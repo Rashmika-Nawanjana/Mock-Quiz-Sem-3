@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Architecture - Mock Quiz Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --github-bg: #0d1117;
+            --github-secondary-bg: #161b22;
+            --github-border: #30363d;
+            --github-text: #e6edf3;
+            --github-text-secondary: #7d8590;
+            --github-green: #238636;
+            --github-green-hover: #2ea043;
+            --github-red: #da3633;
+            --github-red-hover: #f85149;
+        }
+
+        body {
+            background-color: var(--github-bg);
+            color: var(--github-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+
+        .main-container {
+            background-color: var(--github-bg);
+            min-height: calc(100vh - 120px);
+            padding: 2rem 0;
+        }
+
+        .module-header {
+            background-color: var(--github-secondary-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .module-title {
+            color: var(--github-text);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-description {
+            color: var(--github-text-secondary);
+            font-size: 1rem;
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-card {
+            background-color: var(--github-secondary-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-card:hover {
+            border-color: var(--github-text-secondary);
+            transform: translateY(-1px);
+        }
+
+        .quiz-title {
+            color: var(--github-text);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .quiz-description {
+            color: var(--github-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .btn-quiz {
+            background-color: var(--github-green);
+            border: 1px solid var(--github-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-quiz:hover {
+            background-color: var(--github-green-hover);
+            border-color: var(--github-green-hover);
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-brand {
+            color: var(--github-text) !important;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border);">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="navbar-brand mb-0" style="font-size: 2rem;">
+                    <i class="fas fa-graduation-cap me-2"></i>Mock Quiz Hub
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div id="architecture" class="module-section active">
+                <div class="module-header">
+                    <a class="btn btn-outline-light mb-3" href="../index.html">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Home
+                    </a>
+                    <h1 class="module-title"><i class="fas fa-microchip me-3"></i>Computer Architecture</h1>
+                    <p class="module-description">Study CPU design, instruction sets, memory hierarchies, and computer system organization.</p>
+                </div>
+                <div class="quiz-grid">
+                    <div class="quiz-card"><div class="quiz-title">Quiz 1: Basic Architecture</div><div class="quiz-description">Von Neumann architecture, CPU components, and data paths.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 2: Instruction Sets</div><div class="quiz-description">RISC vs CISC, instruction formats, and addressing modes.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 3: Assembly Language</div><div class="quiz-description">Assembly programming, registers, and machine code.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 4: Pipelining</div><div class="quiz-description">Instruction pipelining, hazards, and pipeline optimization.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 5: Cache Memory</div><div class="quiz-description">Cache design, mapping techniques, and replacement policies.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 6: Memory Hierarchy</div><div class="quiz-description">RAM, ROM, virtual memory, and memory management.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 7: I/O Organization</div><div class="quiz-description">I/O interfaces, DMA, and interrupt handling.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 8: Multiprocessors</div><div class="quiz-description">Parallel processing, symmetric multiprocessing, and coherency.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 9: Performance Analysis</div><div class="quiz-description">Benchmarking, performance metrics, and optimization.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 10: Digital Logic</div><div class="quiz-description">Boolean algebra, logic gates, and combinational circuits.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 11: Sequential Circuits</div><div class="quiz-description">Flip-flops, counters, and state machines.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 12: Control Unit Design</div><div class="quiz-description">Hardwired vs microprogrammed control, control signals.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 13: Advanced Topics</div><div class="quiz-description">Superscalar processors, branch prediction, and speculation.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 14: Emerging Technologies</div><div class="quiz-description">Quantum computing, neuromorphic chips, and future architectures.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+

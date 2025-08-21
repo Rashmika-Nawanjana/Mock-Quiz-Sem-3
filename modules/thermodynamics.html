@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thermodynamics - Mock Quiz Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --github-bg: #0d1117;
+            --github-secondary-bg: #161b22;
+            --github-border: #30363d;
+            --github-text: #e6edf3;
+            --github-text-secondary: #7d8590;
+            --github-green: #238636;
+            --github-green-hover: #2ea043;
+            --github-red: #da3633;
+            --github-red-hover: #f85149;
+        }
+
+        body {
+            background-color: var(--github-bg);
+            color: var(--github-text);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+        }
+
+        .main-container {
+            background-color: var(--github-bg);
+            min-height: calc(100vh - 120px);
+            padding: 2rem 0;
+        }
+
+        .module-header {
+            background-color: var(--github-secondary-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .module-title {
+            color: var(--github-text);
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .module-description {
+            color: var(--github-text-secondary);
+            font-size: 1rem;
+        }
+
+        .quiz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-card {
+            background-color: var(--github-secondary-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-card:hover {
+            border-color: var(--github-text-secondary);
+            transform: translateY(-1px);
+        }
+
+        .quiz-title {
+            color: var(--github-text);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .quiz-description {
+            color: var(--github-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .btn-quiz {
+            background-color: var(--github-green);
+            border: 1px solid var(--github-green);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-quiz:hover {
+            background-color: var(--github-green-hover);
+            border-color: var(--github-green-hover);
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-brand {
+            color: var(--github-text) !important;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .quiz-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border);">
+        <div class="container">
+            <div class="text-center">
+                <h1 class="navbar-brand mb-0" style="font-size: 2rem;">
+                    <i class="fas fa-graduation-cap me-2"></i>Mock Quiz Hub
+                </h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <div class="container">
+            <div id="thermodynamics" class="module-section active">
+                <div class="module-header">
+                    <a class="btn btn-outline-light mb-3" href="../index.html">
+                        <i class="fas fa-arrow-left me-2"></i>Back to Home
+                    </a>
+                    <h1 class="module-title"><i class="fas fa-fire me-3"></i>Thermodynamics</h1>
+                    <p class="module-description">Study thermodynamic laws, cycles, heat transfer, and energy conversion systems.</p>
+                </div>
+                <div class="quiz-grid">
+                    <div class="quiz-card"><div class="quiz-title">Quiz 1: Basic Concepts</div><div class="quiz-description">Systems, properties, processes, and equilibrium states.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 2: First Law</div><div class="quiz-description">Energy conservation, internal energy, and enthalpy.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 3: Properties of Pure Substances</div><div class="quiz-description">Phase diagrams, steam tables, and property relations.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 4: Control Volume Analysis</div><div class="quiz-description">Mass and energy conservation for open systems.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 5: Second Law</div><div class="quiz-description">Entropy, irreversibility, and Carnot cycle.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 6: Entropy</div><div class="quiz-description">Entropy generation, T-s diagrams, and entropy balance.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 7: Exergy Analysis</div><div class="quiz-description">Available energy, exergy destruction, and efficiency.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 8: Gas Power Cycles</div><div class="quiz-description">Otto, Diesel, Brayton cycles, and efficiency analysis.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 9: Vapor Power Cycles</div><div class="quiz-description">Rankine cycle, regeneration, and steam turbines.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 10: Refrigeration Cycles</div><div class="quiz-description">Vapor compression, COP, and heat pumps.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 11: Gas Mixtures</div><div class="quiz-description">Ideal gas mixtures, psychrometrics, and air conditioning.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 12: Chemical Reactions</div><div class="quiz-description">Combustion analysis, adiabatic flame temperature.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 13: Heat Transfer</div><div class="quiz-description">Conduction, convection, radiation, and heat exchangers.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 14: Applications</div><div class="quiz-description">Power plants, engines, HVAC systems, and renewable energy.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
