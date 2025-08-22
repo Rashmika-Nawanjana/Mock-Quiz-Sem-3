@@ -1,5 +1,4 @@
-
-        :root {
+:root {
             --github-bg: #0d1117;
             --github-secondary-bg: #161b22;
             --github-border: #30363d;
@@ -17,10 +16,44 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
         }
 
+        .navbar {
+            background-color: var(--github-secondary-bg) !important;
+            border-bottom: 1px solid var(--github-border);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            color: var(--github-text) !important;
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--github-text-secondary) !important;
+            padding: 0.5rem 1rem !important;
+            border-radius: 6px;
+            transition: all 0.2s;
+            margin: 0 0.25rem;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--github-text) !important;
+            background-color: var(--github-bg);
+        }
+
         .main-container {
             background-color: var(--github-bg);
             min-height: calc(100vh - 120px);
             padding: 2rem 0;
+        }
+
+        .module-section {
+            display: none;
+        }
+
+        .module-section.active {
+            display: block;
         }
 
         .module-header {
@@ -99,14 +132,68 @@
             text-decoration: none;
         }
 
-        .navbar-brand {
-            color: var(--github-text) !important;
+        .btn-quiz:disabled {
+            background-color: var(--github-text-secondary);
+            border-color: var(--github-text-secondary);
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .stats-card {
+            background-color: var(--github-secondary-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stats-number {
+            font-size: 1.5rem;
             font-weight: 600;
-            font-size: 1.25rem;
+            color: var(--github-green);
+        }
+
+        .stats-label {
+            font-size: 0.875rem;
+            color: var(--github-text-secondary);
+        }
+
+        .welcome-section {
+            text-align: center;
+            padding: 3rem 0;
+            background-color: var(--github-secondary-bg);
+            border: 1px solid var(--github-border);
+            border-radius: 6px;
+            margin-bottom: 2rem;
+        }
+
+        .welcome-title {
+            font-size: 2.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--github-text);
+        }
+
+        .welcome-subtitle {
+            font-size: 1.1rem;
+            color: var(--github-text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .navbar-toggler {
+            border-color: var(--github-border);
+        }
+
+        .navbar-toggler-icon {
+            filter: invert(0.7);
         }
 
         @media (max-width: 768px) {
             .quiz-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .welcome-title {
+                font-size: 1.75rem;
             }
         }
