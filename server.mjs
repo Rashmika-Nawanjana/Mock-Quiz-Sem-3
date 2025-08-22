@@ -51,7 +51,9 @@ app.get('/modules/thermodynamics', (req, res) => {
 });
 
 
-
+app.get('/quize', (req, res) => {
+  res.render('quize', { title: 'Quize' }); 
+}); 
 
 // Start server
 app.listen(PORT, () => {
