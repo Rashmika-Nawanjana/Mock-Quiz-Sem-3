@@ -1,0 +1,25 @@
+{
+  "name": "mock-quiz",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000M\u0000o\u0000c\u0000k\u0000-\u0000Q\u0000u\u0000i\u0000z\u0000-\u0000S\u0000e\u0000m\u0000-\u00003\u0000\r\u0000 \u0000",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3/issues"
+  },
+  "homepage": "https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
