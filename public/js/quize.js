@@ -1,346 +1,523 @@
+// Quiz State - Using in-memory storage instead of localStorage
+let currentQuestion = 0;
+let selectedOption = null;
+let userAnswers = {}; // Store answers in memory
+let score = 0;
+let quizData = null;
 
-        // Quiz Configuration (Replace with your data)
-        const quizConfig = {
-            questions: [
-                {
-                    id: 'q1',
-                    text: 'What is the primary goal of artificial intelligence?',
-                    options: [
-                        'To replace human intelligence completely',
-                        'To create systems that can perform tasks requiring human intelligence',
-                        'To build robots only',
-                        'To process data faster than humans'
-                    ],
-                    correctAnswer: 1
-                },
-                {
-                    id: 'q2',
-                    text: 'Which of the following is a type of machine learning?',
-                    options: [
-                        'Supervised Learning',
-                        'Unsupervised Learning',
-                        'Reinforcement Learning',
-                        'All of the above'
-                    ],
-                    correctAnswer: 3
-                },
-                {
-                    id: 'q3',
-                    text: 'What does GPU stand for in the context of AI computing?',
-                    options: [
-                        'General Processing Unit',
-                        'Graphics Processing Unit',
-                        'Global Processing Unit',
-                        'Game Processing Unit'
-                    ],
-                    correctAnswer: 1
-                },
-                {
-                    id: 'q4',
-                    text: 'Which algorithm is commonly used for decision making in AI?',
-                    options: [
-                        'Linear Search',
-                        'Bubble Sort',
-                        'Decision Tree',
-                        'Hash Table'
-                    ],
-                    correctAnswer: 2
-                }
-            ],
-            totalQuestions: 4,
-            title: 'Introduction to AI - Quiz 1',
-            estimatedTime: 10
-        };
-
-        // Quiz State
-        let currentQuestion = 0;
-        let selectedOption = null;
-        let userAnswers = JSON.parse(localStorage.getItem('quizAnswers') || '{}');
-        let score = 0;
-
-        // Initialize quiz
-        document.addEventListener('DOMContentLoaded', function() {
-            initializeQuiz();
-            loadQuestion();
-            setupEventListeners();
-        });
-
-        function initializeQuiz() {
-            // Clear previous quiz data
-            localStorage.removeItem('quizAnswers');
-            userAnswers = {};
-        }
-
-        function setupEventListeners() {
-            // Add click listeners to options
-            document.querySelectorAll('.option-item').forEach((item, index) => {
-                item.addEventListener('click', () => selectOption(index));
-            });
-
-            // Add click listeners to buttons
-            const nextBtn = document.getElementById('nextBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            const exitBtn = document.getElementById('exitBtn');
-            const backBtn = document.getElementById('backBtn');
-
-            if (nextBtn) {
-                nextBtn.addEventListener('click', nextQuestion);
-            }
-            if (submitBtn) {
-                submitBtn.addEventListener('click', submitQuiz);
-            }
-            if (exitBtn) {
-                exitBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    if (confirmExit()) {
-                        exitQuiz();
-                    }
-                });
-            }
-            if (backBtn) {
-                backBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    previousQuestion();
-                });
-            }
-
-            // Keyboard navigation
-            document.addEventListener('keydown', handleKeyPress);
-
-            // Prevent accidental page refresh
-            window.addEventListener('beforeunload', function(e) {
-                if (Object.keys(userAnswers).length > 0) {
-                    e.preventDefault();
-                    e.returnValue = '';
-                }
-            });
-        }
-
-        function loadQuestion() {
-            const question = quizConfig.questions[currentQuestion];
-            
-            // Update question display
-            document.getElementById('questionNumber').textContent = `Question ${currentQuestion + 1}`;
-            document.getElementById('questionText').textContent = question.text;
-            
-            // Update options
-            question.options.forEach((option, index) => {
-                const optionElement = document.getElementById(`option-${index}`);
-                optionElement.querySelector('.option-text').textContent = option;
-                optionElement.classList.remove('selected');
-            });
-
-            // Update progress
-            updateProgress();
-
-            // Load previously selected answer if exists
-            const questionId = question.id;
-            if (userAnswers[questionId] !== undefined) {
-                selectOption(userAnswers[questionId], false);
-            } else {
-                selectedOption = null;
-                document.getElementById('nextBtn').disabled = true;
-                const submitBtn = document.getElementById('submitBtn');
-                if (submitBtn) submitBtn.disabled = true;
-            }
-
-            // Show/hide submit button on last question
-            toggleSubmitButton();
-        }
-
-        function updateProgress() {
-            const progressText = document.getElementById('progressText');
-            const progressFill = document.getElementById('progressFill');
-            
-            progressText.textContent = `Progress: Question ${currentQuestion + 1} of ${quizConfig.totalQuestions}`;
-            const percentage = ((currentQuestion + 1) / quizConfig.totalQuestions) * 100;
-            progressFill.style.width = `${percentage}%`;
-        }
-
-        function toggleSubmitButton() {
-            const nextBtn = document.getElementById('nextBtn');
-            let submitBtn = document.getElementById('submitBtn');
-            
-            if (currentQuestion === quizConfig.totalQuestions - 1) {
-                // Last question - show submit button
-                nextBtn.style.display = 'none';
-                
-                if (!submitBtn) {
-                    submitBtn = document.createElement('button');
-                    submitBtn.id = 'submitBtn';
-                    submitBtn.className = 'btn-quiz btn-submit';
-                    submitBtn.disabled = true;
-                    submitBtn.innerHTML = '<i class="fas fa-check"></i>Submit Quiz';
-                    submitBtn.addEventListener('click', submitQuiz);
-                    nextBtn.parentNode.appendChild(submitBtn);
-                } else {
-                    submitBtn.style.display = 'inline-flex';
-                }
-            } else {
-                // Not last question - show next button
-                nextBtn.style.display = 'inline-flex';
-                if (submitBtn) {
-                    submitBtn.style.display = 'none';
-                }
-            }
-        }
-
-        function selectOption(optionIndex, animate = true) {
-            // Remove previous selection
-            document.querySelectorAll('.option-item').forEach(item => {
-                item.classList.remove('selected');
-            });
-
-            // Select new option
-            const selectedElement = document.getElementById(`option-${optionIndex}`);
-            selectedElement.classList.add('selected');
-            
-            if (animate) {
-                selectedElement.style.transform = 'scale(0.98)';
-                setTimeout(() => {
-                    selectedElement.style.transform = 'scale(1)';
-                }, 100);
-            }
-
-            selectedOption = optionIndex;
-
-            // Save answer
-            const questionId = quizConfig.questions[currentQuestion].id;
-            userAnswers[questionId] = optionIndex;
-            localStorage.setItem('quizAnswers', JSON.stringify(userAnswers));
-
-            // Enable next/submit button
-            const nextBtn = document.getElementById('nextBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            if (nextBtn) {
-                nextBtn.disabled = false;
-            }
-            if (submitBtn) {
-                submitBtn.disabled = false;
-            }
-        }
-
-        function nextQuestion() {
-            if (selectedOption === null) {
-                alert('Please select an answer before proceeding.');
-                return;
-            }
-
-            // Move to next question
-            currentQuestion++;
-            
-            if (currentQuestion < quizConfig.totalQuestions) {
-                selectedOption = null;
-                loadQuestion();
-                setupEventListeners(); // Re-setup listeners for new options
-            } else {
-                // Should not happen as submit button should be shown instead
-                submitQuiz();
-            }
-        }
-
-        function previousQuestion() {
-            if (currentQuestion > 0) {
-                currentQuestion--;
-                selectedOption = null;
-                loadQuestion();
-                setupEventListeners(); // Re-setup listeners for new options
-            } else {
-                // Go back to quiz list or module page
-                if (confirm('Go back to quiz selection?')) {
-                    window.location.href = '#'; // Replace with your quiz list URL
-                }
-            }
-        }
-
-        function submitQuiz() {
-            if (selectedOption === null) {
-                alert('Please select an answer before submitting.');
-                return;
-            }
-
-            if (confirm('Are you sure you want to submit your quiz? You cannot change your answers after submission.')) {
-                // Calculate score
-                calculateScore();
-                
-                // Show results
-                showResults();
-
-                // Clear stored answers
-                localStorage.removeItem('quizAnswers');
-            }
-        }
-
-        function calculateScore() {
-            score = 0;
-            quizConfig.questions.forEach((question, index) => {
-                if (userAnswers[question.id] === question.correctAnswer) {
-                    score++;
-                }
-            });
-        }
-
-        function showResults() {
-            const percentage = Math.round((score / quizConfig.totalQuestions) * 100);
-            let message = `Quiz Complete!\n\n`;
-            message += `Score: ${score}/${quizConfig.totalQuestions} (${percentage}%)\n\n`;
-            
-            if (percentage >= 80) {
-                message += 'Excellent work! 🎉';
-            } else if (percentage >= 60) {
-                message += 'Good job! 👍';
-            } else {
-                message += 'Keep studying! 📚';
-            }
-
-            alert(message);
-            
-            // Redirect to results page or quiz list
-            // window.location.href = '/quiz/results'; // Replace with your results URL
-        }
-
-        function exitQuiz() {
-            localStorage.removeItem('quizAnswers');
-            // window.location.href = '/modules'; // Replace with your modules URL
-            alert('Quiz exited. You would be redirected to the modules page.');
-        }
-
-        function confirmExit() {
-            return confirm('Are you sure you want to exit the quiz? Your progress will be lost.');
-        }
-
-        function handleKeyPress(e) {
-            // Numbers 1-4 to select options
-            if (e.key >= '1' && e.key <= '4') {
-                const optionIndex = parseInt(e.key) - 1;
-                if (optionIndex < quizConfig.questions[currentQuestion].options.length) {
-                    selectOption(optionIndex);
-                }
-            }
-            
-            // Enter to proceed to next question
-            if (e.key === 'Enter' && selectedOption !== null) {
-                const nextBtn = document.getElementById('nextBtn');
-                const submitBtn = document.getElementById('submitBtn');
-                
-                if (nextBtn && !nextBtn.disabled && nextBtn.style.display !== 'none') {
-                    nextQuestion();
-                } else if (submitBtn && !submitBtn.disabled && submitBtn.style.display !== 'none') {
-                    submitQuiz();
-                }
-            }
-            
-            // Escape to show exit confirmation
-            if (e.key === 'Escape') {
-                if (confirmExit()) {
-                    exitQuiz();
-                }
-            }
-
-            // Arrow keys for navigation
-            if (e.key === 'ArrowLeft' && currentQuestion > 0) {
-                previousQuestion();
-            }
-        }
+// Initialize quiz when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM loaded, initializing quiz...');
     
+    initializeQuizData();
+    
+    if (!quizData || !quizData.questions || quizData.questions.length === 0) {
+        console.error('Quiz data not found or invalid');
+        return;
+    }
+    
+    console.log('Quiz data loaded:', quizData);
+    initializeQuiz();
+    setupEventListeners();
+    
+    // Load the first question
+    loadQuestion();
+});
+
+// Initialize quiz data - Now expects all questions to be loaded
+function initializeQuizData() {
+    // Method 1: Try global quiz variable (full quiz array) - PREFERRED
+    if (typeof quiz !== 'undefined' && quiz && Array.isArray(quiz)) {
+        quizData = {
+            totalQuestions: quiz.length,
+            questions: quiz,
+            isMultiQuestionPage: true
+        };
+        console.log('Quiz data loaded from global variable - full quiz array:', quizData);
+        return;
+    }
+    
+    // Method 2: If you need to fetch all questions via AJAX
+    // fetchAllQuestions();
+    
+    // Method 3: Fallback - single question (not recommended for dynamic navigation)
+    const questionText = document.querySelector('.question-text');
+    const optionElements = document.querySelectorAll('.option-text');
+    
+    if (questionText && optionElements.length > 0) {
+        console.warn('Only single question found. Dynamic navigation requires all questions to be loaded.');
+        quizData = {
+            totalQuestions: 1,
+            questions: [{
+                id: 1,
+                text: questionText.textContent.trim(),
+                options: Array.from(optionElements).map(el => el.textContent.trim()),
+                correctAnswer: 0 // This should come from your server
+            }],
+            isMultiQuestionPage: false
+        };
+        console.log('Single question fallback:', quizData);
+        return;
+    }
+    
+    console.error('Could not initialize quiz data');
+}
+
+// Fetch all questions via AJAX (if needed)
+function fetchAllQuestions() {
+    // Example AJAX call - adjust URL and handling based on your backend
+    fetch('/api/quiz/questions')
+        .then(response => response.json())
+        .then(data => {
+            quizData = {
+                totalQuestions: data.length,
+                questions: data,
+                isMultiQuestionPage: true
+            };
+            console.log('Questions fetched via AJAX:', quizData);
+            loadQuestion();
+        })
+        .catch(error => {
+            console.error('Error fetching questions:', error);
+        });
+}
+
+function initializeQuiz() {
+    currentQuestion = 0;
+    selectedOption = null;
+    userAnswers = {};
+    score = 0;
+    console.log('Quiz state initialized');
+}
+
+// Setup event listeners
+function setupEventListeners() {
+    console.log('Setting up event listeners...');
+    
+    const optionsContainer = document.querySelector('.options-container');
+    
+    if (optionsContainer) {
+        // Add click listener to container for event delegation
+        optionsContainer.addEventListener('click', function(e) {
+            console.log('Click detected on:', e.target);
+            
+            // Find the option item
+            let optionItem = e.target.closest('.option-item');
+            
+            if (!optionItem) {
+                console.log('No option item found');
+                return;
+            }
+            
+            const optionIndex = parseInt(optionItem.dataset.option);
+            console.log('Option index:', optionIndex);
+            
+            if (!isNaN(optionIndex)) {
+                selectOption(optionIndex);
+            }
+        });
+        
+        console.log('Event listeners attached to options container');
+    }
+
+    // Button event listeners
+    setupButtonListeners();
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', handleKeyPress);
+    
+    console.log('All event listeners set up');
+}
+
+function setupButtonListeners() {
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const exitBtn = document.getElementById('exitBtn');
+    const backBtn = document.getElementById('backBtn');
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Next button clicked');
+            nextQuestion();
+        });
+    }
+    
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Submit button clicked');
+            submitQuiz();
+        });
+    }
+    
+    if (exitBtn) {
+        exitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Exit button clicked');
+            if (confirmExit()) {
+                exitQuiz();
+            }
+        });
+    }
+    
+    if (backBtn) {
+        backBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            console.log('Back button clicked');
+            previousQuestion();
+        });
+    }
+}
+
+// Select an option
+function selectOption(optionIndex) {
+    console.log('selectOption called with index:', optionIndex);
+    
+    // Remove previous selections
+    document.querySelectorAll('.option-item').forEach(item => {
+        item.classList.remove('selected');
+    });
+
+    // Select new option
+    const selectedElement = document.getElementById(`option-${optionIndex}`);
+    if (!selectedElement) {
+        console.error('Could not find option element:', `option-${optionIndex}`);
+        return;
+    }
+    
+    selectedElement.classList.add('selected');
+    console.log('Added selected class to:', selectedElement);
+
+    // Animation effect
+    selectedElement.style.transform = 'scale(0.98)';
+    setTimeout(() => {
+        selectedElement.style.transform = 'scale(1)';
+    }, 100);
+
+    selectedOption = optionIndex;
+    
+    // Store answer for current question
+    const question = quizData.questions[currentQuestion];
+    const questionId = question.id || (currentQuestion + 1);
+    userAnswers[questionId] = optionIndex;
+    
+    console.log('Answer stored for question', questionId, ':', optionIndex);
+
+    // Enable next/submit button
+    updateNavigationButtons();
+}
+
+// Navigate to next question
+function nextQuestion() {
+    console.log('nextQuestion called, current:', currentQuestion);
+    
+    if (selectedOption === null) {
+        alert('Please select an answer before proceeding.');
+        return;
+    }
+
+    // Store current answer (already done in selectOption, but double-check)
+    const question = quizData.questions[currentQuestion];
+    const questionId = question.id || (currentQuestion + 1);
+    userAnswers[questionId] = selectedOption;
+    
+    console.log('Moving to next question. Current answers:', userAnswers);
+
+    // Move to next question
+    if (currentQuestion < quizData.totalQuestions - 1) {
+        currentQuestion++;
+        loadQuestion();
+        console.log('Loaded question:', currentQuestion + 1);
+    } else {
+        console.log('Last question reached, ready to submit');
+        // Already on last question, submit button should be visible
+    }
+}
+
+// Navigate to previous question
+function previousQuestion() {
+    console.log('previousQuestion called, current:', currentQuestion);
+    
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+        console.log('Loaded previous question:', currentQuestion + 1);
+    } else {
+        if (confirm('Go back to quiz selection?')) {
+            window.location.href = '/';
+        }
+    }
+}
+
+// Load current question dynamically
+function loadQuestion() {
+    if (!quizData.questions || currentQuestion >= quizData.questions.length) {
+        console.error('Invalid question data or index');
+        return;
+    }
+
+    const question = quizData.questions[currentQuestion];
+    console.log('Loading question:', currentQuestion + 1, question);
+    
+    // Update question number and text
+    const questionNumberEl = document.querySelector('.question-number');
+    const questionTextEl = document.querySelector('.question-text');
+    
+    if (questionNumberEl) {
+        questionNumberEl.textContent = `Question ${currentQuestion + 1}`;
+    }
+    
+    if (questionTextEl) {
+        questionTextEl.textContent = question.text;
+    }
+
+    // Update options
+    const optionsContainer = document.querySelector('.options-container');
+    if (optionsContainer && question.options) {
+        optionsContainer.innerHTML = '';
+        
+        question.options.forEach((option, index) => {
+            const div = document.createElement('div');
+            div.className = 'option-item';
+            div.dataset.option = index;
+            div.id = `option-${index}`;
+            div.innerHTML = `
+                <span class="option-label">${String.fromCharCode(65 + index)}.</span>
+                <span class="option-text">${option}</span>
+            `;
+            optionsContainer.appendChild(div);
+        });
+    }
+
+    // Reset selection state
+    selectedOption = null;
+
+    // Load previous answer if exists and highlight it
+    const questionId = question.id || (currentQuestion + 1);
+    if (userAnswers[questionId] !== undefined) {
+        const previousAnswer = userAnswers[questionId];
+        console.log('Found previous answer for question', questionId, ':', previousAnswer);
+        selectOption(previousAnswer);
+    }
+
+    // Update progress and navigation
+    updateProgress();
+    updateNavigationButtons();
+    
+    // Scroll to top of question
+    const questionContainer = document.querySelector('.question-container') || document.querySelector('.quiz-container');
+    if (questionContainer) {
+        questionContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+
+// Update progress bar
+function updateProgress() {
+    const progressText = document.getElementById('progressText');
+    const progressFill = document.getElementById('progressFill');
+    
+    if (progressText) {
+        progressText.textContent = `Question ${currentQuestion + 1} of ${quizData.totalQuestions}`;
+    }
+    
+    if (progressFill) {
+        const percentage = ((currentQuestion + 1) / quizData.totalQuestions) * 100;
+        progressFill.style.width = `${percentage}%`;
+    }
+}
+
+// Update navigation buttons based on current state
+function updateNavigationButtons() {
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const backBtn = document.getElementById('backBtn');
+    
+    const isLastQuestion = currentQuestion === quizData.totalQuestions - 1;
+    const isFirstQuestion = currentQuestion === 0;
+    const hasSelectedOption = selectedOption !== null;
+    
+    // Back button
+    if (backBtn) {
+        backBtn.disabled = isFirstQuestion;
+        backBtn.style.display = 'inline-flex';
+    }
+    
+    // Next/Submit button logic
+    if (isLastQuestion) {
+        // Last question - show submit button
+        if (nextBtn) nextBtn.style.display = 'none';
+        
+        if (!submitBtn) {
+            // Create submit button if it doesn't exist
+            const submitBtn = document.createElement('button');
+            submitBtn.id = 'submitBtn';
+            submitBtn.className = 'btn-quiz btn-submit';
+            submitBtn.innerHTML = '<i class="fas fa-check"></i>Submit Quiz';
+            submitBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                submitQuiz();
+            });
+            
+            if (nextBtn && nextBtn.parentNode) {
+                nextBtn.parentNode.appendChild(submitBtn);
+            }
+        } else {
+            submitBtn.style.display = 'inline-flex';
+        }
+        
+        if (submitBtn) {
+            submitBtn.disabled = !hasSelectedOption;
+        }
+    } else {
+        // Not last question - show next button
+        if (nextBtn) {
+            nextBtn.style.display = 'inline-flex';
+            nextBtn.disabled = !hasSelectedOption;
+        }
+        if (submitBtn) {
+            submitBtn.style.display = 'none';
+        }
+    }
+    
+    console.log('Navigation updated - Question:', currentQuestion + 1, 'Selected:', hasSelectedOption, 'Last:', isLastQuestion);
+}
+
+// Submit quiz
+function submitQuiz() {
+    if (selectedOption === null) {
+        alert('Please select an answer before submitting.');
+        return;
+    }
+
+    if (!confirm('Are you sure you want to submit your quiz? You cannot change your answers after submission.')) {
+        return;
+    }
+
+    // Store final answer
+    const question = quizData.questions[currentQuestion];
+    const questionId = question.id || (currentQuestion + 1);
+    userAnswers[questionId] = selectedOption;
+
+    console.log('Final answers:', userAnswers);
+    
+    // Calculate score and show results
+    calculateScore();
+    showResults();
+}
+
+// Calculate final score
+function calculateScore() {
+    score = 0;
+    
+    quizData.questions.forEach((question, index) => {
+        const questionId = question.id || (index + 1);
+        const userAnswer = userAnswers[questionId];
+        const correctAnswer = question.correctAnswer;
+        
+        if (userAnswer === correctAnswer) {
+            score++;
+        }
+    });
+    
+    console.log('Quiz completed. Score:', score, '/', quizData.totalQuestions);
+}
+
+// Show results
+function showResults() {
+    const percentage = Math.round((score / quizData.totalQuestions) * 100);
+    let message = `Quiz Complete!\n\nYour Score: ${score}/${quizData.totalQuestions} (${percentage}%)\n\n`;
+    
+    if (percentage >= 80) {
+        message += 'Excellent work! 🎉 You have a great understanding of the material.';
+    } else if (percentage >= 60) {
+        message += 'Good job! 👍 You have a solid grasp of most concepts.';
+    } else {
+        message += 'Keep studying! 📚 Review the material and try again.';
+    }
+    
+    alert(message);
+    
+    // Optionally redirect to results page with score
+    // window.location.href = `/quiz/results?score=${score}&total=${quizData.totalQuestions}`;
+}
+
+// Exit quiz
+function exitQuiz() {
+    window.location.href = '/';
+}
+
+// Confirm exit
+function confirmExit() {
+    return confirm('Are you sure you want to exit the quiz? Your progress will be lost.');
+}
+
+// Handle keyboard navigation
+function handleKeyPress(e) {
+    // Number keys 1-4 for option selection
+    if (e.key >= '1' && e.key <= '4') {
+        const index = parseInt(e.key) - 1;
+        const currentQ = quizData.questions[currentQuestion];
+        if (currentQ && index < currentQ.options.length) {
+            selectOption(index);
+        }
+    }
+    
+    // Enter key for next/submit
+    if (e.key === 'Enter' && selectedOption !== null) {
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if (nextBtn && nextBtn.style.display !== 'none' && !nextBtn.disabled) {
+            nextQuestion();
+        } else if (submitBtn && submitBtn.style.display !== 'none' && !submitBtn.disabled) {
+            submitQuiz();
+        }
+    }
+    
+    // Escape key for exit
+    if (e.key === 'Escape') {
+        if (confirmExit()) {
+            exitQuiz();
+        }
+    }
+    
+    // Arrow keys for navigation
+    if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+        previousQuestion();
+    }
+    
+    if (e.key === 'ArrowRight' && selectedOption !== null) {
+        if (currentQuestion < quizData.totalQuestions - 1) {
+            nextQuestion();
+        }
+    }
+}
+
+// Additional utility functions
+
+// Get quiz progress as percentage
+function getProgress() {
+    return {
+        current: currentQuestion + 1,
+        total: quizData.totalQuestions,
+        percentage: Math.round(((currentQuestion + 1) / quizData.totalQuestions) * 100),
+        answered: Object.keys(userAnswers).length
+    };
+}
+
+// Jump to specific question (optional feature)
+function jumpToQuestion(questionNumber) {
+    const questionIndex = questionNumber - 1;
+    if (questionIndex >= 0 && questionIndex < quizData.totalQuestions) {
+        currentQuestion = questionIndex;
+        loadQuestion();
+        console.log('Jumped to question:', questionNumber);
+    }
+}
+
+// Review mode - show all questions with answers (optional)
+function enterReviewMode() {
+    // This could be implemented to show a summary of all questions and answers
+    console.log('Review mode - Current answers:', userAnswers);
+}

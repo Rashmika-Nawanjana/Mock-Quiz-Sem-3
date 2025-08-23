@@ -1,0 +1,662 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary role of an operating system?",
+        "options": [
+            "To run application software like web browsers and games",
+            "To act as an intermediary between the user and the computer hardware",
+            "To design and manufacture computer hardware components",
+            "To provide internet connectivity and web hosting services"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q2",
+        "text": "Which component of a computer system provides the basic computing resources like the CPU and memory?",
+        "options": [
+            "Application Programs",
+            "Operating System",
+            "Hardware",
+            "Users"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q3",
+        "text": "What is the name of the program that initializes the system and loads the operating system kernel?",
+        "options": [
+            "Device Driver",
+            "System Call",
+            "Bootstrap Program",
+            "Interrupt Handler"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q4",
+        "text": "How does a device controller typically inform the CPU that it has finished an operation?",
+        "options": [
+            "By sending an email",
+            "By writing a message to main memory",
+            "By causing an interrupt",
+            "By changing a value in its local buffer"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q5",
+        "text": "What is a \"trap\" or \"exception\" in the context of operating systems?",
+        "options": [
+            "A hardware failure that crashes the system",
+            "A physical switch on the computer case",
+            "A software-generated interrupt caused by an error or user request",
+            "A type of computer virus"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q6",
+        "text": "What is the main purpose of Direct Memory Access (DMA)?",
+        "options": [
+            "To allow the CPU to execute multiple programs at once",
+            "To let device controllers transfer data directly to main memory without constant CPU intervention",
+            "To provide a user-friendly interface for file management",
+            "To increase the size of the main memory"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q7",
+        "text": "The technique where the CPU switches between multiple jobs in memory so it always has one to execute is called:",
+        "options": [
+            "Multitasking",
+            "Multiprogramming",
+            "Multiprocessing",
+            "Multithreading"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q8",
+        "text": "What is the key characteristic of a timesharing (multitasking) system?",
+        "options": [
+            "It runs only one program at a time",
+            "It switches jobs so frequently that users can interact with each job interactively",
+            "It uses multiple, specialized processors for different tasks",
+            "It is only used in large mainframe computers"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q9",
+        "text": "What hardware feature allows the OS to protect itself by distinguishing between user code and kernel code?",
+        "options": [
+            "A timer",
+            "A mode bit",
+            "A DMA controller",
+            "A device driver"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q10",
+        "text": "What happens to the mode bit when a system call is executed?",
+        "options": [
+            "It is set to \"user\"",
+            "It is set to \"kernel\"",
+            "It is turned off",
+            "It is not affected by system calls"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q11",
+        "text": "What is the purpose of a timer in an operating system?",
+        "options": [
+            "To display the current time for the user",
+            "To prevent a process from hogging the CPU by generating an interrupt after a time period",
+            "To speed up the execution of privileged instructions",
+            "To manage the battery life on mobile devices"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q12",
+        "text": "What is the fundamental difference between a program and a process?",
+        "options": [
+            "A program is written in code, a process is written in English",
+            "A program is an active entity, while a process is a passive entity",
+            "A program is a passive entity, while a process is an active instance of an executing program",
+            "There is no difference; the terms are interchangeable"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q13",
+        "text": "Which of the following is NOT a responsibility of process management?",
+        "options": [
+            "Creating and deleting processes",
+            "Suspending and resuming processes",
+            "Providing mechanisms for process synchronization",
+            "Directly managing the physical properties of the hard disk platters"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "q14",
+        "text": "The concept of moving processes in and out of memory to run them is called:",
+        "options": [
+            "Caching",
+            "Spooling",
+            "Swapping",
+            "Scheduling"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q15",
+        "text": "What is the main goal of the OS's file-system management?",
+        "options": [
+            "To design new hard drive hardware",
+            "To provide a uniform, logical view of information storage, hiding physical properties",
+            "To increase the clock speed of the CPU",
+            "To assign unique IDs to every user"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q16",
+        "text": "Which OS activity involves deciding which free blocks on a disk to use for a new file?",
+        "options": [
+            "Disk Scheduling",
+            "Free-space Management",
+            "Mounting",
+            "Protection"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q17",
+        "text": "What is the principle of copying information into a faster storage system to improve performance called?",
+        "options": [
+            "Spooling",
+            "Buffering",
+            "Caching",
+            "Swapping"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q18",
+        "text": "In the storage hierarchy, which level is typically the fastest and smallest?",
+        "options": [
+            "Main Memory (RAM)",
+            "Solid-State Disk (SSD)",
+            "Registers",
+            "Magnetic Disk (HDD)"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q19",
+        "text": "What is the major challenge in a multiprocessor environment regarding data in multiple caches?",
+        "options": [
+            "Cache size",
+            "Cache coherency",
+            "Cache color",
+            "Cache price"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q20",
+        "text": "The I/O subsystem is responsible for all of the following EXCEPT:",
+        "options": [
+            "Buffering data during transfer",
+            "Caching parts of data for performance",
+            "Providing a general device-driver interface",
+            "Manufacturing new hardware devices"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "q21",
+        "text": "What is the difference between protection and security?",
+        "options": [
+            "Protection is against hardware failure, security is against software bugs",
+            "Protection controls access to resources, while security defends the entire system from attacks",
+            "Protection is for files, security is for networks",
+            "They are identical concepts"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q22",
+        "text": "What mechanism allows a user to temporarily gain more rights to perform a specific task?",
+        "options": [
+            "User ID assignment",
+            "Group ID assignment",
+            "Privilege escalation",
+            "Mode bit switching"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q23",
+        "text": "What is the key difference between virtualization and emulation?",
+        "options": [
+            "Virtualization is slower than emulation",
+            "Emulation is used for the same CPU type, virtualization for different CPU types",
+            "Virtualization runs a guest OS natively compiled for the CPU, while emulation translates instructions for a different CPU type",
+            "Emulation is a type of cloud computing"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q24",
+        "text": "In a clustered system, what do nodes typically share to maintain a single view of data?",
+        "options": [
+            "A single power supply",
+            "A common user interface",
+            "Storage via a Storage-Area Network (SAN)",
+            "The same brand of processor"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q25",
+        "text": "In a Symmetric Multiprocessing (SMP) system, how are the processors organized?",
+        "options": [
+            "One master processor controls all others",
+            "All processors are peers and can perform any task",
+            "Each processor is assigned a specific, fixed task",
+            "Processors do not share a common main memory"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q26",
+        "text": "What is a key characteristic of a Non-Uniform Memory Access (NUMA) system?",
+        "options": [
+            "All processors have equal access time to all memory",
+            "Access time to memory depends on the memory location relative to a processor",
+            "It does not allow multiple processors",
+            "It is only used in personal computers"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q27",
+        "text": "Which computing environment delivers computing and storage as a service over a network, often using a pay-per-use model?",
+        "options": [
+            "Client-Server",
+            "Peer-to-Peer",
+            "Cloud Computing",
+            "Real-Time Embedded"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q28",
+        "text": "Which type of cloud is run by a company for its own internal use?",
+        "options": [
+            "Public Cloud",
+            "Private Cloud",
+            "Hybrid Cloud",
+            "Community Cloud"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q29",
+        "text": "What is the defining constraint for a Real-Time Embedded system?",
+        "options": [
+            "It must be the smallest possible size",
+            "It must be the cheapest to manufacture",
+            "Processing must be completed within well-defined, fixed time constraints",
+            "It must run a general-purpose operating system"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q30",
+        "text": "Which kernel data structure is a string of n binary digits used to represent the status of n items very efficiently?",
+        "options": [
+            "Linked List",
+            "Binary Search Tree",
+            "Hash Map",
+            "Bitmap"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "q31",
+        "text": "From an OS perspective, what is the main goal of a mainframe or minicomputer operating system?",
+        "options": [
+            "To maximize battery life",
+            "To act as a resource allocator to keep all users happy",
+            "To provide the best single-user gaming experience",
+            "To optimize for touch screen interfaces"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q32",
+        "text": "According to the text, what is the \"one program running at all times on the computer\" called?",
+        "options": [
+            "The Application",
+            "The Bootstrap Program",
+            "The Kernel",
+            "The Middleware"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q33",
+        "text": "What provides a uniform interface between a hardware device controller and the kernel?",
+        "options": [
+            "A System Call",
+            "A Device Driver",
+            "An Interrupt Vector",
+            "The System Bus"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q34",
+        "text": "The interrupt service routine addresses for various devices are stored in a table called the:",
+        "options": [
+            "Device Status Table",
+            "Interrupt Vector",
+            "System Call Table",
+            "Boot Sector"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q35",
+        "text": "In the I/O cycle, what does the CPU do between instructions?",
+        "options": [
+            "Rests to cool down",
+            "Checks for interrupts",
+            "Switches to kernel mode",
+            "Writes data to the disk"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q36",
+        "text": "Which I/O method allows control to return to the user program without waiting for the I/O operation to complete?",
+        "options": [
+            "Synchronous I/O",
+            "Wait-loop I/O",
+            "Asynchronous I/O",
+            "Single-threaded I/O"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q37",
+        "text": "What is the primary characteristic of Main Memory (RAM) that allows the CPU to access any location directly?",
+        "options": [
+            "Non-volatility",
+            "Random Access",
+            "Low Cost",
+            "High Capacity"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q38",
+        "text": "What is the fundamental unit of computer storage, representing a single 0 or 1?",
+        "options": [
+            "A Byte",
+            "A Word",
+            "A Bit",
+            "A Nibble"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q39",
+        "text": "In the storage hierarchy, what is the purpose of secondary storage?",
+        "options": [
+            "To provide the fastest possible access for the CPU",
+            "To act as an extension of main memory with large nonvolatile capacity",
+            "To store the kernel's data structures",
+            "To manage device drivers"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q40",
+        "text": "What logical divisions is a magnetic hard disk surface split into?",
+        "options": [
+            "Tracks and Sectors",
+            "Blocks and Pages",
+            "Frames and Segments",
+            "Arrays and Lists"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "q41",
+        "text": "The technique where the main memory acts as a cache for secondary storage is a description of:",
+        "options": [
+            "Buffering",
+            "Spooling",
+            "Virtual Memory",
+            "Job Scheduling"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q42",
+        "text": "The von Neumann architecture is characterized by:",
+        "options": [
+            "Separate memory for instructions and data",
+            "A single bus for both instructions and data",
+            "The lack of a central processing unit",
+            "Using quantum bits for computation"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q43",
+        "text": "What is the main advantage of Direct Memory Access (DMA)?",
+        "options": [
+            "It increases the CPU's clock speed",
+            "It allows the OS to handle more system calls",
+            "It generates one interrupt per block of data instead of per byte",
+            "It makes the storage devices non-volatile"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q44",
+        "text": "System daemons are best described as:",
+        "options": [
+            "Malicious software that must be removed",
+            "Services provided outside of the kernel",
+            "The instructions stored in the CPU registers",
+            "Another name for application programs"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q45",
+        "text": "In a multiprogrammed system, what does the OS do when a job has to wait for I/O?",
+        "options": [
+            "It shuts down the computer",
+            "It switches to another job",
+            "It displays an error message to the user",
+            "It increases the job's priority"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q46",
+        "text": "What mechanism allows for the execution of a process that is not completely in memory?",
+        "options": [
+            "Dual-mode Operation",
+            "Direct Memory Access (DMA)",
+            "Virtual Memory",
+            "Interrupt Handling"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q47",
+        "text": "The memory layout diagram showing the OS and multiple processes illustrates which concept?",
+        "options": [
+            "Multiprogramming",
+            "Microkernels",
+            "Storage Hierarchy",
+            "System Boot"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "q48",
+        "text": "Which of the following instructions can only be executed in kernel mode?",
+        "options": [
+            "A standard arithmetic instruction",
+            "A privileged instruction",
+            "A function call in a user program",
+            "A request to open a file"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q49",
+        "text": "A multi-threaded process differs from a single-threaded process by having:",
+        "options": [
+            "Multiple program counters",
+            "Multiple operating systems",
+            "A larger virtual memory space",
+            "A higher priority for CPU scheduling"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "q50",
+        "text": "Which OS activity involves deciding which processes to move into and out of memory?",
+        "options": [
+            "Process Synchronization",
+            "Deadlock Handling",
+            "Memory Management",
+            "File-system Management"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q51",
+        "text": "The abstract concept of a file is used by the OS to:",
+        "options": [
+            "Hide the peculiarities of hardware devices",
+            "Increase the speed of the CPU",
+            "Manage power consumption",
+            "Assign security IDs to users"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "q52",
+        "text": "What is the primary reason why proper disk management is \"of central importance\" to system speed?",
+        "options": [
+            "Disks are the most expensive component",
+            "The entire speed of computer operation hinges on the disk subsystem",
+            "Disks have the smallest capacity in the storage hierarchy",
+            "Disks are the easiest component to replace"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q53",
+        "text": "The principle of caching is applied at many levels in a computer system. Where is it NOT typically used?",
+        "options": [
+            "In hardware (CPU caches)",
+            "In the operating system (disk caching)",
+            "In software (web browser caching)",
+            "In the physical wiring of the system bus"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "q54",
+        "text": "In the \"Migration of data A\" diagram, what is the path of data from slowest to fastest storage?",
+        "options": [
+            "Register → Cache → Memory → Disk",
+            "Disk → Memory → Cache → Register",
+            "Cache → Disk → Memory → Register",
+            "Memory → Disk → Cache → Register"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q55",
+        "text": "Spooling is a technique used by the I/O subsystem to manage data by:",
+        "options": [
+            "Overlapping the output of one job with the input of other jobs",
+            "Speeding up the CPU's clock cycles",
+            "Encrypting all data sent to a printer",
+            "Compressing files on the hard disk"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "q56",
+        "text": "A Security ID (SID) or User ID (UID) is used by the OS primarily to:",
+        "options": [
+            "Determine the execution speed of a process",
+            "Control access to resources and determine who can do what",
+            "Calculate the size of a file",
+            "Manage the free space on a disk"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q57",
+        "text": "In virtualization, what is the role of the Virtual Machine Manager (VMM)?",
+        "options": [
+            "To act as the host operating system",
+            "To provide virtualization services to guest operating systems",
+            "To compile source code into machine language",
+            "To manage the computer's physical cooling system"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q58",
+        "text": "A key characteristic of a Network Operating System is that it:",
+        "options": [
+            "Only runs on one specific brand of hardware",
+            "Provides features for systems to communicate and exchange messages across a network",
+            "Has no need for security or protection",
+            "Is the same as a distributed operating system with a single system view"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q59",
+        "text": "What is a major advantage of a multiprocessor system?",
+        "options": [
+            "Each processor requires its own dedicated operating system",
+            "It is always cheaper than a single-processor system",
+            "It can provide increased reliability through graceful degradation",
+            "It simplifies the writing of application software"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q60",
+        "text": "In a clustered system, what is the purpose of a Distributed Lock Manager (DLM)?",
+        "options": [
+            "To physically lock the computer chassis",
+            "To avoid conflicting operations on shared resources",
+            "To manage the cluster's power supply units",
+            "To prevent users from logging in remotely"
+        ],
+        "correctAnswer": 1
+    }
+]

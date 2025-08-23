@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to AI - Quiz 1 - Mock Quiz Hub</title>
+    <title>Operating Systems Quiz - Mock Quiz Hub</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./css/quize-styles.css">
+    <link rel="stylesheet" href="/css/quize-styles.css">
 </head>
 <body>
     <!-- Quiz Header -->
     <div class="quiz-header">
         <div class="container">
             <h1 class="quiz-title">
-                <i class="fas fa-brain me-2"></i>Introduction to AI - Quiz 1
+                <i class="fas fa-brain me-2"></i>Operating Systems Quiz
             </h1>
             <div class="quiz-meta">
-                <i class="fas fa-clock me-1"></i>Estimated time: 10 minutes
+                <i class="fas fa-clock me-1"></i>Estimated time: 60 minutes
                 <span class="mx-2">•</span>
-                <i class="fas fa-question-circle me-1"></i>4 questions
+                <i class="fas fa-question-circle me-1"></i><%= quiz.length %> questions
             </div>
         </div>
     </div>
@@ -28,49 +28,34 @@
         <!-- Progress Bar -->
         <div class="progress-container">
             <div class="progress-text" id="progressText">
-                Progress: Question 1 of 4
+                Question 1 of <%= quiz.length %>
             </div>
             <div class="progress-bar-custom">
-                <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
             </div>
         </div>
 
-        <!-- Question -->
+        <!-- Question Container - Will be populated dynamically -->
         <div class="question-container">
-            <div class="question-number" id="questionNumber">
+            <div class="question-number">
                 Question 1
             </div>
-            <div class="question-text" id="questionText">
-                What is the primary goal of artificial intelligence?
+            <div class="question-text">
+                <!-- Will be filled by JavaScript -->
             </div>
 
-            <!-- Options -->
+            <!-- Options Container - Will be populated dynamically -->
             <div class="options-container">
-                <div class="option-item" data-option="0" id="option-0">
-                    <span class="option-label">A.</span>
-                    <span class="option-text">To replace human intelligence completely</span>
-                </div>
-                <div class="option-item" data-option="1" id="option-1">
-                    <span class="option-label">B.</span>
-                    <span class="option-text">To create systems that can perform tasks requiring human intelligence</span>
-                </div>
-                <div class="option-item" data-option="2" id="option-2">
-                    <span class="option-label">C.</span>
-                    <span class="option-text">To build robots only</span>
-                </div>
-                <div class="option-item" data-option="3" id="option-3">
-                    <span class="option-label">D.</span>
-                    <span class="option-text">To process data faster than humans</span>
-                </div>
+                <!-- Will be filled by JavaScript -->
             </div>
         </div>
 
         <!-- Controls -->
         <div class="controls-container">
             <div>
-                <a href="#" class="btn-quiz btn-back" id="backBtn">
+                <button class="btn-quiz btn-back" id="backBtn" disabled>
                     <i class="fas fa-arrow-left"></i>Back
-                </a>
+                </button>
                 <button class="btn-quiz btn-exit" id="exitBtn">
                     <i class="fas fa-times"></i>Exit Quiz
                 </button>
@@ -80,10 +65,7 @@
                 <button class="btn-quiz btn-next" id="nextBtn" disabled>
                     <i class="fas fa-arrow-right"></i>Next Question
                 </button>
-                <!-- For the last question, show submit button instead -->
-                <!-- <button class="btn-quiz btn-submit" id="submitBtn" disabled style="display: none;">
-                    <i class="fas fa-check"></i>Submit Quiz
-                </button> -->
+                <!-- Submit button will be created dynamically for last question -->
             </div>
         </div>
 
@@ -93,7 +75,23 @@
         </div>
     </div>
 
+    <!-- Pass quiz data to JavaScript -->
+    <script>
+        // Your quiz data is already an array of questions - perfect!
+        var quiz = <%- JSON.stringify(quiz) %>;
+        
+        // Quiz metadata (since it's not in your JSON)
+        var quizMetadata = {
+            title: "Operating Systems Quiz",
+            estimatedTime: "60",
+            totalQuestions: quiz.length
+        };
+        
+        console.log('Quiz data loaded:', quiz.length, 'questions');
+        console.log('First question:', quiz[0]);
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="./js/quize.js"></script>
+    <script src="/js/quize.js"></script>
 </body>
 </html>

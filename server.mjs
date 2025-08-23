@@ -1,7 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import fs from "fs"; 
 
 // Config
 const __filename = fileURLToPath(import.meta.url);
@@ -50,10 +50,28 @@ app.get('/modules/thermodynamics', (req, res) => {
   res.render('modules/thermodynamics'); 
 });
 
+app.get("/quiz/:module/:quizId", (req, res) => {
+    const { module, quizId } = req.params;
 
-app.get('/quize', (req, res) => {
-  res.render('quize', { title: 'Quize' }); 
-}); 
+    // Build the file path
+    const filePath = path.join('quizes', module, `${quizId}.json`);
+
+    // Check if file exists
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).send("Quiz not found");
+    }
+
+    // Read the quiz JSON
+    const quizData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+    // Send or render quiz
+   res.render("quize", { quiz: quizData});
+});
+
+
+// app.get('/quize', (req, res) => {
+//   res.render('quize', { title: 'Quize' }); 
+// }); 
 
 // Start server
 app.listen(PORT, () => {
