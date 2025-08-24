@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .results-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .score-summary {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .score-circle {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .grade {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #667eea;
+        }
+        .question-review {
+            margin: 20px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .question-header {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+        .question-content {
+            padding: 15px;
+        }
+        .correct {
+            border-left: 4px solid #28a745;
+        }
+        .incorrect {
+            border-left: 4px solid #dc3545;
+        }
+        .answer-option {
+            margin: 8px 0;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .user-answer {
+            background-color: #ffc107;
+            color: #000;
+        }
+        .correct-answer {
+            background-color: #28a745;
+            color: white;
+        }
+        .actions {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            margin: 0 10px;
+            background-color: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+        .btn:hover {
+            background-color: #5a6fd8;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+        .btn-secondary:hover {
+            background-color: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h1>Quiz Results</h1>
+        
+        <% if (typeof quiz !== 'undefined' && quiz.title) { %>
+            <h2><%= quiz.title %></h2>
+        <% } %>
+        
+        <% if (typeof results !== 'undefined') { %>
+            <!-- Score Summary -->
+            <div class="score-summary">
+                <div class="score-circle"><%= results.percentage %>%</div>
+                <div class="grade"><%= results.grade %></div>
+                <p><%= results.message %></p>
+            </div>
+            
+            <!-- Statistics -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number"><%= results.totalQuestions %></div>
+                    <div>Total</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number"><%= results.correctCount %></div>
+                    <div>Correct</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number"><%= results.incorrectCount %></div>
+                    <div>Incorrect</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number"><%= results.timeSpent %></div>
+                    <div>Time</div>
+                </div>
+            </div>
+            
+            <!-- Question Review -->
+            <h3>Question Review</h3>
+            <% if (results.questionResults && results.questionResults.length > 0) { %>
+                <% results.questionResults.forEach((questionResult, index) => { %>
+                    <div class="question-review <%= questionResult.isCorrect ? 'correct' : 'incorrect' %>">
+                        <div class="question-header">
+                            Question <%= index + 1 %>: <%= questionResult.isCorrect ? '✓ Correct' : '✗ Incorrect' %>
+                        </div>
+                        <div class="question-content">
+                            <p><strong><%= questionResult.question %></strong></p>
+                            
+                            <% if (!questionResult.isCorrect) { %>
+                                <div class="answer-option user-answer">
+                                    Your answer: <%= questionResult.userAnswerText %>
+                                </div>
+                            <% } %>
+                            
+                            <div class="answer-option correct-answer">
+                                Correct answer: <%= questionResult.correctAnswerText %>
+                            </div>
+                            
+                            <% if (questionResult.explanation && questionResult.explanation.trim() !== '') { %>
+                                <p><strong>Explanation:</strong> <%= questionResult.explanation %></p>
+                            <% } %>
+                        </div>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <p>No question results available.</p>
+            <% } %>
+            
+        <% } else { %>
+            <div style="text-align: center; padding: 50px;">
+                <h2>Error: No Results Available</h2>
+                <p>There was an issue processing your quiz results.</p>
+            </div>
+        <% } %>
+        
+        <!-- Actions -->
+        <div class="actions">
+            <% if (typeof module !== 'undefined' && typeof quizId !== 'undefined') { %>
+                <a href="/quiz/<%= module %>/<%= quizId %>" class="btn">Retake Quiz</a>
+                <a href="/modules/<%= module %>" class="btn btn-secondary">Back to Module</a>
+            <% } %>
+            <a href="/" class="btn btn-secondary">Home</a>
+        </div>
+    </div>
+
+    <script>
+        // Debug information
+        console.log('Results page loaded');
+        <% if (typeof quiz !== 'undefined') { %>
+            console.log('Quiz data:', <%- JSON.stringify(quiz) %>);
+        <% } %>
+        <% if (typeof results !== 'undefined') { %>
+            console.log('Results data:', <%- JSON.stringify(results) %>);
+        <% } %>
+    </script>
+</body>
+</html>

@@ -3,95 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operating Systems Quiz - Mock Quiz Hub</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/quize-styles.css">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .quiz-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #667eea;
+        }
+        .question {
+            margin-bottom: 25px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #fafafa;
+        }
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .question-text {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: #333;
+            line-height: 1.5;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 8px;
+        }
+        .option input[type="radio"] {
+            margin-right: 10px;
+        }
+        .option label {
+            cursor: pointer;
+        }
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #eee;
+        }
+        .submit-btn {
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background: #5a6fd8;
+        }
+        .timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!-- Quiz Header -->
-    <div class="quiz-header">
-        <div class="container">
-            <h1 class="quiz-title">
-                <i class="fas fa-brain me-2"></i>Operating Systems Quiz
-            </h1>
-            <div class="quiz-meta">
-                <i class="fas fa-clock me-1"></i>Estimated time: 60 minutes
-                <span class="mx-2">•</span>
-                <i class="fas fa-question-circle me-1"></i><%= quiz.length %> questions
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-text" id="progressText">
-                Question 1 of <%= quiz.length %>
-            </div>
-            <div class="progress-bar-custom">
-                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
-            </div>
+    <div class="timer" id="timer">Time: 00:00</div>
+    
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Quiz</h1>
+            <p>Answer all questions and click Submit to see your results</p>
         </div>
 
-        <!-- Question Container - Will be populated dynamically -->
-        <div class="question-container">
-            <div class="question-number">
-                Question 1
-            </div>
-            <div class="question-text">
-                <!-- Will be filled by JavaScript -->
-            </div>
+        <!-- The key fix: proper form action URL -->
+        <form id="quizForm" method="POST" action="/quiz/<%= req.params.module %>/<%= req.params.quizId %>/submit">
+            <% if (quiz && quiz.length > 0) { %>
+                <% quiz.forEach((question, index) => { %>
+                    <div class="question">
+                        <div class="question-number">Question <%= index + 1 %> of <%= quiz.length %></div>
+                        <div class="question-text"><%= question.text %></div>
+                        
+                        <% question.options.forEach((option, optionIndex) => { %>
+                            <div class="option">
+                                <input type="radio" 
+                                       id="q<%= index %>_<%= optionIndex %>" 
+                                       name="answers[<%= index %>]" 
+                                       value="<%= optionIndex %>">
+                                <label for="q<%= index %>_<%= optionIndex %>"><%= option %></label>
+                            </div>
+                        <% }); %>
+                    </div>
+                <% }); %>
+            <% } else { %>
+                <div class="question">
+                    <p>No questions available for this quiz.</p>
+                </div>
+            <% } %>
 
-            <!-- Options Container - Will be populated dynamically -->
-            <div class="options-container">
-                <!-- Will be filled by JavaScript -->
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <div class="controls-container">
-            <div>
-                <button class="btn-quiz btn-back" id="backBtn" disabled>
-                    <i class="fas fa-arrow-left"></i>Back
-                </button>
-                <button class="btn-quiz btn-exit" id="exitBtn">
-                    <i class="fas fa-times"></i>Exit Quiz
-                </button>
-            </div>
+            <input type="hidden" name="timeSpent" id="timeSpent" value="0:00">
             
-            <div>
-                <button class="btn-quiz btn-next" id="nextBtn" disabled>
-                    <i class="fas fa-arrow-right"></i>Next Question
-                </button>
-                <!-- Submit button will be created dynamically for last question -->
+            <div class="submit-section">
+                <button type="submit" class="submit-btn">Submit Quiz</button>
             </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="quiz-footer">
-            <p>Mock Quiz Hub • Select your answer and click Next to continue</p>
-        </div>
+        </form>
     </div>
 
-    <!-- Pass quiz data to JavaScript -->
     <script>
-        // Your quiz data is already an array of questions - perfect!
-        var quiz = <%- JSON.stringify(quiz) %>;
+        // Timer functionality
+        let startTime = new Date();
+        let timerInterval;
         
-        // Quiz metadata (since it's not in your JSON)
-        var quizMetadata = {
-            title: "Operating Systems Quiz",
-            estimatedTime: "60",
-            totalQuestions: quiz.length
-        };
+        function startTimer() {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
         
-        console.log('Quiz data loaded:', quiz.length, 'questions');
-        console.log('First question:', quiz[0]);
+        function updateTimer() {
+            const now = new Date();
+            const elapsed = now - startTime;
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            document.getElementById('timer').textContent = `Time: ${timeString}`;
+            document.getElementById('timeSpent').value = timeString;
+        }
+        
+        // Form submission handler
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            // Stop the timer
+            clearInterval(timerInterval);
+            
+            console.log('Form being submitted...');
+            console.log('Action URL:', this.action);
+            
+            // Debug: Log all form data
+            const formData = new FormData(this);
+            console.log('Form data:');
+            for (let [key, value] of formData.entries()) {
+                console.log(key, value);
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            startTimer();
+            console.log('Quiz loaded with <%= quiz ? quiz.length : 0 %> questions');
+        });
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/quize.js"></script>
 </body>
 </html>
