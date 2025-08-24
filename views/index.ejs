@@ -7,22 +7,14 @@
     <title>Mock Quiz Hub</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
     
 </head>
 <body>
     <!-- Header -->
-    <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border);">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="navbar-brand mb-0" style="font-size: 2rem;">
-                    <i class="fas fa-graduation-cap me-2"></i>Mock Quiz Hub
-                </h1>
-            </div>
-        </div>
-    </header>
+    <%- include('./partials/header') %>
 
     <!-- Main Content -->
     <div class="main-container">
@@ -66,56 +58,56 @@
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-brain me-2"></i>Introduction to AI</div>
                                 <div class="quiz-description">Explore the fundamentals of artificial intelligence, machine learning, and neural networks.</div>
-                                <a href="modules/intro-ai.html" class="btn-quiz">
+                                <a href="modules/intro-ai" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-database me-2"></i>Database Systems</div>
                                 <div class="quiz-description">Master SQL, database design, normalization, and transaction management.</div>
-                                <a href="modules/database.html" class="btn-quiz">
+                                <a href="modules/database" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-calculator me-2"></i>Differential Equations</div>
                                 <div class="quiz-description">Practice solving ordinary and partial differential equations.</div>
-                                <a href="modules/differential.html" class="btn-quiz">
+                                <a href="modules/differential" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-chart-bar me-2"></i>Applied Statistics</div>
                                 <div class="quiz-description">Learn probability, hypothesis testing, and statistical analysis.</div>
-                                <a href="modules/statistics.html" class="btn-quiz">
+                                <a href="modules/statistics" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-desktop me-2"></i>Operating Systems</div>
                                 <div class="quiz-description">Understand processes, memory management, and system architecture.</div>
-                                <a href="modules/os.html" class="btn-quiz">
+                                <a href="modules/os" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-microchip me-2"></i>Computer Architecture</div>
                                 <div class="quiz-description">Study CPU design, instruction sets, and system organization.</div>
-                                <a href="modules/architecture.html" class="btn-quiz">
+                                <a href="modules/architecture" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-network-wired me-2"></i>Data Communication</div>
                                 <div class="quiz-description">Master networking protocols, OSI model, and data transmission.</div>
-                                <a href="modules/networking.html" class="btn-quiz">
+                                <a href="modules/networking" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
                             <div class="quiz-card">
                                 <div class="quiz-title"><i class="fas fa-fire me-2"></i>Thermodynamics</div>
                                 <div class="quiz-description">Practice thermodynamic laws, cycles, and energy transfer.</div>
-                                <a href="modules/thermodynamics.html" class="btn-quiz">
+                                <a href="modules/thermodynamics" class="btn-quiz">
                                     <i class="fas fa-play"></i>View Quizzes
                                 </a>
                             </div>
@@ -125,4 +117,4 @@
             </div>
         </div>
     </div>      
-               
+               <%- include('./partials/footer') %>

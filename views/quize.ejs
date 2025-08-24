@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operating Systems Quiz - Mock Quiz Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/quize-styles.css">
+</head>
+<body>
+    <!-- Quiz Header -->
+    <div class="quiz-header">
+        <div class="container">
+            <h1 class="quiz-title">
+                <i class="fas fa-brain me-2"></i>Operating Systems Quiz
+            </h1>
+            <div class="quiz-meta">
+                <i class="fas fa-clock me-1"></i>Estimated time: 60 minutes
+                <span class="mx-2">•</span>
+                <i class="fas fa-question-circle me-1"></i><%= quiz.length %> questions
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-text" id="progressText">
+                Question 1 of <%= quiz.length %>
+            </div>
+            <div class="progress-bar-custom">
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <!-- Question Container - Will be populated dynamically -->
+        <div class="question-container">
+            <div class="question-number">
+                Question 1
+            </div>
+            <div class="question-text">
+                <!-- Will be filled by JavaScript -->
+            </div>
+
+            <!-- Options Container - Will be populated dynamically -->
+            <div class="options-container">
+                <!-- Will be filled by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls-container">
+            <div>
+                <button class="btn-quiz btn-back" id="backBtn" disabled>
+                    <i class="fas fa-arrow-left"></i>Back
+                </button>
+                <button class="btn-quiz btn-exit" id="exitBtn">
+                    <i class="fas fa-times"></i>Exit Quiz
+                </button>
+            </div>
+            
+            <div>
+                <button class="btn-quiz btn-next" id="nextBtn" disabled>
+                    <i class="fas fa-arrow-right"></i>Next Question
+                </button>
+                <!-- Submit button will be created dynamically for last question -->
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="quiz-footer">
+            <p>Mock Quiz Hub • Select your answer and click Next to continue</p>
+        </div>
+    </div>
+
+    <!-- Pass quiz data to JavaScript -->
+    <script>
+        // Your quiz data is already an array of questions - perfect!
+        var quiz = <%- JSON.stringify(quiz) %>;
+        
+        // Quiz metadata (since it's not in your JSON)
+        var quizMetadata = {
+            title: "Operating Systems Quiz",
+            estimatedTime: "60",
+            totalQuestions: quiz.length
+        };
+        
+        console.log('Quiz data loaded:', quiz.length, 'questions');
+        console.log('First question:', quiz[0]);
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/quize.js"></script>
+</body>
+</html>

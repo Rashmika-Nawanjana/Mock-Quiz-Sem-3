@@ -3,35 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operating Systems - Mock Quiz Hub</title>
+    <title>Introduction to AI - Mock Quiz Hub</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../styles.css">
-   
+    <link rel="stylesheet" href="../css/styles.css">
+    
 </head>
 <body>
-    <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border);">
-        <div class="container">
-            <div class="text-center">
-                <h1 class="navbar-brand mb-0" style="font-size: 2rem;">
-                    <i class="fas fa-graduation-cap me-2"></i>Mock Quiz Hub
-                </h1>
-            </div>
-        </div>
-    </header>
+     <%- include('../partials/header') %>
 
     <div class="main-container">
         <div class="container">
-            <div id="os" class="module-section active">
+            <div id="intro-ai" class="module-section active">
                 <div class="module-header">
-                    <a class="btn btn-outline-light mb-3" href="../index.html">
+                    <a class="btn btn-outline-light mb-3" href="/">
                         <i class="fas fa-arrow-left me-2"></i>Back to Home
                     </a>
-                    <h1 class="module-title"><i class="fas fa-desktop me-3"></i>Operating Systems</h1>
-                    <p class="module-description">Learn about process management, memory systems, file systems, and operating system design principles.</p>
+                    <h1 class="module-title"><i class="fas fa-brain me-3"></i>Introduction to AI</h1>
+                    <p class="module-description">Test your knowledge on artificial intelligence fundamentals, machine learning algorithms, neural networks, and AI applications.</p>
                 </div>
                 <div class="quiz-grid">
-                    <div class="quiz-card"><div class="quiz-title">Quiz 1: OS Introduction</div><div class="quiz-description">Operating system concepts, types, and basic functions.</div><a href="https://docs.google.com/forms/d/e/1FAIpQLSdy0Eidv9vhAy_fwmMvjgdvd8bobL9qIuCrA2RUqAWIxiizUQ/viewform?usp=header" class="btn-quiz"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
+                    <div class="quiz-card"><div class="quiz-title">Quiz 1: Comming Soon!</div><div class="quiz-description">Process states, PCB, context switching, and process creation.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
                     <div class="quiz-card"><div class="quiz-title">Quiz 2: Comming Soon!</div><div class="quiz-description">Process states, PCB, context switching, and process creation.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
                     <div class="quiz-card"><div class="quiz-title">Quiz 3: Comming Soon!</div><div class="quiz-description">FCFS, SJF, Round Robin, and priority scheduling algorithms.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
                     <div class="quiz-card"><div class="quiz-title">Quiz 4: Comming Soon!</div><div class="quiz-description">Critical sections, semaphores, monitors, and deadlocks.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
@@ -46,10 +38,11 @@
                     <div class="quiz-card"><div class="quiz-title">Quiz 13: Comming Soon!</div><div class="quiz-description">Shell commands, system calls, and Linux internals.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
                     <div class="quiz-card"><div class="quiz-title">Quiz 14: Comming Soon!</div><div class="quiz-description">Performance monitoring, tuning, and optimization techniques.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
                 </div>
+                </div>
             </div>
         </div>
     </div>
-
+<%- include('../partials/footer') %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

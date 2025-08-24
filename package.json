@@ -1,0 +1,30 @@
+{
+  "name": "mock-quiz",
+  "version": "1.0.0",
+  "description": "Mock Quiz Semester 3",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "nodemon server.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3/issues"
+  },
+  "homepage": "https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
