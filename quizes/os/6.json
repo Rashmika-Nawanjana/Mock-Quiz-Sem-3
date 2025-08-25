@@ -1,0 +1,302 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the Mutual Exclusion Problem?",
+        "options": [
+            "Ensuring all processes run simultaneously",
+            "Eliminating undesirable interleavings of critical sections",
+            "Speeding up process execution",
+            "Allowing multiple processes to share resources freely"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Mutual Exclusion Problem involves eliminating undesirable interleavings so that only one process at a time can execute its critical section."
+    },
+    {
+        "id": "q2",
+        "text": "What are the two protocols added to solve mutual exclusion?",
+        "options": [
+            "Pre-protocol and Post-protocol",
+            "Start-protocol and End-protocol",
+            "Entry-protocol and Exit-protocol",
+            "Init-protocol and Term-protocol"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The pre-protocol (before critical section) and post-protocol (after critical section) are added to enforce mutual exclusion."
+    },
+    {
+        "id": "q3",
+        "text": "Which property requires that if a process is trying to enter its critical section, it will eventually succeed?",
+        "options": [
+            "Mutual Exclusion",
+            "Deadlock Freedom",
+            "No Starvation",
+            "Progress"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Progress property ensures that if some processes are trying to enter their critical sections, one of them will eventually succeed."
+    },
+    {
+        "id": "q4",
+        "text": "What is starvation in the context of mutual exclusion?",
+        "options": [
+            "A process is unable to enter its critical section even though others are",
+            "A process terminates unexpectedly",
+            "All processes are blocked forever",
+            "The system runs out of memory"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Starvation occurs when a process is indefinitely prevented from entering its critical section while others can."
+    },
+    {
+        "id": "q5",
+        "text": "In the First Attempt solution, what is the purpose of the variable 'turn'?",
+        "options": [
+            "To count the number of processes",
+            "To indicate which process's turn it is to enter the critical section",
+            "To store the process ID",
+            "To measure execution time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The shared variable 'turn' indicates whose turn it is to enter the critical section, enforcing strict alternation."
+    },
+    {
+        "id": "q6",
+        "text": "Why does the First Attempt solution suffer from starvation in the absence of contention?",
+        "options": [
+            "Because it uses too many variables",
+            "Because if one process halts in its non-critical section, the other may be blocked forever",
+            "Because it does not enforce mutual exclusion",
+            "Because it causes deadlock"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If one process halts in its non-critical section after setting 'turn', the other process may be permanently blocked from entering its critical section."
+    },
+    {
+        "id": "q7",
+        "text": "In the Second Attempt, what does ci == 0 signify?",
+        "options": [
+            "Process i is in its non-critical section",
+            "Process i is in its critical section",
+            "Process i wishes to enter its critical section",
+            "Process i has terminated"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ci == 0 signals that process i wishes to enter its critical section."
+    },
+    {
+        "id": "q8",
+        "text": "Why does the Second Attempt fail to ensure mutual exclusion?",
+        "options": [
+            "Because both processes can check each other's flags simultaneously and both proceed",
+            "Because it uses only one variable",
+            "Because it does not have a post-protocol",
+            "Because it allows deadlock"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Both processes might check each other's flags at the same time, find them set to 1, and both proceed into their critical sections."
+    },
+    {
+        "id": "q9",
+        "text": "In the Third Attempt, where is the assignment ci = 0 placed?",
+        "options": [
+            "After the critical section",
+            "At the beginning of the pre-protocol",
+            "Inside the critical section",
+            "In the non-critical section"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the Third Attempt, ci = 0 is moved to the beginning of the pre-protocol to signal the intention to enter the critical section earlier."
+    },
+    {
+        "id": "q10",
+        "text": "What problem does the Third Attempt introduce?",
+        "options": [
+            "Starvation",
+            "Deadlock",
+            "No mutual exclusion",
+            "High overhead"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Third Attempt can lead to deadlock if both processes set their flags to 0 simultaneously and then each waits for the other's flag to become 1."
+    },
+    {
+        "id": "q11",
+        "text": "What is Dekker's Algorithm designed to avoid?",
+        "options": [
+            "Using any shared variables",
+            "Strict alternation and deadlock",
+            "All critical sections",
+            "Non-critical sections"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Dekker's Algorithm avoids the strict alternation of naive turn-taking and prevents deadlock."
+    },
+    {
+        "id": "q12",
+        "text": "In Dekker's Algorithm, what does the variable 'turn' resolve?",
+        "options": [
+            "Speed of processes",
+            "Tie-breaking when both processes want to enter",
+            "Memory allocation",
+            "Process priority"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'turn' variable is used to break ties when both processes are trying to enter their critical sections simultaneously."
+    },
+    {
+        "id": "q13",
+        "text": "What is the key idea behind Dekker's Algorithm?",
+        "options": [
+            "Processes take turns backing off",
+            "Processes never wait",
+            "Processes use no shared memory",
+            "Processes execute critical sections simultaneously"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The threads take turns at backing off when contention is detected, ensuring progress and mutual exclusion."
+    },
+    {
+        "id": "q14",
+        "text": "Which atomic instructions are assumed in these solutions?",
+        "options": [
+            "Load and Store",
+            "Test-and-Set",
+            "Compare-and-Swap",
+            "Fetch-and-Add"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The solutions assume that Load and Store to common memory are the only atomic instructions available."
+    },
+    {
+        "id": "q15",
+        "text": "What is a critical section?",
+        "options": [
+            "A section of code that must be executed by all processes",
+            "A section of code that accesses shared resources and must not be interleaved",
+            "A section of code that is always safe to run concurrently",
+            "A section of code that handles errors"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A critical section is a code segment that accesses shared resources and requires mutual exclusion to prevent interleaving."
+    },
+    {
+        "id": "q16",
+        "text": "What is the requirement for a process halting in its non-critical section?",
+        "options": [
+            "It must restart immediately",
+            "It must notify other processes",
+            "It must not interfere with other processes",
+            "It must be terminated by the OS"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A process halting in its non-critical section must not interfere with the operation of other processes."
+    },
+    {
+        "id": "q17",
+        "text": "What does deadlock mean in mutual exclusion?",
+        "options": [
+            "A process terminates unexpectedly",
+            "No process can enter its critical section even though some are trying",
+            "All processes execute their critical sections simultaneously",
+            "The system runs out of memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Deadlock occurs when no process can make progress from its pre-protocol to its critical section, even though some are trying."
+    },
+    {
+        "id": "q18",
+        "text": "What is the minimal overhead requirement in the absence of contention?",
+        "options": [
+            "A process should immediately enter its critical section",
+            "A process should wait indefinitely",
+            "A process should check multiple variables",
+            "A process should skip its critical section"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In the absence of contention, a single process wishing to enter its critical section should succeed with minimal overhead."
+    },
+    {
+        "id": "q19",
+        "text": "In the First Attempt, how is mutual exclusion proven?",
+        "options": [
+            "By assuming both processes are in the critical section and deriving a contradiction",
+            "By testing all possible interleavings",
+            "By using mathematical induction",
+            "By relying on hardware guarantees"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The proof assumes both processes are in their critical sections and shows that this leads to a contradiction regarding the value of 'turn'."
+    },
+    {
+        "id": "q20",
+        "text": "Why is the First Attempt's proof of no starvation flawed?",
+        "options": [
+            "Because it does not consider process termination",
+            "Because it assumes processes will always set 'turn'",
+            "Because it relies on atomic instructions",
+            "Because it ignores the critical section"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The proof does not account for the scenario where one process halts in its non-critical section, which can cause starvation for the other."
+    },
+    {
+        "id": "q21",
+        "text": "In the Second Attempt, what interleaving leads to a violation of mutual exclusion?",
+        "options": [
+            "P1 sets c1=0, then P2 sets c2=0",
+            "P1 checks c2, then P2 checks c1, then both set their flags",
+            "P1 enters critical section, then P2 enters",
+            "P1 sets c1=1, then P2 sets c2=1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If both processes check each other's flags before either sets their own flag to 0, both may proceed into their critical sections."
+    },
+    {
+        "id": "q22",
+        "text": "In the Third Attempt, what interleaving causes deadlock?",
+        "options": [
+            "P1 sets c1=0, then P2 sets c2=0, then each checks the other's flag",
+            "P1 sets c1=1, then P2 sets c2=1",
+            "P1 checks c2, then P2 checks c1",
+            "P1 enters critical section, then P2 enters"
+        ],
+        "correctAnswer": 0,
+        "explanation": "If both processes set their flags to 0 simultaneously, each will then wait for the other's flag to become 1, causing deadlock."
+    },
+    {
+        "id": "q23",
+        "text": "What additional variable does Dekker's Algorithm introduce compared to the First Three Attempts?",
+        "options": [
+            "A turn variable",
+            "A counter",
+            "A timer",
+            "A priority indicator"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Dekker's Algorithm uses a 'turn' variable in addition to the flags to break ties."
+    },
+    {
+        "id": "q24",
+        "text": "How does Dekker's Algorithm prevent deadlock?",
+        "options": [
+            "By using a turn variable to allow one process to proceed",
+            "By avoiding the use of flags",
+            "By allowing both processes to enter",
+            "By terminating one process"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The 'turn' variable ensures that when both processes are competing, one will back off and the other will proceed, preventing deadlock."
+    },
+    {
+        "id": "q25",
+        "text": "What is the overall goal of a mutual exclusion solution?",
+        "options": [
+            "To allow as many processes as possible into the critical section",
+            "To ensure safety (mutual exclusion) and liveness (progress) properties",
+            "To minimize the size of the non-critical section",
+            "To maximize processor speed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A correct solution must satisfy both safety (mutual exclusion) and liveness (progress, no deadlock, no starvation) properties."
+    }
+]

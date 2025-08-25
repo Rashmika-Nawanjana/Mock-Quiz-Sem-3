@@ -8,7 +8,8 @@
             "To design and manufacture computer hardware components",
             "To provide internet connectivity and web hosting services"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The operating system is system software that manages computer hardware and software resources and provides common services for computer programs. It acts as an intermediary between users and the hardware, making the hardware convenient to use."
     },
     {
         "id": "q2",
@@ -19,7 +20,8 @@
             "Hardware",
             "Users"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "The hardware (CPU, memory, I/O devices) provides the basic computing resources. The OS controls and coordinates the use of these resources among the various application programs for the users."
     },
     {
         "id": "q3",
@@ -30,7 +32,8 @@
             "Bootstrap Program",
             "Interrupt Handler"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "The bootstrap program (or boot loader) is the initial program that runs when a computer is powered up. It is stored in firmware (like ROM or EEPROM) and its job is to initialize the system and load the operating system kernel into memory."
     },
     {
         "id": "q4",
@@ -41,7 +44,8 @@
             "By causing an interrupt",
             "By changing a value in its local buffer"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "When a device controller finishes an operation (e.g., reading data from a disk), it triggers a hardware interrupt by signaling the CPU on a specific interrupt request line (IRQ). This alerts the CPU that the device needs attention."
     },
     {
         "id": "q5",
@@ -52,7 +56,8 @@
             "A software-generated interrupt caused by an error or user request",
             "A type of computer virus"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "A trap (or exception) is a software-generated interrupt. It is caused either by an error (e.g., division by zero, invalid memory access) or by a specific user request (a system call) to execute an OS function."
     },
     {
         "id": "q6",
@@ -63,7 +68,8 @@
             "To provide a user-friendly interface for file management",
             "To increase the size of the main memory"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "DMA allows high-speed I/O devices to transfer large blocks of data directly to/from main memory without requiring the CPU to be involved for every byte transferred. The CPU only needs to initiate and conclude the transfer, freeing it up for other work and drastically improving efficiency."
     },
     {
         "id": "q7",
@@ -74,7 +80,8 @@
             "Multiprocessing",
             "Multithreading"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Multiprogramming is the foundational technique of organizing jobs (code and data) so the CPU always has one to execute. The OS switches to another job when the current one must wait (e.g., for I/O). This increases CPU utilization."
     },
     {
         "id": "q8",
@@ -85,7 +92,8 @@
             "It uses multiple, specialized processors for different tasks",
             "It is only used in large mainframe computers"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Timesharing (or multitasking) is a logical extension of multiprogramming. The CPU switches between jobs so frequently (e.g., using a time slice) that users can interact with each program while it is running, providing interactive response time."
     },
     {
         "id": "q9",
@@ -96,7 +104,8 @@
             "A DMA controller",
             "A device driver"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "A mode bit is a hardware flag that indicates the current mode of the CPU: user mode (0) or kernel (monitor/supervisor) mode (1). This bit allows the OS to protect itself and other system components from user processes. Privileged instructions can only be executed in kernel mode."
     },
     {
         "id": "q10",
@@ -107,7 +116,8 @@
             "It is turned off",
             "It is not affected by system calls"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "When a user process executes a system call (a request for an OS service), it triggers a trap. As part of the trap handling, the hardware changes the mode bit from user mode (0) to kernel mode (1) so the OS can execute the requested service with privileged access."
     },
     {
         "id": "q11",
@@ -118,7 +128,8 @@
             "To speed up the execution of privileged instructions",
             "To manage the battery life on mobile devices"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "A timer is a crucial hardware component for CPU protection. It is set to interrupt the CPU after a specified period (a time quantum). This ensures that the OS regains control, preventing a user process from getting stuck in an infinite loop and monopolizing the CPU."
     },
     {
         "id": "q12",
@@ -129,7 +140,8 @@
             "A program is a passive entity, while a process is an active instance of an executing program",
             "There is no difference; the terms are interchangeable"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "A program is a passive entity; it is a file containing a list of instructions (an executable). A process is an active entity; it is a program in execution. A process has associated resources like a program counter, stack, registers, and memory space."
     },
     {
         "id": "q13",
@@ -140,7 +152,8 @@
             "Providing mechanisms for process synchronization",
             "Directly managing the physical properties of the hard disk platters"
         ],
-        "correctAnswer": 3
+        "correctAnswer": 3,
+        "explanation": "Process management deals with the abstraction of an executing program. It handles creation, deletion, scheduling, synchronization, and communication of processes. Managing the physical properties of hardware (like disk platters) is the responsibility of the device drivers and the hardware itself, not process management."
     },
     {
         "id": "q14",
@@ -151,7 +164,8 @@
             "Swapping",
             "Scheduling"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Swapping is the process of temporarily moving a process (or part of a process) out of main memory to a backing store (like a disk) and then bringing it back into memory for continued execution. This is a key technique for memory management, allowing more processes to run than can fit in physical memory at once."
     },
     {
         "id": "q15",
@@ -162,7 +176,8 @@
             "To increase the clock speed of the CPU",
             "To assign unique IDs to every user"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The file system provides a uniform, logical abstraction for the storage and retrieval of data. It hides the messy details of how and where data is physically stored on disks, tapes, or other devices, presenting a simple interface to the user based on files and directories."
     },
     {
         "id": "q16",
@@ -173,7 +188,8 @@
             "Mounting",
             "Protection"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Free-space management is the task of tracking which blocks on a storage device are free and which are allocated. When a new file is created or an existing one expands, the OS must use its free-space management system to find and allocate free blocks for storing the file's data."
     },
     {
         "id": "q17",
@@ -184,7 +200,8 @@
             "Caching",
             "Swapping"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Caching is the principle of copying data into a faster, temporary storage location (the cache) so that future requests for that data can be served faster. This is a fundamental performance optimization technique used at all levels of a computer system (hardware caches, disk caching, etc.)."
     },
     {
         "id": "q18",
@@ -195,7 +212,8 @@
             "Registers",
             "Magnetic Disk (HDD)"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Registers, located directly inside the CPU, provide the fastest possible access to data because they are made from the same material as the CPU and have no access latency. However, they are extremely expensive and limited in number, making them the smallest storage component."
     },
     {
         "id": "q19",
@@ -206,7 +224,8 @@
             "Cache color",
             "Cache price"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "In a multiprocessor system where each CPU has its own local cache, a copy of the same data may exist in multiple caches. If one processor modifies its cached copy, the other copies become stale. Cache coherency is the challenge of ensuring that all processors have a consistent view of this shared data."
     },
     {
         "id": "q20",
@@ -217,7 +236,8 @@
             "Providing a general device-driver interface",
             "Manufacturing new hardware devices"
         ],
-        "correctAnswer": 3
+        "correctAnswer": 3,
+        "explanation": "The I/O subsystem is a kernel component that manages the complexities of I/O operations. This includes memory management for I/O (buffering, caching), a general device-driver interface, and drivers for specific hardware. It does not involve the physical manufacturing of hardware devices."
     },
     {
         "id": "q21",
@@ -228,7 +248,8 @@
             "Protection is for files, security is for networks",
             "They are identical concepts"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Protection is an internal mechanism: it controls the access of processes and users to the resources defined by the computer system (e.g., files, memory, CPU). Security, on the other hand, is a broader defense of the system from external (and internal) attacks, encompassing protection, cryptography, user authentication, and defending against malware."
     },
     {
         "id": "q22",
@@ -239,7 +260,8 @@
             "Privilege escalation",
             "Mode bit switching"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Privilege escalation is the concept where a user or process is granted more rights than they normally have. A common example is the 'sudo' command in Unix/Linux, which allows a permitted user to execute a command as the superuser or another user, temporarily elevating their privileges."
     },
     {
         "id": "q23",
@@ -250,7 +272,8 @@
             "Virtualization runs a guest OS natively compiled for the CPU, while emulation translates instructions for a different CPU type",
             "Emulation is a type of cloud computing"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Virtualization (e.g., VMware, KVM) requires the guest OS to be compiled for the same CPU architecture as the host. It runs most instructions natively on the hardware for speed, with the VMM trapping and handling sensitive instructions. Emulation (e.g., QEMU) can run an OS for a different CPU by translating every instruction from the guest ISA to the host ISA, which is much slower."
     },
     {
         "id": "q24",
@@ -261,7 +284,8 @@
             "Storage via a Storage-Area Network (SAN)",
             "The same brand of processor"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Clustered systems often use shared storage, typically via a Storage-Area Network (SAN), to provide all nodes with access to the same disks. This allows them to work on a common set of data. Software like Distributed Lock Managers (DLMs) are then used to prevent conflicts and maintain data consistency across the nodes accessing this shared storage."
     },
     {
         "id": "q25",
@@ -272,7 +296,8 @@
             "Each processor is assigned a specific, fixed task",
             "Processors do not share a common main memory"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "In an SMP system, all processors are symmetric (equal); they are peers. Each processor runs an identical copy of the OS, and any processor can be assigned to run any task from a common ready queue. They also share the same main memory and I/O devices."
     },
     {
         "id": "q26",
@@ -283,7 +308,8 @@
             "It does not allow multiple processors",
             "It is only used in personal computers"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "In a NUMA system, each processor has its own local memory, which it can access very quickly. It can also access memory attached to another processor (remote memory), but this access is significantly slower. This non-uniformity of memory access times is the defining characteristic of NUMA."
     },
     {
         "id": "q27",
@@ -294,7 +320,8 @@
             "Cloud Computing",
             "Real-Time Embedded"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Cloud computing delivers different services (e.g., computing power, storage, applications) over the internet (\"the cloud\"). A key characteristic is its service-based, often on-demand, pay-per-use business model, abstracting the underlying infrastructure from the user."
     },
     {
         "id": "q28",
@@ -305,7 +332,8 @@
             "Hybrid Cloud",
             "Community Cloud"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "A private cloud is a cloud infrastructure operated solely for a single organization. It may be managed by the organization itself or a third party, and may exist on-premise or off-premise. It offers more control and security than a public cloud."
     },
     {
         "id": "q29",
@@ -316,7 +344,8 @@
             "Processing must be completed within well-defined, fixed time constraints",
             "It must run a general-purpose operating system"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "The defining characteristic of real-time systems is that they must adhere to strict time constraints. Correctness of computation depends not only on the logical result but also on the time at which the result is produced. A late answer is often a wrong answer in these systems (e.g., anti-lock brakes, flight controls)."
     },
     {
         "id": "q30",
@@ -327,7 +356,8 @@
             "Hash Map",
             "Bitmap"
         ],
-        "correctAnswer": 3
+        "correctAnswer": 3,
+        "explanation": "A bitmap (or bit array) is a highly efficient data structure where each bit represents the state of one item (e.g., 0 for free, 1 for allocated). It is commonly used to track free blocks on a disk or free frames in main memory, as it uses very little space compared to other structures."
     },
     {
         "id": "q31",
@@ -338,7 +368,8 @@
             "To provide the best single-user gaming experience",
             "To optimize for touch screen interfaces"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The main goal of an OS for a multi-user system like a mainframe or minicomputer is to act as a primary resource manager. It must allocate resources (CPU time, memory, storage, I/O) among many users and jobs efficiently and fairly to maximize overall system utilization and keep all users productive."
     },
     {
         "id": "q32",
@@ -349,7 +380,8 @@
             "The Kernel",
             "The Middleware"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "The kernel is the core, central component of the operating system. It is the first part to load into memory on startup and remains resident in memory the entire time the computer is running. It handles all critical, low-level tasks and manages system resources."
     },
     {
         "id": "q33",
@@ -360,7 +392,8 @@
             "An Interrupt Vector",
             "The System Bus"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "A device driver is a kernel module that acts as a translator. It understands the specific details and commands of a particular hardware device (controller) and provides a standard, uniform interface to the OS kernel. This allows the kernel to communicate with a wide variety of devices without needing to know their specific details."
     },
     {
         "id": "q34",
@@ -371,7 +404,8 @@
             "System Call Table",
             "Boot Sector"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The interrupt vector is a table stored in low memory that contains the memory addresses of the interrupt service routines (ISRs) for the various devices connected to the system. When an interrupt with number n occurs, the CPU uses n as an index into this table to find the address of the appropriate ISR to execute."
     },
     {
         "id": "q35",
@@ -382,7 +416,8 @@
             "Switches to kernel mode",
             "Writes data to the disk"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The CPU has an internal hardware mechanism that checks the interrupt request line at the end of the execution of every instruction. If an interrupt signal is present and interrupts are not masked, the CPU will stop what it is doing and begin processing the interrupt."
     },
     {
         "id": "q36",
@@ -393,7 +428,8 @@
             "Asynchronous I/O",
             "Single-threaded I/O"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Asynchronous I/O (or non-blocking I/O) returns control to the user program immediately after the I/O request is initiated. The process can continue executing code while the I/O operation is performed in the background. The process is later notified when the operation is complete."
     },
     {
         "id": "q37",
@@ -404,7 +440,8 @@
             "Low Cost",
             "High Capacity"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Random Access Memory (RAM) is called 'random access' because the CPU can access any memory location (byte/word) directly, in any order, without having to sequentially read through other locations first. This is in contrast to sequential access devices like magnetic tapes."
     },
     {
         "id": "q38",
@@ -415,7 +452,8 @@
             "A Bit",
             "A Nibble"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "A bit (binary digit) is the most basic unit of data in a computer. It can have only one of two values, most commonly represented as 0 or 1. All data and instructions are ultimately encoded as sequences of bits."
     },
     {
         "id": "q39",
@@ -426,7 +464,8 @@
             "To store the kernel's data structures",
             "To manage device drivers"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Secondary storage (e.g., hard disks, SSDs) is the non-volatile, permanent storage tier. Its main purpose is to hold large volumes of data and programs persistently. It also acts as an extension of main memory (RAM) through techniques like swapping and virtual memory, allowing systems to run programs larger than physical RAM."
     },
     {
         "id": "q40",
@@ -437,7 +476,8 @@
             "Frames and Segments",
             "Arrays and Lists"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "explanation": "The surface of a magnetic hard disk platter is logically divided into concentric circles called tracks. Each track is further divided into arcs called sectors. A sector is the smallest unit of data that can be read from or written to the disk."
     },
     {
         "id": "q41",
@@ -448,7 +488,8 @@
             "Virtual Memory",
             "Job Scheduling"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Virtual memory is a memory management technique that uses main memory (RAM) as a cache for pages (fixed-length blocks) stored on secondary storage (the hard disk). This creates the illusion of a much larger main memory and allows programs to run without being fully loaded into physical RAM."
     },
     {
         "id": "q42",
@@ -459,7 +500,8 @@
             "The lack of a central processing unit",
             "Using quantum bits for computation"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The von Neumann architecture is defined by its stored-program concept, where both program instructions and data are stored in the same main memory. The CPU fetches both instructions and data over the same system bus. This is known as the von Neumann bottleneck."
     },
     {
         "id": "q43",
@@ -470,7 +512,8 @@
             "It generates one interrupt per block of data instead of per byte",
             "It makes the storage devices non-volatile"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "The main advantage of DMA is that it offloads data transfer work from the CPU. Without DMA, the CPU would be interrupted for every byte transferred. With DMA, the CPU only needs to be involved at the start and end of a large block transfer, generating only one interrupt upon completion, which dramatically improves efficiency."
     },
     {
         "id": "q44",
@@ -481,7 +524,8 @@
             "The instructions stored in the CPU registers",
             "Another name for application programs"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "System daemons (or services in Windows) are background processes that run outside the kernel but provide essential system functions. They are started during the boot process and run continuously, handling requests for services like printing (cupsd), scheduling (cron), or network connections (sshd)."
     },
     {
         "id": "q45",
@@ -492,7 +536,8 @@
             "It displays an error message to the user",
             "It increases the job's priority"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The core idea of multiprogramming is to keep the CPU busy as much as possible. When one job initiates an I/O operation and must wait for its completion (which is very slow compared to the CPU), the OS simply switches the CPU to execute another job that is ready to run in memory."
     },
     {
         "id": "q46",
@@ -503,7 +548,8 @@
             "Virtual Memory",
             "Interrupt Handling"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Virtual memory is the mechanism that allows a process to execute even if only parts of it are currently loaded in main memory (RAM). The rest of the process resides on secondary storage (disk). The memory management unit (MMU) and the OS work together to bring required parts into memory as needed."
     },
     {
         "id": "q47",
@@ -514,7 +560,8 @@
             "Storage Hierarchy",
             "System Boot"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "explanation": "A classic diagram in OS texts shows the OS residing in one part of memory (often low memory) and several user processes residing in other partitions. This visually represents multiprogramming—the concept of having multiple jobs (processes) in memory at the same time, allowing the OS to switch between them."
     },
     {
         "id": "q48",
@@ -525,7 +572,8 @@
             "A function call in a user program",
             "A request to open a file"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "Privileged instructions are those that could potentially harm the system if misused by a user program (e.g., switching the mode bit, initiating an I/O operation, halting the CPU). To protect the system, the hardware only allows these instructions to be executed when the CPU is in kernel mode."
     },
     {
         "id": "q49",
@@ -536,7 +584,8 @@
             "A larger virtual memory space",
             "A higher priority for CPU scheduling"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "explanation": "A thread is a basic unit of CPU utilization within a process. A multi-threaded process contains multiple threads of execution, each having its own program counter, register set, and stack. However, all threads within a single process share the same code section, data section, and other OS resources (like open files)."
     },
     {
         "id": "q50",
@@ -547,7 +596,8 @@
             "Memory Management",
             "File-system Management"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "Memory management is the OS activity responsible for keeping track of which parts of memory are in use and by whom. A key part of this is deciding which processes (or parts of processes) to bring into memory when space becomes available and which to remove (swap out) to make room for others."
     },
     {
         "id": "q51",
@@ -558,7 +608,8 @@
             "Manage power consumption",
             "Assign security IDs to users"
         ],
-        "correctAnswer": 0
+        "correctAnswer": 0,
+        "explanation": "A file is a logical storage unit. The file system abstraction allows the OS to provide a uniform, device-independent interface for storing and retrieving data. Users and programs see simple files and directories, while the OS and device drivers handle the complex details of interacting with the specific hardware (HDD, SSD, USB drive, etc.)."
     },
     {
         "id": "q52",
@@ -569,7 +620,8 @@
             "Disks have the smallest capacity in the storage hierarchy",
             "Disks are the easiest component to replace"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The CPU and memory are extremely fast, while disks are mechanically slow (for HDDs) or have latency issues (for SSDs). This creates a huge performance gap. Because the OS must frequently wait for disk I/O (paging, swapping, file access), the performance of the entire system is often bottlenecked by the speed of the disk subsystem. Efficient disk management is therefore critical."
     },
     {
         "id": "q53",
@@ -580,7 +632,8 @@
             "In software (web browser caching)",
             "In the physical wiring of the system bus"
         ],
-        "correctAnswer": 3
+        "correctAnswer": 3,
+        "explanation": "Caching is a universal principle used to speed up access to slower storage by keeping copies of data in faster storage. It is used in hardware (L1/L2/L3 CPU caches), in the OS (buffer cache for disks), and in applications (web browser cache). The physical wiring of the system bus is a fixed infrastructure component, not a storage location where data is copied for performance."
     },
     {
         "id": "q54",
@@ -591,17 +644,19 @@
             "Cache → Disk → Memory → Register",
             "Memory → Disk → Cache → Register"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "This illustrates the storage hierarchy. Data originates on the slowest, largest, non-volatile storage (Disk). To be used, it is copied into the faster, volatile Main Memory (RAM). For the CPU to process it quickly, it is copied into the even faster, smaller Cache. Finally, for the CPU to perform an operation on it, the data is moved into the fastest, smallest storage location: the CPU's Registers."
     },
     {
         "id": "q55",
         "text": "Spooling is a technique used by the I/O subsystem to manage data by:",
         "options": [
-            "Overlapping the output of one job with the input of other jobs",
+            "Overlapping the output of one job with the computation of other jobs",
             "Speeding up the CPU's clock cycles",
             "Encrypting all data sent to a printer",
             "Compressing files on the hard disk"
         ],
+        "explanation": "Spooling (Simultaneous Peripheral Operations On-Line) places data for a slow device (like a printer) in a temporary working area (a buffer, usually on disk). This allows the application to finish outputting data very quickly, freeing the CPU to compute for other jobs, while the slower peripheral device consumes the data from the spool buffer at its own pace.",
         "correctAnswer": 0
     },
     {
@@ -613,7 +668,8 @@
             "Calculate the size of a file",
             "Manage the free space on a disk"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The SID (Windows) or UID (Unix/Linux) is a unique identifier assigned to each user and group. The operating system uses this ID to enforce security policies, determining which resources (files, devices, etc.) a user or process is allowed to access and what operations (read, write, execute) they can perform."
     },
     {
         "id": "q57",
@@ -624,7 +680,8 @@
             "To compile source code into machine language",
             "To manage the computer's physical cooling system"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "The Virtual Machine Manager (VMM), also known as a hypervisor, is the software, firmware, or hardware that creates and runs virtual machines (guests). Its core role is to provide the virtualization layer that abstracts the underlying physical hardware, allowing multiple guest operating systems to run concurrently on a single host machine."
     },
     {
         "id": "q58",
@@ -635,7 +692,8 @@
             "Has no need for security or protection",
             "Is the same as a distributed operating system with a single system view"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "A Network Operating System (NOS) is designed primarily to support workstations and PCs connected on a local area network (LAN). Its defining characteristic is providing the services and protocols necessary for machines to communicate, share resources (like files and printers), and exchange messages across the network."
     },
     {
         "id": "q59",
@@ -646,7 +704,8 @@
             "It can provide increased reliability through graceful degradation",
             "It simplifies the writing of application software"
         ],
-        "correctAnswer": 2
+        "correctAnswer": 2,
+        "explanation": "A major advantage of multiprocessor systems is increased reliability. If one processor fails, the work can be distributed among the remaining processors, allowing the system to continue functioning, albeit at a reduced capacity. This ability to survive a partial failure is called 'graceful degradation' or fault resilience."
     },
     {
         "id": "q60",
@@ -657,6 +716,7 @@
             "To manage the cluster's power supply units",
             "To prevent users from logging in remotely"
         ],
-        "correctAnswer": 1
+        "correctAnswer": 1,
+        "explanation": "In a clustered system, multiple nodes may need to access shared resources (like a database or a file). A Distributed Lock Manager (DLM) is a service that provides a mechanism for nodes to coordinate access to these resources. It grants and manages locks to prevent simultaneous, conflicting operations (e.g., two nodes writing to the same file at once), ensuring data consistency and integrity."
     }
 ]

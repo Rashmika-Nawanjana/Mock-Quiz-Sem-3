@@ -4,10 +4,14 @@ let selectedOption = null;
 let userAnswers = {}; // Store answers in memory
 let score = 0;
 let quizData = null;
+let startTime = null;
 
 // Initialize quiz when page loads
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing quiz...');
+    
+    // Record start time for quiz duration
+    startTime = new Date();
     
     initializeQuizData();
     
@@ -383,7 +387,7 @@ function updateNavigationButtons() {
     console.log('Navigation updated - Question:', currentQuestion + 1, 'Selected:', hasSelectedOption, 'Last:', isLastQuestion);
 }
 
-// Submit quiz
+// Submit quiz - Updated to send to results page
 function submitQuiz() {
     if (selectedOption === null) {
         alert('Please select an answer before submitting.');
@@ -401,12 +405,82 @@ function submitQuiz() {
 
     console.log('Final answers:', userAnswers);
     
-    // Calculate score and show results
-    calculateScore();
-    showResults();
+    // Calculate time spent
+    const endTime = new Date();
+    const timeSpentMs = endTime - startTime;
+    const timeSpentMinutes = Math.floor(timeSpentMs / 60000);
+    const timeSpentSeconds = Math.floor((timeSpentMs % 60000) / 1000);
+    const timeSpentFormatted = `${timeSpentMinutes.toString().padStart(2, '0')}:${timeSpentSeconds.toString().padStart(2, '0')}`;
+    
+    // Prepare answers array in the correct order
+    const answersArray = [];
+    for (let i = 0; i < quizData.totalQuestions; i++) {
+        const question = quizData.questions[i];
+        const questionId = question.id || (i + 1);
+        const answer = userAnswers[questionId];
+        answersArray[i] = answer !== undefined ? answer : null;
+    }
+    
+    console.log('Prepared answers array:', answersArray);
+    console.log('Time spent:', timeSpentFormatted);
+    
+    // Submit to results page
+    submitToResultsPage(answersArray, timeSpentFormatted);
 }
 
-// Calculate final score
+// Submit quiz data to results page
+function submitToResultsPage(answersArray, timeSpent) {
+    // Get current URL to extract module and quizId
+    const currentPath = window.location.pathname;
+    const pathParts = currentPath.split('/');
+    
+    // Extract module and quizId from URL (e.g., /quiz/os/1)
+    let module = 'os'; // default
+    let quizId = '1';   // default
+    
+    if (pathParts.length >= 4) {
+        module = pathParts[2];
+        quizId = pathParts[3];
+    }
+    
+    console.log('Submitting to:', `/quiz/${module}/${quizId}/submit`);
+    console.log('Module:', module, 'QuizId:', quizId);
+    
+    // Create a form and submit it
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = `/quiz/${module}/${quizId}/submit`;
+    form.style.display = 'none';
+    
+    // Add answers as form fields
+    answersArray.forEach((answer, index) => {
+        const input = document.createElement('input');
+        input.type = 'hidden';
+        input.name = `answers[${index}]`;
+        input.value = answer !== null ? answer : '';
+        form.appendChild(input);
+    });
+    
+    // Add time spent
+    const timeInput = document.createElement('input');
+    timeInput.type = 'hidden';
+    timeInput.name = 'timeSpent';
+    timeInput.value = timeSpent;
+    form.appendChild(timeInput);
+    
+    // Add to document and submit
+    document.body.appendChild(form);
+    
+    console.log('Submitting form with data:', {
+        answers: answersArray,
+        timeSpent: timeSpent,
+        action: form.action
+    });
+    
+    form.submit();
+}
+
+// Calculate final score (now used for client-side validation only)
 function calculateScore() {
     score = 0;
     
@@ -423,7 +497,7 @@ function calculateScore() {
     console.log('Quiz completed. Score:', score, '/', quizData.totalQuestions);
 }
 
-// Show results
+// Show results (deprecated - now handled by server)
 function showResults() {
     const percentage = Math.round((score / quizData.totalQuestions) * 100);
     let message = `Quiz Complete!\n\nYour Score: ${score}/${quizData.totalQuestions} (${percentage}%)\n\n`;
@@ -438,8 +512,7 @@ function showResults() {
     
     alert(message);
     
-    // Optionally redirect to results page with score
-    // window.location.href = `/quiz/results?score=${score}&total=${quizData.totalQuestions}`;
+    // This is now handled by server redirect to results page
 }
 
 // Exit quiz

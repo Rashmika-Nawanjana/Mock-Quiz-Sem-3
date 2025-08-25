@@ -1,0 +1,602 @@
+[
+    {
+        "id": "q1",
+        "text": "Which of the following is NOT a primary service provided by an operating system?",
+        "options": [
+            "User Interface",
+            "Program Execution",
+            "Hardware Manufacturing",
+            "I/O Operations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Hardware manufacturing is not a service provided by an operating system. OS services include user interfaces, program execution, I/O operations, file-system manipulation, communications, error detection, resource allocation, logging, and protection/security."
+    },
+    {
+        "id": "q2",
+        "text": "What are the three most common types of user interfaces mentioned?",
+        "options": [
+            "CLI, GUI, Batch",
+            "Touch, Voice, Gesture",
+            "CLI, GUI, Touchscreen",
+            "Text, Graphic, Audio"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The three most common user interface types are Command-Line (CLI), Graphics User Interface (GUI), and Touchscreen."
+    },
+    {
+        "id": "q3",
+        "text": "What is the primary function of a Command-Line Interpreter (CLI) or shell?",
+        "options": [
+            "To manage hardware resources directly",
+            "To provide a graphical desktop environment",
+            "To fetch a command from the user and execute it",
+            "To compile source code into executable programs"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The primary function of a CLI or shell is to fetch a command from the user and execute it. It acts as an interface between the user and the operating system."
+    },
+    {
+        "id": "q4",
+        "text": "Which company's research center is credited with inventing the GUI desktop metaphor?",
+        "options": [
+            "Apple",
+            "Microsoft",
+            "Xerox PARC",
+            "IBM"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Graphical User Interface (GUI) with a desktop metaphor was invented at Xerox PARC."
+    },
+    {
+        "id": "q5",
+        "text": "What is the primary purpose of system calls?",
+        "options": [
+            "To provide a user-friendly interface for games",
+            "To serve as a programming interface to the services provided by the OS",
+            "To increase the processing speed of the CPU",
+            "To manage the physical hardware manufacturing process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "System calls provide a programming interface to the services offered by the operating system, allowing user programs to request these services."
+    },
+    {
+        "id": "q6",
+        "text": "Which of these is a common API for POSIX-based systems like UNIX and Linux?",
+        "options": [
+            "Win32 API",
+            "Java API",
+            "POSIX API",
+            ".NET API"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The POSIX API is a common standard for POSIX-based systems, which includes virtually all versions of UNIX, Linux, and Mac OS X."
+    },
+    {
+        "id": "q7",
+        "text": "How is the `read()` system call typically accessed by a programmer?",
+        "options": [
+            "By writing assembly code to interact directly with the CPU register",
+            "Through a high-level Application Programming Interface (API)",
+            "By modifying the kernel source code",
+            "Through the BIOS settings"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Programmers mostly access system calls like `read()` through a high-level Application Programming Interface (API), which hides the complexities of the underlying system call implementation."
+    },
+    {
+        "id": "q8",
+        "text": "What does the `ssize_t` data type represent in the `read()` system call API?",
+        "options": [
+            "The size of the system's hard drive",
+            "The number of bytes successfully read",
+            "The speed of the read operation",
+            "The security status of the file"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The `ssize_t` data type is used to represent the number of bytes successfully read by the `read()` system call. A return value of 0 indicates end of file, and -1 indicates an error."
+    },
+    {
+        "id": "q9",
+        "text": "What is the role of the system-call interface?",
+        "options": [
+            "To design new system calls",
+            "To provide a graphical interface for system configuration",
+            "To maintain a table indexed by system call numbers and invoke the intended call in the OS kernel",
+            "To manage user authentication and passwords"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The system-call interface maintains a table indexed by system call numbers. It invokes the intended system call in the OS kernel and returns the status and any return values."
+    },
+    {
+        "id": "q10",
+        "text": "Which method is used by Linux and Solaris to pass parameters to a system call when there are too many for registers?",
+        "options": [
+            "Pass parameters via a network packet",
+            "Store parameters in a block in memory and pass the block's address in a register",
+            "Encode parameters into the system call number itself",
+            "Require the programmer to use fewer parameters"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Linux and Solaris often store parameters in a block, or table, in memory. The address of this block is then passed as a parameter in a register to the system call."
+    },
+    {
+        "id": "q11",
+        "text": "Which of the following is a type of system call?",
+        "options": [
+            "Hardware Design",
+            "Process Control",
+            "User Interface Theming",
+            "Internet Browsing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Process control is a fundamental category of system calls, which includes creating, terminating, and managing processes."
+    },
+    {
+        "id": "q12",
+        "text": "What is the purpose of the 'wait()' system call?",
+        "options": [
+            "To pause the execution of a process until a child process terminates",
+            "To wait for a user to press a key on the keyboard",
+            "To wait for a network packet to arrive",
+            "To put the entire operating system to sleep"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The 'wait()' system call is used for process control. It allows a parent process to suspend its execution until one of its child processes terminates."
+    },
+    {
+        "id": "q13",
+        "text": "In the context of system calls, what does 'reposition' typically refer to?",
+        "options": [
+            "Moving a file to a different folder",
+            "Changing the physical location of a hardware device",
+            "Moving the current access position within an open file or device",
+            "Relocating the operating system in memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For both file and device management system calls, 'reposition' (often done with `lseek`) means moving the current access pointer or offset within an open file or device."
+    },
+    {
+        "id": "q14",
+        "text": "Which Windows system call is roughly equivalent to the UNIX 'fork()'?",
+        "options": [
+            "CreateProcess()",
+            "ExitProcess()",
+            "WaitForSingleObject()",
+            "CreateFile()"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Windows `CreateProcess()` system call is used to create a new process, which is the functional equivalent of the UNIX `fork()` and `exec()` combination."
+    },
+    {
+        "id": "q15",
+        "text": "What is the main goal of the OS's file-system management?",
+        "options": [
+            "To design new hard drive hardware",
+            "To provide a uniform, logical view of information storage, hiding physical properties",
+            "To increase the clock speed of the CPU",
+            "To assign unique IDs to every user"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The file system provides a uniform, logical abstraction for the storage and retrieval of data. It hides the messy details of how and where data is physically stored on disks, tapes, or other devices, presenting a simple interface to the user based on files and directories."
+    },
+    {
+        "id": "q16",
+        "text": "When a C program uses `printf()`, what underlying system call does it typically use in UNIX/Linux?",
+        "options": [
+            "read()",
+            "open()",
+            "write()",
+            "fork()"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `printf()` function in the C standard library ultimately makes a `write()` system call to output the formatted text to the standard output (usually the terminal)."
+    },
+    {
+        "id": "q17",
+        "text": "How does an Arduino typically load and execute a user program (sketch)?",
+        "options": [
+            "From a hard disk drive after booting a full OS",
+            "Via a USB connection into flash memory, loaded by a boot loader",
+            "By reading it from a network server",
+            "By interpreting Java bytecode"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Arduino systems are single-tasking with no OS. Programs (sketches) are loaded via USB into flash memory. A boot loader loads the program from flash into memory for execution."
+    },
+    {
+        "id": "q18",
+        "text": "In a FreeBSD system, what does a shell typically do to run a program?",
+        "options": [
+            "It directly modifies the kernel's memory",
+            "It calls `fork()` to create a new process and then `exec()` to load the program into that process",
+            "It sends the program code to the CPU via a special instruction",
+            "It compiles the program from source code each time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In UNIX-like systems such as FreeBSD, the shell executes the `fork()` system call to create a new process and then `exec()` to load the program into the address space of that process."
+    },
+    {
+        "id": "q19",
+        "text": "What is the primary role of a 'Linker'?",
+        "options": [
+            "To bring a program from disk into memory for execution",
+            "To combine multiple object files and libraries into a single executable file",
+            "To translate source code into object code",
+            "To manage running processes in memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The linker's job is to combine multiple relocatable object files and libraries into a single binary executable file, resolving references between them."
+    },
+    {
+        "id": "q20",
+        "text": "What is the primary role of a 'Loader'?",
+        "options": [
+            "To combine object files into an executable",
+            "To bring an executable program from disk into memory and start its execution",
+            "To compile source code",
+            "To manage dynamic libraries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The loader is responsible for loading the executable file from secondary storage (disk) into main memory and initiating its execution."
+    },
+    {
+        "id": "q21",
+        "text": "What is a key advantage of using Dynamically Linked Libraries (DLLs)?",
+        "options": [
+            "They make executable files smaller and allow library code to be shared in memory",
+            "They execute faster than statically linked code",
+            "They are easier for programmers to write",
+            "They are required for all operating systems"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Dynamically Linked Libraries (DLLs) are not copied into every executable. Instead, they are loaded into memory once and shared by all programs that use them, saving disk space and memory."
+    },
+    {
+        "id": "q22",
+        "text": "Why are applications typically specific to an operating system?",
+        "options": [
+            "Because all operating systems use the same CPU instruction set",
+            "Because each OS provides its own unique set of system calls, file formats, and ABIs",
+            "Because programmers are lazy",
+            "Because of international software laws"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Applications are OS-specific primarily because each operating system has its own unique system calls, file formats, and Application Binary Interfaces (ABIs), which define how programs interact with the OS and hardware."
+    },
+    {
+        "id": "q23",
+        "text": "What does ABI stand for?",
+        "options": [
+            "Application Binary Interface",
+            "Advanced Boot Initialization",
+            "Abstract Binding Instruction",
+            "Application Building Interface"
+        ],
+        "correctAnswer": 0,
+        "explanation": "ABI stands for Application Binary Interface. It is the architecture-dependent equivalent of an API, defining how binary code interfaces with the operating system on a specific CPU architecture."
+    },
+    {
+        "id": "q24",
+        "text": "What is the principle of separating policy from mechanism?",
+        "options": [
+            "Policies are implemented in hardware, mechanisms in software",
+            "The 'what' (policy) is separated from the 'how' (mechanism) for greater flexibility",
+            "Mechanisms are decided by users, policies by the OS",
+            "It means the OS should have no policies"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Separating policy from mechanism means deciding what needs to be done (policy) from how it is to be done (mechanism). This allows policies to be changed easily without altering the underlying mechanisms."
+    },
+    {
+        "id": "q25",
+        "text": "What is a common reason for implementing an OS in a high-level language like C?",
+        "options": [
+            "To make the OS run slower for stability",
+            "To make the OS easier to port to different hardware architectures",
+            "To ensure only one company can maintain it",
+            "To prevent users from reading the source code"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Writing an OS in a high-level language like C makes it easier to port (move) to different hardware architectures, as the code is more abstract and less tied to specific assembly instructions of one CPU."
+    },
+    {
+        "id": "q26",
+        "text": "What is the defining characteristic of a monolithic operating system structure?",
+        "options": [
+            "The entire OS runs as a single program in kernel space",
+            "The OS is broken into small, isolated modules that run in user space",
+            "The OS is divided into many hierarchical layers",
+            "The OS has no kernel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In a monolithic structure, the entire operating system, including all its core functionalities (scheduling, file system, etc.), is packaged as a single large executable running in kernel space."
+    },
+    {
+        "id": "q27",
+        "text": "Which operating system is cited as an example of a traditional monolithic structure?",
+        "options": [
+            "Windows NT",
+            "Original UNIX",
+            "Mach",
+            "Android"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The original UNIX operating system is a classic example of a monolithic structure, where the kernel contains a large number of functions combined into one level."
+    },
+    {
+        "id": "q28",
+        "text": "What is the main idea behind the microkernel approach?",
+        "options": [
+            "To make the kernel as large and feature-rich as possible",
+            "To move as many services as possible from kernel space into user space",
+            "To eliminate all user space components",
+            "To run the entire OS as a single process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The microkernel approach aims to minimize the kernel by moving non-essential services (like file systems, device drivers) out of kernel space and into user space, where they run as separate server processes."
+    },
+    {
+        "id": "q29",
+        "text": "What is a potential detriment of a microkernel architecture?",
+        "options": [
+            "Lack of security",
+            "Performance overhead due to communication between user-space services and the kernel",
+            "Inability to run multiple processes",
+            "Extremely large kernel size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A key detriment of microkernels is the performance overhead introduced by the need for frequent message passing between user-space services and the microkernel, which requires context switches."
+    },
+    {
+        "id": "q30",
+        "text": "What are Loadable Kernel Modules (LKMs)?",
+        "options": [
+            "User-level applications that can be started and stopped",
+            "Parts of the kernel that can be loaded and unloaded dynamically as needed",
+            "Libraries used by application programs",
+            "Hardware components that can be hot-swapped"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Loadable Kernel Modules (LKMs) are object files that contain code to extend the running kernel. They can be loaded into and unloaded from the kernel dynamically without rebooting the system."
+    },
+    {
+        "id": "q31",
+        "text": "What is the name of the hybrid kernel at the core of Mac OS X and iOS?",
+        "options": [
+            "NT Kernel",
+            "Linux",
+            "Darwin",
+            "Solaris"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Darwin is the open-source, UNIX-based core operating system that forms the foundation for Mac OS X and iOS. It combines a Mach microkernel with components from BSD."
+    },
+    {
+        "id": "q32",
+        "text": "What is the role of the Dalvik Virtual Machine (VM) in older Android versions?",
+        "options": [
+            "To execute Java bytecode for Android applications",
+            "To manage the Linux kernel",
+            "To provide the native user interface",
+            "To handle hardware drivers directly"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Dalvik Virtual Machine (later replaced by ART) was designed to execute applications written in Java. It ran dex files (converted from Java bytecode) optimized for minimal memory footprint."
+    },
+    {
+        "id": "q33",
+        "text": "What is the first step in building the Linux kernel from source?",
+        "options": [
+            "`make install`",
+            "`make menuconfig`",
+            "`make`",
+            "Download the source code"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The first step is to download the Linux kernel source code, typically from a site like http://www.kernel.org."
+    },
+    {
+        "id": "q34",
+        "text": "What is the final kernel image file produced by compiling the Linux kernel called?",
+        "options": [
+            "kernel.exe",
+            "vmlinuz",
+            "initrd",
+            "grub.cfg"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The compiled Linux kernel image is named 'vmlinuz' (which stands for 'Virtual Memory LINUx gZip compressed')."
+    },
+    {
+        "id": "q35",
+        "text": "What is the small piece of code that locates and loads the OS kernel into memory?",
+        "options": [
+            "The Linker",
+            "The Bootstrap Loader",
+            "The System Call Interface",
+            "The Compiler"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The bootstrap loader is a small program stored in ROM or EEPROM that is responsible for finding the kernel on disk, loading it into memory, and starting its execution."
+    },
+    {
+        "id": "q36",
+        "text": "What does UEFI stand for?",
+        "options": [
+            "Universal Electronic Firmware Interface",
+            "Unified Extensible Firmware Interface",
+            "United Ethernet Frequency Interconnect",
+            "User Execution Framework Instruction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "UEFI stands for Unified Extensible Firmware Interface. It is a modern replacement for the traditional BIOS, providing more features and capabilities for system booting and initialization."
+    },
+    {
+        "id": "q37",
+        "text": "What is a common, powerful bootstrap loader used in many Linux systems?",
+        "options": [
+            "BOOTMGR",
+            "LILO",
+            "GRUB",
+            "NTLDR"
+        ],
+        "correctAnswer": 2,
+        "explanation": "GRUB (GRand Unified Bootloader) is a common and powerful boot loader used in many Linux systems. It allows users to select from multiple kernels or operating systems at boot time."
+    },
+    {
+        "id": "q38",
+        "text": "What is the purpose of a 'core dump' file?",
+        "options": [
+            "To speed up the computer",
+            "To capture the state of a process's memory at the time of a failure for debugging",
+            "To backup the entire hard drive",
+            "To store user preferences"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A core dump is a file generated when a program crashes. It contains a snapshot of the process's memory at the time of the failure, which can be used for post-mortem debugging."
+    },
+    {
+        "id": "q39",
+        "text": "What is 'profiling' in the context of performance tuning?",
+        "options": [
+            "Creating user account pictures",
+            "Periodically sampling the instruction pointer to identify statistical trends in code execution",
+            "Designing the graphical look of the OS",
+            "Writing a summary of the system's capabilities"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Profiling is a performance analysis technique that involves periodically sampling the instruction pointer to determine which code sections are consuming the most CPU time, helping to identify bottlenecks."
+    },
+    {
+        "id": "q40",
+        "text": "Which tool is used to trace system calls invoked by a process in Linux?",
+        "options": [
+            "gdb",
+            "perf",
+            "strace",
+            "tcpdump"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `strace` tool in Linux is used to trace the system calls made by a process and the signals received by it, which is invaluable for debugging."
+    },
+    {
+        "id": "q41",
+        "text": "Which service is responsible for controlling access to system resources?",
+        "options": [
+            "Logging",
+            "Protection and Security",
+            "Program Execution",
+            "Communications"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Protection and Security services are responsible for controlling all access to system resources, ensuring that only authorized users and processes can perform specific operations."
+    },
+    {
+        "id": "q42",
+        "text": "What is the key difference between 'protection' and 'security' as OS services?",
+        "options": [
+            "They are identical terms",
+            "Protection is internal control of resources; security defends against external threats",
+            "Security is for hardware, protection is for software",
+            "Protection is for files, security is for networks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Protection involves internal control of access to system resources by processes and users. Security involves defending the system from external threats (e.g., requiring user authentication, blocking invalid access attempts)."
+    },
+    {
+        "id": "q43",
+        "text": "In the layered OS design approach, what is the highest layer?",
+        "options": [
+            "The Hardware (Layer 0)",
+            "The Kernel (Layer 1)",
+            "The User Interface (Layer N)",
+            "The Memory Manager"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a layered operating system design, the highest layer (Layer N) is the user interface. The bottom layer (Layer 0) is the hardware."
+    },
+    {
+        "id": "q44",
+        "text": "What is the main communication method between components in a microkernel system?",
+        "options": [
+            "Shared Memory",
+            "Direct Function Calls",
+            "Message Passing",
+            "Global Variables"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a microkernel architecture, communication between the microkernel and user-space services (and between the services themselves) is primarily done through message passing."
+    },
+    {
+        "id": "q45",
+        "text": "What does BCC (BPF Compiler Collection) provide?",
+        "options": [
+            "A new programming language",
+            "A rich toolkit of tracing tools for Linux performance analysis and debugging",
+            "A boot loader for Windows",
+            "A graphical desktop environment"
+        ],
+        "correctAnswer": 1,
+        "explanation": "BCC (BPF Compiler Collection) is a rich toolkit that provides tracing capabilities for the Linux kernel, allowing deep analysis of system behavior and performance."
+    },
+    {
+        "id": "q46",
+        "text": "What is the purpose of the 'iokit' in the macOS Darwin kernel?",
+        "options": [
+            "It is the Java virtual machine",
+            "It is a framework for writing device drivers (kernel extensions)",
+            "It provides the Aqua user interface",
+            "It manages the iOS app store"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The I/O Kit is a framework in the macOS Darwin kernel for developing device drivers (called kernel extensions or kexts). It is object-oriented and designed for simplicity and stability."
+    },
+    {
+        "id": "q47",
+        "text": "Which library in Android provides a smaller C standard library implementation?",
+        "options": [
+            "webkit",
+            "SQLite",
+            "Bionic",
+            "OpenGL"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Bionic is Android's custom, smaller implementation of the C standard library, designed for devices with limited memory and processing power."
+    },
+    {
+        "id": "q48",
+        "text": "What does the 'make modules_install' command do when building the Linux kernel?",
+        "options": [
+            "Downloads the kernel source code",
+            "Configures the kernel options",
+            "Compiles the kernel source into the vmlinuz image",
+            "Installs the compiled kernel modules into the appropriate directory"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The `make modules_install` command takes the compiled kernel modules and installs them into the `/lib/modules/` directory so they can be loaded by the new kernel."
+    },
+    {
+        "id": "q49",
+        "text": "According to Kernighan's Law, how does the difficulty of debugging compare to writing code?",
+        "options": [
+            "Debugging is twice as hard as writing the code",
+            "Writing code is twice as hard as debugging",
+            "They are equally difficult",
+            "Debugging is only for beginners"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Kernighan's Law states: 'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.'"
+    },
+    {
+        "id": "q50",
+        "text": "What is the ultimate goal of performance tuning?",
+        "options": [
+            "To make the system use more resources",
+            "To remove bottlenecks and improve overall system behavior",
+            "To add more decorative features to the UI",
+            "To change the system's color scheme"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The goal of performance tuning is to identify and remove bottlenecks (points of congestion) in the system, thereby improving efficiency, speed, and overall system performance."
+    }
+]

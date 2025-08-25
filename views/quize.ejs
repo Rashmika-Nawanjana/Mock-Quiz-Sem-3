@@ -3,95 +3,880 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operating Systems Quiz - Mock Quiz Hub</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/quize-styles.css">
+    <title>Quiz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #0d1117;
+            color: #f0f6fc;
+            line-height: 1.5;
+        }
+        .quiz-container {
+            background: #161b22;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #30363d;
+        }
+        .quiz-header h1 {
+            color: #f0f6fc;
+            margin: 0 0 8px 0;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        .quiz-header p {
+            color: #8b949e;
+            margin: 0;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            margin: 20px 0;
+            background-color: #21262d;
+            border-radius: 6px;
+            padding: 2px;
+            border: 1px solid #30363d;
+        }
+        .progress-bar {
+            height: 20px;
+            background: #238636;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f0f6fc;
+            font-size: 12px;
+            font-weight: 600;
+            width: 0%;
+        }
+        
+        /* Question Container */
+        .question-container {
+            display: none;
+            margin-bottom: 25px;
+            padding: 24px;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            background: #161b22;
+        }
+        .question-container.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .question-number {
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .question-text {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #f0f6fc;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        .option {
+            margin: 8px 0;
+            padding: 12px 16px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            background: #0d1117;
+        }
+        .option:hover {
+            border-color: #58a6ff;
+            background: #161b22;
+        }
+        .option.selected {
+            border-color: #238636;
+            background: #0d4115;
+            color: #f0f6fc;
+        }
+        .option input[type="radio"] {
+            margin-right: 12px;
+            accent-color: #238636;
+        }
+        .option label {
+            cursor: pointer;
+            font-size: 14px;
+            display: block;
+            width: 100%;
+            color: inherit;
+        }
+        
+        /* Navigation */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #30363d;
+        }
+        .nav-btn {
+            background: #21262d;
+            color: #f0f6fc;
+            padding: 8px 16px;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            min-width: 120px;
+        }
+        .nav-btn:hover:not(:disabled) {
+            background: #30363d;
+            border-color: #8b949e;
+        }
+        .nav-btn:disabled {
+            background: #21262d;
+            color: #484f58;
+            border-color: #30363d;
+            cursor: not-allowed;
+        }
+        .nav-btn.next {
+            background: #238636;
+            border-color: #238636;
+        }
+        .nav-btn.next:hover:not(:disabled) {
+            background: #2ea043;
+            border-color: #2ea043;
+        }
+        .nav-btn.submit {
+            background: #da3633;
+            border-color: #da3633;
+        }
+        .nav-btn.submit:hover:not(:disabled) {
+            background: #e5534b;
+            border-color: #e5534b;
+        }
+        
+        /* Question Navigator */
+        .question-navigator {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .nav-dots {
+            display: inline-flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .nav-dot {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1px solid #30363d;
+            background: #21262d;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            color: #8b949e;
+        }
+        .nav-dot:hover {
+            border-color: #58a6ff;
+            background: #161b22;
+            color: #f0f6fc;
+        }
+        .nav-dot.current {
+            background: #58a6ff;
+            color: #f0f6fc;
+            border-color: #58a6ff;
+        }
+        .nav-dot.answered {
+            background: #238636;
+            color: #f0f6fc;
+            border-color: #238636;
+        }
+        
+        .timer {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #21262d;
+            color: #f0f6fc;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            z-index: 1000;
+            border: 1px solid #30363d;
+        }
+        
+        /* Summary View */
+        .quiz-summary {
+            display: none;
+            text-align: center;
+            padding: 24px;
+            background: #161b22;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+        .quiz-summary.active {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+        .quiz-summary h2 {
+            color: #f0f6fc;
+            margin: 0 0 8px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .quiz-summary p {
+            color: #8b949e;
+            margin: 0 0 20px 0;
+        }
+        .summary-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .stat-item {
+            padding: 16px;
+            background: #0d1117;
+            border-radius: 6px;
+            border: 1px solid #30363d;
+        }
+        .stat-number {
+            font-size: 20px;
+            font-weight: 600;
+            color: #58a6ff;
+            margin-bottom: 4px;
+        }
+        .stat-item div:last-child {
+            color: #8b949e;
+            font-size: 14px;
+        }
+        .submit-btn {
+            background: #da3633;
+            color: #f0f6fc;
+            padding: 8px 24px;
+            border: 1px solid #da3633;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.2s ease;
+        }
+        .submit-btn:hover:not(:disabled) {
+            background: #e5534b;
+            border-color: #e5534b;
+        }
+        .submit-btn:disabled {
+            background: #21262d;
+            color: #484f58;
+            border-color: #30363d;
+            cursor: not-allowed;
+        }
+        
+        #questionInfo {
+            color: #8b949e;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        /* Custom Modal/Popup Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(1, 4, 9, 0.8);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 24px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 16px 32px rgba(1, 4, 9, 0.32);
+            transform: scale(0.95) translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .modal-overlay.active .modal {
+            transform: scale(1) translateY(0);
+        }
+        
+        .modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .modal-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 12px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .modal-icon.warning {
+            background: #7c3d00;
+            color: #f0f6fc;
+        }
+        
+        .modal-title {
+            color: #f0f6fc;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .modal-body {
+            color: #8b949e;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 8px;
+            justify-content: flex-end;
+        }
+        
+        .modal-btn {
+            padding: 6px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid;
+            transition: all 0.2s ease;
+            min-width: 70px;
+            text-align: center;
+        }
+        
+        .modal-btn-primary {
+            background: #da3633;
+            border-color: #da3633;
+            color: #f0f6fc;
+        }
+        
+        .modal-btn-primary:hover {
+            background: #e5534b;
+            border-color: #e5534b;
+        }
+        
+        .modal-btn-secondary {
+            background: #21262d;
+            border-color: #30363d;
+            color: #f0f6fc;
+        }
+        
+        .modal-btn-secondary:hover {
+            background: #30363d;
+            border-color: #8b949e;
+        }
+    </style>
 </head>
 <body>
-    <!-- Quiz Header -->
-    <div class="quiz-header">
-        <div class="container">
-            <h1 class="quiz-title">
-                <i class="fas fa-brain me-2"></i>Operating Systems Quiz
-            </h1>
-            <div class="quiz-meta">
-                <i class="fas fa-clock me-1"></i>Estimated time: 60 minutes
-                <span class="mx-2">•</span>
-                <i class="fas fa-question-circle me-1"></i><%= quiz.length %> questions
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="container">
-        <!-- Progress Bar -->
-        <div class="progress-container">
-            <div class="progress-text" id="progressText">
-                Question 1 of <%= quiz.length %>
-            </div>
-            <div class="progress-bar-custom">
-                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
-            </div>
-        </div>
-
-        <!-- Question Container - Will be populated dynamically -->
-        <div class="question-container">
-            <div class="question-number">
-                Question 1
-            </div>
-            <div class="question-text">
-                <!-- Will be filled by JavaScript -->
-            </div>
-
-            <!-- Options Container - Will be populated dynamically -->
-            <div class="options-container">
-                <!-- Will be filled by JavaScript -->
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <div class="controls-container">
-            <div>
-                <button class="btn-quiz btn-back" id="backBtn" disabled>
-                    <i class="fas fa-arrow-left"></i>Back
-                </button>
-                <button class="btn-quiz btn-exit" id="exitBtn">
-                    <i class="fas fa-times"></i>Exit Quiz
-                </button>
+    <div class="timer" id="timer">Time: 00:00</div>
+    
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>Quiz</h1>
+            <p>Navigate through questions using the controls below</p>
+            
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">0%</div>
             </div>
             
-            <div>
-                <button class="btn-quiz btn-next" id="nextBtn" disabled>
-                    <i class="fas fa-arrow-right"></i>Next Question
-                </button>
-                <!-- Submit button will be created dynamically for last question -->
+            <!-- Question Navigator Dots -->
+            <div class="question-navigator">
+                <div class="nav-dots" id="navDots"></div>
             </div>
         </div>
 
-        <!-- Footer -->
-        <div class="quiz-footer">
-            <p>Mock Quiz Hub • Select your answer and click Next to continue</p>
+        <form id="quizForm" method="POST" action="/quiz/<%= req.params.module %>/<%= req.params.quizId %>/submit">
+            <% if (quiz && quiz.length > 0) { %>
+                <% quiz.forEach((question, index) => { %>
+                    <div class="question-container <%= index === 0 ? 'active' : '' %>" data-question="<%= index %>">
+                        <div class="question-number">
+                            <span>Question <%= index + 1 %> of <%= quiz.length %></span>
+                            <span>Quiz ID: <%= question.id || (index + 1) %></span>
+                        </div>
+                        <div class="question-text"><%= question.text %></div>
+                        
+                        <% question.options.forEach((option, optionIndex) => { %>
+                            <div class="option">
+                                <input type="radio" 
+                                       id="q<%= index %>_<%= optionIndex %>" 
+                                       name="answers[<%= index %>]" 
+                                       value="<%= optionIndex %>">
+                                <label for="q<%= index %>_<%= optionIndex %>"><%= option %></label>
+                            </div>
+                        <% }); %>
+                    </div>
+                <% }); %>
+                
+                <!-- Quiz Summary -->
+                <div class="quiz-summary" id="quizSummary">
+                    <h2>Quiz Summary</h2>
+                    <p>Review your answers before submitting</p>
+                    
+                    <div class="summary-stats">
+                        <div class="stat-item">
+                            <div class="stat-number" id="totalQuestions"><%= quiz.length %></div>
+                            <div>Total Questions</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="answeredCount">0</div>
+                            <div>Answered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="unansweredCount"><%= quiz.length %></div>
+                            <div>Remaining</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="timeSpentDisplay">00:00</div>
+                            <div>Time Spent</div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn" disabled>Submit Quiz</button>
+                    <br><br>
+                    <button type="button" class="nav-btn" onclick="showQuestion(Math.max(0, currentQuestion))">Back to Questions</button>
+                </div>
+                
+            <% } else { %>
+                <div class="question-container active">
+                    <div class="question-text">
+                        <h2>No Questions Available</h2>
+                        <p>This quiz does not contain any questions.</p>
+                        <a href="/modules/<%= req.params.module %>" class="nav-btn">Back to Module</a>
+                    </div>
+                </div>
+            <% } %>
+
+            <!-- Navigation Controls -->
+            <% if (quiz && quiz.length > 0) { %>
+            <div class="navigation">
+                <button type="button" class="nav-btn" id="prevBtn" onclick="previousQuestion()">Previous</button>
+                <span id="questionInfo">Question 1 of <%= quiz.length %></span>
+                <button type="button" class="nav-btn next" id="nextBtn" onclick="nextQuestion()">Next</button>
+            </div>
+            <% } %>
+
+            <input type="hidden" name="timeSpent" id="timeSpent" value="0:00">
+        </form>
+    </div>
+
+    <!-- Custom Modal -->
+    <div class="modal-overlay" id="confirmModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-icon warning">!</div>
+                <h3 class="modal-title">Confirm Submission</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be dynamically inserted here -->
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-secondary" id="modalCancel">Cancel</button>
+                <button class="modal-btn modal-btn-primary" id="modalConfirm">Submit Quiz</button>
+            </div>
         </div>
     </div>
 
-    <!-- Pass quiz data to JavaScript -->
     <script>
-        // Your quiz data is already an array of questions - perfect!
-        var quiz = <%- JSON.stringify(quiz) %>;
+        // Quiz state
+        let currentQuestion = 0;
+        const totalQuestions = <%= quiz ? quiz.length : 0 %>;
+        let startTime = new Date();
+        let timerInterval;
         
-        // Quiz metadata (since it's not in your JSON)
-        var quizMetadata = {
-            title: "Operating Systems Quiz",
-            estimatedTime: "60",
-            totalQuestions: quiz.length
-        };
+        // Initialize quiz only if we have questions
+        document.addEventListener('DOMContentLoaded', function() {
+            if (totalQuestions > 0) {
+                initializeQuiz();
+                startTimer();
+                updateNavigation();
+                updateProgress();
+                updateSubmitButton();
+                createNavigationDots();
+                
+                // Initialize any pre-selected options
+                document.querySelectorAll('.question-container').forEach(container => {
+                    updateOptionSelection(container);
+                });
+            }
+        });
         
-        console.log('Quiz data loaded:', quiz.length, 'questions');
-        console.log('First question:', quiz[0]);
+        function initializeQuiz() {
+            // Add click handlers for options
+            document.querySelectorAll('.option').forEach(option => {
+                option.addEventListener('click', function(e) {
+                    // Prevent double-click issues
+                    e.preventDefault();
+                    
+                    const radio = this.querySelector('input[type="radio"]');
+                    if (radio) {
+                        radio.checked = true;
+                        updateOptionSelection(this.closest('.question-container'));
+                        updateProgress();
+                        updateSubmitButton();
+                        updateNavigationDots();
+                    }
+                });
+            });
+            
+            // Show first question
+            showQuestion(0);
+        }
+        
+        function showQuestion(questionIndex) {
+            if (questionIndex < 0 || questionIndex >= totalQuestions) return;
+            
+            // Hide all questions and summary
+            document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
+            document.getElementById('quizSummary')?.classList.remove('active');
+            
+            // Show current question
+            const questionElement = document.querySelector(`[data-question="${questionIndex}"]`);
+            if (questionElement) {
+                questionElement.classList.add('active');
+                currentQuestion = questionIndex;
+                updateNavigation();
+                updateNavigationDots();
+                
+                // Don't scroll - maintain current scroll position
+            }
+        }
+        
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions - 1) {
+                showQuestion(currentQuestion + 1);
+            } else {
+                showSummary();
+            }
+        }
+        
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                showQuestion(currentQuestion - 1);
+            }
+        }
+        
+        function showSummary() {
+            document.querySelectorAll('.question-container').forEach(q => q.classList.remove('active'));
+            const summaryElement = document.getElementById('quizSummary');
+            if (summaryElement) {
+                summaryElement.classList.add('active');
+                updateSummaryStats();
+                updateSubmitButton();
+                currentQuestion = -1; // Special state for summary
+                updateNavigation();
+                updateNavigationDots();
+                
+                // Only scroll to top for summary view since it's a different content type
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+        
+        function updateNavigation() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const questionInfo = document.getElementById('questionInfo');
+            
+            if (!prevBtn || !nextBtn || !questionInfo) return;
+            
+            if (currentQuestion === -1) {
+                // Summary view
+                prevBtn.textContent = 'Back to Questions';
+                nextBtn.style.display = 'none';
+                questionInfo.textContent = 'Quiz Summary';
+                prevBtn.onclick = () => showQuestion(totalQuestions - 1);
+                prevBtn.disabled = false;
+            } else {
+                prevBtn.textContent = 'Previous';
+                prevBtn.onclick = previousQuestion;
+                nextBtn.style.display = 'block';
+                nextBtn.onclick = nextQuestion;
+                
+                prevBtn.disabled = currentQuestion === 0;
+                
+                if (currentQuestion === totalQuestions - 1) {
+                    nextBtn.textContent = 'Review & Submit';
+                    nextBtn.className = 'nav-btn submit';
+                } else {
+                    nextBtn.textContent = 'Next';
+                    nextBtn.className = 'nav-btn next';
+                }
+                
+                questionInfo.textContent = `Question ${currentQuestion + 1} of ${totalQuestions}`;
+            }
+        }
+        
+        function updateProgress() {
+            const answeredQuestions = getAnsweredQuestions().length;
+            const percentage = totalQuestions > 0 ? Math.round((answeredQuestions / totalQuestions) * 100) : 0;
+            const progressBar = document.getElementById('progressBar');
+            
+            if (progressBar) {
+                progressBar.style.width = percentage + '%';
+                progressBar.textContent = percentage + '%';
+            }
+        }
+        
+        function updateSubmitButton() {
+            const submitBtn = document.getElementById('submitBtn');
+            const answeredQuestions = getAnsweredQuestions();
+            
+            if (submitBtn) {
+                if (answeredQuestions.length > 0) {
+                    submitBtn.disabled = false;
+                } else {
+                    submitBtn.disabled = true;
+                }
+            }
+        }
+        
+        function createNavigationDots() {
+            const navDots = document.getElementById('navDots');
+            if (!navDots) return;
+            
+            navDots.innerHTML = '';
+            
+            for (let i = 0; i < totalQuestions; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'nav-dot';
+                dot.textContent = i + 1;
+                dot.onclick = () => showQuestion(i);
+                dot.title = `Go to Question ${i + 1}`;
+                navDots.appendChild(dot);
+            }
+        }
+        
+        function updateNavigationDots() {
+            const dots = document.querySelectorAll('.nav-dot');
+            const answeredQuestions = getAnsweredQuestions();
+            
+            dots.forEach((dot, index) => {
+                dot.classList.remove('current', 'answered');
+                
+                if (index === currentQuestion) {
+                    dot.classList.add('current');
+                } else if (answeredQuestions.includes(index)) {
+                    dot.classList.add('answered');
+                }
+            });
+        }
+        
+        function updateOptionSelection(questionContainer) {
+            const options = questionContainer.querySelectorAll('.option');
+            const selectedRadio = questionContainer.querySelector('input[type="radio"]:checked');
+            
+            options.forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            if (selectedRadio) {
+                selectedRadio.closest('.option').classList.add('selected');
+            }
+        }
+        
+        function getAnsweredQuestions() {
+            const answered = [];
+            for (let i = 0; i < totalQuestions; i++) {
+                const radio = document.querySelector(`input[name="answers[${i}]"]:checked`);
+                if (radio) {
+                    answered.push(i);
+                }
+            }
+            return answered;
+        }
+        
+        function updateSummaryStats() {
+            const answeredQuestions = getAnsweredQuestions();
+            const totalQuestionsElement = document.getElementById('totalQuestions');
+            const answeredCountElement = document.getElementById('answeredCount');
+            const unansweredCountElement = document.getElementById('unansweredCount');
+            const timeSpentDisplayElement = document.getElementById('timeSpentDisplay');
+            
+            if (totalQuestionsElement) totalQuestionsElement.textContent = totalQuestions;
+            if (answeredCountElement) answeredCountElement.textContent = answeredQuestions.length;
+            if (unansweredCountElement) unansweredCountElement.textContent = totalQuestions - answeredQuestions.length;
+            if (timeSpentDisplayElement) timeSpentDisplayElement.textContent = document.getElementById('timeSpent').value;
+        }
+        
+        // Timer functionality
+        function startTimer() {
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+        
+        function updateTimer() {
+            const now = new Date();
+            const elapsed = now - startTime;
+            const minutes = Math.floor(elapsed / 60000);
+            const seconds = Math.floor((elapsed % 60000) / 1000);
+            const timeString = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            
+            const timerElement = document.getElementById('timer');
+            const timeSpentElement = document.getElementById('timeSpent');
+            
+            if (timerElement) timerElement.textContent = `Time: ${timeString}`;
+            if (timeSpentElement) timeSpentElement.value = timeString;
+        }
+        
+        // Custom modal functions
+        function showConfirmModal(message, onConfirm, onCancel) {
+            const modal = document.getElementById('confirmModal');
+            const modalBody = document.getElementById('modalBody');
+            const confirmBtn = document.getElementById('modalConfirm');
+            const cancelBtn = document.getElementById('modalCancel');
+            
+            modalBody.textContent = message;
+            modal.classList.add('active');
+            
+            // Remove any existing event listeners
+            const newConfirmBtn = confirmBtn.cloneNode(true);
+            const newCancelBtn = cancelBtn.cloneNode(true);
+            confirmBtn.parentNode.replaceChild(newConfirmBtn, confirmBtn);
+            cancelBtn.parentNode.replaceChild(newCancelBtn, cancelBtn);
+            
+            // Add new event listeners
+            newConfirmBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                if (onConfirm) onConfirm();
+            });
+            
+            newCancelBtn.addEventListener('click', () => {
+                modal.classList.remove('active');
+                if (onCancel) onCancel();
+            });
+            
+            // Close on backdrop click
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    if (onCancel) onCancel();
+                }
+            });
+            
+            // Close on Escape key
+            const escapeHandler = (e) => {
+                if (e.key === 'Escape') {
+                    modal.classList.remove('active');
+                    if (onCancel) onCancel();
+                    document.removeEventListener('keydown', escapeHandler);
+                }
+            };
+            document.addEventListener('keydown', escapeHandler);
+        }
+        
+        // Form submission
+        const quizForm = document.getElementById('quizForm');
+        if (quizForm) {
+            quizForm.addEventListener('submit', function(e) {
+                clearInterval(timerInterval);
+                
+                // Final validation
+                const answeredQuestions = getAnsweredQuestions();
+                if (answeredQuestions.length < totalQuestions) {
+                    e.preventDefault();
+                    const unansweredCount = totalQuestions - answeredQuestions.length;
+                    const message = `You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}. Are you sure you want to submit?`;
+                    
+                    showConfirmModal(message, 
+                        () => {
+                            // User confirmed, submit the form
+                            clearInterval(timerInterval);
+                            console.log('Quiz submitted with', answeredQuestions.length, 'out of', totalQuestions, 'answers');
+                            quizForm.submit();
+                        },
+                        () => {
+                            // User cancelled, restart timer
+                            startTimer();
+                        }
+                    );
+                } else {
+                    // All questions answered, submit normally
+                    console.log('Quiz submitted with', answeredQuestions.length, 'out of', totalQuestions, 'answers');
+                }
+            });
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (totalQuestions === 0 || currentQuestion === -1) return; // Don't navigate if no questions or in summary
+            
+            if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+                e.preventDefault();
+                previousQuestion();
+            } else if (e.key === 'ArrowRight') {
+                e.preventDefault();
+                if (currentQuestion < totalQuestions - 1) {
+                    nextQuestion();
+                } else {
+                    showSummary();
+                }
+            }
+        });
+        
+        // Debug information
+        console.log('Quiz initialized with', totalQuestions, 'questions');
+        if (totalQuestions > 0) {
+            console.log('Quiz data structure appears valid');
+        } else {
+            console.log('No quiz questions found');
+        }
     </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/quize.js"></script>
 </body>
 </html>
