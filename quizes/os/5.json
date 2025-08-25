@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary cause of data inconsistency in concurrent processes?",
+        "options": [
+            "Slow processor speed",
+            "Concurrent access to shared data",
+            "Lack of sufficient memory",
+            "Inefficient algorithms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Concurrent access to shared data without proper synchronization can lead to data inconsistency due to interleaved operations."
+    },
+    {
+        "id": "q2",
+        "text": "What is a race condition?",
+        "options": [
+            "A condition where processes run at different speeds",
+            "A situation where the outcome depends on the order of execution of instructions",
+            "A type of memory error",
+            "A hardware failure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A race condition occurs when the outcome of execution depends on the particular order in which instructions from concurrent processes are interleaved."
+    },
+    {
+        "id": "q3",
+        "text": "In the critical-section problem, what is the entry section?",
+        "options": [
+            "The code segment where the process exits the critical section",
+            "The code segment where the process requests permission to enter the critical section",
+            "The critical section itself",
+            "The remainder section"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The entry section is the part of the code where a process requests permission to enter its critical section."
+    },
+    {
+        "id": "q4",
+        "text": "Which of the following is NOT a requirement for a solution to the critical-section problem?",
+        "options": [
+            "Mutual Exclusion",
+            "Progress",
+            "Bounded Waiting",
+            "Starvation Freedom"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The three requirements are Mutual Exclusion, Progress, and Bounded Waiting. Starvation freedom is implied by bounded waiting but is not a separate requirement."
+    },
+    {
+        "id": "q5",
+        "text": "What does the Progress requirement ensure?",
+        "options": [
+            "Only one process can be in its critical section at a time",
+            "Processes will not wait indefinitely to enter their critical sections",
+            "A process will enter its critical section within a bounded number of requests",
+            "If no process is in its critical section, a process wishing to enter will be able to do so"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Progress ensures that if no process is executing in its critical section and some processes wish to enter, then the selection of which process enters next cannot be postponed indefinitely."
+    },
+    {
+        "id": "q6",
+        "text": "What is the main drawback of the interrupt-based solution to critical sections?",
+        "options": [
+            "It does not work on uniprocessors",
+            "It can lead to starvation",
+            "It is inefficient on multiprocessor systems",
+            "It violates mutual exclusion"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Disabling interrupts is inefficient on multiprocessor systems because it affects only one CPU and does not prevent concurrent access on other processors."
+    },
+    {
+        "id": "q7",
+        "text": "In the first software solution for two processes, what does the variable 'turn' indicate?",
+        "options": [
+            "Which process has priority",
+            "Which process is currently in its critical section",
+            "Which process's turn it is to enter the critical section",
+            "How many times each process has entered the critical section"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The variable 'turn' indicates whose turn it is to enter the critical section, enforcing strict alternation."
+    },
+    {
+        "id": "q8",
+        "text": "Why does the first software solution violate the progress requirement?",
+        "options": [
+            "It allows both processes in the critical section simultaneously",
+            "It requires processes to wait even when the critical section is free",
+            "It uses a single shared variable",
+            "It does not work on modern architectures"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If one process is not interested in entering its critical section, the other process may still have to wait for its turn, violating progress."
+    },
+    {
+        "id": "q9",
+        "text": "Peterson's solution for two processes uses which shared variables?",
+        "options": [
+            "turn and flag[2]",
+            "lock and key",
+            "mutex and condition",
+            "semaphore and counter"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Peterson's solution uses two shared variables: 'turn' and a boolean array 'flag[2]'."
+    },
+    {
+        "id": "q10",
+        "text": "What does flag[i] = true indicate in Peterson's solution?",
+        "options": [
+            "Process i is in its critical section",
+            "Process i has exited its critical section",
+            "Process i is ready to enter its critical section",
+            "Process i is terminated"
+        ],
+        "correctAnswer": 2,
+        "explanation": "flag[i] = true indicates that process i is ready to enter its critical section."
+    },
+    {
+        "id": "q11",
+        "text": "Why is Peterson's solution not guaranteed to work on modern architectures?",
+        "options": [
+            "It uses too many variables",
+            "Compilers and processors may reorder instructions",
+            "It only works for two processes",
+            "It requires atomic load and store instructions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Modern architectures may reorder independent instructions for performance, which can break the assumptions of Peterson's algorithm."
+    },
+    {
+        "id": "q12",
+        "text": "What is a memory barrier?",
+        "options": [
+            "A hardware cache",
+            "An instruction that forces memory operations to be completed before proceeding",
+            "A type of semaphore",
+            "A boundary between user and kernel memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A memory barrier is an instruction that ensures all memory operations before it are completed and visible to other processors before any operations after it are executed."
+    },
+    {
+        "id": "q13",
+        "text": "In a weakly ordered memory model, what is guaranteed?",
+        "options": [
+            "All memory operations are immediately visible to all processors",
+            "Memory operations may not be immediately visible to all processors",
+            "Processes execute in a strict sequence",
+            "No memory reordering occurs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a weakly ordered memory model, memory modifications by one processor may not be immediately visible to all other processors."
+    },
+    {
+        "id": "q14",
+        "text": "Which hardware instruction atomically sets a variable to true and returns its previous value?",
+        "options": [
+            "Compare-and-Swap",
+            "Test-and-Set",
+            "Fetch-and-Add",
+            "Load-Linked"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Test-and-Set atomically sets a boolean variable to true and returns its previous value."
+    },
+    {
+        "id": "q15",
+        "text": "What is the main disadvantage of the test-and-set solution for critical sections?",
+        "options": [
+            "It does not ensure mutual exclusion",
+            "It requires busy waiting",
+            "It only works for two processes",
+            "It uses too many variables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The test-and-set solution requires processes to spin in a loop while waiting for the lock, which is known as busy waiting."
+    },
+    {
+        "id": "q16",
+        "text": "What does the compare-and-swap instruction do?",
+        "options": [
+            "Swaps two variables atomically",
+            "Compares two variables and swaps them if they are equal",
+            "Sets a variable to a new value only if it matches an expected value",
+            "Increments a variable atomically"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Compare-and-swap atomically sets a variable to a new value only if its current value equals the expected value, and it returns the original value."
+    },
+    {
+        "id": "q17",
+        "text": "What is an atomic variable?",
+        "options": [
+            "A variable that can only be accessed by one process",
+            "A variable that is updated without interruption",
+            "A variable stored in atomic memory",
+            "A variable that is always consistent"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An atomic variable is one that can be updated without interruption, typically using hardware atomic instructions like compare-and-swap."
+    },
+    {
+        "id": "q18",
+        "text": "What is a mutex lock?",
+        "options": [
+            "A hardware instruction",
+            "A software tool that protects a critical section using acquire and release operations",
+            "A type of semaphore",
+            "A memory barrier"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A mutex lock is a synchronization tool that provides acquire and release operations to protect critical sections."
+    },
+    {
+        "id": "q19",
+        "text": "What is busy waiting?",
+        "options": [
+            "A process waiting in a queue",
+            "A process repeatedly checking a condition while waiting",
+            "A process that is blocked",
+            "A process that is terminated"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Busy waiting occurs when a process repeatedly checks a condition (like a lock being available) while waiting, consuming CPU cycles."
+    },
+    {
+        "id": "q20",
+        "text": "What is another name for a mutex lock that uses busy waiting?",
+        "options": [
+            "Semaphore",
+            "Spinlock",
+            "Monitor",
+            "Condition variable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A mutex lock that uses busy waiting is often called a spinlock because the process 'spins' while waiting for the lock."
+    },
+    {
+        "id": "q21",
+        "text": "What is a semaphore?",
+        "options": [
+            "A hardware device",
+            "An integer variable accessed only through atomic wait and signal operations",
+            "A type of mutex lock",
+            "A memory barrier"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A semaphore is an integer variable that can only be accessed via the atomic operations wait() and signal()."
+    },
+    {
+        "id": "q22",
+        "text": "What is the difference between a counting semaphore and a binary semaphore?",
+        "options": [
+            "A counting semaphore can have any integer value, while a binary semaphore is only 0 or 1",
+            "A binary semaphore is used for mutual exclusion, while a counting semaphore is not",
+            "A counting semaphore is implemented in hardware, while a binary semaphore is software",
+            "There is no difference"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A counting semaphore can take any nonnegative integer value, while a binary semaphore is restricted to 0 and 1."
+    },
+    {
+        "id": "q23",
+        "text": "How can a binary semaphore be used to implement mutual exclusion?",
+        "options": [
+            "Initialize to 0 and call wait() before the critical section",
+            "Initialize to 1 and call wait() before the critical section and signal() after",
+            "Initialize to 0 and call signal() before the critical section",
+            "Initialize to 1 and call signal() before the critical section and wait() after"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A binary semaphore initialized to 1 can be used for mutual exclusion by calling wait() before the critical section (decrementing to 0) and signal() after (incrementing back to 1)."
+    },
+    {
+        "id": "q24",
+        "text": "What is the purpose of the block() operation in semaphore implementation?",
+        "options": [
+            "To busy wait",
+            "To place a process on the waiting queue",
+            "To remove a process from the waiting queue",
+            "To execute the critical section"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The block() operation places the invoking process on the semaphore's waiting queue, allowing it to wait without busy waiting."
+    },
+    {
+        "id": "q25",
+        "text": "What is the purpose of the wakeup() operation in semaphore implementation?",
+        "options": [
+            "To start a new process",
+            "To remove a process from the waiting queue and place it in the ready queue",
+            "To terminate a process",
+            "To signal a condition variable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The wakeup() operation removes a process from the semaphore's waiting queue and places it in the ready queue to be scheduled."
+    },
+    {
+        "id": "q26",
+        "text": "What is a monitor?",
+        "options": [
+            "A hardware synchronization tool",
+            "A high-level abstraction that provides convenient process synchronization",
+            "A type of semaphore",
+            "A memory barrier"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A monitor is a high-level synchronization construct that encapsulates shared data and the procedures that operate on them, ensuring only one process is active in the monitor at a time."
+    },
+    {
+        "id": "q27",
+        "text": "How is mutual exclusion achieved within a monitor?",
+        "options": [
+            "By using semaphores",
+            "By the monitor's implementation ensuring only one process can be active inside at a time",
+            "By using condition variables",
+            "By disabling interrupts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The monitor's implementation guarantees that only one process can be executing within the monitor at any time, providing mutual exclusion."
+    },
+    {
+        "id": "q28",
+        "text": "What are condition variables used for in a monitor?",
+        "options": [
+            "To protect the monitor's entry",
+            "To allow processes to wait for certain conditions within the monitor",
+            "To signal the end of the critical section",
+            "To implement busy waiting"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Condition variables allow processes to wait for specific conditions to become true while inside the monitor, and to signal other processes when those conditions change."
+    },
+    {
+        "id": "q29",
+        "text": "What does x.wait() do on a condition variable?",
+        "options": [
+            "Increments a counter",
+            "Suspends the process until x.signal() is called",
+            "Signals all waiting processes",
+            "Exits the monitor"
+        ],
+        "correctAnswer": 1,
+        "explanation": "x.wait() suspends the executing process on condition variable x until another process invokes x.signal()."
+    },
+    {
+        "id": "q30",
+        "text": "What does x.signal() do on a condition variable?",
+        "options": [
+            "Resumes one process waiting on x",
+            "Resumes all processes waiting on x",
+            "Suspends the current process",
+            "Exits the monitor"
+        ],
+        "correctAnswer": 0,
+        "explanation": "x.signal() resumes exactly one process that is suspended on condition variable x. If no process is waiting, it has no effect."
+    },
+    {
+        "id": "q31",
+        "text": "How can monitors be implemented using semaphores?",
+        "options": [
+            "Use a binary semaphore to protect the monitor entry",
+            "Use a counting semaphore for each condition variable",
+            "Use a semaphore for mutual exclusion and semaphores for condition variables",
+            "Monitors cannot be implemented with semaphores"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Monitors can be implemented using a semaphore for mutual exclusion (mutex) and additional semaphores for each condition variable, along with counters to manage waiting processes."
+    },
+    {
+        "id": "q32",
+        "text": "What is the purpose of the 'next' semaphore in the monitor implementation?",
+        "options": [
+            "To signal the next process to enter the monitor",
+            "To manage processes waiting on condition variables",
+            "To provide mutual exclusion",
+            "To indicate the monitor is free"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'next' semaphore is used to manage the scheduling of processes that have been signaled from condition variables within the monitor."
+    },
+    {
+        "id": "q33",
+        "text": "What is the conditional-wait construct x.wait(c) used for?",
+        "options": [
+            "To wait for a specific time",
+            "To wait with a priority number",
+            "To wait for a condition variable",
+            "To wait for a semaphore"
+        ],
+        "correctAnswer": 1,
+        "explanation": "x.wait(c) allows a process to wait on condition variable x with a priority number c, which can be used to schedule processes in a specific order (e.g., by priority)."
+    },
+    {
+        "id": "q34",
+        "text": "In the resource allocator monitor, what does the acquire(int time) operation do?",
+        "options": [
+            "Allocates the resource immediately",
+            "Waits for the resource with a priority based on time",
+            "Releases the resource",
+            "Signals all waiting processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "acquire(int time) uses the time parameter as a priority number in a conditional wait, allowing processes with shorter requested times to be scheduled first."
+    },
+    {
+        "id": "q35",
+        "text": "What is liveness?",
+        "options": [
+            "The speed of process execution",
+            "A set of properties ensuring processes make progress",
+            "The ability to create new processes",
+            "The opposite of deadlock"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Liveness refers to a set of properties that ensure a system will make progress and that processes will not wait indefinitely."
+    },
+    {
+        "id": "q36",
+        "text": "What is deadlock?",
+        "options": [
+            "A process terminating unexpectedly",
+            "Two or more processes waiting indefinitely for an event that can only be caused by one of them",
+            "A process that is starved",
+            "A type of memory error"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Deadlock occurs when two or more processes are each waiting for an event that can only be caused by one of the other waiting processes, resulting in all being stuck."
+    },
+    {
+        "id": "q37",
+        "text": "How can deadlock occur with semaphores?",
+        "options": [
+            "If a process forgets to call signal()",
+            "If two processes acquire semaphores in opposite orders",
+            "If semaphores are initialized to 0",
+            "If semaphores are binary"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Deadlock can occur if two processes each hold one semaphore and wait for the other, as in the example where P0 holds S and waits for Q, and P1 holds Q and waits for S."
+    },
+    {
+        "id": "q38",
+        "text": "What is starvation?",
+        "options": [
+            "A process that is terminated",
+            "A process that is indefinitely blocked from accessing a resource",
+            "A type of deadlock",
+            "A memory allocation error"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Starvation occurs when a process is indefinitely denied access to a resource it needs, even though the resource is being allocated to other processes."
+    },
+    {
+        "id": "q39",
+        "text": "What is priority inversion?",
+        "options": [
+            "When a high-priority process waits for a low-priority process",
+            "When priorities are assigned incorrectly",
+            "When all processes have the same priority",
+            "When a process changes its own priority"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Priority inversion occurs when a higher-priority process is forced to wait for a lower-priority process to release a resource, which can happen if the lower-priority process holds a lock needed by the higher-priority process."
+    },
+    {
+        "id": "q40",
+        "text": "How can priority inversion be solved?",
+        "options": [
+            "By disabling interrupts",
+            "By using a priority-inheritance protocol",
+            "By increasing the priority of all processes",
+            "By using a spinlock"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Priority inversion can be mitigated by a priority-inheritance protocol, where the lower-priority process temporarily inherits the higher priority of the process it is blocking."
+    },
+    {
+        "id": "q41",
+        "text": "Which of the following is a hardware instruction for synchronization?",
+        "options": [
+            "wait()",
+            "signal()",
+            "compare-and-swap()",
+            "block()"
+        ],
+        "correctAnswer": 2,
+        "explanation": "compare-and-swap() is a hardware instruction that performs an atomic compare and swap operation."
+    },
+    {
+        "id": "q42",
+        "text": "What is the initial value of a binary semaphore used for mutual exclusion?",
+        "options": [
+            "0",
+            "1",
+            "2",
+            "N"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A binary semaphore used for mutual exclusion is initialized to 1, indicating that the resource is available."
+    },
+    {
+        "id": "q43",
+        "text": "In the semaphore implementation without busy waiting, what does the value of the semaphore represent?",
+        "options": [
+            "The number of processes in the critical section",
+            "The number of available resources",
+            "The number of processes waiting on the semaphore",
+            "The priority of the next process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a counting semaphore, the value represents the number of available resources. A negative value indicates the number of processes waiting."
+    },
+    {
+        "id": "q44",
+        "text": "What is the main advantage of using monitors over semaphores?",
+        "options": [
+            "Monitors are faster",
+            "Monitors are easier to use correctly",
+            "Monitors are implemented in hardware",
+            "Monitors do not require condition variables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Monitors provide a higher-level abstraction that reduces the risk of errors like missed signal() or wait() calls that are common with semaphores."
+    },
+    {
+        "id": "q45",
+        "text": "What is the key difference between a mutex lock and a binary semaphore?",
+        "options": [
+            "A mutex lock has ownership, a semaphore does not",
+            "A binary semaphore can be used for counting",
+            "A mutex lock can be signaled by any process, a semaphore cannot",
+            "There is no difference"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A mutex lock has ownership, meaning the process that acquires it must release it. A semaphore has no ownership; any process can signal it."
+    },
+    {
+        "id": "q46",
+        "text": "What is the purpose of the initialization code in a monitor?",
+        "options": [
+            "To initialize the monitor's local variables",
+            "To initialize the condition variables",
+            "To initialize the shared data",
+            "To start the monitor process"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The initialization code in a monitor is used to initialize the shared data managed by the monitor."
+    },
+    {
+        "id": "q47",
+        "text": "In the bounded-waiting solution using compare-and-swap, what is the purpose of the waiting array?",
+        "options": [
+            "To indicate which processes are in the critical section",
+            "To indicate which processes are waiting to enter the critical section",
+            "To store the turn values",
+            "To implement condition variables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The waiting array is used to keep track of which processes are waiting to enter the critical section, allowing bounded waiting to be enforced."
+    },
+    {
+        "id": "q48",
+        "text": "What is the effect of instruction reordering on Peterson's solution?",
+        "options": [
+            "It makes it faster",
+            "It can break mutual exclusion",
+            "It prevents deadlock",
+            "It ensures progress"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Instruction reordering can cause the assignments to turn and flag to be seen out of order by other processes, potentially allowing both to enter the critical section simultaneously."
+    },
+    {
+        "id": "q49",
+        "text": "What is the key takeaway from the modern architecture example with Thread 1 and Thread 2?",
+        "options": [
+            "Threads always execute in order",
+            "Instruction reordering can lead to unexpected results",
+            "Memory barriers are unnecessary",
+            "Variables are always immediately visible"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The example shows that independent instructions may be reordered by the compiler or processor, leading to results that differ from the programmer's expectations, such as Thread 1 printing 0 instead of 100."
+    },
+    {
+        "id": "q50",
+        "text": "Which synchronization tool is specifically designed to avoid busy waiting?",
+        "options": [
+            "Spinlock",
+            "Mutex lock with test-and-set",
+            "Semaphore with block() and wakeup()",
+            "Peterson's solution"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Semaphores can be implemented with a waiting queue and block()/wakeup() operations, which allow processes to wait without busy waiting."
+    },
+    {
+        "id": "q51",
+        "text": "What is the primary use of a counting semaphore?",
+        "options": [
+            "Mutual exclusion",
+            "Synchronizing multiple instances of a resource",
+            "Implementing condition variables",
+            "Priority scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A counting semaphore is used to control access to a resource that has multiple identical instances, with the semaphore value representing the number of available resources."
+    },
+    {
+        "id": "q52",
+        "text": "In the monitor implementation, what is the purpose of the next_count variable?",
+        "options": [
+            "To count the number of processes in the monitor",
+            "To count the number of processes waiting on the 'next' semaphore",
+            "To count the number of condition variables",
+            "To count the number of signals"
+        ],
+        "correctAnswer": 1,
+        "explanation": "next_count keeps track of the number of processes that are suspended on the 'next' semaphore, which are processes that have been signaled and are waiting to re-enter the monitor."
+    },
+    {
+        "id": "q53",
+        "text": "What is the significance of the value returned by compare-and-swap?",
+        "options": [
+            "It indicates whether the swap was successful",
+            "It is the new value of the variable",
+            "It is the old value of the variable",
+            "It is the expected value"
+        ],
+        "correctAnswer": 2,
+        "explanation": "compare-and-swap returns the original value of the variable before the operation, which can be used to determine if the swap occurred."
+    },
+    {
+        "id": "q54",
+        "text": "How does the test-and-set instruction work?",
+        "options": [
+            "It sets a variable to true and returns its previous value",
+            "It sets a variable to false and returns its previous value",
+            "It compares two variables and sets a third",
+            "It swaps two variables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "test-and-set atomically sets a boolean variable to true and returns its previous value."
+    },
+    {
+        "id": "q55",
+        "text": "What is a common use of atomic variables?",
+        "options": [
+            "To implement counters without locking",
+            "To replace semaphores",
+            "To create mutex locks",
+            "To implement monitors"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Atomic variables are often used to implement counters and other simple data structures that can be updated without the overhead of locking, using atomic instructions like compare-and-swap."
+    },
+    {
+        "id": "q56",
+        "text": "What is the main problem with the incorrect use of semaphores?",
+        "options": [
+            "It can lead to deadlock or starvation",
+            "It makes programs run slower",
+            "It requires more memory",
+            "It is not portable"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Incorrect use of semaphores, such as missing wait() or signal() calls, or acquiring them in the wrong order, can easily lead to deadlock or starvation."
+    },
+    {
+        "id": "q57",
+        "text": "What is the role of the mutex semaphore in the monitor implementation?",
+        "options": [
+            "To protect the condition variables",
+            "To ensure mutual exclusion for entry into the monitor",
+            "To manage the waiting queue",
+            "To signal processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The mutex semaphore is used to ensure that only one process can be active inside the monitor at a time."
+    },
+    {
+        "id": "q58",
+        "text": "In the resource allocator monitor, what is the purpose of the 'busy' variable?",
+        "options": [
+            "To indicate if the resource is currently allocated",
+            "To count the number of waiting processes",
+            "To store the priority of the next process",
+            "To implement the condition variable"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The 'busy' boolean variable indicates whether the resource is currently allocated (true) or available (false)."
+    },
+    {
+        "id": "q59",
+        "text": "What is the key characteristic of a strongly ordered memory model?",
+        "options": [
+            "Memory operations may be reordered",
+            "Memory operations are immediately visible to all processors",
+            "It is slower than weakly ordered",
+            "It requires memory barriers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a strongly ordered memory model, any memory modification by one processor is immediately visible to all other processors."
+    },
+    {
+        "id": "q60",
+        "text": "What is the final step in the monitor's procedure execution?",
+        "options": [
+            "Signal the mutex semaphore",
+            "Check if next_count > 0 and signal the 'next' semaphore, else signal mutex",
+            "Signal all condition variables",
+            "Block the process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Before exiting, the procedure checks if there are processes waiting on the 'next' semaphore (next_count > 0). If so, it signals next; otherwise, it signals mutex to allow a new process to enter the monitor."
+    }
+]
