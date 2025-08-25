@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "In the context of problem-solving agents, which of the following environments is LEAST suitable for using atomic representations and simple search algorithms?",
+        "options": [
+            "Episodic, single agent, fully observable, deterministic, static, and discrete",
+            "Continuous, multi-agent, partially observable, stochastic, dynamic",
+            "Discrete, single agent, fully observable, deterministic, static",
+            "Episodic, single agent, fully observable, deterministic, dynamic"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Environments that are continuous, multi-agent, partially observable, stochastic, and dynamic are too complex for simple atomic representations and uninformed search algorithms, which work best in simple, deterministic, fully observable settings."
+    },
+    {
+        "id": "q2",
+        "text": "In the Romania vacation problem, if the agent is in Timisoara and must get to Bucharest, which component of the search problem defines the set of all possible cities the agent can be in?",
+        "options": [
+            "Initial state",
+            "Actions",
+            "State space",
+            "Goal test"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The state space is implicitly defined by the initial state, actions, and transition model, and represents all possible states (cities) the agent can be in during the search."
+    },
+    {
+        "id": "q3",
+        "text": "In the vacuum world problem with two cells, how many distinct states are there?",
+        "options": [
+            "4",
+            "6",
+            "8",
+            "10"
+        ],
+        "correctAnswer": 2,
+        "explanation": "There are 8 states: (Location, Dirt in Left, Dirt in Right) -> 2 locations * 2 dirt states (clean/dirty) in left * 2 dirt states in right = 8 states."
+    },
+    {
+        "id": "q4",
+        "text": "When formulating a route-finding problem for a travel website, which factor is typically NOT part of the action cost function?",
+        "options": [
+            "Monetary cost of the flight",
+            "Flight time",
+            "Airline brand popularity",
+            "Waiting time at the airport"
+        ],
+        "correctAnswer": 2,
+        "explanation": "While monetary cost, flight time, and waiting time are practical costs, airline brand popularity is subjective and not typically included in the action cost function for route-finding algorithms."
+    },
+    {
+        "id": "q5",
+        "text": "In a search tree, what does it mean to 'expand' a node?",
+        "options": [
+            "To check if it is a goal state",
+            "To generate all its successor nodes by applying all applicable actions",
+            "To remove it from the frontier",
+            "To calculate its path cost"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Expanding a node means generating all its children nodes by applying every possible action from that state, thus exploring the next level of the state space."
+    },
+    {
+        "id": "q6",
+        "text": "Why is eliminating redundant paths important in search?",
+        "options": [
+            "It ensures the algorithm is complete",
+            "It guarantees optimality",
+            "It prevents the algorithm from revisiting states and reduces time and space complexity",
+            "It makes the heuristic admissible"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Redundant paths occur when the same state is reached via different paths. Eliminating them (e.g., using graph search with a closed set) avoids unnecessary recomputation, saving time and memory."
+    },
+    {
+        "id": "q7",
+        "text": "Which of the following is NOT a standard criterion for evaluating search algorithms?",
+        "options": [
+            "Completeness",
+            "Optimality",
+            "Heuristic accuracy",
+            "Time complexity"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Completeness, optimality, time complexity, and space complexity are standard evaluation criteria. Heuristic accuracy is a property of informed search heuristics, not a core algorithm evaluation metric."
+    },
+    {
+        "id": "q8",
+        "text": "For a search tree with branching factor b=10 and depth d=5, how many nodes might Breadth-First Search generate in the worst case before finding a solution at depth d?",
+        "options": [
+            "10^5",
+            "1 + 10 + 10^2 + 10^3 + 10^4 + 10^5",
+            "10^6",
+            "5 * 10"
+        ],
+        "correctAnswer": 1,
+        "explanation": "BFS expands all nodes at each level. The total number of nodes in a tree of depth d is the sum of nodes at each level from 0 to d: Σ_{k=0 to d} b^k."
+    },
+    {
+        "id": "q9",
+        "text": "Uniform-Cost Search (UCS) is equivalent to which famous graph algorithm?",
+        "options": [
+            "Breadth-First Search",
+            "Depth-First Search",
+            "Dijkstra's Algorithm",
+            "A* Search"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Uniform-Cost Search expands the node with the lowest path cost, which is the same principle as Dijkstra's algorithm for finding the shortest path in a graph."
+    },
+    {
+        "id": "q10",
+        "text": "What is the key disadvantage of Depth-First Search (DFS) in infinite state spaces?",
+        "options": [
+            "High time complexity",
+            "High space complexity",
+            "It is not complete",
+            "It is not optimal"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In infinite state spaces or spaces with cycles, DFS can follow one path indefinitely and never terminate, making it incomplete for those cases."
+    },
+    {
+        "id": "q11",
+        "text": "Iterative Deepening Depth-First Search (IDS) is often used because it:",
+        "options": [
+            "Has the low space complexity of DFS and the completeness/optimality (for unit costs) of BFS",
+            "Is always faster than BFS",
+            "Uses a heuristic to guide the search",
+            "Is guaranteed to find the optimal solution for any cost function"
+        ],
+        "correctAnswer": 0,
+        "explanation": "IDS combines the linear space complexity of DFS with the completeness and optimality (for unit action costs) of BFS, by performing a series of DFS searches with increasing depth limits."
+    },
+    {
+        "id": "q12",
+        "text": "Bidirectional search is most effective when:",
+        "options": [
+            "The branching factor is very high",
+            "The goal state is uniquely defined and the actions are reversible",
+            "The heuristic function is inconsistent",
+            "The path cost is calculated using a complex function"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Bidirectional search requires being able to search backwards from the goal. This is most straightforward when the goal is a specific state and the actions are reversible (i.e., for every action a from s to s', there is an inverse action from s' to s)."
+    },
+    {
+        "id": "q13",
+        "text": "Looking at the provided search algorithm comparison table, which uninformed search algorithm is complete and optimal for general action costs?",
+        "options": [
+            "Breadth-First Search",
+            "Depth-First Search",
+            "Uniform-Cost Search",
+            "Iterative Deepening Search"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The table shows that Uniform-Cost Search is complete (if b is finite and step costs ≥ ε > 0) and optimal for general action costs. BFS and IDS are only optimal for unit costs."
+    },
+    {
+        "id": "q14",
+        "text": "A heuristic function h(n) for A* search is defined as:",
+        "options": [
+            "The actual cost to reach the goal from n",
+            "The estimated cost of the cheapest path from the state at node n to a goal",
+            "The cost incurred so far to reach node n",
+            "The average cost of all paths from n to the goal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The heuristic function h(n) provides an estimate of the cost from node n to the nearest goal state. It is a key component of the evaluation function f(n) = g(n) + h(n) in A*."
+    },
+    {
+        "id": "q15",
+        "text": "Greedy Best-First Search uses which evaluation function?",
+        "options": [
+            "f(n) = g(n)",
+            "f(n) = h(n)",
+            "f(n) = g(n) + h(n)",
+            "f(n) = g(n) - h(n)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Greedy Best-First Search tries to expand the node that is seemingly closest to the goal, based solely on the heuristic function: f(n) = h(n)."
+    },
+    {
+        "id": "q16",
+        "text": "The main problem with Greedy Best-First Search is that it:",
+        "options": [
+            "Is computationally expensive",
+            "Requires too much memory",
+            "Is neither complete nor optimal",
+            "Cannot use heuristic functions"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Greedy Best-First Search is not complete (it can get stuck in loops or dead ends) and is not optimal (it may find a path that is not the cheapest), as it ignores the cost incurred so far (g(n))."
+    },
+    {
+        "id": "q17",
+        "text": "In the A* search algorithm, what does the evaluation function f(n) = g(n) + h(n) represent?",
+        "options": [
+            "The exact cost of the path from start to goal through n",
+            "The estimated cost of the cheapest solution path that goes through node n",
+            "The heuristic cost from n to the goal",
+            "The cost from the start node to n"
+        ],
+        "correctAnswer": 1,
+        "explanation": "f(n) = g(n) + h(n) estimates the total cost of the path from the start node to the goal node that passes through node n. g(n) is the known cost from start to n, and h(n) is the estimated cost from n to the goal."
+    },
+    {
+        "id": "q18",
+        "text": "For A* search to be guaranteed to find an optimal solution, the heuristic function must be:",
+        "options": [
+            "Consistent",
+            "Monotonic",
+            "Admissible",
+            "Either admissible or consistent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A heuristic is admissible if it never overestimates the true cost to the goal. This is the fundamental requirement for A*'s optimality. Consistency is a stronger condition that implies admissibility."
+    },
+    {
+        "id": "q19",
+        "text": "A heuristic function h(n) is consistent if:",
+        "options": [
+            "h(n) <= h(n') for any successor n'",
+            "h(n) <= c(n, a, n') + h(n') for every node n and its successor n' generated by action a",
+            "h(goal) = 0",
+            "h(n) is always less than the true cost"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Consistency (or monotonicity) means the estimated cost from n to the goal is no greater than the step cost from n to n' plus the estimated cost from n' to the goal. This ensures the f(n) value never decreases along a path."
+    },
+    {
+        "id": "q20",
+        "text": "The primary practical drawback of A* search is its:",
+        "options": [
+            "Time complexity",
+            "Space complexity",
+            "Incompleteness",
+            "Inability to use heuristics"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A* must keep all generated nodes in memory to backtrack and find the path. In the worst case, this leads to exponential space complexity, which is often the limiting factor in practice, even though its time complexity is also exponential."
+    },
+    {
+        "id": "q21",
+        "text": "In the 8-puzzle, the heuristic 'number of misplaced tiles' (h1) is:",
+        "options": [
+            "Admissible and consistent",
+            "Admissible but not consistent",
+            "Not admissible but consistent",
+            "Neither admissible nor consistent"
+        ],
+        "correctAnswer": 0,
+        "explanation": "h1 is admissible (it never overestimates, as each misplaced tile must move at least once) and is also consistent (moving a tile into its correct place directly reduces the count by 1, which equals the step cost, satisfying the consistency inequality)."
+    },
+    {
+        "id": "q22",
+        "text": "The 'sum of Manhattan distances' heuristic (h2) for the 8-puzzle is often better than 'number of misplaced tiles' (h1) because it:",
+        "options": [
+            "Is easier to compute",
+            "Is always a smaller number",
+            "Often provides a better (higher) estimate of the remaining cost, while still being admissible",
+            "Is not admissible but finds solutions faster"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Manhattan distance heuristic considers how far each tile is from its goal position, providing a more informed and accurate (higher) estimate of the actual cost than just counting misplaced tiles. A higher admissible heuristic value prunes the search space more effectively."
+    },
+    {
+        "id": "q23",
+        "text": "A relaxed problem is generated by:",
+        "options": [
+            "Adding restrictions to the actions",
+            "Removing restrictions from the actions",
+            "Changing the goal state",
+            "Increasing the cost of actions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A relaxed problem is created by removing constraints from the original problem's actions, making it easier to solve. The cost of the solution to the relaxed problem provides an admissible heuristic for the original problem."
+    },
+    {
+        "id": "q24",
+        "text": "Pattern databases are used to:",
+        "options": [
+            "Store the entire state space for faster lookup",
+            "Store precomputed exact solution costs for subproblems to use as admissible heuristics",
+            "Learn heuristic functions from experience",
+            "Relax the problem constraints"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pattern databases store the exact solution costs for every possible configuration of a subproblem (a pattern). The cost for a given state's pattern is a powerful admissible heuristic for the overall problem."
+    },
+    {
+        "id": "q25",
+        "text": "In the route-finding problem, which heuristic is most likely to be admissible?",
+        "options": [
+            "The road distance already traveled",
+            "The straight-line distance to the destination",
+            "The estimated time based on current traffic",
+            "The toll cost of the remaining route"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The straight-line (Euclidean) distance is always less than or equal to the actual road distance, making it an admissible heuristic—it never overestimates the true cost (distance) to the goal."
+    },
+    {
+        "id": "q26",
+        "text": "If an A* search using heuristic h(n) returns a solution with cost C, but the optimal cost is actually C* < C, what can be concluded about h(n)?",
+        "options": [
+            "h(n) is admissible",
+            "h(n) is consistent",
+            "h(n) is not admissible",
+            "The search was implemented incorrectly"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The optimality of A* is guaranteed only if the heuristic is admissible (never overestimates). If A* returns a suboptimal solution, it is definitive proof that the heuristic was inadmissible for at least one node."
+    },
+    {
+        "id": "q27",
+        "text": "Which data structure is most suitable for implementing the frontier in a Uniform-Cost Search?",
+        "options": [
+            "Stack (LIFO)",
+            "Queue (FIFO)",
+            "Priority Queue (min-heap based on g(n))",
+            "Priority Queue (min-heap based on h(n))"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Uniform-Cost Search always expands the node with the lowest path cost, g(n). A priority queue (min-heap) where the priority is g(n) efficiently allows insertion and retrieval of the node with the minimum cost."
+    },
+    {
+        "id": "q28",
+        "text": "In the provided A* search example for Romania, what was the f(n) value for the initial state (Arad)?",
+        "options": [
+            "0",
+            "366",
+            "140",
+            "366 + 140"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For the initial state Arad, g(n) = 0 (cost from start to itself). The heuristic h(SLD) from Arad to Bucharest is 366. Therefore, f(n) = g(n) + h(n) = 0 + 366 = 366."
+    },
+    {
+        "id": "q29",
+        "text": "Beam Search limits the search by:",
+        "options": [
+            "Using a depth limit",
+            "Only keeping the best k nodes at each level of the search",
+            "Using an inadmissible heuristic",
+            "Searching backwards from the goal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Beam Search reduces memory usage by not storing the entire frontier. At each level, it only keeps the k most promising nodes (based on the heuristic), discarding the others. This can make it incomplete and suboptimal."
+    },
+    {
+        "id": "q30",
+        "text": "The time complexity of A* search is:",
+        "options": [
+            "O(b^d)",
+            "O(b^m)",
+            "O(b^(C*/ε))", 
+            "Polynomial"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the worst case, the time complexity of A* is exponential in the length of the optimal solution path. The notation O(b^(C*/ε)) is sometimes used, where C* is the optimal cost and ε is a lower bound on action costs, but it remains exponential."
+    },
+    {
+        "id": "q31",
+        "text": "In the context of the 8-puzzle, if the 'blank' tile is included in the 'number of misplaced tiles' heuristic, what would h(start) be for the given start state?",
+        "options": [
+            "7",
+            "8",
+            "9",
+            "0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The start state has all 8 numbered tiles misplaced relative to the goal state. If the blank is also counted as a 'tile' and is considered misplaced (which it usually is not in standard definitions, but the question specifies to include it), then h(start) would be 9. However, the standard heuristic excludes the blank. The slide says 'blank not included', so for the 8 numbered tiles, all 8 are misplaced. The question is tricky and tests attention to detail. The correct answer based on the slide's definition (blank not included) is 8."
+    },
+    {
+        "id": "q32",
+        "text": "Which search algorithm would be most appropriate for a problem with a very large state space and a good admissible heuristic, where memory is the primary constraint?",
+        "options": [
+            "Breadth-First Search",
+            "A* Search",
+            "Iterative Deepening A* Search (IDA*)",
+            "Greedy Best-First Search"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Iterative Deepening A* (IDA*) uses a series of increasing f-cost limits instead of storing all nodes. It combines the optimality and completeness of A* with the low memory footprint of DFS (O(bd)), making it suitable for memory-constrained environments with good heuristics."
+    },
+    {
+        "id": "q33",
+        "text": "What is the key difference between the 'tree search' and 'graph search' versions of algorithms?",
+        "options": [
+            "Tree search is for trees, graph search is for graphs",
+            "Graph search avoids generating redundant paths by keeping a 'closed list' of explored states",
+            "Tree search uses a heuristic, graph search does not",
+            "Graph search is always more efficient"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The fundamental difference is that graph search maintains a closed set (or explored set) to remember visited states, preventing re-expansion and avoiding infinite loops in cyclic state spaces. Tree search does not do this and can get stuck in cycles."
+    },
+    {
+        "id": "q34",
+        "text": "In the vacuum world, the action 'Suck' is designed to:",
+        "options": [
+            "Move the agent to a different cell",
+            "Clean the current cell if it is dirty",
+            "Turn the agent 90 degrees",
+            "Check if the goal state is reached"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'Suck' action's sole purpose is to remove dirt from the agent's current cell, changing the state of that cell from dirty to clean."
+    },
+    {
+        "id": "q35",
+        "text": "The process of problem formulation involves defining all of the following EXCEPT:",
+        "options": [
+            "The initial state",
+            "The goal test",
+            "The search algorithm to be used",
+            "The actions and transition model"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Problem formulation is about defining the components of the problem itself: initial state, actions, transition model, goal test, and action cost. The choice of search algorithm is a separate decision made to solve the formulated problem."
+    },
+    {
+        "id": "q36",
+        "text": "If the step cost for every action in a problem is identical, which uninformed search algorithm is both complete and optimal?",
+        "options": [
+            "Depth-First Search",
+            "Depth-Limited Search",
+            "Breadth-First Search",
+            "All of the above"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When all step costs are identical, the shortest path (found by BFS) is also the cheapest path. Thus, BFS is both complete and optimal in this specific scenario. DFS and DLS are not optimal."
+    },
+    {
+        "id": "q37",
+        "text": "The value 'm' in search complexity analysis represents:",
+        "options": [
+            "The maximum depth of the search tree",
+            "The depth of the shallowest solution",
+            "The branching factor",
+            "The minimum path cost"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'m' is defined as the maximum depth of the search tree. It could be much larger than 'd' (the depth of the solution) and is potentially infinite, which is a problem for DFS."
+    },
+    {
+        "id": "q38",
+        "text": "A search algorithm is considered 'complete' if:",
+        "options": [
+            "It always finds the optimal solution",
+            "It always finds a solution if one exists",
+            "It uses the minimum amount of memory",
+            "It runs in polynomial time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Completeness is the guarantee that an algorithm will find a solution if one exists, and will correctly report failure if no solution exists."
+    },
+    {
+        "id": "q39",
+        "text": "The 'd' in the O(b^d) complexity for BFS refers to:",
+        "options": [
+            "The depth of the search tree",
+            "The depth of the deepest node expanded",
+            "The depth of the shallowest goal node",
+            "The average depth of the tree"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For BFS, 'd' specifically refers to the depth of the shallowest solution (goal node). The algorithm expands all nodes up to this depth before finding the goal."
+    },
+    {
+        "id": "q40",
+        "text": "In the context of the Romania problem, the action 'ToZerind' from state 'Arad' has an action cost of 75. What does this cost most likely represent?",
+        "options": [
+            "Time spent driving",
+            "Distance in miles",
+            "Toll fee",
+            "Fuel consumption"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The problem states 'road distances in miles'. Therefore, the action cost function ACTION-COST(s, a, s') is defined by the distance between cities."
+    }
+]

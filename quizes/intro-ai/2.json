@@ -1,0 +1,723 @@
+[
+    {
+        "id": "q1",
+        "text": "According to the agent definition, what must an agent be able to do?",
+        "options": [
+            "Think like a human",
+            "Learn from its mistakes automatically",
+            "Perceive its environment through sensors and act through actuators",
+            "Communicate with other agents using natural language"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An agent is defined as anything that can perceive its environment through sensors and act upon that environment through actuators."
+    },
+    {
+        "id": "q2",
+        "text": "What does the agent function map?",
+        "options": [
+            "Sensors to actuators",
+            "Percept sequence to action",
+            "Environment state to performance measure",
+            "Goals to utility values"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The agent function maps the agent's percept sequence (complete history of perceptions) to an action."
+    },
+    {
+        "id": "q3",
+        "text": "In the vacuum-cleaner world example, what action should the agent take when it perceives [A, Dirty]?",
+        "options": [
+            "Right",
+            "Left",
+            "Suck",
+            "Wait"
+        ],
+        "correctAnswer": 2,
+        "explanation": "According to the tabulated agent function, the percept [A, Dirty] maps to the Suck action."
+    },
+    {
+        "id": "q4",
+        "text": "What is the fundamental concept behind consequentialism in evaluating agent behavior?",
+        "options": [
+            "The agent's internal thought process",
+            "The elegance of the agent's algorithm",
+            "The consequences of the agent's actions",
+            "The speed of the agent's decision making"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Consequentialism evaluates an agent's behavior by its consequences, not by its internal processes or other characteristics."
+    },
+    {
+        "id": "q5",
+        "text": "A rational agent is one that:",
+        "options": [
+            "Always makes logically perfect decisions",
+            "Knows everything about its environment",
+            "Selects actions expected to maximize its performance measure",
+            "Mimics human decision-making processes exactly"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A rational agent selects actions that are expected to maximize its performance measure given its percept sequence and built-in knowledge."
+    },
+    {
+        "id": "q6",
+        "text": "What is the key difference between perfect rationality and bounded rationality?",
+        "options": [
+            "Perfect rationality requires more computational resources",
+            "Bounded rationality assumes complete knowledge of the environment",
+            "Perfect rationality always produces optimal results while bounded rationality uses approximations",
+            "Bounded rationality is only applicable to single-agent environments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Perfect rationality assumes complete knowledge and optimal decisions, while bounded rationality recognizes limitations and uses approximate methods."
+    },
+    {
+        "id": "q7",
+        "text": "What does PEAS stand for in task environment specification?",
+        "options": [
+            "Perception, Environment, Action, Sensors",
+            "Performance, Environment, Actuators, Sensors",
+            "Planning, Execution, Assessment, Strategy",
+            "Percept, Evaluation, Action, State"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PEAS stands for Performance Measure, Environment, Actuators, Sensors - the four components used to specify a task environment."
+    },
+    {
+        "id": "q8",
+        "text": "For an automated taxi driver, which of these would NOT typically be part of the environment?",
+        "options": [
+            "Roads and traffic",
+            "Weather conditions",
+            "The taxi's steering mechanism",
+            "Pedestrians and other drivers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The steering mechanism is an actuator, not part of the environment. The environment includes external elements like roads, weather, and other entities."
+    },
+    {
+        "id": "q9",
+        "text": "An environment is considered fully observable when:",
+        "options": [
+            "The agent can see everything in all directions",
+            "Sensors detect all aspects relevant to action choices",
+            "The agent has complete knowledge of future events",
+            "All state variables are constantly monitored"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An environment is effectively fully observable if the sensors detect all aspects that are relevant to the choice of action, based on the performance measure."
+    },
+    {
+        "id": "q10",
+        "text": "What distinguishes a multi-agent environment from a single-agent environment?",
+        "options": [
+            "The number of entities present in the environment",
+            "Whether other entities' behaviors affect the agent's performance measure",
+            "The complexity of the environment state space",
+            "The presence of communication protocols between entities"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The key distinction is whether other entities' behaviors are best described as maximizing performance measures that depend on the agent's behavior."
+    },
+    {
+        "id": "q11",
+        "text": "A stochastic environment is one where:",
+        "options": [
+            "The agent's actions have unpredictable consequences",
+            "The next state is completely determined by the current state and action",
+            "Probabilities are explicitly used to model uncertainty",
+            "The environment changes randomly without any pattern"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A stochastic environment explicitly deals with probabilities, where outcomes are not certain but have known probability distributions."
+    },
+    {
+        "id": "q12",
+        "text": "What characterizes an episodic environment?",
+        "options": [
+            "Each action affects only the current episode",
+            "The agent must plan ahead for future consequences",
+            "Episodes are interconnected and dependent on previous actions",
+            "The environment has a definite beginning and end"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In episodic environments, each episode is atomic and independent - actions in one episode don't affect subsequent episodes."
+    },
+    {
+        "id": "q13",
+        "text": "A dynamic environment is one that:",
+        "options": [
+            "Changes rapidly and unpredictably",
+            "Can change while the agent is deliberating",
+            "Has moving parts and animated elements",
+            "Requires constant agent adaptation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A dynamic environment can change while the agent is deliberating, unlike static environments which remain unchanged during deliberation."
+    },
+    {
+        "id": "q14",
+        "text": "Which property best describes the game of checkers?",
+        "options": [
+            "Partially observable, stochastic, continuous",
+            "Fully observable, deterministic, discrete",
+            "Partially observable, deterministic, episodic",
+            "Fully observable, stochastic, sequential"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Checkers is fully observable (all pieces visible), deterministic (no randomness in moves), and discrete (finite positions and moves)."
+    },
+    {
+        "id": "q15",
+        "text": "What is the relationship between agent architecture and agent program?",
+        "options": [
+            "Architecture implements the program",
+            "Program = Architecture + Sensors",
+            "Agent = Architecture + Program",
+            "Architecture is the physical embodiment of the program"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An agent consists of its architecture (the computing device with sensors/actuators) plus the program (the mapping from percepts to actions)."
+    },
+    {
+        "id": "q16",
+        "text": "What is the main limitation of a table-driven agent?",
+        "options": [
+            "It can only handle fully observable environments",
+            "The table size grows exponentially with percept history",
+            "It requires perfect knowledge of the environment",
+            "It cannot learn from experience"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Table-driven agents require storing all possible percept sequences, causing exponential growth in table size as history length increases."
+    },
+    {
+        "id": "q17",
+        "text": "Simple reflex agents base their actions on:",
+        "options": [
+            "Complete percept history",
+            "Current percept only",
+            "Predicted future states",
+            "Utility calculations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Simple reflex agents ignore history and base actions only on the current percept, using condition-action rules."
+    },
+    {
+        "id": "q18",
+        "text": "In which type of environment do simple reflex agents work best?",
+        "options": [
+            "Partially observable",
+            "Fully observable",
+            "Stochastic",
+            "Dynamic"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Simple reflex agents work best in fully observable environments where the current percept completely describes the relevant state."
+    },
+    {
+        "id": "q19",
+        "text": "What additional capability do model-based reflex agents have compared to simple reflex agents?",
+        "options": [
+            "They can set their own goals",
+            "They maintain an internal state based on percept history",
+            "They calculate utility values for different actions",
+            "They can learn from experience"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Model-based reflex agents maintain an internal state that depends on percept history, allowing them to handle partial observability."
+    },
+    {
+        "id": "q20",
+        "text": "The transition model in a model-based agent describes:",
+        "options": [
+            "How the world state changes based on actions",
+            "How percepts reflect the world state",
+            "The agent's goal structure",
+            "The utility of different states"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The transition model describes how the world evolves - both the effects of the agent's actions and how the world changes independently."
+    },
+    {
+        "id": "q21",
+        "text": "The sensor model in a model-based agent describes:",
+        "options": [
+            "How actions affect the environment",
+            "How the world state is reflected in percepts",
+            "The quality of different sensors",
+            "How to filter noisy sensor data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The sensor model describes how the state of the world is reflected in the agent's percepts, including sensor limitations and noise."
+    },
+    {
+        "id": "q22",
+        "text": "Goal-based agents differ from reflex agents in that they:",
+        "options": [
+            "Maintain an internal state",
+            "Consider future consequences of actions",
+            "Use utility functions for decision making",
+            "Can learn from experience"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Goal-based agents consider actions in terms of how they contribute to achieving goals, requiring thinking about future consequences."
+    },
+    {
+        "id": "q23",
+        "text": "What advantage do goal-based agents have over reflex agents?",
+        "options": [
+            "They require less computational resources",
+            "They are more flexible when goals change",
+            "They work better in fully observable environments",
+            "They don't require world models"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Goal-based agents are more flexible because changing the goal automatically changes which actions are appropriate, without rewriting condition-action rules."
+    },
+    {
+        "id": "q24",
+        "text": "Utility-based agents are particularly useful when:",
+        "options": [
+            "The environment is fully observable",
+            "There are conflicting goals to balance",
+            "Decisions need to be made quickly",
+            "The agent has limited sensors"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Utility-based agents use utility functions to make trade-offs between conflicting goals, such as speed vs. safety in driving."
+    },
+    {
+        "id": "q25",
+        "text": "A utility function maps:",
+        "options": [
+            "Actions to performance measures",
+            "States to real numbers representing desirability",
+            "Percepts to internal states",
+            "Goals to achievement probabilities"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A utility function maps a state or sequence of states onto a real number representing the degree of happiness or desirability."
+    },
+    {
+        "id": "q26",
+        "text": "In a learning agent, what is the role of the critic?",
+        "options": [
+            "To generate new problems for exploration",
+            "To modify the performance element based on feedback",
+            "To evaluate how the agent is performing",
+            "To directly control the actuators"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The critic evaluates how the agent is performing against the performance standard and provides feedback to the learning element."
+    },
+    {
+        "id": "q27",
+        "text": "The problem generator in a learning agent is responsible for:",
+        "options": [
+            "Creating new goals for the agent",
+            "Suggesting exploratory actions for learning",
+            "Generating solutions to environmental problems",
+            "Producing sensor data simulations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The problem generator suggests exploratory actions that may be suboptimal in the short term but lead to new, informative experiences for learning."
+    },
+    {
+        "id": "q28",
+        "text": "What is the simplest type of representation for agent states?",
+        "options": [
+            "Structured representation",
+            "Factored representation",
+            "Atomic representation",
+            "Relational representation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Atomic representation is the simplest, treating each state as a black box with no internal structure."
+    },
+    {
+        "id": "q29",
+        "text": "In factored representation, a state consists of:",
+        "options": [
+            "A single unanalyzed entity",
+            "Objects with relationships between them",
+            "A set of variables or attributes with values",
+            "Probabilistic distributions of features"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Factored representation breaks states into variables or attributes, each with values, allowing more expressive representation than atomic states."
+    },
+    {
+        "id": "q30",
+        "text": "Which algorithm is typically used with atomic representations?",
+        "options": [
+            "First-order logic inference",
+            "Constraint satisfaction",
+            "Standard search algorithms",
+            "Bayesian network reasoning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Atomic representations, being simple and unstructured, work well with standard search algorithms that treat states as indivisible units."
+    },
+    {
+        "id": "q31",
+        "text": "Structured representation allows for:",
+        "options": [
+            "Faster computation but less expressiveness",
+            "Representing objects with attributes and relationships",
+            "Only binary variable representations",
+            "Simpler but less powerful reasoning"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Structured representation includes objects with their own attributes and relationships to other objects, enabling complex, expressive models."
+    },
+    {
+        "id": "q32",
+        "text": "Which representation would be most appropriate for modeling a family relationship tree?",
+        "options": [
+            "Atomic representation",
+            "Factored representation",
+            "Structured representation",
+            "Binary representation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Structured representation is ideal for modeling family relationships as it can represent people as objects with attributes and relationships (parent, child, sibling, etc.)."
+    },
+    {
+        "id": "q33",
+        "text": "What is the key advantage of factored over atomic representation?",
+        "options": [
+            "Smaller memory requirements",
+            "Faster processing speed",
+            "Ability to reason about state similarities",
+            "Simpler implementation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Factored representation allows reasoning about state similarities since different states can share some attribute values while differing in others."
+    },
+    {
+        "id": "q34",
+        "text": "Which type of agent would be most suitable for a thermostat controlling room temperature?",
+        "options": [
+            "Goal-based agent",
+            "Utility-based agent",
+            "Learning agent",
+            "Simple reflex agent"
+        ],
+        "correctAnswer": 3,
+        "explanation": "A thermostat typically uses simple condition-action rules (if temperature > setpoint, turn AC on), making it a simple reflex agent."
+    },
+    {
+        "id": "q35",
+        "text": "In a self-driving car, which agent type would be responsible for choosing the fastest route considering traffic conditions?",
+        "options": [
+            "Simple reflex agent",
+            "Model-based reflex agent",
+            "Goal-based agent",
+            "Utility-based agent"
+        ],
+        "correctAnswer": 3,
+        "correctAnswer": 3,
+        "explanation": "Choosing the fastest route involves trade-offs between multiple factors (time, safety, fuel efficiency), making a utility-based agent most appropriate."
+    },
+    {
+        "id": "q36",
+        "text": "What makes an environment partially observable?",
+        "options": [
+            "The agent has limited processing power",
+            "Sensors provide incomplete or noisy information about the state",
+            "The environment changes too rapidly",
+            "The agent has multiple conflicting goals"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Partial observability occurs when sensors don't provide complete information about the environment state, due to noise, limitations, or missing data."
+    },
+    {
+        "id": "q37",
+        "text": "In the vacuum cleaner world, why might the environment be considered partially observable?",
+        "options": [
+            "Because the agent has limited battery life",
+            "Because the agent can only sense dirt in its current location",
+            "Because the environment has multiple rooms",
+            "Because cleaning takes time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If the vacuum agent only has a local dirt sensor, it cannot tell if other locations are dirty, making the environment partially observable."
+    },
+    {
+        "id": "q38",
+        "text": "What characteristic distinguishes a competitive multi-agent environment from a cooperative one?",
+        "options": [
+            "The number of agents involved",
+            "Whether agents communicate with each other",
+            "How one agent's success affects others' performance measures",
+            "The complexity of the environment"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In competitive environments, one agent maximizing its performance measure minimizes others'; in cooperative environments, agents' success correlates positively."
+    },
+    {
+        "id": "q39",
+        "text": "Why are most real-world environments considered stochastic rather than deterministic?",
+        "options": [
+            "Because agents have free will",
+            "Because outcomes have inherent uncertainty",
+            "Because sensors are always imperfect",
+            "Because actions always have multiple effects"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Real-world environments typically involve uncertainty and randomness, making outcomes not completely predictable from current state and action."
+    },
+    {
+        "id": "q40",
+        "text": "What makes taxi driving a sequential environment rather than episodic?",
+        "options": [
+            "The need to follow traffic rules",
+            "The continuous nature of driving",
+            "Current decisions affect future options and outcomes",
+            "The presence of other drivers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Taxi driving is sequential because current decisions (like which route to take) affect all future decisions and outcomes throughout the trip."
+    },
+    {
+        "id": "q41",
+        "text": "Which property makes chess a static environment?",
+        "options": [
+            "The board doesn't change during player deliberation",
+            "Pieces move in predictable patterns",
+            "The game has fixed rules",
+            "Players take turns moving"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Chess is static because the environment doesn't change while an agent is deliberating its move - the board state remains unchanged during thinking time."
+    },
+    {
+        "id": "q42",
+        "text": "What distinguishes a continuous environment from a discrete one?",
+        "options": [
+            "The number of possible states",
+            "Whether time is measured continuously or in steps",
+            "The presence of real-valued variables and continuous time",
+            "The complexity of the agent's decision process"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Continuous environments have real-valued variables, continuous time flow, and typically continuous actions, unlike discrete environments with finite states and discrete time steps."
+    },
+    {
+        "id": "q43",
+        "text": "In the context of agent autonomy, what makes an agent more autonomous?",
+        "options": [
+            "Having more powerful sensors and actuators",
+            "Operating without any human intervention",
+            "Relying more on its own experience than built-in knowledge",
+            "Making decisions faster than human operators"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An agent becomes more autonomous as its actions depend more on its own gathered experience rather than on knowledge built in by the designer."
+    },
+    {
+        "id": "q44",
+        "text": "What is the fundamental difference between omniscience and rationality?",
+        "options": [
+            "Omniscience requires perfect sensors while rationality doesn't",
+            "Omniscient agents know actual outcomes while rational agents maximize expected outcomes",
+            "Rational agents learn while omniscient agents don't need to",
+            "Omniscience is achievable while rationality is not"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Omniscient agents know actual outcomes of actions, while rational agents maximize expected outcomes based on available information."
+    },
+    {
+        "id": "q45",
+        "text": "Why would a rational agent sometimes gather information rather than immediately taking what seems like the best action?",
+        "options": [
+            "To reduce computational load",
+            "To appear more human-like",
+            "To improve future decision-making by reducing uncertainty",
+            "To comply with built-in ethical constraints"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Rational agents may choose information-gathering actions that reduce uncertainty, ultimately leading to better decisions and higher expected performance."
+    },
+    {
+        "id": "q46",
+        "text": "Which component of a learning agent is responsible for improving future performance based on feedback?",
+        "options": [
+            "Performance element",
+            "Critic",
+            "Learning element",
+            "Problem generator"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The learning element takes feedback from the critic and modifies the performance element to improve future performance."
+    },
+    {
+        "id": "q47",
+        "text": "What is the potential benefit of the exploratory actions suggested by the problem generator?",
+        "options": [
+            "Immediate performance improvement",
+            "Reduced computational requirements",
+            "Discovery of better long-term strategies",
+            "Simpler implementation of the agent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Exploratory actions may be suboptimal short-term but can lead to discovering better strategies and knowledge that improves long-term performance."
+    },
+    {
+        "id": "q48",
+        "text": "Which representation type would be most suitable for a natural language understanding agent?",
+        "options": [
+            "Atomic representation",
+            "Factored representation",
+            "Structured representation",
+            "Binary representation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Natural language understanding requires representing objects, their attributes, and relationships between them, making structured representation most appropriate."
+    },
+    {
+        "id": "q49",
+        "text": "What advantage does structured representation provide over factored representation?",
+        "options": [
+            "Faster processing speed",
+            "Ability to represent relational knowledge",
+            "Smaller memory footprint",
+            "Simpler learning algorithms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Structured representation can explicitly represent relationships between objects, enabling more expressive knowledge representation than factored representation."
+    },
+    {
+        "id": "q50",
+        "text": "Which algorithm is typically associated with structured representations?",
+        "options": [
+            "Hidden Markov Models",
+            "First-order logic inference",
+            "Constraint satisfaction",
+            "Bayesian networks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Structured representations work well with first-order logic, which can handle objects, relationships, and quantifiers in expressive knowledge representation."
+    },
+    {
+        "id": "q51",
+        "text": "In the YouTube recommendation agent described, what represents the agent's environment?",
+        "options": [
+            "The recommendation algorithm itself",
+            "User history, context, and video corpus",
+            "The display screen and user interface",
+            "The company's business objectives"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The environment includes user history, context, and the video corpus - the external elements that the agent perceives and acts upon."
+    },
+    {
+        "id": "q52",
+        "text": "What sensors might the Sophia robot use to perceive human emotional states?",
+        "options": [
+            "RGB cameras and microphone array",
+            "Speakers and display screens",
+            "Actuators and joint controllers",
+            "Wheels and mobility systems"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Sophia's cameras can perceive facial expressions and microphones can perceive vocal tone, both relevant for detecting human emotional states."
+    },
+    {
+        "id": "q53",
+        "text": "In Waymo's autonomous driving system, what role do lidar sensors play?",
+        "options": [
+            "Actuators for vehicle control",
+            "Sensors for environment perception",
+            "Processing units for decision making",
+            "Communication devices for vehicle-to-vehicle interaction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Lidar sensors are perception sensors that help the agent build a 3D model of the environment by measuring distances to objects."
+    },
+    {
+        "id": "q54",
+        "text": "Why is a medical diagnosis system typically considered to operate in a stochastic environment?",
+        "options": [
+            "Because doctors are unpredictable",
+            "Because medical outcomes have inherent uncertainty",
+            "Because symptoms can change rapidly",
+            "Because treatment effects vary by patient"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Medical diagnosis involves probabilistic relationships between symptoms and diseases, and uncertain treatment outcomes, making it stochastic."
+    },
+    {
+        "id": "q55",
+        "text": "What makes a part-picking robot's environment typically episodic?",
+        "options": [
+            "Each part is handled independently",
+            "The conveyor belt moves continuously",
+            "The robot must remember previous parts",
+            "Parts arrive in predictable patterns"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Each part can be processed independently - the handling of one part doesn't affect how subsequent parts are handled, making the environment episodic."
+    },
+    {
+        "id": "q56",
+        "text": "Why is a refinery controller's environment considered continuous rather than discrete?",
+        "options": [
+            "It operates 24/7 without interruption",
+            "Process variables like temperature and pressure are continuous",
+            "It controls multiple processes simultaneously",
+            "It requires constant human supervision"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Refinery processes involve continuous variables like temperature, pressure, and flow rates that change continuously over time."
+    },
+    {
+        "id": "q57",
+        "text": "What type of agent would be most appropriate for a chess-playing program?",
+        "options": [
+            "Simple reflex agent",
+            "Model-based reflex agent",
+            "Goal-based agent",
+            "Utility-based agent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Chess requires planning several moves ahead to achieve the goal of checkmating the opponent, making a goal-based agent most appropriate."
+    },
+    {
+        "id": "q58",
+        "text": "In a utility-based agent for poker playing, what would the utility function typically represent?",
+        "options": [
+            "The probability of winning the hand",
+            "The expected monetary value of decisions",
+            "The aesthetic quality of play",
+            "The speed of decision making"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In poker, a utility-based agent would typically use expected monetary value as its utility function to maximize long-term winnings."
+    },
+    {
+        "id": "q59",
+        "text": "What makes a recommendation system like Netflix's a multi-agent environment?",
+        "options": [
+            "It has multiple algorithms working together",
+            "Users' preferences affect each other through the system",
+            "It runs on multiple servers simultaneously",
+            "It recommends content from multiple providers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If users' preferences and behaviors influence each other through the recommendation system, then users can be considered agents in a multi-agent environment."
+    },
+    {
+        "id": "q60",
+        "text": "Why might a simple reflex agent be insufficient for a real-world cleaning robot?",
+        "options": [
+            "Because cleaning requires complex planning",
+            "Because the environment is partially observable (can't see under furniture)",
+            "Because users expect the robot to learn their preferences",
+            "Because cleaning involves multiple types of surfaces"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Real-world environments are typically partially observable (e.g., can't see dirt under furniture), requiring more sophisticated agents than simple reflex agents."
+    }
+]
