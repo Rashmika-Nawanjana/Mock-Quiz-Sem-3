@@ -6,108 +6,182 @@
     <title>Quiz Results</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #f5f5f5;
+            background-color: #0d1117;
+            color: #f0f6fc;
+            line-height: 1.5;
         }
         .results-container {
-            background: white;
+            background: #161b22;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+        .results-container h1 {
+            color: #f0f6fc;
+            margin: 0 0 16px 0;
+            font-size: 32px;
+            font-weight: 600;
+        }
+        .results-container h2 {
+            color: #f0f6fc;
+            margin: 0 0 24px 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .results-container h3 {
+            color: #f0f6fc;
+            margin: 32px 0 16px 0;
+            font-size: 18px;
+            font-weight: 600;
         }
         .score-summary {
             text-align: center;
-            padding: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 10px;
-            margin-bottom: 30px;
+            padding: 24px;
+            background: #238636;
+            color: #f0f6fc;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            border: 1px solid #2ea043;
         }
         .score-circle {
             font-size: 48px;
-            font-weight: bold;
-            margin: 10px 0;
+            font-weight: 600;
+            margin: 8px 0;
         }
         .grade {
-            font-size: 24px;
-            margin: 10px 0;
+            font-size: 20px;
+            margin: 8px 0;
+            font-weight: 500;
+        }
+        .score-summary p {
+            margin: 8px 0 0 0;
+            color: #f0f6fc;
         }
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 15px;
+            gap: 16px;
             margin: 20px 0;
         }
         .stat-item {
             text-align: center;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
+            padding: 16px;
+            background: #0d1117;
+            border-radius: 6px;
+            border: 1px solid #30363d;
         }
         .stat-number {
-            font-size: 24px;
-            font-weight: bold;
-            color: #667eea;
+            font-size: 20px;
+            font-weight: 600;
+            color: #58a6ff;
+            margin-bottom: 4px;
+        }
+        .stat-item div:last-child {
+            color: #8b949e;
+            font-size: 14px;
         }
         .question-review {
-            margin: 20px 0;
-            border: 1px solid #ddd;
+            margin: 16px 0;
+            border: 1px solid #30363d;
             border-radius: 8px;
             overflow: hidden;
+            background: #0d1117;
         }
         .question-header {
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #ddd;
-            font-weight: bold;
+            padding: 16px;
+            background-color: #161b22;
+            border-bottom: 1px solid #30363d;
+            font-weight: 600;
+            font-size: 14px;
+            color: #f0f6fc;
         }
         .question-content {
-            padding: 15px;
+            padding: 16px;
+        }
+        .question-content p {
+            margin: 0 0 16px 0;
+            color: #f0f6fc;
+        }
+        .question-content p:last-child {
+            margin-bottom: 0;
         }
         .correct {
-            border-left: 4px solid #28a745;
+            border-left: 4px solid #238636;
         }
         .incorrect {
-            border-left: 4px solid #dc3545;
+            border-left: 4px solid #da3633;
         }
         .answer-option {
             margin: 8px 0;
             padding: 8px 12px;
-            border-radius: 4px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
         }
         .user-answer {
-            background-color: #ffc107;
-            color: #000;
+            background-color: #7c3d00;
+            color: #f0f6fc;
+            border: 1px solid #a0570a;
         }
         .correct-answer {
-            background-color: #28a745;
-            color: white;
+            background-color: #0d4115;
+            color: #f0f6fc;
+            border: 1px solid #238636;
         }
         .actions {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid #30363d;
         }
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            margin: 0 10px;
-            background-color: #667eea;
-            color: white;
+            padding: 8px 16px;
+            margin: 0 8px 8px 0;
+            background-color: #21262d;
+            color: #f0f6fc;
             text-decoration: none;
             border-radius: 6px;
-            font-weight: bold;
+            font-weight: 500;
+            font-size: 14px;
+            border: 1px solid #30363d;
+            transition: all 0.2s ease;
         }
         .btn:hover {
-            background-color: #5a6fd8;
+            background-color: #30363d;
+            border-color: #8b949e;
+            text-decoration: none;
         }
         .btn-secondary {
-            background-color: #6c757d;
+            background-color: #21262d;
+            border-color: #30363d;
         }
         .btn-secondary:hover {
-            background-color: #545b62;
+            background-color: #30363d;
+            border-color: #8b949e;
+        }
+        
+        /* Error state styling */
+        .error-container {
+            text-align: center;
+            padding: 48px 24px;
+            background: #161b22;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+        }
+        .error-container h2 {
+            color: #da3633;
+            margin: 0 0 16px 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .error-container p {
+            color: #8b949e;
+            margin: 0;
         }
     </style>
 </head>
@@ -175,11 +249,11 @@
                     </div>
                 <% }); %>
             <% } else { %>
-                <p>No question results available.</p>
+                <p style="color: #8b949e; text-align: center; padding: 24px;">No question results available.</p>
             <% } %>
             
         <% } else { %>
-            <div style="text-align: center; padding: 50px;">
+            <div class="error-container">
                 <h2>Error: No Results Available</h2>
                 <p>There was an issue processing your quiz results.</p>
             </div>
