@@ -10,50 +10,51 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background-color: #0d1117;
-            color: #f0f6fc;
+            background-color: #f8fafc;
+            color: #1e293b;
             line-height: 1.5;
         }
         .quiz-container {
-            background: #161b22;
+            background: #ffffff;
             padding: 30px;
             border-radius: 8px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         .quiz-header {
             text-align: center;
             margin-bottom: 30px;
             padding-bottom: 20px;
-            border-bottom: 1px solid #30363d;
+            border-bottom: 1px solid #e2e8f0;
         }
         .quiz-header h1 {
-            color: #f0f6fc;
+            color: #1e293b;
             margin: 0 0 8px 0;
             font-size: 32px;
             font-weight: 600;
         }
         .quiz-header p {
-            color: #8b949e;
+            color: #64748b;
             margin: 0;
         }
         
         /* Progress Bar */
         .progress-container {
             margin: 20px 0;
-            background-color: #21262d;
+            background-color: #f1f5f9;
             border-radius: 6px;
             padding: 2px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
         }
         .progress-bar {
             height: 20px;
-            background: #238636;
+            background: #10b981;
             border-radius: 4px;
             transition: width 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #f0f6fc;
+            color: #ffffff;
             font-size: 12px;
             font-weight: 600;
             width: 0%;
@@ -64,9 +65,10 @@
             display: none;
             margin-bottom: 25px;
             padding: 24px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            background: #161b22;
+            background: #ffffff;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         .question-container.active {
             display: block;
@@ -85,7 +87,7 @@
         }
         
         .question-number {
-            color: #58a6ff;
+            color: #1e293b;
             font-weight: 600;
             font-size: 16px;
             margin-bottom: 16px;
@@ -96,31 +98,31 @@
         .question-text {
             font-size: 16px;
             margin-bottom: 20px;
-            color: #f0f6fc;
+            color: #334155;
             line-height: 1.6;
             font-weight: 400;
         }
         .option {
             margin: 8px 0;
             padding: 12px 16px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
             border-radius: 6px;
             transition: all 0.2s ease;
             cursor: pointer;
-            background: #0d1117;
+            background: #ffffff;
         }
         .option:hover {
-            border-color: #58a6ff;
-            background: #161b22;
+            border-color: #3b82f6;
+            background: #f8fafc;
         }
         .option.selected {
-            border-color: #238636;
-            background: #0d4115;
-            color: #f0f6fc;
+            border-color: #10b981;
+            background: #f0fdf4;
+            color: #1e293b;
         }
         .option input[type="radio"] {
             margin-right: 12px;
-            accent-color: #238636;
+            accent-color: #10b981;
         }
         .option label {
             cursor: pointer;
@@ -137,13 +139,13 @@
             align-items: center;
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid #30363d;
+            border-top: 1px solid #e2e8f0;
         }
         .nav-btn {
-            background: #21262d;
-            color: #f0f6fc;
+            background: #ffffff;
+            color: #1e293b;
             padding: 8px 16px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
             border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
@@ -152,30 +154,32 @@
             min-width: 120px;
         }
         .nav-btn:hover:not(:disabled) {
-            background: #30363d;
-            border-color: #8b949e;
+            background: #f8fafc;
+            border-color: #cbd5e1;
         }
         .nav-btn:disabled {
-            background: #21262d;
-            color: #484f58;
-            border-color: #30363d;
+            background: #f8fafc;
+            color: #94a3b8;
+            border-color: #e2e8f0;
             cursor: not-allowed;
         }
         .nav-btn.next {
-            background: #238636;
-            border-color: #238636;
+            background: #10b981;
+            border-color: #10b981;
+            color: #ffffff;
         }
         .nav-btn.next:hover:not(:disabled) {
-            background: #2ea043;
-            border-color: #2ea043;
+            background: #059669;
+            border-color: #059669;
         }
         .nav-btn.submit {
-            background: #da3633;
-            border-color: #da3633;
+            background: #ef4444;
+            border-color: #ef4444;
+            color: #ffffff;
         }
         .nav-btn.submit:hover:not(:disabled) {
-            background: #e5534b;
-            border-color: #e5534b;
+            background: #dc2626;
+            border-color: #dc2626;
         }
         
         /* Question Navigator */
@@ -193,8 +197,8 @@
             width: 28px;
             height: 28px;
             border-radius: 50%;
-            border: 1px solid #30363d;
-            background: #21262d;
+            border: 1px solid #e2e8f0;
+            background: #ffffff;
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -202,36 +206,37 @@
             font-size: 12px;
             font-weight: 500;
             transition: all 0.2s ease;
-            color: #8b949e;
+            color: #64748b;
         }
         .nav-dot:hover {
-            border-color: #58a6ff;
-            background: #161b22;
-            color: #f0f6fc;
+            border-color: #3b82f6;
+            background: #f8fafc;
+            color: #1e293b;
         }
         .nav-dot.current {
-            background: #58a6ff;
-            color: #f0f6fc;
-            border-color: #58a6ff;
+            background: #3b82f6;
+            color: #ffffff;
+            border-color: #3b82f6;
         }
         .nav-dot.answered {
-            background: #238636;
-            color: #f0f6fc;
-            border-color: #238636;
+            background: #10b981;
+            color: #ffffff;
+            border-color: #10b981;
         }
         
         .timer {
             position: fixed;
             top: 20px;
             right: 20px;
-            background: #21262d;
-            color: #f0f6fc;
+            background: #ffffff;
+            color: #1e293b;
             padding: 8px 12px;
             border-radius: 6px;
             font-weight: 500;
             font-size: 14px;
             z-index: 1000;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
         }
         
         /* Summary View */
@@ -239,22 +244,23 @@
             display: none;
             text-align: center;
             padding: 24px;
-            background: #161b22;
+            background: #ffffff;
             border-radius: 8px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
         .quiz-summary.active {
             display: block;
             animation: fadeInUp 0.5s ease;
         }
         .quiz-summary h2 {
-            color: #f0f6fc;
+            color: #1e293b;
             margin: 0 0 8px 0;
             font-size: 24px;
             font-weight: 600;
         }
         .quiz-summary p {
-            color: #8b949e;
+            color: #64748b;
             margin: 0 0 20px 0;
         }
         .summary-stats {
@@ -265,25 +271,25 @@
         }
         .stat-item {
             padding: 16px;
-            background: #0d1117;
+            background: #f8fafc;
             border-radius: 6px;
-            border: 1px solid #30363d;
+            border: 1px solid #e2e8f0;
         }
         .stat-number {
             font-size: 20px;
             font-weight: 600;
-            color: #58a6ff;
+            color: #3b82f6;
             margin-bottom: 4px;
         }
         .stat-item div:last-child {
-            color: #8b949e;
+            color: #64748b;
             font-size: 14px;
         }
         .submit-btn {
-            background: #da3633;
-            color: #f0f6fc;
+            background: #ef4444;
+            color: #ffffff;
             padding: 8px 24px;
-            border: 1px solid #da3633;
+            border: 1px solid #ef4444;
             border-radius: 6px;
             font-size: 14px;
             font-weight: 500;
@@ -292,18 +298,18 @@
             transition: all 0.2s ease;
         }
         .submit-btn:hover:not(:disabled) {
-            background: #e5534b;
-            border-color: #e5534b;
+            background: #dc2626;
+            border-color: #dc2626;
         }
         .submit-btn:disabled {
-            background: #21262d;
-            color: #484f58;
-            border-color: #30363d;
+            background: #f8fafc;
+            color: #94a3b8;
+            border-color: #e2e8f0;
             cursor: not-allowed;
         }
         
         #questionInfo {
-            color: #8b949e;
+            color: #64748b;
             font-size: 14px;
             font-weight: 500;
         }
@@ -315,7 +321,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(1, 4, 9, 0.8);
+            background: rgba(15, 23, 42, 0.7);
             backdrop-filter: blur(4px);
             display: flex;
             align-items: center;
@@ -332,13 +338,13 @@
         }
         
         .modal {
-            background: #161b22;
-            border: 1px solid #30363d;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 24px;
             max-width: 400px;
             width: 90%;
-            box-shadow: 0 16px 32px rgba(1, 4, 9, 0.32);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
             transform: scale(0.95) translateY(-10px);
             transition: all 0.3s ease;
         }
@@ -366,19 +372,19 @@
         }
         
         .modal-icon.warning {
-            background: #7c3d00;
-            color: #f0f6fc;
+            background: #fbbf24;
+            color: #1e293b;
         }
         
         .modal-title {
-            color: #f0f6fc;
+            color: #1e293b;
             font-size: 16px;
             font-weight: 600;
             margin: 0;
         }
         
         .modal-body {
-            color: #8b949e;
+            color: #64748b;
             font-size: 14px;
             line-height: 1.5;
             margin-bottom: 24px;
@@ -403,25 +409,25 @@
         }
         
         .modal-btn-primary {
-            background: #da3633;
-            border-color: #da3633;
-            color: #f0f6fc;
+            background: #ef4444;
+            border-color: #ef4444;
+            color: #ffffff;
         }
         
         .modal-btn-primary:hover {
-            background: #e5534b;
-            border-color: #e5534b;
+            background: #dc2626;
+            border-color: #dc2626;
         }
         
         .modal-btn-secondary {
-            background: #21262d;
-            border-color: #30363d;
-            color: #f0f6fc;
+            background: #ffffff;
+            border-color: #e2e8f0;
+            color: #1e293b;
         }
         
         .modal-btn-secondary:hover {
-            background: #30363d;
-            border-color: #8b949e;
+            background: #f8fafc;
+            border-color: #cbd5e1;
         }
     </style>
 </head>

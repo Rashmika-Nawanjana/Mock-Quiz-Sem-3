@@ -1,35 +1,36 @@
 :root {
-            --github-bg: #0d1117;
-            --github-secondary-bg: #161b22;
-            --github-border: #30363d;
-            --github-text: #e6edf3;
-            --github-text-secondary: #7d8590;
-            --github-green: #238636;
-            --github-green-hover: #2ea043;
-            --github-red: #da3633;
-            --github-red-hover: #f85149;
+            --light-bg: #f8fafc;
+            --light-secondary-bg: #ffffff;
+            --light-border: #e2e8f0;
+            --light-text: #1e293b;
+            --light-text-secondary: #64748b;
+            --light-green: #10b981;
+            --light-green-hover: #059669;
+            --light-red: #ef4444;
+            --light-red-hover: #dc2626;
         }
 
         body {
-            background-color: var(--github-bg);
-            color: var(--github-text);
+            background-color: var(--light-bg);
+            color: var(--light-text);
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
         }
 
         .navbar {
-            background-color: var(--github-secondary-bg) !important;
-            border-bottom: 1px solid var(--github-border);
+            background-color: var(--light-secondary-bg) !important;
+            border-bottom: 1px solid var(--light-border);
             padding: 1rem 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .navbar-brand {
-            color: var(--github-text) !important;
+            color: var(--light-text) !important;
             font-weight: 600;
             font-size: 1.25rem;
         }
 
         .navbar-nav .nav-link {
-            color: var(--github-text-secondary) !important;
+            color: var(--light-text-secondary) !important;
             padding: 0.5rem 1rem !important;
             border-radius: 6px;
             transition: all 0.2s;
@@ -38,12 +39,12 @@
 
         .navbar-nav .nav-link:hover,
         .navbar-nav .nav-link.active {
-            color: var(--github-text) !important;
-            background-color: var(--github-bg);
+            color: var(--light-text) !important;
+            background-color: var(--light-bg);
         }
 
         .main-container {
-            background-color: var(--github-bg);
+            background-color: var(--light-bg);
             min-height: calc(100vh - 120px);
             padding: 2rem 0;
         }
@@ -57,22 +58,23 @@
         }
 
         .module-header {
-            background-color: var(--github-secondary-bg);
-            border: 1px solid var(--github-border);
+            background-color: var(--light-secondary-bg);
+            border: 1px solid var(--light-border);
             border-radius: 6px;
             padding: 1.5rem;
             margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .module-title {
-            color: var(--github-text);
+            color: var(--light-text);
             font-size: 1.75rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
         }
 
         .module-description {
-            color: var(--github-text-secondary);
+            color: var(--light-text-secondary);
             font-size: 1rem;
         }
 
@@ -84,35 +86,37 @@
         }
 
         .quiz-card {
-            background-color: var(--github-secondary-bg);
-            border: 1px solid var(--github-border);
+            background-color: var(--light-secondary-bg);
+            border: 1px solid var(--light-border);
             border-radius: 6px;
             padding: 1.25rem;
             transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .quiz-card:hover {
-            border-color: var(--github-text-secondary);
+            border-color: var(--light-text-secondary);
             transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .quiz-title {
-            color: var(--github-text);
+            color: var(--light-text);
             font-weight: 600;
             font-size: 1.1rem;
             margin-bottom: 0.75rem;
         }
 
         .quiz-description {
-            color: var(--github-text-secondary);
+            color: var(--light-text-secondary);
             font-size: 0.9rem;
             margin-bottom: 1rem;
             line-height: 1.4;
         }
 
         .btn-quiz {
-            background-color: var(--github-green);
-            border: 1px solid var(--github-green);
+            background-color: var(--light-green);
+            border: 1px solid var(--light-green);
             color: white;
             padding: 0.5rem 1rem;
             border-radius: 6px;
@@ -126,66 +130,68 @@
         }
 
         .btn-quiz:hover {
-            background-color: var(--github-green-hover);
-            border-color: var(--github-green-hover);
+            background-color: var(--light-green-hover);
+            border-color: var(--light-green-hover);
             color: white;
             text-decoration: none;
         }
 
         .btn-quiz:disabled {
-            background-color: var(--github-text-secondary);
-            border-color: var(--github-text-secondary);
+            background-color: var(--light-text-secondary);
+            border-color: var(--light-text-secondary);
             cursor: not-allowed;
             opacity: 0.6;
         }
 
         .stats-card {
-            background-color: var(--github-secondary-bg);
-            border: 1px solid var(--github-border);
+            background-color: var(--light-secondary-bg);
+            border: 1px solid var(--light-border);
             border-radius: 6px;
             padding: 1rem;
             text-align: center;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .stats-number {
             font-size: 1.5rem;
             font-weight: 600;
-            color: var(--github-green);
+            color: var(--light-green);
         }
 
         .stats-label {
             font-size: 0.875rem;
-            color: var(--github-text-secondary);
+            color: var(--light-text-secondary);
         }
 
         .welcome-section {
             text-align: center;
             padding: 3rem 0;
-            background-color: var(--github-secondary-bg);
-            border: 1px solid var(--github-border);
+            background-color: var(--light-secondary-bg);
+            border: 1px solid var(--light-border);
             border-radius: 6px;
             margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
         }
 
         .welcome-title {
             font-size: 2.25rem;
             font-weight: 600;
             margin-bottom: 1rem;
-            color: var(--github-text);
+            color: var(--light-text);
         }
 
         .welcome-subtitle {
             font-size: 1.1rem;
-            color: var(--github-text-secondary);
+            color: var(--light-text-secondary);
             margin-bottom: 2rem;
         }
 
         .navbar-toggler {
-            border-color: var(--github-border);
+            border-color: var(--light-border);
         }
 
         .navbar-toggler-icon {
-            filter: invert(0.7);
+            filter: invert(0.3);
         }
 
         @media (max-width: 768px) {
@@ -197,5 +203,3 @@
                 font-size: 1.75rem;
             }
         }
-
-        
