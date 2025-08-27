@@ -1,0 +1,483 @@
+[
+    {
+        "id": "q1",
+        "text": "A function f(x) satisfies f(-x) = -f(x) for all x in its domain. What is the value of ∫ from -a to a of f(x) dx, where a > 0?",
+        "options": [
+            "2∫ from 0 to a of f(x) dx",
+            "0",
+            "∫ from -a to 0 of f(x) dx",
+            "Cannot be determined without knowing f(x)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "By Definition 2.2, such a function is odd. For an odd, piecewise continuous function, the integral from -a to a is zero due to symmetry about the origin."
+    },
+    {
+        "id": "q2",
+        "text": "Which of the following properties is true for the product of an even function and an odd function?",
+        "options": [
+            "The product is even.",
+            "The product is odd.",
+            "The product could be even or odd depending on the functions.",
+            "The product is neither even nor odd."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Theorem 2.4 states that the product of an even function and an odd function is an odd function."
+    },
+    {
+        "id": "q3",
+        "text": "Two distinct functions f and g are said to be orthogonal over an interval [a, b] if:",
+        "options": [
+            "f(x) * g(x) = 0 for all x in [a, b]",
+            "∫ from a to b of f(x) dx = ∫ from a to b of g(x) dx",
+            "∫ from a to b of f(x)g(x) dx = 0",
+            "f(x) = -g(x) for all x in [a, b]"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Definition 2.7 defines orthogonality by the integral of their product over the interval being zero."
+    },
+    {
+        "id": "q4",
+        "text": "For a 2π-periodic function, the Fourier coefficient a_n is given by:",
+        "options": [
+            "(1/π) ∫ from -π to π of f(x) sin(nx) dx",
+            "(1/π) ∫ from -π to π of f(x) dx",
+            "(1/π) ∫ from -π to π of f(x) cos(nx) dx",
+            "(1/(2π)) ∫ from -π to π of f(x) cos(nx) dx"
+        ],
+        "correctAnswer": 2,
+        "explanation": "As given in Definition 2.9, the formula for the cosine coefficient is a_n = (1/π) ∫ from -π to π of f(x) cos(nx) dx."
+    },
+    {
+        "id": "q5",
+        "text": "According to Dirichlet's Theorem, at a point of discontinuity x=c, the Fourier series of a function f converges to:",
+        "options": [
+            "f(c)",
+            "f(c+)",
+            "f(c-)",
+            "(f(c-) + f(c+)) / 2"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Theorem 2.13 (Dirichlet Theorem) states that at a point of discontinuity, the series converges to the average of the left-hand and right-hand limits."
+    },
+    {
+        "id": "q6",
+        "text": "For an odd function defined on [-π, π], which Fourier coefficients are necessarily zero?",
+        "options": [
+            "a_n only",
+            "b_n only",
+            "a_0 and a_n",
+            "a_0 and b_n"
+        ],
+        "correctAnswer": 2,
+        "correctAnswerIndex": 2,
+        "explanation": "For an odd function, the constant term a_0 and all cosine coefficients a_n are zero because their integrands (f(x) and f(x)cos(nx)) are odd functions. The sine coefficients b_n are generally non-zero."
+    },
+    {
+        "id": "q7",
+        "text": "To find the half-range cosine series for a function defined on [0, π], how must the function be extended to the interval [-π, π]?",
+        "options": [
+            "As an even function",
+            "As an odd function",
+            "Periodically",
+            "It does not need to be extended"
+        ],
+        "correctAnswer": 0,
+        "explanation": "As described in the 'Half-range Series' section, to obtain a cosine series, the function is extended as an even function. This results in b_n = 0."
+    },
+    {
+        "id": "q8",
+        "text": "The Fourier series of a function f(x) with period 2l is given by f(x) = a_0/2 + Σ [a_n cos(nπx/l) + b_n sin(nπx/l)]. What is the formula for b_n?",
+        "options": [
+            "(1/l) ∫ from -l to l of f(x) sin(nπx/l) dx",
+            "(1/π) ∫ from -l to l of f(x) sin(nπx/l) dx",
+            "(2/l) ∫ from 0 to l of f(x) sin(nπx/l) dx",
+            "(1/l) ∫ from 0 to l of f(x) sin(nπx/l) dx"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For the general period 2l, as defined in section 2.8, the coefficient is b_n = (1/l) ∫ from -l to l of f(x) sin(nπx/l) dx."
+    },
+    {
+        "id": "q9",
+        "text": "Parseval's formula for a 2c-periodic function f(x) states that ∫ from -c to c of [f(x)]² dx is equal to:",
+        "options": [
+            "c (a_0² + Σ (a_n² + b_n²))",
+            "c (a_0²/2 + Σ (a_n² + b_n²))",
+            "(c/2) (a_0² + Σ (a_n² + b_n²))",
+            "(c/2) (a_0²/2 + Σ (a_n² + b_n²))"
+        ],
+        "correctAnswer": 1,
+        "explanation": "As given in equation (2.5), Parseval's Formula is ∫ from -c to c [f(x)]² dx = c ( a_0²/2 + Σ (a_n² + b_n²) )."
+    },
+    {
+        "id": "q10",
+        "text": "In the complex form of the Fourier series for a 2π-periodic function, the coefficient c_n is given by:",
+        "options": [
+            "(1/(2π)) ∫ from -π to π of f(x) e^{-inx} dx",
+            "(1/π) ∫ from -π to π of f(x) e^{-inx} dx",
+            "(1/(2π)) ∫ from -π to π of f(x) cos(nx) dx",
+            "(1/π) ∫ from -π to π of f(x) e^{inx} dx"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The complex Fourier coefficient is defined as c_n = (1/(2π)) ∫ from -π to π of f(x) e^{-inx} dx."
+    },
+    {
+        "id": "q11",
+        "text": "For the function f(x) = x² defined on [-π, π] and made periodic, which statement about its Fourier series is true?",
+        "options": [
+            "It is a sine series because x² is an odd function.",
+            "It is a cosine series because x² is an even function.",
+            "It contains both sine and cosine terms.",
+            "It is a constant series."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The function f(x)=x² is even. As per section 2.6, the Fourier series of an even function is a cosine series (all b_n = 0)."
+    },
+    {
+        "id": "q12",
+        "text": "The Dirichlet conditions guarantee that the Fourier series of a function f:",
+        "options": [
+            "Converges absolutely everywhere.",
+            "Converges to f(x) at every point x.",
+            "Converges to f(x) at points of continuity and to the average of limits at jump discontinuities.",
+            "Has coefficients that decrease exponentially."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Theorem 2.13 lists the Dirichlet conditions as sufficient conditions for the series to converge to f(x) at points of continuity and to (f(c-)+f(c+))/2 at points of discontinuity."
+    },
+    {
+        "id": "q13",
+        "text": "What is the value of the integral ∫ from c to c+T of sin(2nπt/T) cos(2mπt/T) dt for integers m, n?",
+        "options": [
+            "T/2",
+            "T",
+            "0",
+            "Cannot be determined without c"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The list of useful integrals in section 2.2 includes this orthogonality relation: ∫ from c to c+T of sin(2nπt/T) cos(2mπt/T) dt = 0 for all integers m, n."
+    },
+    {
+        "id": "q14",
+        "text": "A function is defined piecewise on one period as f(x) = { 1 for 0<x<π; -1 for π<x<2π }. What is its period and what type of function is it?",
+        "options": [
+            "Period π, Even function",
+            "Period 2π, Odd function",
+            "Period 2π, Even function",
+            "Period 2π, Neither even nor odd"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The function is defined with period 2π. Checking symmetry: f(-x) = { -1 for -π<x<0; 1 for -2π<x<-π } which equals -{ 1 for 0<x<π; -1 for π<x<2π } = -f(x). Thus, it is an odd function."
+    },
+    {
+        "id": "q15",
+        "text": "When finding the Fourier series for a general period 2l, the argument of the trigonometric functions changes from nx to:",
+        "options": [
+            "nπx / l",
+            "2nπx / l",
+            "nx / l",
+            "nπx / (2l)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "As shown in equation (2.4), the Fourier series for a function with period 2l uses the harmonics cos(nπx/l) and sin(nπx/l)."
+    },
+    {
+        "id": "q16",
+        "text": "According to Parseval's formula, if the Fourier coefficients of a function are all zero, what must be true about the function on the interval (-c, c)?",
+        "options": [
+            "The function is constant.",
+            "The function is zero at every point.",
+            "The integral of the square of the function is zero.",
+            "The function is continuous."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Parseval's formula (2.5) equates the integral of [f(x)]² to a sum of squared coefficients. If all coefficients are zero, then ∫ from -c to c [f(x)]² dx = 0, which implies f(x) = 0 almost everywhere on the interval."
+    },
+    {
+        "id": "q17",
+        "text": "The complex Fourier coefficient c_n for a 2π-periodic function is related to the real coefficients a_n and b_n by:",
+        "options": [
+            "c_n = a_n + i b_n",
+            "c_n = (a_n - i b_n) / 2",
+            "c_n = (a_n + i b_n) / 2",
+            "c_n = a_n / 2"
+        ],
+        "correctAnswer": 1,
+        "explanation": "As derived in the 'Complex Form' section, the relationship is c_n = (a_n - i b_n) / 2 for n > 0."
+    },
+    {
+        "id": "q18",
+        "text": "For a half-range sine series expansion on [0, c], the extension of the function to [-c, c] must be:",
+        "options": [
+            "Even",
+            "Odd",
+            "Periodic",
+            "Constant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "To obtain a half-range sine series (containing only sin terms), the function is extended to the negative interval as an odd function. This forces a_0 and all a_n to be zero."
+    },
+    {
+        "id": "q19",
+        "text": "What is the fundamental period of the function g(x) = cos(2x) + sin(3x)?",
+        "options": [
+            "π",
+            "2π",
+            "6π",
+            "2π/3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The period of cos(2x) is π. The period of sin(3x) is 2π/3. The fundamental period of the sum is the least common multiple of these periods, which is 2π. (2π/π = 2, 2π/(2π/3)=3, both integers)."
+    },
+    {
+        "id": "q20",
+        "text": "The Fourier series representation of a function is primarily useful because it:",
+        "options": [
+            "Simplifies differentiation.",
+            "Represents a complex function as a sum of simpler sinusoidal components.",
+            "Always converges faster than a Taylor series.",
+            "Is easier to compute than other series."
+        ],
+        "correctAnswer": 1,
+        "explanation": "As stated in the chapter introduction, the key idea behind Fourier series is representing a complex function in terms of simpler sinusoidal components, which is powerful for analysis in many fields."
+    },
+    {
+        "id": "q21",
+        "text": "If a function f is both even and odd, what must be true?",
+        "options": [
+            "It must be constant.",
+            "It must be zero everywhere.",
+            "It must be periodic.",
+            "It must be differentiable."
+        ],
+        "correctAnswer": 1,
+        "explanation": "If f is even, f(-x)=f(x). If f is odd, f(-x)=-f(x). Combining these gives f(x) = -f(x) for all x, which implies 2f(x)=0, so f(x)=0 for all x."
+    },
+    {
+        "id": "q22",
+        "text": "The Fourier series of a continuous and smooth periodic function will typically have coefficients that decay:",
+        "options": [
+            "Not at all (remain constant)",
+            "Linearly (like 1/n)",
+            "Faster than 1/n (e.g., 1/n², exponentially)",
+            "Erratically"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The smoother a function is, the faster its Fourier coefficients tend to zero. A continuous, smooth function has coefficients that decay faster than 1/n (e.g., 1/n² for a once differentiable function, exponentially for analytic functions)."
+    },
+    {
+        "id": "q23",
+        "text": "For the piecewise function f(x) = { 0 for -π<x<0; x for 0<x<π } (period 2π), which coefficient formula is correct?",
+        "options": [
+            "a_0 = (1/π) ∫ from -π to π f(x) dx = (1/π) ∫ from 0 to π x dx",
+            "b_n = (1/π) ∫ from -π to π f(x) sin(nx) dx = (2/π) ∫ from 0 to π x sin(nx) dx",
+            "a_n = (1/π) ∫ from -π to π f(x) cos(nx) dx = 0",
+            "All of the above are potential simplifications based on the function's definition."
+        ],
+        "correctAnswer": 3,
+        "explanation": "Option A is correct because f(x)=0 on [-π,0]. Option B is correct because f(x)sin(nx) is even (0*sin(nx) is even on [-π,0] and x sin(nx) is even on [0,π]), allowing the simplification. Option C is false; f(x)cos(nx) is not odd, so a_n is not necessarily zero. Therefore, the correct choice is that A and B are valid simplifications."
+    },
+    {
+        "id": "q24",
+        "text": "The Gibbs phenomenon refers to:",
+        "options": [
+            "The failure of the Fourier series to converge for some functions.",
+            "Overshoots and oscillations of the Fourier series near a jump discontinuity, even as the number of terms increases.",
+            "The slow convergence of the Fourier series for functions with corners.",
+            "The error in calculating Fourier coefficients numerically."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Gibbs phenomenon is a specific behavior where the Fourier series overshoots and oscillates near a jump discontinuity in the function. This overshoot does not disappear but approaches a finite limit as more terms are added to the series."
+    },
+    {
+        "id": "q25",
+        "text": "The Fourier series expansion of the function f(x) = π - x on (0, 2π) will have:",
+        "options": [
+            "Only sine terms",
+            "Only cosine terms",
+            "Both sine and cosine terms",
+            "No terms (it's already a Fourier series)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The function f(x)=π-x on (0,2π) is neither even nor odd when considered with its periodic extension. Therefore, in general, its Fourier series will contain both a constant term, sine terms, and cosine terms."
+    },
+    {
+        "id": "q26",
+        "text": "If you want to analyze the frequency components of a non-sinusoidal voltage waveform in an AC circuit, the most appropriate mathematical tool is:",
+        "options": [
+            "Taylor series",
+            "Laurent series",
+            "Fourier series",
+            "Geometric series"
+        ],
+        "correctAnswer": 2,
+        "explanation": "As listed in the applications section (Signal Processing, Electrical Engineering), Fourier series is crucial for understanding and analyzing alternating current (AC) waveforms by breaking them down into their sinusoidal frequency components."
+    },
+    {
+        "id": "q27",
+        "text": "For a function defined on [0, L], the half-range cosine expansion and the half-range sine expansion will:",
+        "options": [
+            "Always be identical.",
+            "Always be different.",
+            "Converge to the same function on (0, L).",
+            "Converge to different functions on (0, L)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Both the half-range cosine and sine series converge to the original function f(x) on the open interval (0, L), provided appropriate conditions are met. They represent the same function on that interval but through different series (one with cosines, one with sines) due to different extensions outside [0, L]."
+    },
+    {
+        "id": "q28",
+        "text": "The value of the integral ∫ from -π to π of cos(4x) sin(5x) dx is:",
+        "options": [
+            "π",
+            "π/2",
+            "0",
+            "1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The functions cos(4x) and sin(5x) are orthogonal over the interval [-π, π] for all integers m, n, as per the orthogonality relations in section 2.2. Therefore, the integral of their product is zero."
+    },
+    {
+        "id": "q29",
+        "text": "A key difference between the complex form of the Fourier series and the real form is that the complex form:",
+        "options": [
+            "Is only valid for even functions.",
+            "Uses a single set of coefficients c_n for both positive and negative frequencies.",
+            "Is more difficult to compute.",
+            "Cannot represent functions with discontinuities."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The complex form elegantly combines the a_n and b_n coefficients into a single set of complex coefficients c_n, where n ranges over all integers (positive and negative), corresponding to positive and negative frequencies."
+    },
+    {
+        "id": "q30",
+        "text": "The process of finding the Fourier series of a function is essentially a:",
+        "options": [
+            "Interpolation problem.",
+            "Extrapolation problem.",
+            "Projection onto a basis of orthogonal functions.",
+            "Numerical integration problem."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Calculating Fourier coefficients involves integrating the product of the function and a basis function (sin, cos). This is analogous to projecting a vector onto an orthogonal basis; here the 'vectors' are functions and the 'dot product' is defined by the integral."
+    },
+    {
+        "id": "q31",
+        "text": "The function f(x) = sin(x) + cos(x) is:",
+        "options": [
+            "Even",
+            "Odd",
+            "Neither even nor odd",
+            "Both even and odd"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Check symmetry: f(-x) = sin(-x) + cos(-x) = -sin(x) + cos(x). This is not equal to f(x) = sin(x)+cos(x) (so not even) and not equal to -f(x) = -sin(x)-cos(x) (so not odd). Therefore, it is neither."
+    },
+    {
+        "id": "q32",
+        "text": "If a Fourier series has only sine terms, what can be concluded about the original function?",
+        "options": [
+            "It is an even function.",
+            "It is an odd function.",
+            "It is constant.",
+            "It is defined on [0, π]."
+        ],
+        "correctAnswer": 1,
+        "explanation": "If the Fourier series of a function contains only sine terms, this means all cosine coefficients (a_n) and the constant term (a_0) are zero. This is the characteristic of an odd function (when defined on a symmetric interval like [-L, L])."
+    },
+    {
+        "id": "q33",
+        "text": "The convergence of the Fourier series at a specific point depends on:",
+        "options": [
+            "The global behavior of the function.",
+            "The behavior of the function in an arbitrarily small neighborhood around that point.",
+            "The value of the function at all other points.",
+            "The period of the function."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A key consequence of the localization principle is that the convergence of the Fourier series at a point x depends only on the behavior of the function in an arbitrarily small neighborhood around x, not on its global behavior."
+    },
+    {
+        "id": "q34",
+        "text": "For a function with period T, the fundamental frequency ω₀ is:",
+        "options": [
+            "T",
+            "1/T",
+            "2π",
+            "2π/T"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The fundamental angular frequency is defined as ω₀ = 2π / T, where T is the period. The harmonics in the Fourier series are integer multiples of this frequency: nω₀ = 2πn / T."
+    },
+    {
+        "id": "q35",
+        "text": "The integral ∫ from -π to π of x³ cos(2x) dx for a 2π-periodic extension of f(x)=x³ on (-π, π) will be:",
+        "options": [
+            "Non-zero",
+            "Zero",
+            "π⁴/2",
+            "2π⁴"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The function x³ is odd. cos(2x) is even. The product of an odd and an even function is odd. The integral of an odd function over the symmetric interval [-π, π] is zero."
+    },
+    {
+        "id": "q36",
+        "text": "Parseval's identity is significant in signal processing because it:",
+        "options": [
+            "Allows calculation of the function's derivative from its coefficients.",
+            "Relates the total power of a signal to the sum of the powers of its frequency components.",
+            "Provides the fastest algorithm for computing Fourier coefficients.",
+            "Guarantees uniform convergence of the Fourier series."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Parseval's formula states that the total power (integral of the square) of a signal (function) is equal to the sum of the powers contained in each of its frequency components (squared magnitudes of the coefficients). This is a fundamental conservation of energy principle."
+    },
+    {
+        "id": "q37",
+        "text": "When extending a function defined on [0, L] to create a half-range expansion, the resulting periodic function on the whole real line:",
+        "options": [
+            "Is always continuous.",
+            "Is always smooth.",
+            "May have discontinuities or corners, depending on the original function and the type of extension.",
+            "Has a period of L."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The even or odd extension of a function defined only on [0, L] can introduce discontinuities at x=0 (for sine series/odd extension) or corners at x=0 (for cosine series/even extension), even if the original function was smooth on (0, L). The period becomes 2L."
+    },
+    {
+        "id": "q38",
+        "text": "The Fourier series representation is particularly advantageous over a power series (Taylor series) for representing:",
+        "options": [
+            "Analytic functions.",
+            "Polynomials.",
+            "Discontinuous periodic functions.",
+            "Exponential functions."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A power series requires the function to be analytic (infinitely differentiable) and fails to represent discontinuous functions or functions with corners well. Fourier series can accurately represent piecewise continuous periodic functions, including those with jumps."
+    },
+    {
+        "id": "q39",
+        "text": "The formula for the Fourier coefficient a_0 includes a factor of 1/2 in the series expansion (a_0/2) primarily to:",
+        "options": [
+            "Make the formula for a_0 consistent with the formula for a_n when n=0.",
+            "Ensure the series converges.",
+            "Simplify the calculation of the integral.",
+            "Make the function even."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The formula for a_n is (1/π)∫f(x)cos(nx)dx for n=0,1,2,... If you plug n=0 into this, you get a_0 = (1/π)∫f(x)dx. Including the 1/2 in the series expansion (a_0/2) makes this consistent, as the average value of the function over one period is given by (1/(2π))∫f(x)dx = a_0/2."
+    },
+    {
+        "id": "q40",
+        "text": "A 'low-pass filter' applied to a Fourier series would:",
+        "options": [
+            "Attenuate high-frequency components (large n).",
+            "Attenuate low-frequency components (small n).",
+            "Remove all sine terms.",
+            "Remove all cosine terms."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Filtering is a key application of Fourier analysis. A low-pass filter allows low frequencies (fundamental and lower harmonics, small n) to pass through while reducing the amplitude of high frequencies (higher harmonics, large n), smoothing out the signal."
+    }
+]
