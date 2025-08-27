@@ -1,0 +1,255 @@
+:root {
+            --primary: #5624d0;
+            --primary-light: #cec0fc;
+            --primary-gradient: linear-gradient(135deg, #5624d0 0%, #7e3ff2 100%);
+            --accent: #a435f0;
+            --accent-gradient: linear-gradient(135deg, #a435f0 0%, #c34cff 100%);
+            --background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --card-border: rgba(255, 255, 255, 0.9);
+            --card-shadow: rgba(0, 0, 0, 0.05);
+            --text-primary: #1c1d1f;
+            --text-secondary: #6a6f73;
+            --success: #0ca678;
+            --glow: rgba(86, 36, 208, 0.15);
+            --navbar-bg: rgba(255, 255, 255, 0.9);
+            --footer-bg: rgba(255, 255, 255, 0.9);
+            --btn-outline-bg: rgba(255, 255, 255, 0.85);
+            --btn-outline-border: rgba(255, 255, 255, 0.9);
+            --btn-outline-hover-bg: rgba(255, 255, 255, 0.95);
+            --btn-outline-hover-border: rgba(255, 255, 255, 0.95);
+            --backdrop-overlay-1: rgba(174, 136, 255, 0.1);
+            --backdrop-overlay-2: rgba(206, 192, 252, 0.15);
+            --github-secondary-bg: rgba(255, 255, 255, 0.9);
+            --github-border: rgba(225, 228, 232, 0.8);
+        }
+
+        /* Dark Theme Variables */
+        [data-theme="dark"] {
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+            --accent: #c084fc;
+            --accent-gradient: linear-gradient(135deg, #c084fc 0%, #d946ef 100%);
+            --background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+            --card-bg: rgba(30, 30, 50, 0.8);
+            --card-border: rgba(60, 60, 80, 0.6);
+            --card-shadow: rgba(0, 0, 0, 0.3);
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --success: #10b981;
+            --glow: rgba(124, 58, 237, 0.25);
+            --navbar-bg: rgba(15, 15, 35, 0.9);
+            --footer-bg: rgba(15, 15, 35, 0.9);
+            --btn-outline-bg: rgba(30, 30, 50, 0.85);
+            --btn-outline-border: rgba(60, 60, 80, 0.6);
+            --btn-outline-hover-bg: rgba(40, 40, 65, 0.95);
+            --btn-outline-hover-border: rgba(80, 80, 100, 0.8);
+            --backdrop-overlay-1: rgba(124, 58, 237, 0.15);
+            --backdrop-overlay-2: rgba(167, 139, 250, 0.1);
+            --github-secondary-bg: rgba(15, 15, 35, 0.9);
+            --github-border: rgba(60, 60, 80, 0.6);
+        }
+        
+
+        body {
+            font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background: 
+                radial-gradient(circle at 20% 30%, var(--backdrop-overlay-1) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, var(--backdrop-overlay-2) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: -1;
+            transition: background 0.3s ease;
+        }
+
+        .navbar-brand {
+            color: var(--text-primary) !important;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        /* Premium Theme Toggle Button */
+        .theme-toggle-container {
+            position: absolute;
+            top: 50%;
+            left: 2rem;
+            transform: translateY(-50%);
+        }
+
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            padding: 0.75rem 1rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 
+                0 5px 20px var(--card-shadow),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            height: 45px;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: all 0.6s ease;
+        }
+
+        [data-theme="dark"] .theme-toggle::before {
+            background: linear-gradient(90deg, transparent, rgba(124, 58, 237, 0.3), transparent);
+        }
+
+        .theme-toggle:hover {
+            box-shadow: 
+                0 8px 30px var(--glow),
+                0 0 0 1px var(--primary),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            border-color: var(--primary);
+        }
+
+        .theme-toggle:hover::before {
+            left: 100%;
+        }
+
+        .theme-toggle:active {
+            transition: transform 0.1s ease;
+        }
+
+        .theme-icon {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            margin-right: 0.5rem;
+        }
+
+        .theme-text {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .theme-toggle:hover .theme-icon {
+            color: var(--primary);
+            transform: rotate(180deg);
+        }
+
+        .theme-toggle:hover .theme-text {
+            color: var(--primary);
+        }
+
+        /* Icon rotation animation for theme switching */
+        .theme-icon.switching {
+            animation: themeSwitch 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes themeSwitch {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .theme-toggle-container {
+                left: 1rem;
+            }
+            
+            .theme-toggle {
+                padding: 0.6rem 0.8rem;
+                min-width: 80px;
+                height: 40px;
+            }
+            
+            .theme-text {
+                font-size: 0.8rem;
+            }
+            
+            .theme-icon {
+                font-size: 1rem;
+                margin-right: 0.4rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .theme-toggle {
+                min-width: 45px;
+                padding: 0.6rem;
+            }
+            
+            .theme-text {
+                display: none;
+            }
+            
+            .theme-icon {
+                margin-right: 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem !important;
+            }
+        }
+
+        /* Header container positioning */
+        .container {
+            position: relative;
+        }
+
+        /* Demo content for visualization */
+        .demo-content {
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .demo-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2rem;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 10px 35px var(--card-shadow);
+            margin: 1rem auto;
+            max-width: 500px;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card h3 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .demo-card p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }

@@ -1,4 +1,4 @@
-/* Premium CSS Variables */
+/* Premium CSS Variables - Light Theme */
 :root {
     --primary: #5624d0;
     --primary-light: #cec0fc;
@@ -16,7 +16,60 @@
     --warning: #f59f00;
     --danger: #fa5252;
     --glow: rgba(86, 36, 208, 0.15);
+    --backdrop-overlay-1: rgba(174, 136, 255, 0.15);
+    --backdrop-overlay-2: rgba(206, 192, 252, 0.2);
+    --timer-bg: rgba(255, 255, 255, 0.8);
+    --quiz-container-bg: rgba(255, 255, 255, 0.6);
+    --progress-bg: rgba(255, 255, 255, 0.5);
+    --nav-dot-bg: rgba(255, 255, 255, 0.7);
+    --option-bg: rgba(255, 255, 255, 0.6);
+    --option-hover-bg: rgba(255, 255, 255, 0.8);
+    --stat-item-bg: rgba(255, 255, 255, 0.6);
+    --prev-btn-bg: rgba(255, 255, 255, 0.7);
+    --prev-btn-hover-bg: rgba(255, 255, 255, 0.9);
+    --modal-bg: rgba(255, 255, 255, 0.8);
+    --modal-btn-secondary-bg: rgba(255, 255, 255, 0.7);
+    --modal-btn-secondary-hover-bg: rgba(255, 255, 255, 0.9);
+    --warning-bg: rgba(255, 249, 219, 0.7);
+    --border-top: rgba(255, 255, 255, 0.5);
 }
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --primary: #7c3aed;
+    --primary-light: #a78bfa;
+    --primary-gradient: linear-gradient(135deg, #7c3aed 0%, #9333ea 100%);
+    --accent: #c084fc;
+    --accent-gradient: linear-gradient(135deg, #c084fc 0%, #d946ef 100%);
+    --background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+    --card-bg: rgba(30, 30, 50, 0.7);
+    --card-border: rgba(60, 60, 80, 0.5);
+    --card-border-strong: rgba(80, 80, 100, 0.8);
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --success: #10b981;
+    --warning: #fbbf24;
+    --danger: #ef4444;
+    --glow: rgba(124, 58, 237, 0.25);
+    --backdrop-overlay-1: rgba(124, 58, 237, 0.15);
+    --backdrop-overlay-2: rgba(167, 139, 250, 0.1);
+    --timer-bg: rgba(30, 30, 50, 0.8);
+    --quiz-container-bg: rgba(30, 30, 50, 0.6);
+    --progress-bg: rgba(40, 40, 60, 0.5);
+    --nav-dot-bg: rgba(40, 40, 60, 0.7);
+    --option-bg: rgba(40, 40, 60, 0.6);
+    --option-hover-bg: rgba(50, 50, 70, 0.8);
+    --stat-item-bg: rgba(40, 40, 60, 0.6);
+    --prev-btn-bg: rgba(40, 40, 60, 0.7);
+    --prev-btn-hover-bg: rgba(50, 50, 70, 0.9);
+    --modal-bg: rgba(30, 30, 50, 0.9);
+    --modal-btn-secondary-bg: rgba(40, 40, 60, 0.7);
+    --modal-btn-secondary-hover-bg: rgba(50, 50, 70, 0.9);
+    --warning-bg: rgba(59, 45, 15, 0.7);
+    --border-top: rgba(60, 60, 80, 0.5);
+}
+
 
 /* Global Styles */
 body {
@@ -28,6 +81,7 @@ body {
     padding: 20px;
     min-height: 100vh;
     position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
 body::before {
@@ -38,10 +92,11 @@ body::before {
     right: 0;
     height: 100vh;
     background: 
-        radial-gradient(circle at 20% 30%, rgba(174, 136, 255, 0.15) 0%, transparent 40%),
-        radial-gradient(circle at 80% 70%, rgba(206, 192, 252, 0.2) 0%, transparent 40%);
+        radial-gradient(circle at 20% 30%, var(--backdrop-overlay-1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--backdrop-overlay-2) 0%, transparent 40%);
     pointer-events: none;
     z-index: -1;
+    transition: background 0.3s ease;
 }
 
 /* Timer */
@@ -49,30 +104,39 @@ body::before {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--timer-bg);
     backdrop-filter: blur(12px);
     padding: 12px 18px;
     border-radius: 12px;
     font-weight: 600;
     color: var(--primary);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 20px var(--card-shadow);
     z-index: 100;
     border: 1px solid var(--card-border-strong);
+    transition: all 0.3s ease;
 }
 
 /* Quiz Container */
 .quiz-container {
     max-width: 800px;
     margin: 60px auto 30px;
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--quiz-container-bg);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 30px;
     box-shadow: 
         0 15px 35px var(--card-shadow),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        0 0 0 1px rgba(255, 255, 255, 0.3);
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
     border: 1px solid var(--card-border-strong);
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .quiz-container {
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.5),
+        inset 0 1px 0 rgba(124, 58, 237, 0.1),
+        0 0 0 1px rgba(124, 58, 237, 0.1);
 }
 
 /* Quiz Header */
@@ -89,24 +153,27 @@ body::before {
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: color 0.3s ease;
 }
 
 .quiz-header p {
     color: var(--text-secondary);
     font-size: 1.1rem;
     margin-bottom: 25px;
+    transition: color 0.3s ease;
 }
 
 /* Progress Bar */
 .progress-container {
     width: 100%;
     height: 12px;
-    background: rgba(255, 255, 255, 0.5);
+    background: var(--progress-bg);
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
     border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
 }
 
 .progress-bar {
@@ -141,18 +208,19 @@ body::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--nav-dot-bg);
     border: 1px solid var(--card-border-strong);
     cursor: pointer;
     font-weight: 600;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px var(--card-shadow);
+    color: var(--text-primary);
 }
 
 .nav-dot:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(86, 36, 208, 0.2);
+    box-shadow: 0 4px 12px var(--glow);
     border-color: var(--primary-light);
 }
 
@@ -161,13 +229,18 @@ body::before {
     color: white;
     border-color: var(--primary);
     transform: scale(1.1);
-    box-shadow: 0 4px 15px rgba(86, 36, 208, 0.3);
+    box-shadow: 0 4px 15px var(--glow);
 }
 
 .nav-dot.answered {
     background: var(--primary-light);
     border-color: var(--primary);
-    box-shadow: 0 2px 8px rgba(86, 36, 208, 0.2);
+    box-shadow: 0 2px 8px var(--glow);
+    color: var(--primary);
+}
+
+[data-theme="dark"] .nav-dot.answered {
+    color: var(--text-primary);
 }
 
 /* Question Container */
@@ -188,6 +261,7 @@ body::before {
     font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .question-text {
@@ -196,6 +270,7 @@ body::before {
     margin-bottom: 25px;
     line-height: 1.5;
     color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 /* Options */
@@ -203,20 +278,21 @@ body::before {
     display: block;
     padding: 15px 20px;
     margin-bottom: 12px;
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--option-bg);
     border: 1px solid var(--card-border-strong);
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 1.1rem;
     backdrop-filter: blur(5px);
+    color: var(--text-primary);
 }
 
 .option:hover {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--option-hover-bg);
     transform: translateX(5px);
     border-color: var(--primary-light);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .option.selected {
@@ -224,7 +300,11 @@ body::before {
     border-color: var(--primary);
     color: var(--primary);
     font-weight: 600;
-    box-shadow: 0 4px 15px rgba(86, 36, 208, 0.2);
+    box-shadow: 0 4px 15px var(--glow);
+}
+
+[data-theme="dark"] .option.selected {
+    color: var(--text-primary);
 }
 
 .option input[type="radio"] {
@@ -247,12 +327,14 @@ body::before {
     font-size: 2rem;
     margin-bottom: 10px;
     color: var(--text-primary);
+    transition: color 0.3s ease;
 }
 
 .quiz-summary p {
     color: var(--text-secondary);
     margin-bottom: 30px;
     font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
 .summary-stats {
@@ -263,12 +345,13 @@ body::before {
 }
 
 .stat-item {
-    background: rgba(255, 255, 255, 0.6);
+    background: var(--stat-item-bg);
     padding: 20px;
     border-radius: 12px;
     border: 1px solid var(--card-border-strong);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px var(--card-shadow);
+    transition: all 0.3s ease;
 }
 
 .stat-number {
@@ -287,7 +370,8 @@ body::before {
     align-items: center;
     margin-top: 30px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-top: 1px solid var(--border-top);
+    transition: border-color 0.3s ease;
 }
 
 .nav-btn {
@@ -318,14 +402,14 @@ body::before {
 }
 
 #prevBtn {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--prev-btn-bg);
     color: var(--text-primary);
     border: 1px solid var(--card-border-strong);
 }
 
 #prevBtn:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background: var(--prev-btn-hover-bg);
+    box-shadow: 0 4px 15px var(--card-shadow);
 }
 
 .nav-btn.next {
@@ -336,7 +420,11 @@ body::before {
 
 .nav-btn.next:hover:not(:disabled) {
     background: var(--accent-gradient);
-    box-shadow: 0 4px 20px rgba(162, 53, 240, 0.4);
+    box-shadow: 0 4px 20px var(--glow);
+}
+
+[data-theme="dark"] .nav-btn.next:hover:not(:disabled) {
+    box-shadow: 0 4px 20px rgba(192, 132, 252, 0.4);
 }
 
 .nav-btn.submit {
@@ -353,6 +441,7 @@ body::before {
 #questionInfo {
     font-weight: 600;
     color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 /* Submit Button */
@@ -383,6 +472,10 @@ body::before {
     box-shadow: none;
 }
 
+[data-theme="dark"] .submit-btn:disabled {
+    background: #555;
+}
+
 /* Modal */
 .modal-overlay {
     position: fixed;
@@ -401,25 +494,36 @@ body::before {
     transition: all 0.3s ease;
 }
 
+[data-theme="dark"] .modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
 .modal-overlay.active {
     opacity: 1;
     visibility: visible;
 }
 
 .modal {
-    background: rgba(255, 255, 255, 0.8);
+    background: var(--modal-bg);
     backdrop-filter: blur(20px);
     border-radius: 20px;
     padding: 30px;
     width: 90%;
     max-width: 500px;
     box-shadow: 
-        0 20px 40px rgba(0, 0, 0, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8),
-        0 0 0 1px rgba(255, 255, 255, 0.3);
+        0 20px 40px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
     border: 1px solid var(--card-border-strong);
     transform: translateY(20px);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .modal {
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.6),
+        inset 0 1px 0 rgba(124, 58, 237, 0.1),
+        0 0 0 1px rgba(124, 58, 237, 0.1);
 }
 
 .modal-overlay.active .modal {
@@ -444,11 +548,12 @@ body::before {
     font-size: 1.2rem;
     backdrop-filter: blur(5px);
     border: 1px solid var(--card-border);
+    transition: all 0.3s ease;
 }
 
 .modal-icon.warning {
-    background: rgba(255, 249, 219, 0.7);
-    color: #f59f00;
+    background: var(--warning-bg);
+    color: var(--warning);
 }
 
 .modal-title {
@@ -456,6 +561,7 @@ body::before {
     font-weight: 700;
     color: var(--text-primary);
     margin: 0;
+    transition: color 0.3s ease;
 }
 
 .modal-body {
@@ -463,6 +569,7 @@ body::before {
     font-size: 1.1rem;
     line-height: 1.5;
     color: var(--text-secondary);
+    transition: color 0.3s ease;
 }
 
 .modal-actions {
@@ -483,14 +590,14 @@ body::before {
 }
 
 .modal-btn-secondary {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--modal-btn-secondary-bg);
     color: var(--text-primary);
     border: 1px solid var(--card-border-strong);
 }
 
 .modal-btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background: var(--modal-btn-secondary-hover-bg);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .modal-btn-primary {
@@ -501,7 +608,11 @@ body::before {
 
 .modal-btn-primary:hover {
     background: var(--accent-gradient);
-    box-shadow: 0 4px 15px rgba(162, 53, 240, 0.3);
+    box-shadow: 0 4px 15px var(--glow);
+}
+
+[data-theme="dark"] .modal-btn-primary:hover {
+    box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
 }
 
 /* Animations */
@@ -595,4 +706,66 @@ body::before {
     .modal-body {
         font-size: 1rem;
     }
+}
+
+/* Modal z-index fix - add this to the end of quize-styles.css */
+.modal-overlay {
+    z-index: 99999 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+}
+
+.modal {
+    z-index: 100000 !important;
+    position: relative !important;
+}
+
+/* Ensure other elements don't interfere */
+.theme-toggle-container {
+    z-index: 10 !important;
+}
+
+header {
+    z-index: 50 !important;
+    position: relative !important;
+}
+
+.timer {
+    z-index: 100 !important;
+}
+
+/* Debugging styles - remove after fixing */
+.modal-overlay.active {
+    background: rgba(15, 15, 35, 0.4) !important;
+    backdrop-filter: blur(15px) !important;
+}
+
+.modal-overlay.active .modal {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--card-border) !important;
+    border-radius: 20px !important;
+    min-height: 200px !important;
+    display: block !important;
+    backdrop-filter: blur(15px) !important;
+    box-shadow: 
+        0 20px 50px var(--card-shadow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.modal-overlay.active .modal::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 2px solid transparent;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(240, 240, 240, 0.6) 100%);
+    z-index: -1;
 }

@@ -1,9 +1,75 @@
- <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border);">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Quiz Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/header.css">
+</head>
+<body>
+    <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border); transition: background-color 0.3s ease, border-color 0.3s ease;">
         <div class="container">
             <div class="text-center">
                 <h1 class="navbar-brand mb-0" style="font-size: 2rem;">
                     <i class="fas fa-graduation-cap me-2"></i>Mock Quiz Hub
                 </h1>
             </div>
+            
+            <!-- Premium Theme Toggle Button -->
+            <div class="theme-toggle-container">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="theme-icon fas fa-moon" id="themeIcon"></i>
+                    <span class="theme-text" id="themeText">Dark</span>
+                </button>
+            </div>
         </div>
     </header>
+
+    <!-- Demo content to showcase theme switching -->
+    
+
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const themeText = document.getElementById('themeText');
+        const body = document.body;
+
+        // Check for saved theme preference or default to light
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Apply saved theme on load
+        if (currentTheme === 'dark') {
+            body.setAttribute('data-theme', 'dark');
+            themeIcon.className = 'theme-icon fas fa-sun';
+            themeText.textContent = 'Light';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const isDark = body.getAttribute('data-theme') === 'dark';
+            
+            // Add switching animation
+            themeIcon.classList.add('switching');
+            
+            // Toggle theme
+            if (isDark) {
+                body.removeAttribute('data-theme');
+                themeIcon.className = 'theme-icon fas fa-moon';
+                themeText.textContent = 'Dark';
+                localStorage.setItem('theme', 'light');
+            } else {
+                body.setAttribute('data-theme', 'dark');
+                themeIcon.className = 'theme-icon fas fa-sun';
+                themeText.textContent = 'Light';
+                localStorage.setItem('theme', 'dark');
+            }
+
+            // Remove animation class after animation completes
+            setTimeout(() => {
+                themeIcon.classList.remove('switching');
+            }, 600);
+        });
+    </script>
+</body>
+</html>
