@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary difference between problem-solving agents and knowledge-based agents?",
+        "options": [
+            "Problem-solving agents use logic while knowledge-based agents use search",
+            "Knowledge-based agents maintain explicit representations of the world and can adapt to changes",
+            "Problem-solving agents are faster but less accurate than knowledge-based agents",
+            "Knowledge-based agents only work in fully observable environments"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Knowledge-based agents maintain explicit representations of the world, can be told or learn new information quickly, and adapt to environmental changes, unlike problem-solving agents that execute given solutions."
+    },
+    {
+        "id": "q2",
+        "text": "Which type of representation treats states as black boxes with no internal structure?",
+        "options": [
+            "Factored representation",
+            "Structured representation",
+            "Atomic representation",
+            "Relational representation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Atomic representation treats each state as a complete, unanalyzed whole with no internal structure available to the agent."
+    },
+    {
+        "id": "q3",
+        "text": "In knowledge-based agents, what does the KB (Knowledge Base) primarily contain?",
+        "options": [
+            "Sensor data and actuator commands",
+            "A set of sentences written in a knowledge representation language",
+            "Neural network weights and parameters",
+            "Statistical models of the environment"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Knowledge Base contains a set of sentences written in a knowledge representation language, which may include axioms and derived knowledge."
+    },
+    {
+        "id": "q4",
+        "text": "What are the two main operations performed on a Knowledge Base?",
+        "options": [
+            "PERCEIVE and ACT",
+            "TELL and ASK",
+            "LEARN and INFER",
+            "SENSE and REASON"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The main operations are TELL (add new information to the KB) and ASK (retrieve information from the KB), both of which involve inference."
+    },
+    {
+        "id": "q5",
+        "text": "In the Wumpus World environment, why is it considered partially observable?",
+        "options": [
+            "Because the agent has limited memory capacity",
+            "Because the agent can only sense immediate surroundings",
+            "Because the environment changes randomly",
+            "Because multiple agents compete in the same world"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Wumpus World is partially observable because the agent can only perceive its immediate surroundings (adjacent rooms), not the entire environment."
+    },
+    {
+        "id": "q6",
+        "text": "Which property makes the Wumpus World deterministic?",
+        "options": [
+            "The agent's actions always have predictable outcomes",
+            "The Wumpus moves in predictable patterns",
+            "Pits are arranged in fixed locations",
+            "The result and end of the world are already known"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Wumpus World is deterministic because the outcomes of actions are predictable and the end state is determined by fixed rules."
+    },
+    {
+        "id": "q7",
+        "text": "What does the stench percept indicate in the Wumpus World?",
+        "options": [
+            "A pit is nearby",
+            "Gold is in an adjacent square",
+            "The Wumpus is in an adjacent square",
+            "The agent is in danger"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A stench percept indicates that the Wumpus is in an adjacent square, helping the agent locate and avoid the Wumpus."
+    },
+    {
+        "id": "q8",
+        "text": "What does the breeze percept signal in the Wumpus World?",
+        "options": [
+            "The Wumpus is nearby",
+            "A pit is in an adjacent square",
+            "Gold is close",
+            "The exit is near"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A breeze percept indicates that there is at least one pit in an adjacent square, warning the agent of potential danger."
+    },
+    {
+        "id": "q9",
+        "text": "In logic, what does semantics refer to?",
+        "options": [
+            "The grammatical structure of sentences",
+            "The truth of sentences with respect to possible worlds",
+            "The inference rules used to derive conclusions",
+            "The efficiency of logical reasoning algorithms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Semantics defines the truth of sentences with respect to each possible world (model), where each sentence is either true or false."
+    },
+    {
+        "id": "q10",
+        "text": "What is a model in logical terms?",
+        "options": [
+            "A simplified representation of a complex system",
+            "An abstraction where each sentence is either true or false",
+            "A mathematical formula for inference",
+            "A type of knowledge representation language"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A model is a possible world abstraction where each sentence has a definite truth value (either true or false)."
+    },
+    {
+        "id": "q11",
+        "text": "What does the notation M(α) represent?",
+        "options": [
+            "The meaning of sentence α",
+            "The set of all models that satisfy sentence α",
+            "The inference rules applicable to α",
+            "The complexity of evaluating α"
+        ],
+        "correctAnswer": 1,
+        "explanation": "M(α) represents the set of all models in which sentence α is true, i.e., all models that satisfy α."
+    },
+    {
+        "id": "q12",
+        "text": "What does logical entailment (α ⊨ β) mean?",
+        "options": [
+            "α can be derived from β using inference rules",
+            "β is a more specific version of α",
+            "In every model where α is true, β is also true",
+            "α and β are logically equivalent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "α ⊨ β means that in every model (possible world) where sentence α is true, sentence β is also necessarily true."
+    },
+    {
+        "id": "q13",
+        "text": "How is logical entailment related to model sets?",
+        "options": [
+            "α ⊨ β if and only if M(α) = M(β)",
+            "α ⊨ β if and only if M(α) ⊇ M(β)",
+            "α ⊨ β if and only if M(α) ⊆ M(β)",
+            "α ⊨ β if and only if M(α) ∩ M(β) = ∅"
+        ],
+        "correctAnswer": 2,
+        "explanation": "α ⊨ β if and only if the set of models where α is true is a subset of the set of models where β is true (M(α) ⊆ M(β))."
+    },
+    {
+        "id": "q14",
+        "text": "What is model checking in logical inference?",
+        "options": [
+            "Verifying that a knowledge base is consistent",
+            "Enumerating all possible models to check sentence truth",
+            "Testing different inference algorithms for efficiency",
+            "Validating the syntax of logical sentences"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Model checking involves enumerating all possible models to verify that a sentence is true in all models where the knowledge base is true."
+    },
+    {
+        "id": "q15",
+        "text": "When is model checking computationally feasible?",
+        "options": [
+            "When the knowledge base uses propositional logic",
+            "When the space of possible models is finite",
+            "When using first-order logic with few variables",
+            "When inference rules are simple and limited"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Model checking is computationally feasible when the space of possible models is finite, as exhaustive enumeration becomes possible."
+    },
+    {
+        "id": "q16",
+        "text": "What does it mean for an inference algorithm to be sound?",
+        "options": [
+            "It can derive all true sentences from the KB",
+            "It only derives sentences that are entailed by the KB",
+            "It works efficiently on large knowledge bases",
+            "It can handle both certain and uncertain knowledge"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A sound inference algorithm only derives sentences that are entailed by the knowledge base (truth-preserving)."
+    },
+    {
+        "id": "q17",
+        "text": "What does it mean for an inference algorithm to be complete?",
+        "options": [
+            "It can derive any sentence that is entailed by the KB",
+            "It always terminates with an answer",
+            "It handles all types of logical expressions",
+            "It works with both propositional and first-order logic"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A complete inference algorithm can derive any sentence that is entailed by the knowledge base."
+    },
+    {
+        "id": "q18",
+        "text": "What is the grounding problem in knowledge representation?",
+        "options": [
+            "Connecting symbolic representations to real-world aspects",
+            "Simplifying complex logical expressions",
+            "Converting between different knowledge representation formats",
+            "Making abstract concepts more concrete and understandable"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Grounding involves connecting symbolic representations in the knowledge base to actual aspects of the real world that they represent."
+    },
+    {
+        "id": "q19",
+        "text": "Why is the Wumpus World considered sequential?",
+        "options": [
+            "Because actions must be performed in a specific order",
+            "Because the agent's previous actions affect future options",
+            "Because the environment has a time-based component",
+            "Because percepts arrive in a sequence over time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Wumpus World is sequential because the order of actions matters - previous actions affect future possibilities and outcomes."
+    },
+    {
+        "id": "q20",
+        "text": "What makes the Wumpus World a static environment?",
+        "options": [
+            "The Wumpus and pits do not move during the game",
+            "The agent's knowledge base remains unchanged",
+            "The environment rules are fixed and unchangeable",
+            "Percepts are received at fixed time intervals"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Wumpus World is static because the Wumpus and pits remain stationary - they do not move while the agent is deliberating."
+    },
+    {
+        "id": "q21",
+        "text": "Which percept would indicate that the agent has found the gold?",
+        "options": [
+            "Stench",
+            "Breeze",
+            "Glitter",
+            "Scream"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A glitter percept indicates that the gold is in the current square, meaning the agent has found it."
+    },
+    {
+        "id": "q22",
+        "text": "What does the scream percept indicate?",
+        "options": [
+            "The Wumpus has been killed",
+            "The agent has fallen into a pit",
+            "Gold has been collected",
+            "Another agent is in danger"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A scream percept indicates that the Wumpus has been killed, typically when the agent shoots the arrow successfully."
+    },
+    {
+        "id": "q23",
+        "text": "In the KB-agent algorithm, what does the MAKE-PERCEPT-SENTENCE function do?",
+        "options": [
+            "Converts percepts into logical sentences to add to the KB",
+            "Translates between different sensor formats",
+            "Filters noisy or unreliable percept data",
+            "Creates action commands based on current percepts"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MAKE-PERCEPT-SENTENCE converts raw percept data into logical sentences that can be added to the knowledge base using TELL."
+    },
+    {
+        "id": "q24",
+        "text": "What is the purpose of the MAKE-ACTION-QUERY function in the KB-agent?",
+        "options": [
+            "To generate possible actions for the agent to consider",
+            "To formulate a query asking what action to take at time t",
+            "To evaluate the consequences of different actions",
+            "To learn from past action outcomes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "MAKE-ACTION-QUERY formulates a query that asks the knowledge base what action should be taken at the current time t."
+    },
+    {
+        "id": "q25",
+        "text": "What does the MAKE-ACTION-SENTENCE function do?",
+        "options": [
+            "Converts action commands into actuator signals",
+            "Creates a sentence recording the action taken for the KB",
+            "Generates alternative action sequences for planning",
+            "Evaluates the utility of different possible actions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "MAKE-ACTION-SENTENCE creates a logical sentence that records the action taken, which is then added to the knowledge base."
+    },
+    {
+        "id": "q26",
+        "text": "Which real-world application is mentioned as similar to the Wumpus World problem?",
+        "options": [
+            "Natural language processing systems",
+            "Autonomous vehicles and robotics",
+            "Financial trading algorithms",
+            "Medical diagnosis systems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Wumpus World problem has similarities to designing intelligent agents for autonomous vehicles, robotics, and game creation."
+    },
+    {
+        "id": "q27",
+        "text": "What is an axiom in a knowledge base?",
+        "options": [
+            "A self-evident truth that requires no proof",
+            "A derived conclusion from existing knowledge",
+            "A temporary assumption for reasoning",
+            "A rule for converting between representations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "An axiom is a fundamental statement that is accepted as true without proof, serving as a starting point for reasoning."
+    },
+    {
+        "id": "q28",
+        "text": "In factored representation, how is knowledge organized?",
+        "options": [
+            "As objects with relationships between them",
+            "As assignment of values to variables",
+            "As complete states without internal structure",
+            "As probabilistic distributions of features"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Factored representation organizes knowledge as assignments of values to variables, providing more structure than atomic representation."
+    },
+    {
+        "id": "q29",
+        "text": "What distinguishes structured representation from factored representation?",
+        "options": [
+            "Structured representation includes objects and relations between them",
+            "Factored representation is more expressive than structured representation",
+            "Structured representation uses only binary variables",
+            "Factored representation handles uncertainty better"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Structured representation includes objects with attributes and explicit relationships between objects, making it more expressive than factored representation."
+    },
+    {
+        "id": "q30",
+        "text": "Why is the Wumpus World considered a single-agent environment?",
+        "options": [
+            "Because only one agent can play at a time",
+            "Because the Wumpus is not considered an agent",
+            "Because the environment rules support only one agent",
+            "Because percepts are designed for single-agent processing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Wumpus World is single-agent because the Wumpus is not considered an agent (it doesn't have goals or perform strategic actions)."
+    },
+    {
+        "id": "q31",
+        "text": "What is the significance of the 'OK' symbol in the Wumpus World grid?",
+        "options": [
+            "The square contains gold",
+            "The square is safe to enter",
+            "The agent has visited this square",
+            "The square contains a pit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'OK' symbol indicates that a square is safe to enter (no pit or Wumpus present)."
+    },
+    {
+        "id": "q32",
+        "text": "What does the 'V' symbol represent in the Wumpus World grid?",
+        "options": [
+            "The square contains a pit",
+            "The agent has visited this square",
+            "The Wumpus is in this square",
+            "The square is ventilated (safe)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'V' symbol indicates that the agent has previously visited this square."
+    },
+    {
+        "id": "q33",
+        "text": "In the context of logical agents, what does 'knowledge level' refer to?",
+        "options": [
+            "The amount of information stored in the knowledge base",
+            "The abstract specification of what the agent knows and what its goals are",
+            "The complexity of the inference algorithms used",
+            "The hierarchy of concepts in the knowledge representation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The knowledge level refers to the abstract specification of what the agent knows (world representation) and what its goals are, separate from implementation details."
+    },
+    {
+        "id": "q34",
+        "text": "What is the relationship between implementation level and knowledge level?",
+        "options": [
+            "They are identical concepts",
+            "Implementation level specifies how knowledge is represented and processed",
+            "Knowledge level deals with hardware details while implementation level deals with software",
+            "Implementation level is more abstract than knowledge level"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The implementation level specifies how knowledge is represented and processed in the system, while the knowledge level deals with what the agent knows and wants."
+    },
+    {
+        "id": "q35",
+        "text": "Why is inference necessary in knowledge-based agents?",
+        "options": [
+            "To convert between different knowledge representation formats",
+            "To derive new information from existing knowledge",
+            "To optimize the storage of knowledge in the KB",
+            "To communicate with other agents effectively"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Inference is necessary to derive new information (conclusions) from the existing knowledge in the KB, enabling the agent to make informed decisions."
+    },
+    {
+        "id": "q36",
+        "text": "What is the fundamental principle behind sound inference?",
+        "options": [
+            "Efficiency: deriving conclusions quickly",
+            "Completeness: deriving all possible conclusions",
+            "Truth preservation: only deriving entailed sentences",
+            "Robustness: handling inconsistent knowledge"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Sound inference ensures truth preservation - only sentences that are logically entailed by the KB are derived."
+    },
+    {
+        "id": "q37",
+        "text": "In the Wumpus World, what can the agent infer if it perceives a breeze in square [1,1]?",
+        "options": [
+            "There is a pit in [1,1]",
+            "There is at least one pit in {[1,2], [2,1]}",
+            "The Wumpus is nearby",
+            "Gold is in an adjacent square"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A breeze indicates at least one pit in adjacent squares. From [1,1], the adjacent squares are [1,2] and [2,1]."
+    },
+    {
+        "id": "q38",
+        "text": "What can the agent infer if it perceives stench but no breeze in a square?",
+        "options": [
+            "The Wumpus is in an adjacent square and no pits are nearby",
+            "Both Wumpus and pit are in adjacent squares",
+            "The agent is safe from pits but not from Wumpus",
+            "The percept sensors are malfunctioning"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Stench without breeze suggests the Wumpus is in an adjacent square but no pits are in adjacent squares."
+    },
+    {
+        "id": "q39",
+        "text": "Why is theorem proving mentioned as an alternative to model checking?",
+        "options": [
+            "Theorem proving is always faster than model checking",
+            "Model checking doesn't work for propositional logic",
+            "Theorem proving can handle infinite model spaces",
+            "Model checking requires complete knowledge of all models"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Theorem proving can handle cases where the model space is infinite, unlike model checking which requires finite model spaces."
+    },
+    {
+        "id": "q40",
+        "text": "What is the key insight behind the statement 'if KB is true in the real world, then any sentence derived by sound inference is also true'?",
+        "options": [
+            "Sound inference preserves truth from premises to conclusions",
+            "All knowledge bases accurately represent the real world",
+            "Inference algorithms are perfect and never make errors",
+            "The real world always matches our models exactly"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This statement captures the essence of sound inference: if the premises (KB) are true and the inference is sound, the conclusions must also be true."
+    },
+    {
+        "id": "q41",
+        "text": "In the Wumpus World, why might an agent need to use logical inference?",
+        "options": [
+            "To determine safe squares to move to based on percept patterns",
+            "To calculate optimal paths through the grid",
+            "To communicate with the Wumpus",
+            "To predict random environmental changes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The agent uses logical inference to deduce which squares are safe (no pit or Wumpus) based on patterns of stench and breeze percepts."
+    },
+    {
+        "id": "q42",
+        "text": "What is the primary challenge in developing a knowledge-based agent for environments like the Wumpus World?",
+        "options": [
+            "Representing the environment knowledge effectively and performing efficient inference",
+            "Processing sensory data quickly enough",
+            "Communicating with other agents in the environment",
+            "Learning completely new concepts from scratch"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main challenge is representing the environment knowledge in a way that supports effective logical reasoning and performing inference efficiently."
+    },
+    {
+        "id": "q43",
+        "text": "How does the agent's knowledge base evolve over time in the Wumpus World?",
+        "options": [
+            "It grows as the agent receives new percepts and takes actions",
+            "It remains fixed throughout the game",
+            "It shrinks as irrelevant information is discarded",
+            "It gets completely replaced at each time step"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The KB grows over time as the agent adds new percept sentences and action sentences, building up its understanding of the environment."
+    },
+    {
+        "id": "q44",
+        "text": "What role does time (counter t) play in the KB-agent algorithm?",
+        "options": [
+            "It ensures actions are performed in timely manner",
+            "It coordinates with other agents in the environment",
+            "It indexes percepts and actions to maintain temporal context",
+            "It limits how long the agent can deliberate"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The time counter t indexes percepts and actions, allowing the agent to maintain temporal context and reason about sequences of events."
+    },
+    {
+        "id": "q45",
+        "text": "Why is the Wumpus World considered a discrete environment?",
+        "options": [
+            "Because time advances in discrete steps",
+            "Because the grid has distinct, separate squares",
+            "Because percepts are received at discrete intervals",
+            "Because actions have discrete outcomes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Wumpus World is discrete because the environment consists of distinct, separate squares (cells) in a grid formation."
+    },
+    {
+        "id": "q46",
+        "text": "What is the significance of the bump percept?",
+        "options": [
+            "The agent has walked into a wall",
+            "The agent has found gold",
+            "A pit is nearby",
+            "The Wumpus is attacking"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A bump percept indicates that the agent has attempted to move into a wall and has been stopped."
+    },
+    {
+        "id": "q47",
+        "text": "In logical terms, what does it mean when we say KB ⊢ α?",
+        "options": [
+            "α can be derived from KB using inference rules",
+            "α is true in some models where KB is true",
+            "α is equivalent to KB",
+            "KB is a subset of α"
+        ],
+        "correctAnswer": 0,
+        "explanation": "KB ⊢ α means that α can be derived from KB using inference rules (syntactic concept), as opposed to KB ⊨ α which means α is entailed by KB (semantic concept)."
+    },
+    {
+        "id": "q48",
+        "text": "What is the relationship between ⊢ (derivability) and ⊨ (entailment) for a sound and complete inference system?",
+        "options": [
+            "They are identical: KB ⊢ α if and only if KB ⊨ α",
+            "Derivability is stronger than entailment",
+            "Entailment is stronger than derivability",
+            "There is no consistent relationship between them"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In a sound and complete inference system, derivability (⊢) and entailment (⊨) coincide: KB ⊢ α if and only if KB ⊨ α."
+    },
+    {
+        "id": "q49",
+        "text": "Why might a knowledge-based agent be preferable to a problem-solving agent for dynamic environments?",
+        "options": [
+            "Knowledge-based agents can adapt to changes by updating their KB",
+            "Problem-solving agents require too much memory",
+            "Knowledge-based agents are always faster",
+            "Problem-solving agents cannot handle partial observability"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Knowledge-based agents can adapt to environmental changes by updating their knowledge base, while problem-solving agents typically work with fixed solution plans."
+    },
+    {
+        "id": "q50",
+        "text": "What is the main advantage of using logical representation in AI agents?",
+        "options": [
+            "It enables precise, rigorous reasoning about knowledge",
+            "It is the most computationally efficient representation",
+            "It closely mimics human neural processing",
+            "It requires minimal memory resources"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Logical representation enables precise, rigorous reasoning about knowledge, with well-defined semantics and sound inference rules."
+    },
+    {
+        "id": "q51",
+        "text": "In the Wumpus World, what information does the agent start with?",
+        "options": [
+            "Complete knowledge of the environment layout",
+            "Only the rules of the environment and its initial position",
+            "A map of safe squares provided in advance",
+            "Knowledge of where the gold is located"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The agent starts with only the rules of the environment and knowledge of its initial position, and must explore to discover the rest."
+    },
+    {
+        "id": "q52",
+        "text": "What is the primary goal of the agent in the Wumpus World?",
+        "options": [
+            "Kill the Wumpus",
+            "Find the gold and return to the starting square",
+            "Explore the entire environment",
+            "Avoid all pits successfully"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The agent's goal is to find the gold and then return to the starting square [1,1] to exit the environment."
+    },
+    {
+        "id": "q53",
+        "text": "How does the agent typically kill the Wumpus?",
+        "options": [
+            "By pushing it into a pit",
+            "By shooting an arrow into the Wumpus's square",
+            "By tricking it into moving into unsafe territory",
+            "By using special weapons found in the environment"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The agent can kill the Wumpus by shooting an arrow into the square where the Wumpus is located."
+    },
+    {
+        "id": "q54",
+        "text": "What happens if the agent enters a square with a pit?",
+        "options": [
+            "It gets stuck and cannot move further",
+            "It dies and the game ends",
+            "It takes damage but can continue",
+            "It can climb out if it has the right equipment"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If the agent enters a square with a pit, it dies and the game ends immediately."
+    },
+    {
+        "id": "q55",
+        "text": "What happens if the agent enters the Wumpus's square?",
+        "options": [
+            "It can negotiate with the Wumpus",
+            "It gets eaten and the game ends",
+            "It automatically fights and kills the Wumpus",
+            "It gets captured but can escape later"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If the agent enters the square containing the Wumpus, it gets eaten and the game ends."
+    },
+    {
+        "id": "q56",
+        "text": "Why is the Wumpus World useful for studying AI agents?",
+        "options": [
+            "It presents a simple yet rich environment for studying knowledge representation and reasoning",
+            "It accurately simulates real-world complexity",
+            "It requires advanced neural network approaches",
+            "It focuses exclusively on sensorimotor skills"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Wumpus World provides a simple yet rich environment that illustrates key concepts in knowledge representation, reasoning, and agent design."
+    },
+    {
+        "id": "q57",
+        "text": "What type of logic is typically used initially to represent knowledge in the Wumpus World?",
+        "options": [
+            "Propositional logic",
+            "First-order logic",
+            "Probabilistic logic",
+            "Temporal logic"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Propositional logic is typically used initially to represent knowledge in the Wumpus World, with propositions for each square (e.g., P₁₂ for pit in [1,2])."
+    },
+    {
+        "id": "q58",
+        "text": "What limitation of propositional logic might become apparent in larger versions of the Wumpus World?",
+        "options": [
+            "It requires separate propositions for each square and property",
+            "It cannot represent uncertain knowledge",
+            "It doesn't support logical inference",
+            "It only works for fully observable environments"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Propositional logic requires separate propositions for each square and each property (e.g., P₁₂, P₁₃, W₁₂, W₁₃, etc.), which becomes cumbersome for large grids."
+    },
+    {
+        "id": "q59",
+        "text": "How might first-order logic address limitations of propositional logic in the Wumpus World?",
+        "options": [
+            "By using variables and quantifiers to represent patterns compactly",
+            "By allowing probabilistic reasoning about uncertainty",
+            "By providing temporal operators for reasoning about time",
+            "By supporting neural network integration"
+        ],
+        "correctAnswer": 0,
+        "explanation": "First-order logic can use variables and quantifiers to represent patterns compactly (e.g., ∀x,y Adjacent(x,y) → (Breeze(x) ↔ Pit(y)))."
+    },
+    {
+        "id": "q60",
+        "text": "What is the key takeaway about knowledge-based agents from the Wumpus World example?",
+        "options": [
+            "Explicit knowledge representation and logical reasoning enable effective decision-making in partially observable environments",
+            "Agents should always avoid dangerous situations completely",
+            "Complex environments require complex agent architectures",
+            "Sensory information is always reliable and sufficient for decision making"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Wumpus World demonstrates that explicit knowledge representation combined with logical reasoning enables agents to make effective decisions even in partially observable, dangerous environments."
+    }
+]

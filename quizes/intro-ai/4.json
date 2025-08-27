@@ -1,0 +1,722 @@
+[
+    {
+        "id": "1",
+        "text": "What is the main characteristic that distinguishes local search from backtracking state-space search?",
+        "options": [
+            "Local search maintains paths in memory",
+            "Local search uses a single current state and moves to neighbors",
+            "Local search is always complete",
+            "Local search requires a binary goal test"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Local search uses a single current state and moves only to neighbors, without keeping track of paths or previously visited states."
+    },
+    {
+        "id": "2",
+        "text": "In which type of problems is local search particularly suitable?",
+        "options": [
+            "Problems where the path to the goal is important",
+            "Problems requiring systematic exploration of all possibilities",
+            "Optimization problems where only the final configuration matters",
+            "Problems with small state spaces"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Local search is ideal for optimization problems where only the final configuration matters, such as 8-queens, IC design, or factory layout."
+    },
+    {
+        "id": "3",
+        "text": "What is the primary advantage of local search algorithms?",
+        "options": [
+            "They guarantee finding the optimal solution",
+            "They use little memory space",
+            "They are always complete",
+            "They work best for small state spaces"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Local search algorithms use little memory space because they don't maintain search trees or graphs in memory."
+    },
+    {
+        "id": "4",
+        "text": "In the 8-queens problem using local search, what does the objective function F(x) typically represent?",
+        "options": [
+            "The number of queens on the board",
+            "The number of non-attacking pairs of queens",
+            "The number of attacking pairs of queens",
+            "The distance between queens"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the 8-queens problem, the objective function F(x) typically represents the number of attacking pairs of queens, which we want to minimize."
+    },
+    {
+        "id": "5",
+        "text": "How does the state representation differ between Chapter 3 search and Chapter 4 local search?",
+        "options": [
+            "Chapter 3 uses complete configurations while Chapter 4 uses partial configurations",
+            "Chapter 4 uses complete configurations while Chapter 3 typically uses partial configurations",
+            "Both use the same state representation",
+            "Chapter 3 uses objective functions while Chapter 4 uses heuristic functions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Chapter 4 local search begins with complete configurations and makes modifications, while Chapter 3 search typically starts with partial configurations."
+    },
+    {
+        "id": "6",
+        "text": "In the landscape visualization of local search, what does elevation correspond to?",
+        "options": [
+            "The number of successors",
+            "The objective function value",
+            "The distance to the start state",
+            "The temperature parameter"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the landscape visualization, elevation corresponds to the objective function value, with the aim of finding the highest peak (global maximum)."
+    },
+    {
+        "id": "7",
+        "text": "What is the fundamental operation in hill climbing (greedy local search)?",
+        "options": [
+            "Generate all possible paths from the current state",
+            "Generate nearby successors and pick the best one",
+            "Randomly select any state from the state space",
+            "Backtrack when no improvement is found"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hill climbing generates nearby successor states and picks the best one to replace the current state."
+    },
+    {
+        "id": "8",
+        "text": "What problem does hill climbing face when it encounters a local maximum?",
+        "options": [
+            "It will oscillate between states",
+            "It will continue searching indefinitely",
+            "It will terminate and return the local maximum",
+            "It will restart automatically"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When hill climbing encounters a local maximum, it will terminate and return that state, potentially missing the global maximum."
+    },
+    {
+        "id": "9",
+        "text": "What is a ridge in the context of hill climbing problems?",
+        "options": [
+            "A flat area where all states have the same value",
+            "A region higher than its neighbors but with a slope",
+            "The global maximum of the state space",
+            "A valley between two local maxima"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A ridge is a region that is higher than its neighbors but itself has a slope, making it difficult for greedy algorithms to navigate."
+    },
+    {
+        "id": "10",
+        "text": "What characterizes a plateau in hill climbing?",
+        "options": [
+            "A steep slope leading to the global maximum",
+            "A flat area where the evaluation function is constant",
+            "A sequence of local maxima",
+            "The highest point in the state space"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A plateau is a flat area where the evaluation function is constant, resulting in a random walk behavior."
+    },
+    {
+        "id": "11",
+        "text": "How does stochastic hill climbing differ from basic hill climbing?",
+        "options": [
+            "It always chooses the worst successor",
+            "It chooses randomly from among uphill moves",
+            "It uses multiple current states",
+            "It includes a temperature parameter"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Stochastic hill climbing chooses at random from among the uphill moves, with probability varying with the steepness of the move."
+    },
+    {
+        "id": "12",
+        "text": "When is first-choice hill climbing particularly useful?",
+        "options": [
+            "When states have very few successors",
+            "When the state space is small",
+            "When a state has many (e.g., thousands) of successors",
+            "When the objective function is linear"
+        ],
+        "correctAnswer": 2,
+        "explanation": "First-choice hill climbing is useful when a state has many successors, as it generates successors randomly until finding one better than the current state."
+    },
+    {
+        "id": "13",
+        "text": "What makes random-restart hill climbing complete?",
+        "options": [
+            "It always finds the optimal solution",
+            "It uses multiple current states simultaneously",
+            "With probability approaching 1, it will eventually generate a goal state",
+            "It never gets stuck in local maxima"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Random-restart hill climbing is complete because if all states have equal probability of being generated, a goal state will eventually be generated with probability approaching 1."
+    },
+    {
+        "id": "14",
+        "text": "What is the metallurgical metaphor behind simulated annealing?",
+        "options": [
+            "Quenching metals rapidly to increase hardness",
+            "Heating metals to high temperature then gradually cooling",
+            "Forging metals under high pressure",
+            "Alloying different metals together"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Simulated annealing is based on annealing in metallurgy, which involves heating metals to a high temperature and then gradually cooling them to harden them."
+    },
+    {
+        "id": "15",
+        "text": "In simulated annealing, what happens when a generated neighbor is worse than the current state?",
+        "options": [
+            "It is always rejected",
+            "It is always accepted",
+            "It is accepted with probability proportional to temperature and ΔE",
+            "It causes the algorithm to restart"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In simulated annealing, a worse neighbor is accepted with probability e^(ΔE/T), where ΔE is the change in evaluation and T is the temperature."
+    },
+    {
+        "id": "16",
+        "text": "How does the temperature parameter affect moves in simulated annealing?",
+        "options": [
+            "High T allows more worse moves, low T allows fewer worse moves",
+            "High T allows fewer worse moves, low T allows more worse moves",
+            "T only affects the speed of convergence, not move acceptance",
+            "T determines the number of restarts"
+        ],
+        "correctAnswer": 0,
+        "explanation": "High temperature allows more worse moves (exploration), while low temperature allows fewer worse moves (exploitation)."
+    },
+    {
+        "id": "17",
+        "text": "What is the purpose of the schedule in simulated annealing?",
+        "options": [
+            "To determine the value of T as a function of completed cycles",
+            "To select which successors to generate",
+            "To decide when to restart the algorithm",
+            "To control the mutation rate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The schedule determines the value of the temperature T as a function of the completed cycles or time steps."
+    },
+    {
+        "id": "18",
+        "text": "How does local beam search differ from basic hill climbing?",
+        "options": [
+            "It uses multiple current states instead of one",
+            "It always accepts worse moves",
+            "It uses a temperature parameter",
+            "It includes crossover operations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Local beam search keeps track of k states rather than just one, beginning with k randomly generated states."
+    },
+    {
+        "id": "19",
+        "text": "What problem can occur in basic local beam search?",
+        "options": [
+            "Successors can become concentrated in a small part of state space",
+            "It uses too much memory for large k values",
+            "It never converges to a solution",
+            "It requires a binary goal test"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In local beam search, successors can become concentrated in a small part of the state space, reducing diversity."
+    },
+    {
+        "id": "20",
+        "text": "How does stochastic beam search address the concentration problem?",
+        "options": [
+            "By choosing k successors with probability proportional to their value",
+            "By increasing the number of states k",
+            "By adding a temperature parameter",
+            "By using crossover operations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Stochastic beam search chooses k successors with probability proportional to their value, which helps maintain diversity."
+    },
+    {
+        "id": "21",
+        "text": "What is the key difference between genetic algorithms and local beam search?",
+        "options": [
+            "Genetic algorithms use a single current state",
+            "Genetic algorithms generate successors by combining two parent states",
+            "Genetic algorithms don't use an evaluation function",
+            "Genetic algorithms are always complete"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Genetic algorithms generate successor states by combining two parent states through crossover, unlike local beam search."
+    },
+    {
+        "id": "22",
+        "text": "In genetic algorithms, what is the fitness function?",
+        "options": [
+            "A function that measures how fit the algorithm is",
+            "An evaluation function that measures how good a state is",
+            "A function that determines the mutation rate",
+            "A schedule for temperature reduction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The fitness function in genetic algorithms is an evaluation function that measures how good a state is (higher values are better)."
+    },
+    {
+        "id": "23",
+        "text": "What is elitism in genetic algorithms?",
+        "options": [
+            "Including top-scoring parents from previous generation",
+            "Selecting only the best individuals for reproduction",
+            "Eliminating all weak individuals",
+            "Using a high mutation rate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Elitism involves including a few top-scoring parents from the previous generation in addition to the newly formed offspring."
+    },
+    {
+        "id": "24",
+        "text": "What is culling in genetic algorithms?",
+        "options": [
+            "Discarding individuals below a given threshold",
+            "Combining two parents to create offspring",
+            "Randomly modifying genes",
+            "Selecting individuals for reproduction"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Culling involves discarding individuals below a given fitness threshold from the population."
+    },
+    {
+        "id": "25",
+        "text": "What effect does crossover have in genetic algorithms?",
+        "options": [
+            "It causes small local changes to a state",
+            "It can jump to a completely different part of the search space",
+            "It always improves the fitness of offspring",
+            "It reduces diversity in the population"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Crossover can cause 'jumping' to a completely different part of the search space, enabling non-local exploration."
+    },
+    {
+        "id": "26",
+        "text": "Which of the following is NOT a tunable parameter in genetic algorithms?",
+        "options": [
+            "Population size",
+            "Mutation rate",
+            "Objective function",
+            "Crossover points"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The objective function is defined by the problem, while population size, mutation rate, and crossover points are tunable parameters."
+    },
+    {
+        "id": "27",
+        "text": "What is a criticism of genetic algorithms mentioned in the lecture?",
+        "options": [
+            "They use too much memory",
+            "They have many tunable parameters",
+            "They are always worse than hill climbing",
+            "They cannot solve optimization problems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A criticism of genetic algorithms is that they have many tunable parameters, making it difficult to replicate performance across problems."
+    },
+    {
+        "id": "28",
+        "text": "For which type of problems is local search NOT suitable?",
+        "options": [
+            "Optimization problems",
+            "Problems where the path to the goal is important",
+            "Problems with large state spaces",
+            "Problems with continuous variables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Local search is not suitable for problems where the path to the goal is important, as it doesn't maintain path information."
+    },
+    {
+        "id": "29",
+        "text": "What is the main reason local search can handle large or infinite state spaces?",
+        "options": [
+            "It uses little memory space",
+            "It is always complete",
+            "It guarantees optimal solutions",
+            "It uses systematic exploration"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Local search can handle large or infinite state spaces because it uses little memory space, not maintaining the search tree or graph."
+    },
+    {
+        "id": "30",
+        "text": "In the 8-queens problem, how is a successor state typically generated?",
+        "options": [
+            "By adding a new queen to the board",
+            "By moving one queen to a different row",
+            "By removing a queen from the board",
+            "By changing the board size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the 8-queens problem, a successor state is generated by moving one queen to a different row in its column."
+    },
+    {
+        "id": "31",
+        "text": "What does the VALUE represent in the hill climbing algorithm pseudocode?",
+        "options": [
+            "The number of successors",
+            "The objective function value",
+            "The temperature",
+            "The number of restarts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the hill climbing pseudocode, VALUE represents the objective function value of a state."
+    },
+    {
+        "id": "32",
+        "text": "Why is hill climbing considered incomplete?",
+        "options": [
+            "It uses too much memory",
+            "It may get stuck in local maxima and never find the global maximum",
+            "It only works for discrete state spaces",
+            "It requires the objective function to be linear"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hill climbing is incomplete because it may get stuck in local maxima and never find the global maximum or goal state."
+    },
+    {
+        "id": "33",
+        "text": "What is the purpose of the probability calculation e^(ΔE/T) in simulated annealing?",
+        "options": [
+            "To always accept better moves",
+            "To determine the chance of accepting worse moves",
+            "To calculate the optimal temperature",
+            "To select which successor to generate"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The probability e^(ΔE/T) determines the chance of accepting a worse move, where ΔE is the negative change in evaluation."
+    },
+    {
+        "id": "34",
+        "text": "As temperature decreases in simulated annealing, what happens to the probability of accepting worse moves?",
+        "options": [
+            "It increases",
+            "It decreases",
+            "It stays the same",
+            "It becomes zero immediately"
+        ],
+        "correctAnswer": 1,
+        "explanation": "As temperature decreases, the probability of accepting worse moves decreases, making the algorithm more greedy."
+    },
+    {
+        "id": "35",
+        "text": "In local beam search, what happens if any of the k states is a goal?",
+        "options": [
+            "The algorithm continues searching",
+            "The algorithm halts",
+            "The algorithm restarts",
+            "The algorithm reduces k"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If any of the k states in local beam search is a goal, the algorithm halts immediately."
+    },
+    {
+        "id": "36",
+        "text": "What is the typical representation of states in genetic algorithms?",
+        "options": [
+            "As trees or graphs",
+            "As strings over a finite alphabet",
+            "As numerical vectors only",
+            "As matrices"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In genetic algorithms, states are typically represented as strings over a finite alphabet, often binary strings."
+    },
+    {
+        "id": "37",
+        "text": "What is the role of mutation in genetic algorithms?",
+        "options": [
+            "To combine two parents into offspring",
+            "To introduce random changes to maintain diversity",
+            "To select the best individuals",
+            "To reduce the population size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Mutation introduces random changes to individuals, helping to maintain diversity in the population."
+    },
+    {
+        "id": "38",
+        "text": "What does the mixing number refer to in genetic algorithms?",
+        "options": [
+            "The number of parents that combine to form offspring",
+            "The mutation rate",
+            "The population size",
+            "The number of generations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The mixing number refers to the number of parents that combine to form offspring (typically 2 in standard genetic algorithms)."
+    },
+    {
+        "id": "39",
+        "text": "In the N-queens example, what does the fitness value represent?",
+        "options": [
+            "The number of attacking pairs",
+            "The number of non-attacking queens",
+            "The number of queens on the board",
+            "The number of columns with queens"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the N-queens example, the fitness value represents the number of non-attacking queens (higher is better)."
+    },
+    {
+        "id": "40",
+        "text": "What is the primary advantage of genetic algorithms over hill climbing?",
+        "options": [
+            "They use less memory",
+            "They are simpler to implement",
+            "They can find solutions that local search can't via crossover",
+            "They always converge faster"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Genetic algorithms can find solutions that local search can't primarily through crossover, which allows jumping to different parts of the search space."
+    },
+    {
+        "id": "41",
+        "text": "What is the main disadvantage of genetic algorithms according to the lecture?",
+        "options": [
+            "They use too much memory",
+            "They have many tunable parameters",
+            "They cannot handle large state spaces",
+            "They are always incomplete"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Genetic algorithms have many tunable parameters, making it difficult to replicate performance from one problem to another."
+    },
+    {
+        "id": "42",
+        "text": "What is the termination condition for the genetic algorithm pseudocode provided?",
+        "options": [
+            "When temperature reaches zero",
+            "When an individual is fit enough or out of time",
+            "When all possible states are generated",
+            "When the population converges to identical individuals"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The genetic algorithm terminates when an individual is fit enough or when it runs out of time (computation budget)."
+    },
+    {
+        "id": "43",
+        "text": "In simulated annealing, what does ΔE represent?",
+        "options": [
+            "The temperature change",
+            "The difference in evaluation between current and neighbor states",
+            "The energy of the current state",
+            "The schedule parameter"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ΔE represents the difference in evaluation value between the neighbor state and the current state (Value[next] - Value[current])."
+    },
+    {
+        "id": "44",
+        "text": "What happens in simulated annealing when T=0?",
+        "options": [
+            "The algorithm accepts all moves",
+            "The algorithm rejects all worse moves",
+            "The algorithm restarts",
+            "The algorithm increases temperature"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When T=0, simulated annealing rejects all worse moves and becomes equivalent to hill climbing."
+    },
+    {
+        "id": "45",
+        "text": "How does first-choice hill climbing implement stochastic hill climbing?",
+        "options": [
+            "By always choosing the first successor generated",
+            "By generating successors randomly until finding a better one",
+            "By using a temperature parameter",
+            "By maintaining multiple current states"
+        ],
+        "correctAnswer": 1,
+        "explanation": "First-choice hill climbing implements stochastic hill climbing by generating successors randomly until one is found that is better than the current state."
+    },
+    {
+        "id": "46",
+        "text": "What is the key idea behind random-restart hill climbing?",
+        "options": [
+            "Using multiple current states simultaneously",
+            "Restarting from random positions when stuck",
+            "Adding randomness to move selection",
+            "Combining parents to create new states"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Random-restart hill climbing involves starting different searches from random positions and stopping when a goal is found."
+    },
+    {
+        "id": "47",
+        "text": "Why is pure random walk complete but inefficient?",
+        "options": [
+            "It systematically explores all states",
+            "It eventually finds a solution but may take a long time",
+            "It uses optimal memory management",
+            "It always finds the shortest path"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pure random walk is complete because it will eventually find a solution, but it's inefficient as it may take an impractically long time."
+    },
+    {
+        "id": "48",
+        "text": "What is the purpose of the schedule in simulated annealing?",
+        "options": [
+            "To determine how temperature decreases over time",
+            "To select which successors to generate",
+            "To decide when to restart the algorithm",
+            "To control the mutation rate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The schedule determines how temperature decreases over time, controlling the exploration-exploitation tradeoff."
+    },
+    {
+        "id": "49",
+        "text": "In genetic algorithms, what is the typical purpose of selection with replacement?",
+        "options": [
+            "To allow very fit individuals to reproduce several times",
+            "To reduce population diversity",
+            "To eliminate weak individuals",
+            "To increase mutation rate"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Selection with replacement allows very fit individuals to reproduce several times, propagating good genetic material."
+    },
+    {
+        "id": "50",
+        "text": "What problem does the 'shoulder' represent in the state-space landscape?",
+        "options": [
+            "A local maximum that is not the global maximum",
+            "A flat area that is not a peak",
+            "A ridge with difficult navigation",
+            "The global maximum of the space"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A 'shoulder' is a flat area in the state-space landscape that is not a peak, making it challenging for hill climbing algorithms."
+    },
+    {
+        "id": "51",
+        "text": "What is the fundamental difference between heuristic functions and objective functions?",
+        "options": [
+            "Heuristic functions estimate distance to goal, objective functions measure state quality",
+            "Objective functions estimate distance to goal, heuristic functions measure state quality",
+            "They are identical concepts with different names",
+            "Heuristic functions are for local search, objective functions for systematic search"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Heuristic functions estimate distance to the nearest goal, while objective functions measure how good a state is (quality measure)."
+    },
+    {
+        "id": "52",
+        "text": "Why might local search never explore portions of the search space where solutions exist?",
+        "options": [
+            "Because it is not systematic",
+            "Because it uses too much memory",
+            "Because it always finds optimal solutions",
+            "Because it requires path information"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Local search is not systematic and might never explore portions of the search space where solutions exist, as it doesn't guarantee complete coverage."
+    },
+    {
+        "id": "53",
+        "text": "In the traveling salesman problem using local search, what typically represents a state?",
+        "options": [
+            "A single city",
+            "The order of cities visited",
+            "The distance between two cities",
+            "The number of cities"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the TSP using local search, a state is typically represented as the order of cities visited (a permutation of cities)."
+    },
+    {
+        "id": "54",
+        "text": "What is a common way to generate successor states in the traveling salesman problem?",
+        "options": [
+            "Adding a new city to the tour",
+            "Removing a city from the tour",
+            "Changing the current ordering of cities",
+            "Changing the distance matrix"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the TSP, successor states are typically generated by changing the current ordering of cities, such as swapping two cities."
+    },
+    {
+        "id": "55",
+        "text": "What does the objective function represent in the traveling salesman problem?",
+        "options": [
+            "The number of cities",
+            "The length of the route",
+            "The time to compute the route",
+            "The number of possible routes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the TSP, the objective function represents the length of the route, which we want to minimize."
+    },
+    {
+        "id": "56",
+        "text": "What is the key insight behind simulated annealing's approach to avoiding local optima?",
+        "options": [
+            "It uses multiple current states",
+            "It occasionally accepts worse moves to escape local optima",
+            "It restarts from random positions",
+            "It uses crossover operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Simulated annealing avoids local optima by occasionally accepting worse moves, allowing escape from local optima."
+    },
+    {
+        "id": "57",
+        "text": "How does the initial temperature affect simulated annealing?",
+        "options": [
+            "High initial temperature allows more exploration early on",
+            "Low initial temperature leads to faster convergence",
+            "Initial temperature doesn't affect performance",
+            "High initial temperature makes the algorithm greedy immediately"
+        ],
+        "correctAnswer": 0,
+        "explanation": "High initial temperature allows more exploration (worse moves accepted) early in the search process."
+    },
+    {
+        "id": "58",
+        "text": "What is the primary purpose of mutation in genetic algorithms?",
+        "options": [
+            "To create offspring from parents",
+            "To maintain diversity in the population",
+            "To select the best individuals",
+            "To reduce the population size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The primary purpose of mutation is to maintain diversity in the population by introducing random changes."
+    },
+    {
+        "id": "59",
+        "text": "What is the main difference between genetic algorithms and simulated annealing?",
+        "options": [
+            "Genetic algorithms use multiple states, simulated annealing uses one",
+            "Simulated annealing uses crossover, genetic algorithms use temperature",
+            "Genetic algorithms are always better",
+            "Simulated annealing requires more memory"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Genetic algorithms use a population of multiple states, while simulated annealing typically uses a single current state."
+    },
+    {
+        "id": "60",
+        "text": "According to the lecture, what is the current consensus on genetic algorithms versus hill climbing with random restarts?",
+        "options": [
+            "Genetic algorithms are always superior",
+            "Hill climbing with random restarts is always superior",
+            "No convincing evidence that GAs are generally better",
+            "They are equivalent in all cases"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture states there is no convincing evidence that genetic algorithms are generally better than hill climbing with random restarts."
+    }
+]

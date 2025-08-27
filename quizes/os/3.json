@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "Which of the following components is NOT part of a process's memory layout?",
+        "options": [
+            "Text section",
+            "Stack",
+            "Program counter",
+            "Heap"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The program counter is a CPU register that stores the address of the next instruction to execute, not part of the memory layout which includes text, stack, data, and heap sections."
+    },
+    {
+        "id": "q2",
+        "text": "What happens during a context switch?",
+        "options": [
+            "The CPU switches from user mode to kernel mode",
+            "The state of the current process is saved and the state of the next process is loaded",
+            "A process creates a new child process",
+            "A process terminates and releases all its resources"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A context switch involves saving the state of the currently executing process and loading the saved state of the next process to be executed."
+    },
+    {
+        "id": "q3",
+        "text": "In process scheduling, what is the main purpose of the ready queue?",
+        "options": [
+            "To hold processes waiting for I/O operations to complete",
+            "To store processes that have terminated but haven't been cleaned up",
+            "To maintain processes that are ready to execute but waiting for CPU time",
+            "To keep track of all processes currently executing on the CPU"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The ready queue contains all processes that are in main memory, ready and waiting to be executed by the CPU."
+    },
+    {
+        "id": "q4",
+        "text": "What is a zombie process?",
+        "options": [
+            "A process that has terminated but whose parent has not yet called wait()",
+            "A process that is running but not responding to signals",
+            "A process that has been terminated by the operating system due to excessive resource usage",
+            "A process that has no parent process (init becomes its parent)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A zombie process is one that has completed execution but still has an entry in the process table because its parent hasn't called wait() to read its exit status."
+    },
+    {
+        "id": "q5",
+        "text": "In the producer-consumer problem with bounded buffer, why can only BUFFER_SIZE-1 elements be used?",
+        "options": [
+            "To avoid race conditions between producer and consumer",
+            "To distinguish between full and empty buffer states",
+            "One buffer space is reserved for the operating system",
+            "The counter variable requires one buffer space for synchronization"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Using only BUFFER_SIZE-1 elements allows the implementation to distinguish between a full buffer (in == out) and an empty buffer ((in+1)%BUFFER_SIZE == out)."
+    },
+    {
+        "id": "q6",
+        "text": "What is the main difference between ordinary pipes and named pipes?",
+        "options": [
+            "Ordinary pipes are bidirectional while named pipes are unidirectional",
+            "Named pipes require a parent-child relationship while ordinary pipes do not",
+            "Ordinary pipes can be used over a network while named pipes cannot",
+            "Named pipes can be accessed by unrelated processes while ordinary pipes require a parent-child relationship"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Named pipes (FIFOs) can be accessed by any process that has appropriate permissions, while ordinary pipes typically require a parent-child relationship between communicating processes."
+    },
+    {
+        "id": "q7",
+        "text": "In message passing IPC, what is a rendezvous?",
+        "options": [
+            "When two processes share a common mailbox",
+            "When both send and receive operations are blocking",
+            "When messages are temporarily cached in a queue",
+            "When a link is associated with exactly two processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A rendezvous occurs when both send and receive operations are blocking, meaning the sender and receiver synchronize at the point of message exchange."
+    },
+    {
+        "id": "q8",
+        "text": "What is the purpose of the Mach port mechanism?",
+        "options": [
+            "To provide hardware-level memory protection",
+            "To enable message-based communication between tasks",
+            "To implement virtual memory management",
+            "To schedule processes on multiple CPUs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Mach uses ports as communication endpoints for message passing between tasks, with even system calls implemented as messages."
+    },
+    {
+        "id": "q9",
+        "text": "In RPC systems, what is the function of the stub?",
+        "options": [
+            "To allocate memory for the remote procedure",
+            "To marshal parameters and locate the server",
+            "To authenticate the client to the server",
+            "To encrypt the communication between client and server"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The client-side stub marshals parameters, locates the server, and communicates with the server-side stub, which unmarshals parameters and invokes the actual procedure."
+    },
+    {
+        "id": "q10",
+        "text": "What problem does the External Data Representation (XDR) format solve in RPC?",
+        "options": [
+            "Network latency issues",
+            "Different data representations across architectures",
+            "Security vulnerabilities in remote calls",
+            "Memory allocation in distributed systems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "XDR provides a standard data representation to handle differences between architectures, such as big-endian vs. little-endian byte ordering."
+    },
+    {
+        "id": "q11",
+        "text": "In Android's process importance hierarchy, which process type is most likely to be terminated when memory is needed?",
+        "options": [
+            "Foreground process",
+            "Visible process",
+            "Service process",
+            "Empty process"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Empty processes are the least important in Android's hierarchy and are the first to be terminated when the system needs to reclaim memory."
+    },
+    {
+        "id": "q12",
+        "text": "What is the primary advantage of Chrome's multiprocess architecture?",
+        "options": [
+            "Faster webpage loading",
+            "Improved security and stability",
+            "Reduced memory usage",
+            "Better compatibility with web standards"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Chrome's multiprocess architecture isolates websites in separate renderer processes, preventing a problematic website from crashing the entire browser and providing security through sandboxing."
+    },
+    {
+        "id": "q13",
+        "text": "In the Windows CreateProcess API, what is the purpose of the STARTUPINFO structure?",
+        "options": [
+            "To specify security attributes for the new process",
+            "To define the window station, desktop, standard handles, and appearance of the main window",
+            "To set the priority class of the new process",
+            "To determine the memory allocation for the new process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The STARTUPINFO structure specifies the window station, desktop, standard handles, and appearance of the main window for a process at creation time."
+    },
+    {
+        "id": "q14",
+        "text": "What is cascading termination?",
+        "options": [
+            "When a process terminates all its child processes before exiting",
+            "When the operating system terminates a process and all its descendants",
+            "When multiple processes terminate simultaneously due to a system error",
+            "When a parent process waits for all children to terminate before exiting"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Cascading termination occurs when the operating system terminates all children, grandchildren, etc., of a process that has terminated, typically when the system doesn't allow children to exist without their parent."
+    },
+    {
+        "id": "q15",
+        "text": "In POSIX shared memory, what is the purpose of the shm_open() function?",
+        "options": [
+            "To allocate physical memory for a process",
+            "To create or open a shared memory object",
+            "To map shared memory into a process's address space",
+            "To synchronize access to shared memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "shm_open() creates a new shared memory object or opens an existing one, returning a file descriptor that can be used to reference the shared memory."
+    },
+    {
+        "id": "q16",
+        "text": "What is the main difference between shared memory and message passing IPC?",
+        "options": [
+            "Shared memory is faster but requires explicit synchronization",
+            "Message passing is faster but uses more memory",
+            "Shared memory works only between related processes",
+            "Message passing is implemented in hardware while shared memory is software-based"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Shared memory is typically faster as it avoids data copying, but it requires processes to explicitly synchronize their access to the shared region to prevent race conditions."
+    },
+    {
+        "id": "q17",
+        "text": "In a socket communication, what does the port number 127.0.0.1:6013 represent?",
+        "options": [
+            "A remote server on the internet",
+            "A loopback connection to the local system",
+            "A broadcast address for the local network",
+            "A reserved port for system services"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The IP address 127.0.0.1 is the loopback address, which refers to the local system itself. The port number 6013 is the specific endpoint on that system."
+    },
+    {
+        "id": "q18",
+        "text": "What is the race condition demonstrated in the producer-consumer example with a counter?",
+        "options": [
+            "Both processes might try to access the buffer simultaneously",
+            "The counter might not reflect the actual number of items in the buffer",
+            "The producer might overwrite unconsumed items",
+            "The consumer might try to read from an empty buffer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The race condition occurs because the counter++ and counter-- operations are not atomic, leading to inconsistent values that don't accurately represent the number of items in the buffer."
+    },
+    {
+        "id": "q19",
+        "text": "In indirect communication with mailboxes, what problem arises when multiple processes share a mailbox?",
+        "options": [
+            "Messages might be delivered to the wrong process",
+            "The mailbox might become corrupted",
+            "It's unclear which process should receive a message",
+            "Messages might be lost if the mailbox is full"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When multiple processes can receive from the same mailbox, it's ambiguous which process should get a particular message, requiring additional mechanisms to resolve this."
+    },
+    {
+        "id": "q20",
+        "text": "What is the purpose of the mmap() function in POSIX shared memory?",
+        "options": [
+            "To create a shared memory object",
+            "To set the size of a shared memory object",
+            "To map a shared memory object into the process's address space",
+            "To synchronize access to shared memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "mmap() maps the shared memory object (referenced by a file descriptor) into the process's address space, making it accessible as if it were regular memory."
+    },
+    {
+        "id": "q21",
+        "text": "In the process state diagram, what transition occurs when an I/O or event wait completes?",
+        "options": [
+            "Waiting → Running",
+            "Waiting → Ready",
+            "Ready → Running",
+            "Running → Waiting"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When an I/O operation or event wait completes, the process moves from the Waiting state to the Ready state, where it awaits CPU allocation."
+    },
+    {
+        "id": "q22",
+        "text": "What information is typically stored in a Process Control Block (PCB)?",
+        "options": [
+            "The entire program code and data",
+            "Process state, program counter, CPU registers, and scheduling information",
+            "Only the process ID and parent process ID",
+            "The contents of all files opened by the process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The PCB contains process state, program counter, CPU registers, scheduling information, memory management information, accounting information, and I/O status information."
+    },
+    {
+        "id": "q23",
+        "text": "Why is context switch time considered overhead?",
+        "options": [
+            "It requires privileged kernel mode operations",
+            "The CPU is not doing useful work during the switch",
+            "It consumes significant memory resources",
+            "It causes cache misses and pipeline stalls"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Context switch time is pure overhead because the CPU is saving and restoring process states instead of executing user program instructions."
+    },
+    {
+        "id": "q24",
+        "text": "In mobile systems like iOS, what distinguishes a foreground process from a background process?",
+        "options": [
+            "Foreground processes have higher priority",
+            "Foreground processes are controlled via the user interface",
+            "Background processes cannot perform I/O operations",
+            "Foreground processes have access to more memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In iOS, foreground processes are those controlled via the user interface, while background processes run but are not on the display and have limitations on their activities."
+    },
+    {
+        "id": "q25",
+        "text": "What is the main purpose of the wait() system call?",
+        "options": [
+            "To pause a process for a specified time interval",
+            "To wait for a child process to terminate",
+            "To wait for an I/O operation to complete",
+            "To wait for a signal from another process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The wait() system call allows a parent process to wait for one of its child processes to terminate and obtain its exit status."
+    },
+    {
+        "id": "q26",
+        "text": "In the process creation hierarchy, what is the typical relationship between parent and child processes regarding resources?",
+        "options": [
+            "Children always inherit all of their parent's resources",
+            "Children never inherit any of their parent's resources",
+            "The resource sharing depends on the options specified during process creation",
+            "Children inherit resources but cannot share them with the parent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Different systems provide different options for resource sharing between parent and child processes, which can be specified during process creation."
+    },
+    {
+        "id": "q27",
+        "text": "What is the significance of the init process (pid = 1) in Unix-like systems?",
+        "options": [
+            "It is the first process started by the kernel",
+            "It has the highest priority in the system",
+            "It manages all hardware devices",
+            "It handles all user authentication"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The init process (pid = 1) is the first process started by the kernel during booting and serves as the root of the process tree, adopting orphaned processes."
+    },
+    {
+        "id": "q28",
+        "text": "In the producer-consumer problem, what is the difference between bounded-buffer and unbounded-buffer approaches?",
+        "options": [
+            "Bounded-buffer has limited size while unbounded-buffer has practically unlimited size",
+            "Bounded-buffer requires synchronization while unbounded-buffer does not",
+            "Unbounded-buffer is faster but less reliable",
+            "Bounded-buffer works only with shared memory while unbounded-buffer works with message passing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The bounded-buffer approach assumes a fixed buffer size, while the unbounded-buffer approach places no practical limit on the buffer size."
+    },
+    {
+        "id": "q29",
+        "text": "What is the purpose of the exec() system call in Unix process creation?",
+        "options": [
+            "To create a new process",
+            "To replace the current process's memory space with a new program",
+            "To execute a function in a separate thread",
+            "To change the priority of a process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The exec() system call replaces the current process's memory space with a new program, but maintains the same process ID."
+    },
+    {
+        "id": "q30",
+        "text": "In message passing, what is the difference between direct and indirect communication?",
+        "options": [
+            "Direct communication uses shared memory while indirect uses messages",
+            "Direct communication requires processes to name each other explicitly",
+            "Indirect communication is faster but less reliable",
+            "Direct communication works only between related processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In direct communication, processes must explicitly name each other (send(P, message), receive(Q, message)), while indirect communication uses mailboxes or ports as intermediaries."
+    },
+    {
+        "id": "q31",
+        "text": "What is the main advantage of using sockets for interprocess communication?",
+        "options": [
+            "They provide the fastest communication method",
+            "They can be used for communication between processes on different systems",
+            "They require no synchronization mechanisms",
+            "They are implemented entirely in hardware for better performance"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sockets enable communication between processes on the same system or different systems across a network, making them versatile for distributed systems."
+    },
+    {
+        "id": "q32",
+        "text": "In the Windows LPC mechanism, what is the purpose of the connection port?",
+        "options": [
+            "To establish the initial connection between client and server",
+            "To transfer large amounts of data between processes",
+            "To provide security authentication for interprocess communication",
+            "To manage memory allocation for message passing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The connection port is used by clients to establish the initial connection with a server, after which private communication ports are created for actual data exchange."
+    },
+    {
+        "id": "q33",
+        "text": "What problem does the 'dining philosophers problem' illustrate in interprocess communication?",
+        "options": [
+            "Race conditions in shared memory access",
+            "Deadlock in resource allocation",
+            "Message passing bottlenecks",
+            "Memory fragmentation in process creation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The dining philosophers problem illustrates potential deadlock situations that can occur when multiple processes compete for exclusive access to multiple resources."
+    },
+    {
+        "id": "q34",
+        "text": "In Android, what is the role of a service in background processing?",
+        "options": [
+            "To provide a user interface for background tasks",
+            "To perform tasks that can continue even if the background process is suspended",
+            "To manage all background processes in the system",
+            "To allocate memory resources for background activities"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Android services allow background processes to perform tasks that can continue running even if the main background process is suspended, with no user interface and small memory footprint."
+    },
+    {
+        "id": "q35",
+        "text": "What is the purpose of the mach_msg() function in the Mach operating system?",
+        "options": [
+            "To allocate memory for message passing",
+            "To create and manage ports for communication",
+            "To send and receive messages through ports",
+            "To synchronize access to shared resources"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The mach_msg() function is used in Mach for both sending and receiving messages through ports, with flexible options for handling various scenarios."
+    },
+    {
+        "id": "q36",
+        "text": "In the context of process scheduling, what is the dispatcher?",
+        "options": [
+            "The module that selects which process to execute next",
+            "The module that performs the context switch",
+            "The queue that holds waiting processes",
+            "The algorithm that determines process priorities"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The dispatcher is the module that gives control of the CPU to the process selected by the short-term scheduler, performing the context switch and updating registers."
+    },
+    {
+        "id": "q37",
+        "text": "What is the main challenge in implementing remote procedure calls (RPC)?",
+        "options": [
+            "Making remote calls appear as local procedure calls",
+            "Ensuring all systems use the same programming language",
+            "Preventing unauthorized access to remote procedures",
+            "Managing network bandwidth consumption"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main challenge in RPC is providing transparency—making remote procedure calls appear as local procedure calls while handling all the complexities of network communication."
+    },
+    {
+        "id": "q38",
+        "text": "In the Chrome browser architecture, what is the purpose of the renderer process?",
+        "options": [
+            "To manage the user interface and window",
+            "To render web pages and execute JavaScript",
+            "To handle network communications",
+            "To manage browser plugins and extensions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The renderer process in Chrome is responsible for rendering web pages, dealing with HTML, CSS, and JavaScript, with each website typically running in its own renderer process for isolation."
+    },
+    {
+        "id": "q39",
+        "text": "What is the significance of well-known ports (below 1024) in socket programming?",
+        "options": [
+            "They provide better security than higher-numbered ports",
+            "They are reserved for standard services like HTTP (80) and FTP (21)",
+            "They offer faster communication than higher-numbered ports",
+            "They are required for communication between different networks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ports below 1024 are well-known ports reserved for standard services (e.g., HTTP on port 80, FTP on port 21) and typically require privileged access to use."
+    },
+    {
+        "id": "q40",
+        "text": "In the process state model, what causes a transition from Running to Ready state?",
+        "options": [
+            "An I/O request",
+            "A timer interrupt",
+            "Process termination",
+            "Completion of an I/O operation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A timer interrupt (time slice expiration) causes a process to transition from Running to Ready state, allowing other processes to get CPU time."
+    },
+    {
+        "id": "q41",
+        "text": "What is the purpose of the ftruncate() function in POSIX shared memory?",
+        "options": [
+            "To create a shared memory object",
+            "To set the size of a shared memory object",
+            "To map shared memory into process address space",
+            "To remove a shared memory object"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ftruncate() sets the size of the shared memory object after it has been created or opened with shm_open()."
+    },
+    {
+        "id": "q42",
+        "text": "In message passing with bounded capacity, what happens when the link is full?",
+        "options": [
+            "The oldest message is overwritten",
+            "The sender receives an error code",
+            "The sender blocks until space is available",
+            "The message is temporarily stored in swap space"
+        ],
+        "correctAnswer": 2,
+        "explanation": "With bounded capacity, if the message queue is full, the sender must wait (block) until space becomes available in the queue."
+    },
+    {
+        "id": "q43",
+        "text": "What is the main advantage of using multi-threaded processes over multiple single-threaded processes?",
+        "options": [
+            "Threads provide better security isolation",
+            "Threads within a process can share resources more efficiently",
+            "Threads are easier to program and debug",
+            "Threads have independent memory protection"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Threads within a process share the same address space and resources, allowing for more efficient communication and data sharing compared to separate processes."
+    },
+    {
+        "id": "q44",
+        "text": "In the Windows API, what is the purpose of the WaitForSingleObject() function in process management?",
+        "options": [
+            "To wait for a process to be created",
+            "To wait for a process to terminate",
+            "To wait for a mutex to be released",
+            "To wait for an I/O operation to complete"
+        ],
+        "correctAnswer": 1,
+        "explanation": "WaitForSingleObject() with a process handle waits until the specified process has terminated, similar to wait() in Unix systems."
+    },
+    {
+        "id": "q45",
+        "text": "What is the role of the matchmaker in RPC systems?",
+        "options": [
+            "To encrypt communication between client and server",
+            "To balance load across multiple servers",
+            "To connect clients with appropriate server ports",
+            "To authenticate users before allowing remote calls"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The matchmaker service (or rendezvous service) in RPC systems helps clients find the appropriate server ports for the remote procedures they want to call."
+    },
+    {
+        "id": "q46",
+        "text": "In the process creation sequence using fork() and exec(), what is unique about the child process immediately after fork()?",
+        "options": [
+            "It has a different program counter than the parent",
+            "It is an exact duplicate of the parent process",
+            "It has no access to parent's open files",
+            "It runs with higher priority than the parent"
+        ],
+        "correctAnswer": 1,
+        "explanation": "After fork(), the child process is an exact duplicate of the parent process, with copies of the parent's memory space, file descriptors, and execution context."
+    },
+    {
+        "id": "q47",
+        "text": "What is the main purpose of the 'sandbox' in Chrome's renderer processes?",
+        "options": [
+            "To provide a testing environment for web developers",
+            "To restrict disk and network I/O for security",
+            "To isolate JavaScript execution from HTML rendering",
+            "To manage memory allocation for web content"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The sandbox in Chrome's renderer processes restricts disk and network I/O, minimizing the potential damage from security exploits in web content."
+    },
+    {
+        "id": "q48",
+        "text": "In direct communication, what is a limitation of the communication link?",
+        "options": [
+            "It can only be used for unidirectional communication",
+            "It is associated with exactly one pair of communicating processes",
+            "It has a fixed maximum message size",
+            "It requires a parent-child relationship between processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In direct communication, a link is associated with exactly one pair of communicating processes, which can be limiting for systems requiring more flexible communication patterns."
+    },
+    {
+        "id": "q49",
+        "text": "What is the significance of the program counter in process context?",
+        "options": [
+            "It determines the process's priority level",
+            "It indicates the next instruction to execute when the process resumes",
+            "It tracks the amount of CPU time used by the process",
+            "It stores the process's memory allocation boundaries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The program counter stores the address of the next instruction to execute, which must be saved during context switching so the process can resume execution correctly."
+    },
+    {
+        "id": "q50",
+        "text": "In the producer-consumer problem with message passing, what synchronization is required?",
+        "options": [
+            "Explicit synchronization using semaphores or mutexes",
+            "Synchronization is handled automatically by the message queue",
+            "The producer and consumer must coordinate their execution times",
+            "The operating system must mediate all message exchanges"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In message passing, the message queue itself provides synchronization—the consumer will block if no messages are available, and the producer may block if the queue is full (in bounded capacity)."
+    },
+    {
+        "id": "q51",
+        "text": "What is the purpose of the shm_unlink() function in POSIX shared memory?",
+        "options": [
+            "To unmap shared memory from a process's address space",
+            "To remove a shared memory object",
+            "To decrease the size of a shared memory object",
+            "To synchronize access to shared memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "shm_unlink() removes a shared memory object, similar to deleting a file. The object persists until all processes have unmapped it."
+    },
+    {
+        "id": "q52",
+        "text": "In process termination, what is the difference between exit() and abort()?",
+        "options": [
+            "exit() terminates gracefully while abort() terminates immediately",
+            "exit() can only be called by the parent process",
+            "abort() allows resource cleanup while exit() does not",
+            "exit() works only for child processes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "exit() allows a process to terminate gracefully, performing cleanup and returning status to the parent, while abort() terminates immediately without cleanup."
+    },
+    {
+        "id": "q53",
+        "text": "What is the main advantage of using message passing over shared memory for IPC?",
+        "options": [
+            "Message passing is generally faster",
+            "Message passing avoids synchronization issues",
+            "Message passing uses less memory",
+            "Message passing works better for large data transfers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Message passing avoids many synchronization issues because the messaging system handles the coordination between processes automatically."
+    },
+    {
+        "id": "q54",
+        "text": "In the Windows LPC mechanism, what is the purpose of the shared section object?",
+        "options": [
+            "To establish the initial connection",
+            "To transfer large messages (>256 bytes) efficiently",
+            "To provide security authentication",
+            "To manage port allocation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For messages larger than 256 bytes, Windows LPC uses a shared section object to efficiently transfer data between client and server processes."
+    },
+    {
+        "id": "q55",
+        "text": "What is the role of the kernel port in Mach task creation?",
+        "options": [
+            "To handle all system calls for the task",
+            "To manage memory allocation for the task",
+            "To provide communication with the kernel",
+            "To schedule the task's threads"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Each Mach task gets a kernel port at creation that provides communication with the kernel for system services and resource management."
+    },
+    {
+        "id": "q56",
+        "text": "In the context of process scheduling, what is the main goal of process scheduling?",
+        "options": [
+            "To maximize CPU utilization while providing reasonable response time",
+            "To minimize memory usage across all processes",
+            "To ensure all processes get exactly equal CPU time",
+            "To prioritize system processes over user processes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main goals of process scheduling are to maximize CPU utilization, ensure fair allocation of CPU time, minimize response time, and maximize throughput."
+    },
+    {
+        "id": "q57",
+        "text": "What is the purpose of the time_slice field in Linux's task_struct?",
+        "options": [
+            "To track the total CPU time used by the process",
+            "To determine how long the process can run before being preempted",
+            "To record when the process was last scheduled",
+            "To set the process's priority level"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The time_slice field in task_struct represents the scheduling time slice—how long the process can run on the CPU before being preempted."
+    },
+    {
+        "id": "q58",
+        "text": "In the Chrome multiprocess architecture, what is the role of the browser process?",
+        "options": [
+            "To render web pages and execute JavaScript",
+            "To manage plugins and extensions",
+            "To manage the user interface, disk, and network I/O",
+            "To provide a sandboxed environment for web content"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The browser process in Chrome manages the user interface, address bar, bookmarks, and handles disk and network I/O for the browser as a whole."
+    },
+    {
+        "id": "q59",
+        "text": "What is the significance of the 'counter' variable in the producer-consumer problem with full buffer utilization?",
+        "options": [
+            "It tracks the number of items in the buffer",
+            "It determines the producer's execution speed",
+            "It synchronizes access to the buffer",
+            "It prevents buffer overflow"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The counter variable keeps track of the number of full buffers, allowing the solution to utilize all buffer spaces (unlike the modulo solution which uses BUFFER_SIZE-1 spaces)."
+    },
+    {
+        "id": "q60",
+        "text": "In RPC, what is the purpose of marshalling parameters?",
+        "options": [
+            "To encrypt parameters for secure transmission",
+            "To compress parameters to reduce network traffic",
+            "To convert parameters into a standard format for transmission",
+            "To validate parameters before remote execution"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Marshalling converts parameters from their local representation to a standard format (like XDR) that can be transmitted over the network and understood by the remote system."
+    }
+]

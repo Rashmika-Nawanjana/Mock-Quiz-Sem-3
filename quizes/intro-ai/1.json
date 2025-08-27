@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "According to the Turing Test approach, what is the primary criterion for a machine to be considered intelligent?",
+        "options": [
+            "It can solve complex mathematical problems faster than humans",
+            "It can store and retrieve large amounts of information efficiently",
+            "An interrogator cannot reliably distinguish it from a human in conversation",
+            "It can learn from its mistakes and improve over time"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Turing Test evaluates a machine's ability to exhibit intelligent behavior equivalent to a human, where the interrogator cannot reliably tell the machine apart from a human."
+    },
+    {
+        "id": "q2",
+        "text": "Which component is NOT explicitly mentioned as essential for passing the Turing Test?",
+        "options": [
+            "Natural Language Processing",
+            "Knowledge Representation",
+            "Computer Vision",
+            "Automated Reasoning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The three major components mentioned for passing the Turing Test are Natural Language Processing, Knowledge Representation, and Automated Reasoning. Computer Vision is not explicitly listed as essential for this test."
+    },
+    {
+        "id": "q3",
+        "text": "What was a key finding from the 2023 study by Jones and Bergen regarding GPT-4 in the Turing Test?",
+        "options": [
+            "GPT-4 outperformed humans in all conversational metrics",
+            "GPT-4 was judged to be human 54% of the time, lagging behind actual humans",
+            "GPT-4 failed to pass the Turing test in all experimental conditions",
+            "GPT-4 performed identically to GPT-3.5 in human detection rates"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The study found GPT-4 was judged to be human 54% of the time, outperforming ELIZA (22%) but lagging behind actual humans (67%)."
+    },
+    {
+        "id": "q4",
+        "text": "Which approach to AI focuses on building systems that think like humans through introspection and psychological experiments?",
+        "options": [
+            "The Rational Agent Approach",
+            "The Cognitive Modeling Approach",
+            "The Laws of Thought Approach",
+            "The Turing Test Approach"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Cognitive Modeling Approach aims to create machines that think like humans, using methods like introspection, psychological experiments, and brain imaging to understand human thought processes."
+    },
+    {
+        "id": "q5",
+        "text": "What is a significant limitation of the 'Laws of Thought' approach to AI?",
+        "options": [
+            "It cannot handle probabilistic reasoning",
+            "It focuses too much on human-like behavior rather than optimal behavior",
+            "It becomes computationally intensive even with few facts",
+            "It requires specialized hardware that is not widely available"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'Laws of Thought' approach based on formal logic becomes computationally intensive because even problems with a few dozen facts can exhaust computational resources without guidance on which reasoning steps to try first."
+    },
+    {
+        "id": "q6",
+        "text": "Which characteristic is NOT essential for a rational agent as described in the lecture?",
+        "options": [
+            "Operating autonomously",
+            "Perceiving their environment",
+            "Always thinking logically before acting",
+            "Adapting to change"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Rational agents don't always need to think logically before acting (e.g., reflex actions like removing a hand from a hot stove). They operate autonomously, perceive their environment, persist over time, adapt to change, and pursue goals."
+    },
+    {
+        "id": "q7",
+        "text": "What historical development marked the formal inception of Artificial Intelligence as a field?",
+        "options": [
+            "Alan Turing's 1950 paper 'Computing Machinery and Intelligence'",
+            "McCulloch & Pitts' 1943 Boolean circuit model of the brain",
+            "The Dartmouth Conference in 1956",
+            "Marvin Minsky's SNARC neural network computer in 1951"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Dartmouth Meeting in 1956 is considered the founding event where the term 'Artificial Intelligence' was officially coined and the field was established as a distinct discipline."
+    },
+    {
+        "id": "q8",
+        "text": "Which of these was considered the first AI program?",
+        "options": [
+            "Samuel's Checkers program",
+            "Geometry Theorem Prover",
+            "Logic Theorist",
+            "SAINT symbolic integration program"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Logic Theorist, developed by Alan Newell and Herbert Simon in 1956, is considered to be the first AI program."
+    },
+    {
+        "id": "q9",
+        "text": "What was significant about Samuel's Checkers program developed between 1952-1956?",
+        "options": [
+            "It was the first program to beat a world champion in any game",
+            "It introduced the concept of neural networks to game playing",
+            "It was the first machine learning system that received public recognition",
+            "It used formal logical reasoning to solve game strategy problems"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Samuel's Checkers program was significant as the first machine learning system that received public recognition and served as a precursor to later systems like AlphaGo."
+    },
+    {
+        "id": "q10",
+        "text": "Which development marked the return of neural networks in the mid-1980s?",
+        "options": [
+            "Creation of the first convolutional neural networks",
+            "Development of the backpropagation learning algorithm",
+            "Introduction of deep belief networks",
+            "Publication of the perceptron convergence theorem"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The mid-1980s saw the reinvention and popularization of the backpropagation learning algorithm, which marked the return of neural networks as a viable approach in AI."
+    },
+    {
+        "id": "q11",
+        "text": "What was a key factor enabling the big data revolution in AI from 2001 onward?",
+        "options": [
+            "Development of quantum computing algorithms",
+            "Creation of very large datasets and specialized learning algorithms",
+            "Breakthroughs in neuromorphic computing hardware",
+            "Development of symbolic reasoning systems that scale to large problems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The big data revolution was enabled by the creation of very large datasets (like ImageNet in 2009) and the development of learning algorithms specifically designed to take advantage of these large datasets."
+    },
+    {
+        "id": "q12",
+        "text": "According to the 2018-2019 AI study, what was the most popular category of AI research publications?",
+        "options": [
+            "Computer Vision",
+            "Natural Language Processing",
+            "Machine Learning",
+            "Robotics"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The study found that machine learning was the most popular category of AI papers, which increased 20-fold between 2010 and 2019 to about 20,000 per year."
+    },
+    {
+        "id": "q13",
+        "text": "In which area did AI systems achieve human-level performance by 2019 according to the lecture?",
+        "options": [
+            "Open-ended visual question answering",
+            "Unconstrained natural language understanding",
+            "Protein folding and diabetic retinopathy diagnosis",
+            "Common sense reasoning in open-ended environments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "By 2019, AI systems had met or exceeded human-level performance in protein folding and diabetic retinopathy diagnosis, among other specialized tasks."
+    },
+    {
+        "id": "q14",
+        "text": "What is the current doubling rate for computing power used in top AI applications?",
+        "options": [
+            "Every 3.4 months",
+            "Every 12 months",
+            "Every 18 months",
+            "Every 24 months"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The amount of computing power used in top AI applications is doubling every 3.4 months, significantly faster than traditional Moore's Law rates."
+    },
+    {
+        "id": "q15",
+        "text": "Which application area demonstrates AI's capability in real-time multimodal interaction?",
+        "options": [
+            "Online machine translation systems",
+            "GPT-4o's speech recognition and response capabilities",
+            "Tesla Bot's physical movement coordination",
+            "Waymo's autonomous driving systems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "GPT-4o demonstrates advanced real-time multimodal interaction capabilities, processing and responding to speech, text, and visual inputs seamlessly."
+    },
+    {
+        "id": "q16",
+        "text": "What is a key limitation of current successful AI systems mentioned in the lecture?",
+        "options": [
+            "They cannot process visual information efficiently",
+            "They operate only in well-defined domains with specialized knowledge",
+            "They require excessive computational resources for simple tasks",
+            "They cannot learn from their experiences over time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Current successful AI systems primarily operate in well-defined domains and employ narrow, specialized knowledge rather than general intelligence or common sense."
+    },
+    {
+        "id": "q17",
+        "text": "Which philosophical foundation contributes to AI's understanding of utility and decision theory?",
+        "options": [
+            "Mathematics",
+            "Economics",
+            "Neuroscience",
+            "Psychology"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Economics contributes concepts of utility and decision theory to AI, helping systems make optimal decisions based on expected outcomes."
+    },
+    {
+        "id": "q18",
+        "text": "What was the primary contribution of McCulloch & Pitts in 1943 to the foundations of AI?",
+        "options": [
+            "Development of the first neural network computer",
+            "Boolean circuit model of the brain and neural network computations",
+            "Formulation of the Turing Test for machine intelligence",
+            "Creation of the first symbolic reasoning program"
+        ],
+        "correctAnswer": 1,
+        "explanation": "McCulloch & Pitts developed the Boolean circuit model of the brain, providing the first reference to neural network computations and laying groundwork for connectionist approaches in AI."
+    },
+    {
+        "id": "q19",
+        "text": "Which early AI program was notable for solving calculus problems at college freshman level?",
+        "options": [
+            "Logic Theorist",
+            "Geometry Theorem Prover",
+            "SAINT symbolic integration program",
+            "General Problem Solver (GPS)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SAINT (Symbolic Automatic INTegrator), developed by James Slagle in 1961, was the first symbolic integration program that could solve calculus problems at college freshman level."
+    },
+    {
+        "id": "q20",
+        "text": "What distinguishes the rational agent approach from the laws of thought approach?",
+        "options": [
+            "The rational agent approach requires perfect logical reasoning",
+            "The laws of thought approach considers only optimal outcomes",
+            "The rational agent approach is more general and includes non-logical ways of acting rationally",
+            "The laws of thought approach focuses on human-like behavior rather than optimal behavior"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The rational agent approach is more general than the laws of thought approach because it includes various ways of acting rationally (including reflexes and learned behaviors), not just logical reasoning."
+    },
+    {
+        "id": "q21",
+        "text": "In the evaluation scheme for this course, what percentage of the final marks comes from the end-semester examination?",
+        "options": [
+            "40%",
+            "50%",
+            "60%",
+            "70%"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The end-semester examination contributes 60% of the final marks according to the evaluation scheme presented in the lecture."
+    },
+    {
+        "id": "q22",
+        "text": "Which textbook is listed as the main reference for this course?",
+        "options": [
+            "Artificial Intelligence: Structures and Strategies for Complex Problem Solving",
+            "Pattern Recognition and Machine Learning",
+            "Artificial Intelligence: A Modern Approach, 4th Edition",
+            "Deep Learning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The main textbook for the course is 'Artificial Intelligence: A Modern Approach, 4th Edition' by Stuart Russell and Peter Norvig."
+    },
+    {
+        "id": "q23",
+        "text": "Which week in the syllabus covers Constraint Satisfaction Problems?",
+        "options": [
+            "Week 3",
+            "Week 4",
+            "Week 5",
+            "Week 6"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Week 5 of the syllabus covers Constraint Satisfaction Problems and Revision according to the course outline."
+    },
+    {
+        "id": "q24",
+        "text": "What is the main challenge with achieving perfect rationality in complex environments?",
+        "options": [
+            "Lack of sufficient training data",
+            "Incompatibility with human values",
+            "Excessive computational demands",
+            "Inability to define proper objective functions"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Perfect rationality is not feasible in complex environments because the computational demands become too high, leading to the concept of limited rationality."
+    },
+    {
+        "id": "q25",
+        "text": "Which field contributes to AI through the study of how humans and animals think?",
+        "options": [
+            "Linguistics",
+            "Psychology",
+            "Control Theory",
+            "Neuroscience"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Psychology contributes to AI by studying how humans and animals think, providing insights that can inform the development of intelligent systems."
+    },
+    {
+        "id": "q26",
+        "text": "What was the primary significance of the DENDRAL program developed in 1969?",
+        "options": [
+            "First program to use neural networks for pattern recognition",
+            "First successful knowledge-based program for scientific reasoning",
+            "First program to pass the Turing Test in a limited domain",
+            "First program to demonstrate machine learning through self-play"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DENDRAL, developed by Feigenbaum et al. in 1969, was the first successful knowledge-based program for scientific reasoning, marking an important milestone in expert systems."
+    },
+    {
+        "id": "q27",
+        "text": "Which application area mentioned uses AI for recommending content based on user preferences?",
+        "options": [
+            "Autonomous vehicles",
+            "Medical diagnosis systems",
+            "Streaming services like Netflix and Spotify",
+            "Machine translation systems"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Companies like Netflix, Spotify, Amazon, and YouTube use machine learning algorithms to recommend content based on users' past experiences and preferences."
+    },
+    {
+        "id": "q28",
+        "text": "What does the term 'limited rationality' refer to in the context of rational agents?",
+        "options": [
+            "Agents that can only perform logical reasoning",
+            "Agents that make decisions based on incomplete information",
+            "The practical compromise when perfect rationality is computationally infeasible",
+            "Agents that mimic human cognitive limitations intentionally"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Limited rationality refers to the practical approach where agents make the best possible decisions given computational constraints, recognizing that perfect rationality is often infeasible in complex environments."
+    },
+    {
+        "id": "q29",
+        "text": "Which historical AI development introduced heuristics for guided search through state space?",
+        "options": [
+            "McCulloch & Pitts' neural network model",
+            "Alan Turing's 1950 paper",
+            "Dartmouth Conference proceedings",
+            "Marvin Minsky's SNARC computer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Alan Turing's 1950 paper 'Computing Machinery and Intelligence' introduced the concept of problem solving by searching through state space, guided by heuristics."
+    },
+    {
+        "id": "q30",
+        "text": "What is the current state of AI performance in open-ended visual question answering compared to humans?",
+        "options": [
+            "AI significantly outperforms humans (90% vs 83%)",
+            "AI matches human performance exactly (83% vs 83%)",
+            "AI lags behind human performance (68% vs 83%)",
+            "AI cannot yet attempt open-ended visual question answering"
+        ],
+        "correctAnswer": 2,
+        "explanation": "As reported in the lecture, AI accuracy in open-ended visual question answering improved from 55% to 68% since 2015, but still lags behind human performance at 83%."
+    },
+    {
+        "id": "q31",
+        "text": "Which component of the Turing Test involves storing what the system knows or hears?",
+        "options": [
+            "Natural Language Processing",
+            "Knowledge Representation",
+            "Automated Reasoning",
+            "Machine Learning"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Knowledge Representation is the component that enables the system to store what it knows or hears, which is essential for maintaining context in conversations during the Turing Test."
+    },
+    {
+        "id": "q32",
+        "text": "What was the primary methodological approach used in the GPT-4 Turing test study mentioned?",
+        "options": [
+            "Single-blind laboratory experiments",
+            "Online surveys with hypothetical scenarios",
+            "Randomized, controlled, and preregistered tests",
+            "Long-term longitudinal observation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The study by Jones and Bergen used a randomized, controlled, and preregistered Turing test methodology to ensure rigorous and unbiased evaluation of the AI systems."
+    },
+    {
+        "id": "q33",
+        "text": "Which foundation of AI provides formal methods for dealing with uncertainty and probability?",
+        "options": [
+            "Philosophy",
+            "Mathematics",
+            "Economics",
+            "Linguistics"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Mathematics provides formal representation of probability and statistical methods that are essential for dealing with uncertainty in AI systems."
+    },
+    {
+        "id": "q34",
+        "text": "What distinguishes current AI systems from the next step needed according to the lecture?",
+        "options": [
+            "Current systems use too much computational power",
+            "Current systems lack common sense knowledge for open-ended worlds",
+            "Current systems cannot process visual information",
+            "Current systems are too slow for real-time applications"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The next step for AI requires systems with 'common sense' knowledge to function in open-ended worlds, unlike current systems that operate mainly in well-defined domains with specialized knowledge."
+    },
+    {
+        "id": "q35",
+        "text": "Which early AI program proved theorems that mathematics students would find tricky?",
+        "options": [
+            "Logic Theorist",
+            "Geometry Theorem Prover",
+            "General Problem Solver",
+            "SAINT integration program"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Geometry Theorem Prover, developed by Gelernter in 1959, could prove theorems that many mathematics students would find quite tricky."
+    },
+    {
+        "id": "q36",
+        "text": "What is the primary advantage of the rational agent approach over other AI approaches?",
+        "options": [
+            "It more closely mimics human thought processes",
+            "It is more amenable to scientific development and validation",
+            "It requires less computational resources",
+            "It can solve problems using only first-order logic"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The rational agent approach is more amenable to scientific development because it provides a clear framework for defining and measuring optimal behavior based on objective functions."
+    },
+    {
+        "id": "q37",
+        "text": "Which conference mentioned experienced 800% attendance growth since 2012?",
+        "options": [
+            "AAAI",
+            "ICML",
+            "NeurIPS",
+            "CVPR"
+        ],
+        "correctAnswer": 2,
+        "explanation": "NeurIPS conference attendance increased 800% since 2012 to 13,500 attendees, reflecting the massive growth in AI research and interest."
+    },
+    {
+        "id": "q38",
+        "text": "What was a key finding about international AI research publication trends?",
+        "options": [
+            "The U.S. leads in both quantity and impact of publications",
+            "China publishes more papers but with lower citation impact than the U.S.",
+            "European countries collectively dominate AI research publications",
+            "There is no significant difference in impact between major publishing countries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "China publishes more AI papers per year than the U.S., but U.S. authors have 50% higher citation-weighted impact, indicating higher influence per publication."
+    },
+    {
+        "id": "q39",
+        "text": "Which application demonstrates AI's progress in real-world physical interaction?",
+        "options": [
+            "GPT-4's conversational abilities",
+            "Google Translate's multilingual capabilities",
+            "Tesla Bot's humanoid robotics",
+            "Netflix's recommendation system"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Tesla Bot represents progress in AI-powered physical interaction through humanoid robotics, demonstrating capabilities in real-world physical tasks."
+    },
+    {
+        "id": "q40",
+        "text": "What is the main challenge in moving from current AI systems to more advanced systems?",
+        "options": [
+            "Developing faster processors",
+            "Creating larger datasets",
+            "Achieving common sense reasoning and open-world understanding",
+            "Improving mathematical optimization techniques"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The main challenge is developing systems with 'common sense' knowledge that can function in open-ended worlds and understand unconstrained natural language, moving beyond current narrow domain expertise."
+    }
+]
