@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary disadvantage of parallel transmission over longer distances?",
+        "options": [
+            "It is too slow for modern applications",
+            "It requires complex error correction mechanisms",
+            "It becomes costly and impractical due to signal degradation and wiring needs",
+            "It cannot be used with digital signals"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Over longer distances, parallel transmission requires many separate wires, which is costly. Signal degradation also becomes an issue, and bundling many wires into a single cable is not practical. Additionally, bits may not arrive simultaneously."
+    },
+    {
+        "id": "q2",
+        "text": "In asynchronous transmission, what is the purpose of the start bit?",
+        "options": [
+            "To signal the end of a data group",
+            "To synchronize the clocks of the sender and receiver for the entire session",
+            "To change the line state from idle (1) to active (0), signaling the beginning of a data group",
+            "To carry parity information for error checking"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The start bit changes the line from its idle state (typically logic 1) to a 0, alerting the receiver that a group of bits (e.g., a byte) is about to be sent."
+    },
+    {
+        "id": "q3",
+        "text": "How does isochronous transmission guarantee timely delivery of data?",
+        "options": [
+            "By using very large frame sizes to reduce overhead",
+            "By assigning a fixed, guaranteed bandwidth after an initial start packet is transmitted",
+            "By employing complex forward error correction algorithms",
+            "By dynamically rerouting data through the fastest available path"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Isochronous transmission begins with a start packet. Once transmitted, the data stream is guaranteed a specific bandwidth, ensuring it can be delivered within strict time constraints, which is crucial for applications like streaming video."
+    },
+    {
+        "id": "q4",
+        "text": "What is the fundamental principle that makes Frequency Division Multiplexing (FDM) possible?",
+        "options": [
+            "The data rate of the medium must be lower than the sum of the source data rates",
+            "The useful bandwidth of the medium must exceed the combined bandwidth of the signals to be transmitted",
+            "All signals must be converted to a digital format before multiplexing",
+            "Signals must be synchronized to a common clock source"
+        ],
+        "correctAnswer": 1,
+        "explanation": "FDM is feasible when the available bandwidth of the transmission medium is greater than the combined bandwidth required by the individual signals. Each signal is modulated onto a unique carrier frequency, separated enough to prevent significant overlap."
+    },
+    {
+        "id": "q5",
+        "text": "Why is Wavelength Division Multiplexing (WDM) considered a form of FDM?",
+        "options": [
+            "It uses time slots instead of frequencies",
+            "It multiplexes multiple beams of light, each at a different frequency (wavelength), onto a single fiber",
+            "It converts optical signals to electrical signals for multiplexing",
+            "It is only used for analog signal transmission"
+        ],
+        "correctAnswer": 1,
+        "explanation": "WDM is the optical equivalent of FDM. It combines multiple data streams by using different wavelengths (frequencies) of light on a single optical fiber, thus exploiting the huge bandwidth of fiber optics."
+    },
+    {
+        "id": "q6",
+        "text": "In Synchronous TDM, what is a significant drawback compared to Statistical TDM?",
+        "options": [
+            "It requires more complex hardware for multiplexing and demultiplexing",
+            "It cannot support devices with different data rates",
+            "It wastes capacity by transmitting empty time slots for sources with no data to send",
+            "It is unsuitable for long-distance communication"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Synchronous TDM assigns fixed time slots to each source in every frame. If a source has no data to transmit, its slot remains empty, wasting transmission capacity. This trade-off is made for simplicity of implementation."
+    },
+    {
+        "id": "q7",
+        "text": "What is the primary purpose of 'pulse stuffing' in TDM systems?",
+        "options": [
+            "To add extra bits for error detection",
+            "To synchronize data sources with different clocks or data rates to a common rate",
+            "To encrypt the data stream for security",
+            "To compress the data to save bandwidth"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pulse stuffing (or bit stuffing) is used to synchronize various incoming data streams that may have slightly different rates or clock drift. Extra 'dummy' bits are added to slower streams to raise them to a common, higher data rate suitable for the multiplexed line."
+    },
+    {
+        "id": "q8",
+        "text": "How does Statistical TDM (STDM) improve link efficiency over Synchronous TDM?",
+        "options": [
+            "By using a higher frequency carrier wave",
+            "By dynamically allocating time slots only to active input devices",
+            "By eliminating the need for a framing pattern",
+            "By using analog modulation instead of digital"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Statistical TDM does not pre-assign time slots. Instead, it scans input buffers and includes data only from active sources in its frames. This avoids transmitting empty slots, making more efficient use of the link's capacity, especially when many sources are intermittently active."
+    },
+    {
+        "id": "q9",
+        "text": "What key feature distinguishes ADSL (Asymmetric Digital Subscriber Line) from a traditional leased line?",
+        "options": [
+            "ADSL provides symmetric upstream and downstream data rates",
+            "ADSL uses existing telephone lines but reserves a band for POTS and uses FDM for data",
+            "ADSL can only be used for digital data, not voice",
+            "ADSL requires fiber optic cables to the premises"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ADSL is asymmetric, providing higher downstream capacity. It cleverly uses FDM on existing voice-grade telephone lines. It reserves the lower ~25 kHz spectrum for Plain Old Telephone Service (POTS) and uses higher frequencies for digital data transmission, enabling simultaneous voice and data."
+    },
+    {
+        "id": "q10",
+        "text": "How does Discrete Multitone (DMT) modulation, used in ADSL, adapt to line conditions?",
+        "options": [
+            "It switches between analog and digital transmission based on noise",
+            "It tests each subchannel and allocates more bits to channels with better SNR",
+            "It uses echo cancellation to double the effective bandwidth",
+            "It dynamically changes the TDM frame size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DMT divides the available spectrum into many small subchannels (e.g., 4 kHz each). During initialization, it measures the signal-to-noise ratio (SNR) on each subchannel. It then assigns a higher number of bits to be carried on subchannels with good SNR and fewer or zero bits on subchannels with poor SNR, optimizing the total data rate for the current line conditions."
+    },
+    {
+        "id": "q11",
+        "text": "In a full-duplex transmission mode, what is possible?",
+        "options": [
+            "Data can flow in both directions, but only one way at a time",
+            "Data can flow in both directions simultaneously",
+            "Data can only flow in one predetermined direction",
+            "Data flow alternates directions based on a priority scheme"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Full-duplex communication allows data to be transmitted in both directions at the same time over the same channel, like in a telephone conversation."
+    },
+    {
+        "id": "q12",
+        "text": "What is a major source of overhead in asynchronous transmission?",
+        "options": [
+            "Large frame synchronization headers",
+            "Start and stop bits added to each small group of data bits",
+            "Complex error-checking sequences for every bit",
+            "The need for pulse stuffing to synchronize clocks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Asynchronous transmission adds start and stop bits to each character or small data group (e.g., 2 bits overhead per 8-bit byte). This overhead can be significant compared to the actual data payload."
+    },
+    {
+        "id": "q13",
+        "text": "In the context of FDM, what is 'intermodulation noise'?",
+        "options": [
+            "Noise caused by crosstalk between adjacent channels",
+            "Noise generated within a channel due to poor shielding",
+            "Noise caused by the nonlinear effects of amplifiers generating spurious frequencies in other channels",
+            "Background noise from the transmission medium itself"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Intermodulation noise occurs in FDM systems when the nonlinear characteristics of amplifiers (e.g., on a long link) cause signals in one channel to generate unwanted frequency components that spill over into other channels, degrading the signal."
+    },
+    {
+        "id": "q14",
+        "text": "Why is a 'framing pattern' or 'sync bits' necessary in a Synchronous TDM stream?",
+        "options": [
+            "To provide addressing information for each data source",
+            "To allow the demultiplexer to identify the start and end of each frame and correctly route the time slots",
+            "To compress the data within the frame",
+            "To encrypt the TDM stream for security"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since Synchronous TDM interleaves bits/bytes from multiple sources without start/stop flags for each piece of data, the demultiplexer needs a known, repeating framing pattern to maintain synchronization. This pattern helps the receiver align itself with the frame structure and correctly assign each time slot to the appropriate output channel."
+    },
+    {
+        "id": "q15",
+        "text": "In the TDM example with 11 sources, why is pulse stuffing applied to the 7.2 kbps digital sources?",
+        "options": [
+            "To add error correction codes to their data",
+            "To lower their data rate to match the analog sources",
+            "To raise their data rate to a common multiple (8 kbps) for efficient multiplexing",
+            "To encrypt their data for transmission"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Pulse stuffing is used to synchronize the various input data rates to a common, higher rate. Here, the 7.2 kbps sources have their rates increased to 8 kbps by adding extra 'stuff' bits. This creates a uniform input rate (8 kbps) for the digital sources, simplifying the multiplexing process into the final 128 kbps TDM stream."
+    },
+    {
+        "id": "q16",
+        "text": "What is a key functional difference between a Multiplexer (MUX) and a Demultiplexer (DEMUX)?",
+        "options": [
+            "A MUX combines signals, while a DEMUX separates a combined signal",
+            "A MUX modulates signals, while a DEMUX demodulates them",
+            "A MUX amplifies signals, while a DEMUX attenuates them",
+            "A MUX converts analog to digital, while a DEMUX converts digital to analog"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The core function of a multiplexer is to combine multiple input signals into a single, composite signal for transmission over a shared medium. A demultiplexer performs the reverse operation, taking the composite signal and separating it back into the original component signals."
+    },
+    {
+        "id": "q17",
+        "text": "For which type of data traffic is isochronous transmission MOST critical?",
+        "options": [
+            "Batch file transfers",
+            "Web browsing",
+            "Real-time audio and video streaming",
+            "Email communication"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Isochronous transmission is designed for real-time, time-sensitive data like audio and video streams. It guarantees bandwidth and delivery within strict time constraints, preventing jitter and ensuring smooth playback, which is not a requirement for the other, more bursty types of traffic."
+    },
+    {
+        "id": "q18",
+        "text": "What is the primary reason multiplexing is considered cost-effective?",
+        "options": [
+            "It eliminates the need for error detection",
+            "It allows multiple low-data-rate devices to share a single high-data-rate line, which has a lower cost per kbps",
+            "It simplifies the network protocol stack",
+            "It automatically encrypts all shared data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "High-data-rate transmission lines offer a lower cost per bit transmitted compared to multiple low-rate lines. Multiplexing allows many modest-rate devices to share this efficient, high-capacity link, reducing the overall cost of the transmission facility and equipment."
+    },
+    {
+        "id": "q19",
+        "text": "In the FDM example with voice signals, why is only one sideband (e.g., the lower) transmitted?",
+        "options": [
+            "The upper sideband is always corrupted by noise",
+            "Transmitting one sideband is sufficient to reconstruct the original signal and it conserves bandwidth",
+            "Modulation equipment for single sideband is simpler and cheaper",
+            "Regulations forbid transmitting both sidebands for voice signals"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both sidebands created by amplitude modulation contain the same information. Transmitting just one sideband (e.g., Lower Sideband - LSB) halves the required bandwidth for each signal, allowing more channels to be multiplexed within the available spectrum of the medium without loss of information."
+    },
+    {
+        "id": "q20",
+        "text": "How does echo cancellation enable full-duplex operation on a single wire pair in ADSL?",
+        "options": [
+            "It physically separates the transmitting and receiving wires",
+            "It uses a special modem that filters out its own transmitted signal from the received signal",
+            "It assigns vastly different frequency bands for upstream and downstream",
+            "It uses TDM to alternate transmission directions very rapidly"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Echo cancellation is a signal processing technique that allows a modem to transmit and receive simultaneously on the same line. The modem knows what signal it is sending and can subtract (cancel) that known echo from the total signal on the line, thus isolating the signal being received from the remote end."
+    },
+    {
+        "id": "q21",
+        "text": "What is the fundamental unit of data organization in synchronous transmission?",
+        "options": [
+            "Byte",
+            "Bit",
+            "Frame",
+            "Packet"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Synchronous transmission groups many bits together into a larger unit called a frame. Frames are bracketed with synchronization and control information, allowing for more efficient data transfer with less overhead per bit compared to asynchronous transmission."
+    },
+    {
+        "id": "q22",
+        "text": "Which multiplexing technique is inherently digital and interleaves data in time?",
+        "options": [
+            "FDM",
+            "WDM",
+            "TDM",
+            "CDM"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Time Division Multiplexing (TDM) is a digital technique where the capacity of the link is divided into discrete time slots. Each input source is allocated one or more time slots in a repeating frame, and its data is interleaved with others in the time domain."
+    },
+    {
+        "id": "q23",
+        "text": "In statistical TDM, what information must be included in each time slot or subframe that is NOT necessary in synchronous TDM?",
+        "options": [
+            "Framing bits",
+            "The address of the destination device for the data in that slot",
+            "Error correction codes",
+            "A start bit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Because statistical TDM dynamically assigns slots to active sources rather than using a fixed assignment, each data segment must be accompanied by an address (or channel identifier). This address tells the demultiplexer which output line the data should be routed to, which is unnecessary in synchronous TDM where slot position implies the source/destination."
+    },
+    {
+        "id": "q24",
+        "text": "The 'POTS' band in ADSL is reserved for voice. What is the primary reason for allocating more than the necessary 4 kHz?",
+        "options": [
+            "To allow for high-fidelity audio transmission",
+            "To provide a guard band that prevents crosstalk between the voice and data channels",
+            "To accommodate multiple voice calls using TDM",
+            "To provide bandwidth for a dial-up modem backup"
+        ],
+        "correctAnswer": 1,
+        "explanation": "While voice only requires 0-4 kHz, ADSL typically reserves 0-25 kHz for POTS. This extra bandwidth acts as a guard band, a buffer zone that reduces the filtering requirements and minimizes crosstalk and interference between the low-frequency voice service and the higher-frequency data channels."
+    },
+    {
+        "id": "q25",
+        "text": "What is a key advantage of serial transmission over parallel transmission for long-distance communication?",
+        "options": [
+            "Higher potential data rate",
+            "Simpler synchronization of bits",
+            "Lower cost and greater reliability due to fewer wires",
+            "Built-in error correction"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Serial transmission uses a single communication channel, making it much cheaper and more reliable over long distances. It avoids the issues of cost, signal degradation, and skew (bits arriving at different times) associated with using multiple parallel wires over long distances."
+    },
+    {
+        "id": "q26",
+        "text": "Which component in a WDM system is responsible for amplifying all optical signals simultaneously without converting them to electrical signals?",
+        "options": [
+            "Electrical Repeater",
+            "Multiplexer (MUX)",
+            "Optical Amplifier",
+            "Demultiplexer (DEMUX)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Optical amplifiers are placed periodically along the fiber line. They boost the power of the entire composite optical signal (all wavelengths) directly in the optical domain, which is more efficient than converting each channel to an electrical signal for amplification."
+    },
+    {
+        "id": "q27",
+        "text": "In the TDM process, what is the purpose of the 'scan operation' shown in the transmitter diagram?",
+        "options": [
+            "To check for errors in the data",
+            "To sequentially collect bits or bytes from the input buffers to form the composite TDM stream",
+            "To modulate the digital signal onto an analog carrier",
+            "To compress the data before transmission"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The scan operation is the core function of the multiplexer. It systematically and sequentially polls each input buffer (which holds a bit or a character from each source) and interleaves these pieces of data into a single, continuous output data stream for transmission."
+    },
+    {
+        "id": "q28",
+        "text": "Why is flow control not typically a responsibility of the TDM multiplexer and demultiplexer themselves?",
+        "options": [
+            "Flow control is handled by the physical layer protocol",
+            "The data rate on the multiplexed line is fixed, and the MUX/DEMUX are designed to operate at that rate regardless of device readiness",
+            "TDM includes automatic flow control in every time slot",
+            "Flow control is only needed for statistical TDM, not synchronous TDM"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The TDM multiplexer creates a fixed-rate stream. If an output device cannot accept data, the demultiplexer still must process the incoming slots. The data for the busy device is simply received and must be handled (e.g., discarded or buffered) by the subsequent data link control layer (e.g., HDLC), not the TDM hardware itself."
+    },
+    {
+        "id": "q29",
+        "text": "What does the 'asymmetric' in ADSL directly refer to?",
+        "options": [
+            "The physical shape of the wires",
+            "The use of different modulation techniques for upstream and downstream",
+            "The difference in data rate between the downstream (to user) and upstream (from user) directions",
+            "The fact that it works with older, imperfectly balanced telephone lines"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Asymmetric Digital Subscriber Line is characterized by its different speeds for downloading (downstream) and uploading (upstream). Downstream speed is significantly higher, reflecting the typical usage pattern of internet users who consume more data (e.g., web pages, videos) than they send."
+    },
+    {
+        "id": "q30",
+        "text": "According to the lecture, what is the main reason for the popularity of multiplexing?",
+        "options": [
+            "It enhances security through obscurity",
+            "It simplifies network management software",
+            "The cost per kbps decreases with an increase in the data rate of a facility",
+            "It is a requirement for international data standards"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The driving economic factor is that high-data-rate transmission lines and equipment have a lower cost per unit of data (per kbps) than multiple low-data-rate lines. Multiplexing aggregates many low-rate streams onto one high-rate line, leveraging this economy of scale."
+    },
+    {
+        "id": "q31",
+        "text": "What problem does a guard band aim to solve in FDM?",
+        "options": [
+            "Clock skew between channels",
+            "Crosstalk between adjacent channels",
+            "Excessive overhead from framing bits",
+            "Intermodulation noise from amplifiers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Guard bands are small unused frequency ranges placed between the channels in an FDM system. Their purpose is to provide separation, reducing the chance that the spectra of adjacent channels will overlap and cause crosstalk, which interferes with the signals."
+    },
+    {
+        "id": "q32",
+        "text": "In the HDLC frame structure used for statistical TDM, what is the role of the 'Address' field in a subframe?",
+        "options": [
+            "The IP address of the destination network",
+            "The MAC address of the destination device",
+            "An identifier for the specific data source or output channel the data belongs to",
+            "The address of the multiplexer itself"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Since statistical TDM does not use fixed time slots, the data from different sources is mixed together. The address field in each subframe is a crucial identifier that tells the demultiplexer which output port or destination device the accompanying data block should be forwarded to."
+    },
+    {
+        "id": "q33",
+        "text": "What is the consequence of a demultiplexer losing frame synchronization in a Synchronous TDM system?",
+        "options": [
+            "All data transmission stops until resynchronized",
+            "Only the data in the current frame is lost",
+            "The demultiplexer will misassign all subsequent time slots to the wrong output channels until synchronization is regained",
+            "The system automatically switches to asynchronous transmission mode"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Frame synchronization is critical. If the demultiplexer loses the frame boundary (e.g., misses the framing pattern), it will incorrectly interpret the bit stream. This means it will assign the data from time slots to the wrong output channels, corrupting the data for all channels until the framing pattern is detected again and synchronization is re-established."
+    },
+    {
+        "id": "q34",
+        "text": "Which transmission mode is characterized by unpredictable time intervals between data groups?",
+        "options": [
+            "Synchronous",
+            "Asynchronous",
+            "Isochronous",
+            "Duplex"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Asynchronous transmission sends data in independent, small groups (e.g., characters). The receiver does not know when the next group will arrive, leading to random idle periods between transmissions. Timing is only maintained within each group using start and stop bits."
+    },
+    {
+        "id": "q35",
+        "text": "What is the primary technical challenge that pulse stuffing addresses?",
+        "options": [
+            "Differing data rates from various sources",
+            "High error rates on analog lines",
+            "The need for encryption in TDM systems",
+            "Synchronizing the multiplexer and demultiplexer clocks"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Pulse stuffing is specifically used to handle the issue of multiple data sources that have independent clocks or slightly different native data rates. It brings them all up to a common, synchronized rate suitable for interleaving in the TDM frame."
+    },
+    {
+        "id": "q36",
+        "text": "How does Statistical TDM potentially support more devices than Synchronous TDM on a link of the same data rate?",
+        "options": [
+            "By using a more efficient modulation scheme",
+            "By using data compression on each channel",
+            "By statistically leveraging the fact that not all devices transmit simultaneously, allowing more devices to be pooled",
+            "By eliminating the need for framing bits"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Statistical TDM relies on the statistical probability that not all attached devices will need to transmit data at the same instant. This allows a multiplexer to be designed with more input lines than the number of available time slots in a frame, knowing that the total instantaneous demand will likely not exceed the frame's capacity. Synchronous TDM requires a slot for every device in every frame, limiting the number of devices to the number of slots."
+    },
+    {
+        "id": "q37",
+        "text": "What is the primary function of the 'FCS' field in an HDLC frame?",
+        "options": [
+            "Flow Control Signaling",
+            "Frame Check Sequence (for error detection)",
+            "Frequency Carrier Synchronization",
+            "Frame Channel Selector"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Frame Check Sequence (FCS) field contains a checksum or CRC (Cyclic Redundancy Check) value calculated from the data in the frame. The receiver recalculates this value. If its calculation doesn't match the received FCS, it knows an error has occurred during transmission."
+    },
+    {
+        "id": "q38",
+        "text": "In the context of DMT in ADSL, what does a subchannel's 'bit loading' refer to?",
+        "options": [
+            "The physical weight of the modem",
+            "The number of bits assigned to be transmitted per symbol on that subchannel",
+            "The amount of data buffered for transmission on that subchannel",
+            "The electrical current required to transmit on that subchannel"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Bit loading is the adaptive process in DMT where each 4 kHz subchannel is assigned a number of bits to carry based on its measured signal-to-noise ratio (SNR). High-quality subchannels are loaded with more bits (e.g., using a higher-order QAM constellation), while poor-quality subchannels carry fewer or zero bits."
+    },
+    {
+        "id": "q39",
+        "text": "What is a major application of half-duplex transmission?",
+        "options": [
+            "Telephone networks",
+            "Broadcast television",
+            "Walkie-talkies or police radio",
+            "Fiber optic backbone links"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Half-duplex transmission allows communication in both directions, but only one way at a time. This is ideal for push-to-talk systems like walkie-talkies and traditional police radios, where only one person transmits at a time while others listen."
+    },
+    {
+        "id": "q40",
+        "text": "What is the role of the 'control' field in a generic synchronous frame structure?",
+        "options": [
+            "To carry network layer addressing information",
+            "To contain information for managing the data link layer (e.g., sequence numbers, acknowledgments)",
+            "To perform physical layer synchronization",
+            "To indicate the type of application data in the payload"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The control field in a data link layer frame (like HDLC) is used for link management. It can contain information such as frame sequence numbers, acknowledgment numbers, and commands/responses for controlling the flow of data and managing the connection between two devices."
+    },
+    {
+        "id": "q41",
+        "text": "Why is a simple alternating bit pattern like 101010... often suitable for a TDM framing pattern?",
+        "options": [
+            "It is easy for hardware to generate",
+            "It has a high probability of occurring naturally in a user data stream, ensuring frequent synchronization",
+            "It is a pattern that is unlikely to be sustained in a user data channel, making it easy to distinguish from data",
+            "It provides the best possible error detection capabilities"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A framing pattern must be unique and easily distinguishable from the data payload. A strict alternating pattern like 101010 is statistically very unlikely to occur for a long duration within actual user data. This low probability of imitation makes it a reliable marker for the receiver to identify the start of a frame."
+    },
+    {
+        "id": "q42",
+        "text": "What is the fundamental trade-off between Synchronous and Statistical TDM?",
+        "options": [
+            "Speed vs. Security",
+            "Simplicity vs. Efficiency",
+            "Cost vs. Range",
+            "Analog vs. Digital"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Synchronous TDM is simpler to implement because of its fixed, predictable structure but can be inefficient in its use of bandwidth if slots are unused. Statistical TDM is more complex, requiring buffering and addressing overhead, but is more efficient because it only transmits slots containing actual data."
+    },
+    {
+        "id": "q43",
+        "text": "In the FDM process, what is the 'composite baseband signal'?",
+        "options": [
+            "The original unmodulated voice signal",
+            "The sum of all the individually modulated subcarrier signals",
+            "The signal after it has been demodulated by the receiver",
+            "The signal from the highest frequency channel"
+        ],
+        "correctAnswer": 1,
+        "explanation": "At the FDM transmitter, after each individual signal (e.g., voice) is modulated onto its own subcarrier frequency (f1, f2, ... fn), these modulated signals (s1(t), s2(t), ... sn(t)) are summed together to form a single, composite signal s(t). This composite signal is then often used to modulate a main carrier for transmission."
+    },
+    {
+        "id": "q44",
+        "text": "What property of twisted-pair telephone lines does ADSL exploit that traditional modems did not?",
+        "options": [
+            "Their ability to carry signals with frequencies up to 1 MHz, far beyond the 4 kHz used for voice",
+            "Their built-in error correction capability",
+            "Their symmetric electrical characteristics",
+            "Their use of digital switching"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Traditional voice-band modems were limited to the 0-4 kHz band allocated for voice. ADSL technology exploits the fact that the twisted-pair copper lines themselves are physically capable of carrying signals with frequencies up to 1 MHz or more. It uses FDM to place data channels in this unused higher-frequency spectrum."
+    },
+    {
+        "id": "q45",
+        "text": "What is the primary purpose of the 'scan operation' in the TDM receiver?",
+        "options": [
+            "To check for viruses in the data",
+            "To synchronize with the transmitter's clock",
+            "To distribute the demultiplexed data from the time slots to the correct output buffers",
+            "To modulate the incoming signal"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The receiver's scan operation is the inverse of the transmitter's. It takes the incoming interleaved TDM stream, and based on the known frame structure (slot order), it distributes the data from each time slot to the output buffer associated with that specific channel."
+    },
+    {
+        "id": "q46",
+        "text": "Which of these is NOT a common component of a generic synchronous frame?",
+        "options": [
+            "Synchronization bits",
+            "Start and Stop bits",
+            "Error checking bits",
+            "Data bits"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Start and Stop bits are characteristic of asynchronous transmission, where they are added to each small character. Synchronous transmission uses larger frames bracketed by synchronization patterns (e.g., flags) and includes fields for data, control, and error checking, but not start/stop bits on the individual data elements within the frame."
+    },
+    {
+        "id": "q47",
+        "text": "What is the main reason for using TDM for digitized voice signals (as in the example)?",
+        "options": [
+            "TDM is the only way to transmit digital signals",
+            "It allows multiple digital voice channels to share a single high-speed digital link",
+            "It improves the audio quality of the voice signal",
+            "It encrypts the voice conversation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TDM is a fundamental method for combining multiple low-speed digital streams (like individual PCM-encoded voice channels at 64 kbps) into a single high-speed digital stream (e.g., a T1 line at 1.544 Mbps). This allows for efficient aggregation and transport of many conversations over one physical line."
+    },
+    {
+        "id": "q48",
+        "text": "How does WDM increase the capacity of a single optical fiber?",
+        "options": [
+            "By making the light travel faster",
+            "By using time division multiplexing on a laser beam",
+            "By transmitting multiple signals simultaneously on different wavelengths of light",
+            "By increasing the power of the laser source"
+        ],
+        "correctAnswer": 2,
+        "explanation": "WDM dramatically increases fiber capacity by treating different colors (wavelengths) of light as separate channels. Each wavelength can carry an independent stream of data (e.g., 10 Gbps). A single fiber can carry 80, 160, or more wavelengths, resulting in terabit-per-second total capacity."
+    },
+    {
+        "id": "q49",
+        "text": "What is the defining characteristic of simplex transmission?",
+        "options": [
+            "Data can flow in both directions simultaneously",
+            "Data can flow in both directions, but only one way at a time",
+            "Data flows in only one predetermined direction",
+            "Data flow direction is randomly determined"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Simplex transmission is unidirectional. One device is permanently the transmitter, and the other is permanently the receiver. Examples include traditional broadcast television or a keyboard sending data to a computer (in a simple model)."
+    },
+    {
+        "id": "q50",
+        "text": "In the ADSL frequency allocation diagram, what does the 'echo cancellation' method allow?",
+        "options": [
+            "Upstream and downstream to use overlapping frequency bands",
+            "The complete elimination of the POTS band",
+            "The use of TDM instead of FDM",
+            "The upstream band to be larger than the downstream band"
+        ],
+        "explanation": "Echo cancellation is a technique that allows the upstream and downstream signals to occupy the same frequency band simultaneously. The modem uses sophisticated signal processing to subtract its own transmitted signal (the 'echo') from the total signal on the line, thus isolating the signal received from the other end. This can lead to more flexible bandwidth allocation compared to strict FDM.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q51",
+        "text": "What is the primary mechanism used to prevent buffer overflow in Statistical TDM when input rates exceed the output line capacity?",
+        "options": [
+            "Pulse stuffing",
+            "Flow control protocols at a higher layer (e.g., HDLC)",
+            "Dropping frames randomly",
+            "Increasing the output line speed dynamically"
+        ],
+        "explanation": "Statistical TDM multiplexers have finite input buffers. If the combined input data rate exceeds the output line capacity for a sustained period, buffers will fill up. To prevent overflow and data loss, flow control mechanisms (like those in HDLC) are used. These protocols signal sending devices to pause transmission, typically by not acknowledging received frames until buffer space is available.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q52",
+        "text": "Which multiplexing technique is most susceptible to errors caused by nonlinear amplification?",
+        "options": [
+            "Synchronous TDM",
+            "Statistical TDM",
+            "FDM",
+            "All are equally susceptible"
+        ],
+        "explanation": "FDM is particularly vulnerable to intermodulation noise caused by nonlinearities in system components like amplifiers. Nonlinear amplification creates spurious signals at frequencies that are sums and differences of the original carrier frequencies, which can fall into other channels and cause interference. TDM, being a digital technique in the time domain, is not affected by this specific analog frequency-domain issue.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q53",
+        "text": "What is the key difference between the 'data' in a Synchronous TDM slot and the 'data' in a Statistical TDM subframe?",
+        "options": [
+            "Synchronous TDM data is always analog",
+            "Statistical TDM data includes the user's address information within it",
+            "Synchronous TDM data has no structure, while Statistical TDM data is highly structured",
+            "The data in a Synchronous TDM slot is 'pure' user data, while a Statistical TDM subframe's data is encapsulated with addressing overhead"
+        ],
+        "explanation": "In Synchronous TDM, a time slot contains raw user data (bits/bytes). The destination is implied by the slot's position in the frame. In Statistical TDM, the data unit is a subframe (or packet) which includes not only the user data but also additional header fields (like address and control) that are necessary for the demultiplexer to correctly route the data. This header is the overhead paid for increased efficiency.",
+        "correctAnswer": 3
+    },
+    {
+        "id": "q54",
+        "text": "Why might the effective data rate experienced by a user on a Statistical TDM link be lower than the nominal output line rate?",
+        "options": [
+            "Due to the addressing overhead added to each subframe",
+            "Because statistical multiplexers always operate at half-duplex",
+            "Due to pulse stuffing requirements",
+            "Because it uses analog modulation"
+        ],
+        "explanation": "The efficiency gain of Statistical TDM comes from not sending empty slots. However, this gain is offset by the need to add addressing and control information (overhead) to every block of data that is sent. This overhead consumes some of the link's capacity that could otherwise be used for user data, potentially reducing the effective throughput for each user.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q55",
+        "text": "In the context of the lecture, what does 'PCM' stand for and what is its role in the TDM example?",
+        "options": [
+            "Pulse Code Modulation; it is the method used to convert analog voice signals into a 64 kbps digital stream for TDM",
+            "Parallel Channel Multiplexing; it is an alternative to TDM",
+            "Phase Change Modulation; it is used for the main carrier",
+            "Packet Control Mechanism; it handles flow control"
+        ],
+        "explanation": "Pulse Code Modulation (PCM) is a standard technique for digitizing analog voice signals. It involves sampling the voice signal 8000 times per second and quantizing each sample into an 8-bit value, resulting in a 64 kbps digital stream. These 64 kbps streams are the fundamental inputs that are combined (multiplexed) using TDM to form higher-speed digital hierarchies like T1 (24 channels) and E1 (32 channels).",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q56",
+        "text": "What is the primary function of the 'Flag' field in an HDLC frame?",
+        "options": [
+            "To indicate the priority of the frame",
+            "To carry network layer addressing",
+            "To mark the beginning and end of the frame (framing/synchronization)",
+            "To specify the type of data in the information field"
+        ],
+        "explanation": "The Flag field in HDLC is a unique bit pattern (01111110) that serves as a delimiter. It marks the start and end of a frame, providing synchronization for the receiver to know where a frame begins and ends within the continuous bit stream.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q57",
+        "text": "How does the 'stop bit' in asynchronous transmission differ from the 'idle state' of the line?",
+        "options": [
+            "The stop bit is always a 0, while the idle state is a 1",
+            "The stop bit is always a 1, which is the same as the idle state, ensuring the line returns to idle",
+            "The stop bit carries parity information",
+            "There is no difference; they are the same"
+        ],
+        "explanation": "In asynchronous transmission, the line is held at a logic 1 (marking state) when idle. The start bit transitions the line to 0. The stop bit, which is always a 1, serves to transition the line back to its idle state and ensures a minimum gap between characters, giving the receiver time to process the received data.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q58",
+        "text": "What is a major advantage of using a hierarchical TDM system (e.g., multiplexing multiple T1 lines into a T2 line)?",
+        "options": [
+            "It simplifies network management",
+            "It allows for the creation of very high-speed backbone links by aggregating lower-speed multiplexed streams",
+            "It reduces the need for error checking",
+            "It makes the system fully analog"
+        ],
+        "explanation": "Digital hierarchy standards (like T1, T2, T3, etc.) allow for scalable network design. Multiple low-speed streams are multiplexed into a T1. Multiple T1s can then be multiplexed into a higher-speed T2 stream. This process can continue, creating T3 and higher lines. This allows service providers to build high-capacity backbone networks that efficiently carry traffic from thousands of individual users.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q59",
+        "text": "In the FDM demultiplexing process, what is the role of the bandpass filter?",
+        "options": [
+            "To amplify the selected channel",
+            "To convert the signal from analog to digital",
+            "To isolate a specific channel by filtering out all frequencies outside its assigned band",
+            "To demodulate the signal and extract the original baseband signal"
+        ],
+        "explanation": "At the FDM receiver, the composite signal containing all channels is passed to a bank of bandpass filters. Each filter is tuned to the specific frequency band of one channel. It allows the frequencies in that band to pass through to the demodulator while rejecting (filtering out) all other frequencies, thus isolating the desired channel from the others.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q60",
+        "text": "Considering the entire lecture, what is the single most unifying concept behind all multiplexing techniques?",
+        "options": [
+            "To convert analog signals to digital",
+            "To share the capacity of an expensive, high-performance transmission medium among multiple users to improve cost-effectiveness",
+            "To increase the absolute speed of a single communication channel",
+            "To provide error-free communication"
+        ],
+        "explanation": "While the techniques (FDM, TDM, WDM) differ greatly in their implementation (sharing frequency, time, or wavelength), their core purpose is the same: economic efficiency. They all allow multiple, separate communication signals to share a single transmission facility that has a higher capacity (and lower cost per unit of capacity) than what is needed for any one signal alone.",
+        "correctAnswer": 1
+    }
+]

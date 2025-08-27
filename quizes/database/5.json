@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the fundamental difference between INNER JOIN and OUTER JOIN operations?",
+        "options": [
+            "INNER JOIN returns only matching tuples, OUTER JOIN preserves non-matching tuples with nulls",
+            "INNER JOIN uses Cartesian product, OUTER JOIN uses natural join",
+            "INNER JOIN is faster, OUTER JOIN is more accurate",
+            "INNER JOIN requires USING clause, OUTER JOIN requires ON clause"
+        ],
+        "correctAnswer": 0,
+        "explanation": "INNER JOIN returns only tuples that have matches in both relations, while OUTER JOIN preserves tuples from one or both relations that don't have matches, filling missing attributes with null values."
+    },
+    {
+        "id": "q2",
+        "text": "In a LEFT OUTER JOIN between tables A and B, what happens to tuples from table A that have no matching tuples in table B?",
+        "options": [
+            "They are excluded from the result",
+            "They are included with null values for attributes from table B",
+            "They cause an error in the query execution",
+            "They are duplicated to ensure all combinations are represented"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In LEFT OUTER JOIN, all tuples from the left table (A) are included in the result. Those without matches in the right table (B) appear with null values for all attributes from table B."
+    },
+    {
+        "id": "q3",
+        "text": "What is the key characteristic that distinguishes a FULL OUTER JOIN from LEFT and RIGHT OUTER JOINs?",
+        "options": [
+            "It requires both tables to have the same schema",
+            "It preserves non-matching tuples from both tables with nulls",
+            "It eliminates duplicate tuples automatically",
+            "It can only be used with numeric attributes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "FULL OUTER JOIN preserves tuples from both tables that don't have matches in the other table, filling missing attributes with null values, unlike LEFT or RIGHT OUTER JOINs which preserve only one side."
+    },
+    {
+        "id": "q4",
+        "text": "How would you emulate a FULL OUTER JOIN in MySQL using LEFT and RIGHT JOINs?",
+        "options": [
+            "Use UNION between LEFT JOIN and RIGHT JOIN results",
+            "Use INTERSECT between LEFT JOIN and RIGHT JOIN results",
+            "Use CROSS JOIN between LEFT JOIN and RIGHT JOIN results",
+            "It cannot be emulated in MySQL"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Since MySQL doesn't support FULL OUTER JOIN directly, it can be emulated using UNION between the results of a LEFT JOIN and a RIGHT JOIN, which combines all tuples from both tables."
+    },
+    {
+        "id": "q5",
+        "text": "What is the primary purpose of using the USING clause instead of ON in join operations?",
+        "options": [
+            "To improve query performance",
+            "To simplify syntax when joining on columns with the same name",
+            "To enable outer join functionality",
+            "To handle null values more efficiently"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The USING clause simplifies join syntax when the join condition involves columns with the same name in both tables, avoiding the need to qualify column names with table aliases."
+    },
+    {
+        "id": "q6",
+        "text": "In the context of database views, what does 'view expansion' refer to?",
+        "options": [
+            "Increasing the storage allocated to a view",
+            "The process of replacing view references with their defining queries",
+            "Converting a view into a materialized view",
+            "Adding additional columns to an existing view"
+        ],
+        "correctAnswer": 1,
+        "explanation": "View expansion is the process where the database system replaces references to views in queries with the actual SQL expressions that define those views, recursively until only base relations remain."
+    },
+    {
+        "id": "q7",
+        "text": "What conditions must typically be met for a view to be updatable in SQL?",
+        "options": [
+            "The view must contain at least three base tables",
+            "There must be a one-to-one relationship between view rows and underlying table rows",
+            "The view must include aggregate functions",
+            "The view must be defined with GROUP BY clause"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a view to be updatable, there must be a direct, one-to-one correspondence between rows in the view and rows in the underlying base table(s), typically requiring simple views without aggregates or complex operations."
+    },
+    {
+        "id": "q8",
+        "text": "What is the fundamental difference between a view and a materialized view?",
+        "options": [
+            "Views are virtual, materialized views are physical stored results",
+            "Views are faster, materialized views are slower",
+            "Views support updates, materialized views don't",
+            "Views use memory, materialized views use disk storage"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A view is a virtual relation defined by a query, while a materialized view physically stores the result of the query as an actual table, requiring maintenance when underlying data changes."
+    },
+    {
+        "id": "q9",
+        "text": "Which ACID property ensures that database changes from committed transactions persist despite system failures?",
+        "options": [
+            "Atomicity",
+            "Consistency",
+            "Isolation",
+            "Durability"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Durability guarantees that once a transaction is committed, its effects remain permanent in the database even in the event of system failures, typically through transaction logging and recovery mechanisms."
+    },
+    {
+        "id": "q10",
+        "text": "What does the Isolation property in ACID ensure?",
+        "options": [
+            "Transactions are executed completely or not at all",
+            "Transactions don't interfere with each other's intermediate states",
+            "The database remains consistent after transaction execution",
+            "Transaction results persist after system failures"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Isolation ensures that concurrent transactions execute independently and transparently, preventing them from interfering with each other by seeing intermediate, uncommitted changes."
+    },
+    {
+        "id": "q11",
+        "text": "What is the key difference between PRIMARY KEY and UNIQUE constraints?",
+        "options": [
+            "PRIMARY KEY allows nulls, UNIQUE doesn't",
+            "UNIQUE allows nulls, PRIMARY KEY doesn't",
+            "PRIMARY KEY is for foreign keys, UNIQUE is for primary keys",
+            "UNIQUE requires exactly one per table, PRIMARY KEY allows multiple"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PRIMARY KEY constraints cannot contain null values and there can be only one per table, while UNIQUE constraints can contain a single null value (depending on implementation) and multiple UNIQUE constraints can exist per table."
+    },
+    {
+        "id": "q12",
+        "text": "How does the CHECK constraint differ from other integrity constraints?",
+        "options": [
+            "It can specify arbitrary conditions using predicates",
+            "It only applies to numeric data types",
+            "It's automatically enforced by the database engine",
+            "It requires foreign key relationships"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The CHECK constraint allows specifying custom conditions using predicates that must be satisfied for data to be valid, providing more flexibility than built-in constraints like NOT NULL or UNIQUE."
+    },
+    {
+        "id": "q13",
+        "text": "What problem does referential integrity solve in relational databases?",
+        "options": [
+            "Preventing duplicate tuples in tables",
+            "Ensuring foreign key values reference existing primary keys",
+            "Maintaining data type consistency across columns",
+            "Optimizing query performance through indexing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Referential integrity ensures that values in foreign key columns must either match existing values in the referenced primary key column or be null, preventing orphaned records and maintaining data consistency."
+    },
+    {
+        "id": "q14",
+        "text": "What is the effect of specifying ON DELETE CASCADE in a foreign key constraint?",
+        "options": [
+            "Prevents deletion of referenced parent records",
+            "Automatically deletes child records when parent is deleted",
+            "Sets foreign key to null when parent is deleted",
+            "Creates a backup of deleted records"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ON DELETE CASCADE automatically deletes all child records that reference a parent record when that parent record is deleted, maintaining referential integrity by eliminating orphaned records."
+    },
+    {
+        "id": "q15",
+        "text": "In the person table example with self-referencing foreign keys, what strategy helps avoid constraint violations during insertion?",
+        "options": [
+            "Insert all records with null foreign keys first, then update",
+            "Disable foreign key constraints temporarily",
+            "Insert records in reverse hierarchical order",
+            "Use deferred constraint checking within transactions"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Deferred constraint checking allows constraints to be checked at transaction commit time rather than immediately, enabling insertion of related records in any order within a transaction."
+    },
+    {
+        "id": "q16",
+        "text": "What is the key difference between the DATE and TIMESTAMP data types?",
+        "options": [
+            "DATE stores only date, TIMESTAMP stores date and time",
+            "DATE is more precise than TIMESTAMP",
+            "TIMESTAMP uses less storage than DATE",
+            "DATE supports time zones, TIMESTAMP doesn't"
+        ],
+        "correctAnswer": 0,
+        "explanation": "DATE stores only calendar date (year, month, day), while TIMESTAMP stores both date and time with fractional seconds precision, typically used for precise time recording."
+    },
+    {
+        "id": "q17",
+        "text": "What arithmetic operation between two TIMESTAMP values yields an INTERVAL result?",
+        "options": [
+            "Addition",
+            "Subtraction",
+            "Multiplication",
+            "Division"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Subtracting one TIMESTAMP (or DATE/TIME) from another yields an INTERVAL value representing the duration between the two points in time."
+    },
+    {
+        "id": "q18",
+        "text": "What is the primary advantage of using user-defined types over built-in types?",
+        "options": [
+            "Improved query performance",
+            "Semantic clarity and domain-specific validation",
+            "Reduced storage requirements",
+            "Automatic indexing of columns"
+        ],
+        "correctAnswer": 1,
+        "explanation": "User-defined types provide semantic clarity by creating domain-specific types (like Dollars) that can include validation constraints, making the database schema more meaningful and self-documenting."
+    },
+    {
+        "id": "q19",
+        "text": "How do DOMAIN types differ from user-defined types in SQL?",
+        "options": [
+            "DOMAIN types can have constraints, user-defined types cannot",
+            "User-defined types are more efficient than DOMAIN types",
+            "DOMAIN types are defined with CREATE DOMAIN, user-defined types with CREATE TYPE",
+            "DOMAIN types support inheritance, user-defined types don't"
+        ],
+        "correctAnswer": 2,
+        "explanation": "DOMAIN types are created using CREATE DOMAIN and can include constraints, while user-defined types are created using CREATE TYPE and define completely new types, though both serve similar purposes of extending the type system."
+    },
+    {
+        "id": "q20",
+        "text": "What is the primary storage consideration when working with BLOB and CLOB data types?",
+        "options": [
+            "They are stored inline with other table data",
+            "They typically return pointers rather than the actual data in queries",
+            "They cannot be indexed for efficient retrieval",
+            "They have strict size limitations compared to regular types"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Large objects (BLOBs and CLOBs) are typically stored separately from main table data, and queries return pointers (locators) to the large objects rather than the objects themselves to avoid excessive data transfer."
+    },
+    {
+        "id": "q21",
+        "text": "What is the primary purpose of database indexes?",
+        "options": [
+            "To enforce data integrity constraints",
+            "To speed up data retrieval for specific column values",
+            "To reduce storage requirements for large tables",
+            "To provide backup copies of important data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Indexes are data structures that speed up data retrieval operations by providing efficient access paths to records with specific column values, reducing the need for full table scans."
+    },
+    {
+        "id": "q22",
+        "text": "What is a significant disadvantage of creating too many indexes on a table?",
+        "options": [
+            "They prevent data modification operations",
+            "They increase storage requirements and slow down updates",
+            "They cause data integrity violations",
+            "They make queries run slower"
+        ],
+        "correctAnswer": 1,
+        "explanation": "While indexes speed up read operations, they consume additional storage space and slow down write operations (INSERT, UPDATE, DELETE) because the indexes must be maintained whenever data changes."
+    },
+    {
+        "id": "q23",
+        "text": "Which columns are typically good candidates for indexing?",
+        "options": [
+            "Columns frequently used in WHERE clauses and as foreign keys",
+            "Columns with mostly null values",
+            "Columns that are updated frequently",
+            "Columns with low cardinality (few distinct values)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Columns frequently used in search conditions (WHERE clauses) and foreign key columns are good candidates for indexing because indexes provide the most benefit for these access patterns."
+    },
+    {
+        "id": "q24",
+        "text": "What is the fundamental difference between TRUNCATE and DELETE operations?",
+        "options": [
+            "TRUNCATE is DDL, DELETE is DML",
+            "DELETE is faster than TRUNCATE for large tables",
+            "TRUNCATE can be rolled back, DELETE cannot",
+            "DELETE removes table structure, TRUNCATE only removes data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "TRUNCATE is a DDL (Data Definition Language) operation that quickly removes all rows by deallocating data pages, while DELETE is a DML (Data Manipulation Language) operation that removes rows individually with logging."
+    },
+    {
+        "id": "q25",
+        "text": "Why might TRUNCATE be preferred over DELETE for removing all rows from a large table?",
+        "options": [
+            "TRUNCATE can be conditionally applied with WHERE clauses",
+            "TRUNCATE is faster and uses fewer system resources",
+            "TRUNCATE can be rolled back if needed",
+            "TRUNCATE fires triggers for each row removed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TRUNCATE is much faster than DELETE for large tables because it deallocates entire data pages rather than deleting rows individually, and it generates minimal transaction log activity."
+    },
+    {
+        "id": "q26",
+        "text": "In a recursive view dependency (v1 depends on v2 which depends on v1), what problem occurs during view expansion?",
+        "options": [
+            "The expansion process enters an infinite loop",
+            "The view returns only null values",
+            "The database automatically converts it to a materialized view",
+            "The view expansion is optimized by the query planner"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Recursive view dependencies cause the view expansion process to enter an infinite loop because it repeatedly substitutes view definitions without termination, which database systems typically detect and prevent."
+    },
+    {
+        "id": "q27",
+        "text": "What is the key advantage of using transactions for database operations?",
+        "options": [
+            "They automatically create indexes for better performance",
+            "They ensure data consistency through atomicity and isolation",
+            "They reduce storage requirements through compression",
+            "They provide built-in backup and recovery mechanisms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Transactions ensure data consistency by grouping operations into atomic units (all succeed or all fail) and isolating concurrent operations from seeing intermediate, inconsistent states."
+    },
+    {
+        "id": "q28",
+        "text": "How does the UNIQUE constraint differ from a PRIMARY KEY in terms of null handling?",
+        "options": [
+            "UNIQUE constraints allow multiple nulls, PRIMARY KEY allows one null",
+            "UNIQUE constraints allow one null, PRIMARY KEY allows no nulls",
+            "Both constraints behave identically with null values",
+            "UNIQUE constraints allow no nulls, PRIMARY KEY allows one null"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PRIMARY KEY constraints cannot contain any null values, while UNIQUE constraints typically allow one null value (though this can vary by database implementation)."
+    },
+    {
+        "id": "q29",
+        "text": "What is the purpose of the FINAL keyword in user-defined type creation?",
+        "options": [
+            "It indicates the type cannot have subtypes created from it",
+            "It makes the type immutable after creation",
+            "It specifies that the type definition is complete and optimal",
+            "It enables the type for use in foreign key constraints"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The FINAL keyword specifies that no further subtypes can be created from this user-defined type, while NOT FINAL allows the type to be extended through inheritance."
+    },
+    {
+        "id": "q30",
+        "text": "What problem does deferred constraint checking solve in complex data insertion scenarios?",
+        "options": [
+            "It prevents constraint violations from occurring",
+            "It allows temporary violation during transactions that gets resolved at commit",
+            "It automatically fixes constraint violations during insertion",
+            "It disables constraints permanently for better performance"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Deferred constraint checking allows constraints to be temporarily violated during a transaction as long as they are satisfied by the time the transaction commits, enabling complex multi-step data manipulation."
+    },
+    {
+        "id": "q31",
+        "text": "What is the primary benefit of using materialized views over regular views?",
+        "options": [
+            "They automatically update when underlying data changes",
+            "They provide better performance for frequently accessed query results",
+            "They support more complex query expressions",
+            "They require less storage space than base tables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Materialized views provide better performance for frequently accessed query results by storing precomputed results physically, avoiding the need to repeatedly execute the underlying complex query."
+    },
+    {
+        "id": "q32",
+        "text": "What maintenance requirement is introduced by using materialized views?",
+        "options": [
+            "They must be manually updated when underlying data changes",
+            "They require frequent backup due to volatility",
+            "They need to be redefined when schema changes occur",
+            "They consume additional memory during query execution"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Materialized views require maintenance to keep them synchronized with underlying base tables, either through manual refresh commands or automated refresh mechanisms when data changes."
+    },
+    {
+        "id": "q33",
+        "text": "In which scenario would a RIGHT OUTER JOIN be more appropriate than a LEFT OUTER JOIN?",
+        "options": [
+            "When you want to preserve all tuples from the right table regardless of matches",
+            "When the right table has fewer columns than the left table",
+            "When performing self-joins on the same table",
+            "When joining more than two tables together"
+        ],
+        "correctAnswer": 0,
+        "explanation": "RIGHT OUTER JOIN is appropriate when you need to preserve all tuples from the right table, including those without matches in the left table, with nulls for missing left table attributes."
+    },
+    {
+        "id": "q34",
+        "text": "What is the effect of the ON DELETE SET NULL referential action?",
+        "options": [
+            "It prevents deletion of parent records with existing child references",
+            "It sets foreign key values to null when the referenced parent is deleted",
+            "It automatically deletes the child table when the parent is deleted",
+            "It creates a log entry documenting the deletion cascade"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ON DELETE SET NULL automatically sets the foreign key values to null in child records when the referenced parent record is deleted, preserving the child records but breaking the relationship."
+    },
+    {
+        "id": "q35",
+        "text": "How does the INTERVAL data type typically interact with DATE/TIME/TIMESTAMP values?",
+        "options": [
+            "INTERVAL values can be added to or subtracted from temporal values",
+            "INTERVAL values can only be compared with other INTERVAL values",
+            "INTERVAL values automatically convert temporal values to strings",
+            "INTERVAL values are used exclusively for age calculations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "INTERVAL values represent durations that can be added to or subtracted from DATE, TIME, or TIMESTAMP values to calculate new temporal points, such as adding 7 days to a date."
+    },
+    {
+        "id": "q36",
+        "text": "What is a key consideration when choosing between BLOB and CLOB data types?",
+        "options": [
+            "BLOB for binary data, CLOB for character data",
+            "BLOB for small objects, CLOB for large objects",
+            "BLOB for compressed data, CLOB for uncompressed data",
+            "BLOB for structured data, CLOB for unstructured data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "BLOB (Binary Large Object) is used for storing binary data like images or documents, while CLOB (Character Large Object) is used for large text data, preserving character encoding."
+    },
+    {
+        "id": "q37",
+        "text": "What is the typical storage mechanism for large objects in database systems?",
+        "options": [
+            "They are stored inline within the regular table data pages",
+            "They are stored separately with pointers in the main table",
+            "They are automatically compressed to reduce storage needs",
+            "They are stored in external file systems outside the database"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Large objects are typically stored separately from the main table data, with the table containing pointers (locators) to the actual large object storage, optimizing performance for regular operations."
+    },
+    {
+        "id": "q38",
+        "text": "What is the primary factor that determines whether an index will improve query performance?",
+        "options": [
+            "The number of rows in the table",
+            "The selectivity of the indexed column(s)",
+            "The data type of the indexed column(s)",
+            "The storage engine used by the database"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Index selectivity (the ratio of distinct values to total rows) determines index effectiveness. High selectivity (many distinct values) provides better performance improvement than low selectivity."
+    },
+    {
+        "id": "q39",
+        "text": "Why might an index on a column with very low cardinality (few distinct values) be ineffective?",
+        "options": [
+            "The index would be too large relative to the table size",
+            "The query optimizer might ignore it in favor of full table scans",
+            "It would prevent updates to the indexed column",
+            "It would cause data integrity violations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Indexes on low-cardinality columns are often ineffective because the query optimizer may determine that a full table scan is faster than using an index that doesn't sufficiently narrow down the result set."
+    },
+    {
+        "id": "q40",
+        "text": "What is the key difference in how TRUNCATE and DELETE handle transaction logs?",
+        "options": [
+            "TRUNCATE logs individual row deletions, DELETE logs page deallocations",
+            "TRUNCATE logs minimal information, DELETE logs each row operation",
+            "DELETE doesn't use transaction logs, TRUNCATE uses extensive logging",
+            "Both operations use identical logging mechanisms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TRUNCATE generates minimal log information (typically just page deallocation), while DELETE generates extensive log information for each individual row deletion operation."
+    },
+    {
+        "id": "q41",
+        "text": "How does the behavior of triggers differ between TRUNCATE and DELETE operations?",
+        "options": [
+            "Both operations fire BEFORE and AFTER triggers similarly",
+            "DELETE fires triggers, TRUNCATE does not fire triggers",
+            "TRUNCATE fires triggers once per table, DELETE fires per row",
+            "Only TRUNCATE supports trigger operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DELETE operations fire associated triggers (BEFORE/AFTER DELETE) for each affected row, while TRUNCATE operations typically do not fire any triggers since they don't process rows individually."
+    },
+    {
+        "id": "q42",
+        "text": "What is the primary advantage of using the USING clause over ON when join columns have the same name?",
+        "options": [
+            "It automatically handles null values more efficiently",
+            "It eliminates ambiguity and simplifies the join syntax",
+            "It enables the database to choose better join algorithms",
+            "It allows joining more than two tables simultaneously"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The USING clause simplifies join syntax when joining on columns with identical names by avoiding the need to qualify column names with table aliases, making the query more concise and readable."
+    },
+    {
+        "id": "q43",
+        "text": "In a view that includes an aggregate function like SUM(), why would INSERT operations typically fail?",
+        "options": [
+            "Aggregate views cannot be expanded during query processing",
+            "There's no clear mapping between view rows and underlying table rows",
+            "The database prevents modifications to views with mathematical operations",
+            "Aggregate functions automatically make views read-only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Views containing aggregates lack a clear one-to-one mapping between view rows and underlying table rows, making it ambiguous how INSERT operations should modify the base tables."
+    },
+    {
+        "id": "q44",
+        "text": "What problem does the CHECK constraint solve that isn't addressed by other constraint types?",
+        "options": [
+            "Ensuring column values satisfy custom business rules",
+            "Preventing duplicate values in columns",
+            "Ensuring foreign key relationships are maintained",
+            "Preventing null values in important columns"
+        ],
+        "correctAnswer": 0,
+        "explanation": "CHECK constraints allow enforcement of custom business rules and domain-specific conditions that cannot be expressed through other constraint types like UNIQUE, PRIMARY KEY, or FOREIGN KEY."
+    },
+    {
+        "id": "q45",
+        "text": "What is the significance of the 'final' keyword in user-defined type creation?",
+        "options": [
+            "It prevents the type from being used in table definitions",
+            "It indicates that the type cannot be subclassed or extended",
+            "It makes the type compatible with all built-in operations",
+            "It optimizes storage allocation for the type"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'final' keyword specifies that the user-defined type cannot be extended through inheritance or have subtypes created from it, making it a leaf node in the type hierarchy."
+    },
+    {
+        "id": "q46",
+        "text": "How does referential integrity with CASCADE actions help maintain database consistency?",
+        "options": [
+            "By automatically propagating changes to maintain relationship consistency",
+            "By preventing all deletions of referenced records",
+            "By creating backup copies of related records before changes",
+            "By requiring manual confirmation for cascading operations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "CASCADE actions automatically propagate changes (deletes/updates) from parent records to child records, maintaining referential integrity without requiring manual intervention for each related record."
+    },
+    {
+        "id": "q47",
+        "text": "What is the primary performance consideration when using materialized views?",
+        "options": [
+            "The cost of maintaining consistency with underlying data changes",
+            "The memory required to store the view definition",
+            "The processing time needed for view expansion",
+            "The network bandwidth required to transfer view results"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The main performance consideration with materialized views is the overhead required to keep them synchronized with underlying base tables, which can be significant for frequently updated data."
+    },
+    {
+        "id": "q48",
+        "text": "Why might a database choose to use a full table scan instead of an available index?",
+        "options": [
+            "When the indexed column has high cardinality",
+            "When the query needs to retrieve most of the table's rows",
+            "When the index is on a primary key column",
+            "When the table has very few rows"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The query optimizer may choose a full table scan over index usage when a significant portion of the table needs to be accessed, as sequential reads can be faster than random index accesses for large result sets."
+    },
+    {
+        "id": "q49",
+        "text": "What is the key difference in recovery behavior between TRUNCATE and DELETE after a system crash?",
+        "options": [
+            "TRUNCATE operations can be recovered, DELETE operations cannot",
+            "DELETE operations can be rolled back, TRUNCATE operations cannot in some databases",
+            "Both operations have identical recovery characteristics",
+            "TRUNCATE automatically backs up data before execution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In some databases like MySQL, TRUNCATE operations cannot be rolled back from transaction logs after a crash, while DELETE operations can be recovered due to their detailed logging."
+    },
+    {
+        "id": "q50",
+        "text": "How does the UNIQUE constraint handle multiple null values in a column?",
+        "options": [
+            "It treats all nulls as distinct values, allowing multiple nulls",
+            "It treats all nulls as the same value, allowing only one null",
+            "It rejects all null values entirely",
+            "The behavior is implementation-dependent according to SQL standard"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The SQL standard allows implementations to decide whether to treat nulls as distinct for UNIQUE constraints. Most databases allow multiple nulls in UNIQUE columns, considering each null as distinct."
+    },
+    {
+        "id": "q51",
+        "text": "What is the primary advantage of using domains over base types for columns?",
+        "options": [
+            "Domains provide better storage efficiency",
+            "Domains can include custom constraints and validation rules",
+            "Domains automatically create indexes on the columns",
+            "Domains enable faster query execution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Domains allow defining custom constraints and validation rules that apply to multiple columns, ensuring consistent data validation across the database schema."
+    },
+    {
+        "id": "q52",
+        "text": "In temporal arithmetic, what is the result of adding an INTERVAL to a DATE value?",
+        "options": [
+            "A TIMESTAMP value",
+            "Another DATE value",
+            "An INTEGER representing days",
+            "A string representation of the new date"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Adding an INTERVAL to a DATE results in another DATE value representing the original date shifted by the specified interval duration."
+    },
+    {
+        "id": "q53",
+        "text": "What problem do self-referencing foreign keys solve in database design?",
+        "options": [
+            "They allow representing hierarchical or recursive relationships",
+            "They improve query performance for recursive queries",
+            "They eliminate the need for junction tables in many-to-many relationships",
+            "They provide automatic indexing for hierarchical data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Self-referencing foreign keys enable representing hierarchical structures (like organizational charts or category trees) within a single table by referencing the same table's primary key."
+    },
+    {
+        "id": "q54",
+        "text": "What is the key characteristic that makes a view 'updatable'?",
+        "options": [
+            "The view must contain at least one aggregate function",
+            "The view must be based on a single underlying table",
+            "The view must include a WHERE clause with specific conditions",
+            "The view must be created with the WITH CHECK OPTION"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a view to be updatable, it typically must be based on a single underlying table without aggregates, GROUP BY, or DISTINCT, ensuring a clear mapping between view rows and base table rows."
+    },
+    {
+        "id": "q55",
+        "text": "How does the WITH CHECK OPTION affect view updates?",
+        "options": [
+            "It prevents updates that would make rows disappear from the view",
+            "It automatically checks for data type compatibility during updates",
+            "It enables faster update operations on the view",
+            "It allows updates only during specific time windows"
+        ],
+        "correctAnswer": 0,
+        "explanation": "WITH CHECK OPTION prevents updates or inserts through the view that would create rows not visible through the view (i.e., rows that don't satisfy the view's defining condition)."
+    },
+    {
+        "id": "q56",
+        "text": "What is the primary benefit of using index structures like B-trees over simple linear indexes?",
+        "options": [
+            "B-trees maintain sorted order and support efficient range queries",
+            "B-trees use less storage space than other index structures",
+            "B-trees don't require maintenance when data changes",
+            "B-trees are faster for exact match queries only"
+        ],
+        "correctAnswer": 0,
+        "explanation": "B-trees maintain data in sorted order and support efficient range queries, equality searches, and sequential access, making them versatile for various query patterns."
+    },
+    {
+        "id": "q57",
+        "text": "Why might a database use a hash index instead of a B-tree index?",
+        "options": [
+            "For faster exact match equality queries",
+            "For better support of range queries",
+            "For maintaining sorted data order",
+            "For reduced storage requirements"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Hash indexes provide faster exact match equality queries (O(1) complexity) but don't support range queries or maintain sorted order like B-tree indexes (O(log n) complexity)."
+    },
+    {
+        "id": "q58",
+        "text": "What is the key difference in how NULL values are treated in UNIQUE constraints across different SQL implementations?",
+        "options": [
+            "Some allow multiple NULLs, others allow only one NULL",
+            "Some treat NULLs as equal, others as distinct",
+            "Some reject NULLs entirely in UNIQUE columns",
+            "The behavior is standardized and consistent across implementations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SQL implementations vary in NULL handling for UNIQUE constraints. Some consider all NULLs as equal (allowing only one), while others consider each NULL as distinct (allowing multiple NULLs)."
+    },
+    {
+        "id": "q59",
+        "text": "What problem does the deferred constraint checking option solve in transactional database operations?",
+        "options": [
+            "It allows constraints to be temporarily violated within a transaction",
+            "It automatically corrects constraint violations during commit",
+            "It disables constraint checking for better performance",
+            "It provides alternative constraint definitions for different scenarios"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Deferred constraint checking allows temporary constraint violations within a transaction as long as all constraints are satisfied by the time the transaction commits, enabling complex multi-step operations."
+    },
+    {
+        "id": "q60",
+        "text": "What is the primary advantage of using OUTER JOIN over INNER JOIN in certain queries?",
+        "options": [
+            "OUTER JOIN preserves information about non-matching tuples",
+            "OUTER JOIN provides better performance for large tables",
+            "OUTER JOIN automatically handles null values more efficiently",
+            "OUTER JOIN supports more complex join conditions"
+        ],
+        "correctAnswer": 0,
+        "explanation": "OUTER JOIN preserves information about tuples that don't have matches in the other table (filling with nulls), preventing loss of information that occurs with INNER JOIN when matches don't exist."
+    }
+]

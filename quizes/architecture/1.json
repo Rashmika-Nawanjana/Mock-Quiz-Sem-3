@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "According to the syllabus, which of the following is a primary learning outcome for the Computer Architecture module?",
+        "options": [
+            "Design and fabricate semiconductor components",
+            "Develop a simple microprocessor with a limited instruction set",
+            "Write and optimize high-level language compilers",
+            "Troubleshoot and repair commercial computer hardware"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A key learning outcome listed is the ability to 'Develop a simple microprocessor with a limited instruction set', focusing on architectural understanding rather than semiconductor physics or software engineering."
+    },
+    {
+        "id": "q2",
+        "text": "The recommended textbook 'Computer Architecture: A Quantitative Approach' by Hennessy and Patterson covers several key areas. Which of the following is NOT one of them?",
+        "options": [
+            "Instruction Set Architecture (ISA)",
+            "Domain specific architectures",
+            "Quantum computing algorithms",
+            "Memory Hierarchy"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The textbook covers ISA, Quantitative design, Memory Hierarchy, various parallelisms (Instruction, Data, Thread-Level), and Domain specific architectures. Quantum computing is not listed among its core topics."
+    },
+    {
+        "id": "q3",
+        "text": "What is the fundamental difference between Computer Architecture and Computer Organization?",
+        "options": [
+            "Architecture deals with software, Organization deals with hardware.",
+            "Architecture is the programmer's view (ISA), Organization is the designer's view (internal implementation).",
+            "Architecture is about performance, Organization is about cost.",
+            "They are synonymous terms and can be used interchangeably."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Computer Architecture is the blueprint visible to the programmer (ISA). Computer Organization deals with the internal operational details and implementation of that architecture, which is hidden from the programmer."
+    },
+    {
+        "id": "q4",
+        "text": "In the context of the 'nano-processor' example, what major performance enhancement technique was identified as missing from its single-cycle design?",
+        "options": [
+            "Caching",
+            "Pipelining",
+            "Multithreading",
+            "Speculative execution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture notes explicitly state that the nano-processor was a single-cycle design and that 'Pipelining' is a missing feature that could improve performance."
+    },
+    {
+        "id": "q5",
+        "text": "Which register is solely responsible for holding the memory address of the next instruction to be fetched?",
+        "options": [
+            "Instruction Register (IR)",
+            "Accumulator (A)",
+            "Status Register",
+            "Program Counter (PC)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Program Counter (PC) is the special-purpose register whose function is to keep track of the memory address of the next instruction to be executed."
+    },
+    {
+        "id": "q6",
+        "text": "After an instruction is fetched from memory, where is it stored within the CPU for decoding and execution?",
+        "options": [
+            "Program Counter (PC)",
+            "Accumulator (A)",
+            "Instruction Register (IR)",
+            "General Purpose Register (e.g., t1)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The fetched instruction is stored in the Instruction Register (IR). The control unit then decodes the instruction held in the IR."
+    },
+    {
+        "id": "q7",
+        "text": "What is a key architectural difference between a Microprocessor and a Microcontroller?",
+        "options": [
+            "Microcontrollers are always faster than microprocessors.",
+            "Microprocessors integrate most I/O functions into the same package as the CPU, unlike microcontrollers.",
+            "Microcontrollers integrate most I/O functions into the same package as the CPU, unlike microprocessors.",
+            "Microprocessors cannot be used in embedded systems."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Microcontroller has most I/O functions (e.g., timers, serial communication) integrated into the same IC as the CPU. A Microprocessor typically requires these functions to be provided by separate chips."
+    },
+    {
+        "id": "q8",
+        "text": "In the programming hierarchy, what level sits directly above 'Machine (ISA)' and directly below 'High-Level Language'?",
+        "options": [
+            "Digital Logic",
+            "Control",
+            "Assembly Language",
+            "System Software"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The hierarchy is: User -> High-Level Language -> Assembly Language -> System Software -> Machine (ISA) -> Control -> Digital Logic. Therefore, Assembly Language is directly above Machine level and below High-Level Language."
+    },
+    {
+        "id": "q9",
+        "text": "Why is knowledge of Assembly Language still considered useful for programmers and computer engineers?",
+        "options": [
+            "It is the most portable language across different architectures.",
+            "It is the easiest language for writing complex algorithms.",
+            "It allows for producing fast code and utilizing advanced CPU features not accessible from high-level languages.",
+            "All modern software is ultimately written in Assembly."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Assembly is useful because it can produce highly optimized, fast code and is often the only way to directly use certain advanced or specific hardware features of a processor."
+    },
+    {
+        "id": "q10",
+        "text": "What is the primary function of the Arithmetic Logic Unit (ALU)?",
+        "options": [
+            "To manage the fetch-decode-execute cycle",
+            "To store the results of operations in the Program Counter",
+            "To perform arithmetic and logic operations on data",
+            "To decode instructions fetched from memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The ALU is the core component of the CPU that is responsible for performing all arithmetic (add, subtract) and logic (AND, OR, XOR) operations."
+    },
+    {
+        "id": "q11",
+        "text": "In a typical computer system overview, what is the role of the 'Bus'?",
+        "options": [
+            "To execute instructions",
+            "To store the operating system",
+            "To interconnect the CPU, memory, and I/O devices by transferring data between them",
+            "To convert AC power to DC power for the components"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Bus is the communication system that transfers data between the central components of the computer: the CPU, memory, and input/output devices."
+    },
+    {
+        "id": "q12",
+        "text": "Which step in the instruction execution sequence immediately follows 'Fetch next instruction from memory'?",
+        "options": [
+            "Execute the instruction",
+            "Change PC to point to the next instruction",
+            "Determine the type of instruction",
+            "Fetch data from memory if needed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The standard sequence is: 1. Fetch instruction, 2. Increment PC, 3. Decode instruction, 4. Fetch operands (if needed), 5. Execute, 6. Writeback (if needed)."
+    },
+    {
+        "id": "q13",
+        "text": "What does the RISC-V 'la a0, A' instruction (Load Address) accomplish?",
+        "options": [
+            "It loads the value stored at memory address A into register a0.",
+            "It loads the immediate value 'A' into register a0.",
+            "It calculates and loads the memory address of variable 'A' into register a0.",
+            "It adds the value in register a0 to the address of A."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'la' (Load Address) pseudoinstruction is used to place the memory address (location) of a label (like variable 'A') into a register. It does not load the data value stored at that address."
+    },
+    {
+        "id": "q14",
+        "text": "In RISC-V, what is the purpose of the 'zero' register (x0)?",
+        "options": [
+            "It indicates an error has occurred when its value changes.",
+            "It is used for temporary storage of calculations.",
+            "It always contains the value 0 and writes to it are discarded.",
+            "It holds the return address for function calls."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'zero' register is a hardwired constant that always returns the value 0. Any attempt to write a value to it is ignored, making it useful for operations that need a zero value or for discarding results."
+    },
+    {
+        "id": "q15",
+        "text": "Which RISC-V instruction type is characterized by having fields for two source registers and one destination register?",
+        "options": [
+            "S-type (Store)",
+            "I-type (Immediate)",
+            "R-type (Register)",
+            "J-type (Jump)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "R-type (Register) instructions, like 'add s0, s1, s2', use a format that includes two source registers (rs1, rs2) and one destination register (rd)."
+    },
+    {
+        "id": "q16",
+        "text": "What is the key conceptual purpose of an Instruction Set Architecture (ISA)?",
+        "options": [
+            "To define the exact transistor-level layout of a processor.",
+            "To act as a layer of abstraction between the hardware and the software, defining what the programmer needs to know.",
+            "To specify the clock speed and power consumption of a processor.",
+            "To determine the physical packaging and cooling requirements of a chip."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The ISA is the abstract model of a computer that defines the set of instructions, registers, memory access, etc., that a programmer must understand to write code for that machine, hiding the underlying hardware implementation details."
+    },
+    {
+        "id": "q17",
+        "text": "According to the lecture, what is a significant missing component in the nano-processor regarding its interaction with the outside world?",
+        "options": [
+            "An Arithmetic Logic Unit (ALU)",
+            "A complex instruction decoder",
+            "A memory hierarchy and cache system",
+            "A multi-stage pipeline"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture notes list 'Memory Hierarchy / Cache hierarchy' as a major component missing from the nano-processor, which is crucial for managing the speed gap between the processor and main memory."
+    },
+    {
+        "id": "q18",
+        "text": "In the FLAG/STATUS register, what is the typical purpose of the 'Zero' bit?",
+        "options": [
+            "It indicates an arithmetic overflow has occurred.",
+            "It is set to 1 if the result of the last operation was zero.",
+            "It disables all maskable interrupts when set.",
+            "It signifies the processor is in supervisor mode."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Zero (Z) flag in the status register is a condition code that is set (usually to 1) if the result of an arithmetic or logic operation is zero. This is crucial for conditional branch operations (e.g., beq, bne)."
+    },
+    {
+        "id": "q19",
+        "text": "What is the role of the 'Control Unit' in the 2nd-level view of a computer?",
+        "options": [
+            "To perform arithmetic calculations",
+            "To act as fast storage for intermediate results",
+            "To generate the control signals that coordinate the activities of the ALU, registers, and other components",
+            "To physically connect the address and data buses"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Control Unit is responsible for interpreting the instruction in the IR and generating the necessary timing and control signals to direct the operation of the ALU, registers, and the flow of data on the buses."
+    },
+    {
+        "id": "q20",
+        "text": "The process of 'Assembling' primarily involves:",
+        "options": [
+            "Linking multiple object files into a single executable.",
+            "Converting high-level language code into assembly code.",
+            "Converting mnemonic assembly instructions and symbols into binary machine code.",
+            "Loading the executable program into memory for execution."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Assembling is the step where a program called an assembler translates human-readable assembly language (mnemonics and symbols) into the binary machine code that the processor can execute."
+    },
+    {
+        "id": "q21",
+        "text": "Which of the following is NOT a common metric for evaluating different classes of computers (e.g., servers, embedded)?",
+        "options": [
+            "Reliability",
+            "Cost",
+            "The brand of the CPU",
+            "Energy consumption"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Key performance metrics for computer classes include Reliability, Capacity, Speed, Cost, Energy, and Size. The specific brand of the CPU is an implementation choice, not a fundamental evaluation metric for the class itself."
+    },
+    {
+        "id": "q22",
+        "text": "In the RISC-V ISA, which register is conventionally used to hold the first argument to a function and its return value?",
+        "options": [
+            "sp (x2, Stack Pointer)",
+            "a0 (x10)",
+            "ra (x1, Return Address)",
+            "t0 (x5)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to the RISC-V application binary interface (ABI), registers a0 (x10) and a1 (x11) are used to pass the first two function arguments, and a0 is used to hold the return value."
+    },
+    {
+        "id": "q23",
+        "text": "What is the fundamental operational difference between the 'lw' (Load Word) and 'sw' (Store Word) instructions?",
+        "options": [
+            "'lw' moves data from a register to memory, 'sw' moves data from memory to a register.",
+            "'lw' moves data from memory to a register, 'sw' moves data from a register to memory.",
+            "Both move data between registers, but 'lw' is for words and 'sw' is for bytes.",
+            "'lw' is for arithmetic, 'sw' is for logic operations."
+        ],
+        "correctAnswer": 1,
+        "explanation": "'lw' (Load Word) transfers a word of data from a specified memory address into a destination register. 'sw' (Store Word) transfers a word of data from a source register into a specified memory address."
+    },
+    {
+        "id": "q24",
+        "text": "The 'beq' (Branch if Equal) instruction is an example of what type of instruction flow control?",
+        "options": [
+            "Unconditional jump",
+            "Conditional branch",
+            "Function call",
+            "Exception trap"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'beq' is a conditional branch instruction. It changes the flow of execution (modifies the PC) only if the condition (the two source registers are equal) is met. Otherwise, execution continues to the next instruction."
+    },
+    {
+        "id": "q25",
+        "text": "What is the primary challenge that a memory hierarchy (including caches) is designed to address?",
+        "options": [
+            "The high cost of magnetic hard disk drives",
+            "The difficulty of programming parallel systems",
+            "The speed gap between the fast processor and the slower main memory (DRAM)",
+            "The limited number of registers available in an ISA"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The memory hierarchy (registers -> cache -> main memory -> storage) is designed to mitigate the performance penalty caused by the processor being much faster than the main memory (DRAM). Caches provide fast access to frequently used data."
+    },
+    {
+        "id": "q26",
+        "text": "In the context of processor design, what does the term 'pipelining' refer to?",
+        "options": [
+            "Using multiple independent processor cores on a single chip.",
+            "Overlapping the stages of instruction processing (fetch, decode, execute) to improve throughput.",
+            "Increasing the clock speed to make each instruction execute faster.",
+            "Adding more general-purpose registers to the CPU."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pipelining is a technique where multiple instructions are overlapped in execution. Each stage of the processor (fetch, decode, execute, etc.) works on a different instruction simultaneously, much like an assembly line, increasing overall instruction throughput."
+    },
+    {
+        "id": "q27",
+        "text": "Which tool mentioned in the lecture is a web-based simulator specifically for the RISC-V architecture?",
+        "options": [
+            "Ripes",
+            "WebRiscV",
+            "Verilog",
+            "FPGA development suites"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture mentions 'WebRiscV Simulator (Web Based)' as a tool for simulating RISC-V instructions without hardware. Ripes is a standalone software simulator also mentioned."
+    },
+    {
+        "id": "q28",
+        "text": "What is the purpose of the 'Stack Pointer' (sp, x2) register in RISC-V?",
+        "options": [
+            "To point to the next instruction to be executed.",
+            "To hold the result of arithmetic operations.",
+            "To point to the top of the stack in memory, used for saving register context during function calls.",
+            "To hold a global variable."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Stack Pointer (sp) register holds the memory address of the top of the stack. The stack is a region of memory used for saving temporary data, such as return addresses and register values, during function calls and interrupts."
+    },
+    {
+        "id": "q29",
+        "text": "The 'jal' (Jump and Link) instruction is crucial for implementing what programming construct?",
+        "options": [
+            "Arithmetic loops",
+            "Function or procedure calls",
+            "Conditional if-else statements",
+            "Data movement between registers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'jal' performs two operations: 1) it jumps to a target address (changing the PC), and 2) it saves the address of the next instruction (PC+4) into the return address (ra) register. This allows the called function to return to the caller, enabling subroutine calls."
+    },
+    {
+        "id": "q30",
+        "text": "Which component in the high-level computer view is primarily responsible for storing the program instructions and data that are currently in use?",
+        "options": [
+            "CPU",
+            "Bus",
+            "Memory",
+            "Input/Output Devices"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Main Memory (RAM) is the component that stores the program instructions and data that the CPU is actively using. The CPU fetches instructions from memory and reads/writes data from/to memory."
+    },
+    {
+        "id": "q31",
+        "text": "What is the role of the 'Instruction Decoder' block in a microprocessor?",
+        "options": [
+            "To fetch the instruction from memory.",
+            "To perform the arithmetic calculation specified by the instruction.",
+            "To interpret the binary opcode in the IR and activate the appropriate control signals for other components.",
+            "To hold the address of the next instruction."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Instruction Decoder takes the binary instruction from the Instruction Register (IR), decodes the opcode, and based on that, generates the control signals that will command the ALU, registers, and buses to perform the required operation."
+    },
+    {
+        "id": "q32",
+        "text": "In a multi-stage pipeline like the SweRV EH1 core, what is a potential hazard that must be managed?",
+        "options": [
+            "Voltage hazard",
+            "Data hazard (e.g., a later instruction needs the result of an earlier one that's still in the pipeline)",
+            "Heat hazard",
+            "Physical size hazard"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A data hazard occurs when instructions that are close together in a pipeline depend on each other's results. For example, if one instruction is writing a result to a register in the 'Writeback' stage, a subsequent instruction reading that same register in its 'Decode' stage may get stale data. This requires hazard detection and forwarding or stalling mechanisms."
+    },
+    {
+        "id": "q33",
+        "text": "The 'Amdahl's Law' mentioned in the syllabus is most relevant to evaluating the potential speedup from which performance enhancement technique?",
+        "options": [
+            "Increasing the clock speed",
+            "Adding an SSD instead of an HDD",
+            "Pipelining or parallel processing",
+            "Adding more registers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Amdahl's Law provides a formula for calculating the theoretical maximum speedup of a task when only a portion of it is improved (e.g., parallelized). It is fundamentally used to understand the limits of parallel processing and pipelining, showing that the non-parallelizable part of a program limits the overall speedup."
+    },
+    {
+        "id": "q34",
+        "text": "What is the key difference between a 'RISC' and a 'CISC' architecture at the ISA level?",
+        "options": [
+            "RISC has more complex instructions than CISC.",
+            "CISC has a large and variable instruction set, while RISC has a smaller, simpler, fixed-length set.",
+            "RISC is only for embedded systems, CISC is for desktops.",
+            "CISC processors cannot be pipelined effectively."
+        ],
+        "correctAnswer": 1,
+        "explanation": "CISC (Complex Instruction Set Computer) architectures feature a large number of complex, multi-cycle instructions that can perform operations directly between memory and registers. RISC (Reduced Instruction Set Computer) architectures use a smaller set of simple, single-cycle, fixed-length instructions that primarily operate between registers, requiring Load/Store instructions for memory access."
+    },
+    {
+        "id": "q35",
+        "text": "Which of the following is a primary advantage of using a Hardware Description Language (HDL) like Verilog for computer architecture, as suggested in the lab tools?",
+        "options": [
+            "It allows writing programs that run faster than in C++.",
+            "It enables the design, simulation, and implementation of digital hardware (like processors) before physical fabrication.",
+            "It is used to write the operating system kernel.",
+            "It is the primary language for programming FPGAs as if they were microcontrollers."
+        ],
+        "correctAnswer": 1,
+        "explanation": "HDLs like Verilog and VHDL are used to model the structure and behavior of digital circuits. They allow architects to design, simulate, and test complex systems (like processors) logically and then synthesize them into configurations for FPGAs or layouts for ASICs, without initial physical fabrication."
+    },
+    {
+        "id": "q36",
+        "text": "What is the purpose of the 'System on Chip (SoC)' concept mentioned in the lecture?",
+        "options": [
+            "To create a computer system using only a single type of chip.",
+            "To integrate all or most components of a computer (processor(s), memory, peripherals) onto a single integrated circuit.",
+            "To make software operating systems obsolete.",
+            "To refer to the primary CPU chip in any computer."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A System on a Chip (SoC) integrates the key components of a computer or other electronic system—such as one or more processor cores, memory, I/O ports, and secondary storage—all onto a single chip. This is common in embedded systems and mobile devices."
+    },
+    {
+        "id": "q37",
+        "text": "In the RISC-V instruction 'addi t3, t1, -10', what is the role of the value '-10'?",
+        "options": [
+            "It is a memory address.",
+            "It is an immediate value that is added to the contents of register t1.",
+            "It is the opcode for the subtraction operation.",
+            "It specifies the destination register number."
+        ],
+        "correctAnswer": 1,
+        "explanation": "'addi' is 'add immediate'. The third operand (-10) is a constant (immediate) value that is encoded directly into the instruction itself. The operation performed is: t3 = t1 + (-10), which is effectively a subtraction."
+    },
+    {
+        "id": "q38",
+        "text": "Which bus in the 2nd-level computer view is typically unidirectional and carries the addresses generated by the CPU to memory and I/O devices?",
+        "options": [
+            "Data Bus",
+            "Address Bus",
+            "Control Bus",
+            "I/O Bus"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Address Bus is a unidirectional bus. The CPU outputs memory addresses onto this bus to specify where it wants to read or write data. Other components (memory, I/O controllers) read this address."
+    },
+    {
+        "id": "q39",
+        "text": "What is the significance of the 'Harvard vs. Von Neumann' architectural difference?",
+        "options": [
+            "It defines the number of cores in a processor.",
+            "It relates to how memory is organized: separate instruction/data memories (Harvard) vs. a unified memory (Von Neumann).",
+            "It determines the clock speed of the processor.",
+            "It specifies whether the processor is RISC or CISC."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Von Neumann architecture uses a single, unified memory for both instructions and data. The Harvard architecture uses separate memory systems (and often separate buses) for instructions and data. This can allow for higher performance in certain applications (e.g., DSPs) as instruction fetch and data access can happen simultaneously."
+    },
+    {
+        "id": "q40",
+        "text": "The 'LSU' (Load-Store Unit) in a complex processor pipeline like SweRV EH1 is primarily responsible for:",
+        "options": [
+            "Fetching instructions from memory.",
+            "Decoding arithmetic instructions.",
+            "Handling all data transfers between the processor's registers and the main memory.",
+            "Managing the branch prediction logic."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Load-Store Unit (LSU) is a specialized part of the processor that executes load (e.g., lw) and store (e.g., sw) instructions. It calculates effective addresses and manages the data flow to and from the data memory hierarchy."
+    }
+]

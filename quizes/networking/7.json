@@ -1,0 +1,724 @@
+{
+    "questions": [
+        {
+            "id": "q1",
+            "text": "What is the primary purpose of a Personal Area Network (PAN)?",
+            "options": [
+                "To connect devices within a large campus",
+                "To connect devices and peripherals within a few meters",
+                "To provide internet access across a metropolitan area",
+                "To interconnect multiple organizations globally"
+            ],
+            "correctAnswer": 1,
+            "explanation": "PANs are designed to connect devices and peripherals within a few meters, typically for personal use."
+        },
+        {
+            "id": "q2",
+            "text": "In a bus topology, what is the function of a terminator?",
+            "options": [
+                "To amplify signals for long-distance transmission",
+                "To connect multiple buses together",
+                "To absorb signals and remove them from the bus",
+                "To convert digital signals to analog"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Terminators absorb signals at the end of the bus to prevent signal reflections and remove them from the bus."
+        },
+        {
+            "id": "q3",
+            "text": "What is a key characteristic of ring topology?",
+            "options": [
+                "It uses a central hub for all communications",
+                "It employs unidirectional transmission through repeaters in a closed loop",
+                "It allows bidirectional communication simultaneously",
+                "It requires no special hardware for connection"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ring topology uses a set of repeaters joined with point-to-point links in a closed loop with unidirectional transmission."
+        },
+        {
+            "id": "q4",
+            "text": "In star topology, how do stations typically communicate with each other?",
+            "options": [
+                "Directly without any intermediary",
+                "Through a central node such as a hub or switch",
+                "Via wireless access points only",
+                "Using infrared connections"
+            ],
+            "correctAnswer": 1,
+            "explanation": "In star topology, any two stations must communicate through the central station (hub, switch, or repeater)."
+        },
+        {
+            "id": "q5",
+            "text": "Which factor is NOT typically considered when choosing a network topology?",
+            "options": [
+                "Cost",
+                "Reliability",
+                "Brand popularity of equipment",
+                "Expandability"
+            ],
+            "correctAnswer": 2,
+            "explanation": "While cost, reliability, and expandability are important factors, brand popularity is not a technical consideration for topology selection."
+        },
+        {
+            "id": "q6",
+            "text": "What is the primary purpose of network protocols?",
+            "options": [
+                "To increase the physical size of the network",
+                "To provide rules for how stations begin and proceed with communication",
+                "To reduce the cost of network equipment",
+                "To limit the number of devices on a network"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Protocols are sets of rules that govern how stations begin and proceed with communication on a network."
+        },
+        {
+            "id": "q7",
+            "text": "What is a fundamental problem that multiple access protocols need to solve?",
+            "options": [
+                "How to increase the physical range of the network",
+                "How to reduce the cost of network interface cards",
+                "How to determine when nodes can transmit on a shared channel",
+                "How to convert analog signals to digital"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Multiple access protocols determine how nodes share a channel and when they can transmit to avoid or handle collisions."
+        },
+        {
+            "id": "q8",
+            "text": "Which characteristic is NOT part of an ideal multiple access protocol?",
+            "options": [
+                "When one node wants to transmit, it can send at rate R",
+                "When M nodes want to transmit, each can send at average rate R/M",
+                "Requires a special node to coordinate all transmissions",
+                "Fully decentralized with no synchronization needed"
+            ],
+            "correctAnswer": 2,
+            "explanation": "An ideal multiple access protocol should be fully decentralized with no special node required to coordinate transmissions."
+        },
+        {
+            "id": "q9",
+            "text": "What is the main principle behind TDMA (Time Division Multiple Access)?",
+            "options": [
+                "Dividing the channel into frequency bands",
+                "Using unique codes for each transmission",
+                "Allocating fixed time slots to each node in rotation",
+                "Allowing random transmission with collision detection"
+            ],
+            "correctAnswer": 2,
+            "explanation": "TDMA divides channel access into rounds where each station gets a fixed length time slot for transmission."
+        },
+        {
+            "id": "q10",
+            "text": "How does FDMA (Frequency Division Multiple Access) work?",
+            "options": [
+                "It assigns unique time slots to each node",
+                "It divides the channel spectrum into frequency bands for each station",
+                "It uses special codes to differentiate transmissions",
+                "It allows random access with priority levels"
+            ],
+            "correctAnswer": 1,
+            "explanation": "FDMA divides the channel spectrum into frequency bands, with each station assigned a fixed frequency band."
+        },
+        {
+            "id": "q11",
+            "text": "What is a key characteristic of random access protocols?",
+            "options": [
+                "They require centralized control",
+                "They use predetermined time slots for each node",
+                "They allow collisions and specify how to recover from them",
+                "They assign unique frequency bands to each node"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Random access protocols allow collisions and specify how to detect and recover from them through methods like delayed retransmissions."
+        },
+        {
+            "id": "q12",
+            "text": "What does CSMA (Carrier Sense Multiple Access) require nodes to do before transmitting?",
+            "options": [
+                "Check if the channel is idle by listening first",
+                "Send a request to a central controller",
+                "Wait for a specific time slot assigned to them",
+                "Encode the data with a unique frequency"
+            ],
+            "correctAnswer": 0,
+            "explanation": "CSMA requires nodes to listen to the channel first and transmit only if the channel is sensed idle."
+        },
+        {
+            "id": "q13",
+            "text": "Why can collisions still occur in CSMA despite carrier sensing?",
+            "options": [
+                "Because nodes intentionally collide to test the network",
+                "Because propagation delay means nodes may not hear each other's transmission",
+                "Because the protocol requires occasional collisions for calibration",
+                "Because all nodes are assigned the same frequency band"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Collisions can occur due to propagation delay, where two nodes may not hear each other's transmission immediately."
+        },
+        {
+            "id": "q14",
+            "text": "What is the key advantage of CSMA/CD over basic CSMA?",
+            "options": [
+                "It uses less power for transmission",
+                "It allows for longer frame sizes",
+                "It detects collisions quickly and aborts transmissions, reducing channel wastage",
+                "It doesn't require carrier sensing"
+            ],
+            "correctAnswer": 2,
+            "explanation": "CSMA/CD detects collisions within a short time and aborts colliding transmissions, reducing channel wastage."
+        },
+        {
+            "id": "q15",
+            "text": "In polling MAC protocols, what is a primary concern?",
+            "options": [
+                "High power consumption",
+                "Single point of failure (if master node fails)",
+                "Inability to handle large frames",
+                "Limited to only two nodes"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Polling protocols have a single point of failure concern since if the master node fails, the entire network communication may be disrupted."
+        },
+        {
+            "id": "q16",
+            "text": "What is a limitation of token passing MAC protocols?",
+            "options": [
+                "They cannot work with wired networks",
+                "They require expensive specialized hardware",
+                "They have token overhead and latency issues",
+                "They only work with wireless networks"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Token passing protocols have concerns about token overhead and latency as the token must be passed sequentially between nodes."
+        },
+        {
+            "id": "q17",
+            "text": "How are cable access networks typically structured for upstream communication?",
+            "options": [
+                "All users have dedicated upstream channels",
+                "Users contend for certain upstream channel time slots",
+                "Only one user can transmit upstream at any time",
+                "Upstream communication is not supported"
+            ],
+            "correctAnswer": 1,
+            "explanation": "In cable access networks, multiple users contend for certain upstream channel time slots, while others may be assigned."
+        },
+        {
+            "id": "q18",
+            "text": "What is the fundamental difference between CSMA/CD and CSMA/CA?",
+            "options": [
+                "CSMA/CD is for wireless, CSMA/CA is for wired networks",
+                "CSMA/CD uses collision detection, CSMA/CA uses collision avoidance",
+                "CSMA/CD is slower but more reliable",
+                "CSMA/CA doesn't require carrier sensing"
+            ],
+            "correctAnswer": 1,
+            "explanation": "CSMA/CD uses collision detection while CSMA/CA uses collision avoidance techniques, making them suitable for different network types."
+        },
+        {
+            "id": "q19",
+            "text": "What is the purpose of a MAC address?",
+            "options": [
+                "To identify a device on the global internet",
+                "To provide a network-layer address for interface",
+                "To get a frame from one interface to another physically-connected interface on the same network",
+                "To encrypt data for secure transmission"
+            ],
+            "correctAnswer": 2,
+            "explanation": "MAC addresses are used locally to get frames from one interface to another physically-connected interface on the same network."
+        },
+        {
+            "id": "q20",
+            "text": "How are MAC addresses typically represented?",
+            "options": [
+                "As 32-bit decimal numbers",
+                "As 48-bit hexadecimal numbers",
+                "As 64-bit binary numbers",
+                "As 128-bit ASCII strings"
+            ],
+            "correctAnswer": 1,
+            "explanation": "MAC addresses are typically 48-bit addresses represented in hexadecimal notation (e.g., 1A-2F-BB-76-09-AD)."
+        },
+        {
+            "id": "q21",
+            "text": "Which IEEE standard specifies Ethernet?",
+            "options": [
+                "IEEE 802.2",
+                "IEEE 802.3",
+                "IEEE 802.4",
+                "IEEE 802.5"
+            ],
+            "correctAnswer": 1,
+            "explanation": "IEEE 802.3 specifies Ethernet standards."
+        },
+        {
+            "id": "q22",
+            "text": "In the IEEE 802 reference model, what is the primary function of the Physical Layer?",
+            "options": [
+                "Assemble data into frames with address fields",
+                "Perform error detection on received frames",
+                "Encode/decode signals and handle bit transmission/reception",
+                "Provide interface to higher layers"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The Physical Layer handles encoding/decoding signals, preamble generation/removal, and bit transmission/reception."
+        },
+        {
+            "id": "q23",
+            "text": "Why was the Data Link Layer sub-layered into MAC and LLC in the IEEE 802 model?",
+            "options": [
+                "To make the protocol more expensive to implement",
+                "To accommodate shared access to medium not found in traditional Layer 2",
+                "To reduce compatibility between different manufacturers",
+                "To eliminate the need for physical layer specifications"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The sub-layering was necessary to accommodate shared access to medium, which wasn't present in traditional Layer 2 protocols."
+        },
+        {
+            "id": "q24",
+            "text": "What is the purpose of the preamble in an Ethernet frame?",
+            "options": [
+                "To carry the destination MAC address",
+                "To synchronize receiver and sender clock rates",
+                "To perform error detection on the frame",
+                "To indicate the higher layer protocol"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The 7-byte preamble with pattern 10101010 followed by one byte with pattern 10101011 is used to synchronize receiver and sender clock rates."
+        },
+        {
+            "id": "q25",
+            "text": "How does an Ethernet adapter handle a frame with a non-matching destination address?",
+            "options": [
+                "It forwards the frame to all other nodes",
+                "It passes the data to network layer regardless",
+                "It discards the frame",
+                "It sends a acknowledgment to the sender"
+            ],
+            "correctAnswer": 2,
+            "explanation": "If an adapter receives a frame with a non-matching destination address (and not a broadcast address), it discards the frame."
+        },
+        {
+            "id": "q26",
+            "text": "What does the 'type' field in an Ethernet frame indicate?",
+            "options": [
+                "The manufacturer of the network interface card",
+                "The physical cable type being used",
+                "The higher layer protocol (e.g., IP, IPX, AppleTalk)",
+                "The encryption method used for the data"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The type field indicates the higher layer protocol being carried in the frame, such as IP or other network layer protocols."
+        },
+        {
+            "id": "q27",
+            "text": "Why is Ethernet considered 'unreliable'?",
+            "options": [
+                "It frequently drops packets even without errors",
+                "Receiving NICs don't send ACKs or NACKs to sending NICs",
+                "It cannot detect transmission errors",
+                "It uses outdated hardware technology"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ethernet is unreliable because receiving NICs don't send acknowledgments or negative acknowledgments to sending NICs."
+        },
+        {
+            "id": "q28",
+            "text": "What is Ethernet's MAC protocol?",
+            "options": [
+                "Slotted ALOHA",
+                "Token passing",
+                "Unslotted CSMA/CD with binary backoff",
+                "FDMA with priority scheduling"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ethernet uses unslotted CSMA/CD with binary backoff as its MAC protocol."
+        },
+        {
+            "id": "q29",
+            "text": "What was the original inspiration for the name 'Ethernet'?",
+            "options": [
+                "The ethernet cable connector shape",
+                "The inventor's last name",
+                "The imaginary substance 'ether' believed to be the medium for light",
+                "The company that first commercialized it"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ethernet was named after 'ether,' the imaginary substance that was once believed to occupy all space and be the medium for light."
+        },
+        {
+            "id": "q30",
+            "text": "How has Ethernet evolved physically from its original design?",
+            "options": [
+                "From star to bus topology",
+                "From bus to star topology",
+                "From ring to mesh topology",
+                "From wireless to wired implementation"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Ethernet has evolved from bus topology (popular through mid 90s) to star topology (prevails today) with active switches at the center."
+        },
+        {
+            "id": "q31",
+            "text": "What is the key difference between traditional bus Ethernet and modern star Ethernet?",
+            "options": [
+                "Bus Ethernet is faster than star Ethernet",
+                "In bus topology, all nodes are in the same collision domain",
+                "Star topology requires more expensive cables",
+                "Bus topology has better performance for large networks"
+            ],
+            "correctAnswer": 1,
+            "explanation": "In bus topology, all nodes are in the same collision domain and can collide with each other, while in star topology, nodes do not collide with each other."
+        },
+        {
+            "id": "q32",
+            "text": "Which of these is NOT a typical characteristic considered when choosing network topology?",
+            "options": [
+                "Cost",
+                "Reliability",
+                "Brand color of equipment",
+                "Expandability"
+            ],
+            "correctAnswer": 2,
+            "explanation": "While cost, reliability, and expandability are important technical considerations, the brand color of equipment is not relevant to topology selection."
+        },
+        {
+            "id": "q33",
+            "text": "What problem does the 'tap' device solve in bus topology?",
+            "options": [
+                "It prevents electrical surges from damaging equipment",
+                "It allows stations to attach to the bus communication line",
+                "It converts between different cable types",
+                "It encrypts data on the bus"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The tap is a hardware interface that allows stations to attach to the single communication line (bus) in bus topology."
+        },
+        {
+            "id": "q34",
+            "text": "In ring topology, how is data typically removed from the network?",
+            "options": [
+                "By the destination station after reading it",
+                "By a special purge station at the end of the ring",
+                "By the source station after full circulation",
+                "It remains circulating indefinitely"
+            ],
+            "correctAnswer": 2,
+            "explanation": "In ring topology, data is removed at the source station after it has fully circulated through the ring."
+        },
+        {
+            "id": "q35",
+            "text": "What is a significant advantage of star topology over bus topology?",
+            "options": [
+                "It uses less cable overall",
+                "Failure of one connection doesn't affect other stations",
+                "It doesn't require any special hardware",
+                "It has higher theoretical maximum speed"
+            ],
+            "correctAnswer": 1,
+            "explanation": "In star topology, failure of one connection (spoke) doesn't affect other stations, unlike bus topology where a cable break affects all stations."
+        },
+        {
+            "id": "q36",
+            "text": "Which statement about CSMA/CD is correct?",
+            "options": [
+                "It eliminates collisions completely",
+                "It is particularly well-suited for wireless networks",
+                "It is used in Ethernet networks",
+                "It requires a central controller to manage access"
+            ],
+            "correctAnswer": 2,
+            "explanation": "CSMA/CD (Carrier Sense Multiple Access with Collision Detection) is the MAC protocol used in Ethernet networks."
+        },
+        {
+            "id": "q37",
+            "text": "What is the purpose of the binary backoff algorithm in Ethernet?",
+            "options": [
+                "To encrypt data for security",
+                "To determine wait time after a collision before retransmission",
+                "To compress data for more efficient transmission",
+                "To convert binary data to analog signals"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Binary backoff is used to determine the random wait time after a collision before attempting retransmission, reducing the probability of repeated collisions."
+        },
+        {
+            "id": "q38",
+            "text": "Why is collision detection difficult in wireless LANs?",
+            "options": [
+                "Wireless signals travel too slowly",
+                "Received signal strength is overwhelmed by local transmission strength",
+                "Wireless equipment cannot measure signal strengths",
+                "Wireless protocols prohibit collision detection"
+            ],
+            "correctAnswer": 1,
+            "explanation": "In wireless LANs, collision detection is difficult because the received signal strength is overwhelmed by the strength of the local transmission."
+        },
+        {
+            "id": "q39",
+            "text": "What is the primary function of the LLC (Logical Link Control) sublayer?",
+            "options": [
+                "To manage access to the physical medium",
+                "To provide an interface to higher layers and perform flow/error control",
+                "To encode signals for transmission",
+                "To assign MAC addresses to devices"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The LLC sublayer provides interface to higher layers and performs flow control and error control functions."
+        },
+        {
+            "id": "q40",
+            "text": "What is the significance of the CRC field in an Ethernet frame?",
+            "options": [
+                "It contains the destination MAC address",
+                "It is used for clock synchronization",
+                "It provides error detection through cyclic redundancy check",
+                "It indicates the frame priority level"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The CRC (Cyclic Redundancy Check) field is used for error detection at the receiver; if errors are detected, the frame is dropped."
+        },
+        {
+            "id": "q41",
+            "text": "How does Gigabit Ethernet primarily differ from Fast Ethernet in terms of access method?",
+            "options": [
+                "Gigabit Ethernet uses CSMA/CD while Fast Ethernet uses polling",
+                "Fast Ethernet uses CSMA/CD while Gigabit Ethernet typically uses switching",
+                "Both use exactly the same access method",
+                "Gigabit Ethernet uses token passing while Fast Ethernet uses CSMA/CA"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Fast Ethernet uses CSMA/CD, while Gigabit Ethernet typically uses switched architecture for better performance."
+        },
+        {
+            "id": "q42",
+            "text": "What is a key reason for Ethernet's dominance in LAN technology?",
+            "options": [
+                "It is more secure than alternatives",
+                "It has the highest theoretical speed possible",
+                "It is simpler and cheaper than token LANs and ATM",
+                "It was developed by a government agency with mandatory adoption"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ethernet became dominant because it is simpler and cheaper than alternatives like token LANs and ATM, while keeping up with speed demands."
+        },
+        {
+            "id": "q43",
+            "text": "In the context of Ethernet, what does 'connectionless' mean?",
+            "options": [
+                "No physical connection is required between devices",
+                "No handshaking occurs between sending and receiving NICs",
+                "The network can operate without cables",
+                "Devices can connect without authentication"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Connectionless means no handshaking occurs between sending and receiving NICs before data transmission."
+        },
+        {
+            "id": "q44",
+            "text": "What happens to corrupted Ethernet frames at the receiver?",
+            "options": [
+                "They are automatically retransmitted by the receiver",
+                "They are forwarded to a special error-correction server",
+                "They are dropped and not acknowledged",
+                "They are repaired using error correction codes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Corrupted Ethernet frames detected through CRC are dropped at the receiver and not acknowledged."
+        },
+        {
+            "id": "q45",
+            "text": "Which organization is responsible for standardizing Ethernet?",
+            "options": [
+                "ISO",
+                "IEEE",
+                "IETF",
+                "ITU"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The IEEE (Institute of Electrical and Electronics Engineers) is responsible for standardizing Ethernet as IEEE 802.3."
+        },
+        {
+            "id": "q46",
+            "text": "What is the primary purpose of the MAC sublayer?",
+            "options": [
+                "To provide interface to applications",
+                "To govern access to the LAN transmission media",
+                "To perform signal encoding and decoding",
+                "To route packets between different networks"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The MAC (Media Access Control) sublayer governs access to the LAN transmission media."
+        },
+        {
+            "id": "q47",
+            "text": "How does a network interface card typically obtain its MAC address?",
+            "options": [
+                "It is assigned by the network administrator",
+                "It is dynamically assigned by a DHCP server",
+                "It is burned into the NIC ROM during manufacturing",
+                "It is generated randomly each time the computer boots"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The MAC address is typically burned into the NIC ROM during manufacturing, though it can sometimes be software-settable."
+        },
+        {
+            "id": "q48",
+            "text": "What is the main advantage of token passing protocols over random access protocols?",
+            "options": [
+                "They provide deterministic access without collisions",
+                "They are simpler to implement",
+                "They require less expensive hardware",
+                "They have higher data rates"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Token passing protocols provide deterministic access to the medium without collisions, unlike random access protocols."
+        },
+        {
+            "id": "q49",
+            "text": "Why was Ethernet's original bus topology eventually largely replaced by star topology?",
+            "options": [
+                "Bus topology cables became too expensive",
+                "Star topology provides better fault isolation and performance",
+                "Bus topology couldn't support TCP/IP protocol",
+                "Government regulations prohibited bus topology"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Star topology provides better fault isolation (a cable failure affects only one node) and generally better performance than bus topology."
+        },
+        {
+            "id": "q50",
+            "text": "What is the relationship between IEEE 802.3 and Ethernet?",
+            "options": [
+                "They are competing standards from different organizations",
+                "IEEE 802.3 is the standardized version of Ethernet",
+                "Ethernet is the wireless version of IEEE 802.3",
+                "IEEE 802.3 is an obsolete predecessor to Ethernet"
+            ],
+            "correctAnswer": 1,
+            "explanation": "IEEE 802.3 is the standardized version of Ethernet originally developed by Robert Metcalfe."
+        },
+        {
+            "id": "q51",
+            "text": "In the OSI model, which layer is primarily implemented by Ethernet?",
+            "options": [
+                "Application and Presentation layers",
+                "Network and Transport layers",
+                "Physical and Data Link layers",
+                "Session layer only"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Ethernet primarily implements the Physical and Data Link layers of the OSI model."
+        },
+        {
+            "id": "q52",
+            "text": "What is a significant limitation of channel partitioning MAC protocols like TDMA and FDMA?",
+            "options": [
+                "They cannot handle broadcast communications",
+                "They require complex synchronization",
+                "They allow collisions to occur frequently",
+                "They cannot be used with wired networks"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Channel partitioning protocols like TDMA and FDMA require precise synchronization between nodes, which can be complex to implement."
+        },
+        {
+            "id": "q53",
+            "text": "How does the concept of 'collision domain' differ between bus and star Ethernet topologies?",
+            "options": [
+                "Bus topology has one collision domain for all nodes; star topology has separate collision domains for each node",
+                "Star topology has one collision domain for all nodes; bus topology has separate collision domains",
+                "Both topologies have the same collision domain characteristics",
+                "Collision domains don't exist in Ethernet networks"
+            ],
+            "correctAnswer": 0,
+            "explanation": "In bus topology, all nodes share a single collision domain, while in star topology with a switch, each node is in its own collision domain."
+        },
+        {
+            "id": "q54",
+            "text": "What is the primary purpose of the source address field in an Ethernet frame?",
+            "options": [
+                "To identify where acknowledgments should be sent",
+                "To help routers determine the best path for the frame",
+                "To allow the recipient to identify who sent the frame",
+                "To encrypt the frame contents for security"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The source address field allows the recipient to identify which device sent the Ethernet frame."
+        },
+        {
+            "id": "q55",
+            "text": "Why might CSMA/CA be preferred over CSMA/CD in wireless networks?",
+            "options": [
+                "CSMA/CA provides higher data rates",
+                "Collision detection is difficult in wireless environments",
+                "CSMA/CA requires less expensive hardware",
+                "CSMA/CD is patented and cannot be used in wireless"
+            ],
+            "correctAnswer": 1,
+            "explanation": "CSMA/CA (Collision Avoidance) is preferred in wireless networks because collision detection is difficult due to the hidden terminal problem and signal strength issues."
+        },
+        {
+            "id": "q56",
+            "text": "What is a key advantage of random access protocols over channel partitioning protocols?",
+            "options": [
+                "They provide guaranteed access time for each node",
+                "They are more efficient when nodes have bursty traffic",
+                "They don't require any coordination between nodes",
+                "They eliminate the need for addressing in frames"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Random access protocols are more efficient for bursty traffic because they don't waste bandwidth allocated to idle nodes, unlike channel partitioning protocols."
+        },
+        {
+            "id": "q57",
+            "text": "How does the maximum cable length affect collision detection in CSMA/CD networks?",
+            "options": [
+                "Longer cables require higher data rates",
+                "Longer cables increase propagation delay, affecting collision detection timing",
+                "Cable length has no effect on collision detection",
+                "Shorter cables cause more collisions due to signal reflection"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Longer cables increase propagation delay, which affects the collision detection timing and requires adjustments to the slot time in CSMA/CD networks."
+        },
+        {
+            "id": "q58",
+            "text": "What is the significance of the minimum frame size in Ethernet?",
+            "options": [
+                "It ensures frames contain enough data to be efficient",
+                "It helps prevent undetected collisions in CSMA/CD networks",
+                "It matches the maximum packet size of TCP",
+                "It is required for compatibility with token ring networks"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The minimum frame size ensures that collisions can be detected by the sending station before it finishes transmission in CSMA/CD networks."
+        },
+        {
+            "id": "q59",
+            "text": "How does full-duplex operation change Ethernet's characteristics?",
+            "options": [
+                "It eliminates the need for MAC addresses",
+                "It allows simultaneous transmission and reception, making CSMA/CD unnecessary",
+                "It requires a different frame format",
+                "It reduces the maximum possible cable length"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Full-duplex operation allows simultaneous transmission and reception on separate channels, eliminating collisions and making CSMA/CD unnecessary."
+        },
+        {
+            "id": "q60",
+            "text": "Why might a network administrator choose to implement a token passing protocol instead of CSMA/CD?",
+            "options": [
+                "When deterministic access time is more important than maximum throughput",
+                "When the network has only two devices",
+                "When the budget for network equipment is very limited",
+                "When all devices are manufactured by the same vendor"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Token passing protocols provide deterministic access time (predictable maximum wait time), which is important for real-time applications, though they may have lower maximum throughput than CSMA/CD under light loads."
+        }
+    ]
+}

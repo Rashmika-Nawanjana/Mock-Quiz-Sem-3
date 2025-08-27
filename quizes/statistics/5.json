@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "A 95% confidence interval for the mean breakdown voltage of an insulator is calculated from a sample to be (42.1 kV, 47.9 kV). What is the correct interpretation of this interval?",
+        "options": [
+            "95% of all insulators have a breakdown voltage between 42.1 kV and 47.9 kV.",
+            "We are 95% confident that the true population mean breakdown voltage lies between 42.1 kV and 47.9 kV.",
+            "There is a 95% probability that the sample mean is between 42.1 kV and 47.9 kV.",
+            "The sample mean is exactly 45.0 kV."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A confidence interval provides a range of plausible values for the population parameter (μ), not a probability statement about the sample statistic or individual observations. The confidence level refers to the long-run success rate of the method."
+    },
+    {
+        "id": "q2",
+        "text": "The general form of a confidence interval is 'Statistic ± Margin of Error'. If the margin of error for a population mean is 5.2 and the sample mean is 80.0, what is the confidence interval?",
+        "options": [
+            "(74.8, 85.2)",
+            "(75.0, 85.0)",
+            "(80.0, 85.2)",
+            "(5.2, 80.0)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The interval is calculated as Sample Mean ± Margin of Error. Therefore, the lower limit is 80.0 - 5.2 = 74.8 and the upper limit is 80.0 + 5.2 = 85.2."
+    },
+    {
+        "id": "q3",
+        "text": "What is the standard error (SE) for the sample mean?",
+        "options": [
+            "s / n",
+            "s² / √n",
+            "s / √n",
+            "σ / √n"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The standard error of the sample mean, which estimates the standard deviation of the sampling distribution of x̄, is calculated as the sample standard deviation (s) divided by the square root of the sample size (n)."
+    },
+    {
+        "id": "q4",
+        "text": "To construct a 99% confidence interval for a population proportion, you would use a critical Z-value (Z_(α/2)) of approximately:",
+        "options": [
+            "1.96",
+            "1.645",
+            "2.576",
+            "2.326"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For a 99% confidence interval, α = 0.01 and α/2 = 0.005. The Z-value that leaves 0.5% of the area in each tail of the standard normal distribution is Z₀.₀₀₅ ≈ 2.576."
+    },
+    {
+        "id": "q5",
+        "text": "The standard error for the difference between two independent sample means, x̄₁ - x̄₂, is:",
+        "options": [
+            "s₁/n₁ + s₂/n₂",
+            "√(s₁²/n₁ + s₂²/n₂)",
+            "(s₁ + s₂)/√(n₁ + n₂)",
+            "√(s_p²(1/n₁ + 1/n₂))"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The formula for the standard error of the difference between two independent means, when population variances are unknown and not assumed equal, is √(s₁²/n₁ + s₂²/n₂)."
+    },
+    {
+        "id": "q6",
+        "text": "A poll of 500 voters shows 55% support a candidate. What is the standard error for this sample proportion?",
+        "options": [
+            "√(0.55*0.45/500)",
+            "0.55/√500",
+            "√(0.55/500)",
+            "0.55*0.45/500"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The standard error for a sample proportion p is calculated as √[p(1 - p)/n]. Here, p=0.55, 1-p=0.45, and n=500."
+    },
+    {
+        "id": "q7",
+        "text": "Which distribution is used to construct a confidence interval for a population variance (σ²)?",
+        "options": [
+            "The normal (Z) distribution",
+            "The t-distribution",
+            "The Chi-square (χ²) distribution",
+            "The F-distribution"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The confidence interval for a population variance is derived from the Chi-square distribution. The pivotal quantity is (n-1)s²/σ² ~ χ²₍ₙ₋₁₎."
+    },
+    {
+        "id": "q8",
+        "text": "The formula for a CI for variance is [(n-1)s² / χ²₁₋α/₂, (n-1)s² / χ²α/₂]. For a 95% CI with n=17, what are the correct degrees of freedom for the Chi-square values?",
+        "options": [
+            "16",
+            "17",
+            "n",
+            "2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The degrees of freedom for the Chi-square distribution in a variance confidence interval is ν = n - 1. With n=17, df = 16."
+    },
+    {
+        "id": "q9",
+        "text": "For a 95% CI for variance, the Chi-square values χ²α/₂ and χ²₁₋α/₂ are chosen so that:",
+        "options": [
+            "2.5% of the area is in each tail of the distribution.",
+            "5% of the area is in each tail of the distribution.",
+            "5% of the area is in the right tail only.",
+            "95% of the area is between them."
+        ],
+        "correctAnswer": 0,
+        "explanation": "For a 95% confidence interval, α=0.05, so α/2=0.025. Therefore, we find the critical values where 2.5% of the area is in the lower tail (χ²α/₂) and 2.5% is in the upper tail (χ²₁₋α/₂), leaving 95% in the middle."
+    },
+    {
+        "id": "q10",
+        "text": "From the computational exercise: n=17, s²=137324.3. To find the 95% CI for σ², you need Chi-square values. If χ²₀.₀₂₅,₁₆ = 28.845 and χ²₀.₉₇₅,₁₆ = 6.908, what is the LOWER limit of the interval?",
+        "options": [
+            "(16 * 137324.3) / 28.845",
+            "(16 * 137324.3) / 6.908",
+            "137324.3 / 28.845",
+            "137324.3 / 6.908"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The lower limit of the CI for variance is given by (n-1)s² / χ²₁₋α/₂. Here, n-1=16, s²=137324.3, and χ²₁₋α/₂ for a 95% CI is χ²₀.₉₇₅,₁₆ = 6.908. Wait, no: The formula is Lower Limit = (n-1)s² / χ²_{1-α/2} and Upper Limit = (n-1)s² / χ²_{α/2}. So for the lower limit, you divide by the larger Chi-square value. The calculation is (16 * 137324.3) / 28.845."
+    },
+    {
+        "id": "q11",
+        "text": "Using the values from Q10 (n=17, s²=137324.3, χ²₀.₀₂₅,₁₆=28.845, χ²₀.₉₇₅,₁₆=6.908), calculate the UPPER limit of the 95% CI for the population variance.",
+        "options": [
+            "76,200",
+            "318,000",
+            "219,7000",
+            "1,370,000"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Upper Limit = (n-1)s² / χ²_{α/2} = (16 * 137324.3) / 6.908. First, calculate the numerator: 16 * 137324.3 = 2,197,188.8. Then divide by 6.908: 2,197,188.8 / 6.908 ≈ 318,000. So the upper limit is approximately 318,000."
+    },
+    {
+        "id": "q12",
+        "text": "If you wanted a narrower confidence interval for a mean, which of these actions would achieve that?",
+        "options": [
+            "Increase the confidence level (e.g., from 95% to 99%).",
+            "Decrease the sample size.",
+            "Increase the sample size.",
+            "The width of the interval is fixed and cannot be changed."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The width of the confidence interval is proportional to 1/√n. Increasing the sample size (n) decreases the standard error, which in turn decreases the margin of error and creates a narrower interval."
+    },
+    {
+        "id": "q13",
+        "text": "Everything else being equal, a 99% confidence interval will be __________ a 95% confidence interval.",
+        "options": [
+            "narrower than",
+            "wider than",
+            "the same width as",
+            "unrelated to"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A higher confidence level requires a larger critical value (e.g., Z=2.576 for 99% vs. Z=1.96 for 95%). A larger critical value multiplied by the standard error results in a larger margin of error and a wider interval."
+    },
+    {
+        "id": "q14",
+        "text": "The breakdown voltage of 10 randomly selected insulators are measured: 62, 58, 64, 55, 69, 61, 59, 67, 60, 63 (in kV). What is the point estimate for the population mean breakdown voltage (μ)?",
+        "options": [
+            "61.8 kV",
+            "62.0 kV",
+            "61.0 kV",
+            "The sample size is too small to calculate."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The point estimate for μ is the sample mean, x̄. Sum = 62+58+64+55+69+61+59+67+60+63 = 618. x̄ = 618 / 10 = 61.8 kV."
+    },
+    {
+        "id": "q15",
+        "text": "Using the data from Q14, if the sample standard deviation is s = 4.22 kV, what is the standard error of the mean?",
+        "options": [
+            "4.22 / 10",
+            "4.22 / √10",
+            "√(4.22 / 10)",
+            "4.22² / 10"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The standard error of the mean is s / √n. Here, s = 4.22 kV and n = 10, so SE = 4.22 / √10 ≈ 4.22 / 3.162 ≈ 1.334 kV."
+    },
+    {
+        "id": "q16",
+        "text": "For the data in Q14 and Q15 (x̄=61.8, s=4.22, n=10), what is the margin of error for a 95% CI? (Use t₀.₀₂₅,₉ = 2.262)",
+        "options": [
+            "2.262 * (4.22 / √10)",
+            "1.96 * (4.22 / √10)",
+            "2.262 * 4.22",
+            "1.96 * 4.22"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Because the sample size is small (n=10 < 30) and the population standard deviation is unknown, we use the t-distribution. The margin of error is t_(α/2, n-1) * (s/√n). Here, t₀.₀₂₅,₉ = 2.262 and s/√n is the standard error."
+    },
+    {
+        "id": "q17",
+        "text": "Calculate the 95% confidence interval for the true mean breakdown voltage using the data from Q14-16 (x̄=61.8, s=4.22, n=10, t₀.₀₂₅,₉=2.262, SE≈1.334).",
+        "options": [
+            "61.8 ± 3.02 → (58.78, 64.82)",
+            "61.8 ± 2.62 → (59.18, 64.42)",
+            "61.8 ± 1.33 → (60.47, 63.13)",
+            "61.8 ± 8.27 → (53.53, 70.07)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Margin of Error = t * SE = 2.262 * 1.334 ≈ 3.02. The confidence interval is then x̄ ± ME = 61.8 ± 3.02, which gives a lower limit of 58.78 and an upper limit of 64.82."
+    },
+    {
+        "id": "q18",
+        "text": "A quality control inspector finds that 12 out of a random sample of 200 chips are defective. What is the point estimate for the population proportion of defective chips (p)?",
+        "options": [
+            "0.06",
+            "0.12",
+            "0.005",
+            "0.5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The point estimate for the population proportion p is the sample proportion, ˆp = x/n = 12/200 = 0.06."
+    },
+    {
+        "id": "q19",
+        "text": "For the scenario in Q18 (ˆp=0.06, n=200), what is the standard error for this proportion?",
+        "options": [
+            "√((0.06*0.94)/200)",
+            "0.06/√200",
+            "√(0.06/200)",
+            "0.5/√200"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The standard error for a proportion is √[ˆp(1-ˆp)/n]. Here, ˆp=0.06, 1-ˆp=0.94, n=200."
+    },
+    {
+        "id": "q20",
+        "text": "Calculate the 90% confidence interval for the true proportion of defective chips. (ˆp=0.06, n=200, Z₀.₀₅=1.645). The calculated SE is approximately 0.0168.",
+        "options": [
+            "0.06 ± 0.028 → (0.032, 0.088)",
+            "0.06 ± 0.0168 → (0.0432, 0.0768)",
+            "0.06 ± 0.033 → (0.027, 0.093)",
+            "0.06 ± 0.001 → (0.059, 0.061)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Margin of Error = Z * SE = 1.645 * 0.0168 ≈ 0.0276 (or ~0.028). The confidence interval is ˆp ± ME = 0.06 ± 0.028, which gives a lower limit of 0.032 and an upper limit of 0.088."
+    },
+    {
+        "id": "q21",
+        "text": "You are comparing the strength of two alloys. Sample 1 (n₁=25, x̄₁=80 MPa, s₁=5 MPa). Sample 2 (n₂=30, x̄₂=75 MPa, s₂=6 MPa). What is the point estimate for the difference in mean strength, μ₁ - μ₂?",
+        "options": [
+            "5 MPa",
+            "155 MPa",
+            "-5 MPa",
+            "1 MPa"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The point estimate for the difference in population means (μ₁ - μ₂) is the difference in sample means (x̄₁ - x̄₂) = 80 - 75 = 5 MPa."
+    },
+    {
+        "id": "q22",
+        "text": "For the data in Q21, what is the standard error for the difference between the means?",
+        "options": [
+            "√(5²/25 + 6²/30)",
+            "(5/25 + 6/30)",
+            "√(5/25 + 6/30)",
+            "(5 + 6)/√(25 + 30)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The standard error for the difference between two independent means is √(s₁²/n₁ + s₂²/n₂). Here, s₁²=25, n₁=25, s₂²=36, n₂=30."
+    },
+    {
+        "id": "q23",
+        "text": "Calculate the standard error from Q22. √(5²/25 + 6²/30) = √(25/25 + 36/30) = √(1 + 1.2) = √2.2. What is the value?",
+        "options": [
+            "1.483",
+            "2.2",
+            "1.0",
+            "1.2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "√2.2 ≈ 1.483. This is the standard error for the difference in means."
+    },
+    {
+        "id": "q24",
+        "text": "For a 95% CI for the difference in means (μ₁ - μ₂) from Q21-23 (Point Estimate=5, SE≈1.483, Z₀.₀₂₅=1.96), what is the margin of error?",
+        "options": [
+            "1.96 * 1.483 ≈ 2.91",
+            "1.645 * 1.483 ≈ 2.44",
+            "2.5 * 1.483 ≈ 3.71",
+            "5 * 1.483 ≈ 7.415"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Margin of Error = Z_(α/2) * SE = 1.96 * 1.483 ≈ 2.907, or approximately 2.91."
+    },
+    {
+        "id": "q25",
+        "text": "What is the 95% confidence interval for the difference in mean strength (μ₁ - μ₂) from the previous questions?",
+        "options": [
+            "5 ± 2.91 → (2.09, 7.91)",
+            "5 ± 1.483 → (3.517, 6.483)",
+            "80 ± 2.91 → (77.09, 82.91)",
+            "75 ± 2.91 → (72.09, 77.91)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The CI for the difference is (Point Estimate) ± (Margin of Error) = 5 ± 2.91. This gives a lower limit of 2.09 and an upper limit of 7.91. Since the entire interval is positive, we are 95% confident that the mean strength of Alloy 1 is greater than that of Alloy 2 by between 2.09 and 7.91 MPa."
+    },
+    {
+        "id": "q26",
+        "text": "If a 95% CI for a difference in proportions is (-0.10, 0.05), what is the correct interpretation?",
+        "options": [
+            "Proportion 1 is definitely larger than Proportion 2.",
+            "Proportion 2 is definitely larger than Proportion 1.",
+            "There may be no significant difference between the proportions.",
+            "The sample sizes were too small."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The interval contains zero. This means zero (representing no difference) is a plausible value for the true difference in population proportions. Therefore, we cannot conclude that there is a statistically significant difference between the two proportions."
+    },
+    {
+        "id": "q27",
+        "text": "The central limit theorem is important for constructing confidence intervals for the mean because it:",
+        "options": [
+            "Guarantees the sample mean is equal to the population mean.",
+            "Ensures the sampling distribution of the mean is approximately normal for large n, even if the population isn't.",
+            "Tells us the population standard deviation.",
+            "Only applies to small sample sizes."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The CLT states that for a large enough sample size (n), the sampling distribution of the sample mean will be approximately normally distributed, regardless of the shape of the population distribution. This allows us to use the Z-distribution for inference even when the population is not normal."
+    },
+    {
+        "id": "q28",
+        "text": "When constructing a CI for a mean with a small sample (n < 30) from a non-normal population, what should you do?",
+        "options": [
+            "Use the Z-interval anyway, the CLT still applies.",
+            "Use the t-interval, as it is more robust.",
+            "You cannot construct a valid CI. More data is needed.",
+            "Use the CI for a proportion instead."
+        ],
+        "correctAnswer": 2,
+        "explanation": "With a small sample from a non-normal population, the assumptions for both Z and t intervals are violated. The results may not be valid. The best course of action is to collect more data to leverage the CLT or use non-parametric methods."
+    },
+    {
+        "id": "q29",
+        "text": "The margin of error for a population proportion depends on all of the following EXCEPT:",
+        "options": [
+            "The sample proportion ˆp.",
+            "The sample size n.",
+            "The confidence level (e.g., 90%, 95%).",
+            "The true population proportion p."
+        ],
+        "correctAnswer": 3,
+        "explanation": "The margin of error is calculated using the sample statistic ˆp (ME = Z * √[ˆp(1-ˆp)/n]). We don't know the true p; we are using ˆp to estimate it. Therefore, the margin of error does not directly depend on the unknown parameter p."
+    },
+    {
+        "id": "q30",
+        "text": "If the sample size is doubled, what happens to the margin of error for a mean?",
+        "options": [
+            "It is halved.",
+            "It is reduced by a factor of 1/√2 (about 0.707).",
+            "It is doubled.",
+            "It stays the same."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The margin of error is proportional to 1/√n. If n is doubled (n -> 2n), the new margin of error is proportional to 1/√(2n) = (1/√2) * (1/√n). So it is reduced to about 70.7% of its original size."
+    },
+    {
+        "id": "q31",
+        "text": "A 'more confident' interval (e.g., 99% vs. 95%) will be wider. This trade-off is between:",
+        "options": [
+            "Precision and cost.",
+            "Confidence and precision.",
+            "Accuracy and bias.",
+            "Type I and Type II error."
+        ],
+        "correctAnswer": 1,
+        "explanation": "You can be more confident (e.g., 99% vs. 95%) that your interval captures the parameter, but this comes at the cost of a wider, less precise interval. Conversely, a narrower, more precise interval implies less confidence."
+    },
+    {
+        "id": "q32",
+        "text": "In the formula for the CI of a variance, why do we use (n-1) instead of n?",
+        "options": [
+            "It's a mistake; it should be n.",
+            "n-1 makes the interval wider, which is more conservative.",
+            "Because we use the sample variance s², which itself uses n-1 in its calculation to be unbiased.",
+            "It accounts for the confidence level."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The sample variance s² = Σ(xi - x̄)²/(n-1) is an unbiased estimator of the population variance σ². The pivotal quantity for the CI is built around this unbiased estimator, hence it uses (n-1)s²."
+    },
+    {
+        "id": "q33",
+        "text": "The Chi-square distribution is:",
+        "options": [
+            "Symmetric and bell-shaped.",
+            "Symmetric but not bell-shaped.",
+            "Skewed to the right (positive skew).",
+            "Skewed to the left (negative skew)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Chi-square distribution is not symmetric. It is skewed to the right, especially for small degrees of freedom. It becomes more symmetric as the degrees of freedom increase."
+    },
+    {
+        "id": "q34",
+        "text": "For a given sample, which confidence interval would be the widest?",
+        "options": [
+            "90% CI for the mean",
+            "95% CI for the mean",
+            "99% CI for the mean",
+            "90% CI for the variance"
+        ],
+        "correctAnswer": 3,
+        "explanation": "While a 99% CI for the mean is wider than a 90% or 95% CI, confidence intervals for variance are inherently much wider than those for the mean due to the nature of the Chi-square distribution and the fact that variance is a squared quantity. A 90% CI for variance will generally be wider than a 99% CI for the mean from the same data."
+    },
+    {
+        "id": "q35",
+        "text": "A process engineer claims the variance of a critical dimension is no more than 0.0010 mm². You calculate a 95% CI for the variance to be (0.0007, 0.0015). What does this say about the claim?",
+        "options": [
+            "The data supports the claim, as 0.0010 is within the interval.",
+            "The data refutes the claim, as the entire interval is above 0.0010.",
+            "The data refutes the claim, as the entire interval is below 0.0010.",
+            "The data is inconclusive regarding the claim."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The claim is that σ² ≤ 0.0010. The interval (0.0007, 0.0015) includes values both below (0.0007, 0.0008, 0.0009) and above (0.0011-0.0015) the claim. Since the claimed value of 0.0010 is a plausible value for the true variance (it's inside the CI), the data does not provide strong evidence against the claim."
+    },
+    {
+        "id": "q36",
+        "text": "If you incorrectly use a Z-interval instead of a t-interval for a mean with a small sample, what is the most likely consequence?",
+        "options": [
+            "The interval will be too wide.",
+            "The interval will be too narrow.",
+            "The confidence level will be accurate.",
+            "The point estimate will be wrong."
+        ],
+        "correctAnswer": 1,
+        "explanation": "For small samples, the t-distribution has heavier tails than the Z-distribution, meaning the critical t-value is larger than the Z-value. Using the smaller Z-value will produce a smaller margin of error and an artificially narrow interval, overstating the precision."
+    },
+    {
+        "id": "q37",
+        "text": "The primary difference between a standard deviation and a standard error is:",
+        "options": [
+            "Standard deviation measures spread in data, standard error measures spread in a statistic.",
+            "Standard deviation is for populations, standard error is for samples.",
+            "Standard deviation is always larger.",
+            "There is no difference; the terms are interchangeable."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The sample standard deviation (s) describes the variability or spread of the individual data points. The standard error of the mean (s/√n) describes the variability or spread of the sample mean (the statistic) across different possible samples."
+    },
+    {
+        "id": "q38",
+        "text": "All else equal, if the sample variance (s²) increases, what happens to the width of the CI for the population mean?",
+        "options": [
+            "It decreases.",
+            "It increases.",
+            "It stays the same.",
+            "It becomes negative."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A larger sample variance (s²) means the data is more spread out, which leads to a larger standard error (s/√n). A larger standard error, multiplied by the critical value, results in a larger margin of error and a wider confidence interval."
+    },
+    {
+        "id": "q39",
+        "text": "What is the key assumption behind using the formula for the standard error of the difference between two proportions?",
+        "options": [
+            "The two sample sizes must be equal.",
+            "The two population proportions must be equal.",
+            "The samples must be independent and randomly selected.",
+            "The populations must be normally distributed."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The fundamental assumption for the two-proportion procedures is that the two samples are independent and drawn randomly from their respective populations. The other options are not necessary assumptions."
+    },
+    {
+        "id": "q40",
+        "text": "The ultimate purpose of constructing a confidence interval in engineering contexts (like breakdown voltage) is to:",
+        "options": [
+            "Find the exact value of a population parameter.",
+            "Provide a range of plausible values to support decision-making under uncertainty.",
+            "Prove a hypothesis definitively.",
+            "Calculate a sample statistic."
+        ],
+        "correctAnswer": 1,
+        "explanation": "We rarely know population parameters exactly. Confidence intervals quantify the uncertainty in our estimates, providing a statistically sound range that is likely to contain the true parameter. This helps engineers make informed decisions (e.g., about material safety, process capability) while acknowledging inherent variability."
+    }
+]

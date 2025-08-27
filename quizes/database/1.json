@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "According to the learning outcomes, which of the following is NOT a stated goal for students after completing the module?",
+        "options": [
+            "Explain the role of database systems in information management.",
+            "Design and implement a distributed NoSQL database cluster.",
+            "Apply entity-relationship modelling for simple database requirements.",
+            "Demonstrate the use of a query language to create, update and query a simple database."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The learning outcomes focus on fundamental concepts, data modelling, normalization, and querying a simple database. Designing a distributed NoSQL cluster is an advanced topic beyond the stated scope."
+    },
+    {
+        "id": "q2",
+        "text": "What is the largest component of the final grade, as per the grading scheme?",
+        "options": [
+            "Mini project (Group)",
+            "Mid Term Quiz (Moodle)",
+            "2-hour closed book examination",
+            "In-class/lab pop quizzes/labs"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 2-hour closed book end of semester examination is worth 60% of the final grade, making it the largest single component."
+    },
+    {
+        "id": "q3",
+        "text": "A Database Management System (DBMS) is best described as:",
+        "options": [
+            "A collection of interrelated data and programs to access that data, providing a convenient and efficient environment.",
+            "A single, large file containing all of an enterprise's information in a sequential format.",
+            "A programming language specifically designed for statistical analysis.",
+            "A hardware component used for increasing the processing speed of a server."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The slides define a DBMS as containing interrelated data, a set of programs to access the data, and an environment that is both convenient and efficient to use."
+    },
+    {
+        "id": "q4",
+        "text": "Which of the following is cited as a major drawback of using file systems instead of a DBMS to store data?",
+        "options": [
+            "Excessive data normalization leading to inefficiency.",
+            "Automatic enforcement of complex integrity constraints.",
+            "Data redundancy and inconsistency due to multiple file formats and duplication.",
+            "Built-in, robust mechanisms for handling concurrent user updates."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A key drawback of file systems is data redundancy and inconsistency, where the same information is duplicated in multiple files with different formats, leading to potential conflicts."
+    },
+    {
+        "id": "q5",
+        "text": "The 'Atomicity of updates' problem in file systems refers to:",
+        "options": [
+            "The inability to store data in small, indivisible units.",
+            "The risk that a system failure may leave the database in an inconsistent state with only partial updates completed.",
+            "The challenge of allowing multiple users to access data at the same time.",
+            "The difficulty in representing relationships between different data elements."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Atomicity means that a transaction must happen entirely or not at all. File systems lack this, so a failure during a fund transfer, for example, could deduct money from one account without crediting it to another."
+    },
+    {
+        "id": "q6",
+        "text": "Which level of abstraction describes how a record (e.g., a customer) is physically stored on disk?",
+        "options": [
+            "View Level",
+            "Application Level",
+            "Logical Level",
+            "Physical Level"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The physical level deals with the low-level storage details, such as file organization, indices, and data structures used to store records."
+    },
+    {
+        "id": "q7",
+        "text": "In the three-level architecture, the 'View Level' is primarily used for:",
+        "options": [
+            "Describing the physical storage structure of the entire database.",
+            "Defining the logical structure of all data and relationships.",
+            "Hiding certain data (like salary) from users for security purposes and providing application-specific data perspectives.",
+            "Optimizing query execution plans for faster performance."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The view level provides a mechanism to hide certain data from users and to present data in a form that is most useful to a specific application or user group (e.g., a bank teller view vs. a branch manager view)."
+    },
+    {
+        "id": "q8",
+        "text": "In database terminology, the logical structure of the database (e.g., tables, attributes, relationships) is known as the:",
+        "options": [
+            "Instance",
+            "Schema",
+            "Domain",
+            "Abstraction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The schema is the overall design or blueprint of the database. It is analogous to the type information of a variable in a program."
+    },
+    {
+        "id": "q9",
+        "text": "The actual content of the database at a specific point in time is called the:",
+        "options": [
+            "Schema",
+            "Instance",
+            "Catalog",
+            "Model"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The instance is the collection of data stored in the database at a particular moment. It is analogous to the value of a variable."
+    },
+    {
+        "id": "q10",
+        "text": "Physical Data Independence is a crucial concept that allows us to:",
+        "options": [
+            "Change the logical schema without affecting application programs.",
+            "Change the physical schema (e.g., storage structures, indexes) without changing the logical schema.",
+            "Change the view definitions without affecting the physical storage.",
+            "Change the database instance without affecting the schema."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Physical data independence ensures that applications, which are written against the logical schema, are shielded from changes in how the data is physically stored and accessed."
+    },
+    {
+        "id": "q11",
+        "text": "Which of the following is a tool for describing data, data relationships, data semantics, and data constraints?",
+        "options": [
+            "A Data Dictionary",
+            "A Data Model",
+            "A Storage Manager",
+            "A Query Optimizer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A data model is a collection of conceptual tools for precisely describing these core aspects of data within a domain."
+    },
+    {
+        "id": "q12",
+        "text": "Which data model uses a collection of tables to represent both data and the relationships among that data?",
+        "options": [
+            "Entity-Relationship Model",
+            "Object-Oriented Model",
+            "Relational Model",
+            "Hierarchical Model"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The relational model organizes data into tabular structures (relations), with rows representing records and columns representing attributes. Relationships are implied through shared data values."
+    },
+    {
+        "id": "q13",
+        "text": "A language for accessing and manipulating the data organized by a data model is known as a:",
+        "options": [
+            "Data Definition Language (DDL)",
+            "Data Manipulation Language (DML)",
+            "Data Control Language (DCL)",
+            "Storage Description Language (SDL)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DML is used for retrieving, inserting, deleting, and modifying data. SQL's SELECT, INSERT, UPDATE, and DELETE commands are part of its DML."
+    },
+    {
+        "id": "q14",
+        "text": "In a DML, a __________ language requires the user to specify what data is needed and how to get it, while a __________ language only requires specifying what data is needed.",
+        "options": [
+            "Declarative, Procedural",
+            "Procedural, Declarative",
+            "Functional, Imperative",
+            "Imperative, Functional"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Procedural DMLs (e.g., relational algebra) specify the 'how'. Declarative DMLs (e.g., SQL) specify only the 'what', leaving the 'how' to the database system."
+    },
+    {
+        "id": "q15",
+        "text": "The SQL command 'CREATE TABLE' is a primary example of a:",
+        "options": [
+            "Data Manipulation Language (DML) statement.",
+            "Data Definition Language (DDL) statement.",
+            "Data Control Language (DCL) statement.",
+            "Transaction Control Language (TCL) statement."
+        ],
+        "correctAnswer": 1,
+        "explanation": "DDL is used to define and modify the database schema. Commands like CREATE, ALTER, and DROP are part of DDL."
+    },
+    {
+        "id": "q16",
+        "text": "Metadata, which is 'data about data', is stored in the:",
+        "options": [
+            "Database Instance",
+            "Data Dictionary / System Catalog",
+            "Query Evaluation Engine",
+            "Buffer Manager"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The data dictionary stores metadata, such as the database schema, integrity constraints, user information, and statistical data about the stored data."
+    },
+    {
+        "id": "q17",
+        "text": "The constraint that 'the dept_name value in any instructor tuple must appear in the department relation' is an example of:",
+        "options": [
+            "Entity Integrity",
+            "Domain Constraint",
+            "Referential Integrity",
+            "Authorization"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Referential integrity ensures that a value that appears in one relation for a given set of attributes also appears in a specified set of attributes in another relation (the referenced relation)."
+    },
+    {
+        "id": "q18",
+        "text": "The process of deciding on the database schema (what attributes to record, how to distribute them among relations) is part of:",
+        "options": [
+            "Physical Design",
+            "Logical Design",
+            "View Design",
+            "Transaction Design"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Logical design involves creating a 'good' collection of relation schemas, often using tools like the ER model and normalization theory."
+    },
+    {
+        "id": "q19",
+        "text": "Looking at the combined 'univ' table on page 20, what is the primary design flaw it demonstrates?",
+        "options": [
+            "It uses inefficient data types for the attributes.",
+            "It lacks a primary key, violating entity integrity.",
+            "It combines instructor and department data, leading to data redundancy (e.g., repeated department info) and potential anomalies.",
+            "The attribute names are not descriptive enough."
+        ],
+        "correctAnswer": 2,
+        "explanation": "This is a 'bad design' because it repeats department information (building, budget) for every instructor in that department, wasting space and risking update anomalies."
+    },
+    {
+        "id": "q20",
+        "text": "__________ Theory formalizes what database designs are 'bad' and provides tests to identify them.",
+        "options": [
+            "Entity-Relationship",
+            "Normalization",
+            "Transaction",
+            "Concurrency Control"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Normalization theory provides formal criteria and processes to decompose relations and eliminate undesirable characteristics like redundancy and update anomalies."
+    },
+    {
+        "id": "q21",
+        "text": "In the Entity-Relationship model, an association among several entities is called a:",
+        "options": [
+            "Attribute",
+            "Entity",
+            "Relationship",
+            "Schema"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A relationship is a core construct in the ER model that represents an interaction or link between two or more entities."
+    },
+    {
+        "id": "q22",
+        "text": "Object-Relational Data Models extend the relational model by:",
+        "options": [
+            "Replacing tables with object hierarchies.",
+            "Including object orientation and allowing attributes to have complex, non-atomic types.",
+            "Removing the need for a declarative query language like SQL.",
+            "Eliminating the concepts of primary and foreign keys."
+        ],
+        "correctAnswer": 1,
+        "explanation": "These models add support for complex data types (e.g., nested relations, arrays) and object-oriented features while maintaining the relational foundation and SQL compatibility."
+    },
+    {
+        "id": "q23",
+        "text": "Which program module provides the interface between the low-level data stored in the database and the application programs/queries?",
+        "options": [
+            "Query Optimizer",
+            "Transaction Manager",
+            "Storage Manager",
+            "DML Compiler"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The storage manager is responsible for interaction with the file manager, and for the efficient storing, retrieving, and updating of data."
+    },
+    {
+        "id": "q24",
+        "text": "Which of the following is a responsibility of the Storage Manager?",
+        "options": [
+            "Parsing and translating SQL queries.",
+            "Ensuring the atomicity of transactions.",
+            "Managing file organization, indexing, and hashing.",
+            "Optimizing relational algebra expressions."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The storage manager handles issues of storage access, file organization, and indexing/hashing to allow for efficient data retrieval."
+    },
+    {
+        "id": "q25",
+        "text": "The three main steps in query processing are:",
+        "options": [
+            "Parsing, Authorization, Evaluation",
+            "Parsing and translation, Optimization, Evaluation",
+            "Indexing, Hashing, Retrieval",
+            "Compilation, Linking, Execution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A query is first parsed and translated into an internal form (e.g., relational algebra). It is then optimized by choosing an efficient execution plan. Finally, the evaluation engine executes the plan."
+    },
+    {
+        "id": "q26",
+        "text": "The query optimizer's goal is to:",
+        "options": [
+            "Translate a SQL query into a relational algebra expression.",
+            "Choose the most efficient evaluation plan for a query from a set of alternatives.",
+            "Execute the low-level instructions of a query plan.",
+            "Check the user's authorization to run the query."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The optimizer uses statistical information about the data to estimate the cost of different execution strategies and selects the one with the lowest estimated cost."
+    },
+    {
+        "id": "q27",
+        "text": "A collection of operations that performs a single logical function in a database application is called a:",
+        "options": [
+            "Query",
+            "Program",
+            "Transaction",
+            "Schema"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A transaction is a unit of work that must be executed atomically, consistently, in isolation, and durably (ACID properties)."
+    },
+    {
+        "id": "q28",
+        "text": "The component that ensures the database remains in a consistent state despite system failures is the:",
+        "options": [
+            "Storage Manager",
+            "Query Processor",
+            "Transaction-Management Component",
+            "Buffer Manager"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The transaction manager handles recovery from failures, ensuring that the database can be restored to a consistent state (e.g., by undoing incomplete transactions)."
+    },
+    {
+        "id": "q29",
+        "text": "The component that controls the interaction among concurrent transactions to ensure consistency is the:",
+        "options": [
+            "Authorization Manager",
+            "Concurrency-Control Manager",
+            "File Manager",
+            "Integrity Manager"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The concurrency-control manager schedules transactions and uses mechanisms like locking to ensure that concurrent execution does not lead to inconsistent results."
+    },
+    {
+        "id": "q30",
+        "text": "In the database system architecture diagram, which users 'write application programs'?",
+        "options": [
+            "Naive Users",
+            "Application Programmers",
+            "Sophisticated Users",
+            "Database Administrators"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Application programmers are responsible for writing applications that interact with the database through DML calls embedded in host languages or via APIs."
+    },
+    {
+        "id": "q31",
+        "text": "Which user type is responsible for overall control of the database system and its use?",
+        "options": [
+            "Naive Users",
+            "Application Programmers",
+            "Sophisticated Users",
+            "Database Administrators"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Database administrators (DBAs) use administration tools to perform tasks like schema definition, storage structure management, authorization, and integrity constraint specification."
+    },
+    {
+        "id": "q32",
+        "text": "The shift from sequential tape storage to direct access via hard disks in the late 1960s/70s enabled the development of:",
+        "options": [
+            "Punched card input systems.",
+            "High-performance transaction processing systems.",
+            "Web commerce applications.",
+            "XML data interchange standards."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Direct access storage was a fundamental technological enabler for the interactive and real-time database systems that support transaction processing (e.g., banking, reservations)."
+    },
+    {
+        "id": "q33",
+        "text": "The set of allowed values for a particular attribute is called its:",
+        "options": [
+            "Schema",
+            "Instance",
+            "Domain",
+            "Tuple"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The domain defines the possible set of values that an attribute can take (e.g., the domain for 'salary' might be positive integers)."
+    },
+    {
+        "id": "q34",
+        "text": "In the relational model, attribute values are normally required to be:",
+        "options": [
+            "Composite",
+            "Atomic",
+            "Null",
+            "Derived"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Atomic means indivisible. A value should not be a set or a record structure. This is a rule for the basic relational model, though object-relational models relax it."
+    },
+    {
+        "id": "q35",
+        "text": "A subset of the Cartesian product of a list of domains defines a:",
+        "options": [
+            "Schema",
+            "Relation",
+            "Key",
+            "View"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Formally, a relation r on schema R is a subset of the Cartesian product of the domains of the attributes in R. Informally, it's a table."
+    },
+    {
+        "id": "q36",
+        "text": "Why is the order of tuples irrelevant in a relation?",
+        "options": [
+            "Because it makes data entry faster.",
+            "Because it simplifies the physical storage mechanism.",
+            "Because relations are defined as sets of tuples, and sets are unordered by definition.",
+            "Because SQL does not have a command to reorder tuples."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A relation is a mathematical set. A set has no ordering. Therefore, the logical model has no concept of 'first' or 'last' tuple. Ordering is a physical-level or presentation-level concern."
+    },
+    {
+        "id": "q37",
+        "text": "Breaking up information about an enterprise into multiple relations (e.g., instructor, department) instead of one big table helps avoid:",
+        "options": [
+            "The use of SQL.",
+            "Data isolation.",
+            "Repetition of information and the need for null values.",
+            "The need for a storage manager."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A well-designed multi-relation schema, achieved through normalization, minimizes redundancy (repetition of department info) and avoids nulls (e.g., for a student with no advisor)."
+    },
+    {
+        "id": "q38",
+        "text": "A __________ is a set of attributes that uniquely identifies a tuple within a relation.",
+        "options": [
+            "Superkey",
+            "Domain",
+            "Schema",
+            "View"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A superkey is defined as a set of attributes whose values are sufficient to identify a unique tuple."
+    },
+    {
+        "id": "q39",
+        "text": "If {ID} and {ID, name} are both superkeys for the instructor relation, which one is the candidate key?",
+        "options": [
+            "{ID}",
+            "{ID, name}",
+            "Both are candidate keys.",
+            "Neither is a candidate key; a candidate key must include only one attribute."
+        ],
+        "correctAnswer": 0,
+        "explanation": "A candidate key is a minimal superkey. {ID, name} is a superkey, but it is not minimal because removing 'name' still leaves a superkey ({ID}). Therefore, {ID} is the candidate key."
+    },
+    {
+        "id": "q40",
+        "text": "A foreign key in one relation must correspond to either the primary key or a candidate key of another relation. This rule enforces:",
+        "options": [
+            "Entity Integrity",
+            "Domain Integrity",
+            "Referential Integrity",
+            "Authorization"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Referential integrity ensures that a value appearing in a foreign key attribute of one relation (the referencing relation) must match a value in the primary key attribute of the referenced relation."
+    },
+    {
+        "id": "q41",
+        "text": "In the bank schema (Page 46), the 'branch-name' attribute in the 'account' relation is a __________, referencing the __________ relation.",
+        "options": [
+            "Primary Key, loan",
+            "Foreign Key, branch",
+            "Candidate Key, depositor",
+            "Superkey, customer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'branch-name' in 'account' is a foreign key. It exists to link an account to the branch where it is held, and its values must be present in the primary key ('branch-name') of the 'branch' relation."
+    },
+    {
+        "id": "q42",
+        "text": "From the university database instance (Page 49), which of the following INSERT operations would violate referential integrity?",
+        "options": [
+            "Inserting a new instructor with ID='12345', name='Smith', dept_name='Physics', salary=80000.",
+            "Inserting a new instructor with ID='99999', name='Jones', dept_name='Astrology', salary=50000.",
+            "Inserting a new department with dept_name='Linguistics', building='Watson', budget=40000.",
+            "Deleting the department 'History'."
+        ],
+        "correctAnswer": 1,
+        "explanation": "This insert would violate referential integrity because the value 'Astrology' for the foreign key 'dept_name' in the 'instructor' relation does not exist in the primary key 'dept_name' of the referenced 'department' relation."
+    },
+    {
+        "id": "q43",
+        "text": "From the same instance (Page 49), which DELETE operation could potentially violate referential integrity?",
+        "options": [
+            "Deleting instructor 'Mozart' (ID 15151).",
+            "Deleting the 'Physics' department.",
+            "Deleting instructor 'Singh' (ID 76543).",
+            "Deleting the 'Music' department."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Deleting the 'Physics' department would violate referential integrity if there are still instructors (like Einstein and Gold) in the 'instructor' relation whose 'dept_name' foreign key references 'Physics'. The delete would orphan these tuples."
+    },
+    {
+        "id": "q44",
+        "text": "Even though no two instructors in the current instance (Page 50) have the same name, why is 'name' a poor choice for a primary key?",
+        "options": [
+            "Because it is not a minimal superkey.",
+            "Because the domain of 'name' is not atomic.",
+            "Because it cannot enforce referential integrity.",
+            "Because the schema does not allow it. The primary key must be 'ID'."
+        ],
+        "correctAnswer": 0,
+        "explanation": "A primary key must be a candidate key, which must be minimal. While {name} might be a superkey for this specific instance, it is not guaranteed to be one for all possible instances (e.g., it's possible to hire two people with the same name). {ID} is a minimal and guaranteed superkey."
+    },
+    {
+        "id": "q45",
+        "text": "Which category of 'pure' relational query languages is considered procedural?",
+        "options": [
+            "Tuple Relational Calculus",
+            "Domain Relational Calculus",
+            "Relational Algebra",
+            "Structured Query Language (SQL)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Relational algebra is procedural because its expressions specify a sequence of operations to be performed to get the result (the 'how')."
+    },
+    {
+        "id": "q46",
+        "text": "The σ (sigma) operator in relational algebra is used for:",
+        "options": [
+            "Selecting columns (attributes).",
+            "Selecting tuples (rows) that satisfy a given predicate.",
+            "Combining two relations through a Cartesian product.",
+            "Renaming attributes or relations."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The selection operator (σ) selects a subset of tuples from a relation that satisfy a selection condition. It operates on rows."
+    },
+    {
+        "id": "q47",
+        "text": "The Π (pi) operator in relational algebra is used for:",
+        "options": [
+            "Selecting columns (attributes).",
+            "Selecting tuples (rows) that satisfy a given predicate.",
+            "Combining two relations through a Cartesian product.",
+            "Renaming attributes or relations."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The projection operator (Π) selects specific columns from a relation, removing duplicate tuples from the result. It operates on columns."
+    },
+    {
+        "id": "q48",
+        "text": "The operation that returns all tuples that are in either of two relations, eliminating duplicates, is the:",
+        "options": [
+            "Set Difference (-)",
+            "Cartesian Product (×)",
+            "Union (∪)",
+            "Natural Join (⋈)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The union operation (r ∪ s) returns a relation containing all tuples that are in r, or in s, or in both. As it is a set operation, duplicates are automatically removed."
+    },
+    {
+        "id": "q49",
+        "text": "The operation that returns all tuples that are in one relation but not in another is the:",
+        "options": [
+            "Set Difference (-)",
+            "Cartesian Product (×)",
+            "Union (∪)",
+            "Natural Join (⋈)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The set difference operation (r - s) returns a relation containing all tuples that are in r but not in s."
+    },
+    {
+        "id": "q50",
+        "text": "The most general type of join, which pairs every tuple in one relation with every tuple in another, is the:",
+        "options": [
+            "Natural Join (⋈)",
+            "Theta Join",
+            "Equijoin",
+            "Cartesian Product (×)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Cartesian product (r × s) pairs every tuple in relation r with every tuple in relation s, resulting in a potentially very large relation. Other joins are essentially a Cartesian product followed by a selection."
+    },
+    {
+        "id": "q51",
+        "text": "The Natural Join operation:",
+        "options": [
+            "Requires the user to specify the join condition explicitly.",
+            "Is performed on all attributes with the same name in the two relations.",
+            "Always results in a relation with more attributes than either of the input relations.",
+            "Cannot be used if the two relations have no attributes in common."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A natural join automatically matches tuples based on equality of all attributes common to both relations. The common columns appear only once in the result."
+    },
+    {
+        "id": "q52",
+        "text": "Given the bank schema, which relational algebra expression finds names of all branches in 'Chicago'?",
+        "options": [
+            "Π branch-name (σ branch-city='Chicago' (branch))",
+            "σ branch-city='Chicago' (Π branch-name (branch))",
+            "Π branch-name (branch) ∪ Π branch-city (branch)",
+            "σ branch-city='Chicago' (account)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "First, select (σ) the tuples from 'branch' where the city is 'Chicago'. Then, project (Π) only the 'branch-name' attribute from those selected tuples."
+    },
+    {
+        "id": "q53",
+        "text": "Given the bank schema, which expression finds names of all borrowers with a loan in the 'Downtown' branch?",
+        "options": [
+            "Π customer-name (σ branch-name='Downtown' (borrower))",
+            "Π customer-name (σ branch-name='Downtown' (borrower ⋈ loan))",
+            "Π customer-name (σ branch-name='Downtown' (loan))",
+            "Π customer-name (borrower) ∩ Π customer-name (σ branch-name='Downtown' (loan))"
+        ],
+        "correctAnswer": 1,
+        "explanation": "We need information from two tables: 'borrower' (has customer-name) and 'loan' (has branch-name). We join them (⋈) on their common attribute (likely loan-number). Then we select (σ) for branch 'Downtown', and finally project (Π) the customer names."
+    },
+    {
+        "id": "q54",
+        "text": "For the Employee/Assignment/Project schema (Ex 1.7), which expression lists names and budgets of projects started before May 1, 2008?",
+        "options": [
+            "Π proj_name, budget (σ proj_start_date < '2008-05-01' (Project))",
+            "σ proj_start_date < '2008-05-01' (Π proj_name, budget (Project))",
+            "Π proj_name, budget (Project ⋈ Assignment)",
+            "Π emp_name (σ proj_start_date < '2008-05-01' (Project))"
+        ],
+        "correctAnswer": 0,
+        "explanation": "All needed attributes (proj_name, budget, proj_start_date) are in the 'Project' relation. Select the tuples with the correct date, then project the required columns."
+    },
+    {
+        "id": "q55",
+        "text": "Which expression finds names of employees from 'Moratuwa' who work on projects also located in 'Moratuwa'?",
+        "options": [
+            "Π emp_name (σ emp_city='Moratuwa' (Employee))",
+            "Π emp_name (σ proj_location='Moratuwa' (Project))",
+            "Π emp_name ( σ emp_city='Moratuwa' (Employee) ⋈ Assignment ⋈ σ proj_location='Moratuwa' (Project) )",
+            "Π emp_name (Employee) ∩ Π emp_name (σ proj_location='Moratuwa' (Project))"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This is a three-way join. First, select employees from Moratuwa. Select projects in Moratuwa. Join Employee with Assignment (likely on emp_no), then join that result with the filtered Project relation (on proj_no). Finally, project the employee names from the final joined result."
+    },
+    {
+        "id": "q56",
+        "text": "The result of a relational algebra expression is always a:",
+        "options": [
+            "Number",
+            "Relation",
+            "List of attribute names",
+            "Single data value"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Relational algebra is closed. This means that the input is one or more relations and the output is always a new relation. This allows expressions to be nested."
+    },
+    {
+        "id": "q57",
+        "text": "In the context of the history of database systems, what was the significance of hard disks replacing magnetic tapes?",
+        "options": [
+            "They made data sequential access faster.",
+            "They enabled direct access to data, which was crucial for interactive database systems and transaction processing.",
+            "They simplified the network and hierarchical data models.",
+            "They were the storage medium for the first relational prototypes."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Tapes only allowed sequential access, which was inefficient for finding specific records. Hard disks provided direct (random) access, which is a fundamental requirement for the interactive and real-time nature of modern DBMSs."
+    },
+    {
+        "id": "q58",
+        "text": "The emergence of Web commerce in the 1990s placed new demands on databases, including:",
+        "options": [
+            "The need to process transactions sequentially.",
+            "The need to handle very high volumes of read and write operations from a global user base.",
+            "A decreased need for transaction management.",
+            "The elimination of the client-server architecture."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Web commerce applications require databases that can support extremely high throughput and scalability to serve millions of potential customers simultaneously, driving innovations in parallel and distributed systems."
+    },
+    {
+        "id": "q59",
+        "text": "The rise of semi-structured data formats like XML in the 2000s led to databases that:",
+        "options": [
+            "Strictly enforced the atomicity requirement of the relational model.",
+            "Abandoned the concept of a schema entirely.",
+            "Could store and query data that did not fit neatly into rigid, predefined tables.",
+            "Were exclusively used for online transaction processing (OLTP)."
+        ],
+        "correctAnswer": 2,
+        "explanation": "XML and later NoSQL databases addressed the need to handle data that is irregular, sparse, or has a nested structure, which is common in web data, documents, and scientific applications."
+    },
+    {
+        "id": "q60",
+        "text": "Comparing the centralized and client-server database architectures, a key advantage of client-server is:",
+        "options": [
+            "Simpler hardware requirements for the server.",
+            "Reduced network traffic, as all processing is done on one machine.",
+            "The ability to offload user interface and application logic to client machines, improving scalability.",
+            "The elimination of the need for a query language like SQL."
+        ],
+        "correctAnswer": 2,
+        "explanation": "In client-server architecture, the client machine handles the user interface and application logic, while the server machine is dedicated to running the DBMS and processing data requests. This separation of functionality allows the system to scale to support more users."
+    }
+]

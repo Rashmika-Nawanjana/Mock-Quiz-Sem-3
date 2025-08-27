@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "A random sample of size 16 is drawn from a normal population with variance σ² = 25. If the sample variance is s² = 36, what is the chi-square statistic for this test?",
+        "options": [
+            "21.6",
+            "18.0",
+            "23.0",
+            "19.2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (15)(36)/25 = 540/25 = 21.6"
+    },
+    {
+        "id": "q2",
+        "text": "For a chi-square distribution with 12 degrees of freedom, what is the mean and variance?",
+        "options": [
+            "μ = 12, σ² = 24",
+            "μ = 12, σ² = 12",
+            "μ = 6, σ² = 12",
+            "μ = 12, σ² = 144"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For chi-square distribution: μ = v = 12, σ² = 2v = 24"
+    },
+    {
+        "id": "q3",
+        "text": "A quality control test uses 8 batteries from a production line. The population standard deviation is known to be 2 minutes. If the sample standard deviation is 3 minutes, what is the chi-square statistic?",
+        "options": [
+            "31.5",
+            "24.5",
+            "28.0",
+            "21.0"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (7)(9)/4 = 63/4 = 15.75"
+    },
+    {
+        "id": "q4",
+        "text": "For a chi-square distribution with 5 degrees of freedom, what is P(χ² ≤ 1.15) approximately?",
+        "options": [
+            "0.05",
+            "0.10",
+            "0.01",
+            "0.001"
+        ],
+        "correctAnswer": 1,
+        "explanation": "From the chi-square table, for v=5, χ²=1.15 corresponds to probability ≈ 0.10"
+    },
+    {
+        "id": "q5",
+        "text": "A sample of 20 observations from a normal population has s² = 18. If σ² = 16, what is the chi-square statistic?",
+        "options": [
+            "21.375",
+            "18.250",
+            "19.125",
+            "22.500"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (19)(18)/16 = 342/16 = 21.375"
+    },
+    {
+        "id": "q6",
+        "text": "What is the probability that a chi-square value with 3 degrees of freedom exceeds 7.82?",
+        "options": [
+            "0.05",
+            "0.10",
+            "0.01",
+            "0.20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From the chi-square table, for v=3, χ²=7.82 corresponds to probability 0.05 in the right tail"
+    },
+    {
+        "id": "q7",
+        "text": "The chi-square distribution with 10 degrees of freedom has variance:",
+        "options": [
+            "20",
+            "10",
+            "5",
+            "40"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For chi-square distribution: σ² = 2v = 2(10) = 20"
+    },
+    {
+        "id": "q8",
+        "text": "A random sample of 15 items from a normal population has variance 25. The population variance is 20. What is the chi-square statistic?",
+        "options": [
+            "17.5",
+            "16.8",
+            "18.2",
+            "15.6"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (14)(25)/20 = 350/20 = 17.5"
+    },
+    {
+        "id": "q9",
+        "text": "For a chi-square distribution with 8 degrees of freedom, what is P(χ² > 13.36)?",
+        "options": [
+            "0.10",
+            "0.05",
+            "0.01",
+            "0.20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From the chi-square table, for v=8, χ²=13.36 corresponds to probability 0.10 in the right tail"
+    },
+    {
+        "id": "q10",
+        "text": "The chi-square distribution is a special case of which distribution?",
+        "options": [
+            "Gamma distribution",
+            "Normal distribution",
+            "Exponential distribution",
+            "Beta distribution"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Chi-square distribution is a special case of Gamma distribution with α = k/2 and β = 2"
+    },
+    {
+        "id": "q11",
+        "text": "If X ~ χ²(6), what are the parameters for the equivalent Gamma distribution?",
+        "options": [
+            "α = 3, β = 2",
+            "α = 6, β = 1",
+            "α = 2, β = 3",
+            "α = 3, β = 1"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For chi-square with k df, equivalent Gamma has α = k/2 = 3, β = 2"
+    },
+    {
+        "id": "q12",
+        "text": "A sample of 12 batteries has standard deviation 4 minutes. Population standard deviation is 3 minutes. What is the chi-square statistic?",
+        "options": [
+            "19.56",
+            "16.33",
+            "21.78",
+            "14.22"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (11)(16)/9 = 176/9 ≈ 19.56"
+    },
+    {
+        "id": "q13",
+        "text": "What is the mean of F-distribution with v₁=5, v₂=10 degrees of freedom?",
+        "options": [
+            "1.25",
+            "1.11",
+            "1.43",
+            "1.67"
+        ],
+        "correctAnswer": 0,
+        "explanation": "μ = v₂/(v₂-2) = 10/(10-2) = 10/8 = 1.25"
+    },
+    {
+        "id": "q14",
+        "text": "For F-distribution with v₁=4, v₂=8, what is the variance?",
+        "options": [
+            "1.35",
+            "1.78",
+            "2.15",
+            "2.67"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ² = [2v₂²(v₁+v₂-2)]/[v₁(v₂-2)²(v₂-4)] = [2(64)(10)]/[4(36)(4)] = 1280/576 ≈ 2.22"
+    },
+    {
+        "id": "q15",
+        "text": "Sample 1 (n=12) from normal population with σ₁=5 has s₁=6. Sample 2 (n=8) from normal population with σ₂=4 has s₂=5. What is the f-statistic?",
+        "options": [
+            "1.44",
+            "1.25",
+            "1.67",
+            "1.89"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f = [s₁²/σ₁²]/[s₂²/σ₂²] = [36/25]/[25/16] = 1.44/1.5625 = 0.9216"
+    },
+    {
+        "id": "q16",
+        "text": "Two independent samples: n₁=10, s₁=8, σ₁=6; n₂=15, s₂=7, σ₂=5. What is the f-statistic?",
+        "options": [
+            "1.27",
+            "1.45",
+            "1.63",
+            "1.89"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f = [s₁²/σ₁²]/[s₂²/σ₂²] = [64/36]/[49/25] = 1.777/1.96 = 0.906"
+    },
+    {
+        "id": "q17",
+        "text": "What does f₀.₀₅(6,10) represent?",
+        "options": [
+            "F-value with cumulative probability 0.95",
+            "F-value with cumulative probability 0.05",
+            "F-value with right-tail probability 0.95",
+            "F-value with left-tail probability 0.05"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f₀.₀₅(v₁,v₂) refers to value with cumulative probability (1-0.05)=0.95"
+    },
+    {
+        "id": "q18",
+        "text": "Sample of 11 cows: σ=5kg, s=4.5kg. Sample of 7 bulls: σ=3.5kg, s=4kg. What is the f-statistic?",
+        "options": [
+            "0.92",
+            "1.15",
+            "1.08",
+            "0.85"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f = [s₁²/σ₁²]/[s₂²/σ₂²] = [20.25/25]/[16/12.25] = 0.81/1.306 = 0.62"
+    },
+    {
+        "id": "q19",
+        "text": "For F-distribution with v₁=3, v₂=12, what is the mean?",
+        "options": [
+            "1.20",
+            "1.33",
+            "1.50",
+            "1.67"
+        ],
+        "correctAnswer": 0,
+        "explanation": "μ = v₂/(v₂-2) = 12/(12-2) = 12/10 = 1.20"
+    },
+    {
+        "id": "q20",
+        "text": "What is the variance of F-distribution with v₁=5, v₂=15?",
+        "options": [
+            "0.89",
+            "1.12",
+            "1.35",
+            "1.67"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ² = [2v₂²(v₁+v₂-2)]/[v₁(v₂-2)²(v₂-4)] = [2(225)(18)]/[5(169)(11)] = 8100/9295 ≈ 0.87"
+    },
+    {
+        "id": "q21",
+        "text": "A chi-square distribution with 20 degrees of freedom has mean:",
+        "options": [
+            "20",
+            "40",
+            "10",
+            "5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For chi-square distribution: μ = v = 20"
+    },
+    {
+        "id": "q22",
+        "text": "What is P(χ² ≤ 3.84) for a chi-square distribution with 1 degree of freedom?",
+        "options": [
+            "0.95",
+            "0.90",
+            "0.99",
+            "0.80"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From chi-square table, for v=1, χ²=3.84 corresponds to cumulative probability 0.95"
+    },
+    {
+        "id": "q23",
+        "text": "Sample of 25 items: s²=36, σ²=25. What is the chi-square statistic?",
+        "options": [
+            "34.56",
+            "36.48",
+            "32.64",
+            "38.40"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (24)(36)/25 = 864/25 = 34.56"
+    },
+    {
+        "id": "q24",
+        "text": "For F-distribution, what is the relationship with chi-square distributions?",
+        "options": [
+            "f = (χ²₁/v₁)/(χ²₂/v₂)",
+            "f = χ²₁/χ²₂",
+            "f = (χ²₁+χ²₂)/(v₁+v₂)",
+            "f = χ²₁ × χ²₂"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f(v₁,v₂) = [χ²₁/v₁]/[χ²₂/v₂]"
+    },
+    {
+        "id": "q25",
+        "text": "Two samples: n₁=8, s₁=5, σ₁=4; n₂=10, s₂=6, σ₂=5. What is the f-statistic?",
+        "options": [
+            "1.04",
+            "1.25",
+            "1.47",
+            "1.63"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f = [s₁²/σ₁²]/[s₂²/σ₂²] = [25/16]/[36/25] = 1.5625/1.44 = 1.085"
+    },
+    {
+        "id": "q26",
+        "text": "What is the probability that χ² with 4 degrees of freedom is greater than 9.49?",
+        "options": [
+            "0.05",
+            "0.10",
+            "0.01",
+            "0.20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From chi-square table, for v=4, χ²=9.49 corresponds to right-tail probability 0.05"
+    },
+    {
+        "id": "q27",
+        "text": "A chi-square distribution with 15 degrees of freedom has variance:",
+        "options": [
+            "30",
+            "15",
+            "45",
+            "60"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ² = 2v = 2(15) = 30"
+    },
+    {
+        "id": "q28",
+        "text": "Sample of 18 observations: s=7, σ=6. What is the chi-square statistic?",
+        "options": [
+            "23.15",
+            "25.67",
+            "21.39",
+            "27.22"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (17)(49)/36 = 833/36 ≈ 23.14"
+    },
+    {
+        "id": "q29",
+        "text": "For F-distribution with v₁=8, v₂=20, what is the mean?",
+        "options": [
+            "1.11",
+            "1.25",
+            "1.43",
+            "1.67"
+        ],
+        "correctAnswer": 0,
+        "explanation": "μ = v₂/(v₂-2) = 20/(20-2) = 20/18 ≈ 1.11"
+    },
+    {
+        "id": "q30",
+        "text": "What is the variance of F-distribution with v₁=6, v₂=12?",
+        "options": [
+            "1.12",
+            "1.35",
+            "1.67",
+            "1.89"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ² = [2v₂²(v₁+v₂-2)]/[v₁(v₂-2)²(v₂-4)] = [2(144)(16)]/[6(100)(8)] = 4608/4800 = 0.96"
+    },
+    {
+        "id": "q31",
+        "text": "Two independent samples from normal populations: n₁=9, s₁=8, σ₁=6; n₂=12, s₂=7, σ₂=5. What is the f-statistic?",
+        "options": [
+            "1.14",
+            "1.32",
+            "1.47",
+            "1.63"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f = [s₁²/σ₁²]/[s₂²/σ₂²] = [64/36]/[49/25] = 1.777/1.96 = 0.906"
+    },
+    {
+        "id": "q32",
+        "text": "What is P(χ² ≤ 6.25) for a chi-square distribution with 3 degrees of freedom?",
+        "options": [
+            "0.90",
+            "0.95",
+            "0.99",
+            "0.80"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From chi-square table, for v=3, χ²=6.25 is between values for 0.90 and 0.95 probability"
+    },
+    {
+        "id": "q33",
+        "text": "Sample of 14 items: s²=49, σ²=36. What is the chi-square statistic?",
+        "options": [
+            "17.69",
+            "19.25",
+            "21.67",
+            "23.14"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (13)(49)/36 = 637/36 ≈ 17.69"
+    },
+    {
+        "id": "q34",
+        "text": "For F-distribution with v₁=10, v₂=15, what is the mean?",
+        "options": [
+            "1.15",
+            "1.25",
+            "1.36",
+            "1.50"
+        ],
+        "correctAnswer": 0,
+        "explanation": "μ = v₂/(v₂-2) = 15/(15-2) = 15/13 ≈ 1.15"
+    },
+    {
+        "id": "q35",
+        "text": "What is the variance of F-distribution with v₁=4, v₂=10?",
+        "options": [
+            "1.35",
+            "1.67",
+            "1.89",
+            "2.15"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ² = [2v₂²(v₁+v₂-2)]/[v₁(v₂-2)²(v₂-4)] = [2(100)(12)]/[4(64)(6)] = 2400/1536 ≈ 1.56"
+    },
+    {
+        "id": "q36",
+        "text": "Two samples: n₁=11, s₁=9, σ₁=7; n₂=8, s₂=6, σ₂=5. What is the f-statistic?",
+        "options": [
+            "1.12",
+            "1.28",
+            "1.45",
+            "1.63"
+        ],
+        "correctAnswer": 0,
+        "explanation": "f = [s₁²/σ₁²]/[s₂²/σ₂²] = [81/49]/[36/25] = 1.653/1.44 = 1.148"
+    },
+    {
+        "id": "q37",
+        "text": "What is P(χ² > 10.64) for a chi-square distribution with 4 degrees of freedom?",
+        "options": [
+            "0.05",
+            "0.10",
+            "0.01",
+            "0.20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From chi-square table, for v=4, χ²=10.64 is not listed exactly but is close to 9.49 (0.05) and 11.14 (0.025)"
+    },
+    {
+        "id": "q38",
+        "text": "Sample of 22 observations: s=8, σ=7. What is the chi-square statistic?",
+        "options": [
+            "21.49",
+            "23.67",
+            "25.14",
+            "27.43"
+        ],
+        "correctAnswer": 0,
+        "explanation": "χ² = (n-1)s²/σ² = (21)(64)/49 = 1344/49 ≈ 27.43"
+    },
+    {
+        "id": "q39",
+        "text": "For F-distribution with v₁=7, v₂=18, what is the mean?",
+        "options": [
+            "1.125",
+            "1.250",
+            "1.375",
+            "1.500"
+        ],
+        "correctAnswer": 0,
+        "explanation": "μ = v₂/(v₂-2) = 18/(18-2) = 18/16 = 1.125"
+    },
+    {
+        "id": "q40",
+        "text": "What is the variance of F-distribution with v₁=8, v₂=20?",
+        "options": [
+            "0.89",
+            "1.12",
+            "1.35",
+            "1.67"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ² = [2v₂²(v₁+v₂-2)]/[v₁(v₂-2)²(v₂-4)] = [2(400)(26)]/[8(324)(16)] = 20800/41472 ≈ 0.50"
+    }
+]

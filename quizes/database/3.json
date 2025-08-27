@@ -1,0 +1,722 @@
+[
+    {
+        "id": "1",
+        "text": "Which SQL standard was the first to be formally adopted by ANSI and ISO?",
+        "options": [
+            "SQL-86",
+            "SQL-89", 
+            "SQL-92",
+            "SQL:1999"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SQL-86 was the first SQL standard to be formally adopted by ANSI and ISO, establishing the foundational specifications for the language."
+    },
+    {
+        "id": "2",
+        "text": "What is the key difference between CHAR(n) and VARCHAR(n) data types?",
+        "options": [
+            "CHAR(n) has variable length while VARCHAR(n) has fixed length",
+            "CHAR(n) has fixed length while VARCHAR(n) has variable length",
+            "CHAR(n) supports Unicode while VARCHAR(n) does not",
+            "CHAR(n) is for numbers while VARCHAR(n) is for text"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CHAR(n) specifies a fixed-length character string of exactly n characters, while VARCHAR(n) specifies a variable-length character string with a maximum length of n characters."
+    },
+    {
+        "id": "3",
+        "text": "What happens when you declare an attribute as PRIMARY KEY in a CREATE TABLE statement?",
+        "options": [
+            "It automatically becomes NOT NULL and UNIQUE",
+            "It automatically becomes FOREIGN KEY",
+            "It allows NULL values by default",
+            "It creates an index but allows duplicates"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Declaring an attribute as PRIMARY KEY automatically ensures it is both NOT NULL and UNIQUE, enforcing entity integrity constraints."
+    },
+    {
+        "id": "4",
+        "text": "What is the difference between DROP TABLE and DELETE FROM statements?",
+        "options": [
+            "DROP TABLE deletes content and structure, DELETE FROM only deletes content",
+            "DELETE FROM deletes content and structure, DROP TABLE only deletes content",
+            "Both statements perform identical operations",
+            "DROP TABLE is for temporary tables, DELETE FROM is for permanent tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "DROP TABLE deletes both the table structure and all its data, while DELETE FROM only removes all rows from the table but retains the table structure."
+    },
+    {
+        "id": "5",
+        "text": "In the basic SQL query structure SELECT A1, A2 FROM r1, r2 WHERE P, what does the WHERE clause correspond to in relational algebra?",
+        "options": [
+            "Projection operation",
+            "Selection operation",
+            "Cartesian product operation",
+            "Join operation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The WHERE clause in SQL corresponds to the selection operation (σ) in relational algebra, which filters tuples based on a predicate condition."
+    },
+    {
+        "id": "6",
+        "text": "When would you use the DISTINCT keyword in a SELECT clause?",
+        "options": [
+            "To select only unique column names",
+            "To eliminate duplicate tuples from the query result",
+            "To make the query case-sensitive",
+            "To select only distinct data types"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The DISTINCT keyword is used after SELECT to eliminate duplicate tuples from the query result, ensuring each row in the result is unique."
+    },
+    {
+        "id": "7",
+        "text": "What does the asterisk (*) represent in a SELECT clause?",
+        "options": [
+            "It selects only primary key columns",
+            "It selects all attributes from the specified relations",
+            "It performs multiplication operations",
+            "It indicates a required parameter"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The asterisk (*) in a SELECT clause is a wildcard that selects all attributes from all relations specified in the FROM clause."
+    },
+    {
+        "id": "8",
+        "text": "In the FROM clause, what operation does listing multiple relations correspond to in relational algebra?",
+        "options": [
+            "Selection",
+            "Projection",
+            "Cartesian product",
+            "Natural join"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When multiple relations are listed in the FROM clause separated by commas, it corresponds to the Cartesian product operation (×) in relational algebra."
+    },
+    {
+        "id": "9",
+        "text": "What is the primary purpose of the WHERE clause in an SQL query?",
+        "options": [
+            "To specify which tables to query",
+            "To define the output format",
+            "To specify conditions that result tuples must satisfy",
+            "To order the result set"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The WHERE clause specifies conditions (predicates) that tuples must satisfy to be included in the query result, filtering the data based on specified criteria."
+    },
+    {
+        "id": "10",
+        "text": "What is the main risk when using NATURAL JOIN?",
+        "options": [
+            "It requires more memory than other joins",
+            "It can incorrectly equate unrelated attributes with the same name",
+            "It only works with numeric data types",
+            "It doesn't support foreign key relationships"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NATURAL JOIN can be dangerous because it automatically equates all attributes with the same name, which might include unrelated attributes that happen to share names across different relations."
+    },
+    {
+        "id": "11",
+        "text": "What is the purpose of the AS clause in SQL?",
+        "options": [
+            "To create new tables",
+            "To rename relations or attributes in the query result",
+            "To specify aggregate functions",
+            "To define subqueries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The AS clause is used to rename relations (table aliases) or attributes (column aliases) in the query result, improving readability or resolving naming conflicts."
+    },
+    {
+        "id": "12",
+        "text": "How does the ORDER BY clause sort results by default?",
+        "options": [
+            "Descending order",
+            "Random order",
+            "Ascending order",
+            "By primary key order"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The ORDER BY clause sorts results in ascending order by default. You must explicitly specify DESC for descending order."
+    },
+    {
+        "id": "13",
+        "text": "What does the LIKE operator with pattern '%dar%' match?",
+        "options": [
+            "Exactly 'dar'",
+            "Any string starting with 'dar'",
+            "Any string containing 'dar' as a substring",
+            "Any string ending with 'dar'"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The pattern '%dar%' with LIKE matches any string that contains 'dar' as a substring, with '%' representing any sequence of zero or more characters."
+    },
+    {
+        "id": "14",
+        "text": "What is the purpose of the BETWEEN operator in SQL?",
+        "options": [
+            "To compare two tables",
+            "To check if a value is within a specified range",
+            "To perform string pattern matching",
+            "To join tables based on range conditions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The BETWEEN operator is used to test if a value falls within a specified range, inclusive of the boundary values (e.g., WHERE salary BETWEEN 90000 AND 100000)."
+    },
+    {
+        "id": "15",
+        "text": "Which aggregate function calculates the average value of a numeric column?",
+        "options": [
+            "SUM()",
+            "AVG()",
+            "COUNT()",
+            "MAX()"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The AVG() aggregate function calculates the average value of a numeric column, ignoring NULL values in the calculation."
+    },
+    {
+        "id": "16",
+        "text": "What does COUNT(*) aggregate function do?",
+        "options": [
+            "Counts only distinct values",
+            "Counts all tuples, including those with NULL values",
+            "Counts only non-NULL values",
+            "Counts only primary key values"
+        ],
+        "correctAnswer": 1,
+        "explanation": "COUNT(*) counts all tuples in the relation, including those with NULL values in any columns, unlike other aggregate functions that ignore NULLs."
+    },
+    {
+        "id": "17",
+        "text": "When must attributes appear in the GROUP BY clause?",
+        "options": [
+            "When they are used in aggregate functions",
+            "When they are mentioned in the SELECT clause outside of aggregate functions",
+            "When they are foreign keys",
+            "When they have NULL values"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Attributes that appear in the SELECT clause outside of aggregate functions must be included in the GROUP BY clause to ensure proper grouping semantics."
+    },
+    {
+        "id": "18",
+        "text": "What is the key difference between WHERE and HAVING clauses?",
+        "options": [
+            "WHERE is for grouping, HAVING is for filtering",
+            "WHERE filters rows before grouping, HAVING filters groups after grouping",
+            "HAVING is used with aggregate functions, WHERE is not",
+            "WHERE is for joins, HAVING is for subqueries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The WHERE clause filters individual rows before groups are formed, while the HAVING clause filters groups after the GROUP BY operation has been applied."
+    },
+    {
+        "id": "19",
+        "text": "How do aggregate functions typically handle NULL values?",
+        "options": [
+            "They treat NULL as zero",
+            "They include NULL in calculations",
+            "They ignore NULL values in the aggregated column",
+            "They convert NULL to empty strings"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Most aggregate functions (except COUNT(*)) ignore NULL values when performing calculations on the aggregated column."
+    },
+    {
+        "id": "20",
+        "text": "What is a nested subquery in SQL?",
+        "options": [
+            "A query that uses multiple FROM clauses",
+            "A select-from-where expression nested within another query",
+            "A query that references itself",
+            "A query with multiple SELECT statements"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A nested subquery is a complete SELECT-FROM-WHERE expression that is embedded within another SQL query, typically used in WHERE or HAVING clauses."
+    },
+    {
+        "id": "21",
+        "text": "Which SQL data type would be most appropriate for storing a product price with exactly 2 decimal places?",
+        "options": [
+            "INT",
+            "REAL",
+            "NUMERIC(p,d)",
+            "VARCHAR(n)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "NUMERIC(p,d) is ideal for fixed-point numbers like prices, where p specifies total digits and d specifies decimal places (e.g., NUMERIC(8,2) for prices up to 999999.99)."
+    },
+    {
+        "id": "22",
+        "text": "What is the practical difference between DROP TABLE and ALTER TABLE DROP?",
+        "options": [
+            "DROP TABLE removes the entire table, ALTER TABLE DROP removes only a column",
+            "ALTER TABLE DROP removes the entire table, DROP TABLE removes only a column",
+            "Both perform identical operations but with different syntax",
+            "DROP TABLE is faster but less secure"
+        ],
+        "correctAnswer": 0,
+        "explanation": "DROP TABLE deletes the entire table and its structure, while ALTER TABLE DROP column_name removes only a specific column from the table structure."
+    },
+    {
+        "id": "23",
+        "text": "In a practical scenario, when would you use SELECT DISTINCT?",
+        "options": [
+            "When you want to see all possible values including duplicates",
+            "When you need to eliminate duplicate rows from your result set",
+            "When you're selecting from multiple tables",
+            "When you're using aggregate functions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "You would use SELECT DISTINCT in practical scenarios like generating unique lists of values, such as getting all unique department names from an employee table to populate a dropdown menu."
+    },
+    {
+        "id": "24",
+        "text": "Why might you use arithmetic expressions in the SELECT clause?",
+        "options": [
+            "To perform calculations on retrieved data",
+            "To create new tables",
+            "To filter query results",
+            "To join multiple tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Arithmetic expressions in SELECT are used for on-the-fly calculations, such as converting annual salary to monthly (salary/12) or calculating totals (price * quantity)."
+    },
+    {
+        "id": "25",
+        "text": "In a real-world database, why would you use table aliases with the AS clause?",
+        "options": [
+            "To shorten long table names in queries involving multiple joins",
+            "To change the actual table names in the database",
+            "To improve database performance",
+            "To encrypt table names"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Table aliases are practically used to simplify queries with multiple table joins, making the SQL more readable and easier to write, especially with long table names."
+    },
+    {
+        "id": "26",
+        "text": "When would you use the ORDER BY clause in a practical application?",
+        "options": [
+            "To alphabetize customer names in a report",
+            "To filter out unwanted records",
+            "To calculate totals and averages",
+            "To create new database tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "ORDER BY is used practically to sort results for display purposes, such as alphabetizing customer lists, ranking products by price, or ordering transactions by date."
+    },
+    {
+        "id": "27",
+        "text": "In what practical situation would you use the LIKE operator with pattern matching?",
+        "options": [
+            "To find customers with names containing 'smith'",
+            "To calculate average sales figures",
+            "To join customer and order tables",
+            "To create backup copies of tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "LIKE with pattern matching is used in practical search functionality, such as finding all customers whose names contain 'smith' or products with descriptions matching certain patterns."
+    },
+    {
+        "id": "28",
+        "text": "Why would you use the BETWEEN operator instead of multiple AND conditions?",
+        "options": [
+            "It makes range queries more readable and concise",
+            "It executes faster than equivalent AND conditions",
+            "It works with string data while AND doesn't",
+            "It automatically excludes NULL values"
+        ],
+        "correctAnswer": 0,
+        "explanation": "BETWEEN is used practically to make range queries more readable and easier to maintain than the equivalent (value >= low AND value <= high) syntax."
+    },
+    {
+        "id": "29",
+        "text": "In a sales database, which aggregate function would you use to find the total revenue?",
+        "options": [
+            "AVG()",
+            "SUM()",
+            "COUNT()",
+            "MAX()"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SUM() would be used practically to calculate total revenue by summing all sales amounts, or total quantity sold by summing quantity fields."
+    },
+    {
+        "id": "30",
+        "text": "When would you use GROUP BY in a practical business scenario?",
+        "options": [
+            "To calculate total sales by product category",
+            "To alphabetize a customer list",
+            "To find a specific customer record",
+            "To update product prices"
+        ],
+        "correctAnswer": 0,
+        "explanation": "GROUP BY is used practically to generate summary reports, such as sales totals by category, average order value by region, or employee count by department."
+    },
+    {
+        "id": "31",
+        "text": "In what scenario would you use HAVING instead of WHERE?",
+        "options": [
+            "When filtering groups based on aggregate values",
+            "When filtering individual rows before grouping",
+            "When joining multiple tables",
+            "When creating new tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "HAVING is used practically when you need to filter groups after aggregation, such as finding departments with average salary > 50000 or product categories with total sales > 100000."
+    },
+    {
+        "id": "32",
+        "text": "Why might you use nested subqueries in a real application?",
+        "options": [
+            "To find customers who placed orders in the last month",
+            "To update all prices in a single operation",
+            "To create backup copies of tables",
+            "To improve database performance"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Nested subqueries are used practically for complex filtering conditions, such as finding customers who haven't ordered recently or products that are out of stock but have pending orders."
+    },
+    {
+        "id": "33",
+        "text": "What is a practical use of foreign key constraints?",
+        "options": [
+            "To prevent orphan records and maintain referential integrity",
+            "To improve query performance",
+            "To encrypt database relationships",
+            "To automatically backup related tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Foreign key constraints are used practically to maintain data integrity by ensuring that values in one table correspond to valid values in another table, preventing orphan records."
+    },
+    {
+        "id": "34",
+        "text": "In a customer orders database, which query would find customers from 'Moratuwa'?",
+        "options": [
+            "SELECT * FROM customers WHERE city = 'Moratuwa'",
+            "SELECT * FROM orders WHERE city = 'Moratuwa'",
+            "UPDATE customers SET city = 'Moratuwa'",
+            "DELETE FROM customers WHERE city != 'Moratuwa'"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct query uses WHERE clause to filter customers based on their city attribute: SELECT * FROM customers WHERE city = 'Moratuwa'"
+    },
+    {
+        "id": "35",
+        "text": "How would you find employees who earn more than their department's average salary?",
+        "options": [
+            "Using a subquery with AVG() in WHERE clause",
+            "Using ORDER BY with DESC",
+            "Using NATURAL JOIN without conditions",
+            "Using LIKE with pattern matching"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires a correlated subquery: SELECT name FROM employee e WHERE salary > (SELECT AVG(salary) FROM employee WHERE dept = e.dept)"
+    },
+    {
+        "id": "36",
+        "text": "Which query would list projects with budgets over 1,000,000?",
+        "options": [
+            "SELECT proj_name FROM project WHERE budget > 1000000",
+            "SELECT proj_name FROM project WHERE budget < 1000000",
+            "UPDATE project SET budget = 1000000",
+            "DELETE FROM project WHERE budget <= 1000000"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct query uses WHERE clause with comparison operator: SELECT proj_name FROM project WHERE budget > 1000000"
+    },
+    {
+        "id": "37",
+        "text": "How would you find the number of employees in each city?",
+        "options": [
+            "SELECT city, COUNT(*) FROM employee GROUP BY city",
+            "SELECT COUNT(*) FROM employee ORDER BY city",
+            "SELECT city FROM employee WHERE COUNT(*) > 0",
+            "UPDATE employee SET city = COUNT(*)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires GROUP BY: SELECT city, COUNT(*) FROM employee GROUP BY city"
+    },
+    {
+        "id": "38",
+        "text": "What query would find the highest salary in each department?",
+        "options": [
+            "SELECT dept, MAX(salary) FROM employee GROUP BY dept",
+            "SELECT dept, salary FROM employee ORDER BY salary DESC",
+            "SELECT MAX(salary) FROM employee WHERE dept IS NOT NULL",
+            "UPDATE employee SET salary = MAX(salary)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires GROUP BY with MAX(): SELECT dept, MAX(salary) FROM employee GROUP BY dept"
+    },
+    {
+        "id": "39",
+        "text": "How would you find employees who work on projects located in their home city?",
+        "options": [
+            "Using a join between employee and project tables with city comparison",
+            "Using ORDER BY on city columns",
+            "Using AVG() aggregate function",
+            "Using LIKE with wildcard patterns"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires joining employee and project tables: SELECT e.name FROM employee e JOIN assignment a ON e.emp_no = a.emp_no JOIN project p ON a.proj_no = p.proj_no WHERE e.emp_city = p.proj_location"
+    },
+    {
+        "id": "40",
+        "text": "Which query would update salaries by giving a 10% raise to all employees?",
+        "options": [
+            "UPDATE employee SET salary = salary * 1.10",
+            "SELECT salary * 1.10 FROM employee",
+            "DELETE FROM employee WHERE salary = salary * 1.10",
+            "INSERT INTO employee VALUES (salary * 1.10)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The UPDATE statement with arithmetic expression: UPDATE employee SET salary = salary * 1.10"
+    },
+    {
+        "id": "41",
+        "text": "How would you find the total hours worked on each project?",
+        "options": [
+            "SELECT proj_no, SUM(hours) FROM assignment GROUP BY proj_no",
+            "SELECT proj_no, hours FROM assignment ORDER BY hours",
+            "SELECT SUM(hours) FROM assignment WHERE proj_no IS NOT NULL",
+            "UPDATE assignment SET hours = SUM(hours)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires GROUP BY with SUM(): SELECT proj_no, SUM(hours) FROM assignment GROUP BY proj_no"
+    },
+    {
+        "id": "42",
+        "text": "What is the practical purpose of the NOT NULL constraint?",
+        "options": [
+            "To ensure critical data is always provided",
+            "To make queries run faster",
+            "To allow duplicate values",
+            "To create automatic backups"
+        ],
+        "correctAnswer": 0,
+        "explanation": "NOT NULL constraints ensure that critical fields like customer names, product codes, or essential identifiers always contain values, maintaining data quality."
+    },
+    {
+        "id": "43",
+        "text": "In an e-commerce database, how would you find products that have never been ordered?",
+        "options": [
+            "Using a subquery with NOT IN",
+            "Using ORDER BY with ASC",
+            "Using NATURAL JOIN without conditions",
+            "Using AVG() aggregate function"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires a subquery: SELECT product_name FROM products WHERE product_id NOT IN (SELECT product_id FROM orders)"
+    },
+    {
+        "id": "44",
+        "text": "Which SQL operation would you use to combine customer names with their order dates?",
+        "options": [
+            "JOIN between customers and orders tables",
+            "UNION of customers and orders tables",
+            "GROUP BY on customer_id",
+            "UPDATE customers SET order_date"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires a JOIN: SELECT c.name, o.order_date FROM customers c JOIN orders o ON c.customer_id = o.customer_id"
+    },
+    {
+        "id": "45",
+        "text": "How would you find the most expensive product in each category?",
+        "options": [
+            "Using GROUP BY with MAX() and a subquery or window function",
+            "Using ORDER BY with LIMIT 1",
+            "Using LIKE with pattern matching",
+            "Using UPDATE with MAX()"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This can be done with: SELECT category, product_name, price FROM products p1 WHERE price = (SELECT MAX(price) FROM products p2 WHERE p2.category = p1.category)"
+    },
+    {
+        "id": "46",
+        "text": "What is a practical use of the DISTINCT keyword with COUNT()?",
+        "options": [
+            "To count unique values in a column",
+            "To make the count faster",
+            "To count all values including duplicates",
+            "To ignore NULL values automatically"
+        ],
+        "correctAnswer": 0,
+        "explanation": "COUNT(DISTINCT column) is used practically to count unique values, such as counting distinct customers who made purchases or distinct products sold."
+    },
+    {
+        "id": "47",
+        "text": "How would you find employees who have the same salary as their manager?",
+        "options": [
+            "Using self-join with salary comparison",
+            "Using GROUP BY with AVG()",
+            "Using ORDER BY with DESC",
+            "Using LIKE with exact match"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires a self-join: SELECT e.name FROM employee e JOIN employee m ON e.manager_id = m.emp_id WHERE e.salary = m.salary"
+    },
+    {
+        "id": "48",
+        "text": "Which query would delete all orders older than 5 years?",
+        "options": [
+            "DELETE FROM orders WHERE order_date < CURRENT_DATE - INTERVAL '5 years'",
+            "SELECT * FROM orders WHERE order_date < 5",
+            "UPDATE orders SET order_date = NULL WHERE order_date IS OLD",
+            "DROP TABLE orders WHERE order_date < 5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The correct query uses DELETE with date comparison: DELETE FROM orders WHERE order_date < CURRENT_DATE - INTERVAL '5 years'"
+    },
+    {
+        "id": "49",
+        "text": "How would you find the average order value for each customer?",
+        "options": [
+            "SELECT customer_id, AVG(order_total) FROM orders GROUP BY customer_id",
+            "SELECT AVG(order_total) FROM orders ORDER BY customer_id",
+            "SELECT customer_id FROM orders WHERE AVG(order_total) > 0",
+            "UPDATE orders SET order_total = AVG(order_total)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires GROUP BY with AVG(): SELECT customer_id, AVG(order_total) FROM orders GROUP BY customer_id"
+    },
+    {
+        "id": "50",
+        "text": "What is the practical purpose of using transactions with SQL statements?",
+        "options": [
+            "To ensure multiple operations succeed or fail together",
+            "To make individual queries run faster",
+            "To automatically create table backups",
+            "To simplify SQL syntax"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Transactions ensure atomicity - either all operations within the transaction succeed (commit) or all fail (rollback), crucial for maintaining data consistency in banking, e-commerce, etc."
+    },
+    {
+        "id": "51",
+        "text": "How would you find products that are priced above the average price of all products?",
+        "options": [
+            "Using a subquery with AVG() in WHERE clause",
+            "Using GROUP BY with HAVING",
+            "Using NATURAL JOIN without conditions",
+            "Using ORDER BY with DESC LIMIT 1"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires a subquery: SELECT product_name, price FROM products WHERE price > (SELECT AVG(price) FROM products)"
+    },
+    {
+        "id": "52",
+        "text": "Which SQL feature would you use to ensure email addresses are unique across users?",
+        "options": [
+            "UNIQUE constraint on email column",
+            "PRIMARY KEY on email column",
+            "FOREIGN KEY referencing another table",
+            "LIKE with pattern matching"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A UNIQUE constraint on the email column ensures no duplicate email addresses exist in the users table, while still allowing NULL values if needed."
+    },
+    {
+        "id": "53",
+        "text": "How would you find the top 3 highest-paid employees?",
+        "options": [
+            "SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 3",
+            "SELECT MAX(salary) FROM employee GROUP BY name LIMIT 3",
+            "SELECT name, salary FROM employee WHERE salary = TOP3",
+            "UPDATE employee SET salary = TOP3"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This uses ORDER BY with DESC and LIMIT: SELECT name, salary FROM employee ORDER BY salary DESC LIMIT 3"
+    },
+    {
+        "id": "54",
+        "text": "What is a practical use of the COALESCE function?",
+        "options": [
+            "To replace NULL values with default values",
+            "To calculate averages ignoring zeros",
+            "To concatenate strings with spaces",
+            "To convert numbers to strings"
+        ],
+        "correctAnswer": 0,
+        "explanation": "COALESCE is used practically to handle NULL values, such as displaying 'Unknown' instead of NULL for missing department names or showing 0 instead of NULL for zero sales."
+    },
+    {
+        "id": "55",
+        "text": "How would you update product prices by applying a 15% discount to discontinued items?",
+        "options": [
+            "UPDATE products SET price = price * 0.85 WHERE discontinued = true",
+            "SELECT price * 0.85 FROM products WHERE discontinued",
+            "DELETE FROM products WHERE price = price * 0.85",
+            "INSERT INTO products VALUES (price * 0.85)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The UPDATE statement with WHERE clause: UPDATE products SET price = price * 0.85 WHERE discontinued = true"
+    },
+    {
+        "id": "56",
+        "text": "Which query would find customers who have placed more than 5 orders?",
+        "options": [
+            "SELECT customer_id FROM orders GROUP BY customer_id HAVING COUNT(*) > 5",
+            "SELECT customer_id FROM orders WHERE COUNT(*) > 5",
+            "SELECT customer_id FROM orders ORDER BY COUNT(*) DESC",
+            "UPDATE orders SET customer_id = 5 WHERE COUNT(*) > 5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This requires GROUP BY with HAVING: SELECT customer_id FROM orders GROUP BY customer_id HAVING COUNT(*) > 5"
+    },
+    {
+        "id": "57",
+        "text": "How would you calculate the total sales for the current month?",
+        "options": [
+            "SELECT SUM(amount) FROM sales WHERE EXTRACT(MONTH FROM sale_date) = EXTRACT(MONTH FROM CURRENT_DATE)",
+            "SELECT SUM(amount) FROM sales WHERE sale_date = THIS_MONTH",
+            "SELECT amount FROM sales ORDER BY sale_date DESC",
+            "UPDATE sales SET amount = SUM(amount)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This uses date functions: SELECT SUM(amount) FROM sales WHERE EXTRACT(YEAR_MONTH FROM sale_date) = EXTRACT(YEAR_MONTH FROM CURRENT_DATE)"
+    },
+    {
+        "id": "58",
+        "text": "What is the practical purpose of database indexes?",
+        "options": [
+            "To speed up query performance on frequently searched columns",
+            "To store backup copies of table data",
+            "To encrypt sensitive column data",
+            "To automatically update related tables"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Indexes are used practically to improve query performance on columns frequently used in WHERE clauses, JOIN conditions, or ORDER BY operations, much like a book index."
+    },
+    {
+        "id": "59",
+        "text": "How would you find employees who were hired in the last 30 days?",
+        "options": [
+            "SELECT name FROM employees WHERE hire_date >= CURRENT_DATE - INTERVAL '30 days'",
+            "SELECT name FROM employees WHERE hire_date < 30",
+            "SELECT name FROM employees ORDER BY hire_date DESC LIMIT 30",
+            "UPDATE employees SET hire_date = CURRENT_DATE - 30"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This uses date arithmetic: SELECT name FROM employees WHERE hire_date >= CURRENT_DATE - INTERVAL '30 days'"
+    },
+    {
+        "id": "60",
+        "text": "Why would you use SQL views in a practical application?",
+        "options": [
+            "To simplify complex queries and provide a security layer",
+            "To make physical copies of tables for backup",
+            "To improve database storage efficiency",
+            "To automatically optimize query performance"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Views are used practically to simplify complex queries (hiding joins and calculations), provide security (restricting access to specific columns), and maintain backward compatibility when table structures change."
+    }
+]

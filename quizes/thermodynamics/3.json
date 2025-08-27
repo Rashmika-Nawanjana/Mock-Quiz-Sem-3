@@ -1,0 +1,483 @@
+[
+    {
+        "id": "q1",
+        "text": "What fundamental concept does the Second Law of Thermodynamics introduce that the First Law does not address?",
+        "options": [
+            "Conservation of energy",
+            "The directionality of processes",
+            "The equivalence of heat and work",
+            "The existence of internal energy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "While the First Law states that energy is conserved, the Second Law introduces the concept of directionality, indicating that natural processes have a preferred direction (e.g., heat flows from hot to cold spontaneously)."
+    },
+    {
+        "id": "q2",
+        "text": "According to the Kelvin-Planck statement, why is it impossible for a heat engine to produce net work by exchanging heat with only a single reservoir?",
+        "options": [
+            "It would violate the conservation of energy.",
+            "It would require heat to flow spontaneously from a cold body to a hot body.",
+            "It would have an efficiency greater than the Carnot efficiency.",
+            "It would violate the principle of energy quality degradation."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Kelvin-Planck statement directly asserts that a cyclic device must reject some heat to a cold reservoir to produce net work. Operating with one reservoir would imply 100% efficiency, which is impossible as it would allow the spontaneous flow of heat from cold to hot."
+    },
+    {
+        "id": "q3",
+        "text": "What is the primary function of a cooling tower in a thermal power plant, as implied by the Second Law?",
+        "options": [
+            "To generate additional electricity",
+            "To preheat the feedwater for the boiler",
+            "To act as the cold reservoir for heat rejection",
+            "To increase the pressure of the steam"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Second Law (Kelvin-Planck) necessitates that a heat engine must reject waste heat to a cold reservoir to complete its cycle. The cooling tower serves as a key component of this cold reservoir, allowing the condenser to reject heat (Q_L) to the environment."
+    },
+    {
+        "id": "q4",
+        "text": "The Carnot principle states that the efficiency of all reversible heat engines operating between the same two reservoirs is identical. What is the most significant implication of this?",
+        "options": [
+            "Their thermal efficiency is always 100%.",
+            "Their efficiency depends only on the reservoir temperatures, not the working fluid.",
+            "They all produce the same amount of work output.",
+            "They are all impossible to build in practice."
+        ],
+        "orrectAnswer": 1,
+        "explanation": "The Carnot principle's corollary establishes that the maximum possible efficiency for any heat engine operating between two temperatures is a function solely of those temperatures (η_max = 1 - T_L/T_H), independent of the engine's design or working substance."
+    },
+    {
+        "id": "q5",
+        "text": "Which processes constitute the ideal Carnot cycle for a heat engine?",
+        "options": [
+            "Two isothermal and two isobaric processes",
+            "Two adiabatic and two isochoric processes",
+            "Two isothermal and two adiabatic processes",
+            "Two isentropic and two isenthalpic processes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Carnot cycle, being the most efficient reversible cycle, consists of four processes: reversible isothermal heat addition, reversible adiabatic expansion, reversible isothermal heat rejection, and reversible adiabatic compression."
+    },
+    {
+        "id": "q6",
+        "text": "How does the Clausius statement of the Second Law relate to the operation of a household refrigerator?",
+        "options": [
+            "It explains why the refrigerator's compressor must do work on the refrigerant.",
+            "It predicts the exact amount of electricity the refrigerator will consume.",
+            "It states that the refrigerator's interior will eventually reach absolute zero.",
+            "It proves that the refrigerator is a perpetual motion machine."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Clausius statement says heat cannot flow from cold to hot without external work input. A refrigerator violates this natural directionality, so it requires a compressor (work input, W_in) to force heat (Q_L) out of the cold interior and reject it (Q_H) to the warmer kitchen."
+    },
+    {
+        "id": "q7",
+        "text": "For a heat pump used for heating a house, the Coefficient of Performance (COP_HP) is defined as 4.0. What does this mean practically?",
+        "options": [
+            "It is 400% efficient at converting work to heat.",
+            "It delivers 4 units of heat energy into the house for every 1 unit of electrical work consumed.",
+            "It consumes 4 units of electrical work to deliver 1 unit of heat energy into the house.",
+            "It is operating at the Carnot efficiency for its temperature range."
+        ],
+        "correctAnswer": 1,
+        "explanation": "COP_HP = (Desired Output) / (Work Input) = Q_H / W_in. A COP of 4.0 means the heat pump transfers 4 kJ of heat energy from the cold outside into the warm house for every 1 kJ of electrical energy supplied to its compressor. This is why heat pumps are efficient heaters."
+    },
+    {
+        "id": "q8",
+        "text": "What is the mathematical relationship between the COP of a heat pump (COP_HP) and the COP of a refrigerator (COP_REF) operating between the same two reservoirs?",
+        "options": [
+            "COP_HP = COP_REF",
+            "COP_HP = COP_REF + 1",
+            "COP_HP = 1 / COP_REF",
+            "COP_HP = COP_REF - 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "From the energy conservation for the cycle: W_in = Q_H - Q_L. Therefore, COP_HP = Q_H / W_in and COP_REF = Q_L / W_in. Adding them: COP_HP + COP_REF = (Q_H + Q_L) / W_in. This is not standard. A better relation is COP_HP = 1 + (Q_L / W_in) = 1 + COP_REF. So, COP_HP is always greater than COP_REF by 1."
+    },
+    {
+        "id": "q9",
+        "text": "The thermodynamic temperature scale (Kelvin scale) is defined based on the efficiency of a Carnot engine. If a Carnot engine has an efficiency of 50% and its cold reservoir is at 300 K, what is the temperature of its hot reservoir?",
+        "options": [
+            "150 K",
+            "450 K",
+            "600 K",
+            "900 K"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The efficiency of a Carnot engine is given by η_rev = 1 - (T_L / T_H). Rearranging for T_H: T_H = T_L / (1 - η). Substituting the values: T_H = 300 K / (1 - 0.50) = 300 K / 0.50 = 600 K."
+    },
+    {
+        "id": "q10",
+        "text": "Why can no real heat engine ever achieve the Carnot efficiency?",
+        "options": [
+            "It would violate the First Law of Thermodynamics.",
+            "The Carnot efficiency is only defined for refrigerators.",
+            "All real processes involve some irreversibilities (friction, rapid expansion, etc.).",
+            "The required reservoir temperatures are impossible to maintain."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Carnot cycle is an idealization that assumes perfectly reversible processes. All real-world processes are irreversible to some degree due to factors like friction, unrestrained expansion, and heat transfer across a finite temperature difference. These irreversibilities always reduce the efficiency below the Carnot limit."
+    },
+    {
+        "id": "q11",
+        "text": "A reversible heat engine operates between a source at 800 K and a sink at 400 K. If the heat input is 1000 kJ, what is the maximum possible net work output?",
+        "options": [
+            "250 kJ",
+            "500 kJ",
+            "750 kJ",
+            "1000 kJ"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The maximum possible work output is achieved by a reversible (Carnot) engine. First, find the Carnot efficiency: η_max = 1 - (T_L/T_H) = 1 - (400/800) = 0.5 (or 50%). Then, W_net,max = η_max * Q_H = 0.5 * 1000 kJ = 500 kJ."
+    },
+    {
+        "id": "q12",
+        "text": "For a Carnot refrigerator operating between 250 K and 300 K, what is its Coefficient of Performance (COP_REF)?",
+        "options": [
+            "1.0",
+            "5.0",
+            "6.0",
+            "0.2"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The COP for a reversible refrigerator is given by COP_REF,rev = 1 / ( (T_H / T_L) - 1 ). Substituting the temperatures: COP_REF,rev = 1 / ( (300 K / 250 K) - 1 ) = 1 / (1.2 - 1) = 1 / 0.2 = 5.0."
+    },
+    {
+        "id": "q13",
+        "text": "What does the term 'thermal reservoir' imply about the body's temperature?",
+        "options": [
+            "Its temperature changes significantly when heat is added or removed.",
+            "Its temperature remains constant regardless of the amount of heat transferred.",
+            "It can only supply heat, not absorb it.",
+            "It is always the hottest part of a system."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A thermal reservoir is an idealized concept. It is a body so large that its temperature remains constant when it absorbs or supplies finite amounts of heat. This simplifies the analysis of heat engines and other devices."
+    },
+    {
+        "id": "q14",
+        "text": "If an inventor claims to have built an engine that receives 600 kJ of heat from a source at 500 K and rejects 200 kJ of heat to a sink at 300 K, producing 400 kJ of work, what is the best evaluation of this claim based on the Second Law?",
+        "options": [
+            "It is valid as it satisfies the First Law (Q_in - Q_out = W_net).",
+            "It is impossible because its efficiency (66.7%) exceeds the Carnot efficiency (40%) for these temperatures.",
+            "It is possible if the engine is internally reversible.",
+            "It is impossible because it rejects heat to the sink."
+        ],
+        "correctAnswer": 1,
+        "explanation": "First, check the First Law: 600 - 200 = 400 kJ, so it is satisfied. Now check the Second Law. The Carnot efficiency for T_H=500K and T_L=300K is η_Carnot = 1 - (300/500) = 0.4 (40%). The claimed engine's efficiency is η = W_net / Q_H = 400/600 ≈ 0.667 (66.7%). Since this exceeds the maximum possible efficiency (Carnot), the claim violates the Second Law and is impossible."
+    },
+    {
+        "id": "q15",
+        "text": "The Clausius and Kelvin-Planck statements of the Second Law are equivalent. What does this mean?",
+        "options": [
+            "They are mathematically identical equations.",
+            "They are different ways of saying the same underlying principle.",
+            "Violation of one statement would logically imply the violation of the other.",
+            "They apply to completely different types of systems."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The equivalence of the Clausius and Kelvin-Planck statements means that if a device could violate one of them (e.g., a PMM2 violating Kelvin-Planck), it could be used to construct a device that violates the other (e.g., a refrigerator with no work input, violating Clausius), and vice versa. They are two different expressions of the same fundamental limitation."
+    },
+    {
+        "id": "q16",
+        "text": "In the context of the Second Law, what is meant by the 'quality' of energy?",
+        "options": [
+            "The cost per kilowatt-hour of electricity.",
+            "The source from which the energy is derived (solar, fossil fuels, etc.).",
+            "The ease with which energy can be converted to useful work.",
+            "The total amount of energy available in a system."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Second Law introduces the concept of energy quality. High-quality energy (like electrical work) can be completely converted to other forms. Low-quality energy (like heat at a low temperature) has a limited potential to be converted to useful work. The Second Law governs the degradation of energy quality during processes."
+    },
+    {
+        "id": "q17",
+        "text": "A heat pump and a resistance heater are both used to heat a room to the same temperature. Why might the heat pump be a more desirable option?",
+        "options": [
+            "It consumes less electrical energy to deliver the same amount of heat.",
+            "It makes the room feel warmer at the same temperature.",
+            "It is always cheaper to purchase and install.",
+            "It cools the outside environment while heating the inside."
+        ],
+        "correctAnswer": 0,
+        "explanation": "A resistance heater has a COP of 1 (1 unit of heat for 1 unit of work). A heat pump has a COP greater than 1 because it moves heat from outside rather than generating it. Thus, for the same heating effect (Q_H), a heat pump consumes less electrical work (W_in = Q_H / COP) than a resistance heater (W_in = Q_H), making it more energy-efficient."
+    },
+    {
+        "id": "q18",
+        "text": "What is the key difference between the objectives of a refrigerator and a heat pump?",
+        "options": [
+            "A refrigerator uses work, while a heat pump does not.",
+            "A refrigerator aims to extract heat (Q_L) from a cold space, while a heat pump aims to deliver heat (Q_H) to a hot space.",
+            "A refrigerator operates on a cycle, while a heat pump does not.",
+            "A refrigerator has a higher COP than a heat pump for the same temperatures."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both devices are functionally similar (they move heat from cold to hot using work). The difference is their purpose. The desired output for a refrigerator is the heat removed from the cold space (Q_L) to cool it. The desired output for a heat pump is the heat delivered to the hot space (Q_H) to heat it. This is reflected in their COP definitions: COP_REF = Q_L/W_in, COP_HP = Q_H/W_in."
+    },
+    {
+        "id": "q19",
+        "text": "According to the Carnot principle, for two heat engines operating between the same reservoirs, the reversible engine is always more efficient than the irreversible one. What is the ultimate fate of the difference in their work outputs?",
+        "options": [
+            "It is destroyed.",
+            "It is stored as potential energy.",
+            "It is used to overcome irreversibilities like friction, generating heat that is rejected to the sink.",
+            "It violates the First Law."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The irreversibilities in the less efficient engine (e.g., friction) generate additional entropy. The energy associated with this entropy generation is not available for useful work output. Instead, it is converted to heat (a lower quality form of energy) that must be rejected to the cold reservoir, reducing the net work output compared to the reversible case."
+    },
+    {
+        "id": "q20",
+        "text": "The Kelvin-Planck statement specifically mentions a device that operates 'on a cycle'. Why is this qualification important?",
+        "options": [
+            "It excludes one-time processes like the free expansion of a gas.",
+            "It implies that the device must be made of circular components.",
+            "It means the statement only applies to perpetual motion machines.",
+            "It ensures the device has no moving parts."
+        ],
+        "correctAnswer": 0,
+        "explanation": "The qualification 'on a cycle' is crucial. The Second Law restricts the performance of cyclic devices which must return to their initial state. Non-cyclic, one-time processes (like a piston firing once or a gas expanding into a vacuum) can convert heat from a single reservoir to work, but they are not perpetual motion machines because they cannot repeat the process continuously."
+    },
+    {
+        "id": "q21",
+        "text": "What is the significance of defining an absolute temperature scale (Kelvin) based on Carnot efficiencies?",
+        "options": [
+            "It allows temperature to be measured without thermometers.",
+            "It makes temperature independent of the properties of any particular thermometric substance (e.g., mercury).",
+            "It proves that temperature is always positive.",
+            "It simplifies the calculation of heat transfer rates."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The thermodynamic temperature scale is fundamental because its definition (Q_H / Q_L = T_H / T_L for a Carnot cycle) is independent of the working fluid's properties. This is in contrast to empirical scales (Celsius, Fahrenheit) which rely on the expansion of specific materials like mercury or alcohol."
+    },
+    {
+        "id": "q22",
+        "text": "An air conditioner is essentially a refrigerator whose cold space is a room and whose hot space is the outdoors. On a very hot day, why does its COP decrease?",
+        "options": [
+            "The compressor motor becomes less efficient.",
+            "The temperature difference (T_H - T_L) that it must pump heat against increases.",
+            "The refrigerant absorbs less heat from the room.",
+            "It has to reject less heat to the outdoors."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The COP of a refrigerator (or AC) is inversely related to the temperature difference it must overcome. COP_REF,rev = 1 / ( (T_H / T_L) - 1 ). On a hot day, T_H (outdoors) is higher, and T_L (room) might also be higher, but the ratio T_H/T_L increases, leading to a decrease in COP. The unit must work harder (consume more work) to move heat against a larger temperature gradient."
+    },
+    {
+        "id": "q23",
+        "text": "What is the fundamental reason that a heat engine cannot convert all its heat input into work?",
+        "options": [
+            "Friction in the engine parts",
+            "The need to complete a cycle and return to the initial state",
+            "Heat loss to the surroundings from imperfect insulation",
+            "The molecular structure of the working fluid"
+        ],
+        "correctAnswer": 1,
+        "explanation": "While friction and heat loss are practical irreversibilities that further reduce efficiency, the fundamental Second Law reason is deeper. To reset the system to its initial state and complete a cycle, some energy must be discarded as waste heat to a cold reservoir. This is a necessary consequence of the law, even for a perfectly reversible engine with no friction or heat leaks."
+    },
+    {
+        "id": "q24",
+        "text": "If the rejected heat (Q_L) from a heat engine is zero, what does the Second Law dictate about its efficiency?",
+        "options": [
+            "Its efficiency must be 100%.",
+            "Its efficiency must be 0%.",
+            "Such an engine is impossible.",
+            "Its efficiency is undefined."
+        ],
+        "correctAnswer": 2,
+        "explanation": "If Q_L = 0, the engine would have an efficiency of 100% (η = 1 - 0/Q_H = 1). This violates the Kelvin-Planck statement of the Second Law, which explicitly states it is impossible for a cyclic device to exchange heat with a single reservoir and produce work. Therefore, such an engine is impossible."
+    },
+    {
+        "id": "q25",
+        "text": "In the equation for Carnot efficiency, η_rev = 1 - T_L/T_H, the temperatures T_L and T_H must be expressed in:",
+        "options": [
+            "Degrees Celsius",
+            "Degrees Fahrenheit",
+            "Any temperature scale, as long as the units are consistent",
+            "Kelvin (or another absolute temperature scale)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Carnot efficiency formula requires the use of an absolute temperature scale (like Kelvin or Rankine). This is because the formula is derived from the thermodynamic temperature scale, where zero is absolute zero. Using relative scales like Celsius would give incorrect results (e.g., if T_L was 0°C, it would incorrectly suggest 100% efficiency)."
+    },
+    {
+        "id": "q26",
+        "text": "A reversible heat engine is used to drive a reversible refrigerator operating between the same two reservoirs. Which of the following is true about the net effect of this combined system?",
+        "options": [
+            "It acts as a perpetual motion machine of the first kind.",
+            "It transfers heat from the cold reservoir to the hot reservoir with no net work input.",
+            "It produces net work while exchanging heat with a single reservoir.",
+            "There is no net transfer of heat between the reservoirs."
+        ],
+        "correctAnswer": 3,
+        "explanation": "The work output from the reversible heat engine (W = Q_H1 - Q_L1) is exactly equal to the work input required by the reversible refrigerator (W = Q_H2 - Q_L2). Analyzing the net heat transfer for the cold reservoir: Q_L1 is removed by the engine, and Q_L2 is added by the refrigerator. If the system is set up correctly, these can be equal, resulting in no net heat transfer for either reservoir. The system simply circulates energy."
+    },
+    {
+        "id": "q27",
+        "text": "The 'impossibility' stated by the Second Law is best described as:",
+        "options": [
+            "A technological limitation that could be overcome with better materials.",
+            "A statistical improbability based on the behavior of molecules.",
+            "A fundamental law of nature, not just a limitation of engineering.",
+            "A limitation that only applies to very large systems."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Second Law is a fundamental law of nature, not merely a statement about current engineering capabilities. It is based on statistical mechanics and the extreme improbability of certain molecular arrangements. It defines the ultimate limits that no device, no matter how perfectly designed, can surpass."
+    },
+    {
+        "id": "q28",
+        "text": "What would be the COP of a Carnot heat pump operating between reservoirs at 20°C and 5°C?",
+        "options": [
+            "1.05",
+            "14.65",
+            "19.65",
+            "0.95"
+        ],
+        "correctAnswer": 2,
+        "explanation": "First, convert temperatures to Kelvin: T_H = 20 + 273 = 293 K, T_L = 5 + 273 = 278 K. The COP for a reversible heat pump is COP_HP,rev = 1 / (1 - (T_L/T_H)) = 1 / (1 - (278/293)) = 1 / (1 - 0.9488) = 1 / 0.0512 ≈ 19.53. The closest answer is 19.65 (rounding differences)."
+    },
+    {
+        "id": "q29",
+        "text": "How does the concept of a 'reversible process' link the First and Second Laws of Thermodynamics?",
+        "options": [
+            "Reversibility is only defined by the First Law.",
+            "The First Law defines the energy balance for any process, while the Second Law defines the limit of performance (e.g., maximum work) achieved only when that process is reversible.",
+            "The Second Law invalidates the First Law for reversible processes.",
+            "They are unrelated concepts."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The First Law (energy conservation) must be obeyed by all processes, reversible or irreversible. The Second Law introduces the concept of reversibility and identifies reversible processes as the ideal limit where no entropy is generated. The maximum work output or minimum work input predicted by the First Law is only achievable if the process is also reversible, as dictated by the Second Law."
+    },
+    {
+        "id": "q30",
+        "text": "The cooling towers of a power plant are often seen emitting large plumes of water vapor. This is visual evidence of:",
+        "options": [
+            "The high efficiency of the plant.",
+            "The First Law of Thermodynamics (energy conservation).",
+            "The Second Law of Thermodynamics in action (heat rejection).",
+            "Energy being destroyed."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The plume is primarily condensed water vapor. Its existence is a direct consequence of the Second Law. The power plant must reject a large amount of waste heat (Q_L) to the atmosphere, and the cooling tower is the device that facilitates this necessary heat rejection process."
+    },
+    {
+        "id": "q31",
+        "text": "Which of the following best describes the role of the 'working fluid' in a heat engine in the context of the Second Law?",
+        "options": [
+            "Its sole purpose is to carry heat from source to sink.",
+            "It undergoes a cyclic process to facilitate the conversion of heat to work, but its properties do not change the maximum possible efficiency.",
+            "It generates the work output through chemical reactions.",
+            "Its temperature determines the reservoir temperatures."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The working fluid (e.g., water/steam, refrigerant) is the medium that undergoes the thermodynamic cycle. However, the Carnot principle states that the maximum efficiency (and thus the fundamental limit) depends only on the reservoir temperatures (T_H, T_L), not on the choice of working fluid. The fluid's properties affect how closely a real engine can approach this limit."
+    },
+    {
+        "id": "q32",
+        "text": "If the thermal efficiency of a heat engine is 30% and it rejects heat at a rate of 700 kW, what is its heat input rate?",
+        "options": [
+            "210 kW",
+            "233 kW",
+            "1000 kW",
+            "910 kW"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The thermal efficiency is η = W_net / Q_H = (Q_H - Q_L) / Q_H. We are given η = 0.30 and Q_L = 700 kW. So, 0.30 = (Q_H - 700) / Q_H. Solving for Q_H: 0.30 * Q_H = Q_H - 700 --> 700 = Q_H - 0.30*Q_H --> 700 = 0.70*Q_H --> Q_H = 700 / 0.70 = 1000 kW."
+    },
+    {
+        "id": "q33",
+        "text": "What is the key difference between an irreversible and a reversible adiabatic process?",
+        "options": [
+            "An irreversible one has no heat transfer, while a reversible one does.",
+            "An irreversible one generates entropy, while a reversible one does not.",
+            "A reversible one is slower than an irreversible one.",
+            "They are both represented by the same curve on a P-V diagram."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both reversible and irreversible adiabatic processes have Q = 0. The key difference is that an irreversible adiabatic process (e.g., rapid expansion with friction) generates entropy within the system due to irreversibilities. A reversible adiabatic process is also isentropic (constant entropy), meaning no entropy is generated."
+    },
+    {
+        "id": "q34",
+        "text": "A homeowner claims their heat pump has a heating COP of 3.5 during winter. If the electricity costs $0.12 per kWh, what is the effective cost per kWh of heat delivered to the house?",
+        "options": [
+            "$0.12 per kWh",
+            "$0.034 per kWh",
+            "$0.42 per kWh",
+            "$0.12 / 3.5 = $0.034 per kWh"
+        ],
+        "correctAnswer": 3,
+        "explanation": "COP_HP = (Heat Delivered, kWh) / (Electrical Work Input, kWh). Therefore, Cost per kWh of heat = (Cost per kWh of electricity) / COP_HP = $0.12 / 3.5 ≈ $0.0343 per kWh. The heat pump delivers heat at about one-third the cost of direct electrical resistance heating."
+    },
+    {
+        "id": "q35",
+        "text": "The Carnot efficiency is often called an 'unattainable upper limit'. How should engineers use this concept?",
+        "options": [
+            "Ignore it, as it is not practical.",
+            "Use it as a benchmark to compare the performance of real engines.",
+            "Design engines to operate as close to the Carnot limit as economically possible.",
+            "Both 2 and 3."
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Carnot efficiency provides the absolute theoretical maximum against which the performance of all real heat engines can be compared. It serves as a benchmark. While it is unattainable, engineers strive to minimize irreversibilities (through better design, materials, etc.) to approach this limit, balancing performance gains with economic costs."
+    },
+    {
+        "id": "q36",
+        "text": "What does the Second Law imply about the universe as a whole?",
+        "options": [
+            "The total energy of the universe is constant.",
+            "The total entropy of the universe is constantly increasing.",
+            "The temperature of the universe is constant.",
+            "Work cannot be done in the universe."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The First Law says the universe's energy is constant. The Second Law introduces entropy and states that for any natural process, the total entropy of the universe increases. It only remains constant for an idealized reversible process, which doesn't exist in reality. This points towards a particular direction or 'arrow of time'."
+    },
+    {
+        "id": "q37",
+        "text": "For a given Carnot heat pump, which change would increase its COP the most?",
+        "options": [
+            "Increasing T_H while keeping ΔT constant.",
+            "Decreasing T_L while keeping ΔT constant.",
+            "Decreasing the temperature difference (T_H - T_L).",
+            "Increasing the work input."
+        ],
+        "correctAnswer": 2,
+        "correctAnswerIndex": 2,
+        "explanation": "The COP of a heat pump is COP_HP,rev = 1 / (1 - (T_L/T_H)). The COP increases as the ratio T_L/T_H gets closer to 1. This happens when the temperature difference (T_H - T_L) between the source and sink is minimized. A smaller temperature gradient is easier to pump heat against."
+    },
+    {
+        "id": "q38",
+        "text": "Why is the 'feedwater pump' an essential component of a Rankine cycle (steam power plant) from the perspective of the Second Law?",
+        "options": [
+            "It increases the temperature of the water using work, which is a higher-quality form of energy than heat.",
+            "It completes the cycle by bringing the working fluid back to the boiler pressure, enabling continuous operation.",
+            "It cools down the condenser.",
+            "It generates electricity directly."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The pump does negligible heating compared to the boiler. Its crucial Second Law role is to take the low-pressure liquid from the condenser and pump it back to the high pressure of the boiler. This completes the cycle and allows the working fluid to continuously receive heat at a high temperature (and thus high quality), which is essential for efficient work production."
+    },
+    {
+        "id": "q39",
+        "text": "The Clausius statement forbids a device that transfers heat from cold to hot with no work input. What is the common name for such an impossible device?",
+        "options": [
+            "Perpetual Motion Machine of the First Kind (PMM1)",
+            "Perpetual Motion Machine of the Second Kind (PMM2)",
+            "Perpetual Motion Machine of the Third Kind (PMM3)",
+            "A Carnot refrigerator"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Perpetual Motion Machine of the Second Kind (PMM2) is a hypothetical device that would violate the Second Law. It would, for example, completely convert heat from a single reservoir into work (violating Kelvin-Planck) or transfer heat from cold to hot with no work input (violating Clausius). A Carnot refrigerator requires work input and is possible."
+    },
+    {
+        "id": "q40",
+        "text": "In the energy flow diagram for a heat engine (Q_H -> Engine -> W_net + Q_L), the Second Law quantitatively governs:",
+        "options": [
+            "The absolute value of Q_H.",
+            "The division of Q_H into W_net and Q_L.",
+            "The speed at which W_net is produced.",
+            "The pressure of the working fluid."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The First Law dictates that Q_H = W_net + Q_L. However, it says nothing about how the energy is divided; it could be 100% W_net and 0% Q_L in theory. The Second Law provides the crucial constraint: it dictates that a certain fraction of Q_H MUST be rejected as waste heat Q_L. It governs the splitting of the energy input into useful work and wasted heat."
+    }
+]

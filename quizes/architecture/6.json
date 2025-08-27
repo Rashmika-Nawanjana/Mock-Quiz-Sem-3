@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary function of a head actuator in a Hard Disk Drive (HDD)?",
+        "options": [
+            "To spin the disk platters",
+            "To position the read/write head over the desired track",
+            "To convert magnetic signals into electrical signals",
+            "To provide power to the drive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The head actuator is responsible for moving the read/write head assembly to position the head precisely over the desired track on the platter."
+    },
+    {
+        "id": "q2",
+        "text": "In the context of HDDs, what does 'rotational latency' refer to?",
+        "options": [
+            "The time taken for the platters to reach operating speed from rest",
+            "The time delay for the head to switch from read to write mode",
+            "The time for the desired sector to rotate under the read/write head",
+            "The time taken to transfer data from the disk to the controller"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Rotational latency is the time it takes for the desired sector on the track to rotate under the read/write head once the head is positioned over the correct track."
+    },
+    {
+        "id": "q3",
+        "text": "What is a 'cylinder' in a multi-platter HDD?",
+        "options": [
+            "The physical spindle that holds the platters",
+            "The set of all tracks located at the same head position across all platters",
+            "The outermost track on a single platter",
+            "The mechanism that seals the drive from external air"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A cylinder is the set of corresponding tracks on all the surfaces of the platters in a hard disk drive. All tracks in a cylinder can be accessed without moving the read/write heads."
+    },
+    {
+        "id": "q4",
+        "text": "Which of the following is NOT a typical classification criterion for Hard Disks?",
+        "options": [
+            "Disk capacity (e.g., 1TB, 2TB)",
+            "Type of controller (e.g., SATA, SAS)",
+            "Speed measured in Revolutions Per Minute (RPM)",
+            "The material of the external casing (e.g., aluminum, plastic)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Hard disks are classified by capacity, controller interface (IDE, SCSI, SATA, SAS), and rotational speed (RPM). The material of the external casing is not a standard performance classification."
+    },
+    {
+        "id": "q5",
+        "text": "What is the fundamental technology behind Solid State Drives (SSDs)?",
+        "options": [
+            "Perpendicular magnetic recording",
+            "Magnetoresistive read heads",
+            "NAND flash memory",
+            "3D XPoint™ technology"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SSDs are based on NAND flash memory technology, which is non-volatile and has no moving parts, unlike traditional HDDs."
+    },
+    {
+        "id": "q6",
+        "text": "A key component on an SSD PCB that manages data storage, retrieval, and wear leveling is called the:",
+        "options": [
+            "Head Actuator",
+            "Controller",
+            "NAND Flash Chip",
+            "Cache (DRAM)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The SSD controller is a processor that manages all operations with the NAND flash memory, including error correction, wear leveling, and data mapping."
+    },
+    {
+        "id": "q7",
+        "text": "According to the lecture, what is a major advantage of Intel's 3D XPoint™ technology (Optane) over traditional NAND flash?",
+        "options": [
+            "It requires a transistor at each memory cell",
+            "It is significantly impacted by the number of write cycles",
+            "It offers high endurance, not significantly impacted by write cycles",
+            "It is a volatile memory technology"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A key innovation of 3D XPoint™ technology is its high endurance, meaning its lifespan is not significantly degraded by the number of write cycles, unlike NAND flash."
+    },
+    {
+        "id": "q8",
+        "text": "How does the access time of a typical SSD compare to a high-performance 15,000 rpm SAS HDD?",
+        "options": [
+            "SSD access time is slightly slower",
+            "SSD access time is approximately the same",
+            "SSD access time is orders of magnitude faster (e.g., 0.1ms vs 5.5-8.0ms)",
+            "SSD access time is unpredictable and often slower"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SSDs have virtually no mechanical delay, leading to access times around 0.1ms, which is drastically faster than the 5.5-8.0ms access times of even the fastest HDDs."
+    },
+    {
+        "id": "q9",
+        "text": "In optical storage, what is the physical difference between a 'pit' and a 'land' on a CD?",
+        "options": [
+            "Pits are magnetic, lands are non-magnetic",
+            "Pits are elevations, lands are depressions",
+            "Pits are depressions, lands are flat areas",
+            "Pits store a '1', lands store a '0'"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On a CD, information is stored as a series of microscopic pits etched into a reflective surface. The areas between pits are called lands."
+    },
+    {
+        "id": "q10",
+        "text": "What is the primary motivation for implementing Virtual Memory?",
+        "options": [
+            "To increase the clock speed of the CPU",
+            "To make the cache memory larger",
+            "To allow programs to use more memory than is physically available and to provide memory protection",
+            "To permanently store data on a secondary storage device"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Virtual memory allows a computer to compensate for physical memory shortages by using disk space as an extension of RAM. It also provides memory protection by giving each process its own isolated address space."
+    },
+    {
+        "id": "q11",
+        "text": "In virtual memory systems, what is the term for a fixed-length block of data into which the virtual address space is divided?",
+        "options": [
+            "Sector",
+            "Frame",
+            "Page",
+            "Cache Line"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In virtual memory, the address space is divided into fixed-size blocks called pages. Physical memory is divided into same-sized blocks called frames."
+    },
+    {
+        "id": "q12",
+        "text": "What event occurs when a program tries to access a page that is not currently resident in main memory (RAM)?",
+        "options": [
+            "TLB miss",
+            "Cache miss",
+            "Page fault",
+            "Segmentation fault"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A page fault is an exception raised by the hardware when a program accesses a virtual memory page that is not currently mapped to a physical frame (RAM). The OS then handles loading the required page from disk."
+    },
+    {
+        "id": "q13",
+        "text": "What is the primary structure stored in main memory that the Memory Management Unit (MMU) uses to translate virtual addresses to physical addresses?",
+        "options": [
+            "Translation Lookaside Buffer (TLB)",
+            "Page Table",
+            "Cache Directory",
+            "Segment Table"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The page table is the primary data structure stored in main memory. It contains the mapping between virtual page numbers and physical frame numbers (or disk addresses)."
+    },
+    {
+        "id": "q14",
+        "text": "For a system with 4 KiB pages and a 48-bit virtual address space, how many bits are used for the page offset?",
+        "options": [
+            "12 bits",
+            "36 bits",
+            "48 bits",
+            "16 bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The page offset is the part of the address that specifies the byte within a page. Since 4 KiB = 4096 bytes = 2^12 bytes, 12 bits are needed to address any byte within a page."
+    },
+    {
+        "id": "q15",
+        "text": "Using the same system (4 KiB pages, 48-bit VA), how many entries would a single-level page table have?",
+        "options": [
+            "2^12 entries",
+            "2^36 entries",
+            "2^48 entries",
+            "2^24 entries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Virtual Page Number (VPN) is the remaining bits after the offset. With a 48-bit VA and a 12-bit offset, the VPN is 48 - 12 = 36 bits. Therefore, the page table would need 2^36 entries, which is a massive number (~68 billion)."
+    },
+    {
+        "id": "q16",
+        "text": "Why is a single-level page table often impractical for modern systems with large address spaces?",
+        "options": [
+            "It is too slow to access",
+            "It requires a special processor to manage it",
+            "Its size becomes excessively large, consuming too much physical memory",
+            "It cannot be stored on disk"
+        ],
+        "correctAnswer": 2,
+        "explanation": "As calculated, a single-level page table for a 48-bit address space would have 2^36 entries, requiring gigabytes of memory just for the page table itself. This is impractical, leading to the use of multi-level page tables."
+    },
+    {
+        "id": "q17",
+        "text": "What is the purpose of the Translation Lookaside Buffer (TLB)?",
+        "options": [
+            "To serve as the main page table in physical memory",
+            "To act as a cache for recently used virtual-to-physical address translations",
+            "To store the contents of frequently accessed pages",
+            "To handle page faults when they occur"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The TLB is a small, fast cache inside the MMU that stores recent translations of virtual page numbers to physical frame numbers. It drastically reduces the need to access the much slower main memory page table."
+    },
+    {
+        "id": "q18",
+        "text": "Which locality principle justifies the effectiveness of the TLB?",
+        "options": [
+            "Temporal Locality only",
+            "Spatial Locality only",
+            "Both Temporal and Spatial Locality",
+            "Sequential Locality"
+        ],
+        "correctAnswer": 2,
+        "explanation": "TLB effectiveness relies on both temporal locality (recently used translations are likely to be used again soon) and spatial locality (accesses within a page will use the same translation)."
+    },
+    {
+        "id": "q19",
+        "text": "Besides the physical page number, what additional information might a TLB entry hold?",
+        "options": [
+            "The data from the memory location",
+            "A valid bit, dirty bit, and reference bit",
+            "The virtual address of the next instruction",
+            "The disk address for the page"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TLB entries typically include status bits like: Valid bit (is the entry valid?), Dirty bit (has the page been written to?), and Reference bit (has the page been accessed?). These bits are used for management and protection."
+    },
+    {
+        "id": "q20",
+        "text": "What is the sequence of events on a TLB miss?",
+        "options": [
+            "A page fault is generated immediately",
+            "The MMU loads the correct translation from the page table in memory into the TLB, then the translation is performed",
+            "The processor halts until the user restarts it",
+            "The data is fetched directly from the disk"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On a TLB miss, the hardware (MMU) walks the page table structure located in main memory to find the correct translation. This translation is then loaded into the TLB, and the original memory access is retried, which will now result in a TLB hit."
+    },
+    {
+        "id": "q21",
+        "text": "What is the role of the 'swap space' in a virtual memory system?",
+        "options": [
+            "To cache frequently accessed disk sectors",
+            "To serve as a reserved area on the disk where pages are stored when they are evicted from physical memory (RAM)",
+            "To store the page tables for all running processes",
+            "To act as a backup for the TLB"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Swap space is a designated area on the secondary storage (e.g., HDD/SSD) used by the operating system to store pages that have been paged out of physical memory to free up space for other pages."
+    },
+    {
+        "id": "q22",
+        "text": "In the address translation process, what part of the virtual address remains unchanged in the physical address?",
+        "options": [
+            "The virtual page number (VPN)",
+            "The page offset",
+            "The entire address is translated",
+            "The most significant bit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The page offset is the part of the address that specifies the location within the page. Since pages and frames are the same size, this offset is identical in both the virtual and physical addresses; only the page number is translated."
+    },
+    {
+        "id": "q23",
+        "text": "Which component is primarily responsible for translating virtual addresses to physical addresses?",
+        "options": [
+            "The CPU's main ALU",
+            "The Memory Management Unit (MMU)",
+            "The Disk Controller",
+            "The Operating System Kernel"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Memory Management Unit (MMU) is a hardware component, often part of the CPU, that performs the virtual-to-physical address translation using the page table and TLB."
+    },
+    {
+        "id": "q24",
+        "text": "What does a 'dirty bit' in a page table entry signify?",
+        "options": [
+            "The page is corrupted and cannot be used",
+            "The page has been modified since it was loaded into memory",
+            "The page is currently being accessed by the CPU",
+            "The page is empty and available for use"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The dirty bit is set by the hardware when a write operation is performed on the page. This tells the OS that if it needs to evict this page, it must be written back to disk first, as it is different from the disk copy."
+    },
+    {
+        "id": "q25",
+        "text": "What is the fundamental difference between a 'sector' on an HDD and a 'page' in virtual memory?",
+        "options": [
+            "A sector is a unit of physical storage on disk, while a page is a unit of logical address space and physical memory",
+            "A page is larger than a sector",
+            "A sector is managed by hardware, a page is managed by software",
+            "There is no difference; the terms are interchangeable"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A sector is a fixed-size block of data on a physical storage device like an HDD or SSD. A page is a fixed-size block of data used as a unit of allocation and management in a virtual memory system, residing in either RAM or on disk."
+    },
+    {
+        "id": "q26",
+        "text": "Which of these is a key advantage of SAS drives over SATA drives in an enterprise HDD context?",
+        "options": [
+            "Larger maximum capacity",
+            "Lower cost per gigabyte",
+            "Higher reliability and faster data transfer rates",
+            "They use less power"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SAS (Serial Attached SCSI) drives are designed for enterprise environments and typically offer higher reliability, better performance, and full duplex communication compared to consumer-grade SATA drives."
+    },
+    {
+        "id": "q27",
+        "text": "What is the primary reason an SSD might include a DRAM cache chip?",
+        "options": [
+            "To permanently store user data in case of power loss",
+            "To act as a buffer for mapping tables and data being read/written, improving speed",
+            "To make the SSD appear larger than its actual NAND capacity",
+            "To perform error correction on the NAND flash"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A DRAM cache on an SSD is used to store the Flash Translation Layer (FTL) mapping table and to buffer data, which significantly speeds up operations compared to accessing the mapping table from the slower NAND flash itself."
+    },
+    {
+        "id": "q28",
+        "text": "In the Intel Optane/3D XPoint™ cross-point structure, how is an individual memory cell selected?",
+        "options": [
+            "By a single wire",
+            "By a transistor at each cell",
+            "By selecting its top and bottom perpendicular wires",
+            "By a magnetic field"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A key innovation of 3D XPoint™ is its cross-point structure where a memory cell is located at the intersection of a word line and a bit line. It is selected by applying voltage to the specific top and bottom wires that intersect at that cell, eliminating the need for a transistor per cell."
+    },
+    {
+        "id": "q29",
+        "text": "Why is the 'seek time' component of HDD access time irrelevant for SSDs?",
+        "options": [
+            "SSDs have much faster seek times, so it's negligible",
+            "SSDs don't have moving parts, so there is no physical head to position",
+            "SSDs use a different unit of measurement for access time",
+            "Seek time is only relevant for optical drives, not HDDs or SSDs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Seek time is the time to move the read/write head to the correct track. Since SSDs have no moving mechanical parts, this concept does not apply, contributing to their much faster random access performance."
+    },
+    {
+        "id": "q30",
+        "text": "What is the primary function of the 'head arm' in an HDD assembly?",
+        "options": [
+            "To provide structural support for the platters",
+            "To hold the read/write head and connect it to the actuator assembly",
+            "To filter air particles inside the HDD",
+            "To control the speed of the spinning platters"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The head arm is the mechanical component that extends over the platter. The read/write head is mounted at the end of this arm, and the arm is moved by the actuator to position the head."
+    },
+    {
+        "id": "q31",
+        "text": "The 'land' and 'pit' geometry on a CD is used to represent data based on:",
+        "options": [
+            "Differences in magnetic polarity",
+            "Changes in electrical resistance",
+            "Transitions between pit and land (edge), not the pit/land itself",
+            "The absolute depth of the pit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On a CD, data is encoded by the transition between a pit and a land (the edge). A change in height (edge) represents a '1', while no change (continuous pit or land) represents a '0'."
+    },
+    {
+        "id": "q32",
+        "text": "What is the purpose of the 'valid bit' in a page table entry?",
+        "options": [
+            "To indicate the page has been referenced",
+            "To indicate the page has been modified",
+            "To indicate whether the translation is valid (i.e., the page is in physical memory)",
+            "To indicate the page is read-only"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The valid bit in a Page Table Entry (PTE) indicates if the page is currently resident in physical memory. If the valid bit is 0, it triggers a page fault when that page is accessed."
+    },
+    {
+        "id": "q33",
+        "text": "If a system has a TLB hit, what does this imply about the subsequent steps for address translation?",
+        "options": [
+            "A page table walk in main memory is still required",
+            "The physical address is obtained without needing to access the page table in main memory",
+            "A page fault is guaranteed to occur",
+            "The data is directly retrieved from the disk"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A TLB hit means the translation for the requested virtual page is found in the fast TLB cache. Therefore, the physical address is obtained immediately without the slow process of accessing the page table in main memory."
+    },
+    {
+        "id": "q34",
+        "text": "The concept of virtual memory relies on the principle that not all parts of a program's address space need to be in physical memory at the same time. This is enabled by:",
+        "options": [
+            "Spatial Locality",
+            "Temporal Locality",
+            "The Principle of Locality in general",
+            "The memory hierarchy"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Principle of Locality (both temporal and spatial) ensures that a process only needs a small portion of its address space (the working set) in physical memory at any given time to execute efficiently, making virtual memory feasible."
+    },
+    {
+        "id": "q35",
+        "text": "What is the typical first action performed by the operating system when a page fault occurs?",
+        "options": [
+            "Terminate the process that caused the fault",
+            "Find a free frame in physical memory (or evict one) and load the required page from disk into that frame",
+            "Clear the TLB",
+            "Increase the priority of the process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "On a page fault, the OS is invoked. Its handler finds a free physical frame (possibly by writing a dirty page back to disk if necessary), reads the required page from disk into that frame, updates the page table, and then restarts the instruction that caused the fault."
+    },
+    {
+        "id": "q36",
+        "text": "Compared to a multi-level page table, a single-level page table for a large address space is generally:",
+        "options": [
+            "Faster to access for any translation",
+            "Simpler in design but consumes more physical memory",
+            "More complex but consumes less physical memory",
+            "Not stored in main memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A single-level page table is conceptually simple but has a major disadvantage: its size is proportional to the size of the virtual address space, leading to huge memory consumption. Multi-level tables solve this by only allocating memory for parts of the table that are actually in use."
+    },
+    {
+        "id": "q37",
+        "text": "Which status bit in a TLB or PTE helps the OS implement a page replacement algorithm like Clock (Second Chance)?",
+        "options": [
+            "Valid bit",
+            "Dirty bit",
+            "Reference bit (Accessed bit)",
+            "Execute bit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The reference bit (or accessed bit) is set by hardware when a page is read or written to. Algorithms like Clock use this bit to identify which pages have been used recently, helping to decide which page to evict."
+    },
+    {
+        "id": "q38",
+        "text": "In the HDD access time equation, which component is dependent on the rotational speed (RPM) of the platters?",
+        "options": [
+            "Seek Time",
+            "Rotational Latency",
+            "Transfer Time",
+            "Controller Overhead"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Rotational latency is directly determined by the RPM. The faster the disk spins, the less time it takes on average for the desired sector to rotate under the head. Average rotational latency is approximately half the time for one full rotation."
+    },
+    {
+        "id": "q39",
+        "text": "What is a major trade-off when using an SSD over an HDD for permanent storage?",
+        "options": [
+            "SSDs have higher latency",
+            "SSDs have lower capacity",
+            "SSDs have a higher cost per gigabyte",
+            "SSDs are less robust and more prone to physical shock damage"
+        ],
+        "correctAnswer": 2,
+        "explanation": "While SSDs excel in speed, reliability, and power efficiency, their primary disadvantage compared to HDDs is a significantly higher cost per unit of storage (cost per gigabyte)."
+    },
+    {
+        "id": "q40",
+        "text": "The memory hierarchy from fastest/smallest to slowest/largest is typically:",
+        "options": [
+            "Registers → Cache → Main Memory (DRAM) → Secondary Storage (e.g., SSD/HDD)",
+            "Cache → Registers → Main Memory → Secondary Storage",
+            "Main Memory → Cache → Registers → Secondary Storage",
+            "Secondary Storage → Main Memory → Cache → Registers"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The standard memory hierarchy is: Registers (fastest, smallest, inside CPU), then Cache (SRAM), then Main Memory (DRAM), and finally Secondary Storage (slowest, largest, e.g., SSD/HDD). This hierarchy exploits the principle of locality."
+    }
+]

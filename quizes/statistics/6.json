@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "A pharmaceutical company claims their new drug reduces blood pressure by an average of 10 mmHg. A researcher tests this claim with a sample of 25 patients and finds a mean reduction of 8.5 mmHg with a standard deviation of 3 mmHg. What is the correct null hypothesis for this test?",
+        "options": [
+            "H₀: μ = 10 mmHg",
+            "H₀: μ = 8.5 mmHg",
+            "H₀: μ ≤ 10 mmHg",
+            "H₀: μ ≥ 10 mmHg"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The null hypothesis should represent the company's claim that needs to be tested. The claim is that the average reduction is 10 mmHg, so H₀: μ = 10 mmHg."
+    },
+    {
+        "id": "q2",
+        "text": "In hypothesis testing, if we reject a true null hypothesis, what type of error have we committed?",
+        "options": [
+            "Type I error (α)",
+            "Type II error (β)",
+            "Sampling error",
+            "Measurement error"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Rejecting a true null hypothesis is a Type I error, with probability α (significance level)."
+    },
+    {
+        "id": "q3",
+        "text": "A quality control manager tests whether a production process is operating correctly (H₀: process is in control). If the manager fails to detect when the process is actually out of control, what type of error has occurred?",
+        "options": [
+            "Type I error",
+            "Type II error",
+            "Both Type I and Type II errors",
+            "No error has occurred"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Failing to reject a false null hypothesis (failing to detect an out-of-control process) is a Type II error (β)."
+    },
+    {
+        "id": "q4",
+        "text": "A researcher conducts a hypothesis test with α = 0.05 and obtains a p-value of 0.03. What should be the conclusion?",
+        "options": [
+            "Reject H₀",
+            "Fail to reject H₀",
+            "Accept H₀",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "When p-value ≤ α, we reject the null hypothesis. Here, 0.03 < 0.05, so we reject H₀."
+    },
+    {
+        "id": "q5",
+        "text": "Which of the following represents a two-tailed test?",
+        "options": [
+            "H₁: μ > 100",
+            "H₁: μ < 100",
+            "H₁: μ ≠ 100",
+            "H₁: μ = 100"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A two-tailed test has the alternative hypothesis H₁: μ ≠ value, indicating we're testing for a difference in either direction."
+    },
+    {
+        "id": "q6",
+        "text": "A car manufacturer claims their vehicles average 30 mpg. A consumer group tests 36 cars and finds a mean of 28.5 mpg with a population standard deviation of 3 mpg. What is the calculated z-score for this test?",
+        "options": [
+            "-1.5",
+            "-3.0",
+            "1.5",
+            "3.0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "z = (x̄ - μ) / (σ/√n) = (28.5 - 30) / (3/√36) = (-1.5) / (3/6) = -1.5 / 0.5 = -3.0"
+    },
+    {
+        "id": "q7",
+        "text": "For the car mpg test with z = -3.0 and α = 0.05 (two-tailed), what is the correct decision?",
+        "options": [
+            "Reject H₀",
+            "Fail to reject H₀",
+            "Accept H₁",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The critical z-values for α = 0.05 (two-tailed) are ±1.96. Since -3.0 < -1.96, we reject H₀."
+    },
+    {
+        "id": "q8",
+        "text": "A company claims their batteries last at least 100 hours. A sample of 25 batteries has a mean life of 98 hours with a standard deviation of 5 hours. What type of test should be conducted?",
+        "options": [
+            "Two-tailed test",
+            "Right-tailed test",
+            "Left-tailed test",
+            "No test is needed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The claim is 'at least 100 hours' (H₀: μ ≥ 100). We're testing if the true mean is less than claimed, so it's a left-tailed test (H₁: μ < 100)."
+    },
+    {
+        "id": "q9",
+        "text": "For the battery test with n=25, x̄=98, s=5, and H₀: μ ≥ 100, what is the calculated t-statistic?",
+        "options": [
+            "-0.4",
+            "-2.0",
+            "0.4",
+            "2.0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "t = (x̄ - μ) / (s/√n) = (98 - 100) / (5/√25) = (-2) / (5/5) = -2/1 = -2.0"
+    },
+    {
+        "id": "q10",
+        "text": "If the critical t-value for the battery test (α=0.05, df=24) is -1.711, what should be the conclusion?",
+        "options": [
+            "Reject H₀ - batteries don't last at least 100 hours",
+            "Fail to reject H₀ - insufficient evidence against the claim",
+            "Accept H₀ - batteries last at least 100 hours",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Since t = -2.0 < -1.711 (critical value), we reject H₀. There's evidence that batteries don't last at least 100 hours."
+    },
+    {
+        "id": "q11",
+        "text": "A researcher wants to compare the effectiveness of two teaching methods. Method A (n=30) has mean score=78, s=8. Method B (n=35) has mean score=82, s=7. What is the correct null hypothesis?",
+        "options": [
+            "H₀: μ_A = μ_B",
+            "H₀: μ_A > μ_B",
+            "H₀: μ_A < μ_B",
+            "H₀: μ_A ≠ μ_B"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For comparing two means, the null hypothesis is typically that the means are equal: H₀: μ₁ = μ₂."
+    },
+    {
+        "id": "q12",
+        "text": "For the teaching methods comparison, if we assume equal variances, what is the pooled standard deviation?",
+        "options": [
+            "7.47",
+            "7.50",
+            "7.55",
+            "7.60"
+        ],
+        "correctAnswer": 0,
+        "explanation": "s_p² = [(n₁-1)s₁² + (n₂-1)s₂²] / (n₁+n₂-2) = [(29)(64) + (34)(49)] / 63 = (1856 + 1666)/63 = 3522/63 = 55.90, s_p = √55.90 = 7.47"
+    },
+    {
+        "id": "q13",
+        "text": "What is the degrees of freedom for the two-sample t-test assuming equal variances?",
+        "options": [
+            "63",
+            "64",
+            "65",
+            "60"
+        ],
+        "correctAnswer": 0,
+        "explanation": "df = n₁ + n₂ - 2 = 30 + 35 - 2 = 63"
+    },
+    {
+        "id": "q14",
+        "text": "A poll shows 120 out of 200 voters support Candidate A. Test the claim that more than 50% support Candidate A. What is the test statistic?",
+        "options": [
+            "1.41",
+            "2.00",
+            "2.83",
+            "3.16"
+        ],
+        "correctAnswer": 2,
+        "explanation": "p̂ = 120/200 = 0.6, z = (p̂ - p₀)/√(p₀(1-p₀)/n) = (0.6-0.5)/√(0.5×0.5/200) = 0.1/√(0.25/200) = 0.1/√0.00125 = 0.1/0.03536 = 2.83"
+    },
+    {
+        "id": "q15",
+        "text": "For the candidate support test with z=2.83 and α=0.05 (one-tailed), what is the conclusion?",
+        "options": [
+            "Reject H₀ - evidence supports more than 50% support",
+            "Fail to reject H₀ - insufficient evidence",
+            "Accept H₀ - exactly 50% support",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Critical z-value for α=0.05 (one-tailed) is 1.645. Since 2.83 > 1.645, we reject H₀. There's evidence that more than 50% support Candidate A."
+    },
+    {
+        "id": "q16",
+        "text": "In a paired t-test, 10 students took a pre-test and post-test. The mean difference (post-pre) was 5 points with standard deviation of differences = 3. What is the t-statistic to test if the improvement is significant?",
+        "options": [
+            "1.67",
+            "3.33",
+            "5.00",
+            "5.27"
+        ],
+        "correctAnswer": 3,
+        "explanation": "t = d̄ / (s_d/√n) = 5 / (3/√10) = 5 / (3/3.1623) = 5 / 0.9487 = 5.27"
+    },
+    {
+        "id": "q17",
+        "text": "For the paired t-test with t=5.27, df=9, and α=0.01 (two-tailed), what is the conclusion?",
+        "options": [
+            "Reject H₀ - significant improvement",
+            "Fail to reject H₀ - no significant improvement",
+            "Accept H₀ - no improvement",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Critical t-value for df=9, α=0.01 (two-tailed) is approximately 3.25. Since 5.27 > 3.25, we reject H₀. There's significant improvement."
+    },
+    {
+        "id": "q18",
+        "text": "A sample of 15 items has variance 25. Test H₀: σ² = 20 vs H₁: σ² > 20. What is the chi-square statistic?",
+        "options": [
+            "16.5",
+            "17.5",
+            "18.5",
+            "19.5"
+        ],
+        "correctAnswer": 1,
+        "explanation": "χ² = (n-1)s²/σ₀² = (14)(25)/20 = 350/20 = 17.5"
+    },
+    {
+        "id": "q19",
+        "text": "For the variance test with χ²=17.5, df=14, and α=0.05, what is the conclusion?",
+        "options": [
+            "Reject H₀ - variance is greater than 20",
+            "Fail to reject H₀ - insufficient evidence",
+            "Accept H₀ - variance equals 20",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Critical χ² value for df=14, α=0.05 is 23.685. Since 17.5 < 23.685, we fail to reject H₀. Insufficient evidence that variance > 20."
+    },
+    {
+        "id": "q20",
+        "text": "Two machines produce components. Machine A: n=10, s²=0.02. Machine B: n=8, s²=0.03. Test H₀: σ₁² = σ₂² vs H₁: σ₁² ≠ σ₂². What is the F-statistic?",
+        "options": [
+            "0.67",
+            "1.50",
+            "0.87",
+            "1.15"
+        ],
+        "correctAnswer": 0,
+        "explanation": "F = s₁²/s₂² = 0.02/0.03 = 0.67 (always put larger variance in numerator for two-tailed test, so we use 0.03/0.02 = 1.5 if we reverse them)"
+    },
+    {
+        "id": "q21",
+        "text": "For the variance ratio test with F=1.50, df₁=7, df₂=9, and α=0.05, what is the conclusion?",
+        "options": [
+            "Reject H₀ - variances are different",
+            "Fail to reject H₀ - variances are equal",
+            "Accept H₀ - variances are equal",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Critical F-value for df₁=7, df₂=9, α=0.05 is approximately 3.29. Since 1.50 < 3.29, we fail to reject H₀. No evidence that variances differ."
+    },
+    {
+        "id": "q22",
+        "text": "A company claims their light bulbs last 1000 hours. A sample of 30 bulbs has mean 980 hours with population standard deviation 50 hours. What is the p-value for this test?",
+        "options": [
+            "0.0143",
+            "0.0286",
+            "0.0572",
+            "0.1144"
+        ],
+        "correctAnswer": 1,
+        "explanation": "z = (980-1000)/(50/√30) = -20/(50/5.477) = -20/9.1287 = -2.19. P(Z < -2.19) = 0.0143. For two-tailed test, p-value = 2×0.0143 = 0.0286."
+    },
+    {
+        "id": "q23",
+        "text": "If α=0.05 and p-value=0.0286, what should be the decision?",
+        "options": [
+            "Reject H₀",
+            "Fail to reject H₀",
+            "Accept H₀",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Since p-value (0.0286) < α (0.05), we reject the null hypothesis."
+    },
+    {
+        "id": "q24",
+        "text": "A researcher wants to test if a new teaching method improves scores. Which test is most appropriate?",
+        "options": [
+            "One-sample t-test",
+            "Two-sample independent t-test",
+            "Paired t-test",
+            "Chi-square test"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A paired t-test is appropriate when measuring the same subjects before and after an intervention (like a new teaching method)."
+    },
+    {
+        "id": "q25",
+        "text": "In hypothesis testing, what does the power (1-β) represent?",
+        "options": [
+            "Probability of rejecting H₀ when it's true",
+            "Probability of failing to reject H₀ when it's false",
+            "Probability of rejecting H₀ when it's false",
+            "Probability of failing to reject H₀ when it's true"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Power = 1-β = P(reject H₀ | H₀ is false), the probability of correctly rejecting a false null hypothesis."
+    },
+    {
+        "id": "q26",
+        "text": "Which factor does NOT increase the power of a test?",
+        "options": [
+            "Larger sample size",
+            "Larger effect size",
+            "Higher significance level (α)",
+            "Smaller variance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "While higher α increases the chance of rejecting H₀, it doesn't specifically increase power (1-β). Power is increased by larger n, larger effect size, and smaller variance."
+    },
+    {
+        "id": "q27",
+        "text": "A 95% confidence interval for μ is (48.2, 51.8). What can be concluded about H₀: μ = 50 vs H₁: μ ≠ 50 at α=0.05?",
+        "options": [
+            "Reject H₀",
+            "Fail to reject H₀",
+            "Accept H₀",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since 50 is within the confidence interval (48.2, 51.8), we fail to reject H₀ at α=0.05."
+    },
+    {
+        "id": "q28",
+        "text": "If a 95% CI for the difference between two means is (-2.1, 0.8), what can be concluded about H₀: μ₁ = μ₂?",
+        "options": [
+            "Reject H₀ - means are different",
+            "Fail to reject H₀ - no evidence of difference",
+            "μ₁ > μ₂",
+            "μ₁ < μ₂"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since the CI contains 0, we fail to reject H₀: μ₁ = μ₂. There's no evidence that the means differ."
+    },
+    {
+        "id": "q29",
+        "text": "A company tests H₀: μ = 100 vs H₁: μ ≠ 100 with α=0.05. The p-value is 0.06. What is the conclusion?",
+        "options": [
+            "Reject H₀",
+            "Fail to reject H₀",
+            "Accept H₀",
+            "The test is inconclusive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since p-value (0.06) > α (0.05), we fail to reject H₀."
+    },
+    {
+        "id": "q30",
+        "text": "What is the main difference between z-test and t-test?",
+        "options": [
+            "z-test is for proportions, t-test is for means",
+            "z-test uses population variance, t-test uses sample variance",
+            "z-test is one-tailed, t-test is two-tailed",
+            "z-test is for large samples, t-test for small samples"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The key difference is that z-test uses known population variance (σ²), while t-test uses sample variance (s²) as an estimate."
+    },
+    {
+        "id": "q31",
+        "text": "When should we use a two-sample t-test with unequal variances?",
+        "options": [
+            "When sample sizes are equal",
+            "When population variances are unknown but assumed equal",
+            "When population variances are unknown and not assumed equal",
+            "When data are paired"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The unequal variances t-test (Welch's test) is used when population variances are unknown and we cannot assume they are equal."
+    },
+    {
+        "id": "q32",
+        "text": "A study finds a p-value of 0.001. What does this mean?",
+        "options": [
+            "There's a 0.1% chance H₀ is true",
+            "If H₀ is true, the probability of getting these results is 0.1%",
+            "There's a 99.9% chance H₁ is true",
+            "The effect size is large"
+        ],
+        "correctAnswer": 1,
+        "explanation": "p-value = P(obtaining results at least as extreme | H₀ is true). A p-value of 0.001 means if H₀ is true, there's only a 0.1% chance of getting these results."
+    },
+    {
+        "id": "q33",
+        "text": "Which test is appropriate for comparing variances of two normal populations?",
+        "options": [
+            "z-test",
+            "t-test",
+            "F-test",
+            "Chi-square test"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The F-test is used to compare variances of two normal populations (H₀: σ₁² = σ₂²)."
+    },
+    {
+        "id": "q34",
+        "text": "A researcher conducts 20 independent tests at α=0.05. What is the probability of at least one Type I error?",
+        "options": [
+            "0.05",
+            "0.64",
+            "0.95",
+            "1.00"
+        ],
+        "correctAnswer": 1,
+        "explanation": "P(at least one Type I error) = 1 - P(no Type I errors) = 1 - (0.95)^20 ≈ 1 - 0.3585 = 0.6415"
+    },
+    {
+        "id": "q35",
+        "text": "What is the purpose of Bonferroni correction?",
+        "options": [
+            "To increase power",
+            "To reduce Type I error in multiple testing",
+            "To reduce Type II error",
+            "To estimate effect size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Bonferroni correction adjusts α downward when conducting multiple tests to control the family-wise error rate (probability of at least one Type I error)."
+    },
+    {
+        "id": "q36",
+        "text": "A test has power 0.80 to detect an effect size of 0.5. What is β?",
+        "options": [
+            "0.20",
+            "0.50",
+            "0.80",
+            "1.20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Power = 1-β, so if power = 0.80, then β = 0.20."
+    },
+    {
+        "id": "q37",
+        "text": "Which statement about statistical significance and practical significance is TRUE?",
+        "options": [
+            "Statistical significance always implies practical importance",
+            "Practical importance always leads to statistical significance",
+            "A statistically significant result may not be practically important",
+            "Sample size has no effect on statistical significance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "With large samples, even tiny effects can be statistically significant but may have no practical importance. Statistical significance ≠ practical significance."
+    },
+    {
+        "id": "q38",
+        "text": "When should a one-tailed test be used?",
+        "options": [
+            "Always, because it's more powerful",
+            "When the research hypothesis specifies a direction",
+            "When the sample size is small",
+            "When the population variance is unknown"
+        ],
+        "correctAnswer": 1,
+        "explanation": "One-tailed tests are appropriate when the research hypothesis specifies a direction (e.g., H₁: μ > value or H₁: μ < value)."
+    },
+    {
+        "id": "q39",
+        "text": "What is the effect of increasing sample size on hypothesis testing?",
+        "options": [
+            "Increases Type I error rate",
+            "Decreases power",
+            "Makes it easier to detect small effects",
+            "Has no effect on statistical tests"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Larger sample sizes increase power and make it easier to detect small effects (smaller differences from H₀ become statistically significant)."
+    },
+    {
+        "id": "q40",
+        "text": "A manufacturer claims their tires last 50,000 miles. A consumer group tests 40 tires and finds mean 48,500 miles with standard deviation 4,000 miles. What is the appropriate test?",
+        "options": [
+            "One-sample z-test",
+            "One-sample t-test",
+            "Two-sample t-test",
+            "Paired t-test"
+        ],
+        "correctAnswer": 1,
+        "explanation": "This is a one-sample test comparing a sample mean to a hypothesized value. Since population variance is unknown, we use a one-sample t-test."
+    }
+]

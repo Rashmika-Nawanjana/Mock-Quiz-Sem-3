@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "A population has mean μ = 50 and standard deviation σ = 10. If all possible samples of size n = 25 are drawn from this population, what is the standard error of the sampling distribution of the mean?",
+        "options": [
+            "2.0",
+            "1.0",
+            "0.4",
+            "0.2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The standard error of the mean is calculated as σ/√n = 10/√25 = 10/5 = 2.0"
+    },
+    {
+        "id": "q2",
+        "text": "A factory produces light bulbs with a mean lifespan of 1200 hours and standard deviation of 100 hours. If a random sample of 50 bulbs is selected, what is the probability that the sample mean exceeds 1220 hours?",
+        "options": [
+            "0.0793",
+            "0.4207",
+            "0.9207",
+            "0.1587"
+        ],
+        "correctAnswer": 0,
+        "explanation": "z = (1220-1200)/(100/√50) = 20/14.14 = 1.414. P(z > 1.414) = 0.0793"
+    },
+    {
+        "id": "q3",
+        "text": "In a population where 40% favor a new policy, what is the probability that in a sample of 200 people, the proportion favoring the policy is between 0.35 and 0.45?",
+        "options": [
+            "0.8234",
+            "0.6476",
+            "0.9214",
+            "0.7580"
+        ],
+        "correctAnswer": 2,
+        "explanation": "σ_p = √(0.4×0.6/200) = 0.0346. z1 = (0.35-0.4)/0.0346 = -1.445, z2 = (0.45-0.4)/0.0346 = 1.445. P(-1.445<z<1.445) = 0.9214"
+    },
+    {
+        "id": "q4",
+        "text": "A biased coin has P(heads) = 0.4. In 500 tosses, what is the probability that the number of heads is between 190 and 210?",
+        "options": [
+            "0.6826",
+            "0.5468",
+            "0.7854",
+            "0.6247"
+        ],
+        "correctAnswer": 1,
+        "explanation": "μ = 500×0.4 = 200, σ = √(500×0.4×0.6) = √120 = 10.95. z1 = (189.5-200)/10.95 = -0.958, z2 = (210.5-200)/10.95 = 0.958. P(-0.958<z<0.958) = 0.5468"
+    },
+    {
+        "id": "q5",
+        "text": "For a t-distribution with 15 degrees of freedom, what is the probability that t is less than -2.131?",
+        "options": [
+            "0.025",
+            "0.05",
+            "0.95",
+            "0.975"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For df=15, t_{0.025} = 2.131, so P(t < -2.131) = 0.025"
+    },
+    {
+        "id": "q6",
+        "text": "A sample of 25 measurements from a normal population yields x̄ = 48.2 and s = 3.1. What is the 95% confidence interval for the population mean?",
+        "options": [
+            "(46.91, 49.49)",
+            "(47.12, 49.28)",
+            "(46.74, 49.66)",
+            "(47.45, 48.95)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "t_{0.025,24} = 2.064, CI = 48.2 ± 2.064×(3.1/√25) = 48.2 ± 1.28 = (46.92, 49.48)"
+    },
+    {
+        "id": "q7",
+        "text": "If the population standard deviation is unknown and sample size is 18, which distribution should be used for inference about the population mean?",
+        "options": [
+            "Normal distribution",
+            "t-distribution with 17 df",
+            "t-distribution with 18 df",
+            "Chi-square distribution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When population standard deviation is unknown and sample size is small (n<30), use t-distribution with n-1 degrees of freedom"
+    },
+    {
+        "id": "q8",
+        "text": "A population has proportion P = 0.3. What sample size is needed to ensure the standard error of the sample proportion is less than 0.02?",
+        "options": [
+            "525",
+            "2100",
+            "1200",
+            "752"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ_p = √(0.3×0.7/n) < 0.02 ⇒ 0.21/n < 0.0004 ⇒ n > 525"
+    },
+    {
+        "id": "q9",
+        "text": "The Central Limit Theorem states that the sampling distribution of the mean approaches normality as:",
+        "options": [
+            "Population size increases",
+            "Sample size increases",
+            "Population variance decreases",
+            "Sample variance increases"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CLT states that regardless of the population distribution, the sampling distribution of the mean approaches normality as sample size increases"
+    },
+    {
+        "id": "q10",
+        "text": "A random sample of 16 values from a normal population has mean 42.5 and standard deviation 3.8. What is the probability that the population mean is less than 41?",
+        "options": [
+            "0.0582",
+            "0.9418",
+            "0.1151",
+            "0.8849"
+        ],
+        "correctAnswer": 0,
+        "explanation": "t = (41-42.5)/(3.8/√16) = -1.5/0.95 = -1.579. P(t < -1.579) with df=15 is approximately 0.0582"
+    },
+    {
+        "id": "q11",
+        "text": "In a population where 60% are Democrats, what is the probability that in a sample of 150 people, more than 100 are Democrats?",
+        "options": [
+            "0.0322",
+            "0.1587",
+            "0.2061",
+            "0.0934"
+        ],
+        "correctAnswer": 2,
+        "explanation": "μ = 150×0.6 = 90, σ = √(150×0.6×0.4) = √36 = 6. z = (100.5-90)/6 = 1.75. P(z > 1.75) = 0.0401. Using continuity correction: (100.5-90)/6 = 1.75, P = 0.0401"
+    },
+    {
+        "id": "q12",
+        "text": "For a t-distribution with 10 degrees of freedom, what is the variance?",
+        "options": [
+            "1.25",
+            "1.11",
+            "1.00",
+            "1.43"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Variance of t-distribution = v/(v-2) = 10/8 = 1.25"
+    },
+    {
+        "id": "q13",
+        "text": "A quality control inspector samples 36 items from a production line. The population standard deviation is known to be 0.8 mm. What is the probability that the sample mean differs from the population mean by more than 0.2 mm?",
+        "options": [
+            "0.1336",
+            "0.0668",
+            "0.3174",
+            "0.1587"
+        ],
+        "correctAnswer": 1,
+        "explanation": "σ_x̄ = 0.8/√36 = 0.1333. z = 0.2/0.1333 = 1.5. P(|z|>1.5) = 2×0.0668 = 0.1336"
+    },
+    {
+        "id": "q14",
+        "text": "When sampling without replacement from a finite population, the standard error is:",
+        "options": [
+            "Always larger than with replacement",
+            "Always smaller than with replacement",
+            "The same as with replacement",
+            "Unpredictable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sampling without replacement gives a smaller standard error due to the finite population correction factor"
+    },
+    {
+        "id": "q15",
+        "text": "A sample of 20 observations from a normal population has mean 65.4 and standard deviation 4.3. What is the 99% confidence interval for the population mean?",
+        "options": [
+            "(62.78, 68.02)",
+            "(63.25, 67.55)",
+            "(62.95, 67.85)",
+            "(63.42, 67.38)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "t_{0.005,19} = 2.861, CI = 65.4 ± 2.861×(4.3/√20) = 65.4 ± 2.75 = (62.65, 68.15)"
+    },
+    {
+        "id": "q16",
+        "text": "The finite population correction factor is used when:",
+        "options": [
+            "n/N > 0.05",
+            "N > 1000",
+            "n < 30",
+            "σ is unknown"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The finite population correction factor √((N-n)/(N-1)) is used when the sample size is more than 5% of the population size"
+    },
+    {
+        "id": "q17",
+        "text": "A population has mean 85 and variance 64. If samples of size 36 are drawn, what is the probability that the sample mean is between 83 and 87?",
+        "options": [
+            "0.8664",
+            "0.9332",
+            "0.7888",
+            "0.9544"
+        ],
+        "correctAnswer": 0,
+        "explanation": "σ_x̄ = 8/√36 = 1.333. z1 = (83-85)/1.333 = -1.5, z2 = (87-85)/1.333 = 1.5. P(-1.5<z<1.5) = 0.8664"
+    },
+    {
+        "id": "q18",
+        "text": "For a t-distribution with 25 degrees of freedom, P(t > 1.708) is approximately:",
+        "options": [
+            "0.05",
+            "0.10",
+            "0.025",
+            "0.01"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For df=25, t_{0.05} = 1.708, so P(t > 1.708) = 0.05"
+    },
+    {
+        "id": "q19",
+        "text": "A random sample of 100 students has mean IQ score of 108 with standard deviation 15. What is the probability that the population mean IQ is greater than 105?",
+        "options": [
+            "0.9772",
+            "0.8413",
+            "0.9332",
+            "0.6915"
+        ],
+        "correctAnswer": 0,
+        "explanation": "z = (105-108)/(15/√100) = -3/1.5 = -2.0. P(μ > 105) = P(z > -2.0) = 0.9772"
+    },
+    {
+        "id": "q20",
+        "text": "In a binomial experiment with n=400 and p=0.2, the sampling distribution of the proportion can be approximated by a normal distribution because:",
+        "options": [
+            "np > 5 and n(1-p) > 5",
+            "n > 30",
+            "p > 0.5",
+            "The population is normal"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The normal approximation to binomial is appropriate when np > 5 and n(1-p) > 5"
+    },
+    {
+        "id": "q21",
+        "text": "A sample of 12 observations from a normal population has mean 24.6 and variance 6.25. What is the standard error of the mean?",
+        "options": [
+            "0.721",
+            "0.658",
+            "0.833",
+            "0.521"
+        ],
+        "correctAnswer": 1,
+        "explanation": "s = √6.25 = 2.5, SE = 2.5/√12 = 2.5/3.464 = 0.721"
+    },
+    {
+        "id": "q22",
+        "text": "The t-distribution has heavier tails than the normal distribution, which means:",
+        "options": [
+            "It has more probability in the extremes",
+            "It has less probability in the extremes",
+            "It has the same tail probabilities",
+            "It is more peaked"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Heavier tails indicate more probability in the extreme values compared to the normal distribution"
+    },
+    {
+        "id": "q23",
+        "text": "A population of 1000 items has mean 50 and standard deviation 5. If a sample of 100 items is drawn without replacement, what is the standard error of the mean?",
+        "options": [
+            "0.475",
+            "0.500",
+            "0.525",
+            "0.450"
+        ],
+        "correctAnswer": 0,
+        "explanation": "With finite population correction: SE = (5/√100)×√((1000-100)/(1000-1)) = 0.5×√(900/999) = 0.5×0.949 = 0.4745"
+    },
+    {
+        "id": "q24",
+        "text": "For a sample of size 40 from a normal population with unknown variance, the sampling distribution of the mean follows:",
+        "options": [
+            "t-distribution with 39 df",
+            "t-distribution with 40 df",
+            "Normal distribution",
+            "Chi-square distribution"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For large samples (n≥30), the sampling distribution of the mean is approximately normal regardless of the population distribution"
+    },
+    {
+        "id": "q25",
+        "text": "A political poll shows 220 out of 500 voters support a candidate. What is the standard error of the sample proportion?",
+        "options": [
+            "0.0224",
+            "0.0200",
+            "0.0245",
+            "0.0187"
+        ],
+        "correctAnswer": 0,
+        "explanation": "p = 220/500 = 0.44, SE = √(0.44×0.56/500) = √(0.2464/500) = √0.0004928 = 0.0222"
+    },
+    {
+        "id": "q26",
+        "text": "As degrees of freedom increase, the t-distribution:",
+        "options": [
+            "Approaches the normal distribution",
+            "Becomes more spread out",
+            "Becomes more skewed",
+            "Approaches the chi-square distribution"
+        ],
+        "correctAnswer": 0,
+        "explanation": "As df → ∞, the t-distribution approaches the standard normal distribution"
+    },
+    {
+        "id": "q27",
+        "text": "A machine fills bottles with mean 500ml and standard deviation 2ml. If 25 bottles are sampled, what is the probability that the sample mean is less than 499ml?",
+        "options": [
+            "0.0062",
+            "0.9938",
+            "0.3085",
+            "0.6915"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SE = 2/√25 = 0.4, z = (499-500)/0.4 = -2.5, P(z < -2.5) = 0.0062"
+    },
+    {
+        "id": "q28",
+        "text": "The Central Limit Theorem applies to:",
+        "options": [
+            "Only normal populations",
+            "Only large samples",
+            "Any population with finite variance",
+            "Only binomial populations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "CLT applies to any population with finite variance, given sufficiently large sample size"
+    },
+    {
+        "id": "q29",
+        "text": "A sample of 18 measurements has mean 32.4 and standard deviation 2.8. What is the 90% confidence interval for the population mean?",
+        "options": [
+            "(31.24, 33.56)",
+            "(31.45, 33.35)",
+            "(31.08, 33.72)",
+            "(31.62, 33.18)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "t_{0.05,17} = 1.740, CI = 32.4 ± 1.740×(2.8/√18) = 32.4 ± 1.15 = (31.25, 33.55)"
+    },
+    {
+        "id": "q30",
+        "text": "In hypothesis testing, when the population standard deviation is unknown and sample size is small, we use the t-distribution because:",
+        "options": [
+            "It accounts for extra uncertainty in estimating σ with s",
+            "It has heavier tails",
+            "It is more conservative",
+            "All of the above"
+        ],
+        "correctAnswer": 3,
+        "explanation": "All reasons are valid: the t-distribution accounts for uncertainty in estimating σ, has heavier tails, and gives more conservative results"
+    },
+    {
+        "id": "q31",
+        "text": "A population has proportion 0.35. What is the probability that in a sample of 200, the sample proportion is within 0.03 of the population proportion?",
+        "options": [
+            "0.7248",
+            "0.8414",
+            "0.6826",
+            "0.9544"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SE = √(0.35×0.65/200) = 0.0337, z = 0.03/0.0337 = 0.89, P(-0.89<z<0.89) = 0.6267. More precisely: P = 0.6267"
+    },
+    {
+        "id": "q32",
+        "text": "For a t-distribution with 8 degrees of freedom, what is P(t < 2.306)?",
+        "options": [
+            "0.975",
+            "0.95",
+            "0.99",
+            "0.90"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For df=8, t_{0.025} = 2.306, so P(t < 2.306) = 0.975"
+    },
+    {
+        "id": "q33",
+        "text": "The standard error of the mean decreases when:",
+        "options": [
+            "Sample size increases",
+            "Population variance increases",
+            "Both A and B",
+            "Neither A nor B"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SE = σ/√n, so it decreases as sample size increases and increases as population variance increases"
+    },
+    {
+        "id": "q34",
+        "text": "A sample of 22 observations has mean 45.3 and standard deviation 4.1. What is the test statistic for testing H₀: μ = 43?",
+        "options": [
+            "2.58",
+            "2.87",
+            "2.35",
+            "2.14"
+        ],
+        "correctAnswer": 0,
+        "explanation": "t = (45.3-43)/(4.1/√22) = 2.3/0.874 = 2.63"
+    },
+    {
+        "id": "q35",
+        "text": "The finite population correction factor is closest to 1 when:",
+        "options": [
+            "n is very small compared to N",
+            "n is close to N",
+            "N is very large",
+            "σ is small"
+        ],
+        "correctAnswer": 0,
+        "explanation": "When n is very small relative to N, the correction factor √((N-n)/(N-1)) ≈ 1"
+    },
+    {
+        "id": "q36",
+        "text": "A manufacturer claims their batteries last 100 hours on average. A sample of 16 batteries has mean 97 hours and standard deviation 6 hours. What is the probability of obtaining such a sample if the claim is true?",
+        "options": [
+            "0.0455",
+            "0.0228",
+            "0.0672",
+            "0.1336"
+        ],
+        "correctAnswer": 1,
+        "explanation": "t = (97-100)/(6/√16) = -3/1.5 = -2.0, P(t < -2.0) with df=15 ≈ 0.0312 (one-tailed)"
+    },
+    {
+        "id": "q37",
+        "text": "The sampling distribution of the proportion is approximately normal when:",
+        "options": [
+            "np ≥ 10 and n(1-p) ≥ 10",
+            "n ≥ 30",
+            "p ≥ 0.5",
+            "The population is normal"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The normal approximation for proportions is appropriate when np ≥ 10 and n(1-p) ≥ 10"
+    },
+    {
+        "id": "q38",
+        "text": "A population has mean 75 and standard deviation 8. What sample size is needed so that the standard error is 1?",
+        "options": [
+            "64",
+            "16",
+            "32",
+            "8"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SE = σ/√n = 1 ⇒ 8/√n = 1 ⇒ √n = 8 ⇒ n = 64"
+    },
+    {
+        "id": "q39",
+        "text": "For a t-distribution with 20 degrees of freedom, what is the value of t such that P(-t < T < t) = 0.90?",
+        "options": [
+            "1.725",
+            "1.325",
+            "1.812",
+            "1.721"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For df=20, t_{0.05} = 1.725, so P(-1.725 < T < 1.725) = 0.90"
+    },
+    {
+        "id": "q40",
+        "text": "A sample of 30 observations from a non-normal population has mean 42 and standard deviation 5.2. The sampling distribution of the mean is:",
+        "options": [
+            "Approximately normal by CLT",
+            "Exactly normal",
+            "t-distribution with 29 df",
+            "Cannot be determined"
+        ],
+        "correctAnswer": 0,
+        "explanation": "By Central Limit Theorem, with n=30, the sampling distribution of the mean is approximately normal regardless of the population distribution"
+    }
+]

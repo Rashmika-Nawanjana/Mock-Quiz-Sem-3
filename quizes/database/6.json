@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What are the three main components of hard disk data access time?",
+        "options": [
+            "Seek time, rotational latency, and read time",
+            "Seek time, transfer time, and cache time",
+            "Rotational latency, read time, and write time",
+            "Seek time, access time, and cycle time"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Hard disk data access time consists of seek time (positioning head over track), rotational latency (waiting for sector to rotate under head), and read time (actual data reading)."
+    },
+    {
+        "id": "q2",
+        "text": "What is the primary storage technology used in Solid State Drives (SSDs)?",
+        "options": [
+            "Magnetic platters",
+            "NAND flash memory",
+            "Optical storage",
+            "3D XPoint technology"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SSDs are based on NAND flash memory technology, which provides non-volatile storage without moving parts."
+    },
+    {
+        "id": "q3",
+        "text": "In hard disk geometry, what is a cylinder?",
+        "options": [
+            "A single track on one platter",
+            "The set of all tracks at the same position across all platters",
+            "A group of sectors within a track",
+            "The physical spindle that rotates the platters"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A cylinder consists of all tracks that are at the same head position across multiple platters in a hard disk drive."
+    },
+    {
+        "id": "q4",
+        "text": "What is the primary advantage of SSDs over traditional HDDs?",
+        "options": [
+            "Lower cost per gigabyte",
+            "Higher storage capacity",
+            "Faster access times with no moving parts",
+            "Better compatibility with older systems"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SSDs provide significantly faster access times because they have no moving parts, eliminating seek time and rotational latency."
+    },
+    {
+        "id": "q5",
+        "text": "What technology does Intel Optane use?",
+        "options": [
+            "NAND flash memory",
+            "Magnetic storage",
+            "3D XPoint technology",
+            "Optical storage"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Intel Optane uses 3D XPoint technology, which is a non-volatile memory technology that offers high performance and endurance."
+    },
+    {
+        "id": "q6",
+        "text": "In optical storage, what do pits and lands represent?",
+        "options": [
+            "Different magnetic polarities",
+            "Binary 0s and 1s encoded on the disc surface",
+            "Physical sectors and tracks",
+            "Error correction codes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pits and lands are physical features on optical discs that encode binary data through their reflectivity differences."
+    },
+    {
+        "id": "q7",
+        "text": "What is the primary purpose of virtual memory?",
+        "options": [
+            "To increase physical memory speed",
+            "To provide memory protection between processes",
+            "To act as a cache for secondary storage and share memory among programs",
+            "To reduce the cost of main memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Virtual memory allows main memory to act as a cache for secondary storage and enables memory sharing among multiple programs while providing isolation."
+    },
+    {
+        "id": "q8",
+        "text": "What is a page fault in virtual memory systems?",
+        "options": [
+            "An error in page table configuration",
+            "When a requested page is not currently in main memory",
+            "A corruption in the page data",
+            "When the TLB cache is full"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A page fault occurs when a program requests a page that is not currently resident in main memory, requiring the OS to load it from secondary storage."
+    },
+    {
+        "id": "q9",
+        "text": "What is the function of a Translation Lookaside Buffer (TLB)?",
+        "options": [
+            "To store frequently accessed disk sectors",
+            "To cache virtual-to-physical address translations",
+            "To manage page replacement algorithms",
+            "To encrypt memory contents for security"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The TLB is a special cache that stores recent virtual-to-physical address translations to speed up memory access by reducing page table lookups."
+    },
+    {
+        "id": "q10",
+        "text": "What problem arises with a simple page table for large virtual address spaces?",
+        "options": [
+            "It becomes too slow to access",
+            "It requires too much physical memory to store",
+            "It cannot handle memory protection",
+            "It conflicts with cache operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For large virtual address spaces (e.g., 48-bit addresses), a simple page table would require an enormous amount of physical memory to store all possible page table entries."
+    },
+    {
+        "id": "q11",
+        "text": "What are the typical RPM speeds for high-performance HDDs?",
+        "options": [
+            "1,200 - 2,400 RPM",
+            "3,600 - 5,400 RPM",
+            "7,200 - 15,000 RPM",
+            "20,000 - 30,000 RPM"
+        ],
+        "correctAnswer": 2,
+        "explanation": "High-performance HDDs typically operate at 7,200 to 15,000 RPM, with enterprise drives often at 10,000 or 15,000 RPM for faster access times."
+    },
+    {
+        "id": "q12",
+        "text": "What is the role of the controller in an SSD?",
+        "options": [
+            "To physically read and write NAND flash cells",
+            "To manage data distribution, error correction, and wear leveling",
+            "To provide power management for the drive",
+            "To interface with the computer's CPU directly"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The SSD controller manages critical functions including data distribution across flash cells, error correction, wear leveling, and interface communication."
+    },
+    {
+        "id": "q13",
+        "text": "What is wear leveling in SSDs?",
+        "options": [
+            "Distributing writes evenly across all memory cells to prolong lifespan",
+            "Reducing power consumption during idle periods",
+            "Balancing read and write operations for optimal performance",
+            "Leveling the physical surface of the memory chips"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Wear leveling distributes write operations across all available memory cells to prevent specific cells from wearing out prematurely, extending SSD lifespan."
+    },
+    {
+        "id": "q14",
+        "text": "What is the key innovation of 3D XPoint technology compared to NAND flash?",
+        "options": [
+            "It uses magnetic storage instead of electronic",
+            "It doesn't require a transistor at each memory cell",
+            "It operates at cryogenic temperatures for better performance",
+            "It uses optical technology for data storage"
+        ],
+        "explanation": "3D XPoint technology uses a selector that enables memory cells to be written or read without requiring a transistor at each cell, allowing for higher density.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q15",
+        "text": "What is the purpose of the 'valid' bit in a page table entry?",
+        "options": [
+            "To indicate if the page has been modified",
+            "To show if the page is currently in main memory",
+            "To mark pages that require special permissions",
+            "To identify pages that are shared between processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The valid bit in a page table entry indicates whether the corresponding page is currently resident in main memory (1) or needs to be loaded from secondary storage (0)."
+    },
+    {
+        "id": "q16",
+        "text": "Why does virtual memory require protection mechanisms?",
+        "options": [
+            "To prevent unauthorized access to the page table",
+            "To isolate processes from accessing each other's memory",
+            "To protect the OS from hardware failures",
+            "To ensure data integrity during power outages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Protection mechanisms prevent processes from intentionally or unintentionally reading or writing to each other's memory spaces, ensuring isolation and security."
+    },
+    {
+        "id": "q17",
+        "text": "What is the relationship between virtual addresses and physical addresses?",
+        "options": [
+            "They are always identical",
+            "Virtual addresses are mapped to physical addresses through page tables",
+            "Physical addresses are subsets of virtual addresses",
+            "They use completely different address spaces with no relation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Virtual addresses are translated to physical addresses using page tables, which maintain the mapping between a process's virtual address space and physical memory locations."
+    },
+    {
+        "id": "q18",
+        "text": "What is the typical size of a memory page in modern systems?",
+        "options": [
+            "512 bytes",
+            "1KB",
+            "4KB",
+            "64KB"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Most modern systems use 4KB page sizes, though some architectures support multiple page sizes including larger options like 2MB or 1GB for specific use cases."
+    },
+    {
+        "id": "q19",
+        "text": "What problem does multi-level page tables solve?",
+        "options": [
+            "Slow TLB lookup times",
+            "Excessive memory consumption of single-level page tables",
+            "Inefficient page replacement algorithms",
+            "Limited virtual address space"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Multi-level page tables reduce memory consumption by only allocating page table entries for regions of the virtual address space that are actually in use, rather than all possible entries."
+    },
+    {
+        "id": "q20",
+        "text": "What is the 'dirty' bit used for in page table entries?",
+        "options": [
+            "To indicate a page contains malicious code",
+            "To mark pages that have been modified since being loaded",
+            "To identify pages that are frequently accessed",
+            "To signal that a page needs to be encrypted"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The dirty bit indicates whether a page has been modified since it was loaded into memory. This determines if the page needs to be written back to disk when replaced."
+    },
+    {
+        "id": "q21",
+        "text": "What is the main difference between CD-R and CD-RW?",
+        "options": [
+            "CD-R has higher capacity",
+            "CD-RW can be rewritten multiple times",
+            "CD-R uses different laser technology",
+            "CD-RW has faster read speeds"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CD-R (Recordable) discs can be written once, while CD-RW (Rewritable) discs can be erased and rewritten multiple times, though with limited rewrite cycles."
+    },
+    {
+        "id": "q22",
+        "text": "What is the primary benefit of Blu-ray technology over DVD?",
+        "options": [
+            "Higher storage capacity through blue-violet laser",
+            "Faster rotational speeds",
+            "Better compatibility with older drives",
+            "Lower production costs"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Blu-ray uses a blue-violet laser with shorter wavelength than DVD's red laser, allowing for smaller pit sizes and significantly higher storage capacity."
+    },
+    {
+        "id": "q23",
+        "text": "What is the purpose of the 'reference' bit in page table entries?",
+        "options": [
+            "To track how recently a page has been accessed",
+            "To indicate if the page contains reference data",
+            "To mark pages that reference other pages",
+            "To count the number of processes accessing the page"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The reference bit (or accessed bit) is set when a page is accessed, helping page replacement algorithms identify which pages have been used recently."
+    },
+    {
+        "id": "q24",
+        "text": "What is swap space in virtual memory systems?",
+        "options": [
+            "A reserved area of main memory for page tables",
+            "Disk space used to store pages not in physical memory",
+            "Cache memory for frequently accessed pages",
+            "Memory reserved for the operating system kernel"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Swap space is dedicated area on secondary storage (typically disk) where pages are stored when they are not resident in physical memory."
+    },
+    {
+        "id": "q25",
+        "text": "What is the main advantage of SAS drives over SATA drives?",
+        "options": [
+            "Higher storage capacity",
+            "Better performance and reliability for enterprise use",
+            "Lower power consumption",
+            "Better compatibility with consumer devices"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SAS (Serial Attached SCSI) drives offer better performance, reliability, and features suited for enterprise environments compared to SATA drives."
+    },
+    {
+        "id": "q26",
+        "text": "What is the typical access time for SSDs compared to HDDs?",
+        "options": [
+            "SSDs: 0.1ms vs HDDs: 5-8ms",
+            "SSDs: 1ms vs HDDs: 10-15ms",
+            "SSDs: 5ms vs HDDs: 20-25ms",
+            "SSDs: 10ms vs HDDs: 30-40ms"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SSDs typically have access times around 0.1ms, while HDDs have access times in the 5-8ms range due to mechanical movement requirements."
+    },
+    {
+        "id": "q27",
+        "text": "What is the purpose of the page table register?",
+        "options": [
+            "To store the base address of the current process's page table",
+            "To hold the TLB cache contents",
+            "To track the number of page faults",
+            "To manage the swap space location"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The page table register stores the base address of the page table for the currently executing process, enabling the MMU to locate the correct page table."
+    },
+    {
+        "id": "q28",
+        "text": "What is the main limitation of optical storage compared to magnetic storage?",
+        "options": [
+            "Lower storage capacity",
+            "Slower access times",
+            "Higher cost per gigabyte",
+            "Shorter lifespan"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Optical storage generally has slower access times due to the mechanical nature of optical drives and the need to physically rotate discs and move laser assemblies."
+    },
+    {
+        "id": "q29",
+        "text": "What is the primary function of the head actuator in an HDD?",
+        "options": [
+            "To rotate the platters at constant speed",
+            "To move the read/write heads across platter surfaces",
+            "To control power management functions",
+            "To manage data caching operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The head actuator precisely moves the read/write heads across the surfaces of the platters to position them over specific tracks for data access."
+    },
+    {
+        "id": "q30",
+        "text": "What is the significance of the 'non-volatile' property in storage technologies?",
+        "options": [
+            "Data is retained without continuous power",
+            "Data cannot be modified once written",
+            "Storage is resistant physical damage",
+            "Data access speed remains constant"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Non-volatile storage retains data without requiring continuous electrical power, making it suitable for permanent data storage."
+    },
+    {
+        "id": "q31",
+        "text": "What is the main advantage of 3D NAND technology in SSDs?",
+        "options": [
+            "Higher storage density by stacking memory cells vertically",
+            "Faster data transfer rates through parallel access",
+            "Lower power consumption through advanced materials",
+            "Better error correction capabilities"
+        ],
+        "correctAnswer": 0,
+        "explanation": "3D NAND technology stacks memory cells in multiple layers vertically, significantly increasing storage density compared to planar (2D) NAND designs."
+    },
+    {
+        "id": "q32",
+        "text": "What is the purpose of the 'spare' areas in SSD layout?",
+        "options": [
+            "To provide extra storage for future expansion",
+            "To replace failed memory blocks through wear leveling",
+            "To store error correction codes and metadata",
+            "To accommodate thermal expansion of components"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Spare areas in SSDs are used to store error correction codes, metadata, and other overhead information necessary for reliable operation."
+    },
+    {
+        "id": "q33",
+        "text": "What is the main challenge in implementing virtual memory?",
+        "options": [
+            "Designing efficient address translation mechanisms",
+            "Preventing electrical interference in memory circuits",
+            "Synchronizing multiple memory controllers",
+            "Managing heat dissipation in memory modules"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The primary challenge is designing efficient address translation mechanisms that minimize performance overhead while providing memory protection and isolation."
+    },
+    {
+        "id": "q34",
+        "text": "What is the typical failure rate difference between SSDs and HDDs?",
+        "options": [
+            "SSDs have 2-5% failure rate vs HDDs 4-10%",
+            "SSDs have 4-10 times lower failure rate than HDDs",
+            "SSDs and HDDs have similar failure rates",
+            "SSDs have higher failure rates due to write cycle limitations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SSDs typically have 4-10 times lower failure rates compared to HDDs, due to their lack of moving parts that are susceptible to mechanical failure."
+    },
+    {
+        "id": "q35",
+        "text": "What is the purpose of the battery/capacitor in some SSDs?",
+        "options": [
+            "To provide backup power for completing writes during power loss",
+            "To maintain data in volatile cache memory",
+            "To power the controller during sleep modes",
+            "To regulate voltage for consistent performance"
+        ],
+        "explanation": "Some SSDs include capacitors or batteries to provide enough power to complete pending write operations in case of sudden power loss, preventing data corruption.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q36",
+        "text": "What is the relationship between virtual page number and physical page number?",
+        "options": [
+            "They are always identical",
+            "They have a fixed offset relationship",
+            "They are mapped through the page table",
+            "The physical page number is derived by hashing the virtual page number"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The virtual page number is translated to a physical page number through the page table, which contains the mapping for each virtual page to its physical location (if resident in memory)."
+    },
+    {
+        "id": "q37",
+        "text": "What is the main advantage of multi-level cell (MLC) NAND flash?",
+        "options": [
+            "Higher storage density by storing multiple bits per cell",
+            "Faster read/write speeds through parallel operation",
+            "Lower power consumption per bit stored",
+            "Longer lifespan through reduced write amplification"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MLC NAND stores multiple bits per cell (typically 2 bits), increasing storage density but often with trade-offs in write endurance and performance compared to single-level cell (SLC) NAND."
+    },
+    {
+        "id": "q38",
+        "text": "What is the primary cause of rotational latency in HDDs?",
+        "options": [
+            "The time to move heads between tracks",
+            "The time for platters to rotate desired sector under head",
+            "The delay in electronics processing read commands",
+            "The time to transfer data from platters to buffer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Rotational latency is the time required for the desired sector to rotate under the read/write head once the head is positioned over the correct track."
+    },
+    {
+        "id": "q39",
+        "text": "What is the purpose of the 'disk address' in page table entries?",
+        "options": [
+            "To locate the page in secondary storage when not in memory",
+            "To identify which disk controller to use for access",
+            "To specify the rotational position of the data on disk",
+            "To encrypt the disk storage location for security"
+        ],
+        "correctAnswer": 0,
+        "explanation": "When a page is not in main memory, the disk address in the page table entry indicates where the page is stored on secondary storage (disk)."
+    },
+    {
+        "id": "q40",
+        "text": "What is the main benefit of the stackable design in 3D XPoint technology?",
+        "options": [
+            "Further increases memory density by adding vertical layers",
+            "Improves thermal dissipation for better performance",
+            "Allows for modular replacement of failed components",
+            "Enables mixed technology integration in single packages"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The stackable design of 3D XPoint technology allows multiple layers of memory to be stacked vertically, significantly increasing density beyond planar technologies."
+    },
+    {
+        "id": "q41",
+        "text": "What is the typical energy consumption difference between SSDs and HDDs?",
+        "options": [
+            "SSDs consume 2-3 times more power than HDDs",
+            "SSDs and HDDs have similar power consumption",
+            "SSDs consume 2-3 times less power than HDDs",
+            "Power consumption depends solely on capacity, not technology"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SSDs typically consume 2-3 times less power than HDDs because they lack moving parts that require significant energy to operate."
+    },
+    {
+        "id": "q42",
+        "text": "What is the purpose of the page offset in virtual address translation?",
+        "options": [
+            "To identify which page table level to access",
+            "To specify the byte position within a page",
+            "To indicate the protection level for the page",
+            "To determine the swap space location for the page"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The page offset specifies the exact byte position within a page and remains unchanged during virtual-to-physical address translation."
+    },
+    {
+        "id": "q43",
+        "text": "What is the main advantage of NVMe interface for SSDs over SATA?",
+        "options": [
+            "Higher bandwidth and lower latency through PCIe connection",
+            "Better compatibility with older systems",
+            "Lower cost implementation",
+            "Simpler driver requirements"
+        ],
+        "correctAnswer": 0,
+        "explanation": "NVMe provides significantly higher bandwidth and lower latency by utilizing the PCIe bus directly, rather than the SATA interface which was designed for HDDs."
+    },
+    {
+        "id": "q44",
+        "text": "What is the primary function of the 'ref' (reference) bit in TLB entries?",
+        "options": [
+            "To track recently used translations for replacement decisions",
+            "To indicate translated addresses that reference other addresses",
+            "To mark translations that require refresh due to aging",
+            "To count how many processes use the same translation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The reference bit in TLB entries helps determine which translations have been used recently, informing replacement decisions when the TLB is full."
+    },
+    {
+        "id": "q45",
+        "text": "What is the main difference between magnetic and optical storage technologies?",
+        "options": [
+            "Magnetic uses magnetism while optical uses light for data storage",
+            "Optical has higher capacity while magnetic has better performance",
+            "Magnetic is volatile while optical is non-volatile",
+            "Optical is cheaper while magnetic is more reliable"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Magnetic storage uses magnetic fields to orient particles on a surface, while optical storage uses light (lasers) to read and write data on reflective surfaces."
+    },
+    {
+        "id": "q46",
+        "text": "What is the purpose of the 'dirty' bit in TLB entries?",
+        "options": [
+            "To indicate that a translation may be incorrect",
+            "To mark translations for pages that have been modified",
+            "To identify translations that need to be flushed",
+            "To signal that a translation is shared between processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The dirty bit in TLB entries indicates that the corresponding page has been modified, which affects how the page is handled when it needs to be replaced."
+    },
+    {
+        "id": "q47",
+        "text": "What is the main challenge in NAND flash memory that requires wear leveling?",
+        "options": [
+            "Limited number of write cycles per memory cell",
+            "Slow read access times compared to write times",
+            "High power consumption during write operations",
+            "Data retention degradation over time without refresh"
+        ],
+        "correctAnswer": 0,
+        "explanation": "NAND flash memory cells can only endure a limited number of write cycles before they wear out, necessitating wear leveling to distribute writes evenly."
+    },
+    {
+        "id": "q48",
+        "text": "What is the primary benefit of virtual memory for programmers?",
+        "options": [
+            "They don't need to worry about physical memory limitations",
+            "It automatically optimizes their code for performance",
+            "It provides built-in encryption for memory contents",
+            "It eliminates the need for memory allocation functions"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Virtual memory allows programmers to work with a large, uniform address space without concern for the actual physical memory limitations of the system."
+    },
+    {
+        "id": "q49",
+        "text": "What is the typical capacity range for individual NAND flash chips in SSDs?",
+        "options": [
+            "128MB to 1GB",
+            "2GB to 128GB",
+            "256GB to 2TB",
+            "4TB to 16TB"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Individual NAND flash chips in SSDs typically range from 2GB to 128GB, with multiple chips combined to achieve total SSD capacities."
+    },
+    {
+        "id": "q50",
+        "text": "What is the main purpose of the 'tag' field in TLB entries?",
+        "options": [
+            "To store the virtual page number for comparison",
+            "To indicate the physical page number after translation",
+            "To specify the protection level for the translated page",
+            "To track the age of the translation for replacement"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The tag field in TLB entries stores part of the virtual page number, which is compared against incoming virtual addresses to find matching translations."
+    },
+    {
+        "id": "q51",
+        "text": "What is the primary advantage of glass platters over aluminum in HDDs?",
+        "options": [
+            "Better rigidity and thermal stability for higher density",
+            "Lower cost and easier manufacturing",
+            "Higher rotational speeds with less vibration",
+            "Better magnetic properties for data storage"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Glass platters offer better rigidity and thermal stability compared to aluminum, allowing for thinner platters and higher storage densities."
+    },
+    {
+        "id": "q52",
+        "text": "What is the relationship between virtual memory and cache memory?",
+        "options": [
+            "They are the same technology with different names",
+            "Cache memory speeds up access to virtual memory translations",
+            "Virtual memory manages main memory as a cache for disk",
+            "Cache memory is a subset of virtual memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Virtual memory treats main memory as a cache for secondary storage (disk), with similar concepts of blocks (pages), placement, and replacement."
+    },
+    {
+        "id": "q53",
+        "text": "What is the main advantage of MR (MagnetoResistive) reading heads in HDDs?",
+        "options": [
+            "Higher sensitivity for reading smaller magnetic fields",
+            "Lower power consumption than inductive heads",
+            "Ability to write data at higher densities",
+            "Better durability and longer lifespan"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MR reading heads are more sensitive and can detect smaller magnetic fields, enabling higher data densities compared to traditional inductive heads."
+    },
+    {
+        "id": "q54",
+        "text": "What is the purpose of the 'valid' bit in TLB entries?",
+        "options": [
+            "To indicate if the translation is currently usable",
+            "To mark translations that have been verified as correct",
+            "To identify entries that need to be updated",
+            "To signal that the translated page is in memory"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The valid bit in TLB entries indicates whether the translation contained in that entry is currently valid and can be used for address translation."
+    },
+    {
+        "id": "q55",
+        "text": "What is the main reason for the performance difference in random I/O between SSDs and HDDs?",
+        "options": [
+            "SSDs have no seek time or rotational latency",
+            "SSDs use faster interface connections",
+            "HDDs have larger cache memories",
+            "SSDs have simpler data access algorithms"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SSDs excel at random I/O because they have no mechanical seek time or rotational latency, allowing immediate access to any storage location."
+    },
+    {
+        "id": "q56",
+        "text": "What is the primary function of the page table in virtual memory systems?",
+        "options": [
+            "To translate virtual addresses to physical addresses",
+            "To manage the replacement of pages in memory",
+            "To provide encryption for memory contents",
+            "To optimize memory access patterns"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The page table stores the mapping between virtual pages and their corresponding physical page frames (if resident) or disk locations."
+    },
+    {
+        "id": "q57",
+        "text": "What is the main advantage of SAS interface over SATA for enterprise storage?",
+        "options": [
+            "Higher reliability and better error recovery",
+            "Lower cost per connected device",
+            "Simpler configuration and management",
+            "Better compatibility with consumer hardware"
+        ],
+        "correctAnswer": 0,
+        "explanation": "SAS offers higher reliability, better error recovery mechanisms, and features like dual-porting that are essential for enterprise storage environments."
+    },
+    {
+        "id": "q58",
+        "text": "What is the purpose of the 'physical page address' field in TLB entries?",
+        "options": [
+            "To store the translated physical page number",
+            "To indicate the disk location for swapped-out pages",
+            "To track the age of the physical page in memory",
+            "To specify protection attributes for the physical page"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The physical page address field in TLB entries stores the translated physical page number that corresponds to the virtual page number."
+    },
+    {
+        "id": "q59",
+        "text": "What is the main benefit of the perpendicular recording technology in HDDs?",
+        "options": [
+            "Higher areal density by aligning magnetic particles vertically",
+            "Lower power consumption through improved magnets",
+            "Faster seek times with better actuator control",
+            "Better thermal stability for high-temperature operation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Perpendicular recording aligns magnetic particles vertically rather than horizontally, allowing higher areal densities and greater storage capacities."
+    },
+    {
+        "id": "q60",
+        "text": "What is the primary reason for the endurance advantage of 3D XPoint over NAND flash?",
+        "options": [
+            "It is not significantly impacted by write cycle limitations",
+            "It uses larger memory cells that wear out more slowly",
+            "It has built-in error correction that prevents wear",
+            "It operates at lower voltages that reduce cell degradation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "3D XPoint technology is not significantly impacted by the number of write cycles it can endure, making it more durable than NAND flash which has limited write endurance."
+    }
+]

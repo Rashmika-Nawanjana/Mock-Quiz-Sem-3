@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "Which of the following best defines a pure substance in thermodynamics?",
+        "options": [
+            "A substance composed of a single chemical element",
+            "A substance with a fixed chemical composition throughout its mass",
+            "A substance that exists in only one phase at a given temperature and pressure",
+            "A substance that cannot be separated by physical means"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A pure substance is defined by its homogeneous and invariant chemical composition, not by the number of elements or phases. For example, air and water are pure substances despite being mixtures or existing in multiple phases."
+    },
+    {
+        "id": "q2",
+        "text": "Why is a mixture of liquid water and water vapor considered a pure substance?",
+        "options": [
+            "Because it is a single chemical compound",
+            "Because both phases have the same chemical composition (H₂O)",
+            "Because it can be separated by distillation",
+            "Because it exists at equilibrium"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Even though it is a mixture of two phases, both liquid water and water vapor consist solely of H₂O molecules. Therefore, the chemical composition is uniform throughout, satisfying the definition of a pure substance."
+    },
+    {
+        "id": "q3",
+        "text": "What is the key molecular characteristic that distinguishes a solid from a liquid?",
+        "options": [
+            "Solids have higher energy molecules",
+            "Liquids have molecules in a fixed lattice structure",
+            "Solids have molecules held in fixed positions by strong intermolecular forces",
+            "Liquids have negligible intermolecular forces"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a solid, molecules are arranged in a fixed, three-dimensional lattice and oscillate around fixed points due to strong intermolecular forces. In a liquid, molecules are close but can move freely relative to each other."
+    },
+    {
+        "id": "q4",
+        "text": "During the phase change from liquid to gas at constant pressure, why does the temperature remain constant?",
+        "options": [
+            "Because the heat added is used to increase the kinetic energy of the molecules",
+            "Because the heat added is used to break intermolecular bonds, not raise temperature",
+            "Because the pressure is constant",
+            "Because the specific volume decreases"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The energy supplied during a phase change (latent heat) is used to overcome the intermolecular forces holding the molecules in the liquid phase, not to increase their kinetic energy (temperature)."
+    },
+    {
+        "id": "q5",
+        "text": "On a phase diagram, what is the significance of the triple point?",
+        "options": [
+            "It is the point where sublimation occurs",
+            "It is the point where all three phases (solid, liquid, gas) coexist in equilibrium",
+            "It is the highest temperature at which a liquid can exist",
+            "It is the point where the latent heat of vaporization is zero"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The triple point is the unique combination of temperature and pressure where the solid, liquid, and vapor phases of a pure substance coexist in thermodynamic equilibrium."
+    },
+    {
+        "id": "q6",
+        "text": "What is the critical point on a phase diagram?",
+        "options": [
+            "The point where solid and liquid phases become indistinguishable",
+            "The point where liquid and gas phases have the same density and become a supercritical fluid",
+            "The highest pressure at which a substance can boil",
+            "The point where the substance decomposes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "At the critical point, the densities of the liquid and vapor phases become equal, the meniscus between them disappears, and they form a single supercritical fluid phase with properties of both a liquid and a gas."
+    },
+    {
+        "id": "q7",
+        "text": "For water at 101.325 kPa, what is the saturation temperature?",
+        "options": [
+            "0°C",
+            "100°C",
+            "373.15 K",
+            "Both 2 and 3 are correct"
+        ],
+        "correctAnswer": 3,
+        "explanation": "At standard atmospheric pressure (101.325 kPa), the saturation temperature (boiling point) of water is 100°C, which is equivalent to 373.15 K."
+    },
+    {
+        "id": "q8",
+        "text": "What does the term 'saturated liquid' refer to?",
+        "options": [
+            "A liquid that is about to freeze",
+            "A liquid that is at its boiling point and any addition of heat will cause it to vaporize",
+            "A liquid that contains dissolved gases",
+            "A liquid at a pressure above its critical pressure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A saturated liquid is a liquid at its saturation temperature for a given pressure. It is at the point where any infinitesimal addition of heat will cause it to start boiling (vaporizing)."
+    },
+    {
+        "id": "q9",
+        "text": "On a T-v diagram for a pure substance, what does the region under the dome represent?",
+        "options": [
+            "The superheated vapor region",
+            "The compressed liquid region",
+            "The saturated liquid-vapor mixture region",
+            "The solid phase region"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The dome-shaped curve on a T-v diagram represents the two-phase region where saturated liquid and saturated vapor coexist. Points inside the dome represent mixtures of liquid and vapor."
+    },
+    {
+        "id": "q10",
+        "text": "What is the quality (x) of a saturated mixture?",
+        "options": [
+            "The ratio of the volume of vapor to the total volume",
+            "The ratio of the mass of vapor to the total mass of the mixture",
+            "The temperature of the mixture divided by the critical temperature",
+            "The pressure of the mixture divided by the critical pressure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Quality (x) is defined as the fraction of the total mass that is in the vapor phase: x = m_vapor / m_total. It is only defined within the saturated liquid-vapor mixture region (0 ≤ x ≤ 1)."
+    },
+    {
+        "id": "q11",
+        "text": "If the specific volume of a saturated liquid is v_f and of a saturated vapor is v_g, what is the specific volume v of a mixture with quality x?",
+        "options": [
+            "v = v_f + x(v_g)",
+            "v = v_f + x(v_g - v_f)",
+            "v = x * v_g",
+            "v = v_g - x(v_g - v_f)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The specific volume of a saturated liquid-vapor mixture is the weighted average of the specific volumes of the two phases: v = v_f + x(v_g - v_f). The term (v_g - v_f) is often denoted as v_fg."
+    },
+    {
+        "id": "q12",
+        "text": "In the context of property tables, what does the subscript 'f' denote?",
+        "options": [
+            "Final state",
+            "Saturated vapor state",
+            "Saturated liquid state",
+            "Frozen state"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The subscript 'f' is used to denote properties of the saturated liquid state. For example, v_f is the specific volume of saturated liquid, and h_f is its specific enthalpy."
+    },
+    {
+        "id": "q13",
+        "text": "What does the subscript 'fg' represent, for example in h_fg?",
+        "options": [
+            "The property of a superheated vapor",
+            "The difference between the saturated vapor and saturated liquid values",
+            "The property at the critical point",
+            "The property of a compressed liquid"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The subscript 'fg' denotes the change in a property during vaporization. It is defined as the value at the saturated vapor state minus the value at the saturated liquid state: h_fg = h_g - h_f. This represents the latent heat of vaporization."
+    },
+    {
+        "id": "q14",
+        "text": "For water, what is the reference state used in standard steam tables?",
+        "options": [
+            "Saturated liquid at 0°C and 1 atm",
+            "Saturated liquid at 0.01°C and its saturation pressure",
+            "Triple point of water",
+            "Critical point of water"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The reference state for water in most steam tables is the saturated liquid state at the triple point temperature of 0.01°C. At this state, the internal energy (u) and entropy (s) are defined to be zero for the saturated liquid."
+    },
+    {
+        "id": "q15",
+        "text": "Which table would you use to find the properties of water vapor at 200°C and 300 kPa?",
+        "options": [
+            "Saturated water - Temperature table",
+            "Saturated water - Pressure table",
+            "Superheated water tables",
+            "Compressed liquid water tables"
+        ],
+        "correctAnswer": 2,
+        "explanation": "300 kPa at 200°C. The saturation temperature for P=300 kPa is less than 200°C (from tables, ~133.5°C). Since the actual temperature (200°C) is higher than the saturation temperature, the state is superheated vapor. Therefore, the superheated steam tables must be used."
+    },
+    {
+        "id": "q16",
+        "text": "How can the specific enthalpy of a compressed liquid be approximated if data is not available?",
+        "options": [
+            "h ≈ h_f @ same pressure",
+            "h ≈ h_g @ same temperature",
+            "h ≈ h_f @ same temperature",
+            "h ≈ u + Pv, calculated using ideal gas law"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For compressed liquids, the enthalpy is relatively insensitive to pressure. A good approximation is to use the enthalpy of the saturated liquid at the same temperature: h_compressed liquid ≈ h_f @ T. A pressure correction can be applied for greater accuracy if needed."
+    },
+    {
+        "id": "q17",
+        "text": "A rigid tank contains a saturated water mixture at 80°C with 2 kg liquid and 1 kg vapor. What is the quality (x)?",
+        "options": [
+            "0.33",
+            "0.50",
+            "0.67",
+            "1.00"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Quality (x) is the mass fraction of vapor. Total mass m_total = m_liquid + m_vapor = 2 kg + 1 kg = 3 kg. Therefore, x = m_vapor / m_total = 1 kg / 3 kg = 0.333."
+    },
+    {
+        "id": "q18",
+        "text": "For the mixture in the previous question, what is the pressure inside the tank?",
+        "options": [
+            "The pressure must be measured",
+            "It is equal to the saturation pressure at 80°C",
+            "It is less than the saturation pressure at 80°C",
+            "It is greater than the saturation pressure at 80°C"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a pure substance, the temperature and pressure are dependent properties in the saturated mixture region. If a saturated mixture exists at 80°C, the pressure must be the saturation pressure corresponding to 80°C. From tables, P_sat @ 80°C = 47.416 kPa."
+    },
+    {
+        "id": "q19",
+        "text": "A 0.03 m³ rigid tank contains 12 kg of water at 75 kPa. What is the specific volume of the mixture?",
+        "options": [
+            "0.0025 m³/kg",
+            "0.04 m³/kg",
+            "2.5 m³/kg",
+            "40 m³/kg"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Specific volume (v) is defined as volume per unit mass: v = V / m = 0.03 m³ / 12 kg = 0.0025 m³/kg."
+    },
+    {
+        "id": "q20",
+        "text": "For the tank in the previous question, what is the state of the water? (Use P_sat @ 75kPa ≈ 91.76°C, v_f ≈ 0.001037 m³/kg, v_g ≈ 2.217 m³/kg)",
+        "options": [
+            "Compressed liquid, because v < v_f",
+            "Saturated mixture, because v_f < v < v_g",
+            "Superheated vapor, because v > v_g",
+            "At the critical point"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The calculated specific volume is v = 0.0025 m³/kg. Comparing to the saturation properties at 75 kPa: v_f ≈ 0.001037 m³/kg and v_g ≈ 2.217 m³/kg. Since v_f < 0.0025 < v_g, the state is a saturated liquid-vapor mixture."
+    },
+    {
+        "id": "q21",
+        "text": "What is the primary purpose of the saturated water - temperature table?",
+        "options": [
+            "To find properties when pressure is known",
+            "To find properties when temperature is known",
+            "To find properties of superheated vapor",
+            "To find properties of compressed liquid"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The saturated water - temperature table lists properties (P_sat, v_f, v_g, u_f, u_g, h_f, h_g, s_f, s_g) as functions of temperature. It is used when the temperature of the saturated mixture is the known independent property."
+    },
+    {
+        "id": "q22",
+        "text": "What is the primary purpose of the saturated water - pressure table?",
+        "options": [
+            "To find properties when pressure is known",
+            "To find properties when temperature is known",
+            "To find properties of superheated vapor",
+            "To find properties of compressed liquid"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The saturated water - pressure table lists properties (T_sat, v_f, v_g, u_f, u_g, h_f, h_g, s_f, s_g) as functions of pressure. It is used when the pressure of the saturated mixture is the known independent property."
+    },
+    {
+        "id": "q23",
+        "text": "In a reversible, adiabatic (isentropic) expansion process in a turbine, which property remains constant?",
+        "options": [
+            "Enthalpy",
+            "Internal Energy",
+            "Entropy",
+            "Pressure"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An adiabatic process has no heat transfer (Q=0). A reversible adiabatic process is also isentropic, meaning the entropy (s) of the system remains constant."
+    },
+    {
+        "id": "q24",
+        "text": "Steam enters a turbine at 2 MPa and 250°C. What is its state? (T_sat @ 2MPa ≈ 212.4°C)",
+        "options": [
+            "Saturated liquid",
+            "Saturated vapor",
+            "Saturated mixture",
+            "Superheated vapor"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The given temperature (250°C) is greater than the saturation temperature at 2 MPa (212.4°C). Therefore, the steam is superheated vapor."
+    },
+    {
+        "id": "q25",
+        "text": "For a substance that expands upon freezing (like water), how does the slope of the solid-liquid phase boundary on a P-T diagram compare to a substance that contracts on freezing?",
+        "options": [
+            "It has a positive slope",
+            "It has a negative slope",
+            "It is vertical",
+            "It is horizontal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For most substances (which contract on freezing), the solid-liquid equilibrium line has a positive slope. For water (which expands on freezing), the slope of the solid-liquid line is negative. This means increasing pressure lowers the melting point of ice."
+    },
+    {
+        "id": "q26",
+        "text": "What does the term 'supercritical fluid' describe?",
+        "options": [
+            "A vapor heated above its critical temperature",
+            "A liquid compressed above its critical pressure",
+            "A state where distinct liquid and gas phases do not exist",
+            "A solid at very high pressure"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A supercritical fluid is a state of matter where a substance is above both its critical temperature and critical pressure. In this region, there is no distinct phase boundary between liquid and gas; it behaves as a single fluid phase with properties between a gas and a liquid."
+    },
+    {
+        "id": "q27",
+        "text": "On a P-v diagram, how does the constant-temperature line (isotherm) behave in the superheated vapor region?",
+        "options": [
+            "It is a horizontal line within the saturation dome",
+            "It is a vertical line",
+            "It follows the ideal gas law, Pv = constant",
+            "It curves steeply downward"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the superheated vapor region, far from the saturation dome, the vapor behaves like an ideal gas. For an ideal gas, an isothermal process follows the relationship Pv = constant, which is a hyperbolic curve on a P-v diagram."
+    },
+    {
+        "id": "q28",
+        "text": "What is the defining characteristic of the saturated vapor line?",
+        "options": [
+            "Quality x = 0",
+            "Quality x = 1",
+            "Temperature is constant",
+            "Pressure is constant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The left boundary of the saturation dome is the saturated liquid line, where the quality x = 0. The right boundary is the saturated vapor line, where the quality x = 1."
+    },
+    {
+        "id": "q29",
+        "text": "The specific volume of a substance is 0.001 m³/kg. This value is most characteristic of which phase?",
+        "options": [
+            "Solid",
+            "Liquid",
+            "Gas",
+            "Supercritical fluid"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Liquids are nearly incompressible and have high densities. A specific volume of 0.001 m³/kg (density of 1000 kg/m³) is typical for liquid water. Gases have much larger specific volumes (e.g., v_g for water vapor at 100°C is ~1.67 m³/kg)."
+    },
+    {
+        "id": "q30",
+        "text": "Which process involves a phase change directly from solid to vapor?",
+        "options": [
+            "Melting",
+            "Vaporization",
+            "Sublimation",
+            "Deposition"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Sublimation is the process where a solid transforms directly into a vapor without passing through the liquid phase. Deposition is the reverse process (vapor to solid)."
+    },
+    {
+        "id": "q31",
+        "text": "If the specific entropy of water vapor is found to be 7.0 kJ/kg·K, what can be inferred?",
+        "options": [
+            "It is definitely a saturated vapor",
+            "It is definitely a superheated vapor",
+            "It could be a saturated or superheated vapor, depending on pressure",
+            "It is a compressed liquid"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Comparing 7.0 kJ/kg·K to the saturation entropy s_g from tables: s_g @ 1 atm (100°C) is ~7.354 kJ/kg·K. s_g decreases with decreasing pressure. 7.0 kJ/kg·K is less than s_g at 1 atm, meaning the vapor must be superheated (its entropy is lower than saturated vapor at the same pressure, indicating a higher degree of superheat) or at a much lower pressure where s_g is smaller."
+    },
+    {
+        "id": "q32",
+        "text": "What is the significance of the value h_fg?",
+        "options": [
+            "The enthalpy required to melt a solid",
+            "The enthalpy required to vaporize a saturated liquid into a saturated vapor",
+            "The enthalpy change during superheating",
+            "The enthalpy of a compressed liquid"
+        ],
+        "correctAnswer": 1,
+        "explanation": "h_fg is the latent heat of vaporization. It is the amount of enthalpy that must be added to a unit mass of saturated liquid at a given temperature or pressure to convert it completely into saturated vapor."
+    },
+    {
+        "id": "q33",
+        "text": "A process occurs at constant volume in a rigid container. If heat is added to a saturated liquid-vapor mixture, what happens to the pressure?",
+        "options": [
+            "Pressure decreases",
+            "Pressure remains constant",
+            "Pressure increases",
+            "Pressure first decreases then increases"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a rigid container (constant volume), adding heat to a saturated mixture will cause some liquid to vaporize. However, for a pure substance, temperature and pressure are not independent in the two-phase region. The pressure will rise to the new saturation pressure corresponding to the increased temperature caused by the heat addition."
+    },
+    {
+        "id": "q34",
+        "text": "Which of these is an intensive property?",
+        "options": [
+            "Volume",
+            "Mass",
+            "Quality",
+            "Weight"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Intensive properties are independent of the mass of the system. Quality (x) is defined as mass of vapor per total mass. This ratio is independent of the total amount of mass, making it an intensive property. Volume, mass, and weight are extensive properties (depend on mass)."
+    },
+    {
+        "id": "q35",
+        "text": "What is the primary reason property tables are used extensively in thermodynamics?",
+        "options": [
+            "Equations of state are too simple",
+            "Thermodynamic properties are too complex to be expressed by simple equations",
+            "They are easier to read than graphs",
+            "Computers were not available when thermodynamics was developed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The relationships between the thermodynamic properties of real substances (like water) are highly complex and nonlinear. Simple equations cannot accurately represent these relationships over a wide range of states, so tabulated data (property tables) based on experimental measurements are essential."
+    },
+    {
+        "id": "q36",
+        "text": "For a substance at a given pressure, if its temperature is less than T_sat, it is called:",
+        "options": [
+            "Superheated vapor",
+            "Saturated liquid",
+            "Compressed (subcooled) liquid",
+            "Saturated vapor"
+        ],
+        "correctAnswer": 2,
+        "explanation": "If the temperature of a liquid is below the saturation temperature for its given pressure, it is called a compressed liquid or a subcooled liquid. It is not about to vaporize."
+    },
+    {
+        "id": "q37",
+        "text": "The difference between the enthalpy of a superheated vapor and a saturated vapor at the same pressure represents:",
+        "options": [
+            "The latent heat of vaporization",
+            "The sensible heat added during superheating",
+            "The work done during expansion",
+            "The internal energy change"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The enthalpy change from saturated vapor (h_g) to superheated vapor at the same pressure is due to the addition of sensible heat, which increases the temperature (and enthalpy) beyond the saturation point."
+    },
+    {
+        "id": "q38",
+        "text": "On a P-T diagram, the line separating the solid and vapor phases represents the conditions for:",
+        "options": [
+            "Melting",
+            "Sublimation",
+            "Vaporization",
+            "Deposition"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The solid-vapor equilibrium line on a P-T diagram shows the pressure and temperature combinations where sublimation (solid to vapor) and deposition (vapor to solid) occur in equilibrium."
+    },
+    {
+        "id": "q39",
+        "text": "What is the state of water at 300°C and 10 MPa? (T_critical = 374°C, P_critical = 22.06 MPa)",
+        "options": [
+            "Superheated vapor",
+            "Saturated liquid",
+            "Compressed liquid",
+            "Supercritical fluid"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The temperature (300°C) is below the critical temperature (374°C). The pressure (10 MPa) is above the saturation pressure at 300°C (which is ~8.5 MPa). Since P > P_sat @ T, the water is a compressed liquid."
+    },
+    {
+        "id": "q40",
+        "text": "The specific internal energy (u) of a substance is primarily a function of:",
+        "options": [
+            "Pressure only",
+            "Temperature only",
+            "Both temperature and pressure",
+            "Specific volume only"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For ideal gases, internal energy is a function of temperature only. For real substances like water, internal energy is a function of both temperature and pressure (or specific volume). However, for liquids, it is often primarily a function of temperature, and for vapors at low pressure, it approximates an ideal gas."
+    }
+]

@@ -1,0 +1,768 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary difference between a problem-solving agent and a knowledge-based agent?",
+        "options": [
+            "Problem-solving agents use logic, knowledge-based agents use search",
+            "Problem-solving agents execute a given solution, knowledge-based agents reason and adapt",
+            "Knowledge-based agents are faster, problem-solving agents are more accurate",
+            "Problem-solving agents have goals, knowledge-based agents do not"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Problem-solving agents are given a solution to execute, while knowledge-based agents use an internal representation of the world to reason, infer new information, and adapt to changes."
+    },
+    {
+        "id": "q2",
+        "text": "In the context of agent representations, what does a 'structured' representation consist of?",
+        "options": [
+            "A single state with no internal details",
+            "A set of variable assignments",
+            "Objects, relations, and facts about those relations",
+            "A sequence of actions to be performed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A structured representation involves objects, the relations between them, and facts (knowledge) about those relations, providing a rich internal structure."
+    },
+    {
+        "id": "q3",
+        "text": "The core functions a Knowledge Base (KB) must support are TELL and ASK. What do these functions do?",
+        "options": [
+            "TELL deletes information, ASK adds information",
+            "TELL adds new information, ASK retrieves information via inference",
+            "TELL checks for consistency, ASK performs learning",
+            "TELL queries the user, ASK answers user queries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TELL is used to add new information (sentences) to the KB. ASK is used to query the KB, which involves inferring answers from the existing knowledge."
+    },
+    {
+        "id": "q4",
+        "text": "In the Wumpus World, why is the environment characterized as 'partially observable'?",
+        "options": [
+            "Because the agent is blindfolded",
+            "Because the agent can only perceive its immediate surroundings (e.g., adjacent squares)",
+            "Because the map is randomly generated each time",
+            "Because the Wumpus can hide"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The agent can only sense percepts (Stench, Breeze, Glitter, etc.) in its current square, making most of the environment unobserved and thus partially observable."
+    },
+    {
+        "id": "q5",
+        "text": "Which of the following is NOT a property of the Wumpus World as described?",
+        "options": [
+            "Deterministic",
+            "Sequential",
+            "Continuous",
+            "Static"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Wumpus World is discrete, not continuous. The environment is divided into a finite grid of distinct squares."
+    },
+    {
+        "id": "q6",
+        "text": "In logic, what defines the 'syntax' of a language?",
+        "options": [
+            "The meaning of its sentences",
+            "The set of models where sentences are true",
+            "The rules for constructing valid sentences",
+            "The inference algorithms used"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Syntax refers to the formal rules that define how to construct grammatically correct sentences in a language, regardless of their meaning."
+    },
+    {
+        "id": "q7",
+        "text": "What is a 'model' in the context of logical semantics?",
+        "options": [
+            "A simplified version of an inference algorithm",
+            "An abstraction of a possible world where truth values are assigned",
+            "The knowledge base of an agent",
+            "A type of logical connective"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A model is an abstraction of a possible world. It defines the truth value (true or false) for every proposition symbol, allowing the truth of sentences to be evaluated."
+    },
+    {
+        "id": "q8",
+        "text": "The notation M(α) refers to:",
+        "options": [
+            "The logical equivalence of α",
+            "The set of all models in which the sentence α is true",
+            "The model checking algorithm for α",
+            "The main connective in sentence α"
+        ],
+        "correctAnswer": 1,
+        "explanation": "M(α) denotes the set of all models that satisfy α, meaning the set of all possible worlds where the sentence α is true."
+    },
+    {
+        "id": "q9",
+        "text": "What does it mean for a sentence α to logically entail a sentence β (α ⊨ β)?",
+        "options": [
+            "β is true in some models where α is true",
+            "β is true in every model where α is true",
+            "α and β are true in the same models",
+            "α is a stronger statement than β"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Entailment (α ⊨ β) means that β is true in every possible model (world) in which α is true. The truth of α forces the truth of β."
+    },
+    {
+        "id": "q10",
+        "text": "An inference algorithm i that derives α from KB (KB ⊢i α) is considered sound if:",
+        "options": [
+            "It can derive any sentence that is entailed",
+            "It derives α only if α is entailed by KB (KB ⊨ α)",
+            "It is very fast and efficient",
+            "It uses model checking instead of theorem proving"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Soundness (or truth-preserving) is the crucial property that an inference algorithm only derives entailed sentences. If it derives α, then α must be true in all models where KB is true."
+    },
+    {
+        "id": "q11",
+        "text": "Model checking as an inference method:",
+        "options": [
+            "Applies inference rules to the KB",
+            "Is only sound if the KB is in CNF",
+            "Enumerates all possible models to verify entailment",
+            "Is primarily used for first-order logic"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Model checking works by exhaustively enumerating all possible models of the world and checking that the desired sentence α is true in every model where the KB is true."
+    },
+    {
+        "id": "q12",
+        "text": "The concept of 'grounding' ensures that:",
+        "options": [
+            "All sentences are in propositional logic",
+            "If the KB is true in the real world, sound inferences are also true",
+            "The agent's sensors are calibrated correctly",
+            "The inference algorithm is complete"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Grounding connects the abstract symbols in the KB to the real world. If the KB's sentences correctly reflect the real world, then any sentence derived by a sound inference procedure will also be true in the real world."
+    },
+    {
+        "id": "q13",
+        "text": "In propositional logic, which of these is an atomic sentence?",
+        "options": [
+            "P ∨ Q",
+            "¬P",
+            "Wumpus1,2",
+            "P ⇒ (Q ∧ R)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An atomic sentence consists of a single propositional symbol, such as Wumpus1,2, which could be true or false. The others are complex sentences."
+    },
+    {
+        "id": "q14",
+        "text": "What is the correct precedence for these logical operators (highest to lowest)?",
+        "options": [
+            "¬, ∧, ∨, ⇒, ⇔",
+            "∧, ∨, ¬, ⇒, ⇔",
+            "¬, ∧, ∨, ⇔, ⇒",
+            "⇔, ⇒, ∨, ∧, ¬"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The standard precedence order is Negation (¬) first, then Conjunction (∧), then Disjunction (∨), then Implication (⇒), and finally Biconditional (⇔) last."
+    },
+    {
+        "id": "q15",
+        "text": "For the sentence P ⇒ Q to be false, what must be true?",
+        "options": [
+            "P is false and Q is true",
+            "P is true and Q is false",
+            "P is false and Q is false",
+            "P is true and Q is true"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An implication P ⇒ Q is only false if the antecedent (P) is true and the consequent (Q) is false. It is true in all other cases."
+    },
+    {
+        "id": "q16",
+        "text": "In the Wumpus world KB, what does the proposition symbol B₂,₁ represent?",
+        "options": [
+            "The agent is in square [2,1]",
+            "There is a breeze in square [2,1]",
+            "There is a pit in square [2,1]",
+            "Square [2,1] is safe"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The convention used is Bₓ,ᵧ is true if and only if there is a Breeze perceived in the square at location [x, y]."
+    },
+    {
+        "id": "q17",
+        "text": "The rule 'A square is breezy if and only if there is a pit in a neighboring square' for square [1,1] is logically represented as:",
+        "options": [
+            "B₁,₁ ⇒ (P₁,₂ ∨ P₂,₁)",
+            "B₁,₁ ⇔ (P₁,₂ ∧ P₂,₁)",
+            "B₁,₁ ⇔ (P₁,₂ ∨ P₂,₁)",
+            "(P₁,₂ ∨ P₂,₁) ⇒ B₁,₁"
+        ],
+        "correctAnswer": 2,
+        "explanation": "\"If and only if\" is represented by the biconditional connective (⇔). The breeze is present iff there is a pit in at least one (∨) of the neighboring squares."
+    },
+    {
+        "id": "q18",
+        "text": "If an agent perceives nothing (no stench, no breeze) in [1,1], what sentence should be added to the KB?",
+        "options": [
+            "B₁,₁ ∧ S₁,₁",
+            "¬B₁,₁ ∧ ¬S₁,₁",
+            "B₁,₁ ∨ S₁,₁",
+            "¬(B₁,₁ ∨ S₁,₁)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Perceiving 'nothing' means neither a breeze nor a stench is present. This is represented by the conjunction of the negation of each percept: ¬B₁,₁ ∧ ¬S₁,₁."
+    },
+    {
+        "id": "q19",
+        "text": "From the rules R₂: B₁,₁ ⇔ (P₁,₂ ∨ P₂,₁) and R₄: ¬B₁,₁, what can be directly inferred about pits near [1,1]?",
+        "options": [
+            "There must be a pit in [1,2]",
+            "There must be a pit in [2,1]",
+            "There cannot be a pit in [1,2] or [2,1]",
+            "The rules are inconsistent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Since there is no breeze (¬B₁,₁), the left side of the biconditional is false. For a biconditional to be true, the right side must also be false. Therefore, ¬(P₁,₂ ∨ P₂,₁) is true, meaning there is no pit in [1,2] AND no pit in [2,1]."
+    },
+    {
+        "id": "q20",
+        "text": "The process of applying inference rules (like Modus Ponens) directly to the KB to construct a proof is called:",
+        "options": [
+            "Model checking",
+            "Theorem proving",
+            "Grounding",
+            "Satisfiability checking"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Theorem proving involves applying rules of inference directly to the sentences in the knowledge base to derive new sentences, without enumerating all possible models."
+    },
+    {
+        "id": "q21",
+        "text": "Which rule of inference is represented by this form? 'α ⇒ β, α, therefore β'",
+        "options": [
+            "And-Elimination",
+            "Modus Ponens",
+            "Biconditional Elimination",
+            "Resolution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "This is Modus Ponens. If an implication (α ⇒ β) is true and the antecedent (α) is true, then the consequent (β) must be true."
+    },
+    {
+        "id": "q22",
+        "text": "The equivalence (α ⇒ β) ≡ (¬α ∨ β) is known as:",
+        "options": [
+            "De Morgan's Law",
+            "Implication Elimination",
+            "Double Negation Elimination",
+            "Contraposition"
+        ],
+        "correctAnswer": 1,
+        "explanation": "This equivalence is Implication Elimination. It allows you to rewrite an implication using the connectives NOT and OR."
+    },
+    {
+        "id": "q23",
+        "text": "According to De Morgan's Law, ¬(α ∧ β) is equivalent to:",
+        "options": [
+            "¬α ∧ ¬β",
+            "¬α ∨ ¬β",
+            "α ∨ β",
+            "α ∧ β"
+        ],
+        "correctAnswer": 1,
+        "explanation": "De Morgan's Law states that the negation of a conjunction is logically equivalent to the disjunction of the negations: ¬(α ∧ β) ≡ ¬α ∨ ¬β."
+    },
+    {
+        "id": "q24",
+        "text": "A sentence that is true in every possible model is called:",
+        "options": [
+            "Satisfiable",
+            "Valid (or a Tautology)",
+            "A contradiction",
+            "An axiom"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A valid sentence, or tautology, is true in every possible model under every possible interpretation. An example is P ∨ ¬P."
+    },
+    {
+        "id": "q25",
+        "text": "A sentence is 'satisfiable' if:",
+        "options": [
+            "It is true in all models",
+            "It is false in all models",
+            "It is true in at least one model",
+            "It is not a tautology"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Satisfiability means there exists at least one model (possible world) in which the sentence is true."
+    },
+    {
+        "id": "q26",
+        "text": "How are validity and satisfiability connected? A sentence α is valid if and only if:",
+        "options": [
+            "α is satisfiable",
+            "¬α is satisfiable",
+            "¬α is unsatisfiable",
+            "α is not satisfiable"
+        ],
+        "correctAnswer": 2,
+        "explanation": "If α is true in every model (valid), then there is no model where α is false. This means ¬α is false in every model, making it unsatisfiable."
+    },
+    {
+        "id": "q27",
+        "text": "The property that states 'if KB ⊨ α then KB ∧ β ⊨ α' is called:",
+        "options": [
+            "Completeness",
+            "Soundness",
+            "Monotonicity",
+            "Logical Equivalence"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Monotonicity is a fundamental property of standard logical systems. Adding new knowledge (β) to the KB cannot invalidate previous conclusions (α)."
+    },
+    {
+        "id": "q28",
+        "text": "Which of these is an application of the And-Elimination inference rule?",
+        "options": [
+            "Deriving α from α ∧ β",
+            "Deriving β from α ⇒ β and α",
+            "Deriving α ⇒ β from α ⇔ β",
+            "Deriving ¬α from ¬(α ∧ β)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "And-Elimination is a simple rule that allows you to derive any of the conjuncts from a conjunction. From α ∧ β, you can derive α (or you can derive β)."
+    },
+    {
+        "id": "q29",
+        "text": "From the biconditional α ⇔ β, which two new sentences can be derived using biconditional elimination?",
+        "options": [
+            "α ∧ β",
+            "α ∨ β",
+            "α ⇒ β and β ⇒ α",
+            "¬α ⇒ ¬β and ¬β ⇒ ¬α"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Biconditional Elimination breaks the biconditional into two implications: the forward direction (α ⇒ β) and the backward direction (β ⇒ α)."
+    },
+    {
+        "id": "q30",
+        "text": "In the Wumpus proof, from R₂: B₁,₁ ⇔ (P₁,₂ ∨ P₂,₁) and R₄: ¬B₁,₁, what rule is used to derive ¬(P₁,₂ ∨ P₂,₁)?",
+        "options": [
+            "Modus Ponens on the forward implication",
+            "Modus Tollens on the backward implication",
+            "And-Elimination",
+            "Biconditional Elimination"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Biconditional elimination gives (P₁,₂ ∨ P₂,₁) ⇒ B₁,₁. The contrapositive of this is ¬B₁,₁ ⇒ ¬(P₁,₂ ∨ P₂,₁). Since we have ¬B₁,₁ (R₄), Modus Ponens on this contrapositive yields ¬(P₁,₂ ∨ P₂,₁). This application of the contrapositive is often called Modus Tollens."
+    },
+    {
+        "id": "q31",
+        "text": "The final goal of the search in the 'proof as a search' problem is:",
+        "options": [
+            "To find the gold",
+            "To kill the Wumpus",
+            "To reach a state containing the sentence we want to prove",
+            "To find a model that satisfies the KB"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the framework of proving a sentence α, the initial state is the KB. Actions are applications of inference rules. The goal is to reach a state (an expanded KB) that contains the desired sentence α."
+    },
+    {
+        "id": "q32",
+        "text": "The Resolution inference rule requires sentences to be in what form?",
+        "options": [
+            "Implications (⇒)",
+            "Biconditionals (⇔)",
+            "Clauses (disjunctions of literals)",
+            "Conjunctions of atomic sentences"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Resolution rule applies to clauses. A clause is a disjunction of literals (e.g., P ∨ Q ∨ ¬R)."
+    },
+    {
+        "id": "q33",
+        "text": "Converting a sentence to Conjunctive Normal Form (CNF) involves:",
+        "options": [
+            "Expressing it as a conjunction of disjunctions of literals",
+            "Expressing it as a disjunction of conjunctions of literals",
+            "Eliminating all conjunctions",
+            "Eliminating all logical connectives"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A sentence in CNF is a conjunction (AND) of one or more clauses, where each clause is a disjunction (OR) of literals."
+    },
+    {
+        "id": "q34",
+        "text": "What is the first step in converting the biconditional B₁,₁ ⇔ (P₁,₂ ∨ P₂,₁) to CNF?",
+        "options": [
+            "Apply De Morgan's Law",
+            "Eliminate the biconditional",
+            "Eliminate the implication",
+            "Apply distributivity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The first step is Biconditional Elimination, which replaces A ⇔ B with (A ⇒ B) ∧ (B ⇒ A)."
+    },
+    {
+        "id": "q35",
+        "text": "After biconditional elimination, the next step to get to CNF is to:",
+        "options": [
+            "Apply distributivity",
+            "Eliminate implications",
+            "Apply De Morgan's Law",
+            "Remove double negations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "After having (B₁,₁ ⇒ (P₁,₂ ∨ P₂,₁)) ∧ ((P₁,₂ ∨ P₂,₁) ⇒ B₁,₁), the next step is Implication Elimination, rewriting each implication using OR: (¬B₁,₁ ∨ P₁,₂ ∨ P₂,₁) ∧ (¬(P₁,₂ ∨ P₂,₁) ∨ B₁,₁)."
+    },
+    {
+        "id": "q36",
+        "text": "The subexpression ¬(P₁,₂ ∨ P₂,₁) ∨ B₁,₁ is transformed using De Morgan's Law into:",
+        "options": [
+            "(¬P₁,₂ ∧ ¬P₂,₁) ∨ B₁,₁",
+            "(¬P₁,₂ ∨ ¬P₂,₁) ∨ B₁,₁",
+            "¬P₁,₂ ∨ ¬P₂,₁ ∨ B₁,₁",
+            "(P₁,₂ ∧ P₂,₁) ∨ B₁,₁"
+        ],
+        "correctAnswer": 0,
+        "explanation": "De Morgan's Law is applied to ¬(P₁,₂ ∨ P₂,₁), transforming it into (¬P₁,₂ ∧ ¬P₂,₁). So the whole clause becomes (¬P₁,₂ ∧ ¬P₂,₁) ∨ B₁,₁."
+    },
+    {
+        "id": "q37",
+        "text": "The final step in achieving the full CNF for the converted sentence is to apply:",
+        "options": [
+            "Implication Elimination",
+            "Biconditional Elimination",
+            "Double Negation Elimination",
+            "The Distributive Law"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The clause (¬P₁,₂ ∧ ¬P₂,₁) ∨ B₁,₁ is not a conjunction of disjunctions yet. The Distributive Law of OR over AND is applied: (A ∧ B) ∨ C ≡ (A ∨ C) ∧ (B ∨ C). This yields the final CNF clauses: (¬P₁,₂ ∨ B₁,₁) ∧ (¬P₂,₁ ∨ B₁,₁)."
+    },
+    {
+        "id": "q38",
+        "text": "The full CNF of B₁,₁ ⇔ (P₁,₂ ∨ P₂,₁) is:",
+        "options": [
+            "(¬B₁,₁ ∨ P₁,₂ ∨ P₂,₁) ∧ (¬P₁,₂ ∨ B₁,₁) ∧ (¬P₂,₁ ∨ B₁,₁)",
+            "(B₁,₁ ∨ P₁,₂ ∨ P₂,₁) ∧ (¬P₁,₂ ∨ ¬B₁,₁) ∧ (¬P₂,₁ ∨ ¬B₁,₁)",
+            "(¬B₁,₁ ∧ P₁,₂ ∧ P₂,₁) ∨ (¬P₁,₂ ∧ B₁,₁) ∨ (¬P₂,₁ ∧ B₁,₁)",
+            "(B₁,₁ ⇒ P₁,₂ ∨ P₂,₁) ∧ (P₁,₂ ∨ P₂,₁ ⇒ B₁,₁)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This is the final correct CNF, combining the first clause from implication elimination with the two clauses derived by applying De Morgan and then distributivity."
+    },
+    {
+        "id": "q39",
+        "text": "The primary limitation of model checking that motivates the use of theorem proving is:",
+        "options": [
+            "It is not sound",
+            "It is not complete",
+            "It can be computationally infeasible for large models",
+            "It cannot handle propositional logic"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Model checking requires enumerating all possible models. For problems with many proposition symbols, the number of models is exponential (2^n), making model checking computationally intractable. Theorem proving can often find a proof without this enumeration."
+    },
+    {
+        "id": "q40",
+        "text": "In the Wumpus world, the sentence 'There is no pit in [1,1]' (R₁: ¬P₁,₁) is an example of:",
+        "options": [
+            "A percept sentence",
+            "An eternal truth/axiom of the environment",
+            "A derived conclusion",
+            "A goal sentence"
+        ],
+        "correctAnswer": 1,
+        "explanation": "This is part of the agent's initial knowledge about the rules of the world. The agent starts in [1,1] and it is safe, so this is a fundamental axiom given to the KB."
+    },
+    {
+        "id": "q41",
+        "text": "If the agent moves to [2,1] and perceives a Breeze, what new sentence is added to the KB?",
+        "options": [
+            "B₂,₁",
+            "L₂,₁",
+            "B₂,₁ ∧ L₂,₁",
+            "B₂,₁ ∧ L₂,₁ ∧ ¬B₁,₁"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The percept itself is a breeze, so the atomic sentence B₂,₁ (asserting there is a breeze in [2,1]) is added. The agent's location (L₂,₁) would be handled by a separate mechanism."
+    },
+    {
+        "id": "q42",
+        "text": "The query ASK(KB, MAKE-ACTION-QUERY(t)) in the KB-AGENT function returns:",
+        "options": [
+            "A percept",
+            "An action",
+            "A new sentence for the KB",
+            "The current time step"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The ASK function queries the knowledge base to decide what action to take. The KB uses its knowledge and goals to infer which action should be returned."
+    },
+    {
+        "id": "q43",
+        "text": "A 'sound' inference algorithm is most critical for ensuring:",
+        "options": [
+            "The agent acts quickly",
+            "All entailed sentences can be derived",
+            "The agent's conclusions are true in the real world",
+            "The KB remains in CNF"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Soundness means the algorithm only derives entailed sentences. If the KB is a true reflection of the world (grounded) and the algorithm is sound, then its conclusions will also be true in the real world, leading to correct actions."
+    },
+    {
+        "id": "q44",
+        "text": "A 'complete' inference algorithm is defined as one that can:",
+        "options": [
+            "Derive any sentence that is entailed",
+            "Derive only sentences that are entailed",
+            "Convert any sentence to CNF",
+            "Handle both propositional and first-order logic"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Completeness is the property that an inference algorithm can derive any sentence that is entailed by the knowledge base. If KB ⊨ α, a complete algorithm will eventually derive α."
+    },
+    {
+        "id": "q45",
+        "text": "The logical equivalence (α ∨ (β ∧ γ)) ≡ ((α ∨ β) ∧ (α ∨ γ)) demonstrates:",
+        "options": [
+            "Commutativity of ∨",
+            "Associativity of ∧",
+            "Distributivity of ∨ over ∧",
+            "De Morgan's Law"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This equivalence shows that disjunction (∨) can be distributed over conjunction (∧), which is a key step in converting sentences to CNF."
+    },
+    {
+        "id": "q46",
+        "text": "In the model {P=true, Q=false}, what is the truth value of ¬P ∨ Q?",
+        "options": [
+            "True",
+            "False"
+        ],
+        "correctAnswer": 1,
+        "explanation": "¬P is false (because P is true). A disjunction (OR) is only true if at least one operand is true. Since both ¬P (false) and Q (false) are false, the whole sentence ¬P ∨ Q is false."
+    },
+    {
+        "id": "q47",
+        "text": "Which of these sentences is satisfiable but not valid?",
+        "options": [
+            "P ∨ ¬P",
+            "P ∧ ¬P",
+            "P",
+            "P ∨ Q"
+        ],
+        "correctAnswer": 3,
+        "explanation": "P ∨ Q is not valid (it is false in the model where both P and Q are false). It is satisfiable (it is true in the model where P is true). P ∨ ¬P is valid. P ∧ ¬P is unsatisfiable. P is satisfiable but not valid, just like P ∨ Q, so both C and D are technically correct. However, D is a better example as it involves multiple symbols. A more precise question would be needed to distinguish, but based on the options, D is a clear choice."
+    },
+    {
+        "id": "q48",
+        "text": "The Wumpus world is 'static', meaning:",
+        "options": [
+            "The agent is the only thing that can change it",
+            "It does not change while the agent is thinking",
+            "It is completely observable",
+            "It has only one solution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A static environment is one that does not change of its own accord while the agent is deliberating. The Wumpus and pits do not move."
+    },
+    {
+        "id": "q49",
+        "text": "The initial KB of a logical agent typically contains:",
+        "options": [
+            "Only percepts",
+            "Only actions",
+            "The rules of the environment and initial percepts",
+            "A complete map of the world"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The agent starts with knowledge of the general rules that always hold (e.g., breeze ⇔ adjacent pit) and the initial percepts from its starting location."
+    },
+    {
+        "id": "q50",
+        "text": "The inference rule Modus Tollens has the form:",
+        "options": [
+            "α ⇒ β, β, therefore α",
+            "α ⇒ β, ¬β, therefore ¬α",
+            "α ∨ β, ¬α, therefore β",
+            "α ⇔ β, therefore α ⇒ β"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Modus Tollens states that if an implication (α ⇒ β) is true and the consequent (β) is false, then the antecedent (α) must also be false."
+    },
+    {
+        "id": "q51",
+        "text": "The Resolution rule combines two clauses to produce a new clause. What clause results from resolving (A ∨ B) and (¬A ∨ C)?",
+        "options": [
+            "A ∨ C",
+            "B ∨ C",
+            "A ∨ ¬A",
+            "B ∧ C"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Resolution rule cancels out the complementary literals (A and ¬A) and combines the remaining literals from both clauses into a disjunction: B ∨ C."
+    },
+    {
+        "id": "q52",
+        "text": "First-order logic, compared to propositional logic, primarily adds the ability to represent:",
+        "options": [
+            "Logical connectives",
+            "Objects, properties, and relations",
+            "Probability",
+            "Time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "First-order logic (FOL) extends propositional logic by introducing objects, predicates to represent their properties and relations, and quantifiers (∀, ∃) to make general statements about collections of objects."
+    },
+    {
+        "id": "q53",
+        "text": "In the context of the KB agent function, what is the purpose of the persistent counter 't'?",
+        "options": [
+            "To limit the number of inferences",
+            "To uniquely identify each percept and action in time",
+            "To track the agent's score",
+            "To seed the random number generator"
+        ],
+        "explanation": "The time counter 't' is used to create unique sentences for each percept (MAKE-PERCEPT-SENTENCE(percept, t)) and action (MAKE-ACTION-SENTENCE(action, t)), allowing the agent to reason about the sequence of events over time.",
+        "options": [
+            "To limit the number of inferences",
+            "To uniquely identify each percept and action in time",
+            "To track the agent's score",
+            "To seed the random number generator"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q54",
+        "text": "According to the lecture, real-world applications of concepts from the Wumpus World include:",
+        "options": [
+            "Designing spreadsheets",
+            "Designing intelligent agents for autonomous vehicles and robotics",
+            "Writing natural language parsers",
+            "Optimizing database queries"
+        ],
+        "explanation": "The challenges of partial observability, reasoning, and planning in the Wumpus World are analogous to those faced in real-world applications like autonomous vehicles (navigating unseen obstacles) and robotics.",
+        "options": [
+            "Designing spreadsheets",
+            "Designing intelligent agents for autonomous vehicles and robotics",
+            "Writing natural language parsers",
+            "Optimizing database queries"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q55",
+        "text": "The sentence ¬(P₁,₂ ∨ P₂,₁) derived in the Wumpus example is equivalent to:",
+        "options": [
+            "P₁,₂ ∧ P₂,₁",
+            "¬P₁,₂ ∨ ¬P₂,₁",
+            "¬P₁,₂ ∧ ¬P₂,₁",
+            "P₁,₂ ∨ P₂,₁"
+        ],
+        "explanation": "This is a direct application of De Morgan's Law: ¬(P₁,₂ ∨ P₂,₁) ≡ ¬P₁,₂ ∧ ¬P₂,₁. This tells the agent that both [1,2] and [2,1] are safe from pits.",
+        "options": [
+            "P₁,₂ ∧ P₂,₁",
+            "¬P₁,₂ ∨ ¬P₂,₁",
+            "¬P₁,₂ ∧ ¬P₂,₁",
+            "P₁,₂ ∨ P₂,₁"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q56",
+        "text": "If a knowledge-based agent is told a new fact that contradicts its existing KB, what property ensures that this does not automatically make every sentence entailed?",
+        "options": [
+            "Soundness",
+            "Completeness",
+            "Monotonicity",
+            "Consistency"
+        ],
+        "explanation": "Standard logical systems are monotonic. Adding a contradiction (KB ∧ ¬KB) would indeed make the KB inconsistent, allowing any sentence to be derived. The key is to maintain consistency. The property that prevents this chaos is the initial consistency of the KB. Monotonicity itself doesn't prevent inconsistency; it just says adding knowledge doesn't retract old truths. The question highlights a limitation of monotonic logics. A better answer might be that the agent's knowledge acquisition should avoid contradictions, but this isn't a built-in property. The listed options are the core properties. Soundness and completeness are properties of the inference algorithm, not the KB. Monotonicity is a property of the logic. Consistency is a property of the KB itself. The question is tricky. The best answer is that the agent relies on its KB being consistent.",
+        "options": [
+            "Soundness",
+            "Completeness",
+            "Monotonicity",
+            "Consistency"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "q57",
+        "text": "The process of proving KB ⊨ α by proving that KB ∧ ¬α is unsatisfiable is called:",
+        "options": [
+            "Model checking",
+            "Proof by resolution",
+            "Proof by contradiction (or reductio ad absurdum)",
+            "Forward chaining"
+        ],
+        "explanation": "This is proof by contradiction. We assume the negation of what we want to prove (¬α). If this assumption, combined with the KB (KB ∧ ¬α), leads to a contradiction (is unsatisfiable), then our original goal α must be true if KB is true.",
+        "options": [
+            "Model checking",
+            "Proof by resolution",
+            "Proof by contradiction (or reductio ad absurdum)",
+            "Forward chaining"
+        ],
+        "correctAnswer": 2
+    },
+    {
+        "id": "q58",
+        "text": "The Unit Clause heuristic used in DPLL is important because it:",
+        "options": [
+            "Converts sentences to CNF",
+            "Forces a branching decision",
+            "Finds pure symbols",
+            "Propagates the effect of a single-literal clause, simplifying the model"
+        ],
+        "explanation": "A unit clause is a clause with only one literal (e.g., [P] or [¬Q]). The Unit Clause rule forces that literal to be true (if P) or false (if ¬Q) in the model, which often allows other clauses to be simplified or satisfied, reducing the problem size.",
+        "options": [
+            "Converts sentences to CNF",
+            "Forces a branching decision",
+            "Finds pure symbols",
+            "Propagates the effect of a single-literal clause, simplifying the model"
+        ],
+        "correctAnswer": 3
+    },
+    {
+        "id": "q59",
+        "text": "A 'pure symbol' in the DPLL algorithm is a symbol that:",
+        "options": [
+            "Appears in a unit clause",
+            "Appears with only one polarity (all positive or all negative) in all remaining clauses",
+            "Has not been assigned a truth value yet",
+            "Appears in every clause"
+        ],
+        "explanation": "A pure symbol is one that, in all remaining clauses, appears with the same sign (e.g., always P, never ¬P, or vice-versa). It can be assigned a value that makes all clauses containing it true without risk of making another clause false, simplifying the problem.",
+        "options": [
+            "Appears in a unit clause",
+            "Appears with only one polarity (all positive or all negative) in all remaining clauses",
+            "Has not been assigned a truth value yet",
+            "Appears in every clause"
+        ],
+        "correctAnswer": 1
+    },
+    {
+        "id": "q60",
+        "text": "Why is propositional logic often impractical for very large, complex knowledge bases?",
+        "options": [
+            "It is not sound or complete",
+            "It cannot represent the real world",
+            "It requires a separate symbol for every atomic proposition, leading to combinatorial explosion",
+            "Its inference rules are too slow"
+        ],
+        "explanation": "This is the 'representational bottleneck'. To represent complex relationships between n objects, propositional logic may require an exponential number of symbols (e.g., a separate symbol for 'Pit at [x,y]' for every square). First-order logic solves this by using objects, variables, and quantifiers.",
+        "options": [
+            "It is not sound or complete",
+            "It cannot represent the real world",
+            "It requires a separate symbol for every atomic proposition, leading to combinatorial explosion",
+            "Its inference rules are too slow"
+        ],
+        "correctAnswer": 2
+    }
+]

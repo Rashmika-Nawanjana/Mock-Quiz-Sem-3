@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the primary purpose of the Entity-Relationship (E-R) Model?",
+    "options": [
+      "To optimize SQL query performance",
+      "To provide a graphical representation of the logical database structure",
+      "To define user authorization levels",
+      "To handle database transaction concurrency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The E-R Model is a conceptual tool used to visualize and design the logical structure of a database, representing entities, their attributes, and the relationships between them."
+  },
+  {
+    "id": "q2",
+    "text": "An object that exists and is distinguishable from other objects in a database is called a(n):",
+    "options": [
+      "Attribute",
+      "Entity",
+      "Entity Set",
+      "Relationship"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An entity is a distinct object (e.g., a specific person, company) that can be uniquely identified within the system."
+  },
+  {
+    "id": "q3",
+    "text": "A set of entities of the same type that share the same properties is known as a(n):",
+    "options": [
+      "Attribute Group",
+      "Entity Collection",
+      "Entity Set",
+      "Relationship Cluster"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An entity set is a collection of similar entities, such as all 'instructors' or all 'students' in a university database."
+  },
+  {
+    "id": "q4",
+    "text": "What is an association among several entities called?",
+    "options": [
+      "Attribute",
+      "Entity Set",
+      "Relationship",
+      "Domain"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A relationship is an association that exists between multiple entities, such as an 'advisor' relationship connecting a 'student' entity and an 'instructor' entity."
+  },
+  {
+    "id": "q5",
+    "text": "A relationship set is a mathematical relation among n entities where:",
+    "options": [
+      "n must always be 2",
+      "n can be 2 or more (n ≥ 2)",
+      "n must be an odd number",
+      "n is always 1"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A relationship set can involve two or more entity sets. While binary relationships (n=2) are most common, ternary (n=3) or higher-degree relationships are also possible."
+  },
+  {
+    "id": "q6",
+    "text": "Which of the following is TRUE about attributes of a relationship set?",
+    "options": [
+      "A relationship set cannot have attributes.",
+      "Attributes describe the properties of the entities involved, not the relationship itself.",
+      "An attribute can be a property of the relationship set itself.",
+      "Relationship set attributes must always be composite."
+    ],
+    "correctAnswer": 2,
+    "explanation": "A relationship set can have its own descriptive attributes. For example, an 'advisor' relationship between a student and instructor could have a 'start_date' attribute."
+  },
+  {
+    "id": "q7",
+    "text": "What is the degree of a relationship set that involves three entity sets?",
+    "options": [
+      "Binary",
+      "Ternary",
+      "Quadratic",
+      "Primary"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The degree of a relationship set is the number of entity sets that participate in it. A relationship involving three entity sets is called a ternary relationship."
+  },
+  {
+    "id": "q8",
+    "text": "Which of the following best describes a 'derived' attribute?",
+    "options": [
+      "An attribute that must have multiple values",
+      "An attribute whose value can be calculated from other attributes",
+      "An attribute that is part of a composite key",
+      "An attribute that is the primary key of a weak entity set"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A derived attribute is not stored directly in the database but can be computed or derived from other existing attributes. For example, 'age' can be derived from 'date_of_birth'."
+  },
+  {
+    "id": "q9",
+    "text": "An attribute that can be split into smaller, component attributes is called a:",
+    "options": [
+      "Multivalued Attribute",
+      "Derived Attribute",
+      "Composite Attribute",
+      "Discriminator Attribute"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A composite attribute is one that can be divided into smaller sub-parts representing more basic attributes. For example, an 'address' attribute can be composite, made up of 'street', 'city', and 'zip_code'."
+  },
+  {
+    "id": "q10",
+    "text": "Mapping cardinality constraints express:",
+    "options": [
+      "The number of attributes an entity can have",
+      "The number of entities to which another entity can be associated via a relationship set",
+      "The order in which entities are stored physically",
+      "The data type constraints for primary keys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mapping cardinality defines the maximum number of relationship instances an entity can participate in. It is crucial for describing the business rules of associations (e.g., one-to-one, one-to-many)."
+  },
+  {
+    "id": "q11",
+    "text": "In a 'one-to-many' relationship from entity set A to B, an entity in A can be associated with:",
+    "options": [
+      "At most one entity in B",
+      "Many entities in B",
+      "Exactly one entity in B",
+      "No entities in B"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In a one-to-many relationship, an entity from set A can be associated with any number (zero or more) of entities in set B, but an entity in B is associated with at most one entity in A."
+  },
+  {
+    "id": "q12",
+    "text": "A minimal super key, meaning no subset of it is a super key, is called a:",
+    "options": [
+      "Primary Key",
+      "Foreign Key",
+      "Candidate Key",
+      "Partial Key"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A candidate key is a minimal super key. It is a set of attributes that uniquely identifies an entity, and from which no attribute can be removed without destroying its uniqueness."
+  },
+  {
+    "id": "q13",
+    "text": "The combination of primary keys of the participating entity sets forms a __________ of a relationship set.",
+    "options": [
+      "Foreign Key",
+      "Weak Key",
+      "Super Key",
+      "Discriminator Key"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The primary keys from all participating entity sets together uniquely identify a relationship instance, making their combination a super key for the relationship set."
+  },
+  {
+    "id": "q14",
+    "text": "Why might an attribute in an entity set be considered redundant?",
+    "options": [
+      "If it is a composite attribute",
+      "If it is a derived attribute",
+      "If the information it holds is already represented by a relationship to another entity set",
+      "If it is part of the primary key"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An attribute is redundant if it duplicates information that is already completely and explicitly represented by a relationship to another entity. For example, a 'dept_name' in an 'instructor' entity is redundant if there is an 'inst_dept' relationship to a 'department' entity set which already has that information."
+  },
+  {
+    "id": "q15",
+    "text": "In an E-R Diagram, what shape represents a relationship set?",
+    "options": [
+      "Rectangle",
+      "Diamond",
+      "Ellipse",
+      "Double Rectangle"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In standard E-R diagram notation, entity sets are represented by rectangles, attributes by ellipses, and relationship sets by diamonds."
+  },
+  {
+    "id": "q16",
+    "text": "How is a multivalued attribute typically represented in an E-R diagram?",
+    "options": [
+      "With a double ellipse",
+      "With a dashed ellipse",
+      "With an ellipse inside another ellipse",
+      "It is not represented"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A multivalued attribute is depicted by a double oval (or ellipse) in an E-R diagram. For example, the 'phone_number' attribute of an 'instructor' could be multivalued."
+  },
+  {
+    "id": "q17",
+    "text": "What does a directed line (→) drawn between a relationship set and an entity set signify?",
+    "options": [
+      "Many",
+      "One",
+      "Total Participation",
+      "Partial Participation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A directed line (→) from a relationship set to an entity set signifies 'one' in the mapping cardinality. It means an entity on the 'many' side of the relationship is associated with at most one entity on the 'one' side."
+  },
+  {
+    "id": "q18",
+    "text": "What does a double line connecting an entity set to a relationship set represent?",
+    "options": [
+      "One-to-one cardinality",
+      "Many-to-many cardinality",
+      "Total participation",
+      "A weak entity set"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A double line indicates total participation. It means that every entity in the entity set must participate in at least one relationship in the relationship set. For example, every 'section' must be related to a 'course'."
+  },
+  {
+    "id": "q19",
+    "text": "An entity set that lacks a primary key and depends on another entity set for its existence is a:",
+    "options": [
+      "Strong Entity Set",
+      "Parent Entity Set",
+      "Weak Entity Set",
+      "Identifying Entity Set"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A weak entity set does not have a sufficient set of attributes to form a primary key on its own. Its existence is dependent on a strong 'identifying' entity set."
+  },
+  {
+    "id": "q20",
+    "text": "The set of attributes that distinguishes among all the entities of a weak entity set is called the:",
+    "options": [
+      "Super Key",
+      "Foreign Key",
+      "Discriminator (Partial Key)",
+      "Primary Key"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The discriminator (or partial key) of a weak entity set is an attribute or set of attributes that uniquely identifies weak entities relative to their specific owning strong entity."
+  },
+  {
+    "id": "q21",
+    "text": "How is the primary key of a weak entity set formed?",
+    "options": [
+      "It is the same as the primary key of its strong entity set.",
+      "It is just its own discriminator.",
+      "It is the combination of the primary key of its strong entity set and its own discriminator.",
+      "Weak entity sets do not have a primary key."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The full primary key for a weak entity is composite, formed by the primary key of its identifying strong entity set plus the weak entity's own discriminator (partial key)."
+  },
+  {
+    "id": "q22",
+    "text": "In an E-R diagram, how is the identifying relationship for a weak entity set depicted?",
+    "options": [
+      "With a single diamond",
+      "With a double diamond",
+      "With a dashed diamond",
+      "With a colored diamond"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The identifying relationship that connects a weak entity set to its owner strong entity set is depicted with a double diamond in the E-R diagram."
+  },
+  {
+    "id": "q23",
+    "text": "When converting an entity set with a composite attribute to a relational schema, what happens?",
+    "options": [
+      "The composite attribute is stored as a single column.",
+      "A separate table is created for the composite attribute.",
+      "Each component attribute of the composite attribute becomes a separate column in the table.",
+      "The composite attribute is ignored as it is not a simple attribute."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Composite attributes are 'flattened out' during the conversion to a relational schema. Each simple component attribute within the composite attribute becomes its own column in the table."
+  },
+  {
+    "id": "q24",
+    "text": "How is a multivalued attribute of an entity set represented in the relational schema?",
+    "options": [
+      "It is added as a single column in the entity's table, storing all values in a list.",
+      "It is ignored and not represented in the schema.",
+      "A new separate table is created, containing the primary key of the entity and the multivalued attribute.",
+      "It is converted into a derived attribute."
+    ],
+    "correctAnswer": 2,
+    "explanation": "A multivalued attribute 'M' of entity 'E' is represented by creating a new table 'EM'. This new table has two columns: the primary key of 'E' and the multivalued attribute 'M'. Each value of the multivalued attribute gets its own row in this new table."
+  },
+  {
+    "id": "q25",
+    "text": "For a many-to-many relationship set, how is it typically represented in the relational schema?",
+    "options": [
+      "By adding a foreign key to one of the participating entity tables.",
+      "By adding foreign keys to both participating entity tables.",
+      "By creating a new separate table that includes the primary keys of the participating entity sets as foreign keys.",
+      "It does not require explicit representation if it has no attributes."
+    ],
+    "correctAnswer": 2,
+    "explanation": "A many-to-many relationship set is represented by creating a new table (relation). This table includes the primary keys of the participating entity sets as foreign keys, which together form the primary key of this new table, plus any descriptive attributes of the relationship itself."
+  },
+  {
+    "id": "q26",
+    "text": "A many-to-one relationship set that is total on the many-side can be represented more efficiently by:",
+    "options": [
+      "Creating a separate table for the relationship",
+      "Adding an extra attribute (foreign key) to the table schema for the 'many' side entity set",
+      "Adding an extra attribute to the table schema for the 'one' side entity set",
+      "Using a ternary relationship instead"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To avoid a separate table for the relationship, a foreign key attribute can be added to the schema of the entity set on the 'many' side of the relationship. This foreign key references the primary key of the entity set on the 'one' side."
+  },
+  {
+    "id": "q27",
+    "text": "The process of defining subgroupings within an entity set that are distinctive from other entities is called:",
+    "options": [
+      "Generalization",
+      "Specialization",
+      "Aggregation",
+      "Normalization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Specialization is a top-down design process where an entity set is divided into subclasses based on distinguishing characteristics (e.g., specializing a 'person' into 'employee' and 'student')."
+  },
+  {
+    "id": "q28",
+    "text": "The process of combining multiple entity sets into a single, higher-level entity set based on common features is called:",
+    "options": [
+      "Specialization",
+      "Generalization",
+      "Aggregation",
+      "Reduction"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Generalization is a bottom-up design process where multiple entity sets with common features are synthesized into a single, more general superclass entity set (e.g., generalizing 'car' and 'truck' into 'vehicle')."
+  },
+  {
+    "id": "q29",
+    "text": "What concept allows a lower-level entity set to inherit all the attributes and relationship participation of a higher-level entity set?",
+    "options": [
+      "Polymorphism",
+      "Encapsulation",
+      "Attribute Inheritance",
+      "Cardinality Limitation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the ISA hierarchy (specialization/generalization), a lower-level entity (subclass) inherits all attributes and relationships from its higher-level entity (superclass). This is known as attribute inheritance."
+  },
+  {
+    "id": "q30",
+    "text": "A constraint where an entity can belong to only one lower-level entity set within a generalization is known as:",
+    "options": [
+      "Overlapping",
+      "Disjoint",
+      "Total",
+      "Partial"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A disjointness constraint means that an entity from the superclass can be a member of at most one of the subclasses. The subclasses are mutually exclusive."
+  },
+  {
+    "id": "q31",
+    "text": "A constraint where an entity must belong to at least one lower-level entity set within a generalization is known as:",
+    "options": [
+      "Overlapping",
+      "Disjoint",
+      "Total Completeness",
+      "Partial Completeness"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Total completeness constraint means that every entity in the superclass must also be a member of at least one subclass. There are no superclass entities that exist outside of all the subclasses."
+  },
+  {
+    "id": "q32",
+    "text": "What is the main purpose of aggregation in E-R modeling?",
+    "options": [
+      "To combine attributes into a composite attribute",
+      "To treat a relationship set as an entity set for the purpose of participating in another relationship",
+      "To create a weak entity set",
+      "To enforce total participation constraints"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Aggregation is an abstraction through which relationships are treated as higher-level entities. This allows a relationship set to participate in another relationship set, helping to eliminate redundancy and model complex semantics."
+  },
+  {
+    "id": "q33",
+    "text": "When converting a specialization to relational schemas using Method 1, what is a potential drawback?",
+    "options": [
+      "It leads to storage of redundant data for inherited attributes.",
+      "Retrieving information about a subclass entity requires accessing both the subclass and superclass tables.",
+      "It cannot represent overlapping specializations.",
+      "It violates foreign key constraints."
+    ],
+    "correctAnswer": 1,
+    "explanation": "Method 1 creates a table for the superclass and a table for each subclass containing the superclass's primary key and subclass-specific attributes. A drawback is that querying a subclass requires a JOIN between the subclass table and the superclass table to get all attributes."
+  },
+  {
+    "id": "q34",
+    "text": "When converting a specialization to relational schemas using Method 2, what is a potential drawback?",
+    "options": [
+      "It requires complex SQL queries for insertion.",
+      "It cannot represent attribute inheritance.",
+      "It may store common attributes redundantly for an entity that belongs to multiple subclasses.",
+      "It cannot represent disjoint constraints."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Method 2 creates a separate table for each subclass containing all inherited and specific attributes. A key drawback is redundancy: if an entity belongs to multiple subclasses (overlapping specialization), the inherited attributes (e.g., name, address) are stored redundantly in each subclass table it appears in."
+  },
+  {
+    "id": "q35",
+    "text": "Which of the following is a key E-R design decision?",
+    "options": [
+      "Choosing the programming language for the application",
+      "Deciding whether a concept is best represented as an entity set or an attribute",
+      "Selecting the hardware for the database server",
+      "Determining the user interface layout"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A fundamental design decision in conceptual modeling is choosing whether a real-world concept should be represented as an entity set, an attribute of another entity, or a relationship set. This choice significantly impacts the flexibility and clarity of the model."
+  },
+  {
+    "id": "q36",
+    "text": "In the context of the provided university E-R diagram, what is the likely cardinality of the 'advisor' relationship?",
+    "options": [
+      "One instructor advises one student",
+      "One instructor advises many students, one student has one advisor",
+      "One instructor advises many students, one student has many advisors",
+      "Many instructors advise many students"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Based on the typical university schema and the common interpretation of 'advisor', the relationship is most often modeled as one-to-many: an instructor can advise many students, but a student has (at a given time) one official advisor. The diagram's use of a directed line from 'advisor' to 'instructor' suggests many-to-one, meaning 'one instructor' per student."
+  },
+  {
+    "id": "q37",
+    "text": "In the 'section' weak entity set, why is 'course_id' not explicitly stored as an attribute according to the ideal design?",
+    "options": [
+      "It is a derived attribute.",
+      "It is redundant because it is implicit in the identifying relationship with the 'course' entity set.",
+      "It is a composite attribute.",
+      "It is represented as a multivalued attribute instead."
+    ],
+    "correctAnswer": 1,
+    "explanation": "The existence of a 'section' is dependent on a 'course'. The primary key of the 'course' is part of the primary key of 'section'. Storing 'course_id' explicitly in the 'section' entity would be redundant because this information is already inherent and will be captured as a foreign key in the table created from the identifying relationship."
+  },
+  {
+    "id": "q38",
+    "text": "Looking at the Car Insurance E-R diagram (Ex1), what is the cardinality of the 'owns' relationship?",
+    "options": [
+      "One customer owns one car",
+      "One customer owns many cars, one car is owned by one customer",
+      "One customer owns many cars, one car is owned by many customers",
+      "Many customers own many cars"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The diagram uses the cardinality notation '1..*' on the customer side and '1..1' on the car side. This means one customer can own one or more cars (1..*), but a car is owned by exactly one customer (1..1). This is a one-to-many relationship from customer to car."
+  },
+  {
+    "id": "q39",
+    "text": "In the SLPL Team E-R diagram (Ex2), the 'season_score' attribute of 'player' is marked with '()'. This most likely indicates it is a:",
+    "options": [
+      "Multivalued Attribute",
+      "Composite Attribute",
+      "Derived Attribute",
+      "Discriminator Attribute"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Attributes depicted with parentheses, such as 'age()' or 'season_score()', typically represent derived attributes. Their values are not stored directly but are computed from other data in the database (e.g., by aggregating 'score' from each 'match')."
+  },
+  {
+    "id": "q40",
+    "text": "According to the summary, which non-structural aspect significantly influences physical database design?",
+    "options": [
+      "The choice of E-R notation (Chen vs. UML)",
+      "The cost of enforcing data constraints",
+      "The number of entity sets in the diagram",
+      "The number of composite attributes used"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture notes emphasize that 'Constraint Enforcement Costs!' are a crucial aspect of 'Other Aspects of DB Design'. The performance overhead of checking complex constraints must be considered during implementation, influencing choices like indexing and schema refinement."
+  },
+  {
+    "id": "q41",
+    "text": "What is the domain of an attribute?",
+    "options": [
+      "The entity set it belongs to",
+      "The set of all possible values that the attribute can have",
+      "Its data type in the relational schema (e.g., VARCHAR, INT)",
+      "The relationship set it describes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The domain of an attribute defines the universe of permissible values for that attribute. For example, the domain for a 'grade' attribute might be the set {'A', 'B', 'C', 'D', 'F'}."
+  },
+  {
+    "id": "q42",
+    "text": "In a ternary relationship 'proj_guide' between instructor, student, and project, what is the super key for the relationship set?",
+    "options": [
+      "The primary key of instructor",
+      "The primary key of student",
+      "The primary key of project",
+      "The combination of the primary keys of instructor, student, and project"
+    ],
+    "correctAnswer": 3,
+    "explanation": "For a relationship set of any degree, the super key is typically the combination of the primary keys of all the participating entity sets. This combination uniquely identifies a specific relationship instance."
+  },
+  {
+    "id": "q43",
+    "text": "Why might a designer choose to model a concept as an entity set (like 'phone') instead of an attribute of another entity set?",
+    "options": [
+      "To reduce the number of tables",
+      "If they need to store additional information about that concept (e.g., 'location' for a phone number)",
+      "To make the primary key simpler",
+      "Because attributes cannot be multivalued"
+    ],
+    "correctAnswer": 1,
+    "explanation": "If a concept requires its own descriptive attributes or needs to participate in relationships with other entities, it must be modeled as an entity set itself, not merely as an attribute. This provides greater expressiveness."
+  },
+  {
+    "id": "q44",
+    "text": "The 'roles' in a relationship are necessary when:",
+    "options": [
+      "The relationship is many-to-many",
+      "The relationship set has an attribute",
+      "The same entity set participates in a relationship more than once",
+      "The relationship is one-to-one"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Roles are labels that define the function an entity plays in a relationship. They are essential when an entity set participates in a relationship more than once (e.g., a 'course' entity set participating in a 'prereq' relationship as both the 'course_id' and the 'prereq_id') to clarify the meaning of each connection."
+  },
+  {
+    "id": "q45",
+    "text": "In the context of reduction to schemas, what is the primary key for the table representing a weak entity set?",
+    "options": [
+      "The discriminator of the weak entity set",
+      "The primary key of the strong entity set it depends on",
+      "A new, surrogate key created automatically",
+      "The combination of the strong entity's primary key and the weak entity's discriminator"
+    ],
+    "correctAnswer": 3,
+    "explanation": "As established earlier, the full primary key for a weak entity is a composite key formed from the primary key of its identifying strong entity and its own partial key (discriminator). This is directly translated to the relational schema."
+  },
+  {
+    "id": "q46",
+    "text": "A relationship from a superclass to another entity set is considered:",
+    "options": [
+      "Invalid in E-R modeling",
+      "Inherited by all subclasses",
+      "Applicable only to the superclass, not the subclasses",
+      "Represented using aggregation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A key feature of specialization/generalization is inheritance. All relationships in which the superclass participates are automatically inherited by every subclass. This means a subclass entity can be involved in those relationships as well."
+  },
+  {
+    "id": "q47",
+    "text": "The 'discriminator' of a weak entity set is underlined with:",
+    "options": [
+      "A solid line",
+      "A dashed line",
+      "A double line",
+      "A wavy line"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In E-R diagram notation, the partial key (discriminator) of a weak entity set is underlined with a dashed line to distinguish it from the primary key of a strong entity set, which is underlined with a solid line."
+  },
+  {
+    "id": "q48",
+    "text": "Which of the following is a key difference between the presented E-R notation and UML class diagram notation?",
+    "options": [
+      "UML does not support relationships.",
+      "The position for depicting cardinality constraints is reversed.",
+      "E-R diagrams do not support attributes.",
+      "UML uses diamonds for relationships."
+    ],
+    "correctAnswer": 1,
+    "explanation": "The notes point out a syntactic difference: '*Note reversal of position in cardinality constraint depiction*'. The placement of cardinality indicators (like 1, *, 1..*) relative to the relationship line and the entity classes is different between standard E-R notation and UML class diagrams."
+  },
+  {
+    "id": "q49",
+    "text": "The problem in Ex4 (tracking time for advisor and salary) would likely require modifying the model to:",
+    "options": [
+      "Make 'student' a weak entity",
+      "Change the cardinality to many-to-many",
+      "Add effective date attributes to the 'advisor' relationship and the 'instructor' entity",
+      "Use aggregation on the 'course' entity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "To track historical data (like when an advisor relationship was valid or when a salary was effective), the model must be extended to become a 'temporal' model. This often involves changing relationships to track history (potentially affecting cardinality) and adding time-based attributes like 'start_date' and 'end_date' to relationships and relevant entity attributes."
+  },
+  {
+    "id": "q50",
+    "text": "What is the final step outlined in the lecture notes after designing the E-R model?",
+    "options": [
+      "Writing application code",
+      "Reduction to Relation Schemas",
+      "Choosing a DBMS vendor",
+      "Designing the user interface"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The logical progression is to first create a conceptual E-R model and then map (reduce) that model to a logical relational schema, which is a collection of table definitions. This is a crucial step before physical implementation."
+  },
+  {
+    "id": "q51",
+    "text": "In the conversion process, a simple attribute of an entity set becomes a:",
+    "options": [
+      "Separate table",
+      "Column in the table representing that entity set",
+      "Foreign key in another table",
+      "Derived attribute in the schema"
+    ],
+    "correctAnswer": 1,
+    "explanation": "During the conversion from an E-R model to a relational schema, each simple attribute of an entity set is mapped directly to a column in the table that represents that entity set."
+  },
+  {
+    "id": "q52",
+    "text": "If a relationship set has no attributes, and is many-to-one, the most efficient representation is usually:",
+    "options": [
+      "A separate table with two foreign keys",
+      "A separate table with one foreign key",
+      "Adding a foreign key to the table on the 'many' side",
+      "Adding a foreign key to the table on the 'one' side"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For a many-to-one relationship without its own attributes, the most efficient design is to avoid a separate table. Instead, add a foreign key column to the table representing the entity set on the 'many' side. This column references the primary key of the table on the 'one' side."
+  },
+  {
+    "id": "q53",
+    "text": "The 'identifying entity set' for a weak entity set is always a:",
+    "options": [
+      "Weak Entity Set itself",
+      "Strong Entity Set",
+      "Relationship Set",
+      "Specialized Entity Set"
+    ],
+    "correctAnswer": 1,
+    "explanation": "By definition, a weak entity set depends on a strong entity set for its identification and existence. This strong entity set is called its 'identifying' or 'owner' entity set."
+  },
+  {
+    "id": "q54",
+    "text": "The ISA hierarchy in specialization/generalization is represented by a:",
+    "options": [
+      "Double diamond",
+      "Triangle component",
+      "Dashed line",
+      "Double rectangle"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The ISA relationship, indicating a superclass-subclass connection, is depicted in E-R diagrams as a triangle component connecting the superclass to the subclasses. The word 'ISA' (meaning 'is a') is often written inside or next to the triangle."
+  },
+  {
+    "id": "q55",
+    "text": "A user-defined constraint on a specialization defines membership in a subclass based on:",
+    "options": [
+      "A condition evaluated by the database system",
+      "An assignment made by the database user",
+      "The value of a discriminator attribute",
+      "The entity's primary key value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "There are two types of membership constraints for subclasses. Condition-defined membership uses a conditional expression on attributes (e.g., `job_type = 'Secretary'`). User-defined membership means the DB user explicitly assigns an entity to a subclass, with no formal condition."
+  },
+  {
+    "id": "q56",
+    "text": "The main goal of using aggregation is to:",
+    "options": [
+      "Improve query performance",
+      "Avoid redundancy and allow relationships on relationships",
+      "Enforce total participation",
+      "Create simpler primary keys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Aggregation is used to abstract a relationship into an entity so that this new 'aggregate' entity can participate in further relationships. This helps model complex scenarios without redundantly duplicating information from the original relationship."
+  },
+  {
+    "id": "q57",
+    "text": "In the relational schema for aggregation, the primary key typically includes:",
+    "options": [
+      "Only the primary key of the new aggregate entity",
+      "The primary key of the associated entity set",
+      "The primary key of the original aggregated relationship",
+      "A newly generated surrogate key"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The schema created for the aggregate entity will include the primary key(s) of the relationship set that was aggregated. This primary key from the relationship is what uniquely identifies the aggregate entity."
+  },
+  {
+    "id": "q58",
+    "text": "Which of these is NOT a typical factor considered during database design according to the 'Other Aspects' slide?",
+    "options": [
+      "Authorization Requirements",
+      "Enterprise workflows and Data Flows",
+      "The brand of the computer monitor used by the DBA",
+      "Usage requirements (Throughput, Response Time)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 'Other Aspects' slide lists practical concerns like constraints, performance (throughput/response time), security (authorization), business processes (workflows), and human factors. The brand of hardware is not a conceptual design concern covered by the E-R model."
+  },
+  {
+    "id": "q59",
+    "text": "The problem of 'Requirement Changes' highlighted at the end suggests that database design is:",
+    "options": [
+      "A rigid, one-time process",
+      "An iterative and evolving process",
+      "Only concerned with current needs",
+      "Independent of application development"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Acknowledging 'Requirement Changes' emphasizes that database design is not a static, one-off activity. It is an iterative process that must adapt and evolve as the understanding of the problem domain deepens or as business needs change over time."
+  },
+  {
+    "id": "q60",
+    "text": "The 'Human-oriented nature of DB Design' implies that the final end-user is a human, which influences design towards:",
+    "options": [
+      "Using the fastest possible algorithms regardless of cost",
+      "Creating schemas that are meaningful, understandable, and facilitate useful queries for users",
+      "Hiding all data complexity from users",
+      "Using only binary relationships"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Since the ultimate consumer of the data is a human user, the design must prioritize clarity, semantic meaning, and ease of use. The conceptual schema should model the real world in a way that is intuitive for users to understand and query, even if it adds some complexity to the model itself."
+  }
+]

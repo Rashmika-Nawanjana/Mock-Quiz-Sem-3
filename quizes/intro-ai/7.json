@@ -1,0 +1,721 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary ontological commitment of First-Order Logic (FOL) that distinguishes it from propositional logic?",
+        "options": [
+            "Facts that either hold or do not hold",
+            "Objects in the world and relations among them",
+            "Facts that hold at particular times",
+            "Degree of belief in facts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "FOL assumes there are objects in the world, and there are relations among them that do or do not hold, unlike propositional logic which only deals with facts."
+    },
+    {
+        "id": "q2",
+        "text": "Which of the following is an example of a unary relation in FOL?",
+        "options": [
+            "Married(John, Mary)",
+            "LargerThan(3, 2)",
+            "Round(Ball)",
+            "LeftLeg(John)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A unary relation states a fact about a single object. Round(Ball) is a property of the ball, making it unary."
+    },
+    {
+        "id": "q3",
+        "text": "In FOL, what does the epistemological commitment regarding a fact allow?",
+        "options": [
+            "It defines what exists in the world",
+            "It specifies the possible states of knowledge an agent can have about a fact",
+            "It determines the syntactic structure of a sentence",
+            "It assigns a degree of truth to a fact"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Epistemological commitment refers to the possible states of knowledge a logic allows with respect to each fact (e.g., true/false/unknown in FOL)."
+    },
+    {
+        "id": "q4",
+        "text": "According to the provided table, which language has an ontological commitment that includes 'facts with degree of truth'?",
+        "options": [
+            "Propositional logic",
+            "First-order logic",
+            "Temporal logic",
+            "Fuzzy logic"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Fuzzy logic's ontological commitment is 'facts with degree of truth ∈ [0,1]', as shown in the epistemological commitments table."
+    },
+    {
+        "id": "q5",
+        "text": "In a model for FOL, what is a 'domain'?",
+        "options": [
+            "The set of all possible interpretations for symbols",
+            "The set of objects the model contains",
+            "The set of all valid sentences in the knowledge base",
+            "The set of functions that are total"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The domain of a model is the set of objects it contains. These objects are also called domain elements."
+    },
+    {
+        "id": "q6",
+        "text": "What is the role of an 'intended interpretation' in FOL?",
+        "options": [
+            "To define the syntax of well-formed formulas",
+            "To list all possible models for a set of sentences",
+            "To specify which object, relation, or function a symbol refers to",
+            "To determine the truth value of a quantified sentence"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An intended interpretation specifies the mapping from symbols to reality: which object a constant refers to, which relation a predicate refers to, and which function a function symbol refers to."
+    },
+    {
+        "id": "q7",
+        "text": "Which of the following is NOT a basic syntactic element of FOL?",
+        "options": [
+            "Constants",
+            "Predicates",
+            "Probabilities",
+            "Quantifiers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The basic syntactic elements of FOL are constants, predicates, functions, variables, connectives, equality, and quantifiers. Probabilities are not part of core FOL syntax."
+    },
+    {
+        "id": "q8",
+        "text": "What is a 'Term' in FOL?",
+        "options": [
+            "A logical expression that refers to a truth value",
+            "A logical expression that refers to an object",
+            "A predicate followed by a list of arguments",
+            "A sentence formed using a quantifier"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Term is a logical expression that refers to an object. It can be a constant, a variable, or a function applied to a term(s)."
+    },
+    {
+        "id": "q9",
+        "text": "Which of these is an example of an atomic sentence?",
+        "options": [
+            "Brother(Richard, John) ∧ King(John)",
+            "∀x (Person(x) ⇒ Mortal(x))",
+            "Brother(LeftLeg(Richard), John)",
+            "¬King(Richard)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An atomic sentence is formed by a predicate symbol followed by a parenthesized list of terms. Brother(LeftLeg(Richard), John) uses the predicate 'Brother' with the terms 'LeftLeg(Richard)' and 'John'."
+    },
+    {
+        "id": "q10",
+        "text": "What is the primary purpose of quantifiers in FOL?",
+        "options": [
+            "To connect two atomic sentences with a logical operator",
+            "To express properties of collections of objects without enumerating them",
+            "To define the scope of a variable within a function",
+            "To assign a specific object to a constant symbol"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Quantifiers allow us to express properties of collections of objects instead of enumerating objects by name. Universal (∀) means 'for all', Existential (∃) means 'there exists'."
+    },
+    {
+        "id": "q11",
+        "text": "How is the universal quantification '∀x At(x, UoM) ⇒ Smart(x)' correctly interpreted?",
+        "options": [
+            "Everyone is at UoM and everyone is smart",
+            "If someone is at UoM, then they are smart",
+            "For every object x, if x is at UoM, then x is smart",
+            "There exists an object x that is at UoM and is smart"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The universal quantifier ∀x means 'for all x'. The sentence ∀x At(x, UoM) ⇒ Smart(x) means that for every possible object x, if x is at UoM, then x is smart."
+    },
+    {
+        "id": "q12",
+        "text": "What is the common mistake when using the universal quantifier?",
+        "options": [
+            "Using ∧ as the main connective instead of ⇒",
+            "Using ⇒ as the main connective instead of ∧",
+            "Forgetting to specify the domain of quantification",
+            "Using a constant symbol instead of a variable"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A common mistake is using ∧ as the main connective with ∀, e.g., ∀x At(x, UoM) ∧ Smart(x). This means 'Everyone is at UoM and everyone is smart', which is overly strong. The correct main connective is usually ⇒."
+    },
+    {
+        "id": "q13",
+        "text": "How is the existential quantification '∃x At(x, UoM) ∧ Smart(x)' correctly interpreted?",
+        "options": [
+            "Everyone at UoM is smart",
+            "There exists someone who, if they are at UoM, then they are smart",
+            "There exists an object x such that x is at UoM and x is smart",
+            "Not everyone at UoM is smart"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The existential quantifier ∃x means 'there exists an x'. The sentence ∃x At(x, UoM) ∧ Smart(x) means that there is at least one object x that is both at UoM and smart."
+    },
+    {
+        "id": "q14",
+        "text": "Why is '∃x At(x, UoM) ⇒ Smart(x)' a potentially problematic sentence?",
+        "options": [
+            "It is true only if everyone at UoM is smart",
+            "It is false if no one is at UoM",
+            "It is true even if there exists someone not at UoM",
+            "It uses the wrong quantifier for the intended meaning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Using ⇒ as the main connective with ∃ is a common mistake. ∃x At(x, UoM) ⇒ Smart(x) is true if there exists any object not at UoM (because F⇒T is T, and T⇒Anything is T), which is not the intended meaning of 'someone at UoM is smart'."
+    },
+    {
+        "id": "q15",
+        "text": "Which of the following statements about quantifier order is TRUE?",
+        "options": [
+            "∀x ∃y is logically equivalent to ∃y ∀x",
+            "∃x ∀y is logically equivalent to ∀y ∃x",
+            "The order of identical quantifiers (∀x∀y or ∃x∃y) can be swapped without changing meaning",
+            "The order of mixed quantifiers (∀x∃y) can be swapped without changing meaning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The order of identical quantifiers does not matter: ∀x ∀y is the same as ∀y ∀x, and ∃x ∃y is the same as ∃y ∃x. The order of mixed quantifiers (∀x∃y vs ∃y∀x) does matter and is not equivalent."
+    },
+    {
+        "id": "q16",
+        "text": "What is the meaning of '∃x ∀y Loves(x,y)'?",
+        "options": [
+            "Everyone loves everyone",
+            "There is someone who is loved by everyone",
+            "There is someone who loves everyone",
+            "Everyone is loved by someone"
+        ],
+        "correctAnswer": 2,
+        "explanation": "∃x ∀y Loves(x,y) translates to 'There exists an x such that for all y, x loves y'. This means 'There is someone (x) who loves everyone (y)'."
+    },
+    {
+        "id": "q17",
+        "text": "What is the meaning of '∀y ∃x Loves(x,y)'?",
+        "options": [
+            "Everyone loves everyone",
+            "There is someone who is loved by everyone",
+            "There is someone who loves everyone",
+            "Everyone is loved by someone"
+        ],
+        "correctAnswer": 3,
+        "explanation": "∀y ∃x Loves(x,y) translates to 'For all y, there exists an x such that x loves y'. This means 'For every person y, there is some x who loves y', or 'Everyone is loved by someone'."
+    },
+    {
+        "id": "q18",
+        "text": "According to De Morgan's rules for quantifiers, which is equivalent to ¬∀x P?",
+        "options": [
+            "∀x ¬P",
+            "∃x ¬P",
+            "¬∃x P",
+            "∃x P"
+        ],
+        "correctAnswer": 1,
+        "explanation": "De Morgan's rule for quantifiers states that the negation of a universal quantifier is equivalent to an existential quantifier with negation: ¬∀x P ≡ ∃x ¬P."
+    },
+    {
+        "id": "q19",
+        "text": "Which of the following correctly expresses that everyone likes ice cream using an existential quantifier and negation?",
+        "options": [
+            "∃x ¬Likes(x, IceCream)",
+            "¬∃x Likes(x, IceCream)",
+            "¬∃x ¬Likes(x, IceCream)",
+            "∃x Likes(x, IceCream)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The equivalence ∀x Likes(x,IceCream) ≡ ¬∃x ¬Likes(x,IceCream) is an application of quantifier duality. 'Everyone likes ice cream' is equivalent to 'There does not exist someone who does not like ice cream'."
+    },
+    {
+        "id": "q20",
+        "text": "In FOL, when is the equality statement 'term1 = term2' true?",
+        "options": [
+            "When the terms have the same syntactic structure",
+            "When the terms are both constants",
+            "When the terms refer to the same object under the given interpretation",
+            "When the terms are both variables"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The equality statement term1 = term2 is true under a given interpretation if and only if term1 and term2 refer to the same object."
+    },
+    {
+        "id": "q21",
+        "text": "How might FOL's equality be used to define that two people are siblings?",
+        "options": [
+            "Sibling(x,y) ⇔ Parent(x) = Parent(y)",
+            "Sibling(x,y) ⇔ ∃p (Parent(p,x) ∧ Parent(p,y))",
+            "Sibling(x,y) ⇔ ∃p (Parent(p,x) ∧ Parent(p,y) ∧ ¬(x=y))",
+            "Sibling(x,y) ⇔ Child(x,p) = Child(y,p)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A common definition for Sibling is that two distinct individuals share a parent: Sibling(x,y) ⇔ ¬(x=y) ∧ ∃p (Parent(p,x) ∧ Parent(p,y)). The inequality ¬(x=y) is crucial to prevent someone from being their own sibling."
+    },
+    {
+        "id": "q22",
+        "text": "In the context of a Knowledge Base (KB), what is the purpose of the TELL operation?",
+        "options": [
+            "To ask a question and get a yes/no answer",
+            "To ask a quantified question and get a substitution",
+            "To add a new sentence to the KB",
+            "To check the consistency of the KB"
+        ],
+        "correctAnswer": 2,
+        "explanation": "TELL is used to add new sentences (assertions) to the knowledge base, e.g., TELL(KB, King(John)) or TELL(KB, ∀x King(x) ⇒ Person(x))."
+    },
+    {
+        "id": "q23",
+        "text": "What does ASK(KB, ∃x Person(x)) typically return?",
+        "options": [
+            "True or False",
+            "A substitution (binding list) for x that makes Person(x) true",
+            "A list of all objects that are persons",
+            "The number of persons in the knowledge base"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a quantified query like ∃x Person(x), the ASK operation typically returns a substitution (or binding list), which is an object that can be substituted for the variable x to make the sentence true, proving the existential claim."
+    },
+    {
+        "id": "q24",
+        "text": "In the royal kinship domain, which predicate would most likely be a unary predicate?",
+        "options": [
+            "Parent",
+            "Spouse",
+            "Male",
+            "Grandparent"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Unary predicates (properties) state a fact about a single object. 'Male' is a property of an individual (e.g., Male(Harry)), making it unary. The others are relations between multiple objects (binary)."
+    },
+    {
+        "id": "q25",
+        "text": "What is the purpose of an 'axiom' in a knowledge base?",
+        "options": [
+            "To serve as a query asked of the KB",
+            "To provide basic factual information from which conclusions can be derived",
+            "To define the syntactic rules of the logic",
+            "To interpret the meaning of constant symbols"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Axioms provide the basic factual information (definitions and plain facts) from which useful conclusions (theorems) can be derived through logical inference."
+    },
+    {
+        "id": "q26",
+        "text": "Which axiom correctly defines a mother?",
+        "options": [
+            "∀m, c Mother(c) = m ⇔ Parent(m, c)",
+            "∀m, c Mother(c) = m ⇔ Female(m)",
+            "∀m, c Mother(c) = m ⇔ Female(m) ∧ Parent(m, c)",
+            "∀m, c Mother(c) = m ⇔ Female(m) ∨ Parent(m, c)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A mother is defined as a female parent. The correct axiom is ∀m, c Mother(c) = m ⇔ (Female(m) ∧ Parent(m, c)). This uses the equality symbol for definition and the conjunction ∧ to combine the two necessary properties."
+    },
+    {
+        "id": "q27",
+        "text": "The axiom ∀p, c Parent(p, c) ⇔ Child(c, p) illustrates what kind of relationship?",
+        "options": [
+            "A symmetric relationship",
+            "A transitive relationship",
+            "An inverse relationship",
+            "A reflexive relationship"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The axiom states that p is the parent of c if and only if c is the child of p. This defines Parent and Child as inverse relations."
+    },
+    {
+        "id": "q28",
+        "text": "What is a 'theorem' in the context of a logical knowledge base?",
+        "options": [
+            "An intended interpretation for a symbol",
+            "A sentence that is added to the KB using TELL",
+            "A sentence that is entailed by the axioms",
+            "A query asked using ASK"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A theorem is a sentence that is entailed by the axioms (i.e., it must be true if the axioms are true). It is not necessarily explicitly stated in the KB but can be derived from it."
+    },
+    {
+        "id": "q29",
+        "text": "Which of the following is likely a theorem derived from other axioms about siblings?",
+        "options": [
+            "Male(Harry)",
+            "∀x Male(x) ⇔ ¬Female(x)",
+            "∀x, y Sibling(x, y) ⇔ Sibling(y, x)",
+            "Parent(Charles, William)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The symmetry of the sibling relationship (Sibling(x,y) ⇔ Sibling(y,x)) is not typically a basic axiom but a theorem that can be logically derived from the more fundamental axiom defining a sibling as another child of one's parents."
+    },
+    {
+        "id": "q30",
+        "text": "What is a key expressive advantage of FOL over propositional logic?",
+        "options": [
+            "FOL can represent degrees of belief",
+            "FOL can represent facts that change over time",
+            "FOL allows objects and relations as semantic primitives",
+            "FOL can handle uncertainty"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A key advantage of FOL is that it allows us to talk about objects and the relations between them directly, providing a much more expressive and natural way to model many domains compared to propositional logic, which only deals with monolithic facts."
+    },
+    {
+        "id": "q31",
+        "text": "Which symbol in FOL is used to represent a specific, named object?",
+        "options": [
+            "Predicate symbol",
+            "Function symbol",
+            "Constant symbol",
+            "Variable"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Constant symbols are used to name specific, unique objects in the domain, e.g., John, UoM, Richard."
+    },
+    {
+        "id": "q32",
+        "text": "What does a function symbol in FOL refer to?",
+        "options": [
+            "A relation between objects",
+            "A truth value",
+            "A logical connective",
+            "A mapping from objects to an object"
+        ],
+        "correctAnswer": 3,
+        "explanation": "A function symbol refers to a function, which is a mapping from zero or more objects to another object. For example, leftLeg refers to the function that maps a person to their left leg object."
+    },
+    {
+        "id": "q33",
+        "text": "In the sentence Married(Father(Richard), Mother(John)), what is 'Father(Richard)'?",
+        "options": [
+            "A constant symbol",
+            "A predicate symbol",
+            "A function term",
+            "A variable"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Father(Richard) is a term formed by applying the function symbol Father to the constant term Richard. It is a complex term that refers to an object (Richard's father)."
+    },
+    {
+        "id": "q34",
+        "text": "Which connective is most commonly the main connective in a universally quantified sentence?",
+        "options": [
+            "Conjunction (∧)",
+            "Disjunction (∨)",
+            "Implication (⇒)",
+            "Biconditional (⇔)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The implication (⇒) is typically the main connective with ∀. The standard form is ∀x (P(x) ⇒ Q(x)), meaning 'All P's are Q's'."
+    },
+    {
+        "id": "q35",
+        "text": "Which connective is most commonly the main connective in an existentially quantified sentence?",
+        "options": [
+            "Conjunction (∧)",
+            "Disjunction (∨)",
+            "Implication (⇒)",
+            "Biconditional (⇔)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The conjunction (∧) is typically the main connective with ∃. The standard form is ∃x (P(x) ∧ Q(x)), meaning 'There exists an x that is both P and Q'."
+    },
+    {
+        "id": "q36",
+        "text": "The sentence ∀x (Cat(x) ⇒ (∃y (Mouse(y) ∧ Hates(x, y)))) translates to:",
+        "options": [
+            "All cats hate all mice",
+            "There is a mouse that all cats hate",
+            "Every cat hates some mouse",
+            "Some cat hates every mouse"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The sentence reads: For all x, if x is a cat, then there exists a y such that y is a mouse and x hates y. This means every cat has at least one mouse that it hates."
+    },
+    {
+        "id": "q37",
+        "text": "What is the scope of a quantifier?",
+        "options": [
+            "The set of all constant symbols in the knowledge base",
+            "The part of the sentence to which the quantifier applies",
+            "The domain of objects in the model",
+            "The interpretation of a function symbol"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The scope of a quantifier is the part of the sentence that immediately follows it and to which the quantification applies. It is often indicated by parentheses."
+    },
+    {
+        "id": "q38",
+        "text": "A variable in a sentence is 'bound' if it:",
+        "options": [
+            "Is a constant symbol",
+            "Is within the scope of a quantifier for that variable",
+            "Is not used in any predicate",
+            "Refers to a specific object in the domain"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A variable is bound if it is within the scope of a quantifier that uses that same variable name. A variable that is not bound is called free."
+    },
+    {
+        "id": "q39",
+        "text": "A 'sentence' in FOL is a well-formed formula that has:",
+        "options": [
+            "No constant symbols",
+            "At least one function symbol",
+            "No free variables",
+            "Only unary predicates"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A sentence (or closed formula) in FOL is a well-formed formula that has no free variables. Every variable is bound by a quantifier."
+    },
+    {
+        "id": "q40",
+        "text": "Which rule of inference is often associated with the universal quantifier?",
+        "options": [
+            "Existential Instantiation",
+            "Universal Generalization",
+            "Universal Instantiation",
+            "Existential Generalization"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Universal Instantiation (or Universal Elimination) is the rule of inference that states if ∀x P(x) is true, then P(c) is true for any specific object c in the domain."
+    },
+    {
+        "id": "q41",
+        "text": "The process of replacing a universally quantified variable with a specific object is called:",
+        "options": [
+            "Generalization",
+            "Skolemization",
+            "Instantiation",
+            "Unification"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Instantiation is the process of substituting a variable bound by a quantifier with a specific term (a constant or another ground term)."
+    },
+    {
+        "id": "q42",
+        "text": "Which of these is NOT a standard binary connective in FOL?",
+        "options": [
+            "∧ (Conjunction)",
+            "∨ (Disjunction)",
+            "¬ (Negation)",
+            "⇒ (Implication)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "¬ (Negation) is a unary connective, as it operates on a single sentence. The others (∧, ∨, ⇒, ⇔) are binary connectives, operating on two sentences."
+    },
+    {
+        "id": "q43",
+        "text": "The knowledge base contains: ∀x (Student(x) ⇒ Study(x)). We TELL it Student(Alice). What can we infer?",
+        "options": [
+            "Study(Alice)",
+            "¬Study(Alice)",
+            "∀x Study(x)",
+            "∃x Study(x)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Using Universal Instantiation on ∀x (Student(x) ⇒ Study(x)) gives Student(Alice) ⇒ Study(Alice). Since we know Student(Alice) is true, Modus Ponens allows us to infer Study(Alice)."
+    },
+    {
+        "id": "q44",
+        "text": "What is the primary role of the '=' (equality) symbol in FOL compared to a predicate?",
+        "options": [
+            "It has a fixed, standard interpretation across all models",
+            "It is used to define new predicates",
+            "It can have its interpretation specified by an axiom",
+            "It is a shorthand for a specific binary predicate like Equals"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Equality (=) is a special predicate in FOL. Unlike other predicates, its interpretation is fixed across all models: it always means that two terms refer to the exact same object."
+    },
+    {
+        "id": "q45",
+        "text": "Which of these sentences uses a complex term as an argument to a predicate?",
+        "options": [
+            "Tall(John)",
+            "FatherOf(John) = Henry",
+            "Loves(John, Mary)",
+            "Loves(John, FatherOf(Mary))"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Loves(John, FatherOf(Mary)) uses the function term FatherOf(Mary) as the second argument to the Loves predicate. This is a complex term within a predicate."
+    },
+    {
+        "id": "q46",
+        "text": "In the context of FOL semantics, what is a 'model'?",
+        "options": [
+            "A set of syntactic rules for forming sentences",
+            "A possible world that specifies truth values for all sentences",
+            "A specific interpretation for all constant symbols",
+            "A database of facts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A model in FOL is a formal construct that represents a possible world. It consists of a domain (set of objects) and an interpretation that assigns meaning to all constant, function, and predicate symbols, thereby determining the truth value of every sentence."
+    },
+    {
+        "id": "q47",
+        "text": "A sentence is 'valid' if it is:",
+        "options": [
+            "True in some models",
+            "True in all models",
+            "Contained in the knowledge base",
+            "Derivable from the axioms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A sentence is valid (or a tautology) if it is true in all possible models, regardless of the domain or the interpretation of the symbols."
+    },
+    {
+        "id": "q48",
+        "text": "A sentence is 'satisfiable' if it is:",
+        "options": [
+            "True in some model",
+            "True in all models",
+            "False in all models",
+            "Not a well-formed formula"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A sentence is satisfiable if there exists at least one model in which the sentence is true."
+    },
+    {
+        "id": "q49",
+        "text": "A sentence is 'unsatisfiable' if it is:",
+        "options": [
+            "True in some model",
+            "True in all models",
+            "False in all models",
+            "False in some models"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A sentence is unsatisfiable (or a contradiction) if there is no model in which it is true; it is false in every possible model."
+    },
+    {
+        "id": "q50",
+        "text": "Logical 'entailment', KB ⊨ α, means that:",
+        "options": [
+            "α is in the knowledge base KB",
+            "α is true in every model where KB is true",
+            "α is satisfiable",
+            "α is a valid sentence"
+        ],
+        "correctAnswer": 1,
+        "explanation": "KB ⊨ α (KB entails α) means that in every model in which all sentences in the knowledge base KB are true, the sentence α is also true."
+    },
+    {
+        "id": "q51",
+        "text": "Which of these is an example of a purely syntactic operation in FOL?",
+        "options": [
+            "Determining the truth value of a sentence",
+            "Checking if a formula is well-formed",
+            "Finding a model for a set of sentences",
+            "Interpreting a constant symbol"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Syntax is concerned with the structure of formulas, i.e., whether a string of symbols is a well-formed formula according to the grammatical rules of FOL, regardless of meaning."
+    },
+    {
+        "id": "q52",
+        "text": "Which of these is an example of a semantic concept in FOL?",
+        "options": [
+            "The order of quantifiers in a sentence",
+            "The binding of a variable",
+            "The truth value of a sentence in a model",
+            "The formation of a term from a function"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Semantics is concerned with meaning and truth. The truth value of a sentence given a specific interpretation (model) is a semantic concept."
+    },
+    {
+        "id": "q53",
+        "text": "The property that 'one's grandmother is the mother of one's parent' is best captured by:",
+        "options": [
+            "A unary predicate",
+            "A function symbol",
+            "An axiom",
+            "A constant symbol"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This general rule is a definition that allows new facts to be inferred. It is provided as an axiom in the knowledge base: ∀g, c Grandmother(g, c) ⇔ ∃p (Mother(p, c) ∧ Mother(g, p)) (or similar using Parent)."
+    },
+    {
+        "id": "q54",
+        "text": "In FOL, representing 'There are exactly two books on the table' would require:",
+        "options": [
+            "Existential quantifier and conjunction",
+            "Universal quantifier and implication",
+            "Existential quantifier, conjunction, inequality, and a uniqueness condition",
+            "A single predicate with two arguments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Representing exact numerical quantities often requires multiple logical components: ∃x∃y (Book(x)∧Book(y)∧OnTable(x)∧OnTable(y)∧¬(x=y)∧∀z (OnTable(z)⇒(z=x∨z=y))). This states there are at least two and at most two books."
+    },
+    {
+        "id": "q55",
+        "text": "Which FOL component allows the representation of 'the left leg of John'?",
+        "options": [
+            "Constant symbol: LeftLegJohn",
+            "Predicate symbol: LeftLeg(John)",
+            "Function symbol: LeftLeg(John)",
+            "Variable: x in LeftLeg(x)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A function symbol is used to represent a mapping from objects to objects. LeftLeg(John) is a term formed by the function LeftLeg applied to the constant John, referring to the object which is John's left leg."
+    },
+    {
+        "id": "q56",
+        "text": "The statement 'No one is their own parent' is formally expressed as:",
+        "options": [
+            "∀x ¬Parent(x, x)",
+            "∃x ¬Parent(x, x)",
+            "¬∀x Parent(x, x)",
+            "¬∃x Parent(x, x)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'No one is their own parent' means 'For all x, it is not the case that x is the parent of x'. This is directly written as the universally quantified negation ∀x ¬Parent(x, x)."
+    },
+    {
+        "id": "q57",
+        "text": "Which query would find all children of Charles in the knowledge base?",
+        "options": [
+            "ASK(KB, Child(Charles, x))",
+            "ASK(KB, Parent(Charles, x))",
+            "ASK(KB, ∃x Child(Charles, x))",
+            "ASK(KB, ∀x Parent(Charles, x))"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since Parent and Child are inverse relations, finding the children of Charles is equivalent to finding all x such that Parent(Charles, x) is true. ASK(KB, Parent(Charles, x)) would return substitutions for x (e.g., William, Harry)."
+    },
+    {
+        "id": "q58",
+        "text": "The axiom ∀x (Person(x) ⇒ (Male(x) ∨ Female(x))) represents:",
+        "options": [
+            "A definition of Person",
+            "A disjunctive property of Persons",
+            "An exhaustive categorization of Persons",
+            "An equivalence between Person and Gender"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This axiom states that if something is a Person, then it must be either Male or Female. This provides an exhaustive categorization for all persons regarding these two properties (assuming Male and Female are disjoint)."
+    },
+    {
+        "id": "q59",
+        "text": "Which logical rule connects the universal quantifier and implication?",
+        "options": [
+            "Modus Ponens",
+            "Universal Instantiation",
+            "De Morgan's Law",
+            "Existential Generalization"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Universal Instantiation is the key rule that connects a universally quantified implication to a specific instance. From ∀x (P(x) ⇒ Q(x)) and P(c), we can use Universal Instantiation to get P(c) ⇒ Q(c), and then Modus Ponens to get Q(c)."
+    },
+   {
+    "id": "q60",
+    "text": "What is the fundamental difference in how FOL and propositional logic handle the statement 'All humans are mortal'?",
+    "options": [
+        "FOL uses a single predicate, while propositional logic requires a quantifier",
+        "FOL can express it with one quantified sentence, while propositional logic requires a separate sentence for each human",
+        "Propositional logic can express it more compactly using implication",
+        "There is no difference; both logics handle it the same way"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FOL can represent 'All humans are mortal' compactly with ∀x (Human(x) ⇒ Mortal(x)). Propositional logic would require a separate implication for each individual human (e.g., Human_John ⇒ Mortal_John, Human_Mary ⇒ Mortal_Mary, etc.), making it impractical for large domains."
+}]
