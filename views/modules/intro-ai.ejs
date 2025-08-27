@@ -7,45 +7,125 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
-    
 </head>
 <body>
      <%- include('../partials/header') %>
 
     <div class="main-container">
         <div class="container">
-            <div id="intro-ai" class="module-section active">
+            <div id="intro-intro-ai" class="module-section active">
                 <div class="module-header">
                     <a class="btn btn-outline-light mb-3" href="/">
                         <i class="fas fa-arrow-left me-2"></i>Back to Home
                     </a>
                     <h1 class="module-title"><i class="fas fa-brain me-3"></i>Introduction to AI</h1>
-                    <p class="module-description">Test your knowledge on artificial intelligence fundamentals, machine learning algorithms, neural networks, and AI applications.</p>
+                    <p class="module-description">Test your knowledge of artificial intelligence fundamentals, machine learning algorithms, neural networks, and AI applications.</p>
                 </div>
                 <div class="quiz-grid">
-                    <div class="quiz-card"><div class="quiz-title">Quiz 1: Comming Soon!</div><div class="quiz-description">Process states, PCB, context switching, and process creation.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 2: Comming Soon!</div><div class="quiz-description">Process states, PCB, context switching, and process creation.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 3: Comming Soon!</div><div class="quiz-description">FCFS, SJF, Round Robin, and priority scheduling algorithms.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 4: Comming Soon!</div><div class="quiz-description">Critical sections, semaphores, monitors, and deadlocks.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 5: Comming Soon!</div><div class="quiz-description">Deadlock conditions, prevention, avoidance, and recovery.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 6: Comming Soon!</div><div class="quiz-description">Memory allocation, paging, segmentation, and virtual memory.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 7: Comming Soon!</div><div class="quiz-description">Page replacement algorithms, thrashing, and working sets.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 8: Comming Soon!</div><div class="quiz-description">File organization, directory structures, and file allocation.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 9: Comming Soon!</div><div class="quiz-description">I/O hardware, device drivers, and interrupt handling.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 10: Comming Soon!</div><div class="quiz-description">Disk scheduling, RAID, and storage management.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 11: Comming Soon!</div><div class="quiz-description">Access control, authentication, and security threats.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 12: Comming Soon!</div><div class="quiz-description">Network OS, distributed file systems, and coordination.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 13: Comming Soon!</div><div class="quiz-description">Shell commands, system calls, and Linux internals.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                    <div class="quiz-card"><div class="quiz-title">Quiz 14: Comming Soon!</div><div class="quiz-description">Performance monitoring, tuning, and optimization techniques.</div><a href="#" class="btn-quiz" onclick="alert('Please replace this with your Google Forms link')"><i class="fas fa-external-link-alt"></i>Take Quiz</a></div>
-                </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 1: Take Quiz</div>
+                        <div class="quiz-description">Introduction</div>
+                        <a href="/quiz/intro-ai/1" class="btn-quiz">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 2: Take Quiz</div>
+                        <div class="quiz-description">Intelligent Agents</div>
+                        <a href="/quiz/intro-ai/2" class="btn-quiz">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 3: Take Quiz</div>
+                        <div class="quiz-description">Search Algorithms</div>
+                        <a href="/quiz/intro-ai/3" class="btn-quiz">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 4: Take Quiz</div>
+                        <div class="quiz-description">Local Search and Optimization Problems</div>
+                        <a href="/quiz/intro-ai/4" class="btn-quiz">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 5: Take Quiz</div>
+                        <div class="quiz-description">CSP</div>
+                        <a href="/quiz/intro-ai/5" class="btn-quiz">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 6: coming soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/6" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 7: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/7" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 8: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/8" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 9: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/9" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 10: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/10" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 11: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/11" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 12: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/12" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 13: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/13" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
+                    <div class="quiz-card">
+                        <div class="quiz-title">Quiz 14: Coming Soon!</div>
+                        <div class="quiz-description">Stay Tuned!</div>
+                        <a href="/quiz/intro-ai/14" class="btn-quiz" onclick="alert('Please replace this with your quiz link')">
+                            <i class="fas fa-external-link-alt"></i>Take Quiz
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 <%- include('../partials/footer') %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
