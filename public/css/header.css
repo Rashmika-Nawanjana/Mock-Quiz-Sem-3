@@ -180,47 +180,6 @@
             100% { transform: rotate(360deg) scale(1); }
         }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .theme-toggle-container {
-                left: 1rem;
-            }
-            
-            .theme-toggle {
-                padding: 0.6rem 0.8rem;
-                min-width: 80px;
-                height: 40px;
-            }
-            
-            .theme-text {
-                font-size: 0.8rem;
-            }
-            
-            .theme-icon {
-                font-size: 1rem;
-                margin-right: 0.4rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .theme-toggle {
-                min-width: 45px;
-                padding: 0.6rem;
-            }
-            
-            .theme-text {
-                display: none;
-            }
-            
-            .theme-icon {
-                margin-right: 0;
-            }
-            
-            .navbar-brand {
-                font-size: 1.5rem !important;
-            }
-        }
-
         /* Header container positioning */
         .container {
             position: relative;
@@ -265,4 +224,264 @@
         .no-style:visited {
             color: inherit;
             text-decoration: none;
+        }
+
+        /* ====================================== */
+        /* PRO TIP LIGHT BULB - DESKTOP DEFAULT  */
+        /* ====================================== */
+        /* 
+           Default positioning for desktop/large screens:
+           - Position: absolute to navbar container
+           - Right: 200px from container edge
+           - Size: 1.3rem font-size, 0.5rem padding
+        */
+        .pro-tip-bulb {
+            position: absolute;
+            right: 200px; /* Desktop: 200px from right edge */
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.3rem; /* Desktop: larger bulb icon */
+            color: #ffd700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            padding: 0.5rem; /* Desktop: comfortable padding */
+        }
+
+        .pro-tip-bulb:hover {
+            transform: translateY(-50%) scale(1.2);
+            color: #ffed4e;
+            filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8));
+        }
+
+        /* ====================================== */
+        /* PRO TIP TOOLTIP - DESKTOP DEFAULT     */
+        /* ====================================== */
+        /* 
+           Default tooltip styling for desktop:
+           - Width: 320px (comfortable reading width)
+           - Positioning: centered below the bulb
+           - Font size: 0.9rem (readable)
+           - Padding: generous for desktop
+        */
+        .pro-tip-tooltip {
+            position: absolute;
+            top: 100%;
+            right: 50%;
+            transform: translateX(50%);
+            margin-top: 15px;
+            background: linear-gradient(135deg, #ffeaa7, #fdcb6e);
+            color: #2d3436;
+            padding: 1rem 1.25rem; /* Desktop: generous padding */
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            font-size: 0.9rem; /* Desktop: comfortable reading size */
+            width: 320px; /* Desktop: wide tooltip for better readability */
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(50%) translateY(-10px);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            z-index: 1000;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pro-tip-tooltip::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            right: 50%;
+            transform: translateX(50%);
+            width: 16px;
+            height: 16px;
+            background: #ffeaa7;
+            transform: translateX(50%) rotate(45deg);
+            border-radius: 2px;
+            border-top: 2px solid rgba(255, 255, 255, 0.3);
+            border-left: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .pro-tip-bulb:hover .pro-tip-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(50%) translateY(0);
+        }
+
+        .pro-tip-tooltip strong {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #2d3436;
+        }
+
+        .pro-tip-tooltip p {
+            margin: 0;
+            line-height: 1.5;
+            color: #2d3436;
+        }
+
+        /* Dark theme support for tooltip */
+        [data-theme="dark"] .pro-tip-tooltip {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: #2c3e50;
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .pro-tip-tooltip::before {
+            background: #f39c12;
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="dark"] .pro-tip-tooltip strong,
+        [data-theme="dark"] .pro-tip-tooltip p {
+            color: #2c3e50;
+        }
+
+        /* ====================================== */
+        /* RESPONSIVE BREAKPOINTS                 */
+        /* ====================================== */
+
+        /* ====================================== */
+        /* TABLET RESPONSIVENESS (768px and down) */
+        /* ====================================== */
+        /* 
+           Changes for tablet screens:
+           - Move bulb closer to edge (150px from right)
+           - Reduce bulb size slightly (1.2rem)
+           - Narrow tooltip (280px width)
+           - Smaller font and padding for tooltip
+           - Position tooltip arrow closer to edge
+        */
+        @media (max-width: 768px) {
+            .theme-toggle-container {
+                left: 1rem;
+            }
+            
+            .theme-toggle {
+                padding: 0.6rem 0.8rem;
+                min-width: 80px;
+                height: 40px;
+            }
+            
+            .theme-text {
+                font-size: 0.8rem;
+            }
+            
+            .theme-icon {
+                font-size: 1rem;
+                margin-right: 0.4rem;
+            }
+
+            /* TABLET: Adjust light bulb positioning and size */
+            .pro-tip-bulb {
+                font-size: 1.2rem; /* Slightly smaller than desktop */
+                right: 150px; /* Closer to edge for tablet */
+                padding: 0.4rem; /* Reduced padding */
+            }
+
+            /* TABLET: Adjust tooltip size and positioning */
+            .pro-tip-tooltip {
+                width: 280px; /* Narrower for tablet screens */
+                font-size: 0.85rem; /* Smaller text */
+                padding: 0.875rem 1rem; /* Less padding */
+                right: 30px; /* Position tooltip arrow closer to edge */
+                transform: none; /* Remove centering transform */
+            }
+
+            /* TABLET: Adjust tooltip arrow position */
+            .pro-tip-tooltip::before {
+                right: 40px; /* Move arrow to match new tooltip position */
+                transform: rotate(45deg); /* Remove centering transform */
+            }
+
+            /* TABLET: Remove centering transform on hover */
+            .pro-tip-bulb:hover .pro-tip-tooltip {
+                transform: none;
+            }
+        }
+
+        /* ====================================== */
+        /* MOBILE RESPONSIVENESS (576px and down) */
+        /* ====================================== */
+        /* 
+           Changes for mobile screens:
+           - Move bulb much closer to edge (80px from right)
+           - Smaller bulb icon (1.1rem)
+           - Much narrower tooltip (240px)
+           - Smaller text and compact padding
+           - Tooltip positioned to avoid screen edges
+        */
+        @media (max-width: 576px) {
+            .theme-toggle {
+                min-width: 45px;
+                padding: 0.6rem;
+            }
+            
+            .theme-text {
+                display: none;
+            }
+            
+            .theme-icon {
+                margin-right: 0;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem !important;
+            }
+
+            /* MOBILE: Further adjust light bulb for small screens */
+            .pro-tip-bulb {
+                font-size: 1.1rem; /* Smaller for mobile */
+                right: 80px; /* Much closer to edge */
+                padding: 0.3rem; /* Minimal padding */
+            }
+
+            /* MOBILE: Compact tooltip for small screens */
+            .pro-tip-tooltip {
+                width: 240px; /* Narrow for mobile */
+                font-size: 0.8rem; /* Compact text */
+                padding: 0.75rem 0.875rem; /* Compact padding */
+                right: 20px; /* Close to screen edge but not touching */
+                border-radius: 10px; /* Slightly smaller border radius */
+            }
+
+            /* MOBILE: Adjust arrow position for compact tooltip */
+            .pro-tip-tooltip::before {
+                right: 30px; /* Position arrow appropriately */
+                width: 14px; /* Slightly smaller arrow */
+                height: 14px;
+            }
+        }
+
+        /* ====================================== */
+        /* EXTRA SMALL MOBILE (480px and down)   */
+        /* ====================================== */
+        /* 
+           Changes for very small mobile screens:
+           - Move bulb very close to edge (60px)
+           - Even smaller tooltip (220px)
+           - More compact spacing throughout
+           - Ensure tooltip doesn't overflow screen
+        */
+        @media (max-width: 480px) {
+            /* EXTRA SMALL MOBILE: Very close positioning */
+            .pro-tip-bulb {
+                right: 60px; /* Very close to edge for tiny screens */
+                font-size: 1rem; /* Smallest practical size */
+            }
+
+            /* EXTRA SMALL MOBILE: Very compact tooltip */
+            .pro-tip-tooltip {
+                width: 220px; /* Minimum practical width */
+                font-size: 0.75rem; /* Small but readable */
+                padding: 0.675rem 0.75rem; /* Very compact */
+                right: 15px; /* Close to edge with small margin */
+            }
+
+            /* EXTRA SMALL MOBILE: Proportional arrow */
+            .pro-tip-tooltip::before {
+                right: 25px;
+                width: 12px;
+                height: 12px;
+            }
         }
