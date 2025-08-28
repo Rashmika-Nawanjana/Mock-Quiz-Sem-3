@@ -265,16 +265,17 @@
     },
     {
         "id": "q23",
-        "text": "Which week in the syllabus covers Constraint Satisfaction Problems?",
+        "text": "Which of the following is a primary criticism leveled against the Turing Test as a valid measure of machine intelligence?",
         "options": [
-            "Week 3",
-            "Week 4",
-            "Week 5",
-            "Week 6"
+            "It requires specialized hardware that is not universally available for testing",
+            "It prioritizes the imitation of human behavior over actual intelligence or understanding",
+            "It is too computationally expensive to administer at a large scale",
+            "It focuses exclusively on logical reasoning and ignores other forms of intelligence"
         ],
-        "correctAnswer": 2,
-        "explanation": "Week 5 of the syllabus covers Constraint Satisfaction Problems and Revision according to the course outline."
-    },
+        "correctAnswer": 1,
+        "explanation": "A major criticism of the Turing Test is that it is a test of a machine's ability to imitate a human, which can be achieved through clever deception or manipulation (e.g., like ELIZA). This does not necessarily prove the machine possesses true understanding, consciousness, or general intelligence, a concept known as the 'Chinese Room' argument."
+    }
+,
     {
         "id": "q24",
         "text": "What is the main challenge with achieving perfect rationality in complex environments?",
