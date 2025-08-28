@@ -1,5 +1,4 @@
-{
-    "questions": [
+[
         {
             "id": "q1",
             "text": "What is the primary purpose of a Personal Area Network (PAN)?",
@@ -721,4 +720,3 @@
             "explanation": "Token passing protocols provide deterministic access time (predictable maximum wait time), which is important for real-time applications, though they may have lower maximum throughput than CSMA/CD under light loads."
         }
     ]
-}

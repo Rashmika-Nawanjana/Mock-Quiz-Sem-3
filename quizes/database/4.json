@@ -1,5 +1,5 @@
-{
-    "questions": [
+
+    [
         {
             "id": "q1",
             "text": "What is the primary problem with combining instructor and department information into a single relation as shown in the in_dep example?",
@@ -721,4 +721,3 @@
             "correctAnswer": 3
         }
     ]
-}

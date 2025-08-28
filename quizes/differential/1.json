@@ -1,0 +1,482 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the Laplace transform of the function f(t) = t^3 * e^(4t)?",
+    "options": [
+      "3! / (s-4)^4",
+      "6 / (s-4)^4",
+      "3! / s^4",
+      "6 / s^4"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Using the first shifting theorem: L{t^n * e^(at)} = n! / (s-a)^(n+1). For n=3, a=4: L{t^3 * e^(4t)} = 3! / (s-4)^4 = 6/(s-4)^4."
+  },
+  {
+    "id": "q2",
+    "text": "Which theorem states that L{e^(at)f(t)} = F(s-a) where F(s) = L{f(t)}?",
+    "options": [
+      "Linearity Theorem",
+      "First Shifting Theorem (S-Shifting)",
+      "Second Shifting Theorem (T-Shifting)",
+      "Convolution Theorem"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The First Shifting Theorem (or Frequency Shifting Theorem) states that L{e^(at)f(t)} = F(s-a) for s > α + a, where F(s) = L{f(t)} exists for s > α."
+  },
+  {
+    "id": "q3",
+    "text": "What is the Laplace transform of the Dirac delta function δ(t-5)?",
+    "options": [
+      "1",
+      "e^(-5s)",
+      "e^(5s)",
+      "5/s"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Laplace transform of the Dirac delta function is L{δ(t-a)} = e^(-as). Therefore, L{δ(t-5)} = e^(-5s)."
+  },
+  {
+    "id": "q4",
+    "text": "If L{f(t)} = F(s), what is L{t^2 * f(t)}?",
+    "options": [
+      "F''(s)",
+      "-F''(s)",
+      "(-1)^2 * d²F(s)/ds²",
+      "d²F(s)/ds²"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The multiplication by t^n theorem states: L{t^n * f(t)} = (-1)^n * dⁿF(s)/dsⁿ. Therefore, for n=2: L{t^2 * f(t)} = (-1)^2 * d²F(s)/ds² = d²F(s)/ds²."
+  },
+  {
+    "id": "q5",
+    "text": "The Laplace transform of the derivative y'(t) is given by:",
+    "options": [
+      "sY(s) - y(0)",
+      "sY(s) + y(0)",
+      "Y(s)/s - y(0)",
+      "s^2Y(s) - sy(0) - y'(0)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A fundamental property for solving ODEs is L{y'(t)} = sL{y(t)} - y(0) = sY(s) - y(0), assuming y and y' are piecewise continuous and y is of exponential order."
+  },
+  {
+    "id": "q6",
+    "text": "What is the inverse Laplace transform of F(s) = e^(-7s) * s/(s^2+4)?",
+    "options": [
+      "cos(2t) * u(t-7)",
+      "cos(2(t-7)) * u(t-7)",
+      "sin(2(t-7)) * u(t-7)",
+      "cos(2t-7)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Using the second shifting theorem (time shifting): If L^{-1}{F(s)} = f(t), then L^{-1}{e^(-as)F(s)} = u(t-a)f(t-a). Here, L^{-1}{s/(s^2+4)} = cos(2t). Thus, L^{-1}{e^(-7s)*s/(s^2+4)} = cos(2(t-7)) * u(t-7)."
+  },
+  {
+    "id": "q7",
+    "text": "The convolution of two functions f(t) and g(t) is defined as:",
+    "options": [
+      "∫₀ᵗ f(τ)g(τ) dτ",
+      "∫₀ᵗ f(t-τ)g(τ) dτ",
+      "∫₀ᵗ f(τ)g(t-τ) dτ",
+      "∫₀ᵗ f(t)g(t-τ) dτ"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The convolution of f(t) and g(t) is defined by (f * g)(t) = ∫₀ᵗ f(τ)g(t-τ) dτ for t ≥ 0."
+  },
+  {
+    "id": "q8",
+    "text": "According to the Convolution Theorem:",
+    "options": [
+      "L{f(t)g(t)} = L{f(t)} * L{g(t)}",
+      "L{f(t) * g(t)} = L{f(t)} + L{g(t)}",
+      "L{f(t) * g(t)} = L{f(t)} L{g(t)}",
+      "L{f(t)/g(t)} = L{f(t)} / L{g(t)}"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Convolution Theorem states that the Laplace transform of the convolution of two functions is the product of their Laplace transforms: L{(f * g)(t)} = L{f(t)} ⋅ L{g(t)}."
+  },
+  {
+    "id": "q9",
+    "text": "For a periodic function f(t) with period T, the Laplace transform is given by:",
+    "options": [
+      "L{f(t)} = (1/(1-e^{-sT})) ∫₀ᵀ e^{-st} f(t) dt",
+      "L{f(t)} = ∫₀ᵀ e^{-st} f(t) dt",
+      "L{f(t)} = (1/(1-e^{sT})) ∫₀ᵀ e^{-st} f(t) dt",
+      "L{f(t)} = ∫₀∞ e^{-st} f(t) dt / T"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Laplace transform of a periodic function f(t) with period T is L{f(t)} = [∫₀ᵀ e^{-st} f(t) dt] / [1 - e^{-sT}]."
+  },
+  {
+    "id": "q10",
+    "text": "The unit step function u(t-a) is defined as:",
+    "options": [
+      "0 for t < a, 1 for t ≥ a",
+      "1 for t < a, 0 for t ≥ a",
+      "a for t < 0, 1 for t ≥ 0",
+      "1 for all t"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The unit step function (or Heaviside function) is defined as u(t-a) = { 0 if t < a, 1 if t ≥ a }."
+  },
+  {
+    "id": "q11",
+    "text": "What is the Laplace transform of the function g(t) = ∫₀ᵗ sin(3τ) dτ?",
+    "options": [
+      "3 / [s(s^2+9)]",
+      "1 / [s(s^2+9)]",
+      "3 / (s^2+9)",
+      "s / (s^2+9)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Using the integration property: L{∫₀ᵗ f(τ) dτ} = F(s)/s. Here, f(t)=sin(3t), so F(s)=L{sin(3t)}=3/(s^2+9). Thus, L{g(t)} = (3/(s^2+9)) / s = 3 / [s(s^2+9)]."
+  },
+  {
+    "id": "q12",
+    "text": "To solve an ODE using Laplace transforms, the initial conditions are incorporated:",
+    "options": [
+      "After finding the inverse Laplace transform",
+      "During the transformation of the derivatives",
+      "They are not needed for the Laplace transform method",
+      "By solving a separate algebraic system"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A key advantage of the Laplace transform method is that initial conditions are automatically incorporated during the transformation of the derivatives (e.g., L{y'} = sY(s) - y(0)), becoming part of the resulting algebraic equation in the s-domain."
+  },
+  {
+    "id": "q13",
+    "text": "The function f(t) = { -1 if 0≤t<2, 1 if 2≤t } can be expressed using the unit step function as:",
+    "options": [
+      "-1 + 2u(t-2)",
+      "1 - 2u(t-2)",
+      "-u(t-2) + 2",
+      "u(t-2) - 1"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The function starts at -1. At t=2, it jumps by +2 (from -1 to +1). This jump is achieved by adding 2 * u(t-2). Thus, f(t) = -1 + 2u(t-2)."
+  },
+  {
+    "id": "q14",
+    "text": "What is the Laplace transform of f(t) = e^(-3t) * cos²(t)? (Hint: Use a trigonometric identity)",
+    "options": [
+      "1/(2(s+3)) + (s+3)/(2[(s+3)^2+4])",
+      "s/(s^2+1) * 1/(s+3)",
+      "(s+3)/((s+3)^2+1)",
+      "1/(s+3) + 1/((s+3)^2+1)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "First, use the identity cos²(t) = (1 + cos(2t))/2. So f(t) = (1/2)e^(-3t) + (1/2)e^(-3t)cos(2t). Then L{f(t)} = (1/2)L{e^(-3t)} + (1/2)L{e^(-3t)cos(2t)} = (1/2)(1/(s+3)) + (1/2)((s+3)/((s+3)^2+4))."
+  },
+  {
+    "id": "q15",
+    "text": "If L^{-1}{F(s)} = f(t), what is L^{-1}{F(s+5)}?",
+    "options": [
+      "e^(5t) f(t)",
+      "e^(-5t) f(t)",
+      "f(t-5) u(t-5)",
+      "f(t+5)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "This is the inverse form of the First Shifting Theorem (s-shifting). If L{f(t)} = F(s), then L{e^(at)f(t)} = F(s-a). Therefore, the inverse is L^{-1}{F(s+a)} = e^(-at) f(t). So L^{-1}{F(s+5)} = e^(-5t) f(t)."
+  },
+  {
+    "id": "q16",
+    "text": "The Dirac delta function δ(t) is best described as:",
+    "options": [
+      "A classical function with infinite value at t=0",
+      "A distribution or generalized function",
+      "The derivative of the unit step function u(t)",
+      "Both B and C"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The Dirac delta is not a function in the classical sense but a distribution (generalized function). Informally, it is often thought of as the derivative of the unit step function, though this derivative doesn't exist in the classical sense at t=0."
+  },
+  {
+    "id": "q17",
+    "text": "For the function f(t) = t * cosh(at), which method is most efficient for finding its Laplace transform?",
+    "options": [
+      "Definition (direct integration)",
+      "First Shifting Theorem",
+      "Derivative of the Transform Theorem (Multiplication by t)",
+      "Convolution Theorem"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The theorem L{t^n * f(t)} = (-1)^n * dⁿF(s)/dsⁿ is efficient here. We know L{cosh(at)} = s/(s²-a²). Therefore, L{t * cosh(at)} = - d/ds [ s/(s²-a²) ]."
+  },
+  {
+    "id": "q18",
+    "text": "The solution to the IVP y'' - 5y' + 6y = 0, y(0)=2, y'(0)=3 using Laplace transforms involves solving:",
+    "options": [
+      "(s²Y - 2s - 3) - 5(sY - 2) + 6Y = 0",
+      "(s²Y - 2s - 3) - 5(sY) + 6Y = 0",
+      "s²Y - 5sY + 6Y = 0",
+      "(s²Y - 2s) - 5(sY - 3) + 6Y = 0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Apply the transform: L{y''} = s²Y(s) - s y(0) - y'(0) = s²Y - 2s - 3. L{y'} = sY(s) - y(0) = sY - 2. L{y} = Y(s). So the transformed equation is: (s²Y - 2s - 3) - 5(sY - 2) + 6Y = 0."
+  },
+  {
+    "id": "q19",
+    "text": "The s-domain algebraic equation for the circuit L di/dt + iR + (1/C)∫i dx = v(t) involves the term for the integral. Its Laplace transform is:",
+    "options": [
+      "I(s)/s",
+      "s I(s)",
+      "I(s) / (Cs)",
+      "I(s) / (sC)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Using the integration property: L{∫₀ᵗ i(x) dx} = I(s)/s. The term is (1/C) times this integral, so its Laplace transform is (1/C) * (I(s)/s) = I(s) / (sC)."
+  },
+  {
+    "id": "q20",
+    "text": "What is the inverse Laplace transform of F(s) = 1 / [s(s+3)]?",
+    "options": [
+      "(1/3)(1 - e^(-3t))",
+      "e^(-3t) - 1",
+      "(1/3)(e^(-3t) - 1)",
+      "1 - e^(-3t)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Use partial fractions: 1/[s(s+3)] = A/s + B/(s+3). Solving gives A=1/3, B=-1/3. So F(s) = (1/3)/s - (1/3)/(s+3). The inverse transform is (1/3)*1 - (1/3)*e^(-3t) = (1/3)(1 - e^(-3t))."
+  },
+  {
+    "id": "q21",
+    "text": "The Laplace transform of the function f(t) = sin(3t) / t is found using which theorem?",
+    "options": [
+      "First Shifting Theorem",
+      "Multiplication by t^n",
+      "Division by t",
+      "Convolution Theorem"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The theorem L{ (1/t) f(t) } = ∫_s^∞ F(u) du is used. Here, f(t)=sin(3t), so F(s)=3/(s²+9). Thus, L{sin(3t)/t} = ∫_s^∞ [3/(u²+9)] du."
+  },
+  {
+    "id": "q22",
+    "text": "The function |sin(t)| is periodic. What is its period?",
+    "options": [
+      "π",
+      "2π",
+      "π/2",
+      "4π"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The function |sin(t)| repeats every π radians, as sin(t+π) = -sin(t), and taking the absolute value makes |sin(t)| = |sin(t+π)|."
+  },
+  {
+    "id": "q23",
+    "text": "The property ∫_{-∞}^{∞} f(x) δ(x-a) dx = f(a) is known as:",
+    "options": [
+      "The definition of the delta function",
+      "The sifting property",
+      "The sampling property",
+      "Both B and C"
+    ],
+    "correctAnswer": 3,
+    "explanation": "This fundamental property of the Dirac delta function is called both the sifting property and the sampling property, as it 'sifts out' or 'samples' the value of the function f at the point a."
+  },
+  {
+    "id": "q24",
+    "text": "To find L{u(t-2) * t²}, we must first:",
+    "options": [
+      "Directly apply the definition",
+      "Express t² in terms of (t-2)",
+      "Use the convolution theorem",
+      "Use the derivative property"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To apply the Second Shifting Theorem (L{u(t-a)f(t-a)} = e^{-as}F(s)), the function multiplied by u(t-a) must be written as f(t-a). So we write t² = ((t-2)+2)² = (t-2)² + 4(t-2) + 4. Thus, u(t-2)t² = u(t-2)[(t-2)² + 4(t-2) + 4]."
+  },
+  {
+    "id": "q25",
+    "text": "The inverse Laplace transform of F(s) = 3! / (s-2)^4 is:",
+    "options": [
+      "e^(2t) * t^3",
+      "e^(2t) * t^4",
+      "e^(2t) * t^3 / 3!",
+      "t^3 / 3!"
+    ],
+    "correctAnswer": 0,
+    "explanation": "We know L{t^n} = n!/s^{n+1}. Using the First Shifting Theorem in reverse: L^{-1}{n!/(s-a)^{n+1}} = e^(at) * t^n. Here, n=3, a=2. So L^{-1}{3!/(s-2)^4} = e^(2t) * t^3."
+  },
+  {
+    "id": "q26",
+    "text": "A system of differential equations is solved by Laplace transforms by:",
+    "options": [
+      "Solving each equation completely separately",
+      "Transforming each equation and solving the resulting system of algebraic equations simultaneously",
+      "Adding the equations together first",
+      "Taking the inverse transform before solving algebraically"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each differential equation is transformed into an algebraic equation involving the transforms of the unknown functions (e.g., X(s), Y(s)). This results in a system of linear algebraic equations which is solved simultaneously for X(s) and Y(s). Then the inverse Laplace transform is applied to find x(t) and y(t)."
+  },
+  {
+    "id": "q27",
+    "text": "The function h(t) in an LTI system such that y(t)=x(t)*h(t) is called the:",
+    "options": [
+      "Input function",
+      "Output function",
+      "Impulse response",
+      "Transfer function"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In an LTI system, the output y(t) is the convolution of the input x(t) with the system's impulse response h(t), defined as the output of the system when the input is a Dirac delta function δ(t)."
+  },
+  {
+    "id": "q28",
+    "text": "The Laplace transform of the integral equation y(t) = 1 - sin(t) - ∫₀ᵗ y(τ)dτ, y(0)=0, becomes:",
+    "options": [
+      "Y(s) = 1/s - 1/(s²+1) - Y(s)/s",
+      "Y(s) = 1/s - 1/(s²+1) - sY(s)",
+      "Y(s) = s - s/(s²+1) - Y(s)",
+      "Y(s) = 1 - 1/(s²+1) - Y(s)/s"
+    ],
+    "correctAnswer": 0,
+    "explanation": "L{y(t)} = Y(s). L{1} = 1/s. L{sin(t)} = 1/(s²+1). L{∫₀ᵗ y(τ)dτ} = Y(s)/s. Taking the Laplace transform of both sides of the equation gives: Y(s) = 1/s - 1/(s²+1) - Y(s)/s."
+  },
+  {
+    "id": "q29",
+    "text": "The function f(t) = e^(5t) * sin(2t)/t requires which combination of theorems for finding its Laplace transform?",
+    "options": [
+      "First Shifting and Division by t",
+      "First Shifting and Convolution",
+      "Division by t and Convolution",
+      "Second Shifting and Multiplication by t"
+    ],
+    "correctAnswer": 0,
+    "explanation": "First, apply the First Shifting Theorem: L{e^(5t) * sin(2t)} = 2/((s-5)²+4). Then, apply the Division by t theorem: L{ (1/t)[e^(5t)sin(2t)] } = ∫_s^∞ [2/((u-5)²+4)] du."
+  },
+  {
+    "id": "q30",
+    "text": "The main reason Laplace transforms are effective for solving linear ODEs with constant coefficients is that they:",
+    "options": [
+      "Turn differentiation into multiplication",
+      "Work for any nonlinearity",
+      "Always yield simpler integrals than other methods",
+      "Eliminate the need for initial conditions"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The core strength is that the Laplace transform converts operations of calculus (differentiation, integration) into simpler algebraic operations (multiplication, division) in the s-domain, making differential equations easier to solve as algebraic equations."
+  },
+  {
+    "id": "q31",
+    "text": "What is the correct Laplace transform expression for the second derivative y''(t)?",
+    "options": [
+      "s² Y(s)",
+      "s² Y(s) - y'(0)",
+      "s² Y(s) - s y(0) - y'(0)",
+      "s Y(s) - y(0)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The correct formula for the Laplace transform of the second derivative is L{y''(t)} = s² Y(s) - s y(0) - y'(0)."
+  },
+  {
+    "id": "q32",
+    "text": "The inverse Laplace transform of F(s) = e^{-7s} / [(s-5)² + 4] is:",
+    "options": [
+      "(1/2) e^(5(t-7)) sin(2(t-7)) u(t-7)",
+      "e^(5(t-7)) sin(2(t-7)) u(t-7)",
+      "(1/2) e^(5t) sin(2t) u(t-7)",
+      "e^(5t) sin(2(t-7)) u(t-7)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "First, identify the form L^{-1}{1/[(s-5)²+4]} = (1/2)e^(5t) sin(2t) (using L{sin(bt)}=b/(s²+b²) and first shifting). Then apply the second shifting theorem (time shift) for e^{-7s}: L^{-1}{e^{-7s}F(s)} = u(t-7) * f(t-7). So the answer is u(t-7) * [ (1/2) e^(5(t-7)) sin(2(t-7)) ]."
+  },
+  {
+    "id": "q33",
+    "text": "For the function f(t) = t² * cos(at), finding its Laplace transform directly by integration would be:",
+    "options": [
+      "Simple using a standard integral",
+      "Very difficult due to the t² term",
+      "Easier than using theorems",
+      "Impossible"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While possible in principle, direct integration of ∫₀∞ t² cos(at) e^{-st} dt would require multiple applications of integration by parts and is algebraically messy. Using the theorem L{t^n f(t)} = (-1)^n dⁿF/dsⁿ (where F(s)=L{cos(at)}=s/(s²+a²)) is significantly more efficient."
+  },
+  {
+    "id": "q34",
+    "text": "The function defined by the limit of δ_n(x) = { n for -1/(2n) ≤ x ≤ 1/(2n), 0 otherwise } as n→∞ is:",
+    "options": [
+      "The Gaussian function",
+      "The Dirac delta function",
+      "The Unit step function",
+      "The Sinc function"
+    ],
+    "correctAnswer": 1,
+    "explanation": "This specific sequence of rectangular pulse functions, which become infinitely tall and infinitesimally narrow while maintaining unit area, is a common way to define (or model) the Dirac delta function δ(x)."
+  },
+  {
+    "id": "q35",
+    "text": "The Convolution Theorem is particularly useful for finding:",
+    "options": [
+      "The Laplace transform of a product f(t)g(t)",
+      "The inverse Laplace transform of a product F(s)G(s)",
+      "The Laplace transform of a sum f(t)+g(t)",
+      "The inverse Laplace transform of a sum F(s)+G(s)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Convolution Theorem states L{f*g} = F(s)G(s). Its primary practical application is in the inverse direction: if you need to find L^{-1}{F(s)G(s)} and it's not readily decomposable by partial fractions, you can compute it as the convolution (f*g)(t) = ∫₀ᵗ f(τ)g(t-τ) dτ."
+  },
+  {
+    "id": "q36",
+    "text": "In the solution process using Laplace transforms, the step after transforming the ODE into an algebraic equation is:",
+    "options": [
+      "Apply initial conditions",
+      "Solve the algebraic equation for Y(s)",
+      "Take the inverse Laplace transform",
+      "Simplify the expression"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The standard procedure is: 1) Transform the ODE (initial conditions are incorporated here). 2) Solve the resulting algebraic equation for the transform of the solution, Y(s). 3) Take the inverse Laplace transform of Y(s) to find the solution y(t)."
+  },
+  {
+    "id": "q37",
+    "text": "The Laplace transform H(s) = Y(s)/X(s) for an LTI system is called the:",
+    "options": [
+      "Impulse response",
+      "Step response",
+      "Transfer function",
+      "Characteristic equation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For an LTI system, the transfer function H(s) is defined as the Laplace transform of the impulse response h(t), and it is also the ratio of the Laplace transform of the output Y(s) to the Laplace transform of the input X(s), assuming zero initial conditions."
+  },
+  {
+    "id": "q38",
+    "text": "The function f(t) = { t-1 if 1≤t<2, 3-t if 2≤t<3 } can be expressed using unit step functions as:",
+    "options": [
+      "(t-1)[u(t-1)-u(t-2)] + (3-t)[u(t-2)-u(t-3)]",
+      "(t-1)u(t-1) + (4-2t)u(t-2) + (t-3)u(t-3)",
+      "(t-1)u(t-1) + (3-t)u(t-2)",
+      "u(t-1)(t-1) + u(t-2)(3-t)"
+    ],
+    "correctAnswer": 0,
+    "explanation": "This is a piecewise function defined on specific intervals. The correct expression uses the difference of unit step functions to 'turn on' each piece only in its specified interval: f(t) = (t-1)[u(t-1) - u(t-2)] + (3-t)[u(t-2) - u(t-3)]."
+  },
+  {
+    "id": "q39",
+    "text": "The stability of a system described by a transfer function H(s) can often be analyzed by examining:",
+    "options": [
+      "The zeros of H(s)",
+      "The poles of H(s)",
+      "The gain of H(s)",
+      "The order of the numerator of H(s)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The poles of the transfer function H(s) (the roots of its denominator) determine the system's stability. For a causal system to be stable, all poles must have negative real parts (lie in the left half of the complex s-plane)."
+  },
+  {
+    "id": "q40",
+    "text": "When applying the Laplace transform method to a differential equation, the final solution in the time domain is valid:",
+    "options": [
+      "Only for t > 0",
+      "For all real t",
+      "Only at the initial condition t=0",
+      "Only for t < 0"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Laplace transform is defined by an integral from 0 to ∞. Therefore, the method inherently provides the solution for t ≥ 0. The behavior for t < 0 is not determined by the Laplace transform solution to an initial value problem."
+  }
+]
