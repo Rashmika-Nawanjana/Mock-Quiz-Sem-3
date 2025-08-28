@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "What fundamental concept does the Zeroth Law of Thermodynamics establish?",
+        "options": [
+            "The conservation of energy",
+            "The definition of temperature and thermal equilibrium",
+            "The impossibility of perpetual motion",
+            "The direction of spontaneous processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Zeroth Law establishes the concepts of temperature and thermal equilibrium. It states that if two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other, allowing for the definition of temperature."
+    },
+    {
+        "id": "q2",
+        "text": "According to the First Law of Thermodynamics for a closed system undergoing a cycle, what is the relationship between net heat and net work?",
+        "options": [
+            "∑Q - ∑W = 0",
+            "∑Q + ∑W = 0",
+            "∑Q = ∑W",
+            "∑Q / ∑W = constant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The First Law states that for any closed system undergoing a thermodynamic cycle, the sum of the net heat transfer (∑Q) and the net work transfer (∑W) must equal zero: ∑Q + ∑W = 0."
+    },
+    {
+        "id": "q3",
+        "text": "In the standard sign convention for thermodynamics, which scenario is considered POSITIVE work?",
+        "options": [
+            "Work done on the system by its surroundings",
+            "Work done by the system on its surroundings",
+            "Work done during compression",
+            "Work done when volume decreases"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The standard sign convention defines work done BY the system (e.g., expansion work) as POSITIVE. Work done ON the system (e.g., compression work) is NEGATIVE."
+    },
+    {
+        "id": "q4",
+        "text": "A steam power plant turbine develops 1 MW. Heat supplied to steam is 2800 kJ/kg, heat rejected is 2100 kJ/kg, and the feed pump requires 5 kW. What is the steam mass flow rate?",
+        "options": [
+            "1.000 kg/s",
+            "1.421 kg/s",
+            "2.000 kg/s",
+            "0.476 kg/s"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Applying the First Law (∑Q + ∑W = 0) to the cycle: (2800 - 2100) kJ/kg * ṁ - (1000 + 5) kW = 0. Solving gives 700ṁ = 1005 kW, therefore ṁ = 1005 / 700 ≈ 1.421 kg/s."
+    },
+    {
+        "id": "q5",
+        "text": "Corollary 1 of the First Law introduces a property (X) whose change equals the sum of net heat and work transfer. What is this property?",
+        "options": [
+            "Enthalpy (H)",
+            "Entropy (S)",
+            "Internal Energy (U)",
+            "Gibbs Free Energy (G)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Corollary 1 proves the existence of a property whose change is equal to the sum of heat and work transfers for any process (not just a cycle). This property is the Internal Energy, U: Q + W = ΔU."
+    },
+    {
+        "id": "q6",
+        "text": "If a closed system is completely isolated from its surroundings (adiabatic and no work interaction), what does Corollary 2 of the First Law state about its internal energy?",
+        "options": [
+            "It will increase continuously",
+            "It will decrease to zero",
+            "It will remain unchanged",
+            "It will fluctuate randomly"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Corollary 2 states that if a system is isolated (Q=0 and W=0), then according to ΔU = Q + W, the change in internal energy is zero (ΔU = 0). Therefore, the internal energy remains constant."
+    },
+    {
+        "id": "q7",
+        "text": "What does Corollary 3 of the First Law declare to be impossible?",
+        "options": [
+            "A heat engine with 100% efficiency",
+            "A process that decreases entropy",
+            "A perpetual motion machine of the first kind (PMM1)",
+            "Reaching absolute zero temperature"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Corollary 3 states that a Perpetual Motion Machine of the First Kind (PMM1) is impossible. A PMM1 is a device that produces work without consuming an equivalent amount of energy (or produces more energy than it consumes), violating energy conservation."
+    },
+    {
+        "id": "q8",
+        "text": "For a closed system, the Non-Flow Energy Equation is given by:",
+        "options": [
+            "Q - W = ΔU",
+            "Q + W = ΔH",
+            "Q - W = ΔU + ΔKE + ΔPE",
+            "Q + W = ΔU + ΔKE + ΔPE"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The general energy balance for a closed system is Q - W = ΔE, where ΔE is the change in the total energy of the system. Total energy includes internal, kinetic, and potential energy: ΔE = ΔU + ΔKE + ΔPE."
+    },
+    {
+        "id": "q9",
+        "text": "In an air motor, compressed air expands (U_initial=420 kJ/kg, U_final=200 kJ/kg) doing 100 kJ/kg of work. What is the heat transfer?",
+        "options": [
+            "120 kJ/kg rejected",
+            "120 kJ/kg supplied",
+            "320 kJ/kg supplied",
+            "720 kJ/kg rejected"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Apply the closed system energy equation: Q - W = ΔU. So, Q - (100 kJ/kg) = (200 - 420) kJ/kg = -220 kJ/kg. Therefore, Q = -220 + 100 = -120 kJ/kg. The negative sign indicates heat is rejected from the system."
+    },
+    {
+        "id": "q10",
+        "text": "For an open system (control volume), what additional energy term must be considered for mass crossing the boundary, compared to a closed system?",
+        "options": [
+            "Internal Energy (u)",
+            "Flow Work (Pv)",
+            "Kinetic Energy (C²/2)",
+            "Potential Energy (gz)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For mass to enter or leave an open system, work must be done to push it across the boundary against the prevailing pressure. This is called flow work, and its specific value is Pv. The total specific energy carried by a flowing stream is θ = u + Pv + C²/2 + gz = h + C²/2 + gz."
+    },
+    {
+        "id": "q11",
+        "text": "The specific enthalpy (h) is defined as:",
+        "options": [
+            "u + P",
+            "u + Pv",
+            "Pv + C²/2",
+            "u + KE + PE"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Enthalpy (H) is a composite property defined as H = U + PV. The specific enthalpy is therefore h = u + Pv. It represents the total energy associated with the mass flow due to its internal energy and the flow work."
+    },
+    {
+        "id": "q12",
+        "text": "The general energy balance equation for a transient open system is:",
+        "options": [
+            "Q - W = ∑m_eθ_e - ∑m_iθ_i",
+            "Q - W + ∑m_iθ_i - ∑m_eθ_e = ΔE_CV",
+            "ṁ (θ_e - θ_i) = ΔE_CV",
+            "Q - W = ΔU"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The general unsteady (transient) energy balance for a control volume accounts for energy entering/leaving with mass and energy transfer as heat/work: [Energy in as Q & W] + [Energy in with mass] - [Energy out with mass] = [Change in energy inside CV]. This is Q - W + ∑m_iθ_i - ∑m_eθ_e = ΔE_CV."
+    },
+    {
+        "id": "q13",
+        "text": "A steady flow process is characterized by:",
+        "options": [
+            "Properties within the control volume change with time",
+            "Properties at the inlets and outlets change with time",
+            "Properties at any point within the control volume do not change with time",
+            "The mass flow rate at the inlet is always greater than at the outlet"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a steady flow process, although properties can vary from point to point within the control volume, at any fixed location, none of the properties change with time. Additionally, mass flow rates and energy transfer rates are constant."
+    },
+    {
+        "id": "q14",
+        "text": "For a steady-state, steady-flow process with one inlet and one outlet, the energy balance simplifies to:",
+        "options": [
+            "Q - W = m (u_e - u_i)",
+            "Q - W = m (h_e - h_i)",
+            "Q - W = m [(h_e - h_i) + (C_e² - C_i²)/2 + g(z_e - z_i)]",
+            "Q + W = m [(h_e - h_i) + (C_e² - C_i²)/2 + g(z_e - z_i)]"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For a steady-flow process, ΔE_CV = 0 and mass flow rates are equal (ṁ_i = ṁ_e = ṁ). The general energy balance simplifies to the Steady Flow Energy Equation (SFEE): Q - W = ṁ [(h_e - h_i) + (C_e² - C_i²)/2 + g(z_e - z_i)]."
+    },
+    {
+        "id": "q15",
+        "text": "The term (h + C²/2 + gz) in the SFEE represents:",
+        "options": [
+            "The total energy stored within the control volume",
+            "The total energy transferred as heat",
+            "The total specific energy of a flowing stream",
+            "The work done by the system"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The term θ = h + C²/2 + gz is the total specific energy (energy per unit mass) carried by a flowing stream. It includes the specific enthalpy (h), specific kinetic energy (C²/2), and specific potential energy (gz)."
+    },
+    {
+        "id": "q16",
+        "text": "In the SFEE written for a rate basis (kW), what does the symbol Ẇ represent?",
+        "options": [
+            "Total work done",
+            "Power, or the rate of work transfer",
+            "Specific work (kJ/kg)",
+            "Flow work rate"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the rate form of the SFEE, Ẇ represents the power, which is the rate at which work is transferred across the system boundary. Its units are kW (kJ/s). Similarly, �Q is the heat transfer rate."
+    },
+    {
+        "id": "q17",
+        "text": "For a system in steady state, which of the following is TRUE?",
+        "options": [
+            "The mass inside the control volume must be zero",
+            "The mass inside the control volume is constant",
+            "The enthalpy inside the control volume must be zero",
+            "The pressure must be uniform throughout the control volume"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A key characteristic of a steady-state process is that the total mass and total energy contained within the control volume remain constant over time (Δm_CV=0, ΔE_CV=0). This does not require the properties to be uniform throughout the CV."
+    },
+    {
+        "id": "q18",
+        "text": "The primary historical figure associated with the experimental demonstration of the equivalence of heat and work, leading to the First Law, is:",
+        "options": [
+            "Niels Bohr",
+            "James Prescott Joule",
+            "Sadi Carnot",
+            "Lord Kelvin"
+        ],
+        "correctAnswer": 1,
+        "explanation": "James Prescott Joule conducted famous experiments in the mid-19th century (e.g., the paddle wheel experiment) which demonstrated that heat and work are equivalent forms of energy transfer, providing a key foundation for the First Law of Thermodynamics."
+    },
+    {
+        "id": "q19",
+        "text": "The Zeroth Law is necessary because it:",
+        "options": [
+            "Was discovered after the First and Second Laws",
+            "Provides a logical foundation for the concept of temperature",
+            "Defines the conservation of energy principle",
+            "Explains the direction of heat transfer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Zeroth Law, though named later, is fundamental as it establishes the transitive property of thermal equilibrium. This allows for the consistent and meaningful definition of temperature, which is a prerequisite for the other laws."
+    },
+    {
+        "id": "q20",
+        "text": "In the context of the First Law, 'energy is a conserved property' means:",
+        "options": [
+            "The total energy of an isolated system is constant",
+            "Energy conversion processes are 100% efficient",
+            "Energy has a constant monetary value",
+            "The internal energy of a system can never change"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The statement 'energy is a conserved property' is the core of the First Law. It means that energy can be transferred between a system and its surroundings (as heat or work) or converted from one form to another, but the total quantity of energy involved remains constant."
+    },
+    {
+        "id": "q21",
+        "text": "If the net work done BY a closed system during a cycle is positive, what must be true about the net heat transfer?",
+        "options": [
+            "Net heat transfer is positive (into the system)",
+            "Net heat transfer is negative (out of the system)",
+            "Net heat transfer must be zero",
+            "It cannot be determined from the work alone"
+        ],
+        "correctAnswer": 0,
+        "explanation": "From the First Law for a cycle, ∑Q + ∑W = 0. If ∑W (work done BY system) is positive, then ∑Q must be negative to satisfy the equation. A negative ∑Q means a net heat transfer OUT of the system."
+    },
+    {
+        "id": "q22",
+        "text": "The proof of Corollary 1 (existence of internal energy) relies on applying the First Law to:",
+        "options": [
+            "A single process between two states",
+            "Two different processes between the same two states",
+            "An adiabatic process only",
+            "A cycle composed of three processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The proof considers two different processes (A and B) connecting the same initial and final states. By applying the First Law to cycles formed by combining each path with a common third process (C), it is shown that (Q+W) is the same for both paths A and B, proving it depends only on the state change (ΔU)."
+    },
+    {
+        "id": "q23",
+        "text": "For an adiabatic (Q=0) closed system, the change in internal energy is equal to:",
+        "options": [
+            "Zero",
+            "The net heat transfer",
+            "The negative of the net work transfer",
+            "The net work transfer"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For any closed system process, ΔU = Q + W. If the process is adiabatic (Q=0), this simplifies to ΔU = W. Therefore, the change in internal energy is equal to the net work done ON the system. If work is done BY the system (W positive), internal energy decreases."
+    },
+    {
+        "id": "q24",
+        "text": "The flow work term (Pv) for a substance entering a control volume represents:",
+        "options": [
+            "The work done by the fluid inside the CV",
+            "The work done by the surroundings to push the fluid into the CV",
+            "The kinetic energy of the flow",
+            "The shaft work delivered by the system"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Flow work is the work done by the immediate upstream surroundings (outside the CV) to push mass into the control volume against the inlet pressure. It is energy transferred into the CV with the mass flow."
+    },
+    {
+        "id": "q25",
+        "text": "In the SFEE, if kinetic and potential energy changes are negligible, the equation simplifies to:",
+        "options": [
+            "Q - W = m(u_e - u_i)",
+            "Q - W = m(h_e - h_i)",
+            "Q + W = m(h_e - h_i)",
+            "Q - W = 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The full SFEE is Q - W = m[(h_e - h_i) + (C_e² - C_i²)/2 + g(z_e - z_i)]. If changes in kinetic energy (ΔKE) and potential energy (ΔPE) are negligible compared to enthalpy change, the equation simplifies to Q - W = m(h_e - h_i)."
+    },
+    {
+        "id": "q26",
+        "text": "A nozzle is a device designed to increase a fluid's velocity. For a well-insulated nozzle operating at steady state with negligible potential energy change, the SFEE simplifies to:",
+        "options": [
+            "h_e = h_i",
+            "h_e + C_e²/2 = h_i + C_i²/2",
+            "W = h_e - h_i",
+            "Q = C_e²/2 - C_i²/2"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a nozzle: typically Q ≈ 0 (well-insulated), W = 0 (no shaft work), ΔPE ≈ 0. The SFEE simplifies to 0 = (h_e - h_i) + (C_e² - C_i²)/2. Rearranged, this becomes h_i + C_i²/2 = h_e + C_e²/2. The enthalpy decreases to cause an increase in kinetic energy."
+    },
+    {
+        "id": "q27",
+        "text": "A key difference between the closed system (Q - W = ΔU + ΔKE + ΔPE) and open system SFEE is the replacement of internal energy (u) with which property?",
+        "options": [
+            "Entropy (s)",
+            "Enthalpy (h)",
+            "Pressure (P)",
+            "Volume (v)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the energy balance for flowing systems (open systems), the combination u + Pv (enthalpy, h) naturally appears instead of just internal energy (u) because it accounts for both the internal energy and the flow work (Pv) associated with mass crossing the boundary."
+    },
+    {
+        "id": "q28",
+        "text": "The 'Muddiest Point' technique used at the end of the lecture is primarily a tool for:",
+        "options": [
+            "Introducing new complex topics",
+            "Assessing student confusion and identifying topics needing review",
+            "Giving a final exam",
+            "Providing historical context"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'Muddiest Point' is a formative assessment technique where students identify the concepts they found most confusing. This provides the instructor with valuable feedback on which areas need further clarification or a different teaching approach."
+    },
+    {
+        "id": "q29",
+        "text": "For a throttling valve (e.g., a partially opened valve), which is often modeled as a steady-state process with no heat or work transfer, the SFEE implies:",
+        "options": [
+            "Temperature remains constant",
+            "Enthalpy remains constant",
+            "Pressure remains constant",
+            "Velocity remains constant"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a throttling valve: Q=0, W=0, ΔKE≈0, ΔPE≈0. The SFEE (Q - W = m[(h_e - h_i) + ΔKE + ΔPE]) simplifies to 0 = m(h_e - h_i). Therefore, h_e = h_i. The enthalpy at the inlet equals the enthalpy at the outlet."
+    },
+    {
+        "id": "q30",
+        "text": "The work term (W) in the general energy balance for an open system (Q - W + ∑m_iθ_i - ∑m_eθ_e = ΔE_CV) typically includes:",
+        "options": [
+            "Only shaft work",
+            "Only flow work",
+            "Only boundary work",
+            "Shaft work and possibly other forms like electrical work, but NOT flow work"
+        ],
+        "correctAnswer": 3,
+        "explanation": "In the open system energy balance, the work term (W) represents all forms of work transfer other than flow work. This includes shaft work (Ẇ_shaft) and other types like electrical work. Flow work is already accounted for within the enthalpy term (h = u + Pv) of the energy carried by mass (θ)."
+    },
+    {
+        "id": "q31",
+        "text": "If the mass flow rate at the inlet of a steady-state device is 5 kg/s, what is the mass flow rate at the outlet?",
+        "options": [
+            "Less than 5 kg/s",
+            "Greater than 5 kg/s",
+            "Exactly 5 kg/s",
+            "It depends on the pressure drop"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A fundamental requirement of a steady-state process is that the mass within the control volume remains constant. This is only possible if the mass flow rate entering exactly equals the mass flow rate leaving. Therefore, ṁ_i = ṁ_e = 5 kg/s."
+    },
+    {
+        "id": "q32",
+        "text": "The statement 'Properties at the boundaries do not change with time' is a characteristic of:",
+        "options": [
+            "A transient process",
+            "A steady-flow process",
+            "An isolated system",
+            "A closed system only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a steady-flow process, while properties can vary from point to point within the control volume, the properties at each specific inlet and outlet boundary remain constant with time. This is a key defining condition of steady state."
+    },
+    {
+        "id": "q33",
+        "text": "The First Law statement ∑Q + ∑W = 0 applies strictly to:",
+        "options": [
+            "Any process",
+            "Cyclic processes only",
+            "Adiabatic processes only",
+            "Processes with no work interaction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The formulation ∑Q + ∑W = 0 is the original statement of the First Law and it applies specifically to a closed system undergoing a complete thermodynamic cycle, where the system returns to its initial state (ΔU_cycle=0)."
+    },
+    {
+        "id": "q34",
+        "text": "The specific internal energy (u) of a substance is primarily a function of:",
+        "options": [
+            "Velocity and position",
+            "Temperature and specific volume (or pressure)",
+            "Pressure only",
+            "Flow work only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a simple compressible substance, the specific internal energy (u) is a thermodynamic property that depends on two other independent intensive properties, most commonly temperature (T) and specific volume (v). For an ideal gas, u depends only on T."
+    },
+    {
+        "id": "q35",
+        "text": "In the context of the First Law, 'energy is a conserved property' means:",
+        "options": [
+            "The total energy of an isolated system is constant",
+            "Energy conversion processes are 100% efficient",
+            "Energy has a constant monetary value",
+            "The internal energy of a system can never change"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The statement 'energy is a conserved property' is the core of the First Law. It means that energy can be transferred between a system and its surroundings (as heat or work) or converted from one form to another, but the total quantity of energy involved remains constant."
+    },
+    {
+        "id": "q36",
+        "text": "For a system undergoing a process where ΔU = -50 kJ and W = +30 kJ (work done by system), the heat transfer (Q) is:",
+        "options": [
+            "+80 kJ (added)",
+            "-80 kJ (rejected)",
+            "+20 kJ (added)",
+            "-20 kJ (rejected)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Use the closed system energy equation: ΔU = Q + W. Plug in the values: -50 kJ = Q + (+30 kJ). Solve for Q: Q = -50 kJ - 30 kJ = -80 kJ. The negative sign indicates 80 kJ of heat is rejected from the system."
+    },
+    {
+        "id": "q37",
+        "text": "The term 'w_flow = Pv' has units of:",
+        "options": [
+            "kW",
+            "kJ",
+            "kJ/kg",
+            "kg/m³"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Pressure (P) has units of kPa or N/m². Specific volume (v) has units of m³/kg. Therefore, the product Pv has units of (N/m²)*(m³/kg) = N*m/kg = J/kg = kJ/kg. It is specific flow work (work per unit mass)."
+    },
+    {
+        "id": "q38",
+        "text": "A turbine produces work. In the SFEE for a turbine, the work term (W) is:",
+        "options": [
+            "Positive",
+            "Negative",
+            "Zero",
+            "Equal to the heat transfer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The sign convention defines work done BY the system as POSITIVE. A turbine does work on its surroundings (e.g., turns a generator), so the work transfer term (W or Ẇ) in the SFEE (Q - W = ...) is positive."
+    },
+    {
+        "id": "q39",
+        "text": "The primary purpose of a feed pump in a steam power plant cycle is to:",
+        "options": [
+            "Add heat to the water",
+            "Do work ON the water to increase its pressure",
+            "Convert thermal energy to kinetic energy",
+            "Reject heat to the surroundings"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The feed pump's function is to pump condensate (water) from the low-pressure condenser back to the high-pressure boiler. This requires work to be done ON the water (Win is negative in the cycle balance), significantly increasing its pressure."
+    },
+    {
+        "id": "q40",
+        "text": "The Zeroth Law allows us to use a thermometer because it implies that the thermometer reading represents the __________ of the system it's in contact with.",
+        "options": [
+            "Internal energy",
+            "Temperature",
+            "Pressure",
+            "Enthalpy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Zeroth Law establishes that if the thermometer (system C) is in thermal equilibrium with the object of interest (system A), then they must have the same temperature. Thus, the thermometer's reading (e.g., mercury height) is a measure of the temperature of object A."
+    }
+]

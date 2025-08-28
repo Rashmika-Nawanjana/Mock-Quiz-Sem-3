@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary difference between encoding and modulation as defined in the lecture?",
+        "options": [
+            "Encoding is for digital signals, modulation is for analog signals",
+            "Encoding prepares a signal for wire/fiber, modulation modifies a carrier signal",
+            "Encoding increases data rate, modulation decreases bandwidth",
+            "Encoding uses multiple levels, modulation uses only two levels"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Encoding converts signals to a form suitable for transmission on a wire or fiber, while modulation modifies a carrier signal with the information signal."
+    },
+    {
+        "id": "q2",
+        "text": "In NRZ-L encoding, what characterizes the signal representation?",
+        "options": [
+            "Transition at the beginning of each bit period indicates the bit value",
+            "Two different voltage levels are used, constant during the bit interval",
+            "The signal returns to zero voltage after each bit transmission",
+            "Alternating positive and negative pulses represent binary 1s"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NRZ-L uses two different voltages for 0 and 1 bits, with voltage constant during the bit interval and no return to zero voltage."
+    },
+    {
+        "id": "q3",
+        "text": "What is the key advantage of differential encoding schemes like NRZI?",
+        "options": [
+            "They require less bandwidth than NRZ-L",
+            "They eliminate the DC component completely",
+            "They provide more reliable detection of transitions rather than levels",
+            "They allow each signal element to represent multiple bits"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Differential encoding represents data by changes rather than levels, making transition detection more reliable than level detection."
+    },
+    {
+        "id": "q4",
+        "text": "Which characteristic is a significant disadvantage of NRZ encoding for signal transmission?",
+        "options": [
+            "High bandwidth requirements",
+            "Lack of synchronization capability",
+            "Susceptibility to noise",
+            "Complex implementation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NRZ encoding lacks synchronization capability due to the absence of regular transitions, especially during long strings of identical bits."
+    },
+    {
+        "id": "q5",
+        "text": "In Bipolar-AMI encoding, how are binary 1s represented?",
+        "options": [
+            "By alternating positive and negative pulses",
+            "By the absence of line signal",
+            "By a constant positive voltage",
+            "By mid-bit transitions"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Bipolar-AMI represents binary 1s with alternating positive and negative pulses, while zeros are represented by no line signal."
+    },
+    {
+        "id": "q6",
+        "text": "What is the primary trade-off when using multilevel binary encoding schemes like Bipolar-AMI?",
+        "options": [
+            "They require more complex hardware implementation",
+            "They are less bandwidth efficient than NRZ",
+            "They require approximately 3dB more signal power for the same error probability",
+            "They cannot be used for long-distance transmission"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Multilevel binary systems require the receiver to distinguish between three levels (+A, -A, 0), needing approx. 3dB more signal power for the same bit error probability."
+    },
+    {
+        "id": "q7",
+        "text": "How does Manchester encoding provide built-in synchronization?",
+        "options": [
+            "By including a separate clock signal with the data",
+            "Through a transition in the middle of each bit period",
+            "By using alternating voltage levels for each bit",
+            "Through special synchronization bits inserted periodically"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Manchester encoding provides synchronization through a transition in the middle of each bit period, which serves as both clock and data."
+    },
+    {
+        "id": "q8",
+        "text": "What is the key difference between Manchester and Differential Manchester encoding?",
+        "options": [
+            "Manchester uses two voltage levels, Differential Manchester uses three",
+            "Differential Manchester is a differential encoding scheme",
+            "Manchester has higher bandwidth requirements",
+            "Differential Manchester provides better error detection"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Differential Manchester is a differential encoding scheme where data is represented by the presence or absence of transition at the start of the bit period."
+    },
+    {
+        "id": "q9",
+        "text": "What problem does scrambling techniques like B8ZS and HDB3 primarily address?",
+        "options": [
+            "Reducing bandwidth requirements",
+            "Eliminating the DC component and ensuring adequate transitions",
+            "Increasing data rate beyond the Nyquist limit",
+            "Providing error correction capability"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Scrambling techniques replace sequences that would produce constant voltage, eliminating DC component and ensuring enough transitions for synchronization."
+    },
+    {
+        "id": "q10",
+        "text": "In B8ZS coding, how does the receiver identify and interpret the special substitution sequence?",
+        "options": [
+            "By detecting two violations of the AMI code pattern",
+            "Through a special start delimiter before the sequence",
+            "By recognizing three consecutive zero pulses",
+            "Through a separate control channel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "B8ZS causes two deliberate violations of the AMI code pattern, which the receiver detects and interprets as an octet of all zeros."
+    },
+    {
+        "id": "q11",
+        "text": "What is the primary reason for using modulation techniques like ASK, FSK, and PSK in telephone systems?",
+        "options": [
+            "To increase the data rate beyond the channel capacity",
+            "To convert digital data for transmission over analog voice-grade lines",
+            "To provide error correction capability",
+            "To encrypt the data for security"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Modems use these modulation techniques to convert digital data for transmission over the analog public telephone system (300Hz to 3400Hz voice-grade lines)."
+    },
+    {
+        "id": "q12",
+        "text": "Why is ASK generally considered inefficient compared to other modulation schemes?",
+        "options": [
+            "It requires more complex receiver circuitry",
+            "It is highly susceptible to sudden gain changes and noise",
+            "It cannot be used at data rates above 1200bps",
+            "It requires wider bandwidth than other techniques"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ASK is inefficient because it's susceptible to sudden gain changes and typically uses one amplitude as zero (presence/absence of carrier), making it vulnerable to noise."
+    },
+    {
+        "id": "q13",
+        "text": "What advantage does FSK have over ASK in terms of error susceptibility?",
+        "options": [
+            "FSK is less susceptible to errors caused by amplitude variations",
+            "FSK requires less bandwidth than ASK",
+            "FSK can achieve higher data rates on voice-grade lines",
+            "FSK is easier to implement than ASK"
+        ],
+        "correctAnswer": 0,
+        "explanation": "FSK is less susceptible to error than ASK because it uses frequency variations rather than amplitude variations, making it more immune to amplitude-based noise and gain changes."
+    },
+    {
+        "id": "q14",
+        "text": "In PSK, what characteristic of the carrier signal is altered to represent data?",
+        "options": [
+            "Amplitude",
+            "Frequency",
+            "Phase",
+            "Wavelength"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Phase Shift Keying (PSK) alters the phase of the carrier signal to represent data, with different phase shifts representing different binary values."
+    },
+    {
+        "id": "q15",
+        "text": "What is the key advantage of QPSK over basic PSK?",
+        "options": [
+            "It requires less power for the same error rate",
+            "It is less susceptible to phase noise",
+            "Each signal element represents more than one bit",
+            "It provides built-in error correction"
+        ],
+        "correctAnswer": 2,
+        "explanation": "QPSK provides more efficient bandwidth usage by having each signal element represent two bits through shifts of π/2 (90°), doubling the data rate for the same bandwidth."
+    },
+    {
+        "id": "q16",
+        "text": "How does QAM achieve higher data rates compared to simple modulation schemes?",
+        "options": [
+            "By using multiple carriers simultaneously",
+            "By combining amplitude and phase modulation on the same carrier",
+            "Through advanced error correction techniques",
+            "By operating at much higher frequencies"
+        ],
+        "correctAnswer": 1,
+        "explanation": "QAM combines ASK and PSK, sending two different signals simultaneously on the same carrier frequency by using two copies of the carrier (one shifted 90°) that are each ASK modulated."
+    },
+    {
+        "id": "q17",
+        "text": "According to the Nyquist theorem in PCM, what sampling rate is required for a signal with maximum frequency of 4000Hz?",
+        "options": [
+            "4000 samples per second",
+            "8000 samples per second",
+            "16000 samples per second",
+            "32000 samples per second"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Nyquist theorem states that sampling must be at twice the highest frequency. For voice data limited to 4000Hz, 8000 samples per second are required."
+    },
+    {
+        "id": "q18",
+        "text": "What is quantizing error in PCM, and why does it occur?",
+        "options": [
+            "Error caused by sampling at insufficient rates",
+            "Noise introduced during the analog-to-digital conversion process",
+            "The difference between the actual analog value and the nearest quantization level",
+            "Errors introduced during digital transmission"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Quantizing error occurs because analog samples must be approximated to the nearest digital value (quantization level), making exact recovery of the original signal impossible."
+    },
+    {
+        "id": "q19",
+        "text": "What is the data rate of standard PCM for telephone voice transmission?",
+        "options": [
+            "32 kbps",
+            "56 kbps",
+            "64 kbps",
+            "128 kbps"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Standard PCM uses 8000 samples per second of 8 bits each, resulting in a data rate of 64 kbps."
+    },
+    {
+        "id": "q20",
+        "text": "How does nonlinear encoding (companding) improve PCM performance?",
+        "options": [
+            "By increasing the sampling rate beyond Nyquist",
+            "By using unevenly spaced quantization levels to reduce overall distortion",
+            "Through error correction coding",
+            "By eliminating the need for quantization"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Nonlinear encoding uses unevenly spaced quantization levels (more levels for weak signals, fewer for strong signals), reducing overall signal distortion compared to linear encoding."
+    },
+    {
+        "id": "q21",
+        "text": "In delta modulation, what is 'slope overload noise'?",
+        "options": [
+            "Noise caused by excessive quantization levels",
+            "Distortion that occurs when the analog signal changes too rapidly for the staircase to follow",
+            "Interference between adjacent samples",
+            "Noise introduced during the sampling process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Slope overload noise occurs in delta modulation when the analog input signal changes too rapidly for the staircase function to follow, causing distortion."
+    },
+    {
+        "id": "q22",
+        "text": "What is the fundamental principle behind delta modulation?",
+        "options": [
+            "Encoding the difference between consecutive samples rather than absolute values",
+            "Using variable sampling rates based on signal activity",
+            "Eliminating the need for quantization",
+            "Transmitting only significant changes in the signal"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Delta modulation approximates the analog input with a staircase function that moves up or down one level (δ) at each sample interval, effectively encoding the difference between consecutive samples."
+    },
+    {
+        "id": "q23",
+        "text": "Why are analog signals modulated onto higher frequency carriers for transmission?",
+        "options": [
+            "To reduce the signal power requirements",
+            "To allow for frequency division multiplexing and more efficient transmission",
+            "To make the signals digital for error correction",
+            "To compress the analog data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Modulating analog signals onto higher frequency carriers allows for more efficient transmission and permits frequency division multiplexing, where multiple signals can share the same medium."
+    },
+    {
+        "id": "q24",
+        "text": "In amplitude modulation (AM), what does the modulation index represent?",
+        "options": [
+            "The ratio of carrier frequency to modulating signal frequency",
+            "The depth of modulation or how much the carrier amplitude varies",
+            "The number of sidebands produced",
+            "The bandwidth efficiency of the modulation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The modulation index in AM represents the depth of modulation, indicating how much the carrier amplitude varies in response to the modulating signal."
+    },
+    {
+        "id": "q25",
+        "text": "What mathematical relationship describes a phase modulated signal?",
+        "options": [
+            "s(t) = A_c[1 + k·m(t)]cosω_ct",
+            "s(t) = A_ccos(ω_ct + Δ_pm(t))",
+            "s(t) = A_ccos(2πΔ_f∫m(τ)dτ)",
+            "s(t) = A_c[1 + k·m(t)]sinω_ct"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For phase modulation, the modulated signal is s(t) = A_ccos(ω_ct + θ(t)) where θ(t) = Δ_pm(t), with the phase shift proportional to the modulating signal."
+    },
+    {
+        "id": "q26",
+        "text": "How does frequency modulation (FM) differ from phase modulation (PM) in terms of the relationship with the modulating signal?",
+        "options": [
+            "FM varies frequency proportionally to the modulating signal, PM varies phase proportionally",
+            "FM varies phase proportionally to the modulating signal, PM varies frequency proportionally",
+            "FM uses amplitude variations, PM uses phase variations",
+            "FM is digital, PM is analog"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In FM, the frequency varies proportionally to the modulating signal, while in PM, the phase varies proportionally to the modulating signal."
+    },
+    {
+        "id": "q27",
+        "text": "Which encoding scheme is specifically mentioned as being used for magnetic recording?",
+        "options": [
+            "Manchester encoding",
+            "Bipolar-AMI",
+            "NRZ",
+            "Differential Manchester"
+        ],
+        "correctAnswer": 2,
+        "explanation": "NRZ encoding is used for magnetic recording, though it's not often used for signal transmission due to its DC component and lack of synchronization capability."
+    },
+    {
+        "id": "q28",
+        "text": "What is the fundamental difference between baseband and broadband transmission?",
+        "options": [
+            "Baseband is digital, broadband is analog",
+            "Baseband carries one signal at a time, broadband carries multiple signals simultaneously",
+            "Baseband uses higher frequencies than broadband",
+            "Baseband requires modulation, broadband does not"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Baseband transmission carries only one data signal at a time (like Ethernet), while broadband carries two or more different data signals in separate channels simultaneously."
+    },
+    {
+        "id": "q29",
+        "text": "In the context of signal interpretation, what three factors affect successful interpretation of signals?",
+        "options": [
+            "Voltage level, bit duration, and encoding scheme",
+            "Signal-to-noise ratio, data rate, and bandwidth",
+            "Carrier frequency, modulation index, and bandwidth",
+            "Sampling rate, quantization levels, and compression ratio"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The three key factors affecting successful signal interpretation are signal-to-noise ratio, data rate, and bandwidth."
+    },
+    {
+        "id": "q30",
+        "text": "What problem common to both NRZ and multilevel binary encoding does biphase encoding (Manchester) solve?",
+        "options": [
+            "High bandwidth requirements",
+            "DC component and lack of synchronization",
+            "Complex implementation",
+            "Susceptibility to noise"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Biphase encoding (Manchester) solves both the DC component problem and lack of synchronization capability that plague NRZ and some multilevel binary schemes."
+    },
+    {
+        "id": "q31",
+        "text": "In Differential Manchester encoding, how is a binary 0 represented?",
+        "options": [
+            "By a transition at the start of the bit period",
+            "By no transition at the start of the bit period",
+            "By a low-to-high transition in the middle of the bit period",
+            "By a high-to-low transition in the middle of the bit period"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In Differential Manchester encoding, a transition at the start of a bit period represents binary 0, while no transition represents binary 1."
+    },
+    {
+        "id": "q32",
+        "text": "What is the primary purpose of the mid-bit transition in standard Manchester encoding?",
+        "options": [
+            "To represent the binary value of the bit",
+            "To serve as both clock and data information",
+            "To eliminate the DC component",
+            "To provide error detection capability"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The mid-bit transition in Manchester encoding serves dual purposes: it provides clocking information (synchronization) and also represents the data value."
+    },
+    {
+        "id": "q33",
+        "text": "Why is HDB3 called 'High Density Bipolar 3 Zeros'?",
+        "options": [
+            "It can represent three zeros with a single pulse",
+            "It replaces strings of four zeros with special sequences",
+            "It uses three different voltage levels for encoding",
+            "It requires at least three zeros between consecutive ones"
+        ],
+        "correctAnswer": 1,
+        "explanation": "HDB3 is designed to handle high densities of zeros by replacing strings of four zeros with special sequences containing one or two pulses."
+    },
+    {
+        "id": "q34",
+        "text": "What advantage do B8ZS and HDB3 scrambling techniques provide over basic Bipolar-AMI?",
+        "options": [
+            "Higher data rates for the same bandwidth",
+            "Better error correction capability",
+            "Elimination of long sequences of zero level line signal",
+            "Simpler implementation circuitry"
+        ],
+        "correctAnswer": 2,
+        "explanation": "B8ZS and HDB3 prevent long sequences of zero level line signal that could cause synchronization problems in basic Bipolar-AMI."
+    },
+    {
+        "id": "q35",
+        "text": "In analog modulation, what is the relationship between the carrier frequency and the modulating signal frequency?",
+        "options": [
+            "The carrier frequency must be exactly twice the highest modulating frequency",
+            "The carrier frequency is usually much greater than the highest modulating frequency",
+            "The carrier frequency should be equal to the modulating frequency for efficiency",
+            "The carrier frequency is typically lower than the modulating frequency"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In analog modulation, the carrier frequency is usually much greater than the highest frequency of the input message signal for efficient transmission and to prevent interference."
+    },
+    {
+        "id": "q36",
+        "text": "What does the envelope represent in amplitude modulation?",
+        "options": [
+            "The highest frequency component of the modulated signal",
+            "The pattern of the original modulating signal",
+            "The bandwidth of the transmitted signal",
+            "The phase relationship between carrier and sidebands"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The envelope of an AM signal represents the pattern of the original modulating signal, specifically s(t) = A_c[1 + k·m(t)]."
+    },
+    {
+        "id": "q37",
+        "text": "Which digital-to-analog modulation technique is mentioned as being used over optical fiber?",
+        "options": [
+            "Amplitude Shift Keying (ASK)",
+            "Frequency Shift Keying (FSK)",
+            "Phase Shift Keying (PSK)",
+            "Quadrature Amplitude Modulation (QAM)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "ASK is used over optical fiber, where the presence or absence of light represents the binary data."
+    },
+    {
+        "id": "q38",
+        "text": "What is the key advantage of multiple FSK over binary FSK?",
+        "options": [
+            "Higher resistance to noise",
+            "More bandwidth efficiency",
+            "Simpler implementation",
+            "Lower power consumption"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Multiple FSK is more bandwidth efficient than binary FSK because each signaling element represents more than one bit."
+    },
+    {
+        "id": "q39",
+        "text": "In the performance comparison of digital-to-analog modulation schemes, how do PSK and QPSK compare to ASK and FSK in terms of bit error rate?",
+        "options": [
+            "They have approximately 3dB superior performance in the presence of noise",
+            "They have approximately 3dB worse performance in the presence of noise",
+            "They have identical performance to ASK and FSK",
+            "Their performance depends on the carrier frequency used"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In the presence of noise, the bit error rate of PSK and QPSK are about 3dB superior to ASK and FSK."
+    },
+    {
+        "id": "q40",
+        "text": "What is the relationship between ASK/PSK bandwidth and bit rate?",
+        "options": [
+            "Bandwidth is inversely proportional to bit rate",
+            "Bandwidth is directly related to bit rate",
+            "Bandwidth is independent of bit rate",
+            "Bandwidth decreases as bit rate increases"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The bandwidth of ASK and PSK is directly related to the bit rate, unlike FSK where the relationship is more complex."
+    },
+    {
+        "id": "q41",
+        "text": "In PCM, what is the purpose of the PAM (Pulse Amplitude Modulation) stage?",
+        "options": [
+            "To quantize the analog samples",
+            "To create discrete-time but continuous-amplitude samples",
+            "To encode the samples into binary format",
+            "To compress the digital data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The PAM stage in PCM creates discrete-time but continuous-amplitude samples by sampling the analog signal at regular intervals."
+    },
+    {
+        "id": "q42",
+        "text": "What is the significance of the 4kHz frequency limit for voice data in PCM?",
+        "options": [
+            "It represents the maximum frequency that can be quantized without error",
+            "It determines the minimum sampling rate required by the Nyquist theorem",
+            "It is the standard bandwidth allocation for telephone channels",
+            "It represents the cutoff frequency for analog filters used in telephony"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 4kHz limit is the standard bandwidth allocation for telephone voice channels, which determines the required sampling rate for PCM encoding."
+    },
+    {
+        "id": "q43",
+        "text": "Why does delta modulation typically require higher sampling rates than PCM for comparable quality?",
+        "options": [
+            "Because it uses only one bit per sample instead of multiple bits",
+            "Because it requires oversampling to avoid slope overload",
+            "Because it uses a more complex quantization scheme",
+            "Because it includes error correction overhead"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Delta modulation uses only one bit per sample and requires higher sampling rates (oversampling) to avoid slope overload noise and provide reasonable quality."
+    },
+    {
+        "id": "q44",
+        "text": "What is the fundamental mathematical operation in frequency modulation?",
+        "options": [
+            "Multiplication of the carrier with the modulating signal",
+            "Integration of the modulating signal",
+            "Differentiation of the carrier signal",
+            "Addition of the modulating signal to the carrier phase"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In frequency modulation, the phase term θ(t) involves the integral of the modulating signal: θ(t) = 2πΔ_f∫m(τ)dτ from -∞ to t."
+    },
+    {
+        "id": "q45",
+        "text": "Which encoding scheme is used by IEEE 802.3 (Ethernet)?",
+        "options": [
+            "NRZ-L",
+            "Manchester",
+            "Differential Manchester",
+            "Bipolar-AMI"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Manchester encoding is used by IEEE 802.3 (Ethernet) standards."
+    },
+    {
+        "id": "q46",
+        "text": "Which encoding scheme is used by IEEE 802.5 (Token Ring)?",
+        "options": [
+            "NRZ-L",
+            "Manchester",
+            "Differential Manchester",
+            "Bipolar-AMI"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Differential Manchester encoding is used by IEEE 802.5 (Token Ring) standards."
+    },
+    {
+        "id": "q47",
+        "text": "In the context of signal transmission, what does 'band' measure?",
+        "options": [
+            "The data rate in bits per second",
+            "The modulation rate in signal elements per second",
+            "The bandwidth in Hertz",
+            "The signal-to-noise ratio in decibels"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Band measures the modulation rate, which is the rate at which the signal level changes, measured in signal elements per second."
+    },
+    {
+        "id": "q48",
+        "text": "What is the term for the time taken for a transmitter to emit a single bit?",
+        "options": [
+            "Bit rate",
+            "Modulation period",
+            "Bit duration or length",
+            "Signal element interval"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The duration or length of a bit is the time taken for the transmitter to emit the bit."
+    },
+    {
+        "id": "q49",
+        "text": "In polar signaling, how are the two logic states typically represented?",
+        "options": [
+            "Both states use positive voltage but different amplitudes",
+            "One state uses positive voltage, the other uses negative voltage",
+            "Both states use the same voltage but different frequencies",
+            "One state uses voltage, the other uses zero voltage"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In polar signaling, one logic state is represented by positive voltage and the other by negative voltage."
+    },
+    {
+        "id": "q50",
+        "text": "What is the key difference between unipolar and polar signaling?",
+        "options": [
+            "Unipolar uses one voltage level, polar uses two voltage levels of opposite signs",
+            "Unipolar is for digital data, polar is for analog data",
+            "Unipolar has higher bandwidth efficiency than polar",
+            "Unipolar provides better synchronization than polar"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In unipolar signaling, all signal elements have the same sign, while in polar signaling, one logic state uses positive voltage and the other uses negative voltage."
+    },
+    {
+        "id": "q51",
+        "text": "What problem common to many encoding schemes does scrambling specifically address?",
+        "options": [
+            "High power consumption",
+            "Limited maximum data rate",
+            "Sequences that produce constant voltage",
+            "Complex receiver design"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Scrambling replaces sequences that would produce constant voltage, which can cause synchronization problems and DC component issues."
+    },
+    {
+        "id": "q52",
+        "text": "In the PCM example with 4-bit quantization, how many quantization levels are available?",
+        "options": [
+            "8 levels",
+            "16 levels",
+            "32 levels",
+            "256 levels"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A 4-bit system provides 2^4 = 16 quantization levels, as mentioned in the PCM discussion."
+    },
+    {
+        "id": "q53",
+        "text": "What is the primary advantage of using 8-bit samples in PCM instead of 4-bit samples?",
+        "options": [
+            "Higher data rate",
+            "Reduced quantizing error",
+            "Lower bandwidth requirements",
+            "Simpler implementation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "8-bit samples provide 256 quantization levels compared to 16 levels for 4-bit samples, significantly reducing quantizing error and improving quality."
+    },
+    {
+        "id": "q54",
+        "text": "In delta modulation, what determines whether the staircase function moves up or down?",
+        "options": [
+            "The absolute value of the analog signal",
+            "Whether the analog signal is above or below the current staircase value",
+            "The slope of the analog signal",
+            "The frequency of the analog signal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In delta modulation, the staircase function moves up or down based on whether the analog input is above or below the current value of the staircase function."
+    },
+    {
+        "id": "q55",
+        "text": "What is the main reason for modulating analog data onto analog signals?",
+        "options": [
+            "To convert them to digital format",
+            "To allow frequency division multiplexing",
+            "To reduce their bandwidth requirements",
+            "To add error correction capability"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Modulating analog data onto analog signals (typically higher frequency carriers) permits frequency division multiplexing, allowing multiple signals to share the same transmission medium."
+    },
+    {
+        "id": "q56",
+        "text": "In QAM, how are two independent signals transmitted simultaneously on the same carrier?",
+        "options": [
+            "By using different encryption keys for each signal",
+            "By using two copies of the carrier phase-shifted by 90°",
+            "By time-division multiplexing the signals",
+            "By using different modulation techniques for each signal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "QAM uses two copies of the carrier frequency, one shifted by 90°, with each carrier being ASK modulated, allowing two independent signals over the same medium."
+    },
+    {
+        "id": "q57",
+        "text": "What is the primary application mentioned for QAM in the lecture?",
+        "options": [
+            "Ethernet networks",
+            "Optical fiber communication",
+            "Asymmetric Digital Subscriber Line (ADSL)",
+            "Satellite communication"
+        ],
+        "correctAnswer": 2,
+        "explanation": "QAM is used on Asymmetric Digital Subscriber Line (ADSL) and some wireless applications, as mentioned in the lecture."
+    },
+    {
+        "id": "q58",
+        "text": "What does the term 'mark' and 'space' refer to in digital signaling?",
+        "options": [
+            "Start and stop bits in asynchronous transmission",
+            "Binary 1 and binary 0 respectively",
+            "The highest and lowest voltage levels",
+            "Synchronization patterns in data frames"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In digital signaling, 'mark' refers to binary 1 and 'space' refers to binary 0."
+    },
+    {
+        "id": "q59",
+        "text": "What is the key characteristic that distinguishes baseband transmission of analog signals?",
+        "options": [
+            "It uses the original frequency range before modulation",
+            "It requires digital encoding of the analog signal",
+            "It uses higher frequencies than broadband transmission",
+            "It allows multiple signals on the same channel"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For analog signals, baseband refers to the original frequency range of the analog signal before it is modulated onto a carrier."
+    },
+    {
+        "id": "q60",
+        "text": "In the context of signal elements, what does each pulse represent in digital signaling?",
+        "options": [
+            "A single bit of data",
+            "A signal element that may represent one or more bits",
+            "A synchronization marker",
+            "A voltage level transition"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Each pulse is a signal element, and depending on the encoding scheme, a signal element may represent one or more bits of data."
+    }
+]

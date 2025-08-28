@@ -1,0 +1,722 @@
+[
+    {
+        "id": "1",
+        "text": "What is the primary purpose of the Physical Layer in the OSI model?",
+        "options": [
+            "To provide error-free transmission across a single link",
+            "To accept a raw string of bits and deliver it across a link",
+            "To deliver packets from sender to receiver across a network",
+            "To provide end-to-end delivery between hosts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Physical Layer's core function is to accept a raw bitstream and handle its transmission across the physical communication link."
+    },
+    {
+        "id": "2",
+        "text": "Which OSI layer is responsible for logical addressing and path determination?",
+        "options": [
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer",
+            "Session Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Network Layer handles logical addressing (like IP addresses) and determines the path (routing) for packets across the network."
+    },
+    {
+        "id": "3",
+        "text": "What is a key function of the Data Link Layer?",
+        "options": [
+            "Logical Addressing",
+            "Routing",
+            "Data Framing",
+            "Encryption"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A primary function of the Data Link Layer is to encapsulate network layer packets into frames for transmission over a single link."
+    },
+    {
+        "id": "4",
+        "text": "Which layer of the OSI model provides end-to-end delivery and reliability?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Session Layer",
+            "Application Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Transport Layer is responsible for ensuring data is delivered completely and correctly from the source host to the destination host."
+    },
+    {
+        "id": "5",
+        "text": "What is the main purpose of the Session Layer?",
+        "options": [
+            "To format data for transmission",
+            "To control the dialog between two end-user applications",
+            "To provide physical addressing",
+            "To handle error detection and correction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Session Layer establishes, manages, and terminates connections (sessions) between cooperating applications."
+    },
+    {
+        "id": "6",
+        "text": "Which layer is responsible for translation, compression, and encryption?",
+        "options": [
+            "Presentation Layer",
+            "Application Layer",
+            "Session Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Presentation Layer handles the translation of data between a networking format and a specific application's format, including compression and encryption."
+    },
+    {
+        "id": "7",
+        "text": "What type of communication involves real-time interaction?",
+        "options": [
+            "One-way",
+            "Interactive-Non real time",
+            "Interactive-Real time",
+            "Two-party"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Interactive-Real time communication requires immediate exchange and response, such as in a voice or video call."
+    },
+    {
+        "id": "8",
+        "text": "What does PSTN stand for?",
+        "options": [
+            "Public Switched Telephone Network",
+            "Private System Telephone Network",
+            "Public System Telecommunication Network",
+            "Private Switched Telecommunication Node"
+        ],
+        "correctAnswer": 0,
+        "explanation": "PSTN is the traditional circuit-switched telephone network used for voice communications."
+    },
+    {
+        "id": "9",
+        "text": "Which of the following is a fundamental component of a network?",
+        "options": [
+            "Terminals for Access",
+            "Operating Systems",
+            "Application Software",
+            "User Interfaces"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Terminals for access (end devices) are a core component, allowing users to enter and receive information from the network."
+    },
+    {
+        "id": "10",
+        "text": "What is a major challenge in networking that layering helps to address?",
+        "options": [
+            "Different architecture",
+            "Uniform data formats",
+            "Same communication rates",
+            "Identical languages"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Layering provides a structured way to manage complexity and enable communication between systems with different underlying architectures."
+    },
+    {
+        "id": "11",
+        "text": "What is the primary benefit of a layered architecture in networking?",
+        "options": [
+            "Faster data transmission",
+            "Transparent implementation and independent design",
+            "Reduced hardware costs",
+            "Simpler user interfaces"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Layering allows layers to be developed and modified independently, as long as they provide the required service to the layer above."
+    },
+    {
+        "id": "12",
+        "text": "How many layers are there in the OSI model?",
+        "options": [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The OSI (Open Systems Interconnection) model is a conceptual framework composed of seven layers."
+    },
+    {
+        "id": "13",
+        "text": "Which OSI layer is responsible for physical addressing (e.g., MAC addresses)?",
+        "options": [
+            "Network Layer",
+            "Data Link Layer",
+            "Physical Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Data Link Layer deals with hardware or physical addressing, which is used for local delivery on a specific link."
+    },
+    {
+        "id": "14",
+        "text": "What is the main function of the Application Layer?",
+        "options": [
+            "Data encryption",
+            "Providing network-based applications to users",
+            "Error detection",
+            "Flow control"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Application Layer provides the interface for users and applications to access network services, like web browsing or email."
+    },
+    {
+        "id": "15",
+        "text": "Which layer shields higher layers from the details of how packets are routed through the network?",
+        "options": [
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer",
+            "Session Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Network Layer handles the complexity of routing, presenting a consistent service of host-to-host delivery to the Transport Layer above it."
+    },
+    {
+        "id": "16",
+        "text": "What does the Transport layer handle?",
+        "options": [
+            "Logical addressing",
+            "Physical transmission",
+            "End-to-end delivery and reliability",
+            "Data formatting"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Transport Layer's key responsibility is managing the reliable, end-to-end delivery of data between processes on different hosts."
+    },
+    {
+        "id": "17",
+        "text": "Which layer is often not implemented as a separate, distinct layer in real systems?",
+        "options": [
+            "Session Layer",
+            "Transport Layer",
+            "Network Layer",
+            "Physical Layer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The functions of the Session Layer are frequently integrated into the Application Layer protocols in modern implementations like the TCP/IP model."
+    },
+    {
+        "id": "18",
+        "text": "What is a key function of the Presentation Layer?",
+        "options": [
+            "Routing",
+            "Data Representation and Encryption",
+            "Flow Control",
+            "Token Management"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Presentation Layer is concerned with the syntax and semantics of the information transmitted, ensuring data is readable through translation, encryption, and compression."
+    },
+    {
+        "id": "19",
+        "text": "In the OSI model, what is the data unit at the Network Layer?",
+        "options": [
+            "Bits",
+            "Frames",
+            "Packets",
+            "Segments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Network Layer encapsulates segments from the transport layer into packets, also called datagrams."
+    },
+    {
+        "id": "20",
+        "text": "What is the data unit at the Physical Layer?",
+        "options": [
+            "Bits",
+            "Frames",
+            "Packets",
+            "Segments"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Physical Layer is solely concerned with the transmission and reception of a raw stream of bits over a physical medium."
+    },
+    {
+        "id": "21",
+        "text": "Which layer manages dialog control such as full vs half duplex?",
+        "options": [
+            "Session Layer",
+            "Presentation Layer",
+            "Application Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Managing the mode of communication (simplex, half-duplex, full-duplex) is a function of the Session Layer."
+    },
+    {
+        "id": "22",
+        "text": "What does the Data Link Layer use for addressing?",
+        "options": [
+            "Logical addressing (IP)",
+            "Hardware level addressing (MAC)",
+            "Port addressing",
+            "Application addressing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Data Link Layer uses physical or hardware addresses, like MAC addresses, to deliver frames between devices on the same network segment."
+    },
+    {
+        "id": "23",
+        "text": "Which layer is responsible for managing congestion in the network core?",
+        "options": [
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer",
+            "Application Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Network Layer employs algorithms to control congestion that occurs when too many packets are present in an area of the network."
+    },
+    {
+        "id": "24",
+        "text": "What is a primary function of the Transport Layer?",
+        "options": [
+            "Data framing",
+            "Multiplexing and demultiplexing",
+            "Encryption",
+            "Token management"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Transport Layer protocols multiplex data from different application processes on the sender side and demultiplex it to the correct process on the receiver side."
+    },
+    {
+        "id": "25",
+        "text": "Which OSI layers are primarily responsible for quality of service (QoS) guarantees?",
+        "options": [
+            "Data Link and Network Layers",
+            "Network and Transport Layers",
+            "Transport and Session Layers",
+            "Session and Presentation Layers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Network Layer can provide QoS for packet delivery (e.g., priority), and the Transport Layer can provide QoS for connection characteristics (e.g., guaranteed throughput)."
+    },
+    {
+        "id": "26",
+        "text": "What is the stated scope of CS2033 regarding the OSI model?",
+        "options": [
+            "Covers all layers in depth",
+            "Focuses on Application and Presentation Layers",
+            "Physical Layer in depth, touches Data Link, briefly introduces Network and Application",
+            "Only covers Physical and Data Link Layers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture slides specify that the course covers the Physical Layer in depth, touches the Data Link Layer, and briefly introduces the Network and Application layers."
+    },
+    {
+        "id": "27",
+        "text": "Which layer provides services like file transfer and electronic mail directly to the user?",
+        "options": [
+            "Application Layer",
+            "Presentation Layer",
+            "Session Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Protocols like FTP (file transfer) and SMTP (email) are implemented at the Application Layer to provide direct user services."
+    },
+    {
+        "id": "28",
+        "text": "What type of network is a LAN?",
+        "options": [
+            "Local Area Networks",
+            "Long Area Networks",
+            "Logical Access Networks",
+            "Linked Application Nodes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A LAN (Local Area Network) is a network that connects devices over a small geographic area, like a home, office, or building."
+    },
+    {
+        "id": "29",
+        "text": "What is a key advantage of a layered network architecture?",
+        "options": [
+            "Reduced need for hardware",
+            "Faster processing speed",
+            "Flexible to modify and independent testing",
+            "Simpler user authentication"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A major advantage is modularity; layers can be updated or replaced independently, simplifying development, testing, and maintenance."
+    },
+    {
+        "id": "30",
+        "text": "Which layer is responsible for defining the electrical, mechanical, and procedural characteristics for activating and maintaining a physical link?",
+        "options": [
+            "Physical Layer",
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "These are core responsibilities of the Physical Layer, encompassing hardware specifications like voltages, pin layouts, and cable types."
+    },
+    {
+        "id": "31",
+        "text": "What does OSI stand for?",
+        "options": [
+            "Open System Interconnect",
+            "Operational Signal Interface",
+            "Open Signal Interchange",
+            "Operational System Integration"
+        ],
+        "correctAnswer": 0,
+        "explanation": "OSI is the acronym for Open Systems Interconnection, a reference model for developing networking standards."
+    },
+    {
+        "id": "32",
+        "text": "Which layer handles error detection and correction for transmission across a single communication link?",
+        "options": [
+            "Physical Layer",
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Data Link Layer adds error detection codes (like CRC) to frames to detect and sometimes correct errors introduced by the physical layer."
+    },
+    {
+        "id": "33",
+        "text": "What is the role of the Network Layer in addressing?",
+        "options": [
+            "Hardware addressing for a local link",
+            "Logical addressing for internetwork communication",
+            "Port addressing for applications",
+            "No addressing role"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Network Layer uses logical addresses (e.g., IP addresses) that are independent of the underlying hardware to route packets across multiple networks."
+    },
+    {
+        "id": "34",
+        "text": "Which layer manages the establishment, management, and termination of connections between applications?",
+        "options": [
+            "Network Layer",
+            "Transport Layer",
+            "Session Layer",
+            "Presentation Layer"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This is the defining function of the Session Layer, which controls the dialogues (sessions) between cooperating applications."
+    },
+    {
+        "id": "35",
+        "text": "According to the slides, where are Presentation Layer functions often implemented in practice?",
+        "options": [
+            "In a separate, distinct layer",
+            "Within the Application Layer",
+            "Within the Transport Layer",
+            "Within the Network Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The slides note that 'in practice [Presentation Layer functions are] not implemented in a separate layer but included elsewhere – e.g. in the applications'."
+    },
+    {
+        "id": "36",
+        "text": "What is the data unit at the Transport Layer?",
+        "options": [
+            "Bits",
+            "Frames",
+            "Packets",
+            "Segments"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Transport Layer protocol data unit is called a segment (in TCP) or a datagram (in UDP)."
+    },
+    {
+        "id": "37",
+        "text": "Which layer would be responsible for defining the timing and sequencing of bits on the wire?",
+        "options": [
+            "Physical Layer",
+            "Data Link Layer",
+            "Network Layer",
+            "Session Layer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Defining the timing (synchronization) of bits is a fundamental function of the Physical Layer."
+    },
+    {
+        "id": "38",
+        "text": "Which challenge of networking is directly addressed by the concept of standardization?",
+        "options": [
+            "Different architecture",
+            "Different languages",
+            "Different data formats",
+            "Different communication rates"
+        ],
+        "explanation": "Standardization creates agreed-upon rules and formats, ensuring interoperability despite different underlying systems and architectures.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "39",
+        "text": "In the OSI communication diagram, what is the role of routers?",
+        "options": [
+            "Operate at the Physical and Data Link layers",
+            "Operate at the Network layer",
+            "Operate at the Transport layer",
+            "Operate at all layers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Routers are network devices that make forwarding decisions based on logical network addresses, which is the primary function of the Network Layer."
+    },
+    {
+        "id": "40",
+        "text": "What is the primary purpose of flow control at the Data Link Layer?",
+        "options": [
+            "To prevent a fast sender from overwhelming a slow receiver on a single link",
+            "To find the best path through a network",
+            "To encrypt data for security",
+            "To translate application data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Data Link Layer flow control ensures the integrity of the transmission across the immediate link by managing the pace of data flow between two directly connected nodes."
+    },
+    {
+        "id": "41",
+        "text": "Which of these is NOT a typical function of the Physical Layer?",
+        "options": [
+            "Encoding and signaling",
+            "Data transmission and reception",
+            "Topology and physical network design",
+            "Error detection and handling"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Error detection and handling is a function of the Data Link Layer. The Physical Layer deals with raw bit transmission, which may include errors."
+    },
+    {
+        "id": "42",
+        "text": "The Internet is an example of which type of network?",
+        "options": [
+            "PSTN",
+            "LAN",
+            "Television Network",
+            "Internet (a global WAN)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Internet is a prime example of a global Wide Area Network (WAN), connecting smaller networks (LANs, MANs) together."
+    },
+    {
+        "id": "43",
+        "text": "What is the fundamental purpose of communication as defined in the lecture?",
+        "options": [
+            "Sharing computational resources",
+            "Sending information from one place to another",
+            "Managing network security",
+            "Standardizing data formats"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The slides define communication simply as 'Sending information from one place to another'."
+    },
+    {
+        "id": "44",
+        "text": "Which layer's functionality includes 'Interhost Communication'?",
+        "options": [
+            "Application Layer",
+            "Presentation Layer",
+            "Session Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Session Layer is described as managing 'Interhost Communication', specifically the dialog between applications on different hosts."
+    },
+    {
+        "id": "45",
+        "text": "Multiplexing at the Transport Layer allows for:",
+        "options": [
+            "Multiple paths for a single packet",
+            "Multiple applications to share a single network connection",
+            "Multiple frames to be combined into a packet",
+            "Multiple bits to form a byte"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Transport Layer multiplexing enables data from multiple sending processes (applications) to be sent over the same network connection, and demultiplexing delivers it to the correct receiving process."
+    },
+    {
+        "id": "46",
+        "text": "Which OSI layer is most concerned with the mechanical characteristics of interfaces and transmission media?",
+        "options": [
+            "Physical",
+            "Data Link",
+            "Network",
+            "Transport"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Defining connectors, cables, and physical interfaces falls squarely under the domain of the Physical Layer."
+    },
+    {
+        "id": "47",
+        "text": "The concept of 'Media for Transmission' is a component of a network most directly associated with which OSI layer?",
+        "options": [
+            "Application Layer",
+            "Network Layer",
+            "Data Link Layer",
+            "Physical Layer"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Physical Layer defines the properties of the transmission media itself, such as copper cable, fiber optic, or radio waves."
+    },
+    {
+        "id": "48",
+        "text": "In the context of the OSI model, what does 'transparent implementation' mean?",
+        "options": [
+            "The media is see-through",
+            "The implementation details of a layer are hidden from other layers",
+            "Data is not encrypted",
+            "Signals can pass through obstacles"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Transparent implementation means each layer provides a service to the layer above it without exposing how the service is actually implemented, promoting independence."
+    },
+    {
+        "id": "49",
+        "text": "Which layer ensures that a receiver is not overwhelmed by data by regulating the amount of data sent?",
+        "options": [
+            "Network Layer (Congestion Control)",
+            "Transport Layer (Flow Control)",
+            "Data Link Layer (Flow Control)",
+            "Both Transport and Data Link Layers"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Flow control is implemented at both the Data Link Layer (for a single hop) and the Transport Layer (for the entire end-to-end path) to prevent overwhelming receivers."
+    },
+    {
+        "id": "50",
+        "text": "What is the primary distinction between the Network Layer and the Transport Layer?",
+        "options": [
+            "Network Layer deals with logical addressing, Transport deals with physical addressing",
+            "Network Layer provides host-to-host delivery, Transport provides process-to-process delivery",
+            "Network Layer provides reliability, Transport provides routing",
+            "Network Layer is implemented in software, Transport in hardware"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Network Layer moves packets from the original source host to the destination host. The Transport Layer extends this delivery to a specific process (application) on the destination host."
+    },
+    {
+        "id": "51",
+        "text": "Which problem is solved by the layered approach to network design?",
+        "options": [
+            "The high cost of network hardware",
+            "The complexity of designing a monolithic communication system",
+            "The limited speed of physical transmission media",
+            "The need for user training"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Layering breaks down the immense complexity of network communication into smaller, more manageable, and functionally separate components (layers)."
+    },
+    {
+        "id": "52",
+        "text": "The function 'Datagram encapsulation' is performed at which layer?",
+        "options": [
+            "Physical Layer",
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Network Layer encapsulates the transport layer segment by adding a header containing logical address information, creating a packet or datagram."
+    },
+    {
+        "id": "53",
+        "text": "Which of these is a function listed for the Network Layer?",
+        "options": [
+            "Token Management",
+            "Synchronization",
+            "Quality of Service",
+            "Compression"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The slides list 'Quality of Service - Guarantee levels of service' as a function of the Network Layer."
+    },
+    {
+        "id": "54",
+        "text": "Equipment for Switching is a network component that operates primarily at which OSI layer?",
+        "options": [
+            "Physical Layer",
+            "Data Link Layer (Switches)",
+            "Network Layer (Routers)",
+            "All of the above"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Different switching equipment operates at different layers: hubs (Physical), switches (Data Link), routers (Network). Therefore, switching happens across multiple layers."
+    },
+    {
+        "id": "55",
+        "text": "The direction of information flow (e.g., one-way, interactive) is a characteristic managed at which layer?",
+        "options": [
+            "Physical Layer (Simplex/Duplex)",
+            "Session Layer (Dialog Control)",
+            "Application Layer",
+            "Both Physical and Session Layers"
+        ],
+        "explanation": "The Physical Layer defines the fundamental capability of the medium (simplex, half-duplex, full-duplex). The Session Layer manages how this capability is used in the dialog between applications (e.g., taking turns talking).",
+        "correctAnswer": 3
+    },
+    {
+        "id": "56",
+        "text": "What is the core idea behind 'Open System Interconnect (OSI)'?",
+        "options": [
+            "Using open-source software for networking",
+            "Communication regardless of underlying architecture",
+            "Connecting systems without wires",
+            "Making all network specifications public"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The goal of the OSI model is to enable communication between open systems—systems that are open for communication with other systems—by defining a standard, vendor-neutral framework."
+    },
+    {
+        "id": "57",
+        "text": "Which layer would be responsible for ensuring a file is converted from EBCDIC to ASCII encoding?",
+        "options": [
+            "Application Layer",
+            "Presentation Layer",
+            "Session Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Translation between different data representations is a key function of the Presentation Layer."
+    },
+    {
+        "id": "58",
+        "text": "The concept of a 'well defined function' for each layer helps to achieve which goal?",
+        "options": [
+            "Increased transmission speed",
+            "Modularization and clear boundaries",
+            "Reduced number of layers",
+            "Simpler hardware"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Assigning a specific, well-defined function to each layer is the essence of modular design, which creates clear boundaries and responsibilities."
+    },
+    {
+        "id": "59",
+        "text": "In the OSI model encapsulation process, what is the PDU for the Data Link layer?",
+        "options": [
+            "Bit",
+            "Frame",
+            "Packet",
+            "Segment"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Data Link Layer receives a packet from the Network Layer and encapsulates it into a Frame, adding its own header and trailer."
+    },
+    {
+        "id": "60",
+        "text": "Why is the OSI model described as a reference model rather than an implementation blueprint?",
+        "options": [
+            "It is too complex to ever implement",
+            "It is a theoretical guide for understanding functions, not a strict protocol stack",
+            "It has been replaced entirely by the TCP/IP model",
+            "It only applies to telephone networks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The OSI model is primarily a conceptual tool for standardizing and understanding the diverse functions of networking. Real-world protocols (like TCP/IP) often combine functions described in separate OSI layers."
+    }
+]

@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "Which section of a microprocessor is primarily responsible for fetching instructions from program memory?",
+        "options": [
+            "Register Processing Section",
+            "Instruction Register & Decoder",
+            "Program Execution Section",
+            "ALU & Accumulator"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Program Execution Section handles literal address operations, including interacting with Program Memory and the Program Counter to fetch instructions."
+    },
+    {
+        "id": "q2",
+        "text": "A major concern for processor design in mobile phones, compared to laptops, is:",
+        "options": [
+            "Higher heat dissipation",
+            "Larger available memory",
+            "Lower power consumption",
+            "More complex hardware modules"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Mobile devices prioritize lower power consumption to extend battery life, which is a major design constraint compared to laptops which may prioritize raw performance."
+    },
+    {
+        "id": "q3",
+        "text": "The abstraction layer that defines the native data types, instructions, and registers available to a programmer is known as the:",
+        "options": [
+            "Micro-architecture",
+            "Logic Design",
+            "Instruction Set Architecture (ISA)",
+            "System Software"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Instruction Set Architecture (ISA) is the part of computer architecture related to programming, including native data types, instructions, registers, and addressing modes."
+    },
+    {
+        "id": "q4",
+        "text": "A processor with a large number of dedicated hardware co-processors and a complex set of instructions is characteristic of a:",
+        "options": [
+            "RISC architecture",
+            "CISC architecture",
+            "Harvard architecture",
+            "Von Neumann architecture"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CISC (Complex Instruction Set Computer) architectures use many dedicated hardware modules, leading to a large and complex instruction set."
+    },
+    {
+        "id": "q5",
+        "text": "Which of the following is a key characteristic of a RISC architecture?",
+        "options": [
+            "Consumes more power due to many active modules",
+            "Large number of complex instructions",
+            "Minimal and simple hardware design",
+            "Difficult to program due to many choices"
+        ],
+        "correctAnswer": 2,
+        "explanation": "RISC (Reduced Instruction Set Computer) architectures are defined by a minimal set of simple hardware, leading to a reduced, simple instruction set that consumes less power."
+    },
+    {
+        "id": "q6",
+        "text": "The x86-64 ISA, widely used in modern desktops and laptops, originated from:",
+        "options": [
+            "64-bit extensions proposed by AMD",
+            "The original 32-bit Acorn RISC Machine (ARM)",
+            "The 8-bit Zilog Z80 processor",
+            "Sun Microsystems' SPARC architecture"
+        ],
+        "correctAnswer": 0,
+        "explanation": "x86-64 is the 64-bit extension of the x86 architecture, which was originally proposed by AMD and later adopted by Intel."
+    },
+    {
+        "id": "q7",
+        "text": "What is a defining feature of the RISC-V ISA that differentiates it from many other ISAs?",
+        "options": [
+            "It is a closed standard owned by a single corporation",
+            "It started with over 1300 instructions",
+            "It is an open standard with a modular design",
+            "It is exclusively for 8-bit embedded systems"
+        ],
+        "correctAnswer": 2,
+        "explanation": "RISC-V is an open-standard ISA with a modular design, allowing for base instruction sets and optional extensions, unlike proprietary ISAs like x86 or ARM."
+    },
+    {
+        "id": "q8",
+        "text": "In the RISC-V modular scheme, what does the 'M' standard extension provide?",
+        "options": [
+            "Atomic operations",
+            "Single-precision floating point",
+            "Integer multiply and divide operations",
+            "Compressed instructions for smaller code size"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'M' standard extension in RISC-V adds instructions for Integer Multiplication and Division."
+    },
+    {
+        "id": "q9",
+        "text": "An RV32IMAFD ISA is equivalent to:",
+        "options": [
+            "RV32E",
+            "RV32C",
+            "RV32G",
+            "RV32N"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'G' designation in RISC-V is a general-purpose shorthand for the IMAFD combination of extensions (Base Integer, Multiply, Atomic, Single-Float, Double-Float)."
+    },
+    {
+        "id": "q10",
+        "text": "What is the primary purpose of the RISC-V 'C' extension?",
+        "options": [
+            "To enable user-level interrupts",
+            "To add bit manipulation instructions",
+            "To provide more efficient instruction encoding and reduce code size",
+            "To support double-precision floating-point calculations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'C' (Compressed) extension provides 16-bit versions of common 32-bit instructions, significantly reducing code size."
+    },
+    {
+        "id": "q11",
+        "text": "A fundamental challenge in encoding instructions for a 32-bit RISC architecture like RV32I is:",
+        "options": [
+            "Having too much space in the instruction word for operands",
+            "Fitting opcodes, register identifiers, and immediate values into a fixed 32-bit length",
+            "The inability to perform arithmetic operations",
+            "The requirement to support variable-length instructions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A fixed 32-bit instruction length requires careful design to fit all necessary information (opcode, registers, immediates), often requiring compromises like smaller immediate fields."
+    },
+    {
+        "id": "q12",
+        "text": "Which RISC-V instruction format is used for register-register arithmetic operations like `add` and `xor`?",
+        "options": [
+            "I-type",
+            "S-type",
+            "R-type",
+            "U-type"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The R-type (Register) format is used for instructions that operate on two source registers (rs1, rs2) and write to a destination register (rd), such as add, sub, and, or, xor."
+    },
+    {
+        "id": "q13",
+        "text": "How many different registers can be specified in a single RISC-V instruction using the 5-bit rs1, rs2, and rd fields?",
+        "options": [
+            "8",
+            "16",
+            "32",
+            "64"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A 5-bit field can represent 2^5 = 32 different values, allowing it to specify any one of the 32 base architecture registers (x0 to x31)."
+    },
+    {
+        "id": "q14",
+        "text": "In the R-type instruction format, the 'funct7' and 'funct3' fields are primarily used to:",
+        "options": [
+            "Specify the destination register",
+            "Specify the source register 2",
+            "Determine the specific operation to perform (e.g., add vs. sub)",
+            "Hold the immediate value"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'funct7' and 'funct3' fields in the R-type format work with the 'opcode' to uniquely identify the specific instruction (e.g., distinguishing add (funct7=0) from sub (funct7=32))."
+    },
+    {
+        "id": "q15",
+        "text": "What is the key difference between a logical right shift (srl) and an arithmetic right shift (sra)?",
+        "options": [
+            "srl performs division, sra does not",
+            "srl preserves the sign bit, sra does not",
+            "sra preserves the sign bit (sign-extends), srl shifts in zeros",
+            "sra is used for unsigned numbers, srl for signed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An arithmetic right shift (sra) replicates the sign bit (MSB) to preserve the sign of a two's complement number, while a logical right shift (srl) always shifts in zeros."
+    },
+    {
+        "id": "q16",
+        "text": "For the instruction `add x5, x6, x7`, what is the value of the 'funct7' field in its machine code encoding?",
+        "options": [
+            "0x00",
+            "0x20",
+            "0x04",
+            "It depends on the values in x6 and x7"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The 'add' instruction has a 'funct7' field value of '0000000' (0x00). The 'sub' instruction uses '0100000' (0x20) to differentiate it."
+    },
+    {
+        "id": "q17",
+        "text": "Which RISC-V instruction format is specifically designed for instructions that use a constant immediate value and one source register, such as `addi`?",
+        "options": [
+            "R-type",
+            "I-type",
+            "S-type",
+            "U-type"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The I-type (Immediate) format is used for instructions with one source register (rs1) and a 12-bit immediate value, such as addi, andi, and load instructions (lw, lb)."
+    },
+    {
+        "id": "q18",
+        "text": "What is the range of the 12-bit immediate value in an I-type instruction like `addi` after it is sign-extended to 32 bits?",
+        "options": [
+            "0 to 4095",
+            "-2048 to 2047",
+            "-1024 to 1023",
+            "-4096 to 4095"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A 12-bit two's complement number has a range of -2^11 to 2^11 - 1, which is -2048 to 2047. This value is sign-extended to 32 bits for use in arithmetic operations."
+    },
+    {
+        "id": "q19",
+        "text": "The instruction `andi x5, x6, 4` performs a bitwise AND between the value in register x6 and the immediate value 4. How is the immediate value 4 represented in the 12-bit 'imm' field of this I-type instruction?",
+        "options": [
+            "0000 0000 0100",
+            "1000 0000 0100",
+            "0000 0000 0000",
+            "1111 1111 1100"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The decimal value 4 is represented in 12-bit two's complement as 0000 0000 0100. The leading zeros are used for positive numbers."
+    },
+    {
+        "id": "q20",
+        "text": "For the instruction `andi x5, x6, -4`, what is the correct 12-bit two's complement encoding of the immediate value -4?",
+        "options": [
+            "0000 0000 0100",
+            "1000 0000 0100",
+            "1111 1111 1100",
+            "0111 1111 1100"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The decimal value -4 is represented in 12-bit two's complement by inverting the bits of +4 (0000 0000 0100) and adding 1, resulting in 1111 1111 1100."
+    },
+    {
+        "id": "q21",
+        "text": "In RISC-V, which register is hardwired to always contain the value zero?",
+        "options": [
+            "x1 (ra)",
+            "x2 (sp)",
+            "x0 (zero)",
+            "x3 (gp)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Register x0, named 'zero', is hardwired to the constant value 0. Writes to it are ignored, and reads always return 0."
+    },
+    {
+        "id": "q22",
+        "text": "Which RISC-V register is conventionally used to hold the return address for a function call?",
+        "options": [
+            "x0 (zero)",
+            "x1 (ra)",
+            "x2 (sp)",
+            "x5 (t0)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Register x1 is named 'ra' (return address) and is used by the `jal` (jump and link) instruction to store the address to return to after a function call."
+    },
+    {
+        "id": "q23",
+        "text": "Which set of registers (x12-x17) is conventionally used for what purpose in RISC-V?",
+        "options": [
+            "Temporary variables",
+            "Saved variables",
+            "Function arguments",
+            "Global pointer"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Registers x10-x17 are the 'a' registers (a0-a7). x10-a11 are for arguments/return values, and x12-x17 (a2-a7) are for passing function arguments."
+    },
+    {
+        "id": "q24",
+        "text": "What is the operation performed by the instruction `srai s3, s4, 31`?",
+        "options": [
+            "Logical left shift of s4 by 31 bits, store in s3",
+            "Logical right shift of s4 by 31 bits, store in s3",
+            "Arithmetic right shift of s4 by 31 bits, store in s3",
+            "Add 31 to s4 and store in s3"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'srai' is Shift Right Arithmetic Immediate. It shifts the value in s4 right by 31 bits, sign-extending the MSB, and stores the result in s3."
+    },
+    {
+        "id": "q25",
+        "text": "The instruction `lw s7, 0x2C(t1)` will:",
+        "options": [
+            "Store the value in s7 to memory at address [t1 + 0x2C]",
+            "Load a byte from memory address [t1 + 0x2C] into s7",
+            "Load a word (32 bits) from memory address [t1 + 0x2C] into s7",
+            "Add the value 0x2C to register t1 and store in s7"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'lw' is Load Word. It calculates an effective address by adding the immediate value (0x2C) to the base address in register t1, then loads a 32-bit word from that memory location into register s7."
+    },
+    {
+        "id": "q26",
+        "text": "Which instruction is used to transfer control to an instruction address stored in a register?",
+        "options": [
+            "j Label",
+            "jal L7",
+            "jr s1",
+            "beq s1, s2, L1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'jr s1' (Jump Register) sets the program counter (PC) to the value contained in register s1, transferring control to that address."
+    },
+    {
+        "id": "q27",
+        "text": "The RISC-V instruction `li s1, 0xABCDEF12` is most likely:",
+        "options": [
+            "A basic R-type instruction",
+            "A basic I-type instruction",
+            "A pseudoinstruction",
+            "Part of the M extension"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'li' (Load Immediate) is a pseudoinstruction. It is not a single machine instruction but is expanded by the assembler into a sequence of actual machine instructions (like lui followed by addi) to load a large 32-bit constant."
+    },
+    {
+        "id": "q28",
+        "text": "Which instruction format is used for store operations like `sw` (store word)?",
+        "options": [
+            "R-type",
+            "I-type",
+            "S-type",
+            "U-type"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The S-type (Store) format is used for store instructions. It has fields for two source registers (rs1 for base address, rs2 for data to store) and a 12-bit immediate offset split across two parts in the instruction word."
+    },
+    {
+        "id": "q29",
+        "text": "The U-type instruction format provides a 20-bit immediate value that is placed:",
+        "options": [
+            "In the lower 20 bits of the destination register",
+            "In the upper 20 bits of the destination register",
+            "Added directly to the program counter",
+            "Used as a memory offset for load/store"
+        ],
+        "correctAnswer": 1,
+        "explanation": "U-type instructions (like lui - load upper immediate) place the 20-bit immediate value into the upper 20 bits of the destination register, filling the lower 12 bits with zeros. This is useful for forming large addresses or constants."
+    },
+    {
+        "id": "q30",
+        "text": "Which instruction is crucial for building function calls, as it saves the return address to the `ra` register?",
+        "options": [
+            "j Label",
+            "jr s1",
+            "jal L7",
+            "beq s1, s2, L1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'jal' (Jump and Link) performs two operations: 1) It saves the address of the next instruction (PC+4) into the `ra` (x1) register. 2) It jumps to the target address. This is the mechanism for calling a function."
+    },
+    {
+        "id": "q31",
+        "text": "A good ISA should last through many implementations. This promotes:",
+        "options": [
+            "Higher clock speeds",
+            "Portability and software compatibility",
+            "Lower transistor counts",
+            "Simpler compilers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A stable ISA allows for multiple hardware implementations (e.g., different microarchitectures, process technologies) while ensuring that software written for the ISA remains compatible and portable across them."
+    },
+    {
+        "id": "q32",
+        "text": "The argument that a programmer only needs the assembly instructions and register map, not hardware details, assumes the ISA provides a complete:",
+        "options": [
+            "Microarchitectural specification",
+            "Power consumption profile",
+            "Abstraction layer",
+            "Heat dissipation model"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This argument hinges on the ISA successfully acting as a complete abstraction layer, hiding all implementation details (microarchitecture, pipelining, caches) and exposing only the programmer-visible state and operations."
+    },
+    {
+        "id": "q33",
+        "text": "The 'A' standard extension in RISC-V provides instructions for:",
+        "options": [
+            "Atomic operations",
+            "Floating-point arithmetic",
+            "Bit manipulation",
+            "Compressed encoding"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The 'A' extension adds instructions for Atomic Operations, which are essential for synchronizing operations between multiple threads or processors (e.g., in multicore systems)."
+    },
+    {
+        "id": "q34",
+        "text": "The RISC-V 'F' and 'D' extensions are related to:",
+        "options": [
+            "Faster integer math",
+            "Floating-point operations (single and double precision)",
+            "Function call efficiency",
+            "Data compression"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'F' extension adds support for Single-Precision (32-bit) floating-point operations. The 'D' extension adds support for Double-Precision (64-bit) floating-point operations."
+    },
+    {
+        "id": "q35",
+        "text": "A processor designed for a low-power embedded system might use the RV32E variant because it:",
+        "options": [
+            "Has more registers",
+            "Has only 16 general-purpose registers",
+            "Includes the floating-point extensions",
+            "Uses a CISC design"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The RV32E ('Embedded') variant reduces the number of general-purpose registers from 32 to 16 (x0-x15). This reduces the hardware cost and power consumption, making it suitable for very small, low-power cores."
+    },
+    {
+        "id": "q36",
+        "text": "What is the primary functional difference between the I-type `slli` (shift left logical immediate) and the R-type `sll` (shift left logical) instruction?",
+        "options": [
+            "sll is faster",
+            "slli uses an immediate value for the shift amount, sll uses a register",
+            "sll is for arithmetic, slli is for logical",
+            "There is no difference"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'sll' instruction (R-type) uses the value in a register (rs2) to determine the shift amount. The 'slli' instruction (I-type) uses a constant immediate value encoded in the instruction itself to determine the shift amount."
+    },
+    {
+        "id": "q37",
+        "text": "The `beq` (branch if equal) instruction in RISC-V uses which instruction format?",
+        "options": [
+            "I-type",
+            "S-type",
+            "SB-type (a variant of S)",
+            "UJ-type"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Branch instructions like 'beq' use the SB-type format. It is similar to the S-type but has the immediate field split and rearranged to optimize the common case of branching to nearby instructions."
+    },
+    {
+        "id": "q38",
+        "text": "The `lui` (load upper immediate) instruction is primarily used to:",
+        "options": [
+            "Load a small constant (-2048 to 2047)",
+            "Load the upper 20 bits of a 32-bit constant or address",
+            "Perform a logical OR operation",
+            "Calculate a memory address for a load"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'lui' (U-type) places a 20-bit immediate value into the upper 20 bits of the destination register, setting the lower 12 bits to zero. It is used to construct the upper part of large constants or addresses, with the lower part often added by a subsequent 'addi' instruction."
+    },
+    {
+        "id": "q39",
+        "text": "Which pseudoinstruction would likely be expanded into an `xori` instruction with all ones?",
+        "options": [
+            "neg s1, s3 (negate)",
+            "not t1, t2 (not / invert)",
+            "mv s3, s7 (move)",
+            "nop (no operation)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'not' pseudoinstruction, which performs a bitwise inversion (NOT), is typically implemented as 'xori rd, rs, -1'. The immediate value -1 (in two's complement) has all bits set to 1, so XORing a value with all ones flips all its bits."
+    },
+    {
+        "id": "q40",
+        "text": "The ability to discover available ISA extensions in a RISC-V core by reading the 'misa' CSR demonstrates the importance of:",
+        "options": [
+            "Hardware secrecy",
+            "Software abstraction",
+            "Self-describing hardware",
+            "Complex instruction sets"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'misa' (Machine ISA) Control and Status Register allows software to query which base ISA and standard extensions are implemented by the hardware. This feature of self-description is crucial for portable software in RISC-V's modular ecosystem."
+    }
+]

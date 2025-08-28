@@ -1,0 +1,483 @@
+[
+    {
+        "id": "q1",
+        "text": "In the CPU block diagram presented, which component is directly responsible for modifying the Program Counter?",
+        "options": [
+            "Instruction Decoder",
+            "ALU",
+            "Literal Address Operation section",
+            "Timing, Control and Register selection unit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'Literal Address Operation' section, which interfaces with Program Memory and the Program Counter, is shown to have a 'Modify' function, indicating its role in altering the PC's value, such as during jumps or branches."
+    },
+    {
+        "id": "q2",
+        "text": "What is the primary function of the 'Timing, Control and Register selection' unit in the CPU diagram?",
+        "options": [
+            "To perform arithmetic and logic operations",
+            "To manage the flow of data between the clock, interrupts, and all other CPU sections",
+            "To decode instructions from the Instruction Register",
+            "To store temporary data for the ALU"
+        ],
+        "correctAnswer": 1,
+        "explanation": "This unit is centrally connected to the Clock, Reset, Interrupts, and all major sections (Program Execution, Register Processing, RAM), indicating its role in coordinating and controlling the overall operation and timing of the CPU."
+    },
+    {
+        "id": "q3",
+        "text": "According to the lecture, what are the three main categories of CPU performance enhancements discussed?",
+        "options": [
+            "Caching, Prefetching, Speculative Execution",
+            "Pipelining, Parallelism, Advanced processor architectures",
+            "Multithreading, Multicore, Superscalar",
+            "Clock Speed Increase, Larger Registers, Faster RAM"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The introduction slide explicitly lists 'Pipelining', 'Parallelism', and 'Advanced processor architectures' as the key CPU performance enhancement topics to be covered."
+    },
+    {
+        "id": "q4",
+        "text": "In the sequential laundry analogy, what is the total time taken to complete one load (wash, dry, fold)?",
+        "options": [
+            "30 minutes",
+            "40 minutes",
+            "90 minutes",
+            "20 minutes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The latency for a single task is the sum of its stages: 30 min (wash) + 40 min (dry) + 20 min (fold) = 90 minutes."
+    },
+    {
+        "id": "q5",
+        "text": "What is the throughput improvement for 4 loads when moving from sequential to pipelined laundry?",
+        "options": [
+            "Throughput is halved",
+            "Throughput remains the same",
+            "Throughput is nearly doubled",
+            "Throughput is quadrupled"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Sequential processing took 6 hours (360 min) for 4 loads. Pipelining completed the same workload in 3.5 hours (210 min). The time to finish the workload was reduced, meaning the rate of completing loads (throughput) increased significantly, nearly doubling in this case."
+    },
+    {
+        "id": "q6",
+        "text": "The pipelined laundry example demonstrates that the overall pipeline rate is limited by:",
+        "options": [
+            "The fastest stage",
+            "The average of all stage times",
+            "The slowest stage",
+            "The number of tasks"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A fundamental lesson from pipelining is that the maximum achievable clock rate (or in the analogy, the rate of completing loads) is determined by the slowest stage in the pipeline, which is the dryer at 40 minutes."
+    },
+    {
+        "id": "q7",
+        "text": "What is the 'time to fill' the pipeline also known as?",
+        "options": [
+            "Drain time",
+            "Latency",
+            "Throughput penalty",
+            "Pipeline startup cost"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The 'time to fill the pipeline' refers to the initial cycles where the pipeline is not yet full and thus not achieving its maximum throughput. This is a startup cost or latency before peak performance is reached."
+    },
+    {
+        "id": "q8",
+        "text": "In a CPU pipeline, what is the primary metric for improvement?",
+        "options": [
+            "Reducing the latency of a single instruction",
+            "Increasing the clock speed of the slowest stage",
+            "Improving the throughput of the entire workload",
+            "Minimizing the number of pipeline stages"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A key lesson from the slides is that 'Pipelining doesn't reduce latency of a single task' but instead aims to 'Improve throughput of entire workload' by allowing multiple instructions to be processed simultaneously at different stages."
+    },
+    {
+        "id": "q9",
+        "text": "In the 5-stage MIPS pipeline (IF, ID, EX, MEM, WB), which stage is responsible for calculating a memory address?",
+        "options": [
+            "Instruction Fetch (IF)",
+            "Instruction Decode (ID)",
+            "Execute (EX)",
+            "Memory Access (MEM)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Execute (EX) stage is where the ALU operates. For a load or store instruction, the ALU calculates the effective memory address, which is then used in the subsequent Memory Access (MEM) stage."
+    },
+    {
+        "id": "q10",
+        "text": "How many clock cycles does it take for a single instruction to complete (latency) in a 5-stage pipeline?",
+        "options": [
+            "1 cycle",
+            "3 cycles",
+            "5 cycles",
+            "It depends on the instruction"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a standard 5-stage pipeline, an instruction must progress sequentially through all five stages (IF, ID, EX, MEM, WB). Therefore, it takes 5 clock cycles from the start of its fetch to the completion of its write-back."
+    },
+    {
+        "id": "q11",
+        "text": "In the ideal pipelined execution diagram, what is happening in Cycle 4?",
+        "options": [
+            "Only Instruction 1 is executing (EX)",
+            "Instruction 1 is writing back (WB), Instruction 2 is in MEM, Instruction 3 is in EX, Instruction 4 is in ID",
+            "Instruction 1 is in MEM, Instruction 2 is in EX, Instruction 3 is in ID, Instruction 4 is in IF",
+            "The pipeline is still being filled"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Following the pattern in the diagram: In Cycle 4, the first instruction (I1) is in its Write-Back (WB) stage. I2 is in the Memory Access (MEM) stage. I3 is in the Execute (EX) stage. I4 is being fetched (IF). This demonstrates multiple instructions being processed concurrently."
+    },
+    {
+        "id": "q12",
+        "text": "What is the primary purpose of the pipeline registers (e.g., between IF/ID, ID/EX) in a CPU pipeline?",
+        "options": [
+            "To store the final results of computations",
+            "To act as a permanent storage for frequently used data",
+            "To hold the output of one stage as the input for the next stage on the next clock cycle",
+            "To decode instructions before they are executed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Pipeline registers (or latches) are crucial for isolating each pipeline stage. They capture the state and results from one stage at the end of a clock cycle and provide that data as the input to the next stage at the start of the next clock cycle."
+    },
+    {
+        "id": "q13",
+        "text": "According to the Intel x86 history chart, which microarchitecture had a pipeline depth of 5 stages?",
+        "options": [
+            "Pentium MMX (P55C)",
+            "Original Pentium (P5 / P54C)",
+            "Intel P6 Family",
+            "Bonnell (Atom)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The slide clearly states that the original 'Pentium (P5 / P54C)' had a 'Pipeline Depth: 5'."
+    },
+    {
+        "id": "q14",
+        "text": "What trend is observable in the misprediction penalty for the Intel Core microarchitectures listed (Core, Core 2, Nehalem)?",
+        "options": [
+            "It consistently decreases",
+            "It remains constant at 7",
+            "It consistently increases",
+            "It fluctuates randomly"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The chart shows the pipeline depth remained at 7, but the misprediction penalty increased: Core (Yonah) had 12, Core 2 had 14, and Nehalem had 16. This indicates deeper pipelines and/or more complex branch resolution logic, making branch misses more costly."
+    },
+    {
+        "id": "q15",
+        "text": "The Bonnell (Atom) microarchitecture pipeline has many small stages (IF1, IF2, ID1, ID2, etc.). What is a potential disadvantage of this design?",
+        "options": [
+            "Lower maximum clock speed",
+            "Increased complexity and power consumption per instruction",
+            "Decreased misprediction penalty",
+            "Reduced number of instructions in flight"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Breaking down pipeline stages into smaller, simpler steps allows for a higher clock frequency. However, this increases the number of pipeline stages, which can lead to a higher branch misprediction penalty and generally increases the hardware complexity and power consumption for managing the deeper pipeline."
+    },
+    {
+        "id": "q16",
+        "text": "In the 'Pipeline With a Branch Penalty' example, what causes the pipeline to stall or introduce bubbles?",
+        "options": [
+            "A data dependency between instructions",
+            "A cache miss during instruction fetch",
+            "A taken branch instruction",
+            "An arithmetic overflow exception"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The slide is titled 'Pipeline With a Branch Penalty Due to a Taken Branch'. When a branch is taken, the sequentially fetched instructions (Inst. 2, 3, 4) that are already in the pipeline are not the correct ones to execute, so the pipeline must be flushed, wasting cycles and creating a 'penalty'."
+    },
+    {
+        "id": "q17",
+        "text": "In the branch penalty diagram, how many clock cycles (CC) is the penalty for the taken branch?",
+        "options": [
+            "1 CC",
+            "2 CC",
+            "3 CC",
+            "4 CC"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The slide explicitly states: 'IPC instructions have a branch penalty of 1 CC'. The diagram shows one bubble (wasted cycle) in the pipeline after the branch is resolved, corresponding to a 1-cycle penalty."
+    },
+    {
+        "id": "q18",
+        "text": "Looking at the branch penalty timing diagram, in which clock cycle is the branch instruction (Inst. 1) in its Execute (IE) stage?",
+        "options": [
+            "Cycle 2",
+            "Cycle 3",
+            "Cycle 4",
+            "Cycle 5"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Following the standard 5-stage pipeline for Inst. 1: IF in Cycle 1, ID/OF in Cycle 2, Execute (IE) in Cycle 3, Write Back (WB) in Cycle 4. The branch is resolved during the Execute stage."
+    },
+    {
+        "id": "q19",
+        "text": "After the branch is taken in the example, which instruction is fetched next?",
+        "options": [
+            "Inst. 2",
+            "Inst. 3",
+            "Inst. 4",
+            "Inst. 20"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The program order shows Inst. 1 is the branch. The pipeline fetches Inst. 2, 3, and 4 speculatively. After the branch (to Inst. 20) is taken and resolved, the pipeline flushes the incorrect instructions and starts fetching from the new target address, Inst. 20."
+    },
+    {
+        "id": "q20",
+        "text": "What fundamental CPU design concept is the laundry analogy primarily used to explain?",
+        "options": [
+            "Virtual Memory",
+            "Pipelining",
+            "Cache Hierarchies",
+            "Multicore Processing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The slides use the 'Laundry example' specifically under the heading 'Pipelining – It’s Natural!' to introduce the concept of breaking down a task into stages and overlapping execution to improve throughput."
+    },
+    {
+        "id": "q21",
+        "text": "In the CPU block diagram, which bus is likely used to transfer data from the 'RAM & Data Registers' to the 'ALU'?",
+        "options": [
+            "Address Bus",
+            "External System Bus",
+            "Internal Data Bus",
+            "Control Bus"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'Internal data bus' is shown connecting the 'Accumulator' and the 'ALU'. Data from RAM would typically be loaded into a register (like the accumulator) via the system bus, and then transferred to the ALU via this internal data bus for processing."
+    },
+    {
+        "id": "q22",
+        "text": "Which component in the CPU diagram is responsible for holding the current instruction being decoded?",
+        "options": [
+            "Program Counter",
+            "Accumulator",
+            "Instruction Register",
+            "Address Register"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 'Instruction Register' is explicitly labeled in the 'Program Execution Section'. Its purpose is to hold the instruction fetched from memory so that the 'Instruction Decoder' can decode it."
+    },
+    {
+        "id": "q23",
+        "text": "What is the role of the 'FLAG & Special Function Registers' shown in the diagram?",
+        "options": [
+            "To store the address of the next instruction",
+            "To hold temporary data for the ALU",
+            "To store status bits (e.g., zero, carry) and control information from ALU operations",
+            "To decode instruction opcodes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Flags (or condition codes) are status bits set by the ALU after an operation (e.g., Zero flag, Carry flag, Overflow flag). Special Function Registers are CPU registers with a specific control purpose, unlike general-purpose data registers."
+    },
+    {
+        "id": "q24",
+        "text": "The potential speedup from pipelining is theoretically equal to what?",
+        "options": [
+            "The number of tasks",
+            "The time of the longest stage",
+            "The number of pipeline stages",
+            "The sum of all stage times"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A key lesson from the slides is: 'Potential speedup = No pipe stages'. If all stages are balanced, an N-stage pipeline can theoretically improve throughput by a factor of N compared to sequential execution."
+    },
+    {
+        "id": "q25",
+        "text": "Why does 'time to drain/flush' the pipeline reduce the overall speedup?",
+        "options": [
+            "It requires extra energy to stop the pipeline",
+            "It prevents new tasks from entering the pipeline",
+            "It represents cycles where the pipeline is not full, reducing average throughput",
+            "It causes errors in the final results of tasks"
+        ],
+        "correctAnswer": 2,
+        "explanation": "At the end of a workload, no new tasks are entering the pipeline. The pipeline must still process the tasks that are already in progress through the remaining stages. During this 'drain' time, the pipeline is not fully utilized, which slightly reduces the overall average throughput and thus the achieved speedup."
+    },
+    {
+        "id": "q26",
+        "text": "In the 5-stage pipeline notation (IF, ID, EX, MEM, WB), what is a common primary activity of the 'ID' stage?",
+        "options": [
+            "Perform an arithmetic operation",
+            "Read operands from the register file",
+            "Access data memory",
+            "Write a result to the register file"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Instruction Decode (ID) stage is responsible for decoding the instruction and reading the required operands from the register file. The Execute (EX) stage performs arithmetic, and the Write Back (WB) stage writes to the register file."
+    },
+    {
+        "id": "q27",
+        "text": "Which stage in a standard 5-stage RISC pipeline is often idle for instructions that do not access memory (e.g., ADD, XOR)?",
+        "options": [
+            "IF",
+            "ID",
+            "EX",
+            "MEM",
+            "WB"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The Memory Access (MEM) stage is specifically for load and store instructions. For arithmetic or logic instructions (like ADD, XOR), no memory access is needed, so the MEM stage effectively becomes a 'do-nothing' or pass-through stage for that instruction."
+    },
+    {
+        "id": "q28",
+        "text": "Comparing Pentium and Pentium MMX pipelines, what was a consequence of adding the MMX execution stages?",
+        "options": [
+            "The overall pipeline depth decreased",
+            "The misprediction penalty decreased",
+            "The pipeline became deeper for MMX multiply operations",
+            "The clock speed was forced to decrease"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The slide shows that for an MMX multiply-add instruction, the pipeline gained extra stages ('RD | M1 | M2 | M3 | WB'), making it deeper than the standard integer pipeline. This could increase the latency for those specific instructions."
+    },
+    {
+        "id": "q29",
+        "text": "What does a larger branch misprediction penalty imply for a software developer?",
+        "options": [
+            "The developer doesn't need to worry about branches",
+            "The cost of a poorly predicted branch is higher",
+            "Branches will be predicted with 100% accuracy",
+            "The CPU has a smaller cache"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A larger misprediction penalty means that when the CPU guesses the wrong path for a branch, it wastes more cycles (e.g., 16 in Nehalem vs. 3-4 in original Pentium). This makes writing code with predictable branch patterns (e.g., using sorted data for branches) more important for performance on modern deep-pipeline CPUs."
+    },
+    {
+        "id": "q30",
+        "text": "The Intel P6 family pipeline includes stages like 'Rename' and 'Schedule'. What advanced architecture concept do these stages facilitate?",
+        "options": [
+            "Pipelining",
+            "Out-of-Order Execution",
+            "Speculative Execution",
+            "Caching"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Register renaming is a technique used to eliminate false data dependencies (WAR and WAW hazards). Scheduling (or dispatching) involves sending instructions to execution units when their operands are ready, not necessarily in program order. These are key components of Out-of-Order (OoO) execution engines."
+    },
+    {
+        "id": "q31",
+        "text": "In the branch penalty diagram, what is happening in clock cycle 5?",
+        "options": [
+            "Inst. 1 is writing back, Inst. 20 is being fetched",
+            "The pipeline is completely stalled",
+            "Inst. 4 is executing, Inst. 20 is decoding",
+            "Inst. 1 is executing, Inst. 2 is decoding"
+        ],
+        "correctAnswer": 0,
+        "explanation": "In cycle 5: Inst. 1 (the branch) is in its Write Back (WB) stage. Meanwhile, the fetch stage, having been redirected by the branch, is now fetching the correct instruction, Inst. 20. The bubbles (penalty) are in the stages where Inst. 2, 3, and 4 would have been."
+    },
+    {
+        "id": "q32",
+        "text": "What is the state of the pipeline stages during the 'branch penalty' clock cycle?",
+        "options": [
+            "They are powered down to save energy",
+            "They are processing incorrect instructions that will be flushed",
+            "They are stalled, performing no useful work (bubbles)",
+            "They are calculating the target address of the branch"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The penalty is manifested as 'bubbles' or 'stalls' in the pipeline. These are cycles where a stage does no productive work because the instructions it was processing were from the wrong path and have been invalidated (flushed)."
+    },
+    {
+        "id": "q33",
+        "text": "Which performance enhancement technique is characterized by executing multiple instructions simultaneously in the same clock cycle?",
+        "options": [
+            "Pipelining",
+            "Superscalar Execution",
+            "Very Long Instruction Word (VLIW)",
+            "Both 2 and 3"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Pipelining overlaps execution of multiple instructions in time. Superscalar and VLIW architectures go further by having multiple execution units, allowing them to execute multiple instructions in parallel within the same clock cycle. This falls under the broader topic of 'Parallelism' mentioned in the introduction."
+    },
+    {
+        "id": "q34",
+        "text": "What is a 'structural hazard' in a pipelined processor?",
+        "options": [
+            "A branch is mispredicted",
+            "An instruction needs data produced by a previous instruction that isn't ready",
+            "Two instructions in the pipeline need to use the same hardware resource at the same time",
+            "The program counter increments incorrectly"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A structural hazard occurs when the hardware cannot support all possible combinations of instructions simultaneously in overlapped execution. For example, if the processor has only one memory port, a load instruction (MEM stage) and an instruction fetch (IF stage) could conflict in the same cycle."
+    },
+    {
+        "id": "q35",
+        "text": "What is a 'data hazard' in a pipelined processor?",
+        "options": [
+            "A branch is mispredicted",
+            "An instruction needs data produced by a previous instruction that isn't ready",
+            "Two instructions in the pipeline need to use the same hardware resource at the same time",
+            "The program counter increments incorrectly"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A data hazard occurs when an instruction depends on the result of a previous instruction that is still being processed in the pipeline. For example, if instruction B uses a register that instruction A is writing to, B cannot read the correct value until A has completed its WB stage."
+    },
+    {
+        "id": "q36",
+        "text": "What is a 'control hazard' in a pipelined processor?",
+        "options": [
+            "A branch is mispredicted",
+            "An instruction needs data produced by a previous instruction that isn't ready",
+            "Two instructions in the pipeline need to use the same hardware resource at the same time",
+            "The program counter increments incorrectly"
+        ],
+        "correctAnswer": 0,
+        "explanation": "A control hazard (or branch hazard) arises from the need to make a decision (e.g., based on a branch) before the instruction flow is known. The pipeline may have already fetched and started processing instructions based on a prediction. If the prediction is wrong, those instructions must be discarded (flushed), causing a penalty."
+    },
+    {
+        "id": "q37",
+        "text": "Which technique is commonly used to reduce the impact of data hazards?",
+        "options": [
+            "Branch Prediction",
+            "Forwarding (Bypassing)",
+            "Instruction Prefetching",
+            "Register Renaming"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Forwarding (or bypassing) is a technique where the result from an earlier stage of a previous instruction is made available directly to the ALU for a dependent next instruction, before it is formally written back to the register file. This reduces the need to stall the pipeline for data dependencies."
+    },
+    {
+        "id": "q38",
+        "text": "The concept of 'Instruction Level Parallelism (ILP)' refers to:",
+        "options": [
+            "Using multiple CPU cores to run different programs",
+            "The ability of a processor to execute multiple instructions from a single thread simultaneously",
+            "Adding more stages to the pipeline",
+            "Increasing the width of the data bus"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ILP is the parallel execution of multiple instructions from a single sequential program thread. Techniques like pipelining, superscalar execution, and out-of-order execution are all methods to exploit ILP, as shown in the slide titled 'Instruction Level Parallelism (ILP)'."
+    },
+    {
+        "id": "q39",
+        "text": "What is the fundamental difference between the 'Parallelism' and 'Pipelining' categories mentioned in the introduction?",
+        "options": [
+            "Pipelining is for latency, Parallelism is for throughput",
+            "Pipelining is a form of temporal parallelism, while other forms (e.g., superscalar) involve spatial parallelism",
+            "They are the same concept",
+            "Pipelining is used in GPUs, Parallelism is used in CPUs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pipelining is a specific technique that achieves parallelism by overlapping the execution of multiple instructions in time (temporal parallelism). The broader category of 'Parallelism' includes other techniques like superscalar execution, which uses multiple execution units to execute instructions simultaneously in space (spatial parallelism) within a single core."
+    },
+    {
+        "id": "q40",
+        "text": "Why is the 'Execute' stage in a pipeline often subdivided in complex CPUs like those in the Intel chart?",
+        "options": [
+            "To reduce the cost of branch misprediction",
+            "To allow for a higher clock frequency by simplifying the work done per cycle",
+            "To make the instruction decoder simpler",
+            "To reduce the number of transistors needed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Subdividing a complex stage (like Execute, which may involve ALUs, FPUs, AGUs) into multiple simpler stages is a common technique to reduce the critical path delay. This allows the clock period to be shorter, enabling a higher overall clock frequency for the CPU."
+    }
+]

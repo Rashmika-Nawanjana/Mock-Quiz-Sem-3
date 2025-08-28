@@ -1,0 +1,722 @@
+[
+    {
+        "id": "1",
+        "text": "Which OSI layer is primarily responsible for error detection and correction in data transmission?",
+        "options": [
+            "Physical Layer",
+            "Data Link Layer",
+            "Network Layer",
+            "Transport Layer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Data Link Layer is responsible for error detection and correction, as it handles frame transmission and ensures data integrity across a single communication link."
+    },
+    {
+        "id": "2",
+        "text": "What is the main disruptive characteristic of impulse noise?",
+        "options": [
+            "It is constant and predictable",
+            "It causes small timing irregularities",
+            "It consists of random spikes that can destroy bits of information",
+            "It results from signal attenuation over distance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Impulse noise consists of random spikes of power that can destroy one or more bits of information, making it highly disruptive to digital signals."
+    },
+    {
+        "id": "3",
+        "text": "How does transmission speed relate to the impact of impulse noise?",
+        "options": [
+            "Faster speeds reduce the impact of impulse noise",
+            "Slower speeds make impulse noise more destructive",
+            "Faster speeds can result in more bits being lost to a single noise spike",
+            "Transmission speed has no effect on impulse noise impact"
+        ],
+        "correctAnswer": 2,
+        "explanation": "At faster transmission speeds, bits are closer together, so a single impulse noise spike can damage multiple bits of information."
+    },
+    {
+        "id": "4",
+        "text": "What is crosstalk in data communications?",
+        "options": [
+            "The reflective feedback of a transmitted signal",
+            "Unwanted coupling between two different signal paths",
+            "Small timing irregularities during digital signal transmission",
+            "Continuous loss of signal strength through a medium"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Crosstalk is the unwanted coupling between two different signal paths, such as hearing another conversation while on the telephone."
+    },
+    {
+        "id": "5",
+        "text": "Which type of noise is characterized by reflective feedback of a transmitted signal?",
+        "options": [
+            "White noise",
+            "Impulse noise",
+            "Echo",
+            "Jitter"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Echo is the reflective feedback of a transmitted signal as it moves through a medium, most often occurring on coaxial cable."
+    },
+    {
+        "id": "6",
+        "text": "What causes jitter in digital signal transmission?",
+        "options": [
+            "Random spikes of power",
+            "Unwanted coupling between signals",
+            "Small timing irregularities during signal repetition",
+            "Signal reflection at cable ends"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Jitter results from small timing irregularities that occur when a digital signal is repeated over and over during transmission."
+    },
+    {
+        "id": "7",
+        "text": "What is delay distortion in signal transmission?",
+        "options": [
+            "Random spikes that destroy bits of information",
+            "Variable signal propagation speed based on frequency",
+            "Reflective feedback of transmitted signals",
+            "Continuous loss of signal strength"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Delay distortion occurs because the velocity of propagation of a signal through a medium varies with the frequency of the signal."
+    },
+    {
+        "id": "8",
+        "text": "What is attenuation in data communications?",
+        "options": [
+            "The reflective feedback of a transmitted signal",
+            "Continuous loss of a signal's strength as it travels through a medium",
+            "Unwanted coupling between two different signal paths",
+            "Small timing irregularities during digital signal transmission"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Attenuation is the continuous loss of a signal's strength as it travels through a medium, which can make signals too weak to distinguish 1s and 0s."
+    },
+    {
+        "id": "9",
+        "text": "Which error prevention technique involves using less lossy media and amplifiers?",
+        "options": [
+            "Shielding cables",
+            "Line conditioning",
+            "Replacing older equipment",
+            "Combating attenuation"
+        ],
+        "correctAnswer": 3,
+        "explanation": "To combat attenuation, we can use less lossy media and amplifiers to maintain signal strength over distance."
+    },
+    {
+        "id": "10",
+        "text": "What is the purpose of information redundancy in coding?",
+        "options": [
+            "To increase transmission speed",
+            "To reduce the number of bits needed",
+            "To enable error detection and correction",
+            "To simplify encoding processes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Information redundancy adds extra bits to data words, creating codewords that enable error detection and possibly correction."
+    },
+    {
+        "id": "11",
+        "text": "What characterizes a separable code?",
+        "options": [
+            "Data and code bits are integrated together",
+            "It has separate fields for data and code bits",
+            "It requires complex processing to extract data",
+            "It cannot be used for error correction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A separable code has separate fields for the data and the code bits, allowing the code bits to be processed separately to verify data correctness."
+    },
+    {
+        "id": "12",
+        "text": "In even parity coding, how is the parity bit set?",
+        "options": [
+            "To make the total number of 1's odd",
+            "To make the total number of 1's even",
+            "To match the first data bit",
+            "To always be 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In even parity code, the extra bit is set so that the total number of 1's in the (d+1)-bit word (including the parity bit) is even."
+    },
+    {
+        "id": "13",
+        "text": "What is the advantage of 2-dimensional parity (LRC/VRC) over simple parity?",
+        "options": [
+            "It uses fewer bits",
+            "It can identify a unique erroneous bit",
+            "It doesn't require parity bits",
+            "It works only with odd parity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "2-dimensional parity (Longitudinal Redundancy Check/Vertical Redundancy Check) can identify a unique erroneous bit, providing better error detection capabilities."
+    },
+    {
+        "id": "14",
+        "text": "What does Hamming distance measure?",
+        "options": [
+            "The physical distance between communicating devices",
+            "The number of bit positions in which two codewords differ",
+            "The time delay in signal transmission",
+            "The strength of a signal over distance"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Hamming distance between two codewords is the number of bit positions in which the two words differ."
+    },
+    {
+        "id": "15",
+        "text": "What is the purpose of Hamming codes?",
+        "options": [
+            "To increase transmission speed",
+            "To provide error detection and correction",
+            "To reduce the number of bits needed",
+            "To encrypt data for security"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hamming codes are error-correcting codes that use multiple parity bits to detect and correct errors in data transmission."
+    },
+    {
+        "id": "16",
+        "text": "In the (7,4) SEC Hamming Code, what do the numbers represent?",
+        "options": [
+            "7 data bits + 4 parity bits",
+            "4 data bits + 3 parity bits",
+            "7 total bits with 4 errors correctable",
+            "4 total bits with 7 parity checks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The (7,4) SEC Hamming Code uses 7-bit codewords with 4 data bits and 3 parity bits, allowing it to correct single-bit errors."
+    },
+    {
+        "id": "17",
+        "text": "How are parity bits typically placed in Hamming codes?",
+        "options": [
+            "At the beginning of the codeword",
+            "At the end of the codeword",
+            "At positions corresponding to powers of two",
+            "Randomly throughout the codeword"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In Hamming codes, parity bits are typically placed at positions corresponding to powers of two (1, 2, 4, 8, etc.)."
+    },
+    {
+        "id": "18",
+        "text": "What is the fundamental principle behind CRC error detection?",
+        "options": [
+            "Adding simple parity bits to data",
+            "Using Hamming distance calculations",
+            "Treating data as polynomials and using polynomial division",
+            "Employing 2-dimensional parity checks"
+        ],
+        "correctAnswer": 2,
+        "explanation": "CRC treats the packet of data as a large polynomial and uses polynomial arithmetic (division) to generate a checksum for error detection."
+    },
+    {
+        "id": "19",
+        "text": "In CRC, what happens to the quotient during the checksum calculation?",
+        "options": [
+            "It is attached to the message",
+            "It is used as the checksum",
+            "It is discarded",
+            "It is sent separately from the message"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In CRC calculation, the quotient is discarded while the remainder is attached to the end of the message as the checksum."
+    },
+    {
+        "id": "20",
+        "text": "How does the receiver verify data integrity using CRC?",
+        "options": [
+            "By comparing received parity bits with calculated ones",
+            "By recalculating the CRC and checking for a zero remainder",
+            "By measuring Hamming distance from expected codewords",
+            "By checking if all bits are identical to the sent message"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The receiver divides the received message (with CRC) by the same generating polynomial. If the remainder is zero, no error occurred."
+    },
+    {
+        "id": "21",
+        "text": "Which noise type is also known as thermal or Gaussian noise?",
+        "options": [
+            "Impulse noise",
+            "White noise",
+            "Crosstalk",
+            "Echo"
+        ],
+        "correctAnswer": 1,
+        "explanation": "White noise, also known as thermal or Gaussian noise, is relatively constant and can be reduced, but if too strong, it can disrupt signals."
+    },
+    {
+        "id": "22",
+        "text": "What makes impulse noise particularly difficult to remove from analog signals?",
+        "options": [
+            "Its constant nature",
+            "Its predictability",
+            "Its similarity to the original signal",
+            "Its low amplitude"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Impulse noise is difficult to remove from analog signals because it may be hard to distinguish from the original signal."
+    },
+    {
+        "id": "23",
+        "text": "Which error prevention method involves using equalizers?",
+        "options": [
+            "Reducing attenuation",
+            "Preventing crosstalk",
+            "Correcting delay distortion",
+            "Eliminating jitter"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Delay distortion can be reduced using equalizers, which compensate for the varying propagation speeds of different frequencies."
+    },
+    {
+        "id": "24",
+        "text": "What is the relationship between signal distortion and bit reception?",
+        "options": [
+            "Distortion improves bit reception",
+            "Distortion has no effect on bit reception",
+            "Distortion can cause successive bits to merge, making reception difficult",
+            "Distortion only affects analog signals, not digital bits"
+        ],
+        "correctAnswer": 2,
+        "explanation": "As signals travel and become distorted, successive bits may merge, making it difficult to distinguish individual bits during reception."
+    },
+    {
+        "id": "25",
+        "text": "What is a key characteristic of interference in communication systems?",
+        "options": [
+            "It is always constant and predictable",
+            "It is often intermittent and difficult to diagnose",
+            "It only affects analog signals",
+            "It can be completely eliminated with proper shielding"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Interference from outside sources is often intermittent and difficult to diagnose, making it challenging to address."
+    },
+    {
+        "id": "26",
+        "text": "Which error prevention technique involves observing the stated capacities of media?",
+        "options": [
+            "Proper shielding",
+            "Line conditioning",
+            "Media replacement",
+            "Capacity observance"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Observing the stated capacities of media helps prevent errors by ensuring that transmission parameters stay within the media's operational limits."
+    },
+    {
+        "id": "27",
+        "text": "In coding theory, what is the relationship between data bits (d) and codeword bits (c)?",
+        "options": [
+            "c = d",
+            "c < d",
+            "c > d",
+            "c = d + 1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A data word with d bits is encoded into a codeword with c bits where c > d, adding redundancy for error detection/correction."
+    },
+    {
+        "id": "28",
+        "text": "What is required to extract original data from a non-separable code?",
+        "options": [
+            "Simply disregarding the code bits",
+            "Processing the code bits separately",
+            "Some processing to extract data from the integrated word",
+            "Using a different polynomial for decoding"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A non-separable code has data and code bits integrated together, requiring processing to extract the original data from the encoded word."
+    },
+    {
+        "id": "29",
+        "text": "In odd parity coding, how is the parity bit set?",
+        "options": [
+            "To make the total number of 1's even",
+            "To make the total number of 1's odd",
+            "To match the last data bit",
+            "To always be 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In odd parity code, the extra bit is set so that the total number of 1's in the (d+1)-bit word (including the parity bit) is odd."
+    },
+    {
+        "id": "30",
+        "text": "What is the minimum Hamming distance required for single-error correction?",
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A minimum Hamming distance of 3 is required for single-error correction, allowing the distinction between valid codewords even with one bit error."
+    },
+    {
+        "id": "31",
+        "text": "What formula determines the number of parity bits needed in Hamming codes?",
+        "options": [
+            "2^m ≥ m + r + 1",
+            "2^r ≥ m + r + 1",
+            "m ≥ 2^r + r + 1",
+            "r ≥ 2^m + m + 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The inequality 2^r ≥ m + r + 1 determines the number of parity bits (r) needed for a message of m bits in Hamming codes."
+    },
+    {
+        "id": "32",
+        "text": "In (7,4) Hamming code, which bit positions are typically used for parity bits?",
+        "options": [
+            "Positions 1, 2, 3",
+            "Positions 4, 5, 6",
+            "Positions 1, 2, 4",
+            "Positions 3, 5, 7"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In (7,4) Hamming code, parity bits are typically placed at positions 1, 2, and 4 (corresponding to 2^0, 2^1, 2^2)."
+    },
+    {
+        "id": "33",
+        "text": "How does CRC differ from parity-based error detection methods?",
+        "options": [
+            "CRC is a separable code while parity is non-separable",
+            "CRC uses polynomial arithmetic while parity uses simple bit counting",
+            "CRC can only detect errors while parity can correct them",
+            "CRC requires fewer bits than parity methods"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CRC uses polynomial division for error detection, while parity methods rely on simple counting of 1's in the data, making CRC more robust for longer messages."
+    },
+    {
+        "id": "34",
+        "text": "What is the significance of the generating polynomial in CRC?",
+        "options": [
+            "It determines the number of data bits",
+            "It defines the division operation for checksum calculation",
+            "It specifies the parity bit positions",
+            "It sets the Hamming distance threshold"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The generating polynomial defines the division operation used in CRC calculations, determining how the checksum is computed and verified."
+    },
+    {
+        "id": "35",
+        "text": "Why is CRC particularly effective for detecting burst errors?",
+        "options": [
+            "It uses simple parity bits",
+            "It employs polynomial division that spreads error detection across multiple bits",
+            "It can correct errors as well as detect them",
+            "It requires fewer bits than other methods"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CRC's polynomial division spreads the error detection capability across multiple bits, making it highly effective for detecting burst errors where multiple consecutive bits are corrupted."
+    },
+    {
+        "id": "36",
+        "text": "Which noise reduction method is specifically mentioned for combating jitter?",
+        "options": [
+            "Amplifiers",
+            "Equalizers",
+            "Shielding",
+            "Line conditioning"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Shielding is mentioned as a method to reduce jitter, which results from small timing irregularities during digital signal transmission."
+    },
+    {
+        "id": "37",
+        "text": "What happens when white noise becomes too strong?",
+        "options": [
+            "It improves signal quality",
+            "It can completely disrupt the signal",
+            "It converts to impulse noise",
+            "It only affects analog signals"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If white noise gets too strong, it can completely disrupt the signal, making communication impossible."
+    },
+    {
+        "id": "38",
+        "text": "How does proper shielding help in error prevention?",
+        "options": [
+            "It reduces signal attenuation",
+            "It prevents signal reflection",
+            "It reduces interference and crosstalk",
+            "It increases transmission speed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Proper shielding of cables helps reduce interference and crosstalk, which are sources of noise that can cause transmission errors."
+    },
+    {
+        "id": "39",
+        "text": "What is the purpose of telephone line conditioning or equalization?",
+        "options": [
+            "To increase data transmission speed",
+            "To reduce various forms of noise and distortion",
+            "To add redundancy to the signal",
+            "To convert analog signals to digital"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Telephone line conditioning or equalization helps reduce various forms of noise and distortion, improving signal quality for transmission."
+    },
+    {
+        "id": "40",
+        "text": "What is the role of digital repeaters and analog amplifiers in error prevention?",
+        "options": [
+            "They add coding redundancy to signals",
+            "They detect and correct errors automatically",
+            "They combat signal attenuation over distance",
+            "They convert between analog and digital signals"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Digital repeaters and analog amplifiers help combat signal attenuation by regenerating or boosting signals over long distances."
+    },
+    {
+        "id": "41",
+        "text": "In 2-dimensional parity, what do LRC and VRC stand for?",
+        "options": [
+            "Longitudinal Redundancy Check and Vertical Redundancy Check",
+            "Linear Redundancy Code and Vertical Redundancy Code",
+            "Longitudinal Reliability Check and Vertical Reliability Check",
+            "Linear Reliability Code and Vertical Reliability Code"
+        ],
+        "correctAnswer": 0,
+        "explanation": "LRC stands for Longitudinal Redundancy Check and VRC stands for Vertical Redundancy Check in 2-dimensional parity schemes."
+    },
+    {
+        "id": "42",
+        "text": "What is the key advantage of Hamming codes over simple parity?",
+        "options": [
+            "They use fewer bits",
+            "They can correct errors as well as detect them",
+            "They are simpler to implement",
+            "They work only with even parity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hamming codes can not only detect errors but also correct them, specifically single-bit errors, which simple parity cannot do."
+    },
+    {
+        "id": "43",
+        "text": "In CRC calculation, what operation is used instead of standard arithmetic division?",
+        "options": [
+            "Modulo-2 division (XOR)",
+            "Modulo-10 division",
+            "Binary addition",
+            "Polynomial multiplication"
+        ],
+        "correctAnswer": 0,
+        "explanation": "CRC uses modulo-2 division, which is implemented using XOR operations, rather than standard arithmetic division."
+    },
+    {
+        "id": "44",
+        "text": "What does a non-zero remainder indicate in CRC verification?",
+        "options": [
+            "Successful transmission with no errors",
+            "An error occurred during transmission",
+            "The generating polynomial was incorrect",
+            "The data needs to be retransmitted automatically"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If the receiver's CRC calculation results in a non-zero remainder, it indicates that an error occurred during transmission."
+    },
+    {
+        "id": "45",
+        "text": "Which type of noise is most likely to affect analog signals by making them hard to distinguish from the original?",
+        "options": [
+            "White noise",
+            "Impulse noise",
+            "Crosstalk",
+            "Echo"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Impulse noise is particularly problematic for analog signals because it may be hard to distinguish from the original signal."
+    },
+    {
+        "id": "46",
+        "text": "What is the primary cause of echo in communication systems?",
+        "options": [
+            "Impedance mismatches at cable ends",
+            "Timing irregularities in signal repetition",
+            "Coupling between adjacent signal paths",
+            "Variable signal propagation speeds"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Echo is caused by impedance mismatches at cable ends, where signals reflect back toward the source."
+    },
+    {
+        "id": "47",
+        "text": "How can echo be reduced in communication systems?",
+        "options": [
+            "Through proper shielding",
+            "Using impedance matching techniques",
+            "Increasing transmission speed",
+            "Adding parity bits"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Echo can be significantly reduced using impedance matching techniques to minimize signal reflection at cable ends."
+    },
+    {
+        "id": "48",
+        "text": "What is the relationship between transmission media quality and error prevention?",
+        "options": [
+            "Higher quality media eliminate all errors",
+            "Media quality has no effect on error rates",
+            "Better quality media reduce but don't eliminate errors",
+            "Lower quality media are better for error detection"
+        ],
+        "correctAnswer": 2,
+        "explanation": "While better quality media can reduce error rates, they cannot eliminate errors entirely, which is why error detection and correction methods are still necessary."
+    },
+    {
+        "id": "49",
+        "text": "Why is error detection implemented at multiple layers in networking models?",
+        "options": [
+            "To increase transmission overhead unnecessarily",
+            "To provide redundancy and comprehensive error protection",
+            "Because each layer uses the same error detection methods",
+            "To make network protocols more complex"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Error detection is implemented at multiple layers to provide redundant protection and address different types of errors that might occur at various points in the communication process."
+    },
+    {
+        "id": "50",
+        "text": "What is a key difference between error detection and error correction?",
+        "options": [
+            "Error detection requires more bits than error correction",
+            "Error correction can fix errors without retransmission",
+            "Error detection is only possible in digital systems",
+            "Error correction is simpler to implement than error detection"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Error correction can actually fix errors at the receiver without requiring retransmission, while error detection only identifies that an error occurred."
+    },
+    {
+        "id": "51",
+        "text": "In the context of error control, what action might a system take once an error is detected?",
+        "options": [
+            "Always discard the erroneous data",
+            "Perform no action and continue processing",
+            "Initiate retransmission or error correction",
+            "Shut down the communication channel"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When an error is detected, systems may initiate retransmission of the data or attempt error correction if the coding scheme supports it."
+    },
+    {
+        "id": "52",
+        "text": "What is the main limitation of simple parity checking?",
+        "options": [
+            "It can only detect an odd number of errors",
+            "It requires too many extra bits",
+            "It cannot detect any errors",
+            "It only works with even numbers of data bits"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Simple parity checking can only detect an odd number of bit errors; even numbers of errors may go undetected."
+    },
+    {
+        "id": "53",
+        "text": "How does 2-dimensional parity improve upon simple parity?",
+        "options": [
+            "It can detect all possible error patterns",
+            "It provides some capability to identify error locations",
+            "It uses fewer parity bits",
+            "It works with smaller data blocks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "2-dimensional parity can not only detect more errors than simple parity but also provide some capability to identify the location of errors."
+    },
+    {
+        "id": "54",
+        "text": "What is the fundamental concept behind Hamming code's error correction capability?",
+        "options": [
+            "Using extra bits to create unique signatures for error patterns",
+            "Increasing transmission power to overcome noise",
+            "Adding simple parity to each data bit",
+            "Using cryptographic techniques to secure data"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Hamming codes use extra parity bits to create unique signatures for different error patterns, allowing identification and correction of specific bit errors."
+    },
+    {
+        "id": "55",
+        "text": "Why is CRC particularly well-suited for network communications?",
+        "options": [
+            "It provides the strongest error correction capability",
+            "It has low computational overhead and high error detection rates",
+            "It uses the fewest extra bits of any error detection method",
+            "It can correct errors without additional bandwidth"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CRC provides excellent error detection capabilities with relatively low computational overhead, making it well-suited for high-speed network communications."
+    },
+    {
+        "id": "56",
+        "text": "What determines the number of CRC bits added to a message?",
+        "options": [
+            "The length of the data message",
+            "The degree of the generating polynomial",
+            "The Hamming distance required",
+            "The type of transmission media"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The number of CRC bits is determined by the degree of the generating polynomial (e.g., a polynomial of degree n will produce an n-bit CRC)."
+    },
+    {
+        "id": "57",
+        "text": "How does the effectiveness of CRC compare to simple parity for long messages?",
+        "options": [
+            "CRC is less effective for long messages",
+            "CRC is significantly more effective for long messages",
+            "They have identical effectiveness regardless of message length",
+            "Simple parity is better for long messages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CRC is significantly more effective than simple parity for long messages, as it can detect a wider variety of error patterns including burst errors."
+    },
+    {
+        "id": "58",
+        "text": "What is a common application of Hamming codes?",
+        "options": [
+            "Long-distance network communications",
+            "Error correction in computer memory systems",
+            "Encryption of sensitive data",
+            "Compression of large files"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hamming codes are commonly used for error correction in computer memory systems where single-bit errors can occur."
+    },
+    {
+        "id": "59",
+        "text": "Why might different error detection methods be used at different OSI layers?",
+        "options": [
+            "To create incompatible systems",
+            "To address different types of errors at different points in communication",
+            "Because upper layers require simpler methods",
+            "To increase overall protocol complexity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Different layers face different types of errors and have different requirements, so appropriate error detection methods are used at each layer."
+    },
+    {
+        "id": "60",
+        "text": "What is the ultimate goal of all error detection and correction techniques?",
+        "options": [
+            "To eliminate the need for reliable transmission media",
+            "To ensure data integrity despite imperfect transmission conditions",
+            "To increase transmission speed beyond media limitations",
+            "To make communication systems completely immune to noise"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The ultimate goal of error detection and correction techniques is to ensure data integrity and reliable communication despite the inevitable presence of noise and imperfect transmission conditions."
+    }
+]

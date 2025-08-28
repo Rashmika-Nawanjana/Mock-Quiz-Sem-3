@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the fundamental challenge that necessitates the use of different instruction formats in RISC-V?",
+        "options": [
+            "The need to support complex CISC operations",
+            "The limited 32-bit instruction word size in RV32",
+            "The requirement for variable-length instructions",
+            "The lack of enough opcode bits"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 32-bit fixed instruction size in RV32 forces a compromise, requiring efficient encoding of opcodes, registers, and immediates within this constraint, leading to multiple instruction formats."
+    },
+    {
+        "id": "q2",
+        "text": "Which RISC-V instruction format is used for arithmetic operations that utilize three registers?",
+        "options": [
+            "I-type",
+            "R-type",
+            "S-type",
+            "U-type"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The R-type format is designed for register-to-register operations, containing fields for two source registers (rs1, rs2) and one destination register (rd), as used by instructions like `add` and `xor`."
+    },
+    {
+        "id": "q3",
+        "text": "An I-type instruction's immediate field is how many bits wide?",
+        "options": [
+            "5 bits",
+            "7 bits",
+            "12 bits",
+            "20 bits"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The I-type format includes a 12-bit immediate field (imm[11:0]), used for instructions like `addi` or as the offset for load instructions."
+    },
+    {
+        "id": "q4",
+        "text": "What is the primary purpose of the U-type instruction format?",
+        "options": [
+            "To store values to memory",
+            "To handle conditional branches",
+            "To load a 20-bit immediate value into the upper bits of a register",
+            "To perform jump and link operations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "U-type instructions, like `lui` (Load Upper Immediate), are designed to place a 20-bit immediate value into the upper 20 bits of a destination register, facilitating the construction of large constants."
+    },
+    {
+        "id": "q5",
+        "text": "How is the `lui t1, 0x70070` instruction correctly described?",
+        "options": [
+            "It adds 0x70070 to the program counter.",
+            "It loads the value 0x70070 into the lower 20 bits of register t1.",
+            "It loads the value 0x70070 << 12 into register t1.",
+            "It is an illegal instruction because the immediate is too large."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `lui` (Load Upper Immediate) instruction takes its 20-bit immediate value, shifts it left by 12 bits, and places the result into the destination register. So, `lui t1, 0x70070` sets t1 to 0x70070 << 12 = 0x70070000."
+    },
+    {
+        "id": "q6",
+        "text": "Why can't a single RISC-V instruction load an arbitrary 32-bit immediate value (e.g., 0x700707FF) into a register?",
+        "options": [
+            "The opcode field is too large, leaving no room for the immediate.",
+            "The instruction word is only 32 bits and must also contain the opcode and register fields.",
+            "RISC-V only supports 16-bit immediates.",
+            "It would require a 64-bit instruction set."
+        ],
+        "correctAnswer": 1,
+        "explanation": "A 32-bit instruction word must encode the opcode (7 bits), destination register (5 bits), and the immediate value. There are not enough bits to encode a full 32-bit immediate and the necessary instruction fields simultaneously."
+    },
+    {
+        "id": "q7",
+        "text": "What two instructions are typically used to load the 32-bit value 0x000707FF into register t0?",
+        "options": [
+            "lui t0, 0x7; ori t0, t0, 0x7FF",
+            "lui t0, 0x70; addi t0, t0, 0x7FF",
+            "addi t0, zero, 0x707FF",
+            "lui t0, 0x707; addi t0, t0, 0xFF"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The value is split into its upper 20 bits (0x00070) and lower 12 bits (0x7FF). `lui t0, 0x70` sets t0 to 0x70000. `addi t0, t0, 0x7FF` then adds the lower part, resulting in 0x70000 + 0x7FF = 0x707FF."
+    },
+    {
+        "id": "q8",
+        "text": "How can the value 0x0000FFFF be loaded into a register using `lui` and `addi`?",
+        "options": [
+            "lui t0, 0x0; addi t0, t0, 0xFFFF",
+            "lui t0, 0x1; addi t0, t0, -1",
+            "lui t0, 0xFFFF; addi t0, t0, 0x0",
+            "It cannot be done because 0xFFFF is too large for addi."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Since 0xFFFF is the maximum 16-bit value, it's easier to think of it as 0x10000 + (-1). `lui t0, 0x1` sets t0 to 0x10000. `addi t0, t0, -1` then subtracts 1, resulting in 0x0FFFF."
+    },
+    {
+        "id": "q9",
+        "text": "What is a primary real-world consideration that leads to the design of a more complex ISA like RISC-V instead of a simpler one?",
+        "options": [
+            "Making assembly programming easier for humans",
+            "Maximizing code density and performance for benchmark programs",
+            "Minimizing the number of instruction formats",
+            "Ensuring all instructions are the same length"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ISA design is driven by real-world performance metrics. An instruction is included if it significantly improves the performance or code density (reduces memory footprint) of important benchmark programs, even if it adds complexity."
+    },
+    {
+        "id": "q10",
+        "text": "What is the purpose of a pseudo-instruction in assembly language?",
+        "options": [
+            "It is a placeholder for an instruction the hardware will implement in the future.",
+            "It is a complex instruction that is executed directly by the microprocessor.",
+            "It is an intuitive instruction for the programmer that the assembler translates into one or more base instructions.",
+            "It is an instruction that performs an operation on pseudo-registers."
+        ],
+        "correctAnswer": 2,
+        "explanation": "Pseudo-instructions (e.g., `li rd, immediate`) provide a more programmer-friendly syntax. The assembler replaces them with equivalent sequences of actual base ISA instructions (e.g., a `lui`/`addi` combination)."
+    },
+    {
+        "id": "q11",
+        "text": "Which base instruction is the `nop` (No Operation) pseudo-instruction typically equivalent to?",
+        "options": [
+            "addi x0, x0, 0",
+            "sub x0, x0, x0",
+            "lui x0, 0",
+            "jal x0, 0"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The `nop` pseudo-instruction is encoded as `addi x0, x0, 0`. This adds 0 to register x0 (the hardwired zero register) and writes the result back to x0, which has no effect, thus performing no operation."
+    },
+    {
+        "id": "q12",
+        "text": "What is a key difference between registers and main memory from a programmer's perspective?",
+        "options": [
+            "Registers are addressed by name, while memory is addressed by location.",
+            "Memory is faster than registers.",
+            "There is more register space than memory space.",
+            "Registers are viewed as a contiguous array, while memory is not."
+        ],
+        "correctAnswer": 0,
+        "explanation": "Registers are accessed via their names (e.g., `a0`, `t1`). Memory is accessed via its address, which is a numerical value, often calculated from a base register and an offset."
+    },
+    {
+        "id": "q13",
+        "text": "In the instruction `lw x5, 4(x10)`, what is the role of register x10?",
+        "options": [
+            "It is the destination register where the loaded word will be stored.",
+            "It is the source register containing the data to be stored.",
+            "It is the base address register used to calculate the effective memory address.",
+            "It is the register that holds the immediate offset value."
+        ],
+        "correctAnswer": 2,
+        "explanation": "In load and store instructions, the register specified in the `rs1` field (here, `x10`/`a0`) contains the base address. The effective address is calculated as the contents of `rs1` plus the sign-extended 12-bit immediate offset (here, 4)."
+    },
+    {
+        "id": "q14",
+        "text": "Which instruction format is used for the `sw` (Store Word) instruction?",
+        "options": [
+            "R-type",
+            "I-type",
+            "S-type",
+            "U-type"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `sw` instruction uses the S-type format. This format is characterized by having two source registers (`rs1` for base address, `rs2` for data to store) and a 12-bit immediate field that is split into two parts in the instruction encoding."
+    },
+    {
+        "id": "q15",
+        "text": "In the S-type format, why is the 12-bit immediate value split into two non-adjacent fields (imm[11:5] and imm[4:0])?",
+        "options": [
+            "To confuse disassemblers",
+            "To make the encoding more secure",
+            "To allow the `rs2` and `rs1` register fields to stay in the same positions as in the R-type format",
+            "Because there are not enough contiguous bits available"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The immediate is split to keep the `rs1`, `rs2`, and `funct3` fields in the same bit positions across R-type, I-type, and S-type instructions. This consistency simplifies the CPU's instruction decoding hardware."
+    },
+    {
+        "id": "q16",
+        "text": "What is the advantage of using the `auipc` (Add Upper Immediate to PC) instruction?",
+        "options": [
+            "It allows for faster arithmetic calculations.",
+            "It enables position-independent code by calculating addresses relative to the current program counter.",
+            "It is used to implement system calls.",
+            "It simplifies the decoding of jump instructions."
+        ],
+        "correctAnswer": 1,
+        "explanation": "`auipc` is crucial for position-independent code. It calculates an address as the PC plus a 20-bit immediate shifted left by 12. This allows a program to access data or code at a fixed offset from its current location, regardless of where it is loaded in memory."
+    },
+    {
+        "id": "q17",
+        "text": "How is the `la a0, A` (Load Address) pseudo-instruction typically expanded?",
+        "options": [
+            "lui a0, %hi(A); addi a0, a0, %lo(A)",
+            "addi a0, zero, A",
+            "lw a0, 0(A)",
+            "auipc a0, %pcrel_hi(A); addi a0, a0, %pcrel_lo(A)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The `la` (load address) pseudo-instruction is expanded by the assembler into an `auipc`/`addi` pair. `auipc` calculates the high part of the address relative to the PC, and `addi` adds the lower 12 bits of the offset. This generates the full address of symbol `A`."
+    },
+    {
+        "id": "q18",
+        "text": "If `auipc a0, 0x2` is executed at PC = 0x000000d8, what value will be placed in register a0?",
+        "options": [
+            "0x00000002",
+            "0x00002000",
+            "0x000020d8",
+            "0x000002d8"
+        ],
+        "correctAnswer": 2,
+        "explanation": "`auipc` calculates `rd = PC + (imm << 12)`. Here, PC is 0xd8, and the immediate 0x2 is shifted left by 12 to become 0x2000. Therefore, a0 = 0xd8 + 0x2000 = 0x20d8."
+    },
+    {
+        "id": "q19",
+        "text": "Which RISC-V instruction type is used for conditional branch instructions like `beq`?",
+        "options": [
+            "R-type",
+            "I-type",
+            "S-type",
+            "B-type"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Conditional branch instructions, such as `beq` (Branch if Equal), use the B-type instruction format. This format contains fields for two source registers to compare (`rs1`, `rs2`) and a compressed 13-bit immediate offset for the branch target."
+    },
+    {
+        "id": "q20",
+        "text": "In the B-type format, how is the 13-bit immediate offset encoded?",
+        "options": [
+            "It is stored in a single contiguous field.",
+            "It is split into five separate fields.",
+            "It is split into imm[12], imm[10:5], imm[4:1], and imm[11] and placed in specific bit positions.",
+            "It is not an immediate offset but a register address."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The B-type immediate is split and scrambled across the instruction word to keep the `rs1` and `rs2` fields in consistent positions. The bits are arranged as [12][10:5][4:1][11]. The hardware reassembles them into a proper 13-bit signed offset."
+    },
+    {
+        "id": "q21",
+        "text": "What does the instruction `beq rs1, rs2, imm` do?",
+        "options": [
+            "It adds the immediate to rs1 and stores the result in rs2.",
+            "It branches to the address in rs1 if rs2 equals zero.",
+            "It adds the immediate to the PC if the value in rs1 is equal to the value in rs2.",
+            "It stores the value of rs1 to the memory address in rs2 offset by imm."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `beq` (Branch if Equal) instruction compares the contents of registers `rs1` and `rs2`. If they are equal, the program counter (PC) is updated to PC + (sign-extended immediate). This changes the flow of execution."
+    },
+    {
+        "id": "q22",
+        "text": "What is the size of the opcode field in all RISC-V base instructions?",
+        "options": [
+            "3 bits",
+            "5 bits",
+            "7 bits",
+            "12 bits"
+        ],
+        "correctAnswer": 2,
+        "explanation": "All standard RISC-V instructions in the base ISA have a 7-bit opcode field located in the least significant bits (bits [6:0]) of the instruction word."
+    },
+    {
+        "id": "q23",
+        "text": "The `funct3` field in RISC-V instructions is primarily used for:",
+        "options": [
+            "Specifying the destination register",
+            "Specifying the shift amount for immediate instructions",
+            "Further specifying the operation to be performed, often as a sub-opcode",
+            "Holding the upper bits of a large immediate value"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The 3-bit `funct3` field, located in bits [14:12], is used in most instruction formats to select a specific variant of the operation indicated by the opcode. For example, it distinguishes between `add` (funct3=0) and `xor` (funct3=4) in the R-type format, or between `beq` (funct3=0) and `bne` (funct3=1) in the B-type format."
+    },
+    {
+        "id": "q24",
+        "text": "Which field is common to both R-type and I-type instructions?",
+        "options": [
+            "funct7",
+            "rs2",
+            "imm[11:0]",
+            "rs1"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Both R-type and I-type instructions have an `rs1` field (bits [19:15]) that specifies the first source register. R-type has a second source register `rs2`, while I-type has an immediate value."
+    },
+    {
+        "id": "q25",
+        "text": "What is the maximum positive value that can be represented in the 12-bit immediate field of an I-type instruction before sign-extension?",
+        "options": [
+            "1023",
+            "2047",
+            "4095",
+            "8191"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A 12-bit field can represent 2^12 = 4096 different values. For signed integers using two's complement, the range is from -2048 to +2047. So the maximum positive value is 2^11 - 1 = 2047."
+    },
+    {
+        "id": "q26",
+        "text": "The `jal` (Jump and Link) instruction uses which format?",
+        "options": [
+            "J-type",
+            "I-type",
+            "U-type",
+            "B-type"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The `jal` instruction uses the J-type format. This format contains a large 21-bit immediate offset for the jump target and a destination register (`rd`) to save the return address (PC+4)."
+    },
+    {
+        "id": "q27",
+        "text": "What problem does the U-type instruction format directly help solve?",
+        "options": [
+            "The need for more than 32 registers",
+            "The difficulty of loading large constants or addresses into registers",
+            "The complexity of decoding branch instructions",
+            "The slow speed of memory access"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The U-type format (`lui`, `auipc`) provides a mechanism to set the upper 20 bits of a register. This is the fundamental building block for constructing any 32-bit constant or address, which often requires a subsequent I-type instruction (like `addi`) to set the lower 12 bits."
+    },
+    {
+        "id": "q28",
+        "text": "In the context of memory access, what does the term 'byte addressable' mean?",
+        "options": [
+            "Each memory address holds one byte (8 bits) of data.",
+            "Each memory address holds one word (32 bits) of data.",
+            "Addresses are stored in bytes.",
+            "The address bus is 8 bits wide."
+        ],
+        "correctAnswer": 0,
+        "explanation": "In a byte-addressable memory system (like RISC-V), every individual byte in memory has a unique address. A 32-bit word load instruction like `lw` will load four consecutive bytes from addresses N, N+1, N+2, N+3."
+    },
+    {
+        "id": "q29",
+        "text": "What is the key difference between `lh` (Load Halfword) and `lhu` (Load Halfword Unsigned)?",
+        "options": [
+            "`lh` loads 16 bits, `lhu` loads 32 bits.",
+            "`lh` sign-extends the loaded value to 32 bits, while `lhu` zero-extends it.",
+            "`lh` uses the I-type format, `lhu` uses the S-type format.",
+            "`lh` is for data, `lhu` is for instructions."
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both `lh` and `lhu` load a 16-bit halfword from memory. The difference is in how they fill the upper 16 bits of the 32-bit destination register. `lh` performs sign-extension (copies the sign bit), while `lhu` performs zero-extension (sets the upper bits to 0)."
+    },
+    {
+        "id": "q30",
+        "text": "Why might an assembler generate different immediate values for two identical `la a0, A` pseudo-instructions in the same program?",
+        "options": [
+            "It is a bug in the assembler.",
+            "The symbol 'A' has moved in memory.",
+            "The instructions are at different program counter (PC) addresses, so the offset from the PC to 'A' is different for each.",
+            "The assembler randomizes the code for security."
+        ],
+        "correctAnswer": 2,
+        "explanation": "The `la` pseudo-instruction is expanded to `auipc`/`addi`, which calculates the address of `A` relative to the current PC. If the two `la` instructions are at different addresses (e.g., in a loop or different functions), the offset from each PC to the fixed address `A` will be different, requiring different immediate values in the `auipc` and `addi` instructions."
+    },
+    {
+        "id": "q31",
+        "text": "What is the effective address calculated by the instruction `sw x5, 4(x10)`?",
+        "options": [
+            "The value in x5 plus 4",
+            "The value in x10 plus 4",
+            "The value 4",
+            "The value in x5"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For store instructions, the effective memory address is calculated as the contents of the base register (`x10`) plus the sign-extended offset immediate (4). The value in the source register (`x5`) is then stored to this calculated address."
+    },
+    {
+        "id": "q32",
+        "text": "Which of the following is NOT a reason for the complexity of RISC-V's instruction encoding?",
+        "options": [
+            "The desire to keep the instruction length fixed at 32 bits",
+            "The need to support a large number of registers (32)",
+            "The goal of simplifying the hardware decoder by keeping register fields in consistent positions",
+            "The requirement to make assembly code instantly readable by humans"
+        ],
+        "correctAnswer": 3,
+        "explanation": "While human readability is a goal of assembly language mnemonics, the specific bit-level encoding of instructions is primarily driven by hardware constraints and efficiency goals (fixed length, consistent field placement for decoding). Human readability is sacrificed in the encoding to achieve these other goals, but is recovered by the assembler and disassembler."
+    },
+    {
+        "id": "q33",
+        "text": "What is the purpose of the `funct7` field in the R-type instruction format?",
+        "options": [
+            "To specify the second source register",
+            "To provide additional bits to specify the operation, often distinguishing between arithmetic and logical shifts",
+            "To hold the upper bits of the immediate value for I-type instructions",
+            "To specify the branch condition for B-type instructions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 7-bit `funct7` field (bits [31:25]) in R-type instructions is used alongside `funct3` and `opcode` to precisely define the operation. A key use case is distinguishing between `add` (funct7=0) and `sub` (funct7=0x20), and between logical right shift `srl` (funct7=0) and arithmetic right shift `sra` (funct7=0x20)."
+    },
+    {
+        "id": "q34",
+        "text": "What is the maximum branch offset range achievable with the 13-bit immediate in a B-type instruction?",
+        "options": [
+            "±256 bytes",
+            "±1024 bytes",
+            "±4096 bytes",
+            "±8192 bytes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The B-type immediate is 13 bits wide and is sign-extended. This gives a range of -2^12 to +2^12 - 1, which is -4096 to +4094 bytes. Branches can target instructions within approximately ±4KB of the current PC."
+    },
+    {
+        "id": "q35",
+        "text": "The `ret` (Return) pseudo-instruction is equivalent to:",
+        "options": [
+            "jalr x0, 0(x1)",
+            "jalr x0, x1, 0",
+            "jr x1",
+            "addi x0, x0, 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The `ret` pseudo-instruction is used to return from a function. It is typically expanded to `jalr x0, 0(x1)`. This instruction jumps to the address stored in the return address register (`x1`/`ra`) and writes the link address (PC+4) to `x0` (which discards it)."
+    },
+    {
+        "id": "q36",
+        "text": "Which instruction would you use to load a byte from memory and ensure the upper 24 bits of the destination register are cleared?",
+        "options": [
+            "lb",
+            "lbu",
+            "lh",
+            "lw"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The `lbu` (Load Byte Unsigned) instruction loads a single byte from memory and then zero-extends it to fill the 32-bit destination register. This means the upper 24 bits are set to 0, which is often desired when treating the loaded value as an unsigned integer."
+    },
+    {
+        "id": "q37",
+        "text": "What is the role of the `rd` field in most RISC-V instruction formats?",
+        "options": [
+            "It specifies the register containing the second source operand.",
+            "It specifies the register where the result of the operation will be written.",
+            "It holds part of the immediate value for memory instructions.",
+            "It determines the type of operation to be performed."
+        ],
+        "correctAnswer": 1,
+        "explanation": "The `rd` field (bits [11:7]) is the 'destination register' field. It specifies the register that will receive the result of an operation, whether it's an arithmetic result, a loaded value from memory, or the next PC calculation from a `jal` instruction."
+    },
+    {
+        "id": "q38",
+        "text": "The immediate value in a U-type instruction is positioned in the instruction word:",
+        "options": [
+            "In the least significant bits (bits [11:0])",
+            "In the most significant bits (bits [31:12])",
+            "Split around the register fields",
+            "It does not have an immediate value"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the U-type format, the 20-bit immediate value occupies the highest 20 bits of the instruction word, specifically bits [31:12]. This allows it to be easily shifted left by 12 bits during execution to form the upper 20 bits of a 32-bit value."
+    },
+    {
+        "id": "q39",
+        "text": "What is the fundamental trade-off illustrated by the need for pseudo-instructions like `li`?",
+        "options": [
+            "Speed vs. Cost",
+            "Hardware simplicity vs. Programmer convenience",
+            "Memory size vs. Register count",
+            "Power consumption vs. Heat output"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pseudo-instructions highlight the trade-off between a simple, minimal hardware instruction set (which is easier to design and can be faster) and the desire for a more expressive and convenient assembly language for programmers. The assembler bridges this gap by translating complex intentions into simple hardware operations."
+    },
+    {
+        "id": "q40",
+        "text": "Which characteristic is common to all instruction formats in the RISC-V base ISA?",
+        "options": [
+            "They all have an `rs2` field.",
+            "They all have a 12-bit immediate field.",
+            "They are all exactly 32 bits long.",
+            "They all use the `funct7` field."
+        ],
+        "correctAnswer": 2,
+        "explanation": "A defining feature of the RISC-V base ISA (RV32I) is that every instruction is precisely 32 bits (one word) in length. This simplicity simplifies instruction fetch and decoding compared to variable-length instruction sets."
+    }
+]

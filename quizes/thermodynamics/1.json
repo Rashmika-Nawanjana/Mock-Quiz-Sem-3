@@ -1,0 +1,482 @@
+[
+  {
+    "id": "q1",
+    "text": "According to Bloom's Taxonomy referenced in the lecture, which cognitive level involves 'Breaking down information into component parts'?",
+    "options": [
+      "Create",
+      "Evaluate",
+      "Analyze",
+      "Apply"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture slide explicitly states that 'Analyze' is the cognitive level for 'Breaking down information into component parts'."
+  },
+  {
+    "id": "q2",
+    "text": "What is the core definition of Thermodynamics provided in the lecture?",
+    "options": [
+      "The study of heat and temperature",
+      "The branch of physics concerned with the interaction of energy and work, and the transformation of energy",
+      "The analysis of system boundaries and control volumes",
+      "The calculation of work and heat transfer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines Thermodynamics as 'the branch of physics concerned with the interaction of energy and work, and transformation of energy from one form to another'."
+  },
+  {
+    "id": "q3",
+    "text": "In the 'System Concept', what separates the system from the surroundings?",
+    "options": [
+      "The Interface",
+      "The Border",
+      "The Boundary",
+      "The Wall"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The diagram in the lecture is clearly labeled, showing the 'BOUNDARY' as the element that separates the 'SYSTEM' from the 'SURROUNDINGS'."
+  },
+  {
+    "id": "q4",
+    "text": "Looking at the image of the engine, if the system boundary is drawn tightly around the combustion chamber (A), what type of system is it primarily when fuel is being injected and exhaust is being expelled?",
+    "options": [
+      "A Closed System",
+      "An Open System",
+      "An Isolated System",
+      "An Adiabatic System"
+    ],
+    "correctAnswer": 1,
+    "explanation": "If mass (fuel and exhaust) is crossing the defined boundary, it is classified as an Open System, also known as a Control Volume."
+  },
+  {
+    "id": "q5",
+    "text": "Can a system boundary be flexible?",
+    "options": [
+      "No, it must always be rigid and fixed to simplify analysis.",
+      "Yes, it can be flexible and change shape, for example, to encompass a expanding balloon.",
+      "No, a flexible boundary would violate the State Postulate.",
+      "Yes, but only for isolated systems."
+    ],
+    "correctAnswer": 1,
+    "explanation": "The boundary is a conceptual tool defined by the analyst. It can be rigid or flexible, real or imaginary, as needed for the analysis (e.g., the skin of a balloon can be a flexible boundary)."
+  },
+  {
+    "id": "q6",
+    "text": "Which of the following is NOT listed as a thermodynamic property in the lecture?",
+    "options": [
+      "Pressure",
+      "Entropy",
+      "Work",
+      "Enthalpy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Work is explicitly described as a 'path function', not a property. Properties (like P, S, H) are 'point functions' or 'state variables'."
+  },
+  {
+    "id": "q7",
+    "text": "What key characteristic defines all thermodynamic properties?",
+    "options": [
+      "They are always extensive.",
+      "They are always intensive.",
+      "They are path functions.",
+      "They are point functions, depending only on the state, not the path to reach it."
+    ],
+    "correctAnswer": 3,
+    "explanation": "A fundamental concept in the lecture is that properties are 'point functions'. Their value depends solely on the current state of the system, not the history of how the system arrived at that state."
+  },
+  {
+    "id": "q8",
+    "text": "Which pair contains one intensive and one extensive property?",
+    "options": [
+      "Volume (V) and Specific Volume (v)",
+      "Mass and Density",
+      "Internal Energy (U) and Specific Internal Energy (u)",
+      "Pressure and Temperature"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mass is an extensive property (depends on the size of the system). Density is an intensive property (independent of the system size). Pressure and Temperature are both intensive. Volume is extensive while Specific Volume is intensive. Internal Energy is extensive while Specific Internal Energy is intensive."
+  },
+  {
+    "id": "q9",
+    "text": "According to the State Postulate, how many independent properties are needed to define the state of a simple compressible system?",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "It depends on the phase of the substance."
+    ],
+    "correctAnswer": 1,
+    "explanation": "The State Postulate for a system free from gravitational, magnetic, etc. effects (a simple compressible system) specifies that only two independent intensive properties are required to fix its state."
+  },
+  {
+    "id": "q10",
+    "text": "For a system to be in thermodynamic equilibrium, which of the following conditions is NOT required?",
+    "options": [
+      "Mechanical Equilibrium",
+      "Thermal Equilibrium",
+      "Chemical Equilibrium",
+      "Phase Equilibrium"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The lecture states that 'All of these must be satisfied for thermodynamic equilibrium'. There is no option that is not required; the question checks for understanding that all four types of equilibrium are necessary."
+  },
+  {
+    "id": "q11",
+    "text": "What is the defining characteristic of a cycle?",
+    "options": [
+      "It is a process where temperature remains constant.",
+      "It is a process where pressure remains constant.",
+      "It is a sequence of processes that returns the system to its initial state.",
+      "It is a process with no heat transfer."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The diagram for a 'Cycle' shows a closed loop (e.g., 1-A-2-B-1), indicating the system returns to its original state, meaning all properties return to their initial values."
+  },
+  {
+    "id": "q12",
+    "text": "Which process is characterized by constant volume?",
+    "options": [
+      "Isobaric",
+      "Isothermal",
+      "Isochoric",
+      "Adiabatic"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An isochoric process is one where the volume (v) remains constant."
+  },
+  {
+    "id": "q13",
+    "text": "What is the key requirement for a process to be considered a quasi-equilibrium process?",
+    "options": [
+      "It must be very slow.",
+      "It must be reversible.",
+      "All intermediate states must be equilibrium states.",
+      "It must involve no friction."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture defines a quasi-equilibrium process as 'A process whose all intermediate states are equilibrium states.' This is a key idealization that allows us to define properties for the system throughout the process."
+  },
+  {
+    "id": "q14",
+    "text": "On a P-v diagram, which process would be represented by a vertical line?",
+    "options": [
+      "Isobaric (constant pressure)",
+      "Isothermal (constant temperature)",
+      "Isochoric (constant volume)",
+      "Adiabatic (no heat transfer)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "On a Pressure-specific volume (P-v) diagram, volume is on the x-axis. A constant volume (isochoric) process would therefore be a vertical line."
+  },
+  {
+    "id": "q15",
+    "text": "What is the fundamental defining characteristic of a reversible process?",
+    "options": [
+      "It is very slow.",
+      "It is a quasi-equilibrium process.",
+      "Both the system and surroundings can be returned to their original states with no net effect.",
+      "It has no work interaction."
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states a reversible process is one 'that can be reversed without leaving any trace on the surrounding', implying both system and surroundings revert to their original states. This is the strict definition."
+  },
+  {
+    "id": "q16",
+    "text": "The lecture states that a reversible process is an 'idealization'. Why is this?",
+    "options": [
+      "Because all real processes have some irreversibilities, like friction or finite temperature differences.",
+      "Because they violate the first law of thermodynamics.",
+      "Because they can only occur in isolated systems.",
+      "Because they require infinite time to complete."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Reversibility is a theoretical limit. Real processes always involve dissipative effects like friction or heat transfer across a finite temperature difference, making them irreversible."
+  },
+  {
+    "id": "q17",
+    "text": "Which of the following is a form of macroscopic energy?",
+    "options": [
+      "Chemical energy",
+      "Nuclear energy",
+      "Translational kinetic energy of molecules",
+      "Gravitational potential energy"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The lecture categorizes energy. Macroscopic energy is energy a system possesses as a whole with respect to an external reference frame, such as kinetic energy (½mV²) and gravitational potential energy (mgz). The other options are forms of microscopic (internal) energy."
+  },
+  {
+    "id": "q18",
+    "text": "What are the three components of the total energy (E) of a system, as given in the equation E = U + KE + PE?",
+    "options": [
+      "Useful, Kinetic, Potential",
+      "Internal, Kinetic, Potential",
+      "Universal, Kinetic, Planetary",
+      "Uniform, Kinetic, Positive"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The total energy E is the sum of the internal energy (U, microscopic), the kinetic energy (KE, macroscopic), and the potential energy (PE, macroscopic)."
+  },
+  {
+    "id": "q19",
+    "text": "How are heat and work similar?",
+    "options": [
+      "They are both properties of a system.",
+      "They are both point functions.",
+      "They are both recognized at the system boundary and represent energy in transit.",
+      "They both depend only on the end states of a process."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Heat and work are both 'boundary phenomena'. They are not stored within the system like properties; they are forms of energy transfer across the boundary. This is a key similarity between them."
+  },
+  {
+    "id": "q20",
+    "text": "Why are heat and work called 'path functions'?",
+    "options": [
+      "Because they define the path on a diagram.",
+      "Because their magnitude depends on the specific path taken during a process, not just the end states.",
+      "Because they are functions of the system's mass.",
+      "Because they are independent of the process path."
+    ],
+    "correctAnswer": 1,
+    "explanation": "This contrasts with properties. The net heat transfer or work done for a process between two states can be different depending on the path (e.g., an isothermal path vs. an adiabatic path). Therefore, their differentials are inexact (δQ, δW)."
+  },
+  {
+    "id": "q21",
+    "text": "Can heat or work be considered a property of a thermodynamic system?",
+    "options": [
+      "Yes, both are extensive properties.",
+      "No, neither are properties; they are energy transfers.",
+      "Work is a property, but heat is not.",
+      "Heat is a property, but work is not."
+    ],
+    "correctAnswer": 1,
+    "explanation": "A system does not 'possess' heat or work. It possesses energy (a property). Heat and work are mechanisms by which the system exchanges energy with its surroundings. They are not state variables."
+  },
+  {
+    "id": "q22",
+    "text": "What is the equation for moving boundary work (often just called 'work' in thermodynamics)?",
+    "options": [
+      "W_mech = ∫F ds",
+      "W_elec = ∫VI dt",
+      "W_b = ∫P dV",
+      "W = ∫T dS"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture provides the equation for moving boundary work as W_b = ∫₁² P dV. This is a fundamental equation for calculating work in closed systems involving expansion or compression."
+  },
+  {
+    "id": "q23",
+    "text": "For a polytropic process where Pvⁿ = constant, the work integral W_b = ∫P dV evaluates to:",
+    "options": [
+      "P(V₂ - V₁)",
+      "0",
+      "(P₂V₂ - P₁V₁)/(1-n) for n ≠ 1",
+      "P₁V₁ ln(V₂/V₁)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "This is a standard result derived by substituting P = C / vⁿ into the work integral W_b = ∫ P dV and solving between states 1 and 2. The other options are for isobaric (constant P), isochoric (dV=0), and isothermal (n=1) processes, respectively."
+  },
+  {
+    "id": "q24",
+    "text": "Which of the following is an extensive property?",
+    "options": [
+      "Pressure",
+      "Temperature",
+      "Density",
+      "Volume"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Extensive properties depend on the size or extent of the system (e.g., mass, volume, total energy). Intensive properties are independent of system size (e.g., pressure, temperature, density, specific volume)."
+  },
+  {
+    "id": "q25",
+    "text": "Converting an extensive property to its specific form (per unit mass) results in what type of property?",
+    "options": [
+      "Another extensive property",
+      "An intensive property",
+      "A path function",
+      "A system boundary"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture explicitly states: 'All mass-normalized properties are intensive properties.' Examples include specific volume (v = V/m), specific internal energy (u = U/m), etc."
+  },
+  {
+    "id": "q26",
+    "text": "If a closed system undergoes a process where its pressure doubles and its volume halves, what can be said about its mass?",
+    "options": [
+      "The mass doubles.",
+      "The mass halves.",
+      "The mass remains constant.",
+      "It cannot be determined from the given information."
+    ],
+    "correctAnswer": 2,
+    "explanation": "A closed system is defined as one where no mass crosses the boundary. Therefore, by definition, its mass must remain constant throughout any process it undergoes."
+  },
+  {
+    "id": "q27",
+    "text": "A perfectly insulated, rigid container is filled with a gas. What type of system is this?",
+    "options": [
+      "Open System",
+      "Closed System",
+      "Isolated System",
+      "Adiabatic System"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Ridged means no mass transfer (closed). Perfectly insulated means no heat transfer. With no work interactions possible (rigid container, no other means), the system has no interaction with its surroundings, making it isolated."
+  },
+  {
+    "id": "q28",
+    "text": "The 'Muddiest Point' activity at the end of the lecture is primarily designed to address which level of Bloom's Taxonomy?",
+    "options": [
+      "Remember",
+      "Understand",
+      "Apply",
+      "Evaluate"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While it involves 'Remembering' facts, the core of the 'Muddiest Point' is self-assessment ('Evaluate') of one's own understanding ('Understand'). Students must evaluate which concepts they understand least."
+  },
+  {
+    "id": "q29",
+    "text": "Which concept is fundamentally concerned with the 'capacity to do work or the ability to cause changes'?",
+    "options": [
+      "Property",
+      "State",
+      "Energy",
+      "Equilibrium"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture provides this as the definition of Energy: 'Energy may be viewed as the capacity to do work or the ability to cause changes'."
+  },
+  {
+    "id": "q30",
+    "text": "If a system is at thermal equilibrium, what is true about temperature?",
+    "options": [
+      "Temperature is constant throughout the system.",
+      "Temperature is zero.",
+      "Temperature is changing very slowly.",
+      "Temperature is highest at the center."
+    ],
+    "correctAnswer": 0,
+    "explanation": "Thermal equilibrium is a state where no heat transfer occurs within the system or with its surroundings. This requires that temperature is uniform throughout the entire system."
+  },
+  {
+    "id": "q31",
+    "text": "A process where the system temperature remains constant is called:",
+    "options": [
+      "Isobaric",
+      "Isothermal",
+      "Isochoric",
+      "Isentropic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The prefix 'iso-' means equal. 'Thermal' refers to temperature. Therefore, isothermal means constant temperature."
+  },
+  {
+    "id": "q32",
+    "text": "Which of these is NOT a common thermodynamic process listed in the lecture?",
+    "options": [
+      "Isobaric",
+      "Isentropic",
+      "Isodynamic",
+      "Polytropic"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The listed common processes are: Isobaric, Isochoric, Isothermal, Adiabatic, Isentropic, and Polytropic. 'Isodynamic' is not a standard term in this context."
+  },
+  {
+    "id": "q33",
+    "text": "The equation for specific total energy is e = u + ½C² + gz. What does the 'C' represent?",
+    "options": [
+      "The speed of light",
+      "A constant",
+      "The velocity of the system",
+      "The specific heat capacity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the context of the kinetic energy term (½C²), C represents the velocity of the center of mass of the entire system relative to an external reference frame."
+  },
+  {
+    "id": "q34",
+    "text": "What distinguishes microscopic energy from macroscopic energy?",
+    "options": [
+      "Microscopic energy is more important.",
+      "Macroscopic energy is related to molecular structure.",
+      "Microscopic energy is independent of external reference frames, while macroscopic energy is not.",
+      "Macroscopic energy is always zero."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Microscopic energy (internal energy, U) is the energy associated with the molecular structure and activity of a system and is independent of external reference frames. Macroscopic energy (KE, PE) is energy the system possesses due to its position or motion relative to an external reference frame."
+  },
+  {
+    "id": "q35",
+    "text": "The integral ∫P dV for a process on a P-V diagram represents:",
+    "options": [
+      "The change in internal energy",
+      "The heat transfer",
+      "The area under the process curve",
+      "The change in enthalpy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Since W_b = ∫P dV, the value of this integral is numerically equal to the area under the path of the process on a P-V diagram. This is a crucial graphical interpretation."
+  },
+  {
+    "id": "q36",
+    "text": "For a given state, properties like internal energy (U) and enthalpy (H) have fixed values. This is because they are:",
+    "options": [
+      "Path functions",
+      "Point functions",
+      "Process dependent",
+      "Always zero"
+    ],
+    "correctAnswer": 1,
+    "explanation": "This reiterates the core concept. Properties are point functions (or state functions). Their value is uniquely determined by the state of the system, regardless of how that state was achieved."
+  },
+  {
+    "id": "q37",
+    "text": "If a system undergoes a cycle, what is the net change in its internal energy?",
+    "options": [
+      "ΔU > 0",
+      "ΔU < 0",
+      "ΔU = 0",
+      "It depends on the path of the cycle."
+    ],
+    "correctAnswer": 2,
+    "explanation": "Because internal energy is a property and a cycle returns the system to its initial state, the net change in any property (including U) for a cycle must be zero."
+  },
+  {
+    "id": "q38",
+    "text": "Which of the following is an example of an intensive property?",
+    "options": [
+      "Total Energy (E)",
+      "Volume (V)",
+      "Entropy (S)",
+      "Specific Volume (v)"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Specific volume (v = V/m) is mass-normalized and is therefore intensive. The other options (E, V, S) are extensive properties as they depend on the total mass of the system."
+  },
+  {
+    "id": "q39",
+    "text": "The boundary of a control volume is also called the:",
+    "options": [
+      "Control surface",
+      "Control mass",
+      "Interface",
+      "Diathermal wall"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The lecture note on Open Systems states: 'Open Systems are also called as “Control Volumes” (CV)'. The boundary of a control volume is specifically termed the 'control surface'."
+  },
+  {
+    "id": "q40",
+    "text": "The lesson learning outcomes include being able to 'Construct a system for a given analysis'. This most directly involves:",
+    "options": [
+      "Recalling the definition of a property.",
+      "Applying the concept of a system boundary to a real device.",
+      "Evaluating the efficiency of a process.",
+      "Remembering the State Postulate."
+    ],
+    "correctAnswer": 1,
+    "explanation": "'Construct' implies creating or defining something. In this context, it means applying the theoretical concept of a system and its boundary to a specific practical scenario (like the quiz on defining a boundary for a video-watching device)."
+  }
+]

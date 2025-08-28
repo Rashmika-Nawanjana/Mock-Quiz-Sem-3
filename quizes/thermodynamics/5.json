@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "What does the Clausius Inequality state for a thermodynamic cycle?",
+        "options": [
+            "∮(δQ/T) > 0 for all cycles",
+            "∮(δQ/T) ≤ 0 for all cycles",
+            "∮(δQ/T) = 0 for all cycles",
+            "∮(δQ/T) ≥ 0 for all cycles"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Clausius Inequality states that for any thermodynamic cycle, the cyclic integral of δQ/T is always less than or equal to zero (∮(δQ/T) ≤ 0)."
+    },
+    {
+        "id": "q2",
+        "text": "According to the Clausius Inequality, what does ∮(δQ/T) = 0 indicate about a cycle?",
+        "options": [
+            "The cycle is impossible",
+            "The cycle is irreversible",
+            "The cycle is reversible",
+            "The cycle violates the first law"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When ∮(δQ/T) = 0, the cycle is reversible (or at least internally reversible)."
+    },
+    {
+        "id": "q3",
+        "text": "For a reversible heat engine operating between two reservoirs, what is the relationship between Q_H/T_H and Q_L/T_L?",
+        "options": [
+            "Q_H/T_H > Q_L/T_L",
+            "Q_H/T_H = Q_L/T_L",
+            "Q_H/T_H < Q_L/T_L",
+            "Q_H/T_H = 0"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For a reversible cycle, ∮(δQ/T) = Q_H/T_H - Q_L/T_L = 0, therefore Q_H/T_H = Q_L/T_L."
+    },
+    {
+        "id": "q4",
+        "text": "What fundamental property did Clausius discover through his inequality?",
+        "options": [
+            "Enthalpy",
+            "Internal Energy",
+            "Entropy",
+            "Gibbs Free Energy"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Clausius Inequality led to the discovery of entropy as a fundamental property of thermodynamic systems."
+    },
+    {
+        "id": "q5",
+        "text": "How is entropy change defined for a reversible process between states 1 and 2?",
+        "options": [
+            "ΔS = ∫₁² PdV",
+            "ΔS = ∫₁² δQ",
+            "ΔS = ∫₁² (δQ/T)",
+            "ΔS = ∫₁² TdQ"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For any reversible process, the entropy change is defined as ΔS = ∫₁² (δQ/T)."
+    },
+    {
+        "id": "q6",
+        "text": "What are the SI units of specific entropy?",
+        "options": [
+            "kJ/K",
+            "kJ/kg",
+            "kJ/kg·K",
+            "kW/K"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Specific entropy has units of kJ/kg·K, representing energy per unit mass per unit temperature."
+    },
+    {
+        "id": "q7",
+        "text": "What does the Principle of Increase of Entropy state for an isolated system?",
+        "options": [
+            "ΔS_isolated < 0",
+            "ΔS_isolated = 0",
+            "ΔS_isolated > 0",
+            "ΔS_isolated ≥ 0"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The entropy of an isolated system always increases or remains constant: ΔS_isolated ≥ 0."
+    },
+    {
+        "id": "q8",
+        "text": "For which type of process does the entropy of an isolated system remain constant?",
+        "options": [
+            "Irreversible process",
+            "Adiabatic process",
+            "Reversible process",
+            "Isothermal process"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For a reversible process in an isolated system, the entropy remains constant (ΔS_isolated = 0)."
+    },
+    {
+        "id": "q9",
+        "text": "What is the relationship between entropy change and reversibility?",
+        "options": [
+            "dS > δQ/T for irreversible processes",
+            "dS = δQ/T for all processes",
+            "dS = δQ/T only for reversible processes",
+            "dS < δQ/T for reversible processes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The relationship dS = δQ/T is valid only for reversible or internally reversible processes."
+    },
+    {
+        "id": "q10",
+        "text": "For an irreversible adiabatic process, what can be said about the entropy change of the system?",
+        "options": [
+            "ΔS = 0",
+            "ΔS > 0",
+            "ΔS < 0",
+            "ΔS = Q/T"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For an irreversible adiabatic process, the entropy of the system increases (ΔS > 0)."
+    },
+    {
+        "id": "q11",
+        "text": "What is the total entropy change for any real process?",
+        "options": [
+            "ΔS_total < 0",
+            "ΔS_total = 0",
+            "ΔS_total > 0",
+            "ΔS_total ≤ 0"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For any real process, the total entropy change (system + surroundings) is always greater than zero (ΔS_total > 0)."
+    },
+    {
+        "id": "q12",
+        "text": "How does the degree of irreversibility relate to entropy generation?",
+        "options": [
+            "Higher irreversibility means less entropy generation",
+            "Higher irreversibility means more entropy generation",
+            "Irreversibility doesn't affect entropy generation",
+            "Entropy generation decreases with irreversibility"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The higher the irreversibilities in a process, the higher the entropy generation."
+    },
+    {
+        "id": "q13",
+        "text": "What does a T-s diagram represent?",
+        "options": [
+            "Temperature vs specific volume",
+            "Temperature vs entropy",
+            "Pressure vs entropy",
+            "Enthalpy vs entropy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A T-s diagram plots Temperature (T) against Entropy (S), and is useful for analyzing thermodynamic cycles."
+    },
+    {
+        "id": "q14",
+        "text": "For a reversible adiabatic process, what is the entropy change?",
+        "options": [
+            "ΔS > 0",
+            "ΔS < 0",
+            "ΔS = 0",
+            "ΔS = Q/T"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A reversible adiabatic process is isentropic, meaning the entropy change is zero (ΔS = 0)."
+    },
+    {
+        "id": "q15",
+        "text": "What is the Clausius Inequality a consequence of?",
+        "options": [
+            "Zeroth Law of Thermodynamics",
+            "First Law of Thermodynamics",
+            "Second Law of Thermodynamics",
+            "Third Law of Thermodynamics"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Clausius Inequality is a mathematical statement of the Second Law of Thermodynamics."
+    },
+    {
+        "id": "q16",
+        "text": "In the proof of entropy as a property, what mathematical technique is used?",
+        "options": [
+            "Method of induction",
+            "Method of contradiction",
+            "Method of separation of variables",
+            "Method of characteristics"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The existence of entropy as a property is proven using the method of contradiction, assuming the Clausius Inequality is valid."
+    },
+    {
+        "id": "q17",
+        "text": "What does the area under a process curve on a T-s diagram represent?",
+        "options": [
+            "Work done",
+            "Heat transfer",
+            "Entropy generation",
+            "Enthalpy change"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The area under a process curve on a T-s diagram represents the heat transfer for that process."
+    },
+    {
+        "id": "q18",
+        "text": "For a Carnot cycle on a T-s diagram, what is the shape?",
+        "options": [
+            "Triangle",
+            "Rectangle",
+            "Trapezoid",
+            "Circle"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A Carnot cycle appears as a rectangle on a T-s diagram, with two isothermal and two adiabatic (isentropic) processes."
+    },
+    {
+        "id": "q19",
+        "text": "What is the relationship between entropy and the arrow of time?",
+        "options": [
+            "Entropy decrease defines the direction of time",
+            "Entropy increase defines the direction of time",
+            "Entropy is constant with time",
+            "Entropy oscillates with time"
+        ],
+        "explanation": "The continual increase of entropy in isolated systems defines the arrow of time, distinguishing past from future.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q20",
+        "text": "How can entropy change be calculated for an irreversible process?",
+        "options": [
+            "Using ΔS = ∫(δQ/T) for the irreversible path",
+            "Using ΔS = ∫(δQ/T) for a reversible path between the same states",
+            "Using ΔS = Q/T",
+            "Using ΔS = 0"
+        ],
+        "explanation": "Since entropy is a property, its change depends only on the initial and final states. For an irreversible process, we devise a reversible path between the same states and calculate ΔS = ∫(δQ/T) for that path.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q21",
+        "text": "What does the inequality dS > δQ/T indicate?",
+        "options": [
+            "A reversible process",
+            "An impossible process",
+            "An irreversible process",
+            "An isentropic process"
+        ],
+        "explanation": "For an irreversible process, the entropy change is greater than δQ/T, i.e., dS > δQ/T.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q22",
+        "text": "In the combined system approach to proving Clausius Inequality, what is W_com?",
+        "options": [
+            "Work done by the composite system",
+            "Work done on the composite system",
+            "Heat transfer of the composite system",
+            "Entropy change of the composite system"
+        ],
+        "explanation": "W_com represents the work done by the composite system in the proof of the Clausius Inequality.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q23",
+        "text": "What is the significance of the equality case in Clausius Inequality?",
+        "options": [
+            "It represents irreversible cycles",
+            "It represents impossible cycles",
+            "It represents reversible cycles",
+            "It represents adiabatic cycles"
+        ],
+        "explanation": "The equality case in Clausius Inequality (∮(δQ/T) = 0) represents reversible cycles.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q24",
+        "text": "Which statement about entropy is NOT true?",
+        "options": [
+            "Entropy is a property of the system",
+            "Entropy is conserved in reversible processes",
+            "Entropy is always increasing",
+            "Entropy can be created but not destroyed"
+        ],
+        "explanation": "Entropy is not conserved; it can be generated (created) during irreversible processes, according to the principle of entropy increase.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q25",
+        "text": "For a system undergoing a cycle, what is the net change in entropy?",
+        "options": [
+            "ΔS > 0",
+            "ΔS < 0",
+            "ΔS = 0",
+            "It depends on the process"
+        ],
+        "explanation": "Since entropy is a property (state function), its net change over any cycle is zero (ΔS_cycle = 0).",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q26",
+        "text": "What is the relationship between the entropy change of the system and surroundings for a reversible process?",
+        "options": [
+            "ΔS_system + ΔS_surroundings > 0",
+            "ΔS_system + ΔS_surroundings = 0",
+            "ΔS_system + ΔS_surroundings < 0",
+            "ΔS_system = -ΔS_surroundings"
+        ],
+        "explanation": "For a reversible process, the total entropy change is zero: ΔS_system + ΔS_surroundings = 0.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q27",
+        "text": "What does the term 'isentropic' mean?",
+        "options": [
+            "Constant temperature",
+            "Constant pressure",
+            "Constant entropy",
+            "Constant volume"
+        ],
+        "explanation": "Isentropic means constant entropy (ΔS = 0). Reversible adiabatic processes are isentropic.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q28",
+        "text": "How is the thermodynamic temperature scale defined using the Second Law?",
+        "options": [
+            "Q_H/Q_L = T_H/T_L",
+            "Q_H/Q_L = T_L/T_H",
+            "Q_H/T_H = Q_L/T_L",
+            "T_H/T_L = W_net/Q_H"
+        ],
+        "explanation": "For reversible heat engines, the Second Law defines the thermodynamic temperature scale through the relation Q_H/Q_L = T_H/T_L.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q29",
+        "text": "What is the entropy change for an irreversible, adiabatic process in a closed system?",
+        "options": [
+            "ΔS = 0",
+            "ΔS > 0",
+            "ΔS < 0",
+            "ΔS = ∫(δQ/T)"
+        ],
+        "explanation": "For any irreversible adiabatic process in a closed system, the entropy increases (ΔS > 0).",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q30",
+        "text": "Which process on a T-s diagram would appear as a vertical line?",
+        "options": [
+            "Isothermal process",
+            "Isobaric process",
+            "Isentropic process",
+            "Isochoric process"
+        ],
+        "explanation": "An isentropic process (constant entropy) appears as a vertical line on a T-s diagram.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q31",
+        "text": "What does the Clausius Inequality imply about perpetual motion machines of the second kind?",
+        "options": [
+            "They are possible",
+            "They are impossible",
+            "They violate the first law only",
+            "They require negative entropy"
+        ],
+        "explanation": "The Clausius Inequality (∮(δQ/T) ≤ 0) proves that perpetual motion machines of the second kind (which convert heat completely into work without other effects) are impossible.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q32",
+        "text": "For a reversible process, how is the entropy change of the surroundings related to the heat transfer?",
+        "options": [
+            "dS_surroundings = δQ/T_surroundings",
+            "dS_surroundings = -δQ/T_surroundings",
+            "dS_surroundings = 0",
+            "dS_surroundings = δQ"
+        ],
+        "explanation": "For a reversible process, the entropy change of the surroundings is dS_surroundings = -δQ/T_surroundings (heat transferred to the system is negative from the surroundings' perspective).",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q33",
+        "text": "What is the key difference between the First and Second Laws regarding energy and entropy?",
+        "options": [
+            "Energy is conserved, entropy is not",
+            "Entropy is conserved, energy is not",
+            "Both energy and entropy are conserved",
+            "Neither energy nor entropy is conserved"
+        ],
+        "explanation": "The First Law states energy is conserved. The Second Law states entropy is not conserved—it can be generated in irreversible processes.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q34",
+        "text": "In the expression dS ≥ δQ/T, when does the equality hold?",
+        "options": [
+            "Always",
+            "For irreversible processes only",
+            "For reversible processes only",
+            "For adiabatic processes only"
+        ],
+        "explanation": "The equality dS = δQ/T holds only for reversible processes. For irreversible processes, dS > δQ/T.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q35",
+        "text": "What does the term 'thermodynamic property' imply about entropy?",
+        "options": [
+            "Its value depends on the process path",
+            "Its value depends only on the state",
+            "It is always increasing",
+            "It is extensive but not intensive"
+        ],
+        "explanation": "As a thermodynamic property, the value of entropy depends only on the state of the system, not on the path taken to reach that state.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q36",
+        "text": "How can the entropy generation be quantified for an irreversible process?",
+        "options": [
+            "S_gen = ΔS_system - ∫(δQ/T)",
+            "S_gen = ΔS_system + ∫(δQ/T)",
+            "S_gen = ΔS_system - ΔS_surroundings",
+            "S_gen = ∫(δQ/T) - ΔS_system"
+        ],
+        "explanation": "The entropy generation for an irreversible process is given by S_gen = ΔS_system - ∫(δQ/T) > 0.",
+        "correctAnswer": 0
+    },
+    {
+        "id": "q37",
+        "text": "What would a violation of the Principle of Increase of Entropy imply?",
+        "options": [
+            "Violation of the First Law",
+            "Violation of the Second Law",
+            "Violation of the Zeroth Law",
+            "A reversible process"
+        ],
+        "explanation": "A process with ΔS_isolated < 0 would violate the Second Law of Thermodynamics (Principle of Increase of Entropy).",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q38",
+        "text": "Which type of process produces no entropy?",
+        "options": [
+            "Irreversible process",
+            "All real processes",
+            "Reversible process",
+            "Adiabatic process"
+        ],
+        "explanation": "A reversible process produces no entropy (S_gen = 0). All real processes are irreversible and generate entropy.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q39",
+        "text": "On a T-s diagram, what does a horizontal line represent?",
+        "options": [
+            "Isentropic process",
+            "Isobaric process",
+            "Isothermal process",
+            "Isochoric process"
+        ],
+        "explanation": "A horizontal line on a T-s diagram represents an isothermal process (constant temperature).",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q40",
+        "text": "What is the fundamental message of the Second Law of Thermodynamics regarding energy quality?",
+        "options": [
+            "Energy cannot be created or destroyed",
+            "Energy quality deteriorates in real processes",
+            "Energy is always conserved in quantity",
+            "Energy can be completely converted to work"
+        ],
+        "explanation": "The Second Law implies that while energy quantity is conserved (First Law), energy quality deteriorates in real processes due to entropy generation. Not all heat can be converted to work.",
+        "correctAnswer": 1
+    }
+]

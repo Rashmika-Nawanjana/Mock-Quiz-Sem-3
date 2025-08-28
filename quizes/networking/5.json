@@ -1,0 +1,723 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary purpose of twisting the wires in a twisted pair cable?",
+        "options": [
+            "To increase the cable's tensile strength",
+            "To reduce signal interference and crosstalk between pairs",
+            "To make the cable more flexible for installation",
+            "To improve the cable's resistance to corrosion"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The twist in twisted pair cables reduces signal interference (crosstalk) between the pairs by ensuring that the two wires are equally exposed to any external interference, canceling it out."
+    },
+    {
+        "id": "q2",
+        "text": "Which characteristic is NOT a common factor for evaluating transmission media?",
+        "options": [
+            "Cost",
+            "Data Rate",
+            "Color of the insulation",
+            "Transmission impairments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "While cost, data rate, and transmission impairments are key evaluation criteria, the color of the insulation is not a functional characteristic affecting performance."
+    },
+    {
+        "id": "q3",
+        "text": "In a coaxial cable, what is the primary function of the metallic shield?",
+        "options": [
+            "To carry the electrical signal",
+            "To protect the signal from electromagnetic interference (EMI)",
+            "To provide structural support to the cable",
+            "To increase the data rate of the cable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The metallic shield in a coaxial cable is a wire mesh that acts to protect the inner signal-carrying conductor from external electromagnetic interference (EMI)."
+    },
+    {
+        "id": "q4",
+        "text": "What is a key disadvantage of Unshielded Twisted Pair (UTP) compared to Shielded Twisted Pair (STP)?",
+        "options": [
+            "UTP is more expensive",
+            "UTP is harder to install due to its thickness",
+            "UTP suffers more from external EM interference",
+            "UTP has a lower maximum data rate"
+        ],
+        "correctAnswer": 2,
+        "explanation": "UTP, while cheaper and easier to install, lacks the additional metal braiding or sheathing found in STP, making it more susceptible to external electromagnetic interference."
+    },
+    {
+        "id": "q5",
+        "text": "The phenomenon where light travels down a fiber optic cable by bouncing off the boundary between the core and cladding is called:",
+        "options": [
+            "Refraction",
+            "Diffraction",
+            "Total Internal Reflection",
+            "Modal Dispersion"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Total internal reflection occurs when light hits the core-cladding interface at an angle greater than the critical angle, causing it to reflect entirely back into the core, thus propagating the light along the fiber."
+    },
+    {
+        "id": "q6",
+        "text": "What is the main cause of modal dispersion in a step-index multimode optical fiber?",
+        "options": [
+            "The core diameter is too small",
+            "Different light rays take paths of different lengths",
+            "The cladding is not reflective enough",
+            "The light source is not powerful enough"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Modal dispersion occurs because light rays entering the fiber at different angles (modes) travel different path lengths. Rays at steeper angles travel a longer path and arrive later than axial rays, causing pulses to spread out."
+    },
+    {
+        "id": "q7",
+        "text": "How does a graded-index multimode fiber primarily reduce modal dispersion?",
+        "options": [
+            "By using a laser instead of an LED",
+            "By making the core diameter very small",
+            "By gradually decreasing the optical density from the center of the core outward",
+            "By using a special coating on the cladding"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A graded-index fiber has a core whose refractive index decreases gradually from the center outward. This causes light rays to curve helically, slowing down the axial rays (which travel through a denser medium) and allowing the oblique rays to catch up, reducing pulse spreading."
+    },
+    {
+        "id": "q8",
+        "text": "Which of the following is a significant ADVANTAGE of optical fiber over conductive metal cables?",
+        "options": [
+            "Lower material cost",
+            "Easier to splice and install",
+            "Impervious to electrical noise and EMI",
+            "Does not require signal conversion"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A major advantage of optical fiber is that it uses light, not electricity, for transmission. This makes it immune to electromagnetic interference (EMI) from motors, power lines, etc., which can severely disrupt electrical signals in metal cables."
+    },
+    {
+        "id": "q9",
+        "text": "In wireless transmission, what is the function of a transmitting antenna?",
+        "options": [
+            "To convert electromagnetic energy into radio frequency electrical energy",
+            "To convert radio frequency electrical energy into electromagnetic energy",
+            "To amplify the signal before it is transmitted",
+            "To filter out noise from the signal"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The transmitting antenna takes the radio frequency (RF) electrical energy from the transmitter and converts it into propagating electromagnetic waves."
+    },
+    {
+        "id": "q10",
+        "text": "According to the electromagnetic spectrum chart, which frequency band is typically used for FM radio and UHF/VHF television?",
+        "options": [
+            "3 kHz - 300 GHz (Radio)",
+            "30 MHz - 1 GHz (Broadcast Radio)",
+            "2 GHz - 40 GHz (Microwave)",
+            "3 x 10^11 - 2 x 10^14 Hz (Infrared)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The broadcast radio band, from 30 MHz to 1 GHz, is used for FM radio, UHF television, and VHF television transmissions."
+    },
+    {
+        "id": "q11",
+        "text": "What is the defining characteristic of an isotropic antenna?",
+        "options": [
+            "It is highly directional",
+            "It is a theoretical point that radiates power equally in all directions",
+            "It uses a parabolic dish to focus energy",
+            "It only receives signals and cannot transmit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An isotropic antenna is a theoretical, point-like reference antenna that radiates power uniformly in all directions, resulting in a perfect spherical radiation pattern. It is used as a benchmark for measuring antenna gain."
+    },
+    {
+        "id": "q12",
+        "text": "Antenna gain is a measure of what property?",
+        "options": [
+            "The amplification power of the antenna's internal circuitry",
+            "The physical size and weight of the antenna",
+            "Its directionality compared to an isotropic antenna",
+            "Its resistance to environmental damage"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Antenna gain measures how directionally concentrated an antenna's radiation pattern is. It is defined as the power output in a specific direction compared to the power output of an isotropic antenna radiating the same total power."
+    },
+    {
+        "id": "q13",
+        "text": "For terrestrial microwave links, what is a critical requirement for the path between antennas?",
+        "options": [
+            "The path must be submerged in water for less loss",
+            "The antennas must be placed underground",
+            "There must be a clear line of sight",
+            "The path must follow the curvature of the earth"
+        ],
+        "orrectAnswer": 2,
+        "explanation": "Terrestrial microwave transmission uses highly directional signals at high frequencies. These signals travel in straight lines and cannot bend around the curvature of the earth, making a clear line of sight between the transmitting and receiving antennas essential."
+    },
+    {
+        "id": "q14",
+        "text": "A satellite that receives a signal at 6 GHz, amplifies it, and retransmits it at 4 GHz is acting as a:",
+        "options": [
+            "Terminal",
+            "Repeater",
+            "Modulator",
+            "Multiplexer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A communications satellite primarily functions as a repeater (or relay station) in space. It receives signals on one frequency (the uplink), amplifies them (to overcome attenuation), and transmits them back to Earth on a different frequency (the downlink)."
+    },
+    {
+        "id": "q15",
+        "text": "Why are satellites often placed in geostationary orbit?",
+        "options": [
+            "To be closer to Earth for stronger signals",
+            "To avoid the Earth's magnetic field",
+            "So they remain fixed relative to a point on Earth, simplifying antenna aiming",
+            "To reduce the cost of launching them"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A geostationary orbit (at ~35,786 km altitude) has a period equal to the Earth's rotation, meaning the satellite remains stationary over a fixed point on the equator. This allows ground antennas to be pointed permanently at a fixed location in the sky."
+    },
+    {
+        "id": "q16",
+        "text": "What is a major propagation issue for broadcast radio signals in urban environments?",
+        "options": [
+            "Attenuation from oxygen absorption",
+            "Multipath interference caused by reflections",
+            "Bending of signals away from the receiver (refraction)",
+            "Free space loss over short distances"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Multipath interference occurs when the transmitted signal reflects off buildings, hills, and other objects. Multiple copies of the signal arrive at the receiver at slightly different times, which can cause distortion and fading of the original signal."
+    },
+    {
+        "id": "q17",
+        "text": "A key limitation of using infrared for data communication is:",
+        "options": [
+            "It requires a license from the government",
+            "It can travel long distances through walls",
+            "It is limited to line-of-sight or reflection and is blocked by walls",
+            "It is highly susceptible to interference from sunlight"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Infrared (IR) waves are short-range and cannot penetrate solid obstacles like walls. Communication requires a direct line-of-sight path or a reflective surface to bounce the signal, making it suitable for closed-room applications like remote controls."
+    },
+    {
+        "id": "q18",
+        "text": "Which propagation method allows high-frequency (2-30 MHz) radio waves to travel beyond the horizon by bouncing off the ionosphere?",
+        "options": [
+            "Ground Wave",
+            "Sky Wave",
+            "Line-of-Sight (LOS)",
+            "Surface Wave"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sky wave propagation utilizes the ionosphere, a layer of the upper atmosphere, to refract (bend) high-frequency radio waves back toward the Earth's surface, enabling long-distance communication beyond the visual horizon."
+    },
+    {
+        "id": "q19",
+        "text": "For frequencies above 30 MHz, which propagation method is necessary?",
+        "options": [
+            "Ground Wave",
+            "Sky Wave",
+            "Line-of-Sight (LOS)",
+            "Surface Wave"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Frequencies above 30 MHz typically penetrate the ionosphere instead of being reflected by it. Therefore, they are limited to line-of-sight propagation, where the transmitting and receiving antennas must be able to 'see' each other."
+    },
+    {
+    "id": "q20",
+    "text": "Which of the following statements about transmission impairments is CORRECT?",
+    "options": [
+        "Attenuation affects only guided media, not unguided media",
+        "Multipath interference is exclusively a problem in fiber optic cables",
+        "Interference from external sources like electric motors can affect both guided and unguided media",
+        "The number of receivers connected to a medium has no effect on signal strength in guided media"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Interference from external sources such as electric motors, lightning strikes, and other electrical equipment can disrupt signals in both guided media (e.g., induced noise in copper cables) and unguided media (e.g., radio frequency interference). This is a fundamental transmission impairment common to both media types."
+},
+    {
+        "id": "q21",
+        "text": "What is the primary cause of multipath interference in a mobile radio environment?",
+        "options": [
+            "The curvature of the Earth",
+            "Absorption of signals by the atmosphere",
+            "Reflections of the signal from buildings and other obstacles",
+            "The high directionality of the antennas used"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In mobile radio (e.g., cellular networks), the receiver is often surrounded by obstacles. The transmitted signal can reflect off these obstacles, creating multiple copies that travel different path lengths and arrive at the receiver at different times, causing interference."
+    },
+    {
+        "id": "q22",
+        "text": "Which standards body is primarily responsible for defining LAN, WAN, and Wireless standards like IEEE 802.3 (Ethernet) and IEEE 802.11 (Wi-Fi)?",
+        "options": [
+            "V-Series (CCITT/ITU-T)",
+            "X-Series (CCITT/ITU-T)",
+            "EIA (Electronic Industries Alliance)",
+            "IEEE (Institute of Electrical and Electronics Engineers)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The IEEE (Institute of Electrical and Electronics Engineers) is renowned for its 802 project, which sets the defining standards for local and metropolitan area networks, including Ethernet (802.3) and Wi-Fi (802.11)."
+    },
+    {
+        "id": "q23",
+        "text": "In the context of transmission media, what does 'attenuation' refer to?",
+        "options": [
+            "The strengthening of a signal as it travels",
+            "The loss of signal strength over distance",
+            "The interference between two adjacent wires",
+            "The conversion of a signal from one form to another"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Attenuation is the gradual weakening or loss of signal strength (power) as it propagates through a medium. It is a fundamental impairment for both guided and unguided media."
+    },
+    {
+        "id": "q24",
+        "text": "In a coaxial cable, the 'baseband mode' of operation means:",
+        "options": [
+            "The entire bandwidth is used for a single data stream",
+            "The bandwidth is split into multiple channels for multiple data streams",
+            "The cable is used for analog transmission only",
+            "The cable is used for digital transmission only"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Baseband transmission devotes the entire bandwidth of the medium to a single data signal. This is common in digital signaling, like early Ethernet over coaxial cable."
+    },
+    {
+        "id": "q25",
+        "text": "What is the main reason optical fibers can achieve much higher data rates than copper wires?",
+        "options": [
+            "Light travels slower than electricity, allowing more data to be packed",
+            "They have a much higher bandwidth and are immune to EMI",
+            "They are cheaper to manufacture, allowing for more fibers",
+            "They use simpler modulation techniques"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Optical fibers have a vast bandwidth potential (orders of magnitude greater than copper) and are not susceptible to the capacitive and inductive effects that limit data rates on electrical conductors. Their immunity to EMI also allows for cleaner signal transmission."
+    },
+    {
+        "id": "q26",
+        "text": "The critical angle in optical fibers is defined as the angle of incidence:",
+        "options": [
+            "Where refraction is at a maximum",
+            "Where the refracted ray travels along the core-cladding interface",
+            "Where total internal reflection begins to occur",
+            "Where the light is completely absorbed by the cladding"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The critical angle is the specific angle of incidence within the denser medium (core) above which total internal reflection occurs. At the critical angle, the refracted ray travels exactly along the boundary between the core and cladding."
+    },
+    {
+        "id": "q27",
+        "text": "Which type of optical fiber is designed to have only one possible path (mode) for light to travel?",
+        "options": [
+            "Step-index multimode fiber",
+            "Graded-index multimode fiber",
+            "Single-mode fiber",
+            "Plastic optical fiber"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Single-mode fiber has a very small core diameter (typically 8-10 microns), which allows only one mode of light (a single straight path) to propagate. This eliminates modal dispersion, enabling very high data rates over long distances."
+    },
+    {
+        "id": "q28",
+        "text": "The 'UHF' band in the electromagnetic spectrum stands for:",
+        "options": [
+            "Ultra High Frequency",
+            "Uniform Harmonic Frequency",
+            "Unified Helical Frequency",
+            "Universal High Fidelity"
+        ],
+        "correctAnswer": 0,
+        "explanation": "UHF stands for Ultra High Frequency. This band ranges from 300 MHz to 3 GHz and is used for television broadcasting, mobile phones, GPS, Wi-Fi, and Bluetooth."
+    },
+    {
+        "id": "q29",
+        "text": "A parabolic reflective antenna is used primarily to:",
+        "options": [
+            "Radiate energy equally in all directions",
+            "Focus a narrow, highly directional beam of energy",
+            "Receive signals from all directions simultaneously",
+            "Reduce the cost of the antenna system"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The parabolic shape of the dish reflects incoming parallel waves to a single focal point (and vice versa for transmission). This geometry allows it to focus electromagnetic energy into a very narrow, highly directional beam, which is crucial for point-to-point microwave links."
+    },
+    {
+        "id": "q30",
+        "text": "What is a significant disadvantage of geostationary (GEO) satellites for applications like voice communication?",
+        "options": [
+            "They are too close to Earth",
+            "They require large, powerful antennas on Earth",
+            "The long propagation distance causes high latency",
+            "They cannot be used for television broadcast"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The immense distance to geostationary orbit (~36,000 km) results in a significant propagation delay of about 240-280 milliseconds for a round trip. This latency is noticeable and problematic for two-way voice conversations and real-time interactive applications."
+    },
+    {
+        "id": "q31",
+        "text": "The 'EHF' band is also commonly known as:",
+        "options": [
+            "The millimeter wave band",
+            "The long wave band",
+            "The microwave band",
+            "The infrared band"
+        ],
+        "correctAnswer": 0,
+        "explanation": "EHF (Extremely High Frequency), ranging from 30 GHz to 300 GHz, is often called the millimeter wave band because the wavelengths range from 10 mm down to 1 mm."
+    },
+    {
+        "id": "q32",
+        "text": "Which wireless propagation method relies on currents induced on the Earth's surface to follow its curvature?",
+        "options": [
+            "Sky Wave",
+            "Line-of-Sight (LOS)",
+            "Ground Wave",
+            "Space Wave"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Ground wave propagation is dominant at low and medium frequencies (below 2 MHz). The electromagnetic wave induces currents in the Earth's surface, which causes the wavefront to tilt downward and follow the curvature of the Earth, allowing it to travel beyond the horizon."
+    },
+    {
+        "id": "q33",
+        "text": "The main source of loss for a terrestrial microwave signal is:",
+        "options": [
+            "Multipath interference",
+            "Attenuation due to distance and factors like rainfall",
+            "Refraction away from the receiver",
+            "Interference from the sun"
+        ],
+        "correctAnswer": 1,
+        "explanation": "While interference can be an issue, the primary source of loss for microwave signals is attenuation. This is the weakening of the signal over distance. At higher microwave frequencies, absorption and scattering by rain (rain fade) become significant additional causes of attenuation."
+    },
+    {
+        "id": "q34",
+        "text": "What does the '802' in IEEE 802.11 refer to?",
+        "options": [
+            "The year it was founded (1980, February)",
+            "The number of working groups in the project",
+            "A project number for LAN/MAN standards",
+            "The recommended data rate in Mbps"
+        ],
+        "correctAnswer": 2,
+        "explanation": "IEEE 802 is a family of standards overseen by the IEEE LAN/MAN Standards Committee (LMSC). The number '802' was simply the next sequential project number available at the time of its formation (February 1980)."
+    },
+    {
+    "id": "q35",
+    "text": "What is the primary reason that higher frequency signals experience greater free space loss over the same distance compared to lower frequency signals?",
+    "options": [
+        "Higher frequency signals are more easily absorbed by the atmosphere",
+        "The wavelength is shorter, making the antenna less efficient",
+        "The effective aperture of a receiving antenna is proportional to wavelength squared",
+        "Higher frequencies are more susceptible to multipath interference"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The effective aperture (A_e) of an antenna, which determines how much power it can capture, is given by A_e = Gλ²/4π, where λ is wavelength. Since λ = c/f, higher frequencies have shorter wavelengths, resulting in a smaller effective aperture and thus greater free space loss for the same gain and distance."
+},
+    {
+        "id": "q36",
+        "text": "Which of the following is a common cause of interference in transmission media?",
+        "options": [
+            "The color of the cable jacket",
+            "Electric motors, lightning, and other wires",
+            "The tensile strength of the conductor",
+            "The length of the cable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Interference, or noise, is an external signal that disrupts the desired signal. Common sources include electric motors (which generate EMI), lightning strikes (a large impulse of energy), and crosstalk from other adjacent wires."
+    },
+    {
+        "id": "q37",
+        "text": "What is the primary reason STP (Shielded Twisted Pair) is more expensive and harder to handle than UTP?",
+        "options": [
+            "It uses gold-plated connectors",
+            "It incorporates a protective metal braid or sheathing",
+            "It has a much larger core diameter",
+            "It requires a special license to use"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The additional metal shielding (braid or foil) in STP adds cost, weight, and rigidity to the cable, making it more expensive to produce and less flexible to install compared to UTP."
+    },
+    {
+        "id": "q38",
+        "text": "The cladding in an optical fiber serves what main purpose?",
+        "options": [
+            "To carry the light signal over long distances",
+            "To provide mechanical strength and protect the core",
+            "To have a lower refractive index to contain light in the core via total internal reflection",
+            "To convert electrical signals to light signals"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The cladding is made of a material with a slightly lower refractive index than the core. This difference in optical density is what creates the conditions necessary for total internal reflection to occur, trapping the light within the core."
+    },
+    {
+        "id": "q39",
+        "text": "Which frequency range is typically associated with 'microwave' transmission?",
+        "options": [
+            "30 MHz - 1 GHz",
+            "2 GHz - 40 GHz",
+            "3 x 10^11 - 2 x 10^14 Hz",
+            "300 GHz - 400 THz"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The microwave frequency spectrum is commonly defined as ranging from about 1 GHz to 40 GHz, with terrestrial and satellite microwave systems often operating in the 2 GHz to 40 GHz range."
+    },
+    {
+        "id": "q40",
+        "text": "What is the primary function of the ionosphere in sky wave propagation?",
+        "options": [
+            "To absorb high-frequency signals",
+            "To refract (bend) radio waves back towards the Earth",
+            "To generate electrical currents for ground waves",
+            "To focus signals for line-of-sight communication"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The ionosphere is a region of the upper atmosphere containing ionized particles. For certain frequencies (HF band), it acts like a reflector, refracting (bending) radio waves sent upwards at an angle back down towards the Earth's surface, enabling long-distance communication."
+    },
+        {
+        "id": "q41",
+        "text": "According to the electromagnetic spectrum chart, which application typically uses the VHF (Very High Frequency) band?",
+        "options": [
+            "AM radio broadcasting",
+            "FM radio and television broadcasting",
+            "Cellular telephony",
+            "Fiber optic communication"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The VHF band (30 MHz to 300 MHz) is commonly used for FM radio broadcasting (88-108 MHz) and VHF television channels (e.g., channels 2-13)."
+    },
+    {
+        "id": "q42",
+        "text": "What phenomenon causes light pulses to spread out in an optical fiber, potentially leading to intersymbol interference?",
+        "options": [
+            "Refraction",
+            "Chromatic dispersion",
+            "Attenuation",
+            "Critical angle effect"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Chromatic dispersion occurs because different wavelengths of light travel at slightly different speeds in the fiber material, causing pulses to spread out over long distances."
+    },
+    {
+        "id": "q43",
+        "text": "In satellite communications, what is the typical purpose of using different frequencies for uplink and downlink?",
+        "options": [
+            "To reduce the cost of satellite components",
+            "To avoid interference between incoming and outgoing signals",
+            "To comply with international regulations",
+            "To increase the satellite's processing power"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Using different frequencies for uplink (earth to satellite) and downlink (satellite to earth) prevents the strong transmitted uplink signal from interfering with the weak received downlink signal."
+    },
+    {
+        "id": "q44",
+        "text": "What is the primary advantage of using LEO (Low Earth Orbit) satellites compared to GEO (Geostationary Orbit) satellites?",
+        "options": [
+            "They require simpler ground equipment",
+            "They have lower propagation delay",
+            "They provide continuous coverage with fewer satellites",
+            "They are less affected by atmospheric conditions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "LEO satellites orbit much closer to Earth (160-2,000 km vs 35,786 km for GEO), resulting in significantly lower signal propagation delay, making them suitable for real-time communications."
+    },
+    {
+        "id": "q45",
+        "text": "In wireless communication, what does 'multipath fading' refer to?",
+        "options": [
+            "The absorption of signals by atmospheric gases",
+            "The bending of signals due to atmospheric refraction",
+            "The combination of multiple signal paths causing constructive and destructive interference",
+            "The loss of signal strength over distance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Multipath fading occurs when multiple copies of a signal arrive at the receiver at different times due to reflections, causing them to interfere with each other either constructively or destructively."
+    },
+    {
+        "id": "q46",
+        "text": "What is the main reason infrared communication is generally limited to short-range applications?",
+        "options": [
+            "Government regulations restrict its power output",
+            "Infrared signals are easily absorbed by atmospheric gases",
+            "It requires complex modulation techniques",
+            "Infrared transmitters are expensive to manufacture"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Infrared signals are strongly absorbed by atmospheric components like water vapor and carbon dioxide, limiting their effective range to short distances, typically within a room."
+    },
+    {
+        "id": "q47",
+        "text": "What characteristic of UTP (Unshielded Twisted Pair) makes it particularly susceptible to electromagnetic interference?",
+        "options": [
+            "Its copper conductor material",
+            "The lack of metallic shielding",
+            "The thickness of its insulation",
+            "The twist rate of the pairs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "UTP lacks any metallic shielding around the twisted pairs, making it vulnerable to electromagnetic interference from external sources like motors, fluorescent lights, and other electrical equipment."
+    },
+    {
+        "id": "q48",
+        "text": "In fiber optics, what is the relationship between a medium's refractive index and its optical density?",
+        "options": [
+            "They are inversely proportional",
+            "They are unrelated concepts",
+            "Higher refractive index indicates higher optical density",
+            "Lower refractive index indicates higher optical density"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The refractive index of a material indicates how much it slows down light compared to vacuum. A higher refractive index corresponds to higher optical density, meaning light travels more slowly through that medium."
+    },
+    {
+        "id": "q49",
+        "text": "What is the primary limitation of ground wave propagation for wireless communication?",
+        "options": [
+            "It only works during daylight hours",
+            "It is limited to low and medium frequencies",
+            "It requires satellites as relays",
+            "It cannot be used over water surfaces"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Ground wave propagation is only effective at relatively low frequencies (typically below 2 MHz) because higher frequency signals are not guided effectively by the Earth's surface and suffer from greater absorption."
+    },
+    {
+        "id": "q50",
+        "text": "Why are parabolic antennas particularly suitable for microwave communication?",
+        "options": [
+            "They can operate without power",
+            "They provide high gain and directivity",
+            "They are inexpensive to manufacture",
+            "They work equally well at all frequencies"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Parabolic antennas focus microwave signals into a narrow, highly directional beam, providing high gain (amplification) and enabling efficient point-to-point communication over long distances."
+    },
+    {
+        "id": "q51",
+        "text": "What is the significance of the critical angle in optical fiber communication?",
+        "options": [
+            "It determines the maximum data rate of the fiber",
+            "It defines the minimum angle for total internal reflection",
+            "It specifies the manufacturing tolerance for fiber diameter",
+            "It indicates the fiber's resistance to bending"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The critical angle is the minimum angle of incidence at which light is totally internally reflected rather than refracted. This principle is fundamental to containing light within the fiber core."
+    },
+    {
+        "id": "q52",
+        "text": "How does atmospheric absorption affect wireless signal propagation?",
+        "options": [
+            "It increases signal strength over distance",
+            "It causes signal distortion through refraction",
+            "It selectively attenuates specific frequency bands",
+            "It improves signal-to-noise ratio"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Atmospheric gases (particularly oxygen and water vapor) absorb electromagnetic energy at specific resonant frequencies, creating absorption bands that cause significant attenuation at those frequencies."
+    },
+    {
+        "id": "q53",
+        "text": "What is the primary difference between baseband and broadband transmission in coaxial cables?",
+        "options": [
+            "Baseband uses digital signaling, while broadband uses analog",
+            "Baseband uses the entire bandwidth for one signal, while broadband divides it into channels",
+            "Baseband is for short distances, while broadband is for long distances",
+            "Baseband requires shielding, while broadband does not"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In baseband transmission, the entire bandwidth of the medium is used for a single digital signal. In broadband transmission, the bandwidth is divided into multiple frequency channels, allowing multiple signals to be transmitted simultaneously."
+    },
+    {
+        "id": "q54",
+        "text": "Why are geostationary satellites spaced at least 3-4 degrees apart in orbit?",
+        "options": [
+            "To prevent gravitational interference between satellites",
+            "To avoid radio frequency interference between adjacent satellites",
+            "To ensure continuous coverage of the Earth's surface",
+            "To comply with international space treaties"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Satellites are spaced apart to prevent their transmission beams from interfering with each other. The minimum spacing (typically 2-4 degrees for C-band and Ku-band) ensures that ground antennas can distinguish between adjacent satellites."
+    },
+    {
+        "id": "q55",
+        "text": "What makes single-mode fiber capable of higher bandwidth than multimode fiber?",
+        "options": [
+            "Larger core diameter",
+            "Elimination of modal dispersion",
+            "Use of special cladding material",
+            "Higher refractive index core"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Single-mode fiber has a much smaller core diameter that allows only one propagation mode, eliminating modal dispersion (where different light paths arrive at different times). This allows for higher bandwidth and longer transmission distances."
+    },
+    {
+        "id": "q56",
+        "text": "What is the primary cause of attenuation in optical fibers?",
+        "options": [
+            "Electromagnetic interference",
+            "Material impurities and Rayleigh scattering",
+            "Modal dispersion",
+            "Chromatic dispersion"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The main causes of attenuation in optical fibers are material impurities (especially hydroxyl ions) and Rayleigh scattering (caused by microscopic variations in material density), both of which absorb or scatter light energy."
+    },
+    {
+        "id": "q57",
+        "text": "Why are microwave frequencies particularly susceptible to rain attenuation?",
+        "options": [
+            "Rain droplets act as small antennas that absorb microwave energy",
+            "Rain changes the atmospheric refractive index dramatically",
+            "Microwave signals are reflected by rain clouds",
+            "Rain increases atmospheric pressure, affecting signal propagation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Rain droplets are approximately the same size as microwave wavelengths, causing them to act as tiny antennas that absorb and scatter the microwave energy, leading to significant signal attenuation, especially at frequencies above 10 GHz."
+    },
+    {
+        "id": "q58",
+        "text": "What is the fundamental principle that allows satellites to remain in geostationary orbit?",
+        "options": [
+            "They use continuous thrusters to maintain position",
+            "Their orbital period matches Earth's rotation period",
+            "They are located at a point where Earth's and Moon's gravity cancel",
+            "They orbit at escape velocity to counteract gravity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A geostationary orbit is circular and located approximately 35,786 km above the equator, where the satellite's orbital period exactly matches the Earth's rotation period (24 hours), causing the satellite to appear stationary relative to the Earth's surface."
+    },
+    {
+        "id": "q59",
+        "text": "How does the graded-index profile in multimode fiber reduce modal dispersion?",
+        "options": [
+            "By using a step-change in refractive index at the core-cladding interface",
+            "By gradually decreasing refractive index from center to edge of core",
+            "By increasing the core diameter to accommodate more modes",
+            "By using a special coating that absorbs higher-order modes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The graded-index profile has a refractive index that decreases gradually from the center of the core toward the cladding. This causes light rays to follow curved paths, with oblique rays traveling faster in the lower-index periphery, helping to equalize propagation times for different modes."
+    },
+    {
+        "id": "q60",
+        "text": "What is the primary technical challenge in implementing widespread terahertz (THz) wireless communication?",
+        "options": [
+            "Lack of available spectrum in the THz range",
+            "Extremely high atmospheric absorption at these frequencies",
+            "International regulations prohibiting THz communication",
+            "Inability to generate and detect THz signals efficiently"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Terahertz frequencies (approximately 0.1-10 THz) experience extremely high atmospheric absorption due to rotational and vibrational resonances of water vapor and other molecules, severely limiting propagation distance to just a few meters in most environments."
+    }
+
+]

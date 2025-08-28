@@ -1,0 +1,482 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the sequence of signals activated on the buses when the CPU reads from memory?",
+        "options": [
+            "Address on Address Bus, then RD signal, then data on Data Bus",
+            "RD signal, then Address on Address Bus, then data on Data Bus",
+            "Data on Data Bus, then Address on Address Bus, then RD signal",
+            "Address on Address Bus, then data on Data Bus, then RD signal"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For a memory read, the CPU first places the address on the Address Bus, then activates the Read (RD) signal on the Control Bus, and finally, the data is fetched from the Data Bus."
+    },
+    {
+        "id": "q2",
+        "text": "What is the primary role of a Memory Controller in a system?",
+        "options": [
+            "To execute arithmetic operations for the CPU",
+            "To manage communication between the CPU and different memory modules",
+            "To store the BIOS and boot instructions",
+            "To increase the clock speed of the CPU"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Memory Controller handles the complexities of communicating with different types of memory (ROM, RAM) and manages the memory hierarchy, offloading this task from the CPU."
+    },
+    {
+        "id": "q3",
+        "text": "In the instruction `Add R4,100(R1)`, what is the effective address?",
+        "options": [
+            "The address stored in register R4",
+            "The immediate value 100",
+            "The sum of 100 and the value stored in register R1",
+            "The address stored in register R1"
+        ],
+        "correctAnswer": 2,
+        "explanation": "This is Displacement addressing. The effective address is calculated by adding the displacement (100) to the contents of the base register (R1)."
+    },
+    {
+        "id": "q4",
+        "text": "Which addressing mode is primarily used for implementing a stack structure using push and pop operations?",
+        "options": [
+            "Direct Addressing",
+            "Autoincrement Addressing",
+            "Autodecrement Addressing",
+            "Indexed Addressing"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Autodecrement addressing (e.g., `-(R2)`) decrements the register *before* using it as an address, which is the behavior of a push operation on a stack that grows downward."
+    },
+    {
+        "id": "q5",
+        "text": "The ever-widening gap between processor and memory performance, growing roughly 50% per year, is often called the:",
+        "options": [
+            "Memory Bottleneck",
+            "Processor-Memory Gap",
+            "Von Neumann Limitation",
+            "Access Time Dilemma"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The graph in the lecture shows a diverging performance trend between processors and memory, historically growing at about 50% per year, known as the Processor-Memory Gap."
+    },
+    {
+        "id": "q6",
+        "text": "What is the fundamental economic and physical reason for implementing a memory hierarchy?",
+        "options": [
+            "To make the CPU run hotter",
+            "To create the illusion of a large, fast, and cheap memory",
+            "To simplify compiler design",
+            "To reduce the number of pins on the CPU"
+        ],
+        "correctAnswer": 1,
+        "explanation": "No single memory technology is optimal in speed, size, and cost. A hierarchy uses a small amount of fast, expensive memory (cache) backed by larger, slower, cheaper memory (RAM, disk) to create the illusion of a large, fast memory store."
+    },
+    {
+        "id": "q7",
+        "text": "According to the principle of locality, which of these is an example of *temporal* locality?",
+        "options": [
+            "Accessing consecutive elements of an array",
+            "Executing instructions in a loop repeatedly",
+            "Accessing variables declared near each other",
+            "Reading a function's instructions sequentially"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Temporal locality refers to the reuse of specific data or instructions *over a short time period*. Executing the instructions within a loop repeatedly is a classic example."
+    },
+    {
+        "id": "q8",
+        "text": "In a typical desktop memory hierarchy, which level is generally the largest and slowest form of semiconductor memory directly accessible by the CPU?",
+        "options": [
+            "L1 Cache",
+            "L2 Cache",
+            "L3 Cache",
+            "Main Memory (DRAM)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Main Memory (DRAM) is larger than the CPU caches (L1, L2, L3) but is significantly slower. It is the primary semiconductor memory the CPU directly accesses for most data and instructions."
+    },
+    {
+        "id": "q9",
+        "text": "Why would the first code snippet (row-major order) likely be faster than the second (column-major order) for a matrix stored in row-major order?",
+        "options": [
+            "It has fewer lines of code",
+            "It uses a different algorithm",
+            "It exhibits better spatial locality",
+            "It has a lower instruction count"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In row-major order, elements in the same row are stored in consecutive memory addresses. The first snippet accesses elements row-by-row, exploiting spatial locality. The second snippet accesses columns, jumping over large blocks of memory, causing many cache misses."
+    },
+    {
+        "id": "q10",
+        "text": "What does the 'Inclusion Property' in a memory hierarchy typically refer to?",
+        "options": [
+            "All data in a higher-level cache must also be in all lower-level caches",
+            "All data in a lower-level memory is a superset of the data in higher-level memories",
+            "The cost of memory must be included in the processor's price",
+            "The hit rate must always be included in the miss rate calculation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Inclusion Property means that data present in a smaller, faster memory level (e.g., L1 cache) is also present in the larger, slower level beneath it (e.g., L2 cache). The lower level is a superset."
+    },
+    {
+        "id": "q11",
+        "text": "What is the 'Miss Penalty' in the context of a cache?",
+        "options": [
+            "The time it takes to check if a block is in the cache",
+            "The rate at which cache accesses result in a miss",
+            "The time to replace a cache block and deliver the requested data to the processor",
+            "The size of the data block that was missed"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Miss Penalty is the additional time required to service a cache miss. This includes the time to fetch the block from main memory, place it in the cache, and then deliver the requested word to the processor."
+    },
+    {
+        "id": "q12",
+        "text": "Which memory technology is characterized by being volatile, having the lowest cost per bit, and using a storage capacitor that requires periodic refreshing?",
+        "options": [
+            "SRAM (Static RAM)",
+            "DRAM (Dynamic RAM)",
+            "ROM (Read-Only Memory)",
+            "Flash Memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DRAM is volatile, cheap, and has high density. Its core component is a capacitor that leaks charge, requiring a refresh cycle to maintain data, which is why it is 'Dynamic'."
+    },
+    {
+        "id": "q13",
+        "text": "What is a key hardware difference between a DRAM cell and an SRAM cell that contributes to SRAM's speed?",
+        "options": [
+            "SRAM uses a capacitor, DRAM uses a transistor",
+            "SRAM uses a flip-flop (multiple transistors), DRAM uses a capacitor and transistor",
+            "SRAM is optically erased, DRAM is electrically erased",
+            "SRAM must be refreshed, DRAM does not"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An SRAM cell uses a stable flip-flop circuit (typically 6 transistors) to store a bit, which does not need refreshing. A DRAM cell uses one transistor and one capacitor, which is simpler and smaller but requires refreshing."
+    },
+    {
+        "id": "q14",
+        "text": "Which type of memory is non-volatile and allows for byte-level erasure and writing?",
+        "options": [
+            "EPROM",
+            "EEPROM",
+            "PROM",
+            "Flash Memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "EEPROM (Electrically Erasable PROM) is non-volatile and can be erased and rewritten electrically at the byte level, unlike Flash memory which erases in blocks."
+    },
+    {
+        "id": "q15",
+        "text": "What is the primary material used to construct a cache memory?",
+        "options": [
+            "DRAM because of its high density",
+            "SRAM because of its speed",
+            "Flash memory because it is non-volatile",
+            "Magnetic disk because of its capacity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Caches require very high-speed access. SRAM is much faster than DRAM (though more expensive and less dense), making it the technology of choice for building CPU caches."
+    },
+    {
+        "id": "q16",
+        "text": "In a direct-mapped cache, how is the location for a memory block determined?",
+        "options": [
+            "It can be placed in any available cache block",
+            "It is chosen by a complex LRU algorithm",
+            "It can be placed in any block within a specific 'set'",
+            "It is mapped to one and only one specific cache block"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Direct mapping is the simplest placement policy. Each memory block maps to exactly one location in the cache, calculated as: (Block Address) MOD (Number of Blocks in Cache)."
+    },
+    {
+        "id": "q17",
+        "text": "What is the main advantage of a fully associative cache mapping?",
+        "options": [
+            "It is very simple and cheap to implement",
+            "It has the lowest possible conflict miss rate",
+            "It requires no tags to be stored",
+            "It uses a very fast linear search"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a fully associative cache, a block can be placed in *any* cache frame. This flexibility minimizes conflict misses because blocks don't compete for specific slots. The disadvantage is the need for expensive hardware to search all tags in parallel."
+    },
+    {
+        "id": "q18",
+        "text": "In an n-way set associative cache, a memory block can be placed in:",
+        "options": [
+            "Exactly one specific block in the cache",
+            "Any block in the entire cache",
+            "Any block within one specific set, which contains n blocks",
+            "The first available block found"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Set-associative mapping is a compromise. The cache is divided into sets, each containing n blocks (n-way). A memory block maps to a specific *set* based on its address but can be placed in *any* block within that set."
+    },
+    {
+        "id": "q19",
+        "text": "Which cache replacement policy requires tracking the exact order in which blocks within a set were accessed?",
+        "options": [
+            "Random Replacement",
+            "First-In-First-Out (FIFO)",
+            "Least Recently Used (LRU)",
+            "Least Frequently Used (LFU)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The LRU policy evicts the block that has not been accessed for the longest time. To implement this precisely, the hardware must track the complete chronological order of accesses for all blocks in a set."
+    },
+    {
+        "id": "q20",
+        "text": "What is the formula for Average Memory Access Time (AMAT)?",
+        "options": [
+            "AMAT = Hit Time + Miss Rate",
+            "AMAT = Hit Time + Miss Rate * Miss Penalty",
+            "AMAT = Miss Penalty / Hit Time",
+            "AMAT = (Hit Time + Miss Penalty) * Miss Rate"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Average Memory Access Time is calculated as the time for a hit plus the additional penalty of a miss multiplied by how often misses occur: AMAT = Hit Time + (Miss Rate * Miss Penalty)."
+    },
+    {
+        "id": "q21",
+        "text": "A CPU has a 95% instruction cache hit rate and a 90% data cache hit rate. If 20% of instructions are data-accessing loads/stores, what is the overall cache hit rate?",
+        "options": [
+            "92.5%",
+            "93.0%",
+            "94.0%",
+            "95.0%"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Overall Hit Rate = (Fraction of instruction accesses * Instruction Hit Rate) + (Fraction of data accesses * Data Hit Rate). Fraction of instruction accesses is 80% (1 - 0.2). So: (0.8 * 0.95) + (0.2 * 0.90) = 0.76 + 0.18 = 0.94 or 94%."
+    },
+    {
+        "id": "q22",
+        "text": "When a cache miss occurs, what is the minimum unit of data that is transferred from main memory to the cache?",
+        "options": [
+            "A single word (e.g., 4 bytes)",
+            "A block (or line), which is multiple words",
+            "An entire memory page (e.g., 4 KB)",
+            "A single byte"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Data is moved between the cache and main memory in fixed-size units called blocks or cache lines. This exploits spatial locality—if one word is needed, its neighbors likely will be soon."
+    },
+    {
+        "id": "q23",
+        "text": "In a cache entry, what is the purpose of the 'Valid' bit?",
+        "options": [
+            "To indicate the data is correct and hasn't been corrupted",
+            "To indicate that the entry contains a meaningful address and data",
+            "To lock the entry so it cannot be replaced",
+            "To mark the entry as the most recently used"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Valid bit indicates whether a specific cache line contains valid data. When a computer starts up, the cache is empty, and all Valid bits are 0. They are set to 1 when a block is loaded into that line."
+    },
+    {
+        "id": "q24",
+        "text": "Which portion of a memory address is used to select which set in a set-associative cache the block could be in?",
+        "options": [
+            "The Tag",
+            "The Index",
+            "The Block Offset",
+            "The Byte Offset"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The address is divided into three parts: Tag, Index, and Block Offset. The Index bits are used to select which specific set in the cache to search. The Tag is then compared to find the exact block within that set."
+    },
+    {
+        "id": "q25",
+        "text": "What type of cache miss is unavoidable because it is the first access to a block?",
+        "options": [
+            "Capacity Miss",
+            "Conflict Miss",
+            "Compulsory Miss",
+            "Coherence Miss"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A Compulsory Miss (or Cold Miss) occurs the very first time a memory block is accessed. It is impossible to avoid because the block has never been in the cache before."
+    },
+    {
+        "id": "q26",
+        "text": "What type of cache miss occurs when the cache is not large enough to hold all the blocks needed during program execution?",
+        "options": [
+            "Compulsory Miss",
+            "Conflict Miss",
+            "Capacity Miss",
+            "Structural Miss"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Capacity misses occur when the working set of the program (the set of blocks it needs) is larger than the cache size. Blocks are evicted and later retrieved because the cache simply isn't big enough."
+    },
+    {
+        "id": "q27",
+        "text": "The strategy of bringing data into the cache before it is actually referenced by the processor is called:",
+        "options": [
+            "Buffering",
+            "Pipelining",
+            "Prefetching",
+            "Speculative execution"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Prefetching is an advanced technique where the memory system predicts which blocks will be needed soon and loads them into the cache ahead of time, aiming to hide the memory latency."
+    },
+    {
+        "id": "q28",
+        "text": "Which component is primarily responsible for translating a programmer's view of memory (virtual address) into the actual physical address in RAM?",
+        "options": [
+            "The Cache Controller",
+            "The Memory Bus",
+            "The Memory Management Unit (MMU)",
+            "The Direct Memory Access (DMA) Controller"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Memory Management Unit (MMU) is a hardware unit that handles virtual memory, translating virtual addresses generated by the CPU into physical addresses used to access main memory. This is part of the 'Virtual Memory' level in the hierarchy."
+    },
+    {
+        "id": "q29",
+        "text": "In the hierarchy for a personal mobile device, which level typically has an access time of around 1 nanosecond?",
+        "options": [
+            "Level 1 (L1) Cache",
+            "Level 2 (L2) Cache",
+            "Main Memory (DRAM)",
+            "Flash Storage"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The L1 cache is the smallest and fastest cache level, physically closest to the CPU cores. Its access time is typically on the order of 1-2 nanoseconds, as shown in the lecture's hierarchy diagram."
+    },
+    {
+        "id": "q30",
+        "text": "What is the primary trade-off that the memory hierarchy is designed to manage?",
+        "options": [
+            "Speed vs. Volatility",
+            "Speed vs. Cost vs. Capacity",
+            "Cost vs. Power Consumption",
+            "Capacity vs. Physical Size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The core trade-off in memory design is that faster memory technologies are more expensive per bit, which limits their capacity. Cheaper technologies offer larger capacity but are slower. The hierarchy balances these three factors: speed, cost, and capacity."
+    },
+    {
+        "id": "q31",
+        "text": "Which bus carries the control signals that indicate whether a read or write operation is to be performed?",
+        "options": [
+            "Address Bus",
+            "Data Bus",
+            "Control Bus",
+            "System Bus"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Control Bus carries signals that control and coordinate the operations of the system, including the Read (RD) and Write (WR) signals that dictate the direction of data flow."
+    },
+    {
+        "id": "q32",
+        "text": "In the Autoincrement addressing mode `(R2)+`, what happens after the register is used as an address?",
+        "options": [
+            "The register is decremented",
+            "The register is incremented",
+            "The data at the address is incremented",
+            "The program counter is incremented"
+        ],
+        "explanation": "Autoincrement addressing uses the value in the register as the effective address, and then *afterwards* increments the register by a step size (d), which is useful for traversing arrays.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q33",
+        "text": "A 'dirty' bit in a cache is used to indicate what?",
+        "options": [
+            "The block is invalid",
+            "The block has been modified since being read from memory",
+            "The block is the least recently used",
+            "The block contains an error"
+        ],
+        "explanation": "A dirty bit (or modified bit) is set to 1 if the data in the cache block has been written to (modified). This is important on a replacement: a dirty block must be written back to main memory, while a clean block can simply be overwritten.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q34",
+        "text": "Which memory technology is primarily used for the 'Secondary Storage' level in a traditional memory hierarchy?",
+        "options": [
+            "SRAM",
+            "DRAM",
+            "Magnetic Disk (Hard Drive)",
+            "EEPROM"
+        ],
+        "explanation": "Secondary storage is non-volatile, high-capacity, and slow. Traditionally, this role was filled by magnetic hard disk drives (HDDs), though Solid State Drives (SSD/Flash) are now common.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q35",
+        "text": "What is the key characteristic of a 'volatile' memory?",
+        "options": [
+            "It can only be read, not written to",
+            "It loses its contents when power is removed",
+            "It has a very slow access time",
+            "It is extremely expensive per bit"
+        ],
+        "explanation": "Volatile memory, like SRAM and DRAM, requires constant electrical power to maintain the stored information. If power is lost, the data is lost.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q36",
+        "text": "In the context of cache addressing, what are the 'Tag' bits used for?",
+        "options": [
+            "To determine the byte offset within a block",
+            "To select which set to look in",
+            "To uniquely identify which main memory block is stored in the cache frame",
+            "To check the valid bit"
+        ],
+        "explanation": "The Tag is the upper portion of the memory address stored in the cache. When an address is presented, the Index selects a set, and the Tag is compared against all tags in that set to check if the desired block is present.",
+        "correctAnswer": 2
+    },
+    {
+        "id": "q37",
+        "text": "Which of these is NOT a common goal of the memory hierarchy?",
+        "options": [
+            "To reduce the effective memory access time",
+            "To reduce the overall cost of the memory system",
+            "To make the main memory appear infinitely large",
+            "To eliminate the need for main memory (DRAM)"
+        ],
+        "explanation": "The goal of the hierarchy is to create the *illusion* of a large, fast, cheap memory by using caches. It does not eliminate the need for main memory (DRAM); it instead relies on it as a crucial, large, slower level.",
+        "correctAnswer": 3
+    },
+    {
+        "id": "q38",
+        "text": "A 'write-through' cache policy immediately writes data to:",
+        "options": [
+            "The L2 cache",
+            "The main memory",
+            "The register file",
+            "The disk"
+        ],
+        "explanation": "In a write-through policy, every write to the cache also triggers an immediate write to the main memory. This simplifies coherence but increases write traffic to main memory.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q39",
+        "text": "The performance of a memory hierarchy is most directly improved by having a:",
+        "options": [
+            "High miss rate",
+            "High hit rate",
+            "Large miss penalty",
+            "Small cache size"
+        ],
+        "explanation": "A high hit rate means most memory accesses are satisfied by the fast cache memory, minimizing the number of slow accesses to main memory (misses), which drastically improves average access time.",
+        "correctAnswer": 1
+    },
+    {
+        "id": "q40",
+        "text": "What problem does a 'victim cache' help to solve?",
+        "options": [
+            "Compulsory misses",
+            "Capacity misses",
+            "Conflict misses",
+            "Coherence misses"
+        ],
+        "explanation": "A victim cache is a small, fully-associative cache that holds blocks recently evicted from the main cache. It helps reduce conflict misses by giving a recently kicked-out block a second chance to be found before going all the way to main memory.",
+        "correctAnswer": 2
+    }
+]

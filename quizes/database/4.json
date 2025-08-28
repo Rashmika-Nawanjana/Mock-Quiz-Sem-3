@@ -1,0 +1,724 @@
+{
+    "questions": [
+        {
+            "id": "q1",
+            "text": "What is the primary problem with combining instructor and department information into a single relation as shown in the in_dep example?",
+            "options": [
+                "Increased storage requirements due to repetition of information",
+                "Inability to represent null values for new departments without instructors",
+                "Violation of first normal form requirements",
+                "Both repetition of information and need for null values"
+            ],
+            "correctAnswer": 3,
+            "explanation": "The combined schema shows repetition of department information for each instructor and requires null values when adding new departments without instructors."
+        },
+        {
+            "id": "q2",
+            "text": "What characterizes a lossy decomposition in database design?",
+            "options": [
+                "It eliminates all redundant data from the original relation",
+                "It cannot reconstruct the original relation from the decomposed relations",
+                "It violates all functional dependencies in the original schema",
+                "It requires more storage space than the original relation"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A lossy decomposition occurs when we cannot reconstruct the original relation from the decomposed relations through natural join operations."
+        },
+        {
+            "id": "q3",
+            "text": "Which mathematical condition must hold for a decomposition to be lossless?",
+            "options": [
+                "R₁ ∪ R₂ = R",
+                "Π_{R₁}(r) ⋈ Π_{R₂}(r) = r",
+                "R₁ ∩ R₂ = ∅",
+                "Π_{R₁}(r) × Π_{R₂}(r) = r"
+            ],
+            "correctAnswer": 1,
+            "explanation": "For decomposition to be lossless, the natural join of the projections of the original relation onto the decomposed schemas must equal the original relation."
+        },
+        {
+            "id": "q4",
+            "text": "What is the defining characteristic of first normal form (1NF)?",
+            "options": [
+                "All attributes must have atomic domains",
+                "There should be no partial functional dependencies",
+                "All non-key attributes must depend on the full primary key",
+                "There should be no transitive dependencies"
+            ],
+            "correctAnswer": 0,
+            "explanation": "First normal form requires that all attribute domains be atomic (indivisible units), not containing sets or composite values."
+        },
+        {
+            "id": "q5",
+            "text": "Why is encoding information in application programs rather than the database considered a bad design practice?",
+            "options": [
+                "It makes applications run slower",
+                "It violates the atomicity requirement of first normal form",
+                "It hides semantic constraints from the database system",
+                "It requires specialized programming languages"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Encoding information in application programs rather than the database hides semantic constraints from the DBMS, making constraint enforcement and query optimization more difficult."
+        },
+        {
+            "id": "q6",
+            "text": "What does the functional dependency α → β mean in terms of relation instances?",
+            "options": [
+                "For every tuple, the value of α determines the value of β",
+                "Whenever two tuples agree on α, they must agree on β",
+                "α is a subset of β in every tuple",
+                "β is functionally dependent on α in at least one tuple"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A functional dependency α → β holds if whenever any two tuples in a relation agree on the attributes α, they must also agree on the attributes β."
+        },
+        {
+            "id": "q7",
+            "text": "What is the closure F⁺ of a set of functional dependencies F?",
+            "options": [
+                "All functional dependencies that are explicitly stated in F",
+                "All functional dependencies that are trivial given F",
+                "All functional dependencies that are logically implied by F",
+                "All functional dependencies that violate BCNF"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The closure F⁺ includes all functional dependencies that are logically implied by F, including those that can be inferred using Armstrong's axioms."
+        },
+        {
+            "id": "q8",
+            "text": "How is a superkey defined using functional dependency notation?",
+            "options": [
+                "K → R where K is a proper subset of R",
+                "K → R where K contains at least one non-prime attribute",
+                "K → R where K is a set of attributes",
+                "K → R (K determines all attributes of R)"
+            ],
+            "correctAnswer": 3,
+            "explanation": "K is a superkey for relation schema R if and only if K → R, meaning K functionally determines all attributes in R."
+        },
+        {
+            "id": "q9",
+            "text": "What distinguishes a candidate key from a superkey?",
+            "options": [
+                "A candidate key must contain only prime attributes",
+                "A candidate key is a minimal superkey (no proper subset is a superkey)",
+                "A candidate key can have null values while a superkey cannot",
+                "A candidate key must be a single attribute"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A candidate key is a superkey with the additional property that no proper subset of it is also a superkey (minimality condition)."
+        },
+        {
+            "id": "q10",
+            "text": "When is a functional dependency considered trivial?",
+            "options": [
+                "When it involves only key attributes",
+                "When it is satisfied by all instances of a relation",
+                "When the right-hand side is a subset of the left-hand side",
+                "When it can be inferred from other dependencies"
+            ],
+            "correctAnswer": 2,
+            "explanation": "A functional dependency α → β is trivial if β ⊆ α, meaning the right-hand side is contained within the left-hand side."
+        },
+        {
+            "id": "q11",
+            "text": "What are the two conditions that must be satisfied for a relation to be in Boyce-Codd Normal Form (BCNF)?",
+            "options": [
+                "No partial dependencies and no transitive dependencies",
+                "All attributes must be atomic and all FDs must be trivial",
+                "For every FD α → β, either it is trivial or α is a superkey",
+                "For every FD α → β, β must contain only prime attributes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "A relation is in BCNF if for every functional dependency α → β in F⁺, either the dependency is trivial (β ⊆ α) or α is a superkey for R."
+        },
+        {
+            "id": "q12",
+            "text": "How do you decompose a relation that violates BCNF due to a non-trivial dependency α → β where α is not a superkey?",
+            "options": [
+                "Create relations (α ∪ β) and (R - α)",
+                "Create relations (α) and (β)",
+                "Create relations (α ∪ β) and (R - (β - α))",
+                "Create relations (α) and (R - β)"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The correct decomposition creates two relations: one containing α ∪ β (the violating FD) and another containing R - (β - α) (all original attributes except those in β that aren't in α)."
+        },
+        {
+            "id": "q13",
+            "text": "What is dependency preservation in the context of database decomposition?",
+            "options": [
+                "All functional dependencies must be preserved in at least one relation",
+                "All functional dependencies can be checked by examining individual relations",
+                "No functional dependencies are lost during decomposition",
+                "The decomposition must preserve all multivalued dependencies"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A decomposition is dependency preserving if we can enforce all functional dependencies by checking them on individual relations without needing to join relations."
+        },
+        {
+            "id": "q14",
+            "text": "How does Third Normal Form (3NF) differ from BCNF?",
+            "options": [
+                "3NF allows partial dependencies while BCNF does not",
+                "3NF is a stricter form of normalization than BCNF",
+                "3NF allows certain dependencies where the determinant is not a superkey",
+                "3NF requires all attributes to be prime"
+            ],
+            "correctAnswer": 2,
+            "explanation": "3NF relaxes BCNF by allowing certain functional dependencies where the determinant is not a superkey, specifically when attributes in β - α are contained in candidate keys."
+        },
+        {
+            "id": "q15",
+            "text": "What are the three goals of normalization?",
+            "options": [
+                "Reduce storage, improve performance, eliminate redundancy",
+                "Each relation in good form, lossless decomposition, dependency preservation",
+                "Eliminate anomalies, ensure atomicity, preserve dependencies",
+                "Minimize joins, maximize indexing, ensure consistency"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The three main goals are: 1) Each relation schema is in good form (typically BCNF or 3NF), 2) The decomposition is lossless, and 3) Preferably, the decomposition is dependency preserving."
+        },
+        {
+            "id": "q16",
+            "text": "Why might a relation in BCNF still have modification anomalies?",
+            "options": [
+                "BCNF doesn't handle multivalued dependencies properly",
+                "BCNF allows partial functional dependencies",
+                "BCNF doesn't ensure atomic domains",
+                "BCNF doesn't eliminate transitive dependencies"
+            ],
+            "correctAnswer": 0,
+            "explanation": "BCNF addresses functional dependencies but doesn't properly handle multivalued dependencies, which can still cause modification anomalies as shown in the inst_info example."
+        },
+        {
+            "id": "q17",
+            "text": "What are Armstrong's three axioms for functional dependencies?",
+            "options": [
+                "Reflexivity, augmentation, transitivity",
+                "Reflexivity, union, decomposition",
+                "Augmentation, pseudotransitivity, union",
+                "Transitivity, decomposition, complementation"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Armstrong's axioms are: 1) Reflexivity: if β ⊆ α, then α → β, 2) Augmentation: if α → β, then γα → γβ, and 3) Transitivity: if α → β and β → γ, then α → γ."
+        },
+        {
+            "id": "q18",
+            "text": "What properties do Armstrong's axioms possess?",
+            "options": [
+                "They are sound but not complete",
+                "They are complete but not sound",
+                "They are both sound and complete",
+                "They are neither sound nor complete"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Armstrong's axioms are both sound (they generate only FDs that actually hold) and complete (they generate all FDs that hold)."
+        },
+        {
+            "id": "q19",
+            "text": "Which rule can be derived from Armstrong's axioms?",
+            "options": [
+                "If α → β and α → γ, then α → βγ (Union)",
+                "If α → β, then β → α (Commutativity)",
+                "If α → βγ, then α → β and α → β (Decomposition)",
+                "Both union and decomposition rules"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Both the union rule (if α → β and α → γ, then α → βγ) and decomposition rule (if α → βγ, then α → β and α → γ) can be derived from Armstrong's axioms."
+        },
+        {
+            "id": "q20",
+            "text": "What is the purpose of computing the closure α⁺ of an attribute set α?",
+            "options": [
+                "To find all attributes that are functionally determined by α",
+                "To identify the candidate keys of a relation",
+                "To determine if a relation is in BCNF",
+                "To compute the number of tuples in a relation"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The closure α⁺ under a set F of FDs is the set of all attributes that are functionally determined by α based on F."
+        },
+        {
+            "id": "q21",
+            "text": "How can attribute closure be used to test if α → β holds?",
+            "options": [
+                "Check if α ⊆ β⁺",
+                "Check if β ⊆ α⁺",
+                "Check if α⁺ ∩ β⁺ ≠ ∅",
+                "Check if α⁺ = β⁺"
+            ],
+            "correctAnswer": 1,
+            "explanation": "To test if α → β holds, compute α⁺ and check if β ⊆ α⁺. If so, then α → β is logically implied by F."
+        },
+        {
+            "id": "q22",
+            "text": "How can attribute closure be used to test if α is a superkey?",
+            "options": [
+                "Check if α⁺ contains all attributes of R",
+                "Check if α⁺ contains at least one candidate key",
+                "Check if α⁺ = α",
+                "Check if α⁺ contains no redundant attributes"
+            ],
+            "correctAnswer": 0,
+            "explanation": "α is a superkey if and only if α⁺ contains all attributes of R, meaning α functionally determines all attributes in the relation."
+        },
+        {
+            "id": "q23",
+            "text": "What is a canonical cover of a set of functional dependencies?",
+            "options": [
+                "A set that contains all possible FDs for a relation",
+                "A minimal set equivalent to the original with no redundancies",
+                "A set where all FDs have single attributes on the right side",
+                "A set that preserves all multivalued dependencies"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A canonical cover is a minimal set of functional dependencies equivalent to the original set, with no redundant dependencies or redundant parts of dependencies."
+        },
+        {
+            "id": "q24",
+            "text": "Which of the following demonstrates redundancy in a set of FDs?",
+            "options": [
+                "{A → B, B → C, A → C} where A → C is redundant",
+                "{A → B, B → C, C → A} where all are necessary",
+                "{A → BC, B → D} where no redundancy exists",
+                "{AB → C, A → B} where both are necessary"
+            ],
+            "correctAnswer": 0,
+            "explanation": "In {A → B, B → C, A → C}, the dependency A → C is redundant because it can be inferred from A → B and B → C using transitivity."
+        },
+        {
+            "id": "q25",
+            "text": "Given R = (A, B, C, D, E) and F = {A → BC, CD → E, B → D, E → A}, what is the closure of attribute set {A}?",
+            "options": [
+                "{A, B, C}",
+                "{A, B, C, D}",
+                "{A, B, C, D, E}",
+                "{A, B, C, D, E, F}"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Starting with A⁺ = {A}. From A → BC, add {B, C}. From B → D, add {D}. From CD → E, add {E} (since we have C and D). From E → A, we already have A. Thus A⁺ = {A, B, C, D, E}."
+        },
+        {
+            "id": "q26",
+            "text": "For the same R and F as above, is {A} a candidate key?",
+            "options": [
+                "Yes, because A⁺ contains all attributes of R",
+                "No, because A doesn't determine all attributes directly",
+                "Yes, but only if no proper subset of A determines R",
+                "No, because E also determines A"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Since A⁺ = {A, B, C, D, E} contains all attributes of R, A is a superkey. Since A is a single attribute, no proper subset can be a superkey, so A is a candidate key."
+        },
+        {
+            "id": "q27",
+            "text": "For the decomposition of R = (A, B, C, D, E) into R₁ = (A, B, C) and R₂ = (A, D, E), what is the common attribute set?",
+            "options": [
+                "{A}",
+                "{A, B}",
+                "{C, D}",
+                "{B, E}"
+            ],
+            "correctAnswer": 0,
+            "explanation": "R₁ ∩ R₂ = (A, B, C) ∩ (A, D, E) = {A}, since A is the only attribute common to both schemas."
+        },
+        {
+            "id": "q28",
+            "text": "Why is the decomposition into R₁ = (A, B, C) and R₂ = (A, D, E) lossless?",
+            "options": [
+                "Because R₁ and R₂ have no common attributes",
+                "Because A → R₁ or A → R₂ holds",
+                "Because the common attribute A is a candidate key for R₁",
+                "Because all FDs are preserved in the decomposition"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The decomposition is lossless because R₁ ∩ R₂ = {A} and A → R₁ (since A → BC and R₁ = (A, B, C)), satisfying the lossless join condition."
+        },
+        {
+            "id": "q29",
+            "text": "What is the key difference between BCNF and 3NF in terms of the dependencies they allow?",
+            "options": [
+                "BCNF allows partial dependencies while 3NF does not",
+                "3NF allows certain non-trivial FDs where the determinant is not a superkey",
+                "BCNF allows transitive dependencies while 3NF does not",
+                "3NF requires all attributes to be prime while BCNF does not"
+            ],
+            "correctAnswer": 1,
+            "explanation": "3NF allows certain non-trivial functional dependencies where the determinant is not a superkey, specifically when attributes in β - α are contained in candidate keys, while BCNF does not allow this."
+        },
+        {
+            "id": "q30",
+            "text": "Which normal form is primarily concerned with eliminating multivalued dependencies that are not functional dependencies?",
+            "options": [
+                "Second Normal Form (2NF)",
+                "Boyce-Codd Normal Form (BCNF)",
+                "Fourth Normal Form (4NF)",
+                "Fifth Normal Form (5NF)"
+            ],
+            "correctAnswer": 2,
+            "explanation": "Fourth Normal Form (4NF) addresses multivalued dependencies that are not also functional dependencies, which can still cause modification anomalies even in BCNF."
+        },
+        {
+            "id": "q31",
+            "text": "In the context of normalization, what is a 'legal instance' of a relation?",
+            "options": [
+                "An instance that satisfies all specified constraints",
+                "An instance that has no null values",
+                "An instance that is in first normal form",
+                "An instance that minimizes storage space"
+            ],
+            "correctAnswer": 0,
+            "explanation": "A legal instance of a relation is one that satisfies all specified constraints, including functional dependencies and other business rules."
+        },
+        {
+            "id": "q32",
+            "text": "What problem does the example with inst_info (ID, child_name, phone) illustrate?",
+            "options": [
+                "The need for better indexing strategies",
+                "That BCNF doesn't address multivalued dependencies properly",
+                "The importance of choosing appropriate data types",
+                "That functional dependencies are insufficient for database design"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The inst_info example shows that even when a relation is in BCNF, it can still have modification anomalies due to multivalued dependencies that aren't functional dependencies."
+        },
+        {
+            "id": "q33",
+            "text": "What is the pseudotransitivity rule derived from Armstrong's axioms?",
+            "options": [
+                "If α → β and γ → δ, then αγ → βδ",
+                "If α → β and βγ → δ, then αγ → δ",
+                "If α → β and γβ → δ, then αγ → δ",
+                "If α → βγ, then α → β and α → γ"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The pseudotransitivity rule states that if α → β and γβ → δ, then αγ → δ. This can be derived from Armstrong's axioms."
+        },
+        {
+            "id": "q34",
+            "text": "Why is testing for superkey using attribute closure more efficient than checking all possible instances?",
+            "options": [
+                "It requires examining only the schema, not the data",
+                "It works for any normal form, not just BCNF",
+                "It can be computed in polynomial time",
+                "It doesn't require knowledge of functional dependencies"
+            ],
+            "correctAnswer": 0,
+            "explanation": "Attribute closure allows us to test for superkeys by examining only the schema and functional dependencies, without needing to inspect actual relation instances."
+        },
+        {
+            "id": "q35",
+            "text": "What is the time complexity of computing attribute closure α⁺ for a set of attributes?",
+            "options": [
+                "O(1) constant time",
+                "O(n) linear in the number of attributes",
+                "O(n²) quadratic in the number of attributes",
+                "Exponential in the number of attributes"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The attribute closure algorithm runs in O(n²) time where n is the number of attributes in the relation, making it efficient for practical database design."
+        },
+        {
+            "id": "q36",
+            "text": "In the decomposition process, why is dependency preservation desirable?",
+            "options": [
+                "It ensures the decomposition is lossless",
+                "It allows efficient enforcement of constraints without joins",
+                "It guarantees the database will be in BCNF",
+                "It minimizes storage requirements"
+            ],
+            "correctAnswer": 1,
+            "explanation": "Dependency preservation is desirable because it allows constraints to be enforced efficiently by checking them on individual relations without performing expensive join operations."
+        },
+        {
+            "id": "q37",
+            "text": "What is the potential trade-off between BCNF and dependency preservation?",
+            "options": [
+                "BCNF always guarantees dependency preservation",
+                "We can always achieve both BCNF and dependency preservation",
+                "Sometimes we must choose between BCNF and dependency preservation",
+                "Dependency preservation is more important than BCNF"
+            ],
+            "correctAnswer": 2,
+            "explanation": "There is a trade-off where we cannot always achieve both BCNF and dependency preservation, which is why 3NF was developed as a compromise."
+        },
+        {
+            "id": "q38",
+            "text": "Which of the following is NOT a type of anomaly that normalization addresses?",
+            "options": [
+                "Insertion anomalies",
+                "Deletion anomalies",
+                "Modification anomalies",
+                "Retrieval anomalies"
+            ],
+            "correctAnswer": 3,
+            "explanation": "Normalization primarily addresses insertion, deletion, and modification anomalies. Retrieval anomalies are not typically discussed in this context."
+        },
+        {
+            "id": "q39",
+            "text": "What does the union rule of functional dependencies state?",
+            "options": [
+                "If α → β and α → γ, then α → βγ",
+                "If α → β and β → γ, then α → γ",
+                "If α → βγ, then α → β and α → γ",
+                "If α → β and γ → δ, then αγ → βδ"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The union rule states that if α → β and α → γ, then α → βγ (the union of the right-hand sides)."
+        },
+        {
+            "id": "q40",
+            "text": "What does the decomposition rule of functional dependencies state?",
+            "options": [
+                "If α → β and α → γ, then α → βγ",
+                "If α → β and β → γ, then α → γ",
+                "If α → βγ, then α → β and α → γ",
+                "If α → β and γ → δ, then αγ → βδ"
+            ],
+            "correctAnswer": 2,
+            "explanation": "The decomposition rule states that if α → βγ, then α → β and α → γ (we can decompose the right-hand side)."
+        },
+        {
+            "id": "q41",
+            "text": "In the context of functional dependencies, what does the term 'logically implied' mean?",
+            "options": [
+                "The FD is explicitly stated in the set F",
+                "The FD must hold in every relation instance that satisfies F",
+                "The FD is trivial and therefore always holds",
+                "The FD is suggested by the attribute names but not necessarily true"
+            ],
+            "correctAnswer": 1,
+            "explanation": "A functional dependency is logically implied by F if it must hold in every relation instance that satisfies all functional dependencies in F."
+        },
+        {
+            "id": "q42",
+            "text": "What is the minimality condition for a candidate key?",
+            "options": [
+                "It must consist of the fewest possible attributes",
+                "No proper subset of it can be a superkey",
+                "It must contain at least one non-prime attribute",
+                "It must be a single attribute"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The minimality condition for a candidate key requires that no proper subset of the key is also a superkey."
+        },
+        {
+            "id": "q43",
+            "text": "How does the concept of 'prime attribute' relate to normalization?",
+            "options": [
+                "Prime attributes are those that appear in some candidate key",
+                "Prime attributes must be of integer type",
+                "Normalization seeks to eliminate all prime attributes",
+                "3NF requires that all attributes are prime"
+            ],
+            "correctAnswer": 0,
+            "explanation": "A prime attribute is one that appears in at least one candidate key. This concept is important in the definition of 3NF."
+        },
+        {
+            "id": "q44",
+            "text": "What is the primary cause of repetition of information in the in_dep example?",
+            "options": [
+                "The relation is not in first normal form",
+                "The relation contains a partial functional dependency",
+                "The relation contains a transitive dependency",
+                "Department information is repeated for each instructor"
+            ],
+            "correctAnswer": 3,
+            "explanation": "The repetition occurs because department information (building, budget) is repeated for each instructor in the same department, indicating a normalization problem."
+        },
+        {
+            "id": "q45",
+            "text": "Why is the decomposition of employee into employee1(ID, name) and employee2(name, street, city, salary) lossy?",
+            "options": [
+                "Because it doesn't preserve all functional dependencies",
+                "Because we cannot reconstruct the original relation if two employees have the same name",
+                "Because it creates new insertion anomalies",
+                "Because it violates first normal form"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The decomposition is lossy because if two employees have the same name, we cannot determine which address and salary belong to which employee when reconstructing the original relation."
+        },
+        {
+            "id": "q46",
+            "text": "What is the fundamental insight behind the lossless join decomposition test?",
+            "options": [
+                "The common attributes must form a superkey for at least one of the relations",
+                "The relations must have no common attributes",
+                "All functional dependencies must be preserved",
+                "The decomposition must be in BCNF"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The test states that a decomposition {R₁, R₂} is lossless if R₁ ∩ R₂ → R₁ or R₁ ∩ R₂ → R₂, meaning the common attributes form a superkey for at least one component."
+        },
+        {
+            "id": "q47",
+            "text": "In the attribute closure algorithm, what is the termination condition?",
+            "options": [
+                "When result contains all attributes of R",
+                "When no new attributes can be added to result",
+                "When we have processed all functional dependencies once",
+                "When result becomes a superkey"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The algorithm terminates when no new attributes can be added to the result set, meaning we have found all attributes functionally determined by α."
+        },
+        {
+            "id": "q48",
+            "text": "What is the significance of the example showing that Strings might not be atomic?",
+            "options": [
+                "It demonstrates that 1NF is insufficient for good design",
+                "It shows that atomicity depends on how attributes are used",
+                "It proves that all databases should use only numeric types",
+                "It indicates that domain selection is irrelevant to normalization"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The example shows that atomicity is not an inherent property of data but depends on how the data is used in applications. Strings might be atomic for some uses but not others."
+        },
+        {
+            "id": "q49",
+            "text": "Why is the inst_info example used to motivate higher normal forms?",
+            "options": [
+                "It shows that BCNF cannot eliminate all redundancy",
+                "It demonstrates that functional dependencies are insufficient",
+                "It illustrates the need for denormalization in practice",
+                "It proves that normalization is unnecessary"
+            ],
+            "correctAnswer": 1,
+            "explanation": "The inst_info example shows that even when a relation is in BCNF (satisfying all functional dependency constraints), it can still have redundancy due to multivalued dependencies."
+        },
+        {
+            "id": "q50",
+            "text": "What is the practical implication of the fact that Armstrong's axioms are sound and complete?",
+            "options": [
+                "We can derive all possible FDs that hold using only these axioms",
+                "We need additional axioms to handle multivalued dependencies",
+                "The axioms only work for BCNF but not 3NF",
+                "The axioms are too complex for practical use"
+            ],
+            "correctAnswer": 0,
+            "explanation": "The soundness and completeness of Armstrong's axioms mean that we can derive all functional dependencies that are logically implied by a set F using only these three inference rules."
+        },
+        {
+            "id": "q51",
+            "text": "In the context of FD theory, what does the term 'attribute set' refer to?",
+            "options": [
+                "Any collection of attributes from a relation schema",
+                "Only sets that form candidate keys",
+                "Sets that appear on the left-hand side of FDs",
+                "Sets that contain only prime attributes"
+            ],
+            "correctAnswer": 0,
+            "explanation": "An attribute set is any subset of attributes from the relation schema R, regardless of whether it forms a key or appears in functional dependencies."
+        },
+        {
+            "id": "q52",
+            "text": "What is the relationship between the closure of attribute sets and the closure of functional dependencies?",
+            "options": [
+                "They are the same concept with different names",
+                "Attribute closure can be used to compute FD closure",
+                "FD closure is a superset of attribute closure",
+                "They are unrelated concepts in database theory"
+            ],
+            "correctAnswer": 1,
+            "explanation": "We can compute F⁺ (the closure of functional dependencies) by computing γ⁺ for each γ ⊆ R and then outputting γ → S for each S ⊆ γ⁺."
+        },
+        {
+            "id": "q53",
+            "text": "Why is the concept of 'canonical cover' important in database design?",
+            "options": [
+                "It minimizes the number of FDs that need to be checked",
+                "It guarantees that the database will be in BCNF",
+                "It ensures all FDs have single attributes on the right side",
+                "It eliminates the need for normalization"
+            ],
+            "correctAnswer": 0,
+            "explanation": "A canonical cover minimizes the set of functional dependencies by eliminating redundancies, making it easier to check constraints and perform normalization."
+        },
+        {
+            "id": "q54",
+            "text": "What is the potential problem with having redundant functional dependencies?",
+            "options": [
+                "They consume extra storage space",
+                "They can lead to inconsistent constraint enforcement",
+                "They violate the atomicity requirement of 1NF",
+                "They prevent the database from being in BCNF"
+            ],
+            "explanation": "Redundant functional dependencies can lead to inconsistent constraint enforcement if some are checked and others are not, and they complicate the process of verifying constraint satisfaction.",
+            "correctAnswer": 1
+        },
+        {
+            "id": "q55",
+            "text": "In the decomposition process, what is the significance of identifying that a relation is not in 'good form'?",
+            "options": [
+                "It indicates the relation should be deleted entirely",
+                "It suggests the relation should be decomposed",
+                "It means the relation contains too many attributes",
+                "It shows that the relation has too many tuples"
+            ],
+            "explanation": "Identifying that a relation is not in 'good form' (typically meaning not in BCNF or 3NF) suggests that it should be decomposed to eliminate anomalies and redundancy.",
+            "correctAnswer": 1
+        },
+        {
+            "id": "q56",
+            "text": "What is the role of functional dependencies in the definition of normal forms?",
+            "options": [
+                "They are irrelevant to normal forms",
+                "They provide the formal criteria for evaluating normal forms",
+                "They are only used in 1NF but not higher normal forms",
+                "They are replaced by multivalued dependencies in higher normal forms"
+            ],
+            "explanation": "Functional dependencies provide the formal criteria for evaluating whether a relation is in 2NF, 3NF, or BCNF, making them fundamental to normalization theory.",
+            "correctAnswer": 1
+        },
+        {
+            "id": "q57",
+            "text": "How does the concept of 'lossless join' relate to the practical use of databases?",
+            "options": [
+                "It ensures that queries return correct results after decomposition",
+                "It guarantees that all queries will run faster",
+                "It eliminates the need for backup and recovery",
+                "It makes the database immune to hardware failures"
+            ],
+            "explanation": "Lossless join decomposition ensures that we can reconstruct the original relation from its decomposition, guaranteeing that queries will return correct results regardless of how the data is partitioned.",
+            "correctAnswer": 0
+        },
+        {
+            "id": "q58",
+            "text": "What is the practical significance of the fact that not all decompositions are good?",
+            "options": [
+                "It shows that decomposition should be avoided entirely",
+                "It emphasizes the need for careful database design",
+                "It proves that normalization theory is flawed",
+                "It suggests that all databases should use a single table"
+            ],
+            "explanation": "The fact that not all decompositions are good (some are lossy) emphasizes the need for careful database design and understanding of normalization principles.",
+            "correctAnswer": 1
+        },
+        {
+            "id": "q59",
+            "text": "Why is the ability to test functional dependencies using attribute closure important?",
+            "options": [
+                "It allows efficient constraint checking during database design",
+                "It eliminates the need for database administrators",
+                "It makes all databases automatically normalized",
+                "It ensures that all queries are optimized"
+            ],
+            "explanation": "The attribute closure algorithm provides an efficient way to test whether functional dependencies hold, which is crucial during database design and normalization.",
+            "correctAnswer": 0
+        },
+        {
+            "id": "q60",
+            "text": "What is the fundamental trade-off in database normalization?",
+            "options": [
+                "Between storage efficiency and query performance",
+                "Between data redundancy and constraint enforcement complexity",
+                "Between normalization level and application simplicity",
+                "Between elimination of anomalies and preservation of dependencies"
+            ],
+            "explanation": "The fundamental trade-off is between eliminating anomalies through higher normal forms and preserving the ability to efficiently enforce constraints without performing expensive join operations.",
+            "correctAnswer": 3
+        }
+    ]
+}

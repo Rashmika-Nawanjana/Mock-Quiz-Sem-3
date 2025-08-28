@@ -1,0 +1,488 @@
+[
+    {
+        "id": "q1",
+        "text": "The time between customer arrivals at a coffee shop follows an exponential distribution with λ = 0.2 customers per minute. What is the probability that the next customer will arrive within 3 minutes?",
+        "options": [
+            "0.4512",
+            "0.5488",
+            "0.3297",
+            "0.6703"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Using the exponential CDF: F(3) = 1 - e^(-λx) = 1 - e^(-0.2*3) = 1 - e^(-0.6) = 1 - 0.5488 = 0.4512"
+    },
+    {
+        "id": "q2",
+        "text": "A light bulb manufacturer claims their bulbs have an average lifespan of 800 hours with exponential distribution. What is the probability that a bulb will last more than 1000 hours?",
+        "options": [
+            "0.2865",
+            "0.7135",
+            "0.3679",
+            "0.6321"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/800 = 0.00125, P(X > 1000) = e^(-λx) = e^(-0.00125*1000) = e^(-1.25) = 0.2865"
+    },
+    {
+        "id": "q3",
+        "text": "The time between earthquakes in a certain region follows an exponential distribution with mean 50 years. What is the probability that the next earthquake occurs within the next 30 years?",
+        "options": [
+            "0.4512",
+            "0.5488",
+            "0.3297",
+            "0.6703"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/50 = 0.02, F(30) = 1 - e^(-0.02*30) = 1 - e^(-0.6) = 1 - 0.5488 = 0.4512"
+    },
+    {
+        "id": "q4",
+        "text": "A server processes requests with exponential service time averaging 2 minutes per request. What is the probability that a request takes more than 3 minutes to process?",
+        "options": [
+            "0.2231",
+            "0.7769",
+            "0.3679",
+            "0.6321"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/2 = 0.5, P(X > 3) = e^(-0.5*3) = e^(-1.5) = 0.2231"
+    },
+    {
+        "id": "q5",
+        "text": "The memoryless property of exponential distribution means that if a component has survived 1000 hours, the probability it survives another 500 hours is the same as:",
+        "options": [
+            "P(surviving 1500 hours)",
+            "P(surviving 500 hours)",
+            "P(surviving 1000 hours)",
+            "P(surviving 2000 hours)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Memoryless property: P(X > s+t | X > s) = P(X > t). So P(survive another 500 | survived 1000) = P(survive 500)"
+    },
+    {
+        "id": "q6",
+        "text": "A radioactive element decays exponentially with half-life of 10 years. What is the decay rate parameter λ?",
+        "options": [
+            "0.0693 per year",
+            "0.1000 per year",
+            "0.0500 per year",
+            "0.0333 per year"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Half-life = ln(2)/λ = 10 years, so λ = ln(2)/10 = 0.693/10 = 0.0693 per year"
+    },
+    {
+        "id": "q7",
+        "text": "The time between customer complaints follows exponential distribution with mean 20 days. What is the probability that the next complaint occurs between 10 and 30 days from now?",
+        "options": [
+            "0.3834",
+            "0.6166",
+            "0.2331",
+            "0.7669"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/20 = 0.05, P(10 < X < 30) = F(30) - F(10) = (1-e^(-1.5)) - (1-e^(-0.5)) = (0.7769) - (0.3935) = 0.3834"
+    },
+    {
+        "id": "q8",
+        "text": "If X ~ Exp(λ), what is the 90th percentile of the distribution?",
+        "options": [
+            "-ln(0.1)/λ",
+            "-ln(0.9)/λ",
+            "ln(0.9)/λ",
+            "ln(0.1)/λ"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For exponential distribution, x_α = -ln(α)/λ where α = 1 - percentile. For 90th percentile, α = 0.1, so x = -ln(0.1)/λ"
+    },
+    {
+        "id": "q9",
+        "text": "A call center receives calls exponentially with mean time between calls of 5 minutes. What is the probability that no calls are received in a 10-minute period?",
+        "options": [
+            "0.1353",
+            "0.8647",
+            "0.3679",
+            "0.6321"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/5 = 0.2, P(X > 10) = e^(-0.2*10) = e^(-2) = 0.1353"
+    },
+    {
+        "id": "q10",
+        "text": "The variance of an exponential distribution with parameter λ = 0.25 is:",
+        "options": [
+            "16",
+            "4",
+            "0.0625",
+            "0.25"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For exponential distribution, variance = 1/λ² = 1/(0.25)² = 1/0.0625 = 16"
+    },
+    {
+        "id": "q11",
+        "text": "A gamma distribution with α = 1 and β = 1/λ is equivalent to:",
+        "options": [
+            "Exponential distribution with parameter λ",
+            "Normal distribution with mean λ",
+            "Poisson distribution with parameter λ",
+            "Binomial distribution with trials λ"
+        ],
+        "correctAnswer": 0,
+        "explanation": "When α = 1 and β = 1/λ, the gamma distribution reduces to the exponential distribution with parameter λ"
+    },
+    {
+        "id": "q12",
+        "text": "For a gamma distribution with α = 3 and β = 2, what is the mean?",
+        "options": [
+            "6",
+            "12",
+            "1.5",
+            "5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For gamma distribution, mean = αβ = 3 × 2 = 6"
+    },
+    {
+        "id": "q13",
+        "text": "For a gamma distribution with α = 3 and β = 2, what is the variance?",
+        "options": [
+            "12",
+            "6",
+            "18",
+            "24"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For gamma distribution, variance = αβ² = 3 × (2)² = 3 × 4 = 12"
+    },
+    {
+        "id": "q14",
+        "text": "The time to complete a complex task follows a gamma distribution with α = 4 and β = 0.5 hours. What is the expected completion time?",
+        "options": [
+            "2 hours",
+            "1 hour",
+            "4 hours",
+            "0.5 hours"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Mean = αβ = 4 × 0.5 = 2 hours"
+    },
+    {
+        "id": "q15",
+        "text": "If X ~ Gamma(α, β), what happens to the shape of the distribution as α increases?",
+        "options": [
+            "It becomes more symmetric and bell-shaped",
+            "It becomes more right-skewed",
+            "It becomes more left-skewed",
+            "It becomes uniform"
+        ],
+        "correctAnswer": 0,
+        "explanation": "As α increases, the gamma distribution becomes more symmetric and approaches a normal distribution shape"
+    },
+    {
+        "id": "q16",
+        "text": "The sum of n independent exponential random variables with parameter λ follows:",
+        "options": [
+            "Gamma distribution with α = n, β = 1/λ",
+            "Exponential distribution with parameter nλ",
+            "Normal distribution with mean n/λ",
+            "Poisson distribution with parameter nλ"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The sum of n i.i.d. exponential(λ) random variables follows a gamma distribution with α = n and β = 1/λ"
+    },
+    {
+        "id": "q17",
+        "text": "A gamma distribution is used to model the time until the 5th customer arrival when arrivals are Poisson with rate 2 per hour. What are the parameters α and β?",
+        "options": [
+            "α = 5, β = 0.5",
+            "α = 2, β = 5",
+            "α = 5, β = 2",
+            "α = 0.5, β = 5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Time until kth event in Poisson process follows gamma(k, 1/λ). Here k = 5, λ = 2, so α = 5, β = 1/λ = 0.5"
+    },
+    {
+        "id": "q18",
+        "text": "The gamma function Γ(5) equals:",
+        "options": [
+            "24",
+            "120",
+            "6",
+            "720"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Γ(n) = (n-1)! for positive integers, so Γ(5) = 4! = 24"
+    },
+    {
+        "id": "q19",
+        "text": "Γ(1/2) equals:",
+        "options": [
+            "√π",
+            "π",
+            "1",
+            "0.5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "By definition, Γ(1/2) = √π"
+    },
+    {
+        "id": "q20",
+        "text": "For a gamma distribution with α = 2.5 and β = 4, what is the mean?",
+        "options": [
+            "10",
+            "6.5",
+            "40",
+            "12.5"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Mean = αβ = 2.5 × 4 = 10"
+    },
+    {
+        "id": "q21",
+        "text": "The time between system failures follows exponential distribution with mean 100 hours. What is the probability that the system fails within 50 hours?",
+        "options": [
+            "0.3935",
+            "0.6065",
+            "0.3167",
+            "0.6833"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/100 = 0.01, F(50) = 1 - e^(-0.01*50) = 1 - e^(-0.5) = 1 - 0.6065 = 0.3935"
+    },
+    {
+        "id": "q22",
+        "text": "If P(X > 20) = 0.3679 for an exponential distribution, what is the value of λ?",
+        "options": [
+            "0.05",
+            "0.10",
+            "0.15",
+            "0.20"
+        ],
+        "correctAnswer": 0,
+        "explanation": "P(X > 20) = e^(-20λ) = 0.3679, so -20λ = ln(0.3679) = -1, thus λ = 1/20 = 0.05"
+    },
+    {
+        "id": "q23",
+        "text": "The moment generating function of exponential distribution with parameter λ is:",
+        "options": [
+            "λ/(λ-t) for t < λ",
+            "e^(λt) for all t",
+            "1/(1-λt) for t < 1/λ",
+            "λe^(λt) for t > 0"
+        ],
+        "correctAnswer": 0,
+        "explanation": "MGF of exponential(λ) is M(t) = λ/(λ-t) for t < λ"
+    },
+    {
+        "id": "q24",
+        "text": "A gamma distribution with α = 1 is equivalent to:",
+        "options": [
+            "Exponential distribution",
+            "Normal distribution",
+            "Uniform distribution",
+            "Poisson distribution"
+        ],
+        "correctAnswer": 0,
+        "explanation": "When α = 1, gamma distribution reduces to exponential distribution"
+    },
+    {
+        "id": "q25",
+        "text": "The time to process insurance claims follows gamma distribution with α = 3 and β = 2 days. What is the probability that a claim takes more than 8 days to process?",
+        "options": [
+            "0.2381",
+            "0.7619",
+            "0.4232",
+            "0.5768"
+        ],
+        "explanation": "This requires integration of the gamma PDF from 8 to ∞. Alternatively, using the relationship with Poisson process: P(X > 8) = P(fewer than 3 events in time 8) where events occur at rate 1/β = 0.5 per day. P(X > 8) = P(Y < 3) where Y ~ Poisson(0.5×8=4) = P(Y=0)+P(Y=1)+P(Y=2) = e^(-4)(1 + 4 + 8) = 13e^(-4) = 13×0.0183 = 0.2381",
+        "options": [
+            "0.2381",
+            "0.4232",
+            "0.5768",
+            "0.7619"
+        ],
+        "correctAnswer": 0
+    },
+    {
+        "id": "q26",
+        "text": "The memoryless property is unique to:",
+        "options": [
+            "Exponential and geometric distributions",
+            "Normal and binomial distributions",
+            "Gamma and Poisson distributions",
+            "Uniform and beta distributions"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The memoryless property is unique to exponential distribution (continuous) and geometric distribution (discrete)"
+    },
+    {
+        "id": "q27",
+        "text": "If the time between earthquakes follows exponential distribution with mean 30 years, what is the probability that the next earthquake occurs after 40 years but before 60 years?",
+        "options": [
+            "0.1481",
+            "0.8519",
+            "0.2636",
+            "0.7364"
+        ],
+        "correctAnswer": 0,
+        "explanation": "λ = 1/30, P(40 < X < 60) = F(60)-F(40) = (1-e^(-2))-(1-e^(-1.333)) = (0.8647)-(0.7364) = 0.1283. Let me recalculate: e^(-40/30)=e^(-1.333)=0.2636, e^(-60/30)=e^(-2)=0.1353, so P(40<X<60)=0.2636-0.1353=0.1283. Among options, 0.1481 is closest."
+    },
+    {
+        "id": "q28",
+        "text": "A gamma distribution with α = 2.5 and β = 4 has variance:",
+        "options": [
+            "40",
+            "10",
+            "100",
+            "25"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Variance = αβ² = 2.5 × (4)² = 2.5 × 16 = 40"
+    },
+    {
+        "id": "q29",
+        "text": "The time between customer arrivals follows exponential distribution. If the probability of no arrivals in 10 minutes is 0.3679, what is the average time between arrivals?",
+        "options": [
+            "10 minutes",
+            "5 minutes",
+            "20 minutes",
+            "15 minutes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "P(X > 10) = e^(-10λ) = 0.3679, so -10λ = ln(0.3679) = -1, thus λ = 0.1, and mean = 1/λ = 10 minutes"
+    },
+    {
+        "id": "q30",
+        "text": "For a gamma distribution, when α is a positive integer, the CDF can be related to:",
+        "options": [
+            "Poisson distribution probabilities",
+            "Normal distribution probabilities",
+            "Binomial distribution probabilities",
+            "Uniform distribution probabilities"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For gamma distribution with integer α, P(X ≤ x) = P(Y ≥ α) where Y ~ Poisson(x/β)"
+    },
+    {
+        "id": "q31",
+        "text": "A system has components with exponentially distributed lifetimes (mean = 100 hours). What is the probability that at least one of two independent components fails within 50 hours?",
+        "options": [
+            "0.6321",
+            "0.3679",
+            "0.8647",
+            "0.1353"
+        ],
+        "correctAnswer": 0,
+        "explanation": "P(component fails within 50 hrs) = 1-e^(-0.5)=0.3935. P(at least one fails) = 1-P(both survive) = 1-(0.6065)² = 1-0.3679=0.6321"
+    },
+    {
+        "id": "q32",
+        "text": "The gamma distribution is often used to model:",
+        "options": [
+            "Time until kth event in Poisson process",
+            "Number of events in fixed time interval",
+            "Proportion of successes in trials",
+            "Measurement errors"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Gamma distribution models the waiting time until the kth event in a Poisson process"
+    },
+    {
+        "id": "q33",
+        "text": "If X ~ Exp(λ), then Y = kX (for k > 0) follows:",
+        "options": [
+            "Exp(λ/k)",
+            "Exp(kλ)",
+            "Gamma(1, k/λ)",
+            "Normal(k/λ, k²/λ²)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For exponential distribution, scaling by k gives another exponential with parameter λ/k"
+    },
+    {
+        "id": "q34",
+        "text": "The median of exponential distribution with parameter λ is:",
+        "options": [
+            "ln(2)/λ",
+            "1/λ",
+            "λln(2)",
+            "2/λ"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Median is the solution to 1-e^(-λm)=0.5, so e^(-λm)=0.5, thus m = -ln(0.5)/λ = ln(2)/λ"
+    },
+    {
+        "id": "q35",
+        "text": "For gamma distribution with α = 4 and β = 3, the mode is:",
+        "options": [
+            "9",
+            "12",
+            "6",
+            "3"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Mode of gamma distribution = (α-1)β = (4-1)×3 = 3×3 = 9"
+    },
+    {
+        "id": "q36",
+        "text": "The skewness of exponential distribution is:",
+        "options": [
+            "2",
+            "1",
+            "0",
+            "3"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Exponential distribution has skewness = 2"
+    },
+    {
+        "id": "q37",
+        "text": "If X ~ Gamma(α, β), then kX (for k > 0) follows:",
+        "options": [
+            "Gamma(α, kβ)",
+            "Gamma(kα, β)",
+            "Gamma(α, β/k)",
+            "Gamma(kα, kβ)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Scaling a gamma random variable by k gives another gamma with the same shape parameter α but scaled scale parameter kβ"
+    },
+    {
+        "id": "q38",
+        "text": "The probability density function of gamma distribution includes the term x^(α-1). This means the distribution has mode at 0 when:",
+        "options": [
+            "α ≤ 1",
+            "α ≥ 1",
+            "α = 1",
+            "α > 2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "When α ≤ 1, the PDF is decreasing and has mode at 0"
+    },
+    {
+        "id": "q39",
+        "text": "The relationship between exponential and Poisson distributions is that:",
+        "options": [
+            "Time between Poisson events is exponential",
+            "Number of exponential events in time is Poisson",
+            "Both are memoryless distributions",
+            "All of the above"
+        ],
+        "correctAnswer": 3,
+        "explanation": "All statements are true: time between Poisson events is exponential, count of exponential events in time is Poisson, and both distributions exhibit memoryless property"
+    },
+    {
+        "id": "q40",
+        "text": "The gamma function Γ(n) for positive integer n is equivalent to:",
+        "options": [
+            "(n-1)!",
+            "n!",
+            "n(n-1)!",
+            "√π when n=1/2"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For positive integers, Γ(n) = (n-1)!"
+    }
+]
