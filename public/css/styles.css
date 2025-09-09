@@ -449,3 +449,10 @@
             padding: 1.5rem 0;
             margin-top: 3rem;
         }
+
+        .module-title{
+            color: var(--text-primary)
+        }
+        .module-description{
+            color: var(--text-primary)
+        }
