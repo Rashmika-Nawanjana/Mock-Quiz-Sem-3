@@ -13,29 +13,33 @@
     
     <header class="py-4" style="background-color: var(--github-secondary-bg); border-bottom: 1px solid var(--github-border); transition: background-color 0.3s ease, border-color 0.3s ease;">
         <div class="container">
-            <div class="text-center">
-                <h1 class="navbar-brand mb-0" style="font-size: 2rem;">
-                     <a href="/" class="no-style">
+            <div class="d-flex align-items-center justify-content-between flex-wrap flex-md-nowrap" style="gap: 1rem; min-height: 56px;">
+                <!-- Left: Theme Toggle -->
+                <div class="theme-toggle-container order-1 order-md-1">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class="theme-icon fas fa-moon" id="themeIcon"></i>
+                        <span class="theme-text" id="themeText">Dark</span>
+                    </button>
+                </div>
+                <!-- Center: Title -->
+                <h1 class="navbar-brand mb-0 mx-auto order-2 order-md-2 text-center" style="font-size: 2rem; white-space: nowrap; flex: 1 1 0;">
+                    <a href="/" class="no-style">
                         <i class="fas fa-graduation-cap me-2"></i>Mock Quiz Hub
                     </a>
                 </h1>
-            </div>
-            
-           <!-- Pro Tip Light Bulb -->
-            <!-- <div class="pro-tip-bulb" title="Hover for a helpful tip!">
-                <i class="fas fa-lightbulb"></i>
-                <div class="pro-tip-tooltip">
-                    <strong>💡 Pro Tip</strong>
-                    <p>Use the lecture slides as your guide while you quiz.understanding beats memorizing every time!</p>
+                <!-- Right: Notification Bell -->
+                <div class="notification-container order-3 order-md-3 ms-auto position-relative">
+                    <button class="btn btn-link p-0 position-relative" id="notificationDropdown" aria-expanded="false">
+                        <i class="fas fa-bell"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
+                    </button>
+                    <div class="notification-tooltip">
+                        <div class="fw-bold mb-2">Recent Updates</div>
+                        <div class="small mb-1">Added: OS Lab 1 Quiz</div>
+                        <div class="dropdown-divider my-1"></div>
+                        <div class="dropdown-item-text text-muted small">Check back for more updates!</div>
+                    </div>
                 </div>
-            </div> -->
-
-            <!-- Premium Theme Toggle Button -->
-            <div class="theme-toggle-container">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                    <i class="theme-icon fas fa-moon" id="themeIcon"></i>
-                    <span class="theme-text" id="themeText">Dark</span>
-                </button>
             </div>
         </div>
 

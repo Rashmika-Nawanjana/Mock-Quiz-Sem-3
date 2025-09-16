@@ -1,3 +1,392 @@
+/* Notification Bell and Tooltip - Premium Design */
+.notification-container .btn-link {
+    color: var(--text-primary);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    outline: none;
+    border: none;
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(255,255,255,0.9) 100%);
+    position: relative;
+    border-radius: 50%;
+    padding: 0.6rem;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 20px var(--glow),
+        0 2px 8px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.notification-container .btn-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.notification-container .btn-link:hover::before {
+    opacity: 0.1;
+}
+
+.notification-container .btn-link:focus {
+    outline: none;
+    box-shadow: 
+        0 4px 20px var(--glow),
+        0 2px 8px rgba(0,0,0,0.1),
+        0 0 0 3px var(--primary-light);
+}
+
+.notification-container .btn-link .fa-bell {
+    font-size: 1.4rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: var(--primary);
+    filter: drop-shadow(0 2px 8px var(--glow));
+    position: relative;
+    z-index: 1;
+}
+
+.notification-container .btn-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 8px 30px var(--glow),
+        0 4px 16px rgba(0,0,0,0.15),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+}
+
+.notification-container .btn-link:hover .fa-bell {
+    color: var(--accent);
+    transform: rotate(-15deg) scale(1.1);
+    text-shadow: 0 0 12px var(--accent);
+    filter: drop-shadow(0 4px 16px var(--glow));
+}
+
+.notification-container .btn-link:active {
+    transform: translateY(0);
+    transition: transform 0.1s ease;
+}
+
+.notification-container .btn-link .badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 4px 12px rgba(229, 57, 53, 0.4),
+        0 2px 6px rgba(0,0,0,0.2);
+    border: 2px solid var(--github-secondary-bg);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 700;
+    font-size: 0.7rem !important;
+    background: linear-gradient(135deg, #ff4444 0%, #e53935 100%) !important;
+    color: #fff !important;
+    animation: premiumBadgePulse 2s infinite;
+    backdrop-filter: blur(10px);
+}
+
+@keyframes premiumBadgePulse {
+    0%, 70%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 4px 12px rgba(229, 57, 53, 0.4), 0 2px 6px rgba(0,0,0,0.2);
+    }
+    35% { 
+        transform: scale(1.15); 
+        box-shadow: 0 6px 20px rgba(229, 57, 53, 0.6), 0 0 16px rgba(229, 57, 53, 0.3);
+    }
+}
+
+/* Premium Tooltip Styles */
+.notification-tooltip {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    z-index: 1050;
+    min-width: 280px;
+    max-width: 350px;
+    background: linear-gradient(135deg, 
+        rgba(255,255,255,0.95) 0%, 
+        rgba(248,250,252,0.98) 50%, 
+        rgba(241,245,249,0.95) 100%);
+    color: var(--text-primary);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.15),
+        0 8px 32px var(--glow),
+        0 4px 16px rgba(0,0,0,0.1),
+        inset 0 1px 0 rgba(255,255,255,0.4);
+    padding: 1.5rem 1.7rem 1.3rem 1.7rem;
+    font-size: 1rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(15px) scale(0.95);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    white-space: normal;
+    backdrop-filter: blur(20px);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.notification-tooltip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-light) 0%, transparent 100%);
+    opacity: 0.05;
+    border-radius: 20px;
+    pointer-events: none;
+}
+
+.notification-tooltip::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 16px;
+    height: 16px;
+    background: linear-gradient(135deg, 
+        rgba(255,255,255,0.95) 0%, 
+        rgba(248,250,252,0.98) 100%);
+    transform: rotate(45deg);
+    border-top: 1px solid rgba(255,255,255,0.3);
+    border-left: 1px solid rgba(255,255,255,0.3);
+    box-shadow: -2px -2px 8px rgba(0,0,0,0.1);
+    backdrop-filter: blur(20px);
+}
+
+.notification-container .btn-link:hover + .notification-tooltip,
+.notification-container .btn-link:focus + .notification-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+}
+
+.notification-tooltip .fw-bold {
+    color: var(--primary);
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.notification-tooltip .small {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 0.4rem;
+    padding: 0.3rem 0;
+    transition: color 0.3s ease;
+    line-height: 1.4;
+}
+
+.notification-tooltip .small:hover {
+    color: var(--primary);
+}
+
+.notification-tooltip .dropdown-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-light) 20%, 
+        var(--primary) 50%, 
+        var(--primary-light) 80%, 
+        transparent 100%);
+    margin: 1rem 0 0.8rem 0;
+    opacity: 0.6;
+}
+
+.notification-tooltip .dropdown-item-text {
+    color: #999;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-align: center;
+    opacity: 0.8;
+}
+
+/* Dark Theme Premium Styles */
+[data-theme="dark"] .notification-container .btn-link {
+    background: linear-gradient(135deg, var(--card-bg) 0%, rgba(30,30,50,0.9) 100%);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    box-shadow: 
+        0 4px 20px var(--glow),
+        0 2px 8px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(124, 58, 237, 0.2);
+}
+
+[data-theme="dark"] .notification-container .btn-link .fa-bell {
+    color: var(--primary-light);
+    filter: drop-shadow(0 2px 8px var(--glow));
+}
+
+[data-theme="dark"] .notification-container .btn-link:hover {
+    box-shadow: 
+        0 8px 30px var(--glow),
+        0 4px 16px rgba(124, 58, 237, 0.3),
+        inset 0 1px 0 rgba(124, 58, 237, 0.3);
+}
+
+[data-theme="dark"] .notification-container .btn-link:hover .fa-bell {
+    color: var(--accent);
+    text-shadow: 0 0 12px var(--accent);
+}
+
+[data-theme="dark"] .notification-tooltip {
+    background: linear-gradient(135deg, 
+        rgba(30,30,50,0.95) 0%, 
+        rgba(45,34,80,0.98) 50%, 
+        rgba(35,33,58,0.95) 100%);
+    color: var(--text-primary);
+    border: 1px solid rgba(124, 58, 237, 0.3);
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.4),
+        0 8px 32px var(--glow),
+        0 4px 16px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(124, 58, 237, 0.2);
+}
+
+[data-theme="dark"] .notification-tooltip::after {
+    background: linear-gradient(135deg, 
+        rgba(30,30,50,0.95) 0%, 
+        rgba(45,34,80,0.98) 100%);
+    border-top: 1px solid rgba(124, 58, 237, 0.3);
+    border-left: 1px solid rgba(124, 58, 237, 0.3);
+    box-shadow: -2px -2px 8px rgba(0,0,0,0.3);
+}
+
+[data-theme="dark"] .notification-tooltip .fw-bold {
+    color: var(--primary-light);
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+[data-theme="dark"] .notification-tooltip .small {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .notification-tooltip .small:hover {
+    color: var(--primary-light);
+}
+
+[data-theme="dark"] .notification-tooltip .dropdown-divider {
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--primary-light) 20%, 
+        var(--accent) 50%, 
+        var(--primary-light) 80%, 
+        transparent 100%);
+}
+
+[data-theme="dark"] .notification-tooltip .dropdown-item-text {
+    color: #888;
+}
+/* Notification Bell Styles */
+.notification-container .btn-link {
+    color: var(--text-primary);
+    transition: color 0.3s, box-shadow 0.3s;
+    outline: none;
+    border: none;
+    background: none;
+    position: relative;
+}
+
+.notification-container .btn-link .fa-bell {
+    font-size: 1.6rem;
+    transition: color 0.3s, text-shadow 0.3s;
+    color: var(--primary);
+    filter: drop-shadow(0 2px 8px var(--glow));
+}
+
+.notification-container .btn-link:hover .fa-bell,
+.notification-container .btn-link:focus .fa-bell {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent), 0 0 2px var(--primary-light);
+    filter: drop-shadow(0 4px 16px var(--glow));
+}
+
+.notification-container .btn-link .badge {
+    box-shadow: 0 2px 8px var(--glow);
+    border: 2px solid var(--github-secondary-bg);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Custom Tooltip for Bell */
+.notification-tooltip {
+    position: absolute;
+    top: 110%;
+    right: 0;
+    z-index: 1050;
+    min-width: 220px;
+    max-width: 300px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0 8px 32px var(--card-shadow);
+    padding: 1rem 1.2rem;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.3s;
+    white-space: normal;
+}
+
+.notification-container .btn-link:hover + .notification-tooltip,
+.notification-container .btn-link:focus + .notification-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+@media (max-width: 576px) {
+    .notification-tooltip {
+        min-width: 160px;
+        font-size: 0.85rem;
+        padding: 0.7rem 0.8rem;
+    }
+}
+
+[data-theme="dark"] .notification-container .btn-link .fa-bell {
+    color: var(--primary-light);
+    filter: drop-shadow(0 2px 8px var(--glow));
+}
+[data-theme="dark"] .notification-container .btn-link:hover .fa-bell {
+    color: var(--accent);
+    text-shadow: 0 0 8px var(--accent), 0 0 2px var(--primary);
+}
+[data-theme="dark"] .notification-tooltip {
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 8px 32px var(--glow);
+}
 :root {
             --primary: #5624d0;
             --primary-light: #cec0fc;
@@ -87,10 +476,12 @@
 
         /* Premium Theme Toggle Button */
         .theme-toggle-container {
-            position: absolute;
-            top: 50%;
-            left: 2rem;
-            transform: translateY(-50%);
+            position: static;
+            top: auto;
+            left: auto;
+            transform: none;
+            display: flex;
+            align-items: center;
         }
 
         .theme-toggle {
@@ -354,19 +745,17 @@
         */
         @media (max-width: 768px) {
             .theme-toggle-container {
-                left: 1rem;
+                left: auto;
+                margin-left: 0.5rem;
             }
-            
             .theme-toggle {
                 padding: 0.6rem 0.8rem;
                 min-width: 80px;
                 height: 40px;
             }
-            
             .theme-text {
                 font-size: 0.8rem;
             }
-            
             .theme-icon {
                 font-size: 1rem;
                 margin-right: 0.4rem;
