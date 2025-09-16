@@ -97,6 +97,7 @@
             <% } %>
 
             <input type="hidden" name="timeSpent" id="timeSpent" value="0:00">
+            <input type="hidden" name="answersArray" id="answersArray" value="">
         </form>
     </div>
 
@@ -133,6 +134,7 @@
                 updateProgress();
                 updateSubmitButton();
                 createNavigationDots();
+                updateAnswersArray(); // Initialize hidden field
                 
                 // Initialize any pre-selected options
                 document.querySelectorAll('.question-container').forEach(container => {
@@ -155,6 +157,7 @@
                         updateProgress();
                         updateSubmitButton();
                         updateNavigationDots();
+                        updateAnswersArray(); // Update hidden field
                     }
                 });
             });
@@ -203,6 +206,7 @@
                 summaryElement.classList.add('active');
                 updateSummaryStats();
                 updateSubmitButton();
+                updateAnswersArray(); // Update hidden field for summary
                 currentQuestion = -1; // Special state for summary
                 updateNavigation();
                 updateNavigationDots();
@@ -247,8 +251,9 @@
         }
         
         function updateProgress() {
-            const answeredQuestions = getAnsweredQuestions().length;
-            const percentage = totalQuestions > 0 ? Math.round((answeredQuestions / totalQuestions) * 100) : 0;
+            const answeredQuestions = getAnsweredQuestions();
+            const answeredCount = answeredQuestions.filter(answer => answer !== -1).length;
+            const percentage = totalQuestions > 0 ? Math.round((answeredCount / totalQuestions) * 100) : 0;
             const progressBar = document.getElementById('progressBar');
             
             if (progressBar) {
@@ -260,9 +265,10 @@
         function updateSubmitButton() {
             const submitBtn = document.getElementById('submitBtn');
             const answeredQuestions = getAnsweredQuestions();
+            const answeredCount = answeredQuestions.filter(answer => answer !== -1).length;
             
             if (submitBtn) {
-                if (answeredQuestions.length > 0) {
+                if (answeredCount > 0) {
                     submitBtn.disabled = false;
                 } else {
                     submitBtn.disabled = true;
@@ -295,7 +301,7 @@
                 
                 if (index === currentQuestion) {
                     dot.classList.add('current');
-                } else if (answeredQuestions.includes(index)) {
+                } else if (answeredQuestions[index] !== -1) {
                     dot.classList.add('answered');
                 }
             });
@@ -319,23 +325,37 @@
             for (let i = 0; i < totalQuestions; i++) {
                 const radio = document.querySelector(`input[name="answers[${i}]"]:checked`);
                 if (radio) {
-                    answered.push(i);
+                    answered[i] = parseInt(radio.value); // Store the selected option index at correct position
+                } else {
+                    answered[i] = -1; // Store -1 for unanswered questions
                 }
             }
+            console.log('Current quiz state (position-aware):', answered); // Debug output
             return answered;
         }
         
         function updateSummaryStats() {
             const answeredQuestions = getAnsweredQuestions();
+            const answeredCount = answeredQuestions.filter(answer => answer !== -1).length;
             const totalQuestionsElement = document.getElementById('totalQuestions');
             const answeredCountElement = document.getElementById('answeredCount');
             const unansweredCountElement = document.getElementById('unansweredCount');
             const timeSpentDisplayElement = document.getElementById('timeSpentDisplay');
             
             if (totalQuestionsElement) totalQuestionsElement.textContent = totalQuestions;
-            if (answeredCountElement) answeredCountElement.textContent = answeredQuestions.length;
-            if (unansweredCountElement) unansweredCountElement.textContent = totalQuestions - answeredQuestions.length;
+            if (answeredCountElement) answeredCountElement.textContent = answeredCount;
+            if (unansweredCountElement) unansweredCountElement.textContent = totalQuestions - answeredCount;
             if (timeSpentDisplayElement) timeSpentDisplayElement.textContent = document.getElementById('timeSpent').value;
+        }
+        
+        function updateAnswersArray() {
+            // Update the hidden field with the complete position-aware array
+            const answeredQuestions = getAnsweredQuestions();
+            const answersArrayField = document.getElementById('answersArray');
+            if (answersArrayField) {
+                answersArrayField.value = JSON.stringify(answeredQuestions);
+                console.log('Updated hidden answersArray field:', answeredQuestions);
+            }
         }
         
         // Timer functionality
@@ -409,18 +429,26 @@
             quizForm.addEventListener('submit', function(e) {
                 clearInterval(timerInterval);
                 
+                // Update the hidden answers array field before submission
+                updateAnswersArray();
+                
                 // Final validation
                 const answeredQuestions = getAnsweredQuestions();
-                if (answeredQuestions.length < totalQuestions) {
+                const answeredCount = answeredQuestions.filter(answer => answer !== -1).length;
+                console.log('Form submission - answered questions array:', answeredQuestions);
+                console.log('Form submission - answered count:', answeredCount, 'out of', totalQuestions);
+                
+                if (answeredCount < totalQuestions) {
                     e.preventDefault();
-                    const unansweredCount = totalQuestions - answeredQuestions.length;
+                    const unansweredCount = totalQuestions - answeredCount;
                     const message = `You have ${unansweredCount} unanswered question${unansweredCount > 1 ? 's' : ''}. Are you sure you want to submit?`;
                     
                     showConfirmModal(message, 
                         () => {
                             // User confirmed, submit the form
                             clearInterval(timerInterval);
-                            console.log('Quiz submitted with', answeredQuestions.length, 'out of', totalQuestions, 'answers');
+                            console.log('Quiz submitted with', answeredCount, 'out of', totalQuestions, 'answers');
+                            console.log('Final answers array:', answeredQuestions);
                             quizForm.submit();
                         },
                         () => {
@@ -430,7 +458,8 @@
                     );
                 } else {
                     // All questions answered, submit normally
-                    console.log('Quiz submitted with', answeredQuestions.length, 'out of', totalQuestions, 'answers');
+                    console.log('Quiz submitted with all', answeredCount, 'questions answered');
+                    console.log('Final answers array:', answeredQuestions);
                 }
             });
         }

@@ -88,13 +88,15 @@ app.get("/quiz/:module/:quizId", (req, res) => {
 app.post("/quiz/:module/:quizId/submit", (req, res) => {
     const { module, quizId } = req.params;
     const userAnswers = req.body.answers; 
+    const answersArray = req.body.answersArray; // New complete array
     const timeSpent = req.body.timeSpent || "0:00";
     
     // DEBUG: Log the incoming request data
     console.log('=== QUIZ SUBMISSION DEBUG ===');
     console.log('Module:', module);
     console.log('Quiz ID:', quizId);
-    console.log('User Answers:', userAnswers);
+    console.log('User Answers (traditional):', userAnswers);
+    console.log('Answers Array (position-aware):', answersArray);
     console.log('Request Body:', req.body);
     console.log('Time Spent:', timeSpent);
     
@@ -114,28 +116,49 @@ app.post("/quiz/:module/:quizId/submit", (req, res) => {
         console.log('Quiz data loaded successfully');
         console.log('Number of questions:', quizData.length);
         
-        // Validate userAnswers
-        if (!userAnswers || typeof userAnswers !== 'object') {
-            console.error('Invalid user answers format:', userAnswers);
-            return res.status(400).send("Invalid answers format");
-        }
+        // Validate and process answers
+        let processedAnswers;
         
-        // Convert userAnswers object to array if needed
-        let answersArray;
-        if (Array.isArray(userAnswers)) {
-            answersArray = userAnswers;
-        } else {
-            // Convert object to array (answers[0], answers[1] format)
-            answersArray = [];
-            for (let i = 0; i < quizData.length; i++) {
-                answersArray[i] = userAnswers[i] || userAnswers[i.toString()] || -1;
+        // Prioritize the complete position-aware array if available
+        if (answersArray) {
+            try {
+                processedAnswers = JSON.parse(answersArray);
+                console.log('Using position-aware answers array:', processedAnswers);
+            } catch (error) {
+                console.error('Error parsing answersArray:', error);
+                processedAnswers = null;
             }
         }
         
-        console.log('Processed answers array:', answersArray);
+        // Fallback to traditional format if position-aware array not available
+        if (!processedAnswers) {
+            console.log('Falling back to traditional answer processing');
+            if (!userAnswers || typeof userAnswers !== 'object') {
+                console.error('Invalid user answers format:', userAnswers);
+                return res.status(400).send("Invalid answers format");
+            }
+            
+            // Convert userAnswers object to array if needed
+            if (Array.isArray(userAnswers)) {
+                processedAnswers = userAnswers;
+            } else {
+                // Convert object to array (answers[0], answers[1] format)
+                processedAnswers = [];
+                for (let i = 0; i < quizData.length; i++) {
+                    processedAnswers[i] = userAnswers[i] || userAnswers[i.toString()] || -1;
+                }
+            }
+        }
+        
+        // Ensure processedAnswers has the right length
+        while (processedAnswers.length < quizData.length) {
+            processedAnswers.push(-1);
+        }
+        
+        console.log('Final processed answers array:', processedAnswers);
         
         // Calculate results
-        const results = calculateQuizResults(quizData, answersArray, timeSpent);
+        const results = calculateQuizResults(quizData, processedAnswers, timeSpent);
         console.log('Results calculated:', {
             totalQuestions: results.totalQuestions,
             correctCount: results.correctCount,
