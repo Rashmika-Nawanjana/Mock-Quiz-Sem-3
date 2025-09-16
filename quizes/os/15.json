@@ -1,0 +1,362 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary purpose of the BIOS during the computer boot process?",
+        "options": [
+            "Manages user logins",
+            "Reads the hard drive and loads the boot loader into RAM",
+            "Executes user applications",
+            "Formats the hard drive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The BIOS reads the hard drive and loads the boot loader into RAM as part of the system startup process."
+    },
+    {
+        "id": "q2",
+        "text": "In a simple OS kernel project, why do we need a loader written in Assembly?",
+        "options": [
+            "To print messages on the screen",
+            "To set the stack pointer and call the kernel's main function",
+            "To compile C++ code",
+            "To manage files"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The loader is responsible for setting up the stack pointer and calling the kernel's main function, which is required before entering the C/C++ kernel code."
+    },
+    {
+        "id": "q3",
+        "text": "Which memory address is typically used for directly writing characters to video memory in a simple PC OS kernel?",
+        "options": [
+            "0x00007C00",
+            "0xB8000",
+            "0xFFFF0000",
+            "0x100000"
+        ],
+        "correctAnswer": 1,
+        "explanation": "0xB8000 is the standard memory-mapped address for VGA text mode video memory."
+    },
+    {
+        "id": "q4",
+        "text": "Why is extern \"C\" used with the kernel main function in C++?",
+        "options": [
+            "To allow the loader to call the function without name mangling",
+            "To allow usage of C++ exceptions",
+            "To enable dynamic memory allocation",
+            "To support printf"
+        ],
+        "correctAnswer": 0,
+        "explanation": "extern \"C\" prevents the C++ compiler from changing the function name, allowing the assembly loader to call it correctly."
+    },
+    {
+        "id": "q5",
+        "text": "What is the purpose of the .multiboot section and the magic number 0x1badb002 in kernel development?",
+        "options": [
+            "To identify the kernel file to the boot loader",
+            "To set the stack pointer",
+            "To initialize video memory",
+            "To allocate heap space"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The .multiboot section and magic number allow the boot loader to recognize the file as a kernel image."
+    },
+    {
+        "id": "q6",
+        "text": "What is the recommended emulator for running Pintos OS?",
+        "options": [
+            "VMware",
+            "VirtualBox",
+            "QEMU",
+            "Bochs"
+        ],
+        "correctAnswer": 2,
+        "explanation": "QEMU is the recommended open-source emulator for running Pintos OS."
+    },
+    {
+        "id": "q7",
+        "text": "Which Linux command can you use to verify that your toolchain supports 32-bit x86 architecture?",
+        "options": [
+            "uname -a",
+            "objdump -i | grep elf32-i386",
+            "gcc --version",
+            "lscpu"
+        ],
+        "correctAnswer": 1,
+        "explanation": "objdump -i | grep elf32-i386 checks if the toolchain can output 32-bit x86 binaries."
+    },
+    {
+        "id": "q8",
+        "text": "What is the purpose of the Makefile in the Pintos kernel project?",
+        "options": [
+            "To edit the kernel source code",
+            "To automate compilation and linkage of project files",
+            "To manage user commands",
+            "To allocate memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Makefile contains build instructions to compile, assemble, and link the kernel and related files."
+    },
+    {
+        "id": "q9",
+        "text": "Where can you find utility scripts like pintos and pintos-gdb in the Pintos distribution?",
+        "options": [
+            "src/kernel/",
+            "src/utils/",
+            "src/devices/",
+            "src/threads/"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Utility scripts are located in the src/utils/ directory."
+    },
+    {
+        "id": "q10",
+        "text": "What does the Pintos shell prompt look like according to the lab material?",
+        "options": [
+            "$",
+            "#",
+            "CS2042>",
+            "Pintos>"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The shell prompt is \"CS2042>\" as specified in the lab material."
+    },
+    {
+        "id": "q11",
+        "text": "Which of the following is NOT a shell command you are required to implement in the Pintos OS lab?",
+        "options": [
+            "whoami",
+            "shutdown",
+            "mkdir",
+            "ram"
+        ],
+        "correctAnswer": 2,
+        "explanation": "mkdir is not listed as a required command in the Pintos shell assignment."
+    },
+    {
+        "id": "q12",
+        "text": "In Pintos OS, which command is used to display the number of seconds since the Unix epoch?",
+        "options": [
+            "time",
+            "date",
+            "uptime",
+            "seconds"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The command 'time' displays the seconds since the Unix epoch."
+    },
+    {
+        "id": "q13",
+        "text": "Why can’t you use the standard C library functions (like printf, scanf) in Pintos kernel mode?",
+        "options": [
+            "Because they are not implemented in C",
+            "Because the kernel runs in user mode",
+            "Because the standard C library uses system calls unavailable in kernel mode",
+            "Because Pintos does not support input/output"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Standard C library functions rely on system calls which are only available in user mode, not in kernel mode."
+    },
+    {
+        "id": "q14",
+        "text": "Which of the following is a recommended tool for debugging Pintos OS, as per the setup instructions?",
+        "options": [
+            "cgdb",
+            "nano",
+            "emacs",
+            "gedit"
+        ],
+        "correctAnswer": 0,
+        "explanation": "cgdb is a recommended debugger for use with Pintos."
+    },
+    {
+        "id": "q15",
+        "text": "Which file should you edit to add the toolchain binaries to your environment PATH?",
+        "options": [
+            "/etc/passwd",
+            ".bashrc",
+            "Makefile",
+            "kernel.c"
+        ],
+        "correctAnswer": 1,
+        "explanation": "You should add export lines to your .bashrc file to update your PATH."
+    },
+    {
+        "id": "q16",
+        "text": "If i386-elf-gcc is not recognized after building the toolchain, what is the most likely cause?",
+        "options": [
+            "The kernel is corrupted",
+            "The utility scripts are missing",
+            "The PATH environment variable is not updated correctly",
+            "The system does not support virtual memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "If the toolchain binaries are not in your PATH, the command will not be found."
+    },
+    {
+        "id": "q17",
+        "text": "What is the function of the shutdown command in the Pintos shell?",
+        "options": [
+            "Restarts the shell",
+            "Shuts down Pintos OS and exits the QEMU emulator",
+            "Logs out the current user",
+            "Deletes all files"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The shutdown command exits the Pintos OS and stops the emulator."
+    },
+    {
+        "id": "q18",
+        "text": "Which Pintos directory contains the file where you implement the shell's main loop?",
+        "options": [
+            "threads/",
+            "devices/",
+            "lib/",
+            "utils/"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The threads/ directory contains init.c where the shell code is implemented."
+    },
+    {
+        "id": "q19",
+        "text": "What is the purpose of the .space 2*1024*1024; directive in the loader assembly code?",
+        "options": [
+            "To clear the screen",
+            "To allocate space for the kernel stack",
+            "To allocate space between kernel and kernel stack",
+            "To reserve space for video memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": ".space 2*1024*1024; reserves space so the kernel stack does not overwrite kernel code/data."
+    },
+    {
+        "id": "q20",
+        "text": "What is the outcome if you run make in pintos/src/threads and everything is set up correctly?",
+        "options": [
+            "The kernel source files will be deleted",
+            "The kernel and shell will be compiled and built",
+            "QEMU will automatically start",
+            "The system will reboot"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Running make builds the kernel and related binaries in the threads directory."
+    },
+    {
+        "id": "q21",
+        "text": "Which utility script is a wrapper around i386-elf-gdb and loads GDB macros for Pintos?",
+        "options": [
+            "pintos-run",
+            "pintos-gdb",
+            "pintos-debug",
+            "pintos-emu"
+        ],
+        "correctAnswer": 1,
+        "explanation": "pintos-gdb is the script that wraps i386-elf-gdb and loads useful macros."
+    },
+    {
+        "id": "q22",
+        "text": "Why is it recommended to use a UNIX/LINUX based OS for Pintos development?",
+        "options": [
+            "Because Windows does not support GCC",
+            "Because UNIX/LINUX terminates processes faster",
+            "Because the toolchain and emulator are easier to set up and run",
+            "Because QEMU does not run on Windows"
+        ],
+        "correctAnswer": 2,
+        "explanation": "UNIX/LINUX environments make it easier to install and use the required development tools."
+    },
+    {
+        "id": "q23",
+        "text": "Which function is the entry point for the Pintos kernel code (after the loader)?",
+        "options": [
+            "main",
+            "kernelMain",
+            "pintos_main",
+            "start"
+        ],
+        "correctAnswer": 1,
+        "explanation": "kernelMain is called by the loader and acts as the entry point to the kernel."
+    },
+    {
+        "id": "q24",
+        "text": "What is the purpose of the priority command in the Pintos shell?",
+        "options": [
+            "To set thread priority",
+            "To display the thread priority of the current thread",
+            "To view process priorities",
+            "To change CPU scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The priority command displays the priority of the current thread."
+    },
+    {
+        "id": "q25",
+        "text": "What happens if no command line arguments are supplied to Pintos at boot?",
+        "options": [
+            "The kernel runs an interactive shell",
+            "The system shuts down",
+            "The kernel panics",
+            "The user is prompted for input"
+        ],
+        "correctAnswer": 0,
+        "explanation": "If no arguments are given, the Pintos kernel launches the interactive shell for user commands."
+    },
+    {
+        "id": "q26",
+        "text": "Which file in Pintos should you examine to understand or implement the shell functionality?",
+        "options": [
+            "devices/input.c",
+            "threads/init.c",
+            "lib/stdio.c",
+            "kernel/loader.c"
+        ],
+        "correctAnswer": 1,
+        "explanation": "threads/init.c contains the main kernel entry and the shell implementation."
+    },
+    {
+        "id": "q27",
+        "text": "Which command in the Pintos shell is used to quit the interactive shell?",
+        "options": [
+            "halt",
+            "quit",
+            "exit",
+            "close"
+        ],
+        "correctAnswer": 2,
+        "explanation": "exit is the command to leave the Pintos shell."
+    },
+    {
+        "id": "q28",
+        "text": "What is the recommended way to run Pintos OS after making and building it?",
+        "options": [
+            "./run",
+            "make run",
+            "make build",
+            "pintos --"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The command 'pintos --' is used to launch Pintos after building."
+    },
+    {
+        "id": "q29",
+        "text": "Which of the following is NOT an essential requirement to build and run Pintos OS?",
+        "options": [
+            "Perl >= 5.8.0",
+            "QEMU",
+            "An x86 cross-compiler toolchain",
+            "Python 3.10"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Python 3.10 is not required for building or running Pintos."
+    },
+    {
+        "id": "q30",
+        "text": "What is the main reason for modifying the PATH environment variable during Pintos setup?",
+        "options": [
+            "To enable network access",
+            "To run utility scripts and toolchain binaries from anywhere in the terminal",
+            "To change default shell",
+            "To enable debugging"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Adding the toolchain and scripts to PATH allows you to call them from any directory."
+    }
+]
