@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "Which of the following best describes the relationship between speed, cost, and reliability in physical storage media classification?",
+    "options": [
+      "Faster storage is always cheaper and more reliable",
+      "Storage speed increases with cost, while reliability varies by storage type",
+      "All storage types have similar cost-performance ratios",
+      "Reliability is inversely proportional to storage speed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to the lecture, storage media are classified by speed (with faster access being more costly), cost per unit of data, and reliability (which depends on factors like power failure resistance and physical durability)."
+  },
+  {
+    "id": "q2",
+    "text": "What is the key difference between volatile and non-volatile storage?",
+    "options": [
+      "Volatile storage is faster than non-volatile storage",
+      "Volatile storage loses contents when power is switched off, non-volatile storage retains contents",
+      "Non-volatile storage is always more expensive than volatile storage",
+      "Volatile storage has unlimited write cycles, non-volatile storage has limited cycles"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Volatile storage loses contents when power is switched off, while non-volatile storage contents persist even when power is switched off, including secondary and tertiary storage."
+  },
+  {
+    "id": "q3",
+    "text": "Main memory typically has access times in the range of:",
+    "options": [
+      "1 to 10 seconds",
+      "1 to 10 milliseconds", 
+      "10s to 100s of nanoseconds",
+      "1 to 10 microseconds"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to the lecture, main memory provides fast access in the range of 10s to 100s of nanoseconds, where 1 nanosecond = 10^-9 seconds."
+  },
+  {
+    "id": "q4",
+    "text": "Which characteristic of flash memory makes it unsuitable for frequent updates?",
+    "options": [
+      "It has slower read speeds than magnetic disks",
+      "It can only support a limited number (10K-1M) of write/erase cycles",
+      "It requires constant power to maintain data",
+      "It has higher cost per byte than main memory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Flash memory can support only a limited number (10K – 1M) of write/erase cycles, and erasing must be done to an entire bank of memory, making frequent updates problematic."
+  },
+  {
+    "id": "q5",
+    "text": "What is the typical capacity range of magnetic disks as mentioned in the lecture?",
+    "options": [
+      "Up to 640 MB",
+      "Up to 1.5 TB as of 2009",
+      "Up to 100 GB",
+      "Up to 500 GB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that magnetic disk capacities range up to roughly 1.5 TB as of 2009, with much larger capacity and better cost/byte than main memory/flash memory."
+  },
+  {
+    "id": "q6",
+    "text": "Which storage medium is described as 'write-once, read-many' (WORM)?",
+    "options": [
+      "Magnetic tape",
+      "Flash memory",
+      "CD-ROM and certain optical disks",
+      "Main memory"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture describes CD-R, DVD-R, DVD+R as write-one, read-many (WORM) optical disks used for archival storage."
+  },
+  {
+    "id": "q7",
+    "text": "What is the primary disadvantage of tape storage compared to disk storage?",
+    "options": [
+      "Lower capacity",
+      "Higher cost per byte",
+      "Sequential-access only, much slower than disk",
+      "Volatility - data is lost on power failure"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Tape storage is non-volatile and used primarily for backup, but has sequential-access which is much slower than disk's direct-access capability."
+  },
+  {
+    "id": "q8",
+    "text": "In the storage hierarchy, what are the three main levels?",
+    "options": [
+      "Cache, RAM, ROM",
+      "Primary, secondary, tertiary storage",
+      "Volatile, semi-volatile, non-volatile",
+      "Fast, medium, slow storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The storage hierarchy consists of primary storage (fastest, volatile like cache and main memory), secondary storage (non-volatile, moderately fast like flash and magnetic disks), and tertiary storage (non-volatile, slow like tape and optical)."
+  },
+  {
+    "id": "q9",
+    "text": "In a magnetic disk, what is a sector?",
+    "options": [
+      "A circular track on the platter surface",
+      "The smallest unit of data that can be read or written",
+      "The arm that positions the read-write head",
+      "A collection of multiple platters"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A sector is the smallest unit of data that can be read or written, typically 512 bytes in size, and each track is divided into sectors."
+  },
+  {
+    "id": "q10",
+    "text": "What does a cylinder consist of in a multi-platter disk system?",
+    "options": [
+      "All sectors on a single track",
+      "The i-th track of all the platters",
+      "All tracks on a single platter",
+      "The collection of all read-write heads"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cylinder i consists of the i-th track of all the platters in a head-disk assembly with multiple disk platters on a single spindle."
+  },
+  {
+    "id": "q11",
+    "text": "What are the two main components of disk access time?",
+    "options": [
+      "Read time and write time",
+      "Seek time and rotational latency",
+      "Transfer time and processing time",
+      "Cylinder time and sector time"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Access time consists of seek time (time to reposition the arm over the correct track) and rotational latency (time for the sector to appear under the head)."
+  },
+  {
+    "id": "q12",
+    "text": "What is the typical range for average seek time on modern disks?",
+    "options": [
+      "1 to 3 milliseconds",
+      "4 to 10 milliseconds",
+      "10 to 20 milliseconds",
+      "20 to 50 milliseconds"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that average seek time is typically 4 to 10 milliseconds on typical disks."
+  },
+  {
+    "id": "q13",
+    "text": "What does MTTF stand for in disk performance measures?",
+    "options": [
+      "Maximum Time To Failure",
+      "Mean Time To Failure",
+      "Minimum Time To Failure",
+      "Median Time To Failure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MTTF stands for Mean Time To Failure - the average time the disk is expected to run continuously without any failure, typically 3 to 5 years."
+  },
+  {
+    "id": "q14",
+    "text": "What is a block in the context of disk storage?",
+    "options": [
+      "A single sector on a track",
+      "A contiguous sequence of sectors from a single track",
+      "An entire track on a platter",
+      "A complete cylinder across all platters"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A block is a contiguous sequence of sectors from a single track, and data is transferred between disk and main memory in blocks, with typical sizes ranging from 4 to 16 kilobytes."
+  },
+  {
+    "id": "q15",
+    "text": "What is the elevator algorithm used for?",
+    "options": [
+      "Data compression on disks",
+      "Disk-arm-scheduling to minimize arm movement",
+      "Error correction in disk reads",
+      "Buffer management in main memory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The elevator algorithm is a disk-arm-scheduling algorithm that orders pending accesses to tracks so that disk arm movement is minimized."
+  },
+  {
+    "id": "q16",
+    "text": "What is the advantage of using nonvolatile write buffers?",
+    "options": [
+      "They increase disk capacity",
+      "They speed up disk writes by immediate buffering to non-volatile RAM",
+      "They reduce the number of read-write heads needed",
+      "They eliminate the need for error checking"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Nonvolatile write buffers speed up disk writes by writing blocks to a non-volatile RAM buffer immediately, allowing database operations to continue without waiting for disk writes."
+  },
+  {
+    "id": "q17",
+    "text": "What does RAID stand for?",
+    "options": [
+      "Rapid Access Independent Disks",
+      "Redundant Arrays of Independent Disks", 
+      "Random Access Integrated Disks",
+      "Reliable Array of Inexpensive Drives"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RAID stands for Redundant Arrays of Independent Disks (originally 'inexpensive' but now 'independent'), providing high capacity, speed, and reliability through multiple disk management."
+  },
+  {
+    "id": "q18",
+    "text": "What is the main goal of mirroring in RAID systems?",
+    "options": [
+      "Increase storage capacity",
+      "Improve read performance only",
+      "Store extra information to rebuild data lost in disk failure",
+      "Reduce the number of disks needed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Mirroring (or shadowing) duplicates every disk so that if one disk fails, data is still available in the mirror disk, providing redundancy to avoid data loss."
+  },
+  {
+    "id": "q19",
+    "text": "In block-level striping, where does block i of a file go with n disks?",
+    "options": [
+      "Disk i",
+      "Disk (i mod n) + 1",
+      "Randomly assigned disk",
+      "Always the first available disk"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In block-level striping with n disks, block i of a file goes to disk (i mod n) + 1, allowing requests for different blocks to run in parallel."
+  },
+  {
+    "id": "q20",
+    "text": "Which RAID level offers the best write performance?",
+    "options": [
+      "RAID 0",
+      "RAID 1", 
+      "RAID 5",
+      "RAID 6"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RAID Level 1 (mirrored disks with block striping) offers the best write performance and is popular for applications such as storing log files in database systems."
+  },
+  {
+    "id": "q21",
+    "text": "What is the main disadvantage of RAID Level 4?",
+    "options": [
+      "No fault tolerance",
+      "Too expensive to implement",
+      "Parity block becomes a bottleneck for independent block writes",
+      "Cannot handle multiple disk failures"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In RAID Level 4, the parity block becomes a bottleneck for independent block writes since every block write also writes to the parity disk."
+  },
+  {
+    "id": "q22",
+    "text": "How does RAID Level 5 solve the bottleneck problem of RAID Level 4?",
+    "options": [
+      "By eliminating parity completely",
+      "By using multiple parity disks",
+      "By partitioning data and parity among all N + 1 disks",
+      "By using faster disks for parity storage"
+    ],
+    "correctAnswer": 2,
+    "explanation": "RAID Level 5 partitions data and parity among all N + 1 disks, rather than storing data in N disks and parity in 1 disk, avoiding the parity disk bottleneck."
+  },
+  {
+    "id": "q23",
+    "text": "Why is RAID Level 3 not used anymore?",
+    "options": [
+      "It's too expensive to implement",
+      "Bit-striping forces single block reads to access all disks, wasting disk arm movement",
+      "It doesn't provide adequate fault tolerance",
+      "It requires specialized hardware not commonly available"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RAID Level 3 is not used anymore since bit-striping forces single block reads to access all disks, wasting disk arm movement, which block striping (Level 5) avoids."
+  },
+  {
+    "id": "q24",
+    "text": "In what type of environment is RAID Level 1 preferred over Level 5?",
+    "options": [
+      "Low-cost storage environments",
+      "High update environments such as log disks",
+      "Read-only database applications",
+      "Applications with large amounts of data but low update rates"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RAID Level 1 is preferred for high update environments such as log disks because it provides much better write performance than Level 5."
+  },
+  {
+    "id": "q25",
+    "text": "What is the main characteristic of optical disk access compared to magnetic disks?",
+    "options": [
+      "Faster seek time",
+      "Higher data transfer rates",
+      "Slower seek time (about 100 msec) due to heavier optical read head",
+      "More reliable under all conditions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Optical disks have slower seek times (about 100 msec) because the optical read head is heavier and slower than magnetic disk heads."
+  },
+  {
+    "id": "q26",
+    "text": "What is the capacity of a standard Blu-ray disk?",
+    "options": [
+      "4.7 GB",
+      "17 GB",
+      "27 GB (54 GB for double sided)",
+      "640 MB"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Blu-ray disks have a capacity of 27 GB, with 54 GB available for double-sided disks."
+  },
+  {
+    "id": "q27",
+    "text": "What is the main use of magnetic tapes in modern database systems?",
+    "options": [
+      "Primary storage for frequently accessed data",
+      "Backup and archival storage of infrequently used information",
+      "Real-time transaction processing",
+      "Index storage for fast data retrieval"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Magnetic tapes are used mainly for backup (to recover from disk failure) and for archival storage of infrequently used information due to their sequential-access limitation."
+  },
+  {
+    "id": "q28",
+    "text": "In fixed-length record organization, what happens when record i is deleted using the 'move records' approach?",
+    "options": [
+      "The record is marked as deleted but not removed",
+      "Records i + 1, ..., n are moved to positions i, ..., n – 1",
+      "The last record is moved to position i",
+      "A pointer chain is created to link free records"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the 'move records' approach for deletion, records i + 1, ..., n are moved to positions i, ..., n – 1 to maintain contiguous storage."
+  },
+  {
+    "id": "q29",
+    "text": "What is the advantage of using free lists for deleted records?",
+    "options": [
+      "Faster deletion process",
+      "Better cache performance",
+      "More space efficient representation by reusing space for normal attributes",
+      "Simpler implementation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Free lists provide more space efficient representation by reusing space for normal attributes of free records to store pointers, with no pointers stored in in-use records."
+  },
+  {
+    "id": "q30",
+    "text": "What causes variable-length records in database systems?",
+    "options": [
+      "Only storage of multiple record types in a file",
+      "Storage of multiple record types, variable length fields, and repeating fields",
+      "Only record types with variable length strings",
+      "Only record types with repeating fields"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Variable-length records arise from storage of multiple record types in a file, record types that allow variable lengths for fields like strings (varchar), and record types that allow repeating fields."
+  },
+  {
+    "id": "q31",
+    "text": "In the slotted page structure, what does the header contain?",
+    "options": [
+      "Only the number of record entries",
+      "Only the end of free space location",
+      "Number of record entries, end of free space, and location/size of each record",
+      "Only pointers to other pages"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The slotted page header contains the number of record entries, end of free space in the block, and location and size of each record."
+  },
+  {
+    "id": "q32",
+    "text": "Which file organization method is suitable for applications requiring sequential processing of the entire file?",
+    "options": [
+      "Heap organization",
+      "Sequential organization",
+      "Hash organization",
+      "Clustered organization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sequential file organization is suitable for applications that require sequential processing of the entire file, where records are ordered by a search-key."
+  },
+  {
+    "id": "q33",
+    "text": "What is the main advantage of multitable clustering file organization?",
+    "options": [
+      "Reduces storage space requirements",
+      "Stores related records on the same block to minimize I/O",
+      "Eliminates the need for indexing",
+      "Simplifies record insertion and deletion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multitable clustering file organization stores related records on the same block to minimize I/O, which is beneficial for queries involving related tables."
+  },
+  {
+    "id": "q34",
+    "text": "What type of information does the data dictionary (system catalog) store?",
+    "options": [
+      "Only table and column names",
+      "Only user authentication data", 
+      "Metadata including relation information, user data, statistical data, and physical organization",
+      "Only database performance statistics"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The data dictionary stores metadata including information about relations, user and accounting information, statistical and descriptive data, physical file organization, and information about indices."
+  },
+  {
+    "id": "q35",
+    "text": "What is the primary goal of the buffer manager?",
+    "options": [
+      "To increase disk storage capacity",
+      "To minimize the number of block transfers between disk and memory",
+      "To compress data before storage",
+      "To encrypt sensitive database information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The buffer manager is responsible for minimizing the number of block transfers between disk and memory by keeping as many blocks as possible in main memory."
+  },
+  {
+    "id": "q36",
+    "text": "When does the buffer manager write a replaced block back to disk?",
+    "options": [
+      "Always, regardless of whether it was modified",
+      "Never, data is lost when replaced",
+      "Only if it was modified since it was last written to/fetched from disk",
+      "Only when explicitly requested by the user"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A replaced block is written back to disk only if it was modified since the most recent time that it was written to/fetched from the disk."
+  },
+  {
+    "id": "q37",
+    "text": "Why can LRU (Least Recently Used) be a bad strategy for certain database access patterns?",
+    "options": [
+      "It uses too much memory",
+      "It's too slow to implement",
+      "For repeated scans of data, like nested loop joins, it may not predict future references well",
+      "It doesn't work with variable-length records"
+    ],
+    "correctAnswer": 2,
+    "explanation": "LRU can be bad for certain access patterns involving repeated scans of data (like nested loop joins) because past patterns may not predict future references well in these scenarios."
+  },
+  {
+    "id": "q38",
+    "text": "What is a pinned block in buffer management?",
+    "options": [
+      "A block that is permanently stored in memory",
+      "A block that is not allowed to be written back to disk",
+      "A block that contains critical system information",
+      "A block that is currently being read from disk"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A pinned block is a memory block that is not allowed to be written back to disk, typically used when the block is currently being processed."
+  },
+  {
+    "id": "q39",
+    "text": "What is the main purpose of indexing in database systems?",
+    "options": [
+      "To compress data for storage efficiency",
+      "To speed up access to desired data",
+      "To provide data encryption",
+      "To backup database information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Indexing mechanisms are used to speed up access to desired data, similar to how an author catalog works in a library."
+  },
+  {
+    "id": "q40",
+    "text": "What are the two basic kinds of indices?",
+    "options": [
+      "Primary and secondary indices",
+      "Dense and sparse indices",
+      "Ordered indices and hash indices",
+      "Clustered and non-clustered indices"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The two basic kinds of indices are ordered indices (where search keys are stored in sorted order) and hash indices (where search keys are distributed uniformly across buckets using a hash function)."
+  },
+  {
+    "id": "q41",
+    "text": "What is a primary index?",
+    "options": [
+      "The first index created on a table",
+      "An index on the primary key only",
+      "An index whose search key specifies the sequential order of the file",
+      "The most frequently used index"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A primary index (also called clustering index) is an index whose search key specifies the sequential order of the file, usually but not necessarily on the primary key."
+  },
+  {
+    "id": "q42",
+    "text": "What characterizes a dense index?",
+    "options": [
+      "It contains more data than the original file",
+      "Index record appears for every search-key value in the file",
+      "It only works with numerical data",
+      "It requires less storage space than sparse indices"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A dense index has an index record that appears for every search-key value in the file, providing direct access to every record."
+  },
+  {
+    "id": "q43",
+    "text": "When is a sparse index applicable?",
+    "options": [
+      "Only when records are randomly distributed",
+      "When records are sequentially ordered on search-key",
+      "Only for numerical search keys",
+      "When the file is very small"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sparse index is applicable when records are sequentially ordered on the search-key, as it contains index records for only some search-key values."
+  },
+  {
+    "id": "q44",
+    "text": "What is the main advantage of sparse indices over dense indices?",
+    "options": [
+      "Faster search times",
+      "Better for range queries",
+      "Less space and less maintenance overhead for insertions and deletions",
+      "Works with any file organization"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Sparse indices require less space and have less maintenance overhead for insertions and deletions compared to dense indices, though they are generally slower for locating records."
+  },
+  {
+    "id": "q45",
+    "text": "Why are multilevel indices used?",
+    "options": [
+      "To handle multiple data types",
+      "When the primary index does not fit in memory, making access expensive",
+      "To support multiple users simultaneously",
+      "To provide backup indexing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multilevel indices are used when the primary index does not fit in memory, making access expensive. A sparse outer index is created on the primary index to improve access times."
+  },
+  {
+    "id": "q46",
+    "text": "Why must secondary indices be dense?",
+    "options": [
+      "They are faster than sparse indices",
+      "They require less maintenance",
+      "Because records are not sequentially ordered on the secondary index search key",
+      "They use less storage space"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Secondary indices must be dense because the records are not sequentially ordered on the secondary index search key, requiring an index entry for each search-key value."
+  },
+  {
+    "id": "q47",
+    "text": "What is the main disadvantage of using secondary indices for sequential scans?",
+    "options": [
+      "They don't support range queries",
+      "Each record access may fetch a new block from disk, making it expensive",
+      "They require more memory than primary indices",
+      "They cannot be updated"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sequential scan using a secondary index is expensive because each record access may fetch a new block from disk, whereas sequential scan using primary index is efficient."
+  },
+  {
+    "id": "q48",
+    "text": "What is the main advantage of B+-tree index files over indexed-sequential files?",
+    "options": [
+      "They use less storage space",
+      "They automatically reorganize with small, local changes for insertions and deletions",
+      "They are simpler to implement",
+      "They work only with numerical data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "B+-tree index files automatically reorganize themselves with small, local changes in the face of insertions and deletions, eliminating the need for periodic reorganization of the entire file."
+  },
+  {
+    "id": "q49",
+    "text": "In static hashing, what is a bucket?",
+    "options": [
+      "A hash function parameter",
+      "A unit of storage containing one or more records",
+      "A type of search key",
+      "An indexing algorithm"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A bucket is a unit of storage containing one or more records (typically a disk block), and records are mapped to buckets using a hash function."
+  },
+  {
+    "id": "q50",
+    "text": "What causes bucket overflow in hash file organization?",
+    "options": [
+      "Only insufficient buckets",
+      "Only skewed distribution of records",
+      "Both insufficient buckets and skewed distribution of records",
+      "Only hash function errors"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Bucket overflow can occur due to insufficient buckets or skew in distribution of records (caused by multiple records with same search-key value or non-uniform hash function distribution)."
+  },
+  {
+    "id": "q51",
+    "text": "What are bitmap indices particularly suitable for?",
+    "options": [
+      "Large text fields",
+      "Attributes that take on a relatively small number of distinct values",
+      "Numerical computations only",
+      "Primary key indexing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Bitmap indices are suitable for attributes that take on a relatively small number of distinct values, such as gender, country, state, or income-level categories."
+  },
+  {
+    "id": "q52",
+    "text": "What are the three basic steps in query processing?",
+    "options": [
+      "Input, Process, Output",
+      "Parsing and translation, Optimization, Evaluation",
+      "Scanning, Sorting, Joining",
+      "Reading, Writing, Indexing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The three basic steps in query processing are: 1) Parsing and translation, 2) Optimization, and 3) Evaluation."
+  },
+  {
+    "id": "q53",
+    "text": "What does the parser do during query processing?",
+    "options": [
+      "Executes the query plan",
+      "Optimizes the query for performance",
+      "Checks syntax and verifies relations",
+      "Returns results to the user"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The parser checks syntax, verifies relations, and translates the query into its internal form, which is then translated into relational algebra."
+  },
+  {
+    "id": "q54",
+    "text": "What is the main goal of query optimization?",
+    "options": [
+      "To reduce memory usage",
+      "To choose the evaluation plan with lowest cost among all equivalent plans",
+      "To simplify the query syntax",
+      "To increase database security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Query optimization aims to choose the evaluation plan with the lowest cost among all equivalent evaluation plans, using statistical information from the database catalog."
+  },
+  {
+    "id": "q55",
+    "text": "What is typically the predominant factor in measuring query cost?",
+    "options": [
+      "CPU processing time",
+      "Memory usage",
+      "Disk access",
+      "Network communication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Disk access is typically the predominant cost factor and is relatively easy to estimate, measured by number of seeks, blocks read, and blocks written."
+  },
+  {
+    "id": "q56",
+    "text": "What is a transaction in database systems?",
+    "options": [
+      "A single SQL statement",
+      "A unit of program execution that accesses and possibly updates various data items",
+      "A database backup operation",
+      "A user login session"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A transaction is a unit of program execution that accesses and possibly updates various data items, and must see a consistent database."
+  },
+  {
+    "id": "q57",
+    "text": "What does the 'A' in ACID properties stand for?",
+    "options": [
+      "Availability",
+      "Atomicity",
+      "Accessibility",
+      "Authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'A' in ACID stands for Atomicity - either all operations of the transaction are properly reflected in the database or none are."
+  },
+  {
+    "id": "q58",
+    "text": "What does the Isolation property ensure in ACID?",
+    "options": [
+      "Transactions run faster when isolated",
+      "Each transaction must be unaware of other concurrently executing transactions",
+      "Transactions cannot access the same data",
+      "Only one transaction can run at a time"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Isolation ensures that each transaction must be unaware of other concurrently executing transactions, and intermediate transaction results must be hidden from other concurrent transactions."
+  },
+  {
+    "id": "q59",
+    "text": "What does the Durability property guarantee?",
+    "options": [
+      "Transactions complete quickly",
+      "Data is never lost during processing",
+      "After a transaction completes successfully, changes persist even if there are system failures",
+      "Transactions can be rolled back at any time"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Durability guarantees that after a transaction completes successfully (is committed), the changes it made to the database persist even if there are subsequent system failures."
+  },
+  {
+    "id": "q60",
+    "text": "What is the purpose of concurrency control in database systems?",
+    "options": [
+      "To speed up transaction processing",
+      "To ensure that concurrent transactions do not interfere with each other and maintain database consistency",
+      "To limit the number of users accessing the database",
+      "To encrypt data during transactions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Concurrency control ensures that concurrent transactions do not interfere with each other, maintaining database consistency and ensuring ACID properties."
+  }
+]
