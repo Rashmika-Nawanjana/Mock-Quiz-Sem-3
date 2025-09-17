@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary purpose of a railway semaphore in the context of concurrent programming?",
+        "options": [
+            "To control train speed and acceleration",
+            "To indicate whether the track ahead is clear or occupied",
+            "To communicate with the central train station",
+            "To measure the distance between trains"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A railway semaphore is a signal flag that indicates whether or not the track ahead is clear or occupied by another train, serving as a mechanism for mutual exclusive occupancy of critical sections."
+    },
+    {
+        "id": "q2",
+        "text": "Who first described the semaphore concept in concurrent programming?",
+        "options": [
+            "Alan Turing in 1936",
+            "Edsger Dijkstra in 1968",
+            "Donald Knuth in 1973",
+            "Tony Hoare in 1978"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The semaphore was first described by Dijkstra in 1968 as a programming primitive for concurrent programs."
+    },
+    {
+        "id": "q3",
+        "text": "What type of variable is a semaphore?",
+        "options": [
+            "A boolean variable that can be true or false",
+            "A floating-point variable with decimal values",
+            "An integer-valued variable that can take only non-negative values",
+            "A string variable that stores process names"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A semaphore is an integer-valued variable which can take only non-negative values."
+    },
+    {
+        "id": "q4",
+        "text": "How many operations are exactly defined on a semaphore?",
+        "options": [
+            "One operation",
+            "Two operations",
+            "Three operations",
+            "Four operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Exactly two operations are defined on a semaphore S: down(S) and up(S)."
+    },
+    {
+        "id": "q5",
+        "text": "In the down(S) operation, what happens if S > 0?",
+        "options": [
+            "The process is suspended",
+            "S is incremented by 1",
+            "S is decremented by 1",
+            "A waiting process is awakened"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In down(S), if S > 0 then S = S - 1, otherwise the process making the call is suspended."
+    },
+    {
+        "id": "q6",
+        "text": "What happens in the up(S) operation when there are processes suspended on S?",
+        "options": [
+            "S is incremented by 1",
+            "All suspended processes are awakened",
+            "One of the suspended processes is awakened",
+            "The semaphore is reset to 0"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In up(S), if there are processes that have been suspended on S, one of them is awakened."
+    },
+    {
+        "id": "q7",
+        "text": "What is a critical property of down(S) and up(S) operations?",
+        "options": [
+            "They can be interrupted by other processes",
+            "They are atomic instructions",
+            "They must be called in pairs",
+            "They can only be used once per process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "down(S) and up(S) are atomic instructions. No instructions can be interleaved between the test and the subsequent action."
+    },
+    {
+        "id": "q8",
+        "text": "What is the requirement for a semaphore's initial value?",
+        "options": [
+            "It must be exactly 1",
+            "It must be exactly 0",
+            "It must be non-negative",
+            "It can be any integer value"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A semaphore must be given a non-negative initial value."
+    },
+    {
+        "id": "q9",
+        "text": "What is a general semaphore?",
+        "options": [
+            "A semaphore that can take only values 0 and 1",
+            "A semaphore that can take any non-negative value",
+            "A semaphore that can take negative values",
+            "A semaphore that can take only positive values"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A general semaphore is a semaphore which can take any non-negative value."
+    },
+    {
+        "id": "q10",
+        "text": "What values can a binary semaphore take?",
+        "options": [
+            "Any non-negative integer",
+            "Only 0 and 1",
+            "Only positive integers",
+            "Only negative integers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A binary semaphore is a semaphore which can take only the values 0 and 1."
+    },
+    {
+        "id": "q11",
+        "text": "Which invariant must a semaphore S always satisfy?",
+        "options": [
+            "S < 0",
+            "S >= 0",
+            "S = 1",
+            "S <= 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A semaphore S satisfies the invariant S >= 0, meaning it can never be negative."
+    },
+    {
+        "id": "q12",
+        "text": "What does the invariant S = S₀ + #Up(S) - #Down(S) represent?",
+        "options": [
+            "The relationship between initial value and completed operations",
+            "The maximum value the semaphore can reach",
+            "The number of processes waiting on the semaphore",
+            "The time complexity of semaphore operations"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This invariant shows that the current semaphore value equals the initial value plus the number of up operations minus the number of completed down operations."
+    },
+    {
+        "id": "q13",
+        "text": "In the mutual exclusion solution using semaphores, what should be the initial value of semaphore S?",
+        "options": [
+            "0",
+            "1",
+            "2",
+            "N (number of processes)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For mutual exclusion, the semaphore S should be initialized to 1 to allow exactly one process in the critical section."
+    },
+    {
+        "id": "q14",
+        "text": "How does the semaphore solution differ from busy-wait approaches?",
+        "options": [
+            "It uses more memory",
+            "It's slower to execute",
+            "Suspended processes don't execute instructions in a loop",
+            "It can only handle two processes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Unlike busy-wait, a process suspended on a semaphore no longer executes instructions checking variables in a busy-wait loop."
+    },
+    {
+        "id": "q15",
+        "text": "In the mutual exclusion proof, what does #CS represent?",
+        "options": [
+            "Number of critical sections in the program",
+            "Number of processes in their critical sections",
+            "Number of semaphore operations completed",
+            "Number of processes waiting to enter critical sections"
+        ],
+        "correctAnswer": 1,
+        "explanation": "#CS represents the number of processes currently in their critical sections."
+    },
+    {
+        "id": "q16",
+        "text": "What invariant proves mutual exclusion in the semaphore solution?",
+        "options": [
+            "#CS + S = 0",
+            "#CS + S = 1",
+            "#CS - S = 1",
+            "#CS * S = 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The invariant #CS + S = 1 proves mutual exclusion, as it ensures #CS ≤ 1."
+    },
+    {
+        "id": "q17",
+        "text": "Why cannot the semaphore mutual exclusion solution deadlock with two processes?",
+        "options": [
+            "Because semaphores prevent all forms of deadlock",
+            "Because if both processes are suspended, it contradicts the invariant #CS + S = 1",
+            "Because the semaphore automatically resolves conflicts",
+            "Because processes alternate in using the critical section"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If both processes are suspended on down(S), then S=0 and #CS=0, which contradicts the invariant #CS + S = 1."
+    },
+    {
+        "id": "q18",
+        "text": "What ensures no individual starvation in the two-process semaphore solution?",
+        "options": [
+            "The FIFO ordering of process execution",
+            "When one process is suspended and the other exits the critical section, it will wake the suspended process",
+            "The automatic process scheduling by the operating system",
+            "The alternating execution pattern enforced by semaphores"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If P1 is suspended (S=0), P2 must be in the critical section. When P2 exits, it executes up(S) which wakes P1, the only suspended process."
+    },
+    {
+        "id": "q19",
+        "text": "What is a blocked-set semaphore?",
+        "options": [
+            "A semaphore that blocks all processes indefinitely",
+            "A semaphore where suspended processes are kept in a set and one unspecified process is awakened",
+            "A semaphore that can only be used by a fixed set of processes",
+            "A semaphore that blocks after a certain number of operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a blocked-set semaphore, suspended processes form a set, and up(S) awakens one unspecified process from this set."
+    },
+    {
+        "id": "q20",
+        "text": "How does a blocked-queue semaphore differ from a blocked-set semaphore?",
+        "options": [
+            "It can handle more processes",
+            "It's faster in execution",
+            "Suspended processes are kept in a FIFO queue and awakened in order",
+            "It uses less memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In a blocked-queue semaphore, suspended processes are kept in a FIFO queue and awakened in the same order they were suspended."
+    },
+    {
+        "id": "q21",
+        "text": "In a busy-wait semaphore, what happens in the down(S) operation?",
+        "options": [
+            "The process is immediately suspended",
+            "The process loops continuously testing S until it can decrement it",
+            "The process is added to a queue",
+            "The semaphore value is automatically decremented"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a busy-wait semaphore, the process loops continuously testing if S > 0, and when true, atomically decrements S and breaks out of the loop."
+    },
+    {
+        "id": "q22",
+        "text": "Which type of semaphore can lead to starvation?",
+        "options": [
+            "Only blocked-queue semaphores",
+            "Only binary semaphores",
+            "Busy-wait and blocked-set semaphores (for N > 2)",
+            "All types of semaphores"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Busy-wait semaphores can cause starvation, and blocked-set semaphores can cause starvation when N > 2, but blocked-queue semaphores prevent starvation."
+    },
+    {
+        "id": "q23",
+        "text": "Why is starvation impossible with blocked-queue semaphores?",
+        "options": [
+            "Because they use more memory",
+            "Because processes are awakened in FIFO order",
+            "Because they're faster than other types",
+            "Because they prevent deadlock"
+        ],
+        "correctAnswer": 1,
+        "explanation": "With blocked-queue semaphores, processes are awakened in FIFO order, so a blocked process will eventually be awakened after at most N-1 other processes."
+    },
+    {
+        "id": "q24",
+        "text": "In the Bill and Ben cafe problem, what is the synchronization requirement?",
+        "options": [
+            "Bill and Ben must work at the same speed",
+            "Bill cannot serve until Ben has made soup, and Ben cannot serve until Bill has made sandwiches",
+            "Only one person can work in the kitchen at a time",
+            "They must serve customers in a specific order"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The problem states that Bill cannot serve until Ben has made the soup and Ben cannot serve until Bill has made the sandwiches."
+    },
+    {
+        "id": "q25",
+        "text": "In the first solution to the Bill and Ben problem, what are the initial values of the semaphores?",
+        "options": [
+            "first = 1, second = 1",
+            "first = 0, second = 0",
+            "first = 1, second = 0",
+            "first = 0, second = 1"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both semaphores 'first' and 'second' are initialized to 0 in the solution."
+    },
+    {
+        "id": "q26",
+        "text": "In the Bill and Ben problem, what does Bill do in SYNCH 1 in the first solution?",
+        "options": [
+            "up(first); down(second);",
+            "down(first); up(second);",
+            "down(second); up(first);",
+            "up(second); down(first);"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the first solution, Bill executes down(first); up(second); in SYNCH 1."
+    },
+    {
+        "id": "q27",
+        "text": "What does Ben do in SYNCH 2 in the first solution to the Bill and Ben problem?",
+        "options": [
+            "down(first); up(second);",
+            "up(first); down(second);",
+            "down(second); up(first);",
+            "up(second); down(first);"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In the first solution, Ben executes up(first); down(second); in SYNCH 2."
+    },
+    {
+        "id": "q28",
+        "text": "What is the main characteristic of the Producer-Consumer problem?",
+        "options": [
+            "Multiple processes compete for the same resource",
+            "One process creates data that another process consumes",
+            "Processes must execute in a specific order",
+            "All processes must access a shared variable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The Producer-Consumer problem involves a producer process that creates data elements and consumer processes that use these data elements."
+    },
+    {
+        "id": "q29",
+        "text": "What is synchronous communication in the context of the Producer-Consumer problem?",
+        "options": [
+            "Using a buffer to store multiple data items",
+            "When producer and consumer are ready simultaneously, data is sent directly",
+            "When all processes run at the same speed",
+            "When data is sent at regular time intervals"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Synchronous communication occurs when one process is ready to send and the other ready to receive, and the data is sent immediately."
+    },
+    {
+        "id": "q30",
+        "text": "What is the purpose of a buffer in asynchronous communication?",
+        "options": [
+            "To speed up the communication process",
+            "To allow flexibility by storing data when sender and receiver are not ready simultaneously",
+            "To reduce memory usage",
+            "To prevent data corruption"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A buffer allows asynchronous communication by storing data elements, providing flexibility when sender and receiver are not ready at the same time."
+    },
+    {
+        "id": "q31",
+        "text": "In the infinite buffer Producer-Consumer solution, why is mutual exclusion not an issue initially?",
+        "options": [
+            "Because there's only one producer and one consumer",
+            "Because the buffer is infinite",
+            "Because producer only writes to tail and consumer only reads from head",
+            "Because semaphores automatically handle mutual exclusion"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Mutual exclusion is not initially an issue because the producer only writes to the tail position and the consumer only reads from the head position."
+    },
+    {
+        "id": "q32",
+        "text": "What does the invariant #E = 0 + tail - head represent in the buffer?",
+        "options": [
+            "The total buffer capacity",
+            "The number of elements currently in the buffer",
+            "The number of empty slots in the buffer",
+            "The difference between production and consumption rates"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The invariant #E = 0 + tail - head represents the number of elements currently in the buffer."
+    },
+    {
+        "id": "q33",
+        "text": "What is the initial value of the 'elements' semaphore in the infinite buffer solution?",
+        "options": [
+            "1",
+            "0",
+            "infinity",
+            "N (buffer size)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'elements' semaphore is initialized to 0 because initially there are no elements in the buffer."
+    },
+    {
+        "id": "q34",
+        "text": "What does the consumer do before accessing the buffer in the infinite buffer solution?",
+        "options": [
+            "up(elements)",
+            "down(elements)",
+            "Check if tail > head",
+            "Lock the buffer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The consumer executes down(elements) which suspends if there are no elements in the buffer."
+    },
+    {
+        "id": "q35",
+        "text": "In the circular buffer solution, how many semaphores are used?",
+        "options": [
+            "One semaphore",
+            "Two semaphores",
+            "Three semaphores",
+            "Four semaphores"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The circular buffer solution uses two semaphores: 'elements' and 'spaces'."
+    },
+    {
+        "id": "q36",
+        "text": "What is the initial value of the 'spaces' semaphore in the circular buffer solution?",
+        "options": [
+            "0",
+            "1",
+            "2",
+            "N (buffer size)"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The 'spaces' semaphore is initialized to N (buffer size) because initially all buffer slots are empty."
+    },
+    {
+        "id": "q37",
+        "text": "What does the producer do before adding an element to the circular buffer?",
+        "options": [
+            "down(elements)",
+            "down(spaces)",
+            "up(elements)",
+            "up(spaces)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The producer executes down(spaces) which suspends if the buffer is full (no empty spaces available)."
+    },
+    {
+        "id": "q38",
+        "text": "In the Dining Philosophers problem, how many philosophers are there?",
+        "options": [
+            "Three",
+            "Four",
+            "Five",
+            "Six"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Dining Philosophers problem involves five philosophers sitting around a circular table."
+    },
+    {
+        "id": "q39",
+        "text": "How many forks does a philosopher need to eat?",
+        "options": [
+            "One fork",
+            "Two forks",
+            "Three forks",
+            "All available forks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A philosopher needs two forks to eat a helping of spaghetti - the fork to his immediate right and left."
+    },
+    {
+        "id": "q40",
+        "text": "What are the synchronization requirements for the Dining Philosophers problem?",
+        "options": [
+            "Only prevent deadlock",
+            "Only ensure mutual exclusion of forks",
+            "Only prevent starvation",
+            "Mutual exclusion of forks, no deadlock, and no starvation"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The synchronization requirements are: only one philosopher at a time uses a fork, no deadlock, and no philosopher starves."
+    },
+    {
+        "id": "q41",
+        "text": "Why is philosopher[4] implemented differently from the others in the dining philosophers solution?",
+        "options": [
+            "Because there are only 4 philosophers",
+            "Because it needs to handle the wraparound from fork[4] to fork[0]",
+            "Because it's the last philosopher to start eating",
+            "Because it uses a different eating strategy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Philosopher[4] is different because it needs to use fork[0] and fork[4], handling the circular nature of the table."
+    },
+    {
+        "id": "q42",
+        "text": "In the Readers and Writers problem, what is the main constraint?",
+        "options": [
+            "Only one reader can access the database at a time",
+            "Only one writer can access the database at a time",
+            "Readers can access simultaneously, but only one writer can write with no active readers",
+            "Writers have priority over readers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Readers may access simultaneously as long as no writer writes, but only one writer at a time may write, provided there are no active readers."
+    },
+    {
+        "id": "q43",
+        "text": "What is wrong with the first Readers and Writers solution that uses only semaphore rw?",
+        "options": [
+            "It allows multiple writers simultaneously",
+            "It doesn't allow multiple readers simultaneously",
+            "It causes deadlock",
+            "It's too complex"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The first solution is over-constrained because it doesn't allow multiple readers to access the database simultaneously."
+    },
+    {
+        "id": "q44",
+        "text": "What does the variable 'nr' represent in the improved Readers and Writers solution?",
+        "options": [
+            "Number of writers currently writing",
+            "Number of readers currently reading",
+            "Number of readers waiting",
+            "Number of read operations completed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The variable 'nr' represents the number of readers currently reading the database."
+    },
+    {
+        "id": "q45",
+        "text": "When does the first reader execute down(rw) in the Readers and Writers solution?",
+        "options": [
+            "Always before reading",
+            "Only when nr == 1 (it's the first reader)",
+            "Only when nr == 0",
+            "Never, only writers use down(rw)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The first reader (when nr == 1) executes down(rw) to block writers while readers are active."
+    },
+    {
+        "id": "q46",
+        "text": "When does the last reader execute up(rw) in the Readers and Writers solution?",
+        "options": [
+            "Always after reading",
+            "Only when nr == 1",
+            "Only when nr == 0 (it was the last reader)",
+            "Never, only writers use up(rw)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The last reader (when nr becomes 0) executes up(rw) to allow writers to proceed."
+    },
+    {
+        "id": "q47",
+        "text": "Under what circumstances is the Readers and Writers solution unfair?",
+        "options": [
+            "When there are more readers than writers",
+            "When writers can be starved by a continuous stream of readers",
+            "When readers have to wait for writers",
+            "It's always fair"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The solution can be unfair to writers because a continuous stream of readers can prevent writers from ever accessing the database."
+    },
+    {
+        "id": "q48",
+        "text": "In the Sleeping Barber problem, what happens when a customer arrives and the waiting room is full?",
+        "options": [
+            "The customer waits outside the barbershop",
+            "The customer comes back later",
+            "The customer wakes the barber immediately",
+            "The customer joins a queue outside"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When the waiting room is full, the customer comes back later rather than waiting."
+    },
+    {
+        "id": "q49",
+        "text": "What does the barber do when the waiting room is empty?",
+        "options": [
+            "Closes the barbershop",
+            "Goes home",
+            "Daydreams (sleeps)",
+            "Cleans the shop"
+        ],
+        "correctAnswer": 2,
+        "explanation": "When the waiting room is empty, the barber daydreams (essentially sleeps until a customer arrives)."
+    },
+    {
+        "id": "q50",
+        "text": "What does the 'customers' semaphore represent in the Sleeping Barber solution?",
+        "options": [
+            "Total number of customers served",
+            "Number of customers currently waiting",
+            "Maximum number of customers allowed",
+            "Number of customers that have arrived"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'customers' semaphore keeps track of customers waiting for the barber's service."
+    },
+    {
+        "id": "q51",
+        "text": "What is the purpose of the 'cutting' semaphore in the Sleeping Barber problem?",
+        "options": [
+            "To control access to the scissors",
+            "To coordinate the customer-barber interaction during the haircut",
+            "To count the number of haircuts completed",
+            "To measure the time spent cutting hair"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'cutting' semaphore coordinates the customer-barber interaction, ensuring proper synchronization during the haircut process."
+    },
+    {
+        "id": "q52",
+        "text": "What does the 'barber' semaphore signify in the Sleeping Barber solution?",
+        "options": [
+            "Whether the barber is sleeping or awake",
+            "The barber's availability to start cutting hair",
+            "The number of barbers in the shop",
+            "The barber's skill level"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'barber' semaphore indicates the barber's availability to start cutting a customer's hair."
+    },
+    {
+        "id": "q53",
+        "text": "What type of relationship does the Sleeping Barber problem illustrate?",
+        "options": [
+            "Producer-Consumer relationship",
+            "Reader-Writer relationship",
+            "Client-Server relationship",
+            "Master-Slave relationship"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The Sleeping Barber problem illustrates a client-server relationship where customers (clients) request services from the barber (server)."
+    },
+    {
+        "id": "q54",
+        "text": "What is a rendezvous in the context of the Sleeping Barber problem?",
+        "options": [
+            "A scheduled appointment time",
+            "A point where customer and barber wait for each other to arrive",
+            "The physical meeting place in the barbershop",
+            "A payment transaction"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A rendezvous is a synchronization point where the customer and barber each wait for the other to arrive before proceeding."
+    },
+    {
+        "id": "q55",
+        "text": "What is the main difference between blocked-set and blocked-queue semaphores in terms of fairness?",
+        "options": [
+            "Blocked-set is always fair, blocked-queue can cause starvation",
+            "Both are equally fair",
+            "Blocked-queue guarantees FIFO fairness, blocked-set can cause starvation for N > 2",
+            "Neither provides any fairness guarantees"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Blocked-queue semaphores guarantee FIFO fairness by awakening processes in the order they were suspended, while blocked-set semaphores can cause starvation when N > 2."
+    },
+    {
+        "id": "q56",
+        "text": "In semaphore implementations, what does 'atomic' mean for the down(S) and up(S) operations?",
+        "options": [
+            "They use atomic data types",
+            "They cannot be interrupted or interleaved with other instructions",
+            "They operate on single bits",
+            "They are the smallest possible operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Atomic means that down(S) and up(S) operations cannot be interrupted or interleaved with other instructions between the test and the subsequent action."
+    },
+    {
+        "id": "q57",
+        "text": "What is the key advantage of using semaphores over busy-waiting solutions?",
+        "options": [
+            "Semaphores are faster to execute",
+            "Semaphores use less memory",
+            "Suspended processes don't waste CPU cycles in busy-wait loops",
+            "Semaphores prevent all types of deadlock"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The key advantage is that suspended processes don't waste CPU cycles continuously checking variables in busy-wait loops."
+    },
+    {
+        "id": "q58",
+        "text": "In the Producer-Consumer problem with circular buffer, what prevents the producer from overwriting unread data?",
+        "options": [
+            "The 'elements' semaphore",
+            "The 'spaces' semaphore",
+            "The head and tail pointers",
+            "The buffer size limit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'spaces' semaphore prevents the producer from adding data when the buffer is full, thus preventing overwriting of unread data."
+    },
+    {
+        "id": "q59",
+        "text": "What is the main purpose of the 'mutex' semaphore in concurrent programming?",
+        "options": [
+            "To count resources",
+            "To provide mutual exclusion for critical sections",
+            "To signal between processes",
+            "To implement producer-consumer relationships"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'mutex' (mutual exclusion) semaphore is primarily used to provide mutual exclusion for critical sections, ensuring only one process accesses shared resources at a time."
+    },
+    {
+        "id": "q60",
+        "text": "Which semaphore definition provides the strongest guarantee against starvation?",
+        "options": [
+            "Busy-wait semaphore",
+            "Blocked-set semaphore",
+            "Blocked-queue semaphore",
+            "Binary semaphore"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Blocked-queue semaphore provides the strongest guarantee against starvation because it maintains a FIFO queue of suspended processes, ensuring that each process will eventually be awakened in the order it was suspended."
+    }
+]

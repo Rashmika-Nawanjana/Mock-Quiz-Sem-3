@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the fundamental requirement for a program to be executed?",
+        "options": [
+            "It must be compiled into machine code",
+            "It must be brought from disk into memory and placed within a process",
+            "It must be stored in cache memory",
+            "It must be loaded into virtual memory only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to the lecture, a program must be brought from disk into memory and placed within a process for it to be run."
+    },
+    {
+        "id": "q2",
+        "text": "Which storage types can the CPU access directly?",
+        "options": [
+            "Main memory and disk storage",
+            "Cache and disk storage",
+            "Main memory and registers only",
+            "Virtual memory and cache"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The CPU can only access main memory and registers directly. All other storage requires indirect access."
+    },
+    {
+        "id": "q3",
+        "text": "What is the typical access time for CPU registers compared to main memory?",
+        "options": [
+            "Registers take many cycles, memory takes one cycle",
+            "Both take the same amount of time",
+            "Registers take one CPU clock or less, memory can take many cycles",
+            "Memory is always faster than registers"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Register access is done in one CPU clock or less, while main memory access can take many cycles, causing a stall."
+    },
+    {
+        "id": "q4",
+        "text": "What sits between main memory and CPU registers to improve performance?",
+        "options": [
+            "Virtual memory",
+            "Cache",
+            "Disk storage",
+            "Translation lookaside buffer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Cache sits between main memory and CPU registers to reduce the performance gap."
+    },
+    {
+        "id": "q5",
+        "text": "How is memory protection implemented using base and limit registers?",
+        "options": [
+            "Base register contains the largest address, limit contains the smallest",
+            "Base register contains the smallest physical address, limit contains the range of logical addresses",
+            "Both registers contain the same value",
+            "Base register is for reading, limit register is for writing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The base register contains the value of the smallest physical address, and the limit register contains the range of logical addresses."
+    },
+    {
+        "id": "q6",
+        "text": "What must the CPU check for every memory access in user mode?",
+        "options": [
+            "That the access is within the cache",
+            "That the access is between base and limit for that user",
+            "That the access is to virtual memory only",
+            "That the access is to read-only memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The CPU must check every memory access generated in user mode to ensure it is between base and limit for that user."
+    },
+    {
+        "id": "q7",
+        "text": "When does compile-time address binding occur?",
+        "options": [
+            "When the process is loaded into memory",
+            "When the process is executed",
+            "When memory location is known a priori and absolute code can be generated",
+            "When the process moves during execution"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Compile-time binding occurs when memory location is known in advance, allowing absolute code to be generated."
+    },
+    {
+        "id": "q8",
+        "text": "What type of code must be generated if memory location is not known at compile time?",
+        "options": [
+            "Absolute code",
+            "Relocatable code",
+            "Static code",
+            "Fixed code"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If memory location is not known at compile time, relocatable code must be generated for load-time binding."
+    },
+    {
+        "id": "q9",
+        "text": "When does execution-time address binding require hardware support?",
+        "options": [
+            "Never",
+            "Always",
+            "When the process can be moved during execution from one memory segment to another",
+            "Only during compilation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Execution-time binding requires hardware support when the process can be moved during execution, needing address maps like base and limit registers."
+    },
+    {
+        "id": "q10",
+        "text": "What is a logical address?",
+        "options": [
+            "Address seen by the memory unit",
+            "Address generated by the CPU, also referred to as virtual address",
+            "Physical location in memory",
+            "Address used by the disk controller"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A logical address is generated by the CPU and is also referred to as a virtual address."
+    },
+    {
+        "id": "q11",
+        "text": "When are logical and physical addresses the same?",
+        "options": [
+            "Always",
+            "Never",
+            "In compile-time and load-time address-binding schemes",
+            "Only in execution-time address-binding schemes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Logical and physical addresses are the same in compile-time and load-time binding schemes, but differ in execution-time binding."
+    },
+    {
+        "id": "q12",
+        "text": "What is the Memory Management Unit (MMU)?",
+        "options": [
+            "Software that manages memory allocation",
+            "Hardware device that maps virtual to physical address at run time",
+            "A type of cache memory",
+            "The main memory controller"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The MMU is a hardware device that maps virtual to physical addresses at run time."
+    },
+    {
+        "id": "q13",
+        "text": "In the simple MMU scheme, what is the base register called?",
+        "options": [
+            "Base register",
+            "Limit register",
+            "Relocation register",
+            "Translation register"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the simple MMU scheme, the base register is called the relocation register."
+    },
+    {
+        "id": "q14",
+        "text": "How does the relocation register work?",
+        "options": [
+            "It stores the size of the process",
+            "Its value is added to every address generated by a user process when sent to memory",
+            "It prevents memory access",
+            "It stores the process ID"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The value in the relocation register is added to every address generated by a user process at the time it is sent to memory."
+    },
+    {
+        "id": "q15",
+        "text": "What is dynamic loading?",
+        "options": [
+            "Loading the entire program into memory at once",
+            "A routine is not loaded until it is called",
+            "Loading programs from cache",
+            "Loading programs into virtual memory only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In dynamic loading, a routine is not loaded until it is called, providing better memory-space utilization."
+    },
+    {
+        "id": "q16",
+        "text": "What is the main advantage of dynamic loading?",
+        "options": [
+            "Faster program execution",
+            "Better memory-space utilization; unused routines are never loaded",
+            "Reduced compilation time",
+            "Simpler program structure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Dynamic loading provides better memory-space utilization because unused routines are never loaded into memory."
+    },
+    {
+        "id": "q17",
+        "text": "What is static linking?",
+        "options": [
+            "Linking postponed until execution time",
+            "System libraries and program code combined by the loader into the binary program image",
+            "Linking that occurs during runtime",
+            "Linking that uses stubs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Static linking involves system libraries and program code being combined by the loader into the binary program image."
+    },
+    {
+        "id": "q18",
+        "text": "In dynamic linking, what is a stub?",
+        "options": [
+            "A complete library routine",
+            "Small piece of code used to locate the appropriate memory-resident library routine",
+            "A type of memory protection",
+            "A cache entry"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A stub is a small piece of code used to locate the appropriate memory-resident library routine in dynamic linking."
+    },
+    {
+        "id": "q19",
+        "text": "How is main memory typically partitioned in contiguous allocation?",
+        "options": [
+            "All memory for user processes only",
+            "Resident OS in high memory, user processes in low memory",
+            "Resident OS in low memory with interrupt vector, user processes in high memory",
+            "Random allocation throughout memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Main memory is usually partitioned with the resident OS in low memory (with interrupt vector) and user processes in high memory."
+    },
+    {
+        "id": "q20",
+        "text": "What is a hole in the context of variable partition allocation?",
+        "options": [
+            "A corrupted memory location",
+            "A block of available memory",
+            "A protected memory area",
+            "A cache miss"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A hole is a block of available memory in variable partition allocation systems."
+    },
+    {
+        "id": "q21",
+        "text": "Which dynamic storage allocation strategy allocates the first hole that is big enough?",
+        "options": [
+            "Best-fit",
+            "Worst-fit",
+            "First-fit",
+            "Next-fit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "First-fit allocates the first hole that is big enough to satisfy the request."
+    },
+    {
+        "id": "q22",
+        "text": "Which allocation strategy produces the smallest leftover hole?",
+        "options": [
+            "First-fit",
+            "Best-fit",
+            "Worst-fit",
+            "Random-fit"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Best-fit produces the smallest leftover hole by allocating the smallest hole that is big enough."
+    },
+    {
+        "id": "q23",
+        "text": "What is external fragmentation?",
+        "options": [
+            "Memory internal to a partition that is not being used",
+            "Total memory space exists to satisfy a request, but it is not contiguous",
+            "Memory that is corrupted",
+            "Memory that cannot be accessed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "External fragmentation occurs when total memory space exists to satisfy a request, but it is not contiguous."
+    },
+    {
+        "id": "q24",
+        "text": "What is internal fragmentation?",
+        "options": [
+            "Total memory space is not contiguous",
+            "Allocated memory may be slightly larger than requested memory",
+            "Memory that is shared between processes",
+            "Memory that is swapped to disk"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Internal fragmentation occurs when allocated memory may be slightly larger than requested memory, with the unused portion internal to the partition."
+    },
+    {
+        "id": "q25",
+        "text": "According to the 50-percent rule, what fraction of memory may be unusable due to fragmentation?",
+        "options": [
+            "1/4",
+            "1/3",
+            "1/2",
+            "2/3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to first-fit analysis and the 50-percent rule, 1/3 of memory may be unusable due to fragmentation."
+    },
+    {
+        "id": "q26",
+        "text": "What is compaction in memory management?",
+        "options": [
+            "Reducing the size of programs",
+            "Shuffling memory contents to place all free memory together in one large block",
+            "Compressing data in memory",
+            "Removing unused programs from memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Compaction involves shuffling memory contents to place all free memory together in one large block to reduce external fragmentation."
+    },
+    {
+        "id": "q27",
+        "text": "What are the fixed-sized blocks of physical memory called in paging?",
+        "options": [
+            "Pages",
+            "Segments",
+            "Frames",
+            "Blocks"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In paging, physical memory is divided into fixed-sized blocks called frames."
+    },
+    {
+        "id": "q28",
+        "text": "What are the fixed-sized blocks of logical memory called in paging?",
+        "options": [
+            "Frames",
+            "Pages",
+            "Segments",
+            "Partitions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In paging, logical memory is divided into fixed-sized blocks called pages."
+    },
+    {
+        "id": "q29",
+        "text": "What is the typical size range for page/frame sizes?",
+        "options": [
+            "64 bytes to 1 KB",
+            "512 bytes to 16 MB",
+            "1 KB to 4 KB only",
+            "16 MB to 1 GB"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Page sizes are typically a power of 2, between 512 bytes and 16 MB."
+    },
+    {
+        "id": "q30",
+        "text": "How is a logical address divided in paging?",
+        "options": [
+            "Base address and offset",
+            "Segment number and offset",
+            "Page number and page offset",
+            "Frame number and frame offset"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In paging, a logical address is divided into a page number (p) and page offset (d)."
+    },
+    {
+        "id": "q31",
+        "text": "If the logical address space is 2^m and page size is 2^n, how many bits are used for the page number?",
+        "options": [
+            "n bits",
+            "m bits",
+            "m-n bits",
+            "m+n bits"
+        ],
+        "correctAnswer": 2,
+        "explanation": "For a logical address space of 2^m and page size 2^n, the page number uses m-n bits and page offset uses n bits."
+    },
+    {
+        "id": "q32",
+        "text": "In the paging example with page size = 2,048 bytes and process size = 72,766 bytes, what is the internal fragmentation?",
+        "options": [
+            "1,086 bytes",
+            "962 bytes",
+            "2,048 bytes",
+            "1,024 bytes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "With 35 pages + 1,086 bytes, internal fragmentation = 2,048 - 1,086 = 962 bytes."
+    },
+    {
+        "id": "q33",
+        "text": "What is the average internal fragmentation for paging?",
+        "options": [
+            "1 frame",
+            "1/4 frame size",
+            "1/2 frame size",
+            "1 frame - 1 byte"
+        ],
+        "correctAnswer": 2,
+        "explanation": "On average, internal fragmentation in paging equals 1/2 frame size."
+    },
+    {
+        "id": "q34",
+        "text": "Where is the page table kept?",
+        "options": [
+            "In CPU registers",
+            "In cache memory",
+            "In main memory",
+            "On disk"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The page table is kept in main memory, with PTBR pointing to it."
+    },
+    {
+        "id": "q35",
+        "text": "What does PTBR stand for?",
+        "options": [
+            "Page Table Base Register",
+            "Page Translation Buffer Register",
+            "Physical Table Base Register",
+            "Process Table Base Register"
+        ],
+        "correctAnswer": 0,
+        "explanation": "PTBR stands for Page-Table Base Register, which points to the page table."
+    },
+    {
+        "id": "q36",
+        "text": "What is the main problem with keeping the page table in main memory?",
+        "options": [
+            "It takes too much space",
+            "Every data/instruction access requires two memory accesses",
+            "It cannot be protected",
+            "It is too slow to update"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The main problem is that every data/instruction access requires two memory accesses: one for the page table and one for the data/instruction."
+    },
+    {
+        "id": "q37",
+        "text": "What does TLB stand for?",
+        "options": [
+            "Translation Lookaside Buffer",
+            "Table Lookup Buffer",
+            "Translation Logic Block",
+            "Table Location Buffer"
+        ],
+        "correctAnswer": 0,
+        "explanation": "TLB stands for Translation Lookaside Buffer, a special fast-lookup hardware cache."
+    },
+    {
+        "id": "q38",
+        "text": "What is the typical size range for TLBs?",
+        "options": [
+            "32 to 128 entries",
+            "64 to 1,024 entries",
+            "1,024 to 4,096 entries",
+            "4,096 to 16,384 entries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TLBs are typically small, ranging from 64 to 1,024 entries."
+    },
+    {
+        "id": "q39",
+        "text": "With an 80% TLB hit ratio and 10 ns memory access time, what is the Effective Access Time?",
+        "options": [
+            "10 ns",
+            "12 ns",
+            "15 ns",
+            "20 ns"
+        ],
+        "correctAnswer": 1,
+        "explanation": "EAT = 0.80 × 10 + 0.20 × 20 = 12 nanoseconds."
+    },
+    {
+        "id": "q40",
+        "text": "What does a valid bit in a page table entry indicate?",
+        "options": [
+            "The page is in cache",
+            "The page is in the process' logical address space and is a legal page",
+            "The page is read-only",
+            "The page is shared"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A valid bit indicates that the associated page is in the process' logical address space and is thus a legal page."
+    },
+    {
+        "id": "q41",
+        "text": "What type of code can be shared among processes?",
+        "options": [
+            "Any code",
+            "Read-only (reentrant) code",
+            "Process-specific code",
+            "Interrupt handlers only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Read-only (reentrant) code can be shared among processes, such as text editors, compilers, and window systems."
+    },
+    {
+        "id": "q42",
+        "text": "For a 32-bit logical address space with 4KB pages, how many page table entries are needed?",
+        "options": [
+            "1,024 entries",
+            "4,096 entries",
+            "1 million entries",
+            "4 million entries"
+        ],
+        "correctAnswer": 2,
+        "explanation": "With 32-bit addresses and 4KB (2^12) pages, you need 2^32 / 2^12 = 1 million entries."
+    },
+    {
+        "id": "q43",
+        "text": "If each page table entry is 4 bytes, how much memory is needed for the page table in the above scenario?",
+        "options": [
+            "4 KB",
+            "1 MB",
+            "4 MB",
+            "16 MB"
+        ],
+        "correctAnswer": 2,
+        "explanation": "1 million entries × 4 bytes each = 4 MB of physical address space for the page table alone."
+    },
+    {
+        "id": "q44",
+        "text": "In a two-level paging scheme with 32-bit addresses and 4K pages, how is the 20-bit page number divided?",
+        "options": [
+            "15-bit page number, 5-bit offset",
+            "10-bit page number, 10-bit offset",
+            "12-bit page number, 8-bit offset",
+            "8-bit page number, 12-bit offset"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 20-bit page number is divided into a 10-bit page number and a 10-bit page offset for two-level paging."
+    },
+    {
+        "id": "q45",
+        "text": "What is p1 in the two-level paging address format p1|p2|d?",
+        "options": [
+            "Index into the inner page table",
+            "Index into the outer page table",
+            "Page offset",
+            "Frame number"
+        ],
+        "correctAnswer": 1,
+        "explanation": "p1 is an index into the outer page table in the two-level paging scheme."
+    },
+    {
+        "id": "q46",
+        "text": "Why is two-level paging insufficient for 64-bit address spaces?",
+        "options": [
+            "Too slow",
+            "The outer page table would still be too large",
+            "Not enough memory",
+            "Hardware limitations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Even with two-level paging, the outer page table would have 2^42 entries or 2^44 bytes, which is still too large."
+    },
+    {
+        "id": "q47",
+        "text": "What is the main idea behind hashed page tables?",
+        "options": [
+            "Store pages in hash order",
+            "The virtual page number is hashed into a page table",
+            "Use hash functions for encryption",
+            "Compress page table entries"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In hashed page tables, the virtual page number is hashed into a page table containing chains of elements."
+    },
+    {
+        "id": "q48",
+        "text": "What does each element in a hashed page table contain?",
+        "options": [
+            "Only the frame number",
+            "Only the virtual page number",
+            "Virtual page number, mapped page frame value, and pointer to next element",
+            "Only a pointer to the next element"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Each element contains the virtual page number, the value of the mapped page frame, and a pointer to the next element."
+    },
+    {
+        "id": "q49",
+        "text": "What is the main advantage of inverted page tables?",
+        "options": [
+            "Faster access time",
+            "Decreases memory needed to store each page table",
+            "Better security",
+            "Easier implementation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Inverted page tables decrease the memory needed to store each page table but increase search time."
+    },
+    {
+        "id": "q50",
+        "text": "What is swapping?",
+        "options": [
+            "Moving data between cache and memory",
+            "A process can be swapped temporarily out of memory to a backing store",
+            "Moving pages between physical frames",
+            "Exchanging data between processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Swapping allows a process to be temporarily moved out of memory to a backing store and then brought back for continued execution."
+    },
+    {
+        "id": "q51",
+        "text": "What is the backing store in swapping?",
+        "options": [
+            "Main memory",
+            "CPU cache",
+            "Fast disk large enough to accommodate copies of all memory images",
+            "Virtual memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Backing store is a fast disk large enough to accommodate copies of all memory images for all users."
+    },
+    {
+        "id": "q52",
+        "text": "For a 100MB process with 50MB/sec transfer rate, what is the swap out time?",
+        "options": [
+            "1000 ms",
+            "2000 ms",
+            "4000 ms",
+            "500 ms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Swap out time = 100MB ÷ 50MB/sec = 2000 ms (2 seconds)."
+    },
+    {
+        "id": "q53",
+        "text": "Why is standard swapping not used in modern operating systems?",
+        "options": [
+            "Too complex to implement",
+            "Hardware limitations",
+            "Context switch time can be very high",
+            "Security concerns"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Standard swapping can result in very high context switch times (e.g., 4 seconds for a 100MB process), so modified versions are used instead."
+    },
+    {
+        "id": "q54",
+        "text": "Why don't mobile systems typically support swapping?",
+        "options": [
+            "Insufficient CPU power",
+            "Flash memory has small space, limited write cycles, and poor throughput",
+            "Battery life concerns",
+            "Security restrictions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Mobile systems use flash memory which has limited space, limited write cycles, and poor throughput between flash memory and CPU."
+    },
+    {
+        "id": "q55",
+        "text": "What does iOS do when memory is low?",
+        "options": [
+            "Crashes the system",
+            "Asks apps to voluntarily relinquish allocated memory",
+            "Automatically swaps to disk",
+            "Restarts all applications"
+        ],
+        "correctAnswer": 1,
+        "explanation": "iOS asks apps to voluntarily relinquish allocated memory and may terminate apps that fail to comply."
+    },
+    {
+        "id": "q56",
+        "text": "What is the IA-32 architecture?",
+        "options": [
+            "64-bit Intel architecture",
+            "32-bit Pentium CPU architecture",
+            "ARM mobile architecture",
+            "SPARC architecture"
+        ],
+        "correctAnswer": 1,
+        "explanation": "IA-32 refers to the 32-bit Pentium CPU architecture from Intel."
+    },
+    {
+        "id": "q57",
+        "text": "How many segments can each process have in IA-32 architecture?",
+        "options": [
+            "Up to 8K segments",
+            "Up to 16K segments",
+            "Up to 32K segments",
+            "Unlimited segments"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Each process can have up to 16K segments in IA-32 architecture, divided into two partitions of 8K each."
+    },
+    {
+        "id": "q58",
+        "text": "What are the possible page sizes in Intel IA-32 architecture?",
+        "options": [
+            "4 KB only",
+            "4 KB or 2 MB",
+            "4 KB or 4 MB",
+            "2 MB or 4 MB"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Intel IA-32 architecture supports page sizes of 4 KB or 4 MB."
+    },
+    {
+        "id": "q59",
+        "text": "What is the addressing limit that led Intel to create Page Address Extension (PAE)?",
+        "options": [
+            "16-bit address limits",
+            "32-bit address limits",
+            "64-bit address limits",
+            "8-bit address limits"
+        ],
+        "correctAnswer": 1,
+        "explanation": "32-bit address limits led Intel to create PAE, allowing 32-bit applications access to more than 4GB of memory space."
+    },
+    {
+        "id": "q60",
+        "text": "In ARM architecture, what are the two types of TLBs used?",
+        "options": [
+            "Data TLB and instruction TLB only",
+            "Outer level micro TLBs and inner main TLB",
+            "Primary and secondary TLBs",
+            "User TLB and kernel TLB"
+        ],
+        "correctAnswer": 1,
+        "explanation": "ARM architecture uses two levels of TLBs: outer level has two micro TLBs (one data, one instruction) and inner has a single main TLB."
+    }
+]

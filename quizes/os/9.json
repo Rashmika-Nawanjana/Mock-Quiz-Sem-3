@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary goal of multiprogramming in CPU scheduling?",
+        "options": [
+            "To reduce memory usage",
+            "To maximize CPU utilization",
+            "To minimize power consumption",
+            "To increase disk storage capacity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Multiprogramming aims to maximize CPU utilization by keeping the CPU busy with multiple processes, switching between them when one process waits for I/O."
+    },
+    {
+        "id": "q2",
+        "text": "In the CPU-I/O Burst Cycle, what follows a CPU burst?",
+        "options": [
+            "Another CPU burst",
+            "Process termination",
+            "An I/O burst",
+            "Memory allocation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The CPU-I/O Burst Cycle consists of alternating CPU execution and I/O wait periods, so a CPU burst is followed by an I/O burst."
+    },
+    {
+        "id": "q3",
+        "text": "According to the histogram of CPU-burst times, what characterizes the distribution?",
+        "options": [
+            "Equal distribution of short and long bursts",
+            "Large number of short bursts, small number of longer bursts",
+            "Small number of short bursts, large number of longer bursts",
+            "Only medium-length bursts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The CPU burst distribution typically shows a large number of short bursts and a small number of longer bursts."
+    },
+    {
+        "id": "q4",
+        "text": "Which of the following situations requires a scheduling decision?",
+        "options": [
+            "Process switches from running to waiting state",
+            "Process switches from running to ready state",
+            "Process switches from waiting to ready state",
+            "All of the above"
+        ],
+        "correctAnswer": 3,
+        "explanation": "CPU scheduling decisions occur in all four situations: running to waiting, running to ready, waiting to ready, and process termination."
+    },
+    {
+        "id": "q5",
+        "text": "For which situations is there no choice in terms of scheduling?",
+        "options": [
+            "Situations 1 and 4 (running to waiting, and termination)",
+            "Situations 2 and 3 (running to ready, and waiting to ready)",
+            "Only situation 1 (running to waiting)",
+            "Only situation 4 (termination)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "For situations 1 (running to waiting) and 4 (termination), there is no choice - a new process must be selected if one exists in the ready queue."
+    },
+    {
+        "id": "q6",
+        "text": "When does nonpreemptive scheduling take place?",
+        "options": [
+            "Only under circumstances 1 and 4",
+            "Only under circumstances 2 and 3",
+            "Under all circumstances",
+            "Never in modern systems"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Nonpreemptive scheduling occurs only when a process switches from running to waiting (1) or terminates (4)."
+    },
+    {
+        "id": "q7",
+        "text": "Which type of scheduling do virtually all modern operating systems use?",
+        "options": [
+            "Nonpreemptive scheduling",
+            "Preemptive scheduling",
+            "First-come, first-served only",
+            "Priority scheduling only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Virtually all modern operating systems including Windows, MacOS, Linux, and UNIX use preemptive scheduling algorithms."
+    },
+    {
+        "id": "q8",
+        "text": "What potential problem can preemptive scheduling cause?",
+        "options": [
+            "Increased memory usage",
+            "Race conditions when data are shared",
+            "Slower CPU performance",
+            "Reduced disk space"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Preemptive scheduling can result in race conditions when data are shared among several processes, as one process may be preempted while updating shared data."
+    },
+    {
+        "id": "q9",
+        "text": "What does the dispatcher module do?",
+        "options": [
+            "Selects which process to run next",
+            "Gives control of the CPU to the selected process",
+            "Manages memory allocation",
+            "Handles I/O operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The dispatcher module gives control of the CPU to the process selected by the CPU scheduler through context switching, mode switching, and jumping to the proper program location."
+    },
+    {
+        "id": "q10",
+        "text": "What is dispatch latency?",
+        "options": [
+            "Time to select the next process",
+            "Time for a process to complete",
+            "Time for dispatcher to stop one process and start another",
+            "Time for I/O operations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Dispatch latency is the time it takes for the dispatcher to stop one process and start another running."
+    },
+    {
+        "id": "q11",
+        "text": "Which scheduling criterion measures the percentage of time the CPU is busy?",
+        "options": [
+            "Throughput",
+            "CPU utilization",
+            "Turnaround time",
+            "Response time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CPU utilization measures keeping the CPU as busy as possible, representing the percentage of time the CPU is actively working."
+    },
+    {
+        "id": "q12",
+        "text": "What does throughput measure in CPU scheduling?",
+        "options": [
+            "CPU utilization percentage",
+            "Number of processes completed per time unit",
+            "Time to execute one process",
+            "Time spent waiting in queue"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Throughput measures the number of processes that complete their execution per time unit."
+    },
+    {
+        "id": "q13",
+        "text": "What is turnaround time?",
+        "options": [
+            "Time spent waiting in ready queue",
+            "Time from request submission to first response",
+            "Amount of time to execute a particular process",
+            "Time for context switching"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Turnaround time is the amount of time to execute a particular process from start to completion."
+    },
+    {
+        "id": "q14",
+        "text": "What does waiting time specifically measure?",
+        "options": [
+            "Total execution time",
+            "Time spent in ready queue",
+            "Time for I/O operations",
+            "Time for memory allocation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Waiting time is the amount of time a process has been waiting in the ready queue."
+    },
+    {
+        "id": "q15",
+        "text": "What is response time in CPU scheduling?",
+        "options": [
+            "Time to complete a process",
+            "Time from request submission until first response is produced",
+            "Time spent in waiting state",
+            "Time for CPU burst"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Response time is the amount of time from when a request was submitted until the first response is produced."
+    },
+    {
+        "id": "q16",
+        "text": "In First-Come, First-Served (FCFS) scheduling, if processes P1(24), P2(3), P3(3) arrive in order P1, P2, P3, what is the average waiting time?",
+        "options": [
+            "3",
+            "17",
+            "27",
+            "51"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Waiting times: P1=0, P2=24, P3=27. Average = (0+24+27)/3 = 17."
+    },
+    {
+        "id": "q17",
+        "text": "What is the convoy effect in FCFS scheduling?",
+        "options": [
+            "Multiple processes running simultaneously",
+            "Short processes waiting behind long processes",
+            "Processes sharing resources",
+            "High priority processes being delayed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The convoy effect occurs when short processes get stuck waiting behind long processes, similar to cars behind a slow truck."
+    },
+    {
+        "id": "q18",
+        "text": "What makes Shortest-Job-First (SJF) scheduling optimal?",
+        "options": [
+            "It maximizes throughput",
+            "It gives minimum average waiting time",
+            "It provides best response time",
+            "It uses least memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SJF is optimal because it gives minimum average waiting time for a given set of processes."
+    },
+    {
+        "id": "q19",
+        "text": "What is the main difficulty with SJF scheduling?",
+        "options": [
+            "High context switch overhead",
+            "Knowing the length of the next CPU request",
+            "Memory management issues",
+            "I/O coordination problems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The main difficulty with SJF is knowing the length of the next CPU request in advance."
+    },
+    {
+        "id": "q20",
+        "text": "What is the preemptive version of SJF called?",
+        "options": [
+            "Preemptive shortest job",
+            "Shortest-remaining-time-first",
+            "Priority scheduling",
+            "Round robin"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The preemptive version of SJF is called shortest-remaining-time-first."
+    },
+    {
+        "id": "q21",
+        "text": "In the exponential averaging formula for predicting CPU burst length, what does α represent?",
+        "options": [
+            "Previous CPU burst length",
+            "Predicted next CPU burst",
+            "Control parameter (0 ≤ α ≤ 1)",
+            "Number of processes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "α is a control parameter where 0 ≤ α ≤ 1 that determines the weight given to recent vs. historical CPU burst information."
+    },
+    {
+        "id": "q22",
+        "text": "When α = 0 in exponential averaging, what happens?",
+        "options": [
+            "Only recent history counts",
+            "Recent history does not count",
+            "All history is weighted equally",
+            "No prediction is made"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When α = 0, τn+1 = τn, meaning recent history does not count and only the initial prediction matters."
+    },
+    {
+        "id": "q23",
+        "text": "When α = 1 in exponential averaging, what happens?",
+        "options": [
+            "Historical data dominates",
+            "Only the actual last CPU burst counts",
+            "No prediction is possible",
+            "All bursts are weighted equally"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When α = 1, τn+1 = tn, meaning only the actual last CPU burst counts for prediction."
+    },
+    {
+        "id": "q24",
+        "text": "In Round Robin (RR) scheduling, what happens after a process uses its time quantum?",
+        "options": [
+            "Process terminates",
+            "Process is preempted and added to end of ready queue",
+            "Process continues running",
+            "Process goes to blocked state"
+        ],
+        "correctAnswer": 1,
+        "explanation": "After using its time quantum, the process is preempted and added to the end of the ready queue."
+    },
+    {
+        "id": "q25",
+        "text": "In Round Robin scheduling, if there are n processes and time quantum is q, what is the maximum wait time for any process?",
+        "options": [
+            "n * q",
+            "(n-1) * q",
+            "q",
+            "n + q"
+        ],
+        "correctAnswer": 1,
+        "explanation": "No process waits more than (n-1)q time units in Round Robin scheduling."
+    },
+    {
+        "id": "q26",
+        "text": "What happens to Round Robin performance when time quantum q becomes very large?",
+        "options": [
+            "Becomes more efficient",
+            "Approaches FIFO behavior",
+            "Reduces context switching",
+            "Both B and C"
+        ],
+        "correctAnswer": 3,
+        "explanation": "When q becomes very large, Round Robin approaches FIFO behavior and reduces context switching overhead."
+    },
+    {
+        "id": "q27",
+        "text": "What is the typical range for time quantum in Round Robin scheduling?",
+        "options": [
+            "1-10 microseconds",
+            "10-100 milliseconds",
+            "1-10 seconds",
+            "100-1000 milliseconds"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Time quantum usually ranges from 10 milliseconds to 100 milliseconds."
+    },
+    {
+        "id": "q28",
+        "text": "In priority scheduling, what does a smaller integer typically represent?",
+        "options": [
+            "Lower priority",
+            "Higher priority",
+            "Medium priority",
+            "No priority"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In priority scheduling, smaller integer typically means higher priority."
+    },
+    {
+        "id": "q29",
+        "text": "What is the main problem with priority scheduling?",
+        "options": [
+            "High overhead",
+            "Starvation of low priority processes",
+            "Memory fragmentation",
+            "Poor response time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The main problem is starvation - low priority processes may never execute."
+    },
+    {
+        "id": "q30",
+        "text": "What is the solution to starvation in priority scheduling?",
+        "options": [
+            "Reduce time quantum",
+            "Aging - increase priority over time",
+            "Use round robin instead",
+            "Eliminate low priority processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Aging solves starvation by gradually increasing the priority of processes as time progresses."
+    },
+    {
+        "id": "q31",
+        "text": "How can SJF be viewed in terms of priority scheduling?",
+        "options": [
+            "SJF is unrelated to priority scheduling",
+            "SJF is priority scheduling where priority is inverse of predicted next CPU burst",
+            "SJF has higher priority than priority scheduling",
+            "SJF replaces priority scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SJF is priority scheduling where priority is the inverse of predicted next CPU burst time."
+    },
+    {
+        "id": "q32",
+        "text": "In Priority Scheduling with Round-Robin, how are processes with the same priority handled?",
+        "options": [
+            "FCFS order",
+            "Random selection",
+            "Round-robin scheduling",
+            "Shortest job first"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Processes with the same priority run using round-robin scheduling among themselves."
+    },
+    {
+        "id": "q33",
+        "text": "What characterizes a multilevel queue scheduling system?",
+        "options": [
+            "Single queue for all processes",
+            "Separate queues for each priority level",
+            "Dynamic queue assignment",
+            "No queue structure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Multilevel queue scheduling has separate queues for each priority level."
+    },
+    {
+        "id": "q34",
+        "text": "In multilevel queue scheduling, which queue is scheduled first?",
+        "options": [
+            "The longest queue",
+            "The shortest queue",
+            "The highest-priority queue",
+            "Random queue selection"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The process in the highest-priority queue is scheduled first."
+    },
+    {
+        "id": "q35",
+        "text": "What is the key difference between multilevel queue and multilevel feedback queue?",
+        "options": [
+            "Number of queues",
+            "Scheduling algorithms used",
+            "Processes can move between queues in feedback queue",
+            "Priority assignments"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In multilevel feedback queue, processes can move between various queues, unlike multilevel queue where assignment is fixed."
+    },
+    {
+        "id": "q36",
+        "text": "How can aging be implemented?",
+        "options": [
+            "Using single queue",
+            "Using multilevel feedback queue",
+            "Using round robin only",
+            "Using FCFS only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Aging can be implemented using multilevel feedback queue by moving processes up in priority over time."
+    },
+    {
+        "id": "q37",
+        "text": "In the multilevel feedback queue example, what happens to a process that doesn't finish in Q0?",
+        "options": [
+            "It terminates",
+            "It moves to Q1",
+            "It returns to Q0",
+            "It goes to blocked state"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A process that doesn't finish in Q0 (8ms quantum) is moved to queue Q1."
+    },
+    {
+        "id": "q38",
+        "text": "What type of threads does the operating system actually schedule?",
+        "options": [
+            "User-level threads",
+            "Kernel-level threads",
+            "Both user and kernel threads equally",
+            "Process threads only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "It is kernel-level threads, not processes, that are being scheduled by the operating system."
+    },
+    {
+        "id": "q39",
+        "text": "What does PCS stand for in thread scheduling?",
+        "options": [
+            "Process Control System",
+            "Process-contention scope",
+            "Priority Control Scheduling",
+            "Processor Control System"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PCS stands for process-contention scope, where scheduling competition is within the process."
+    },
+    {
+        "id": "q40",
+        "text": "What does SCS stand for in thread scheduling?",
+        "options": [
+            "System Control Scheduling",
+            "System-contention scope",
+            "Scheduling Control System",
+            "System CPU Scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SCS stands for system-contention scope, where competition for CPU takes place among all threads in the system."
+    },
+    {
+        "id": "q41",
+        "text": "Which systems use only SCS scheduling?",
+        "options": [
+            "Many-to-many model systems",
+            "Many-to-one model systems",
+            "One-to-one model systems like Windows, Solaris, Linux",
+            "All thread systems"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Systems using the one-to-one model, such as Windows XP, Solaris, and Linux, schedule threads using only SCS."
+    },
+    {
+        "id": "q42",
+        "text": "What does PTHREAD_SCOPE_PROCESS specify?",
+        "options": [
+            "System-contention scope scheduling",
+            "Process-contention scope scheduling",
+            "Global scheduling",
+            "No specific scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PTHREAD_SCOPE_PROCESS schedules threads using PCS (process-contention scope) scheduling."
+    },
+    {
+        "id": "q43",
+        "text": "Which pthread scope do Linux and macOS only allow?",
+        "options": [
+            "PTHREAD_SCOPE_PROCESS",
+            "PTHREAD_SCOPE_SYSTEM",
+            "Both scopes equally",
+            "No specific scope"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Linux and macOS only allow PTHREAD_SCOPE_SYSTEM."
+    },
+    {
+        "id": "q44",
+        "text": "What does SMP stand for in multiprocessor scheduling?",
+        "options": [
+            "Single Multiprocessor Programming",
+            "Symmetric multiprocessing",
+            "System Memory Processing",
+            "Scheduled Multiprocessor Programming"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SMP stands for symmetric multiprocessing, where each processor is self-scheduling."
+    },
+    {
+        "id": "q45",
+        "text": "What is the recent trend in processor design mentioned in the lecture?",
+        "options": [
+            "Single core processors",
+            "Multiple processor cores on same physical chip",
+            "Separate processors for each task",
+            "Elimination of cores"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The recent trend is to place multiple processor cores on the same physical chip."
+    },
+    {
+        "id": "q46",
+        "text": "What does CMT stand for?",
+        "options": [
+            "Central Memory Threading",
+            "Chip-multithreading",
+            "Central Multiprocessor Threading",
+            "Core Memory Threading"
+        ],
+        "correctAnswer": 1,
+        "explanation": "CMT stands for chip-multithreading, which assigns each core multiple hardware threads."
+    },
+    {
+        "id": "q47",
+        "text": "On a quad-core system with 2 hardware threads per core, how many logical processors does the OS see?",
+        "options": [
+            "4",
+            "6",
+            "8",
+            "16"
+        ],
+        "correctAnswer": 2,
+        "explanation": "4 cores × 2 hardware threads per core = 8 logical processors."
+    },
+    {
+        "id": "q48",
+        "text": "What is push migration in load balancing?",
+        "options": [
+            "Idle processors pull tasks from busy processors",
+            "Periodic task pushes tasks from overloaded CPU to other CPUs",
+            "Processes migrate automatically",
+            "Memory migration between processors"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Push migration involves a periodic task that checks load and pushes tasks from overloaded CPUs to other CPUs."
+    },
+    {
+        "id": "q49",
+        "text": "What is pull migration in load balancing?",
+        "options": [
+            "Overloaded processors push tasks away",
+            "Idle processors pull waiting tasks from busy processors",
+            "Automatic task distribution",
+            "Memory balancing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pull migration occurs when idle processors pull waiting tasks from busy processors."
+    },
+    {
+        "id": "q50",
+        "text": "What is processor affinity?",
+        "options": [
+            "Processor preference for certain tasks",
+            "Thread having preference for a processor due to cache contents",
+            "Processor speed matching",
+            "Memory allocation preference"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Processor affinity refers to a thread having preference for a processor because the cache contains its memory accesses."
+    },
+    {
+        "id": "q51",
+        "text": "What is the difference between hard and soft real-time systems?",
+        "options": [
+            "Hard systems are faster",
+            "Hard systems must always meet deadlines; soft systems can occasionally miss them",
+            "Soft systems are more reliable",
+            "No significant difference"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Hard real-time systems must always meet timing requirements or system failure occurs; soft real-time systems can occasionally miss deadlines without catastrophic failure."
+    },
+    {
+        "id": "q52",
+        "text": "What characterizes safety-critical systems?",
+        "options": [
+            "High performance requirements",
+            "Low cost requirements",
+            "Missing deadlines can cause serious loss",
+            "Simple functionality"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Safety-critical systems are those where missing deadlines can cause serious loss or catastrophic results."
+    },
+    {
+        "id": "q53",
+        "text": "What is event latency?",
+        "options": [
+            "Time for process to complete",
+            "Time from when event occurs to when it is serviced",
+            "Time for context switching",
+            "Time for memory allocation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Event latency is the amount of time that elapses from when an event occurs to when it is serviced."
+    },
+    {
+        "id": "q54",
+        "text": "What is interrupt latency?",
+        "options": [
+            "Time between interrupts",
+            "Time from arrival of interrupt to start of service routine",
+            "Time for interrupt to complete",
+            "Time for process scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Interrupt latency is the time from arrival of interrupt to start of routine that services the interrupt."
+    },
+    {
+        "id": "q55",
+        "text": "In Rate Monotonic Scheduling, how are priorities assigned?",
+        "options": [
+            "Based on process importance",
+            "Based on inverse of period (shorter periods = higher priority)",
+            "Based on CPU burst time",
+            "Random assignment"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In Rate Monotonic Scheduling, priority is assigned based on the inverse of the period - shorter periods get higher priority."
+    },
+    {
+        "id": "q56",
+        "text": "In Earliest Deadline First (EDF) scheduling, how are priorities assigned?",
+        "options": [
+            "Based on period length",
+            "Based on CPU requirements",
+            "Based on deadlines (earlier deadline = higher priority)",
+            "Based on arrival time"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In EDF scheduling, priorities are assigned according to deadlines - the earlier the deadline, the higher the priority."
+    },
+    {
+        "id": "q57",
+        "text": "In Proportional Share Scheduling, if an application receives N shares out of T total shares, what fraction of processor time does it get?",
+        "options": [
+            "N * T",
+            "N + T",
+            "N / T",
+            "T / N"
+        ],
+        "correctAnswer": 2,
+        "explanation": "An application receiving N shares out of T total shares gets N/T of the total processor time."
+    },
+    {
+        "id": "q58",
+        "text": "What does SCHED_FIFO provide in POSIX real-time scheduling?",
+        "options": [
+            "Round-robin scheduling with time slicing",
+            "FCFS strategy with FIFO queue, no time-slicing for equal priority",
+            "Priority-based scheduling only",
+            "Shortest job first scheduling"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SCHED_FIFO schedules threads using a FCFS strategy with a FIFO queue and no time-slicing for threads of equal priority."
+    },
+    {
+        "id": "q59",
+        "text": "How does SCHED_RR differ from SCHED_FIFO?",
+        "options": [
+            "Different priority assignment",
+            "Different queue structure",
+            "SCHED_RR includes time-slicing for threads of equal priority",
+            "SCHED_RR is non-preemptive"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SCHED_RR is similar to SCHED_FIFO except that time-slicing occurs for threads of equal priority."
+    },
+    {
+        "id": "q60",
+        "text": "For a periodic real-time process, what is the relationship between processing time t, deadline d, and period p?",
+        "options": [
+            "t ≤ d ≤ p",
+            "0 ≤ t ≤ d ≤ p",
+            "p ≤ d ≤ t",
+            "d ≤ t ≤ p"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For periodic real-time processes, the relationship is 0 ≤ t ≤ d ≤ p, where t is processing time, d is deadline, and p is period."
+    }
+]

@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What are the two main types of secondary storage devices mentioned for modern computers?",
+        "options": [
+            "Magnetic tape and optical disks",
+            "Hard disk drives (HDDs) and nonvolatile memory (NVM) devices",
+            "RAM drives and flash drives",
+            "CD-ROM and DVD drives"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states that the bulk of secondary storage for modern computers consists of hard disk drives (HDDs) and nonvolatile memory (NVM) devices."
+    },
+    {
+        "id": "q2",
+        "text": "What is the typical rotation speed range for HDDs?",
+        "options": [
+            "30 to 120 times per second",
+            "60 to 250 times per second",
+            "100 to 500 times per second",
+            "250 to 1000 times per second"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to the lecture, HDD drives rotate at 60 to 250 times per second."
+    },
+    {
+        "id": "q3",
+        "text": "What does positioning time consist of in HDDs?",
+        "options": [
+            "Only seek time",
+            "Only rotational latency",
+            "Seek time and rotational latency",
+            "Transfer time and controller overhead"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Positioning time (random-access time) is the time to move disk arm to desired cylinder (seek time) and time for desired sector to rotate under the disk head (rotational latency)."
+    },
+    {
+        "id": "q4",
+        "text": "What is a head crash in HDD terminology?",
+        "options": [
+            "When the disk stops spinning",
+            "When data becomes corrupted",
+            "When the disk head makes contact with the disk surface",
+            "When the controller fails"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture defines head crash as the result from disk head making contact with the disk surface, noting 'That's bad'."
+    },
+    {
+        "id": "q5",
+        "text": "What are the common HDD platter sizes mentioned?",
+        "options": [
+            "1.5\", 2.5\", and 5.25\"",
+            "2.5\", 3.5\", and 5.25\"",
+            "3.5\", 2.5\", and 1.8\"",
+            "1.8\", 2.5\", and 4.0\""
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture states that platters commonly come in 3.5\", 2.5\", and 1.8\" sizes."
+    },
+    {
+        "id": "q6",
+        "text": "What is the typical capacity range for modern HDDs mentioned?",
+        "options": [
+            "10GB to 1TB per drive",
+            "30GB to 3TB per drive",
+            "100GB to 5TB per drive",
+            "1TB to 10TB per drive"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to the lecture, HDDs range from 30GB to 3TB per drive."
+    },
+    {
+        "id": "q7",
+        "text": "What is the theoretical transfer rate mentioned for HDDs?",
+        "options": [
+            "3 Gb/sec",
+            "6 Gb/sec",
+            "9 Gb/sec",
+            "12 Gb/sec"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states the theoretical transfer rate is 6 Gb/sec, while the effective transfer rate is 1Gb/sec."
+    },
+    {
+        "id": "q8",
+        "text": "What is the common seek time for desktop drives?",
+        "options": [
+            "3ms",
+            "6ms",
+            "9ms",
+            "12ms"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture mentions seek time from 3ms to 12ms, with 9ms common for desktop drives."
+    },
+    {
+        "id": "q9",
+        "text": "How is average seek time typically calculated?",
+        "options": [
+            "Based on 1/4 of tracks",
+            "Based on 1/3 of tracks",
+            "Based on 1/2 of tracks",
+            "Based on all tracks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states that average seek time is measured or calculated based on 1/3 of tracks."
+    },
+    {
+        "id": "q10",
+        "text": "What is the formula for calculating latency based on spindle speed?",
+        "options": [
+            "RPM / 60",
+            "60 / RPM",
+            "RPM * 60",
+            "60 * RPM"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture shows the formula: Latency = 1 / (RPM / 60) = 60 / RPM."
+    },
+    {
+        "id": "q11",
+        "text": "What is the access latency for the fastest disk mentioned?",
+        "options": [
+            "3ms",
+            "5ms",
+            "9ms",
+            "14.56ms"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For the fastest disk: 3ms (seek) + 2ms (average latency) = 5ms access latency."
+    },
+    {
+        "id": "q12",
+        "text": "What was the capacity of the first commercial disk drive (IBM Model 350) in 1956?",
+        "options": [
+            "5M (7 bit) characters",
+            "10M (8 bit) characters",
+            "50M (7 bit) characters",
+            "100M (8 bit) characters"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The IBM Model 350 disk storage system had 5M (7 bit) characters capacity with 50 x 24\" platters."
+    },
+    {
+        "id": "q13",
+        "text": "What is another name for solid-state disks when they are disk-drive like?",
+        "options": [
+            "Flash drives",
+            "SSDs",
+            "NVM drives",
+            "NAND drives"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states that if NVM devices are disk-drive like, then they are called solid-state disks (SSDs)."
+    },
+    {
+        "id": "q14",
+        "text": "Which characteristic do NVM devices NOT have compared to HDDs?",
+        "options": [
+            "More reliable",
+            "More expensive per MB",
+            "Seek time and rotational latency",
+            "Faster performance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture explicitly states that NVM devices have 'No moving parts, so no seek time or rotational latency'."
+    },
+    {
+        "id": "q15",
+        "text": "What is a key challenge with NVM devices regarding data writing?",
+        "options": [
+            "They can only write sequentially",
+            "They can't overwrite in place",
+            "They require special controllers",
+            "They have slow write speeds"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NVM devices are read and written in 'page' increments but can't overwrite in place - they must first be erased."
+    },
+    {
+        "id": "q16",
+        "text": "How many times can NVM blocks typically be erased before wearing out?",
+        "options": [
+            "~10,000 times",
+            "~50,000 times",
+            "~100,000 times",
+            "~500,000 times"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture states that NVM blocks can only be erased a limited number of times before worn out - approximately 100,000 times."
+    },
+    {
+        "id": "q17",
+        "text": "What does DWPD stand for in NVM terminology?",
+        "options": [
+            "Data Writes Per Day",
+            "Drive Writes Per Day",
+            "Disk Writes Per Day",
+            "Daily Write Performance Data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DWPD stands for Drive Writes Per Day, used to measure NVM device lifespan."
+    },
+    {
+        "id": "q18",
+        "text": "What does the flash translation layer (FTL) table do?",
+        "options": [
+            "Manages power consumption",
+            "Tracks which logical blocks are valid",
+            "Controls write speed",
+            "Monitors temperature"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The controller maintains a flash translation layer (FTL) table to track which logical blocks are valid."
+    },
+    {
+        "id": "q19",
+        "text": "What is the purpose of wear leveling in NVM devices?",
+        "options": [
+            "To increase write speed",
+            "To reduce power consumption",
+            "To write equally to all cells",
+            "To improve read performance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Each cell has a lifespan, so wear leveling is needed to write equally to all cells."
+    },
+    {
+        "id": "q20",
+        "text": "Why are RAM drives used despite computers having buffering and caching via RAM?",
+        "options": [
+            "They are faster than regular RAM",
+            "They are under user control",
+            "They use less power",
+            "They are more reliable"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture explains that while caches/buffers are allocated/managed by programmer, OS, hardware, RAM drives are under user control."
+    },
+    {
+        "id": "q21",
+        "text": "What is the most common disk attachment interface mentioned?",
+        "options": [
+            "ATA",
+            "SATA",
+            "USB",
+            "FC (Fibre Channel)"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states that 'Most common is SATA' among the various bus interfaces available."
+    },
+    {
+        "id": "q22",
+        "text": "What is NVMe designed for?",
+        "options": [
+            "Traditional hard drives",
+            "Network storage",
+            "Fast interface for NVM",
+            "Optical drives"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Because NVM is much faster than HDD, a new fast interface for NVM called NVM express (NVMe) was developed."
+    },
+    {
+        "id": "q23",
+        "text": "Where is Sector 0 located on a disk?",
+        "options": [
+            "First sector of the innermost cylinder",
+            "First sector of the first track on the outermost cylinder",
+            "Last sector of the outermost cylinder",
+            "Center of the disk"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states that Sector 0 is the first sector of the first track on the outermost cylinder."
+    },
+    {
+        "id": "q24",
+        "text": "What is the primary goal of HDD scheduling?",
+        "options": [
+            "Maximize storage capacity",
+            "Minimize power consumption",
+            "Minimize seek time",
+            "Maximize data transfer rate"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The lecture emphasizes that the OS is responsible for using hardware efficiently, which for disk drives means minimizing seek time."
+    },
+    {
+        "id": "q25",
+        "text": "What is disk bandwidth defined as?",
+        "options": [
+            "Maximum data transfer rate",
+            "Total number of bytes transferred divided by total time between first request and completion of last transfer",
+            "Number of I/O operations per second",
+            "Average seek time plus rotational latency"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Disk bandwidth is defined as the total number of bytes transferred, divided by the total time between the first request for service and the completion of the last transfer."
+    },
+    {
+        "id": "q26",
+        "text": "In the FCFS scheduling example with queue (98, 183, 37, 122, 14, 124, 65, 67) and head at 53, what is the total head movement?",
+        "options": [
+            "208 cylinders",
+            "640 cylinders",
+            "320 cylinders",
+            "480 cylinders"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture illustration shows that FCFS results in total head movement of 640 cylinders for this example."
+    },
+    {
+        "id": "q27",
+        "text": "What is the SCAN algorithm also known as?",
+        "options": [
+            "First-come-first-served algorithm",
+            "Elevator algorithm",
+            "Shortest-seek-time-first algorithm",
+            "Round-robin algorithm"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The SCAN algorithm is sometimes called the elevator algorithm."
+    },
+    {
+        "id": "q28",
+        "text": "In the SCAN example, what is the total head movement?",
+        "options": [
+            "640 cylinders",
+            "208 cylinders",
+            "320 cylinders",
+            "480 cylinders"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture illustration shows that SCAN results in total head movement of 208 cylinders."
+    },
+    {
+        "id": "q29",
+        "text": "What is the main advantage of C-SCAN over SCAN?",
+        "options": [
+            "Faster overall performance",
+            "Less total head movement",
+            "More uniform wait time",
+            "Better for sequential access"
+        ],
+        "correctAnswer": 2,
+        "explanation": "C-SCAN provides a more uniform wait time than SCAN."
+    },
+    {
+        "id": "q30",
+        "text": "How does C-SCAN treat the cylinders?",
+        "options": [
+            "As a linear array",
+            "As a circular list that wraps around",
+            "As independent units",
+            "As a hierarchical structure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "C-SCAN treats the cylinders as a circular list that wraps around from the last cylinder to the first one."
+    },
+    {
+        "id": "q31",
+        "text": "Which scheduling algorithms perform better for systems with heavy disk load?",
+        "options": [
+            "FCFS and SSTF",
+            "SCAN and C-SCAN",
+            "Only SSTF",
+            "Only FCFS"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SCAN and C-SCAN perform better for systems that place a heavy load on the disk, with less starvation."
+    },
+    {
+        "id": "q32",
+        "text": "What does the Linux deadline scheduler maintain to avoid starvation?",
+        "options": [
+            "Single priority queue",
+            "Two queues: one for reads, one for writes",
+            "Four queues: 2 read and 2 write queues",
+            "Three queues for different priorities"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Linux deadline scheduler implements four queues: 2 x read and 2 x write queues to avoid starvation."
+    },
+    {
+        "id": "q33",
+        "text": "What is the default configured age for requests in Linux deadline scheduler?",
+        "options": [
+            "100ms",
+            "250ms",
+            "500ms",
+            "1000ms"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The deadline scheduler checks if any requests in FCFS are older than configured age (default 500ms)."
+    },
+    {
+        "id": "q34",
+        "text": "What type of I/O is NVM best at compared to HDD?",
+        "options": [
+            "Sequential I/O",
+            "Random I/O",
+            "Large block I/O",
+            "Cached I/O"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture states that NVM is best at random I/O, while HDD is best at sequential I/O."
+    },
+    {
+        "id": "q35",
+        "text": "What can decrease NVM's performance advantage?",
+        "options": [
+            "High temperature",
+            "Power consumption",
+            "Write amplification",
+            "Read caching"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Write amplification (one write, causing garbage collection and many read/writes) can decrease the performance advantage of NVM."
+    },
+    {
+        "id": "q36",
+        "text": "What is a common error detection method used in networking?",
+        "options": [
+            "Parity bit",
+            "Checksum",
+            "Cyclic redundancy check (CRC)",
+            "Error-correction code (ECC)"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Another error-detection method common in networking is cyclic redundancy check (CRC) which uses hash function to detect multiple-bit errors."
+    },
+    {
+        "id": "q37",
+        "text": "What can Error-correction code (ECC) do that basic error detection cannot?",
+        "options": [
+            "Detect more types of errors",
+            "Work faster",
+            "Correct some errors, not just detect them",
+            "Use less storage space"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Error-correction code (ECC) not only detects, but can correct some errors (soft errors correctable, hard errors detected but not corrected)."
+    },
+    {
+        "id": "q38",
+        "text": "What is low-level formatting also known as?",
+        "options": [
+            "Logical formatting",
+            "Physical formatting",
+            "File system creation",
+            "Partitioning"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Low-level formatting, or physical formatting, divides a disk into sectors that the disk controller can read and write."
+    },
+    {
+        "id": "q39",
+        "text": "What is the usual sector size for data storage?",
+        "options": [
+            "256 bytes",
+            "512 bytes",
+            "1024 bytes",
+            "2048 bytes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Each sector usually holds 512 bytes of data but can be selectable."
+    },
+    {
+        "id": "q40",
+        "text": "What is logical formatting also called?",
+        "options": [
+            "Physical formatting",
+            "Making a file system",
+            "Disk partitioning",
+            "Sector creation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Logical formatting is also called 'making a file system'."
+    },
+    {
+        "id": "q41",
+        "text": "What is checked at mount time for file systems?",
+        "options": [
+            "Available disk space",
+            "File system consistency",
+            "User permissions",
+            "Network connectivity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "At mount time, file system consistency is checked - is all metadata correct?"
+    },
+    {
+        "id": "q42",
+        "text": "What is swap space used for?",
+        "options": [
+            "Temporary file storage",
+            "Moving entire processes or pages from DRAM to secondary storage",
+            "System backup",
+            "Boot process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Swap space is used for moving entire processes (swapping), or pages (paging), from DRAM to secondary storage when DRAM is not large enough."
+    },
+    {
+        "id": "q43",
+        "text": "What are the three ways computers access storage?",
+        "options": [
+            "Local, remote, and cached",
+            "Host-attached, network-attached, and cloud",
+            "Primary, secondary, and tertiary",
+            "Read-only, write-only, and read-write"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Computers access storage in three ways: host-attached, network-attached, and cloud."
+    },
+    {
+        "id": "q44",
+        "text": "What type of architecture does Fibre Channel use?",
+        "options": [
+            "Parallel architecture",
+            "Serial architecture",
+            "Mesh architecture",
+            "Ring architecture"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Fibre Channel is a high-speed serial architecture using fibre or copper cables."
+    },
+    {
+        "id": "q45",
+        "text": "What are common protocols for Network-Attached Storage (NAS)?",
+        "options": [
+            "HTTP and FTP",
+            "NFS and CIFS",
+            "TCP and UDP",
+            "SSH and SFTP"
+        ],
+        "correctAnswer": 1,
+        "explanation": "NFS and CIFS are common protocols for NAS implementation."
+    },
+    {
+        "id": "q46",
+        "text": "What protocol does iSCSI use?",
+        "options": [
+            "Uses Fibre Channel over IP network",
+            "Uses IP network to carry the SCSI protocol",
+            "Uses USB over network",
+            "Uses parallel SCSI over network"
+        ],
+        "correctAnswer": 1,
+        "explanation": "iSCSI protocol uses IP network to carry the SCSI protocol for remotely attaching to devices (blocks)."
+    },
+    {
+        "id": "q47",
+        "text": "How does cloud storage differ from NAS in terms of access?",
+        "options": [
+            "Cloud storage uses faster protocols",
+            "NAS is API based, while cloud storage presents as file systems",
+            "Cloud storage is API based, while NAS presents as file systems",
+            "They use the same access methods"
+        ],
+        "correctAnswer": 2,
+        "explanation": "NAS is presented as just another file system, while cloud storage is API based, with programs using the APIs to provide access."
+    },
+    {
+        "id": "q48",
+        "text": "What does RAID stand for?",
+        "options": [
+            "Redundant Array of Independent Disks",
+            "Redundant Array of Inexpensive Disks",
+            "Reliable Array of Independent Disks",
+            "Rapid Access of Independent Disks"
+        ],
+        "correctAnswer": 1,
+        "explanation": "RAID stands for redundant array of inexpensive disks, providing reliability via redundancy."
+    },
+    {
+        "id": "q49",
+        "text": "If mirrored disks fail independently with 1,300,000 hour MTTF and 10 hour MTTR, what is the mean time to data loss?",
+        "options": [
+            "57,000 years",
+            "5,700 years",
+            "570,000 years",
+            "5.7 million years"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Mean time to data loss = 100,000² / (2 * 10) = 500 * 10⁶ hours, or 57,000 years."
+    },
+    {
+        "id": "q50",
+        "text": "What does RAID 1 implement?",
+        "options": [
+            "Disk striping",
+            "Parity checking",
+            "Mirroring or shadowing",
+            "Block interleaving"
+        ],
+        "correctAnswer": 2,
+        "explanation": "RAID 1 implements mirroring or shadowing, keeping duplicate of each disk."
+    },
+    {
+        "id": "q51",
+        "text": "Which RAID levels use block interleaved parity?",
+        "options": [
+            "RAID 0, 1, 2",
+            "RAID 1, 2, 3",
+            "RAID 4, 5, 6",
+            "RAID 5, 6, 7"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Block interleaved parity is used by RAID 4, 5, 6 and uses much less redundancy."
+    },
+    {
+        "id": "q52",
+        "text": "What is the purpose of hot-spare disks in RAID systems?",
+        "options": [
+            "To improve read performance",
+            "To automatically replace failed disks and rebuild data",
+            "To provide additional storage capacity",
+            "To reduce power consumption"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A small number of hot-spare disks are left unallocated, automatically replacing a failed disk and having data rebuilt onto them."
+    },
+    {
+        "id": "q53",
+        "text": "What is a snapshot in storage terminology?",
+        "options": [
+            "A backup of the entire system",
+            "A view of file system before a set of changes take place",
+            "A compressed version of data",
+            "A temporary storage area"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Snapshot is a view of file system before a set of changes take place (i.e. at a point in time)."
+    },
+    {
+        "id": "q54",
+        "text": "What can replication be used for?",
+        "options": [
+            "Only performance improvement",
+            "Only data compression",
+            "Redundancy and disaster recovery",
+            "Only power efficiency"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Replication is automatic duplication of writes between separate sites for redundancy and disaster recovery."
+    },
+    {
+        "id": "q55",
+        "text": "What does ZFS add to detect data corruption?",
+        "options": [
+            "Additional RAID levels",
+            "Checksums of all data and metadata",
+            "Extra parity bits",
+            "Duplicate storage"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Solaris ZFS adds checksums of all data and metadata to detect and correct data and metadata corruption."
+    },
+    {
+        "id": "q56",
+        "text": "How does ZFS handle storage allocation differently from traditional systems?",
+        "options": [
+            "Uses fixed partitions",
+            "Uses volumes and partitions",
+            "Removes volumes and partitions, using pools",
+            "Uses only physical disks"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ZFS removes volumes, partitions - disks are allocated in pools, and filesystems with a pool share that pool."
+    },
+    {
+        "id": "q57",
+        "text": "What is the main characteristic of object storage?",
+        "options": [
+            "Hierarchical directory structure",
+            "File-system based navigation",
+            "No directory structures, computer-oriented",
+            "User-friendly interface"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Object storage has no way to navigate the pool to find objects (no directory structures), it's computer-oriented, not user-oriented."
+    },
+    {
+        "id": "q58",
+        "text": "What is the typical sequence for using object storage?",
+        "options": [
+            "Create directory, create file, access file",
+            "Mount volume, create file, delete file",
+            "Create object, receive ID, access via ID, delete via ID",
+            "Open connection, transfer data, close connection"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Typical sequence: Create an object within the pool and receive an object ID, Access object via that ID, Delete object via that ID."
+    },
+    {
+        "id": "q59",
+        "text": "How does object storage management software like HDFS and Ceph provide protection?",
+        "options": [
+            "By using RAID arrays",
+            "By storing N copies across N systems",
+            "By using error-correction codes",
+            "By creating backup tapes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Object storage management software determines where to store objects and manages protection typically by storing N copies, across N systems, in the object storage cluster."
+    },
+    {
+        "id": "q60",
+        "text": "Which characteristics best describe object storage systems?",
+        "options": [
+            "Vertically scalable and structured",
+            "Horizontally scalable and structured",
+            "Vertically scalable, content addressable, and unstructured",
+            "Horizontally scalable, content addressable, and unstructured"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Object storage systems are described as horizontally scalable, content addressable, and unstructured."
+    }
+]

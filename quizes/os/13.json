@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "Which of the following is NOT mentioned as a major component of operating system design and operation?",
+        "options": [
+            "I/O management",
+            "Process scheduling",
+            "Memory management", 
+            "Performance management"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to the lecture, I/O management is specifically identified as a major component of operating system design and operation, along with performance management. Process scheduling and memory management are not mentioned in this context."
+    },
+    {
+        "id": "q2", 
+        "text": "What is the primary function of device drivers in an I/O system?",
+        "options": [
+            "To increase the speed of I/O operations",
+            "To encapsulate device details and present uniform device-access interface",
+            "To manage memory allocation for devices",
+            "To handle network communications"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Device drivers encapsulate device details and present uniform device-access interface to I/O subsystem, hiding the complexity of individual devices from the operating system."
+    },
+    {
+        "id": "q3",
+        "text": "In I/O hardware terminology, what is a port?",
+        "options": [
+            "A network communication endpoint",
+            "A connection point for device",
+            "A type of bus architecture",
+            "A memory storage location"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A port is defined as a connection point for device in the I/O hardware architecture."
+    },
+    {
+        "id": "q4",
+        "text": "Which bus type is mentioned as common in PCs and servers?",
+        "options": [
+            "ISA bus",
+            "PCI bus",
+            "AGP bus",
+            "EISA bus"
+        ],
+        "correctAnswer": 1,
+        "explanation": "PCI bus is specifically mentioned as common in PCs and servers, with PCI Express (PCIe) as its modern variant."
+    },
+    {
+        "id": "q5",
+        "text": "What is Serial-attached SCSI (SAS) commonly used for?",
+        "options": [
+            "Network interfaces",
+            "Graphics cards",
+            "Disk interface",
+            "Memory modules"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Serial-attached SCSI (SAS) is mentioned as a common disk interface in the lecture."
+    },
+    {
+        "id": "q6",
+        "text": "A controller (host adapter) contains all of the following EXCEPT:",
+        "options": [
+            "Processor",
+            "Microcode",
+            "Private memory",
+            "Power supply unit"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The controller contains processor, microcode, private memory, and bus controller, but power supply unit is not mentioned as a component."
+    },
+    {
+        "id": "q7",
+        "text": "What is Fibre Channel (FC) described as?",
+        "options": [
+            "A simple cable connection",
+            "A complex controller, usually separate circuit board",
+            "A type of memory interface",
+            "A wireless communication protocol"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Fibre channel (FC) is described as a complex controller, usually separate circuit board (host-bus adapter, HBA) plugging into bus."
+    },
+    {
+        "id": "q8",
+        "text": "Which of the following is NOT typically found in device registers?",
+        "options": [
+            "Data-in register",
+            "Status register", 
+            "Control register",
+            "Cache register"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Device registers typically include data-in register, data-out register, status register, and control register. Cache register is not mentioned."
+    },
+    {
+        "id": "q9",
+        "text": "How many bytes do device registers typically contain?",
+        "options": [
+            "1-4 bytes",
+            "8-16 bytes",
+            "32-64 bytes",
+            "128-256 bytes"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Device registers are typically 1-4 bytes, or FIFO buffer according to the lecture."
+    },
+    {
+        "id": "q10",
+        "text": "In memory-mapped I/O, device data and command registers are:",
+        "options": [
+            "Stored in separate memory chips",
+            "Mapped to processor address space",
+            "Handled only by the CPU",
+            "Isolated from the main system"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In memory-mapped I/O, device data and command registers are mapped to processor address space, especially useful for large address spaces like graphics."
+    },
+    {
+        "id": "q11",
+        "text": "What is the first step in the polling process for each byte of I/O?",
+        "options": [
+            "Host sets command-ready bit",
+            "Read busy bit from status register until 0",
+            "Controller sets busy bit",
+            "Host copies data into data-out register"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The first step in polling is to read busy bit from status register until 0, ensuring the device is ready for the next operation."
+    },
+    {
+        "id": "q12",
+        "text": "What is the main disadvantage of polling when the device is slow?",
+        "options": [
+            "It increases power consumption",
+            "It is inefficient due to busy-wait cycle",
+            "It causes data corruption",
+            "It requires special hardware"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Polling is inefficient if device is slow because of the busy-wait cycle, where CPU wastes time waiting for the device."
+    },
+    {
+        "id": "q13",
+        "text": "How many instruction cycles can polling happen in?",
+        "options": [
+            "1 cycle",
+            "2 cycles", 
+            "3 cycles",
+            "4 cycles"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Polling can happen in 3 instruction cycles: read status, logical-and to extract status bit, branch if not zero."
+    },
+    {
+        "id": "q14",
+        "text": "What triggers the CPU interrupt-request line?",
+        "options": [
+            "Memory allocation",
+            "Process scheduling",
+            "I/O device",
+            "System timer only"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The CPU interrupt-request line is triggered by I/O device, which is checked by processor after each instruction."
+    },
+    {
+        "id": "q15",
+        "text": "What is the purpose of an interrupt vector?",
+        "options": [
+            "To store interrupt data",
+            "To dispatch interrupt to correct handler",
+            "To count the number of interrupts",
+            "To prevent interrupts from occurring"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Interrupt vector is used to dispatch interrupt to correct handler, ensuring the right code handles each type of interrupt."
+    },
+    {
+        "id": "q16",
+        "text": "Which type of interrupts cannot be ignored or delayed?",
+        "options": [
+            "Maskable interrupts",
+            "Nonmaskable interrupts", 
+            "Timer interrupts",
+            "Software interrupts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Some interrupts are nonmaskable, meaning they cannot be ignored or delayed, unlike maskable interrupts."
+    },
+    {
+        "id": "q17",
+        "text": "What happens when more than one device shares the same interrupt number?",
+        "options": [
+            "System crash occurs",
+            "Interrupt chaining is used",
+            "Only the first device works",
+            "Interrupts are disabled"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Interrupt chaining is used when more than one device shares the same interrupt number, allowing multiple devices to use the same interrupt line."
+    },
+    {
+        "id": "q18",
+        "text": "Besides I/O operations, the interrupt mechanism is also used for:",
+        "options": [
+            "Memory allocation only",
+            "Process creation only",
+            "Exceptions and system calls",
+            "File system operations only"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The interrupt mechanism is also used for exceptions (like hardware errors) and system calls (via trap to trigger kernel execution)."
+    },
+    {
+        "id": "q19",
+        "text": "According to the lecture, how many interrupts did a quiet macOS desktop generate over 10 seconds?",
+        "options": [
+            "2,300 interrupts",
+            "23,000 interrupts",
+            "230,000 interrupts", 
+            "2,300,000 interrupts"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A quiet macOS desktop generated 23,000 interrupts over 10 seconds, demonstrating the high frequency of interrupt handling even in relatively inactive systems."
+    },
+    {
+        "id": "q20",
+        "text": "What is the main purpose of Direct Memory Access (DMA)?",
+        "options": [
+            "To increase CPU speed",
+            "To avoid programmed I/O for large data movement",
+            "To reduce memory usage",
+            "To improve graphics performance"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DMA is used to avoid programmed I/O (one byte at a time) for large data movement, making data transfers much more efficient."
+    },
+    {
+        "id": "q21",
+        "text": "What does DMA require to function?",
+        "options": [
+            "Additional CPU cores",
+            "DMA controller",
+            "Extra memory modules",
+            "Special operating system"
+        ],
+        "correctAnswer": 1,
+        "explanation": "DMA requires a DMA controller to manage the direct data transfers between I/O device and memory."
+    },
+    {
+        "id": "q22",
+        "text": "In DMA operation, what information does the OS write into the DMA command block?",
+        "options": [
+            "Only source address",
+            "Only destination address", 
+            "Source and destination addresses, read/write mode, and count of bytes",
+            "Only the count of bytes"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The OS writes DMA command block into memory containing source and destination addresses, read or write mode, and count of bytes."
+    },
+    {
+        "id": "q23",
+        "text": "What is 'cycle stealing' in the context of DMA?",
+        "options": [
+            "DMA controller grabs bus from CPU",
+            "CPU steals cycles from DMA",
+            "Memory cycles are lost",
+            "Bus cycles are duplicated"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Cycle stealing refers to the DMA controller grabbing the bus from CPU (bus mastering), but it's still much more efficient than programmed I/O."
+    },
+    {
+        "id": "q24",
+        "text": "What is DVMA?",
+        "options": [
+            "Direct Virtual Memory Access",
+            "Dual Virtual Memory Architecture",
+            "Dynamic Virtual Memory Allocation",
+            "Distributed Virtual Memory Access"
+        ],
+        "correctAnswer": 0,
+        "explanation": "DVMA (Direct Virtual Memory Access) is a version of DMA that is aware of virtual addresses and can be even more efficient."
+    },
+    {
+        "id": "q25",
+        "text": "What is the main function of the device-driver layer?",
+        "options": [
+            "To increase device speed",
+            "To hide differences among I/O controllers from kernel",
+            "To manage device power consumption",
+            "To provide network connectivity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The device-driver layer hides differences among I/O controllers from kernel, providing a uniform interface."
+    },
+    {
+        "id": "q26",
+        "text": "Which of the following is NOT mentioned as a dimension in which devices vary?",
+        "options": [
+            "Character-stream or block",
+            "Sequential or random-access",
+            "Wired or wireless",
+            "Synchronous or asynchronous"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Devices vary in character-stream or block, sequential or random-access, synchronous or asynchronous, sharable or dedicated, speed, and read-write access, but wired or wireless is not mentioned."
+    },
+    {
+        "id": "q27",
+        "text": "How are I/O devices broadly grouped by the OS according to the lecture?",
+        "options": [
+            "Fast, medium, and slow devices",
+            "Block I/O, Character I/O, Memory-mapped file access, Network sockets",
+            "Input, output, and bidirectional devices",
+            "Local, remote, and virtual devices"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The OS broadly groups I/O devices into Block I/O, Character I/O (Stream), Memory-mapped file access, and Network sockets."
+    },
+    {
+        "id": "q28",
+        "text": "What is the purpose of Unix ioctl() call?",
+        "options": [
+            "To manage file permissions",
+            "To send arbitrary bits to a device control register and data to device data register",
+            "To create new processes",
+            "To allocate memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Unix ioctl() call is used to send arbitrary bits to a device control register and data to device data register for direct device manipulation."
+    },
+    {
+        "id": "q29",
+        "text": "In UNIX and Linux, what is used to identify type and instance of devices?",
+        "options": [
+            "Device names only",
+            "IP addresses",
+            "Tuple of 'major' and 'minor' device numbers",
+            "File permissions"
+        ],
+        "correctAnswer": 2,
+        "explanation": "UNIX and Linux use tuple of 'major' and 'minor' device numbers to identify type and instance of devices."
+    },
+    {
+        "id": "q30",
+        "text": "Which of the following commands is associated with block devices?",
+        "options": [
+            "get(), put()",
+            "send(), receive()",
+            "read, write, seek",
+            "connect(), disconnect()"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Block devices (like disk drives) use commands including read, write, and seek operations."
+    },
+    {
+        "id": "q31",
+        "text": "What type of access is possible with block devices through memory-mapped files?",
+        "options": [
+            "File mapped to virtual memory with clusters brought via demand paging",
+            "Direct hardware access only",
+            "Network-based access only", 
+            "Sequential access only"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Block devices support memory-mapped file access where files are mapped to virtual memory and clusters are brought via demand paging."
+    },
+    {
+        "id": "q32",
+        "text": "Character devices include all of the following EXCEPT:",
+        "options": [
+            "Keyboards",
+            "Mice",
+            "Serial ports",
+            "Disk drives"
+        ],
+        "correctAnswer": 3,
+        "explanation": "Character devices include keyboards, mice, and serial ports. Disk drives are block devices, not character devices."
+    },
+    {
+        "id": "q33",
+        "text": "Why do network devices have their own interface separate from block and character devices?",
+        "options": [
+            "They are faster than other devices",
+            "They vary enough from block and character devices",
+            "They require special drivers",
+            "They use different power requirements"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Network devices vary enough from block and character devices to have their own interface, requiring different handling approaches."
+    },
+    {
+        "id": "q34",
+        "text": "What functionality does the socket interface include?",
+        "options": [
+            "Only network protocol management",
+            "Only network operation management",
+            "select() functionality and separation of network protocol from network operation",
+            "Only data encryption"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The socket interface separates network protocol from network operation and includes select() functionality."
+    },
+    {
+        "id": "q35",
+        "text": "What is the normal resolution for clocks and timers mentioned in the lecture?",
+        "options": [
+            "1/30 second",
+            "1/60 second",
+            "1/100 second",
+            "1/120 second"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Normal resolution for clocks and timers is about 1/60 second, though some systems provide higher-resolution timers."
+    },
+    {
+        "id": "q36",
+        "text": "In blocking I/O, what happens to the process?",
+        "options": [
+            "Process continues running normally",
+            "Process is suspended until I/O completed",
+            "Process is terminated",
+            "Process creates a new thread"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In blocking I/O, the process is suspended until I/O is completed, making it easy to use and understand but insufficient for some needs."
+    },
+    {
+        "id": "q37",
+        "text": "What does nonblocking I/O return?",
+        "options": [
+            "Nothing",
+            "Error code only",
+            "As much data as available",
+            "Complete data set only"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Nonblocking I/O call returns as much as available, returning quickly with count of bytes read or written."
+    },
+    {
+        "id": "q38",
+        "text": "What is the main characteristic of asynchronous I/O?",
+        "options": [
+            "Process waits for I/O completion",
+            "Process runs while I/O executes",
+            "I/O operations are queued",
+            "Multiple processes share I/O"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In asynchronous I/O, the process runs while I/O executes, though it's difficult to use. The I/O subsystem signals process when I/O is completed."
+    },
+    {
+        "id": "q39",
+        "text": "What does vectored I/O allow?",
+        "options": [
+            "One system call to perform multiple I/O operations",
+            "Multiple processes to share one device",
+            "Automatic error recovery",
+            "Network load balancing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Vectored I/O allows one system call to perform multiple I/O operations, using scatter-gather method which is better than multiple individual I/O calls."
+    },
+    {
+        "id": "q40",
+        "text": "What is an example of a vectored I/O system call in Unix?",
+        "options": [
+            "read()",
+            "write()",
+            "readve()",
+            "select()"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Unix readve() is an example of vectored I/O that accepts a vector of multiple buffers to read into or write from."
+    },
+    {
+        "id": "q41",
+        "text": "What is the primary purpose of buffering in the kernel I/O subsystem?",
+        "options": [
+            "To increase storage capacity",
+            "To store data in memory while transferring between devices",
+            "To encrypt data transfers",
+            "To compress data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Buffering stores data in memory while transferring between devices, helping cope with device speed mismatch, transfer size mismatch, and maintain copy semantics."
+    },
+    {
+        "id": "q42",
+        "text": "What is double buffering?",
+        "options": [
+            "Using two different devices",
+            "Two copies of the data (kernel and user)",
+            "Backing up data twice",
+            "Using two processors"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Double buffering involves two copies of the data - kernel and user copies, with varying sizes where one is full/being processed and the other is not-full/being used."
+    },
+    {
+        "id": "q43",
+        "text": "What is the key difference between caching and buffering?",
+        "options": [
+            "Caching is faster device holding copy of data, always just a copy",
+            "Buffering is permanent, caching is temporary",
+            "Caching uses more memory than buffering",
+            "There is no difference"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Caching involves a faster device holding copy of data and is always just a copy, key to performance, sometimes combined with buffering."
+    },
+    {
+        "id": "q44",
+        "text": "What is spooling used for?",
+        "options": [
+            "Network communication",
+            "Memory management",
+            "Hold output for a device that can serve only one request at a time",
+            "Process scheduling"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Spooling is used to hold output for a device if the device can serve only one request at a time, with printing being a common example."
+    },
+    {
+        "id": "q45",
+        "text": "What is the purpose of device reservation?",
+        "options": [
+            "To improve performance",
+            "To provide exclusive access to a device",
+            "To save power",
+            "To reduce errors"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Device reservation provides exclusive access to a device through system calls for allocation and de-allocation, but requires watching out for deadlock."
+    },
+    {
+        "id": "q46",
+        "text": "Which systems are mentioned as being more advanced in error handling?",
+        "options": [
+            "Windows and Linux",
+            "Solaris FMA and AIX",
+            "macOS and FreeBSD",
+            "Android and iOS"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Solaris FMA and AIX are mentioned as more advanced systems that track error frequencies and stop using devices with increasing frequency of retry-able errors."
+    },
+    {
+        "id": "q47",
+        "text": "Why are all I/O instructions defined to be privileged?",
+        "options": [
+            "To improve performance",
+            "To prevent user process from accidentally or purposefully disrupting normal operation",
+            "To save memory",
+            "To reduce complexity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "All I/O instructions are defined to be privileged to prevent user processes from accidentally or purposefully disrupting normal operation via illegal I/O instructions."
+    },
+    {
+        "id": "q48",
+        "text": "How must I/O be performed in protected systems?",
+        "options": [
+            "Directly by user processes",
+            "Via system calls",
+            "Through hardware interrupts only",
+            "Using special user privileges"
+        ],
+        "correctAnswer": 1,
+        "explanation": "I/O must be performed via system calls to maintain system protection and prevent unauthorized access to I/O operations."
+    },
+    {
+        "id": "q49",
+        "text": "What type of method does Windows use for I/O implementation?",
+        "options": [
+            "Direct hardware access",
+            "Polling only",
+            "Message passing",
+            "Shared memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Windows uses message passing where messages with I/O information are passed from user mode into kernel and modified as they flow through to device driver and back to process."
+    },
+    {
+        "id": "q50",
+        "text": "In mobile computing, power management is treated as:",
+        "options": [
+            "A secondary concern",
+            "An optional feature",
+            "First class OS aspect",
+            "Hardware-only responsibility"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Mobile computing has power management as first class OS aspect due to the critical importance of battery life in mobile devices."
+    },
+    {
+        "id": "q51",
+        "text": "What does Android's component-level power management understand?",
+        "options": [
+            "Only individual component power usage",
+            "Relationship between components",
+            "Network power consumption only",
+            "User behavior patterns only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Android's component-level power management understands the relationship between components and builds device tree representing physical device topology."
+    },
+    {
+        "id": "q52",
+        "text": "What are wake locks in Android?",
+        "options": [
+            "Security mechanisms",
+            "Memory protection features", 
+            "Locks that prevent sleep of device when held",
+            "Network synchronization tools"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Wake locks are like other locks but prevent sleep of device when the lock is held, ensuring the device stays awake for critical operations."
+    },
+    {
+        "id": "q53",
+        "text": "What is power collapse in Android?",
+        "options": [
+            "System shutdown",
+            "Battery failure",
+            "Put a device into very deep sleep with marginal power use",
+            "Power supply malfunction"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Power collapse puts a device into very deep sleep with marginal power use, awake enough only to respond to external stimuli like button press or incoming call."
+    },
+    {
+        "id": "q54",
+        "text": "What does ACPI stand for?",
+        "options": [
+            "Advanced Configuration and Power Interface",
+            "Automatic Computer Power Integration",
+            "Advanced Component Power Instructions",
+            "Application Control Power Interface"
+        ],
+        "correctAnswer": 0,
+        "explanation": "ACPI stands for Advanced Configuration and Power Interface, providing firmware code that runs as routines called by kernel for device discovery, management, error and power management."
+    },
+    {
+        "id": "q55",
+        "text": "Which of the following is NOT mentioned as a service coordinated by the I/O subsystem?",
+        "options": [
+            "Management of the name space for files and devices",
+            "Device allocation",
+            "Automatic software updates",
+            "I/O scheduling"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The I/O subsystem coordinates extensive services including namespace management, access control, device allocation, buffering, caching, spooling, I/O scheduling, error handling, and power management, but automatic software updates are not mentioned."
+    },
+    {
+        "id": "q56",
+        "text": "In the STREAMS architecture, what interfaces with the user process?",
+        "options": [
+            "Driver end",
+            "STREAM head",
+            "STREAM modules",
+            "Message queues"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In STREAMS, the STREAM head interfaces with the user process, while the driver end interfaces with the device."
+    },
+    {
+        "id": "q57",
+        "text": "What type of communication does STREAMS provide?",
+        "options": [
+            "Simplex communication",
+            "Half-duplex communication",
+            "Full-duplex communication",
+            "Broadcast communication"
+        ],
+        "correctAnswer": 2,
+        "explanation": "STREAM provides a full-duplex communication channel between a user-level process and a device in Unix System V and beyond."
+    },
+    {
+        "id": "q58",
+        "text": "How do STREAM modules communicate with each other?",
+        "options": [
+            "Direct function calls",
+            "Shared memory",
+            "Message passing between queues",
+            "Signal handling"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Message passing is used to communicate between queues in STREAM modules, with flow control option to indicate available or busy status."
+    },
+    {
+        "id": "q59",
+        "text": "Which of the following is NOT mentioned as a way to improve I/O performance?",
+        "options": [
+            "Reduce number of context switches",
+            "Use DMA",
+            "Increase CPU clock speed",
+            "Reduce data copying"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Performance improvements include reducing context switches, data copying, interrupts, using DMA, smarter hardware, balancing system components, and moving processes to kernel threads. Increasing CPU clock speed is not specifically mentioned."
+    },
+    {
+        "id": "q60",
+        "text": "What makes network traffic especially stressful for I/O performance?",
+        "options": [
+            "High bandwidth requirements",
+            "Complex protocols only",
+            "Multiple factors: CPU demands, context switches, data copying",
+            "Security overhead only"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Network traffic is especially stressful because I/O is a major factor in system performance, demanding CPU to execute device driver and kernel I/O code, causing context switches due to interrupts, and requiring data copying."
+    }
+]

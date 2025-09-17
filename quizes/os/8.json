@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the primary danger of incorrect synchronization in operating systems?",
+    "options": [
+      "It can cause memory leaks",
+      "It can block all processes",
+      "It reduces CPU performance",
+      "It corrupts file systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to the lecture, incorrect use of synchronization can block all processes, which is described as 'shooting ourselves in the foot' with synchronization."
+  },
+  {
+    "id": "q2",
+    "text": "In the Dining Philosophers problem, how many philosophers are sitting around the table?",
+    "options": [
+      "Three",
+      "Four",
+      "Five",
+      "Six"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Dining Philosophers problem involves five philosophers sitting around a circular table, each alternately thinking and eating."
+  },
+  {
+    "id": "q3",
+    "text": "In the Dining Philosophers problem, how many forks does each philosopher need to eat?",
+    "options": [
+      "One fork",
+      "Two forks",
+      "Three forks",
+      "No forks needed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each philosopher needs two forks to eat a helping of spaghetti, and one fork is placed between each pair of philosophers."
+  },
+  {
+    "id": "q4",
+    "text": "Why does philosopher[4] have to be implemented differently from the others in the code example?",
+    "options": [
+      "It has different eating preferences",
+      "It handles the wraparound from fork[4] to fork[0]",
+      "It eats faster than the others",
+      "It doesn't need to think"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Philosopher[4] is different because it needs to handle the circular nature of the table, accessing fork[0] and fork[4] instead of consecutive forks."
+  },
+  {
+    "id": "q5",
+    "text": "According to the formal definition, deadlock exists among a set of processes when:",
+    "options": [
+      "All processes are running simultaneously",
+      "Every process is waiting for an event that can only be caused by another process in the set",
+      "Processes are competing for CPU time",
+      "Memory allocation exceeds available RAM"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The formal definition states that deadlock exists when every process is waiting for an event that can be caused only by another process in the set."
+  },
+  {
+    "id": "q6",
+    "text": "In the bridge analogy for deadlocks, what represents a resource?",
+    "options": [
+      "The entire bridge",
+      "Each car on the bridge",
+      "Each section of the bridge",
+      "The traffic lights"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Each section of a bridge can be viewed as a resource in the bridge analogy, where the bridge only allows traffic in one direction."
+  },
+  {
+    "id": "q7",
+    "text": "Which of the following is NOT one of the four necessary conditions for deadlock?",
+    "options": [
+      "Mutual exclusion",
+      "Hold and wait",
+      "Resource starvation",
+      "Circular wait"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The four necessary conditions are: mutual exclusion, hold and wait, no preemption, and circular wait. Resource starvation is not one of these conditions."
+  },
+  {
+    "id": "q8",
+    "text": "The mutual exclusion condition for deadlock states that:",
+    "options": [
+      "All resources must be shared equally",
+      "At least one resource must be held in a non-sharable mode",
+      "No process can hold more than one resource",
+      "Resources can only be used by one process at a time"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mutual exclusion means at least one resource must be held in a non-sharable mode, meaning it cannot be used by multiple processes simultaneously."
+  },
+  {
+    "id": "q9",
+    "text": "The hold and wait condition requires:",
+    "options": [
+      "Processes to release all resources before requesting new ones",
+      "One process holding one resource and waiting for another resource",
+      "All processes to wait for the same resource",
+      "Resources to be held indefinitely"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hold and wait means there must be one process holding one resource and waiting for another resource."
+  },
+  {
+    "id": "q10",
+    "text": "What does the 'no preemption' condition mean in the context of deadlocks?",
+    "options": [
+      "Resources can be taken away from processes at any time",
+      "Resources cannot be preempted (critical sections cannot be aborted externally)",
+      "Only high-priority processes can preempt resources",
+      "Preemption is handled by the operating system kernel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "No preemption means resources cannot be preempted, and critical sections cannot be aborted externally."
+  },
+  {
+    "id": "q11",
+    "text": "The circular wait condition requires:",
+    "options": [
+      "All processes to wait in a circle",
+      "A set of processes where P1 waits for P2, P2 for P3, etc., forming a cycle",
+      "Resources to be arranged in a circular queue",
+      "Processes to access resources in circular order"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circular wait requires a set of processes [P1, P2, P3,...,Pn] such that P1 is waiting for P2, P2 for P3, etc., forming a cycle."
+  },
+  {
+    "id": "q12",
+    "text": "How many of the four deadlock conditions must be present for deadlock to occur?",
+    "options": [
+      "At least one",
+      "At least two",
+      "At least three",
+      "All four"
+    ],
+    "correctAnswer": 3,
+    "explanation": "All four conditions (mutual exclusion, hold and wait, no preemption, and circular wait) are necessary for deadlock to occur."
+  },
+  {
+    "id": "q13",
+    "text": "What are the two main approaches to dealing with deadlock mentioned in the lecture?",
+    "options": [
+      "Detection and prevention",
+      "Pro-active (prevention) and reactive (detection + corrective action)",
+      "Hardware and software solutions",
+      "Static and dynamic allocation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture identifies two approaches: pro-active (prevention) and reactive (detection + corrective action)."
+  },
+  {
+    "id": "q14",
+    "text": "To prevent deadlock by eliminating mutual exclusion, which approach is suggested?",
+    "options": [
+      "Use only shared resources",
+      "Buy more resources, split into pieces, or virtualize to make 'infinite' copies",
+      "Implement resource pooling",
+      "Use lock-free programming"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To eliminate mutual exclusion, the lecture suggests buying more resources, splitting them into pieces, or virtualizing to make 'infinite' copies."
+  },
+  {
+    "id": "q15",
+    "text": "How can the hold and wait condition be eliminated?",
+    "options": [
+      "Allow unlimited resource holding",
+      "Implement resource timeouts",
+      "Wait on all resources at once (must know in advance)",
+      "Use priority-based allocation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The hold and wait condition can be eliminated by waiting on all resources at once, though this requires knowing resource needs in advance."
+  },
+  {
+    "id": "q16",
+    "text": "Which is an example of eliminating the no preemption condition?",
+    "options": [
+      "Using mutex locks",
+      "Physical memory virtualized with VM, allowing pages to be taken away",
+      "Implementing semaphores",
+      "Using critical sections"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Physical memory can be virtualized with VM, allowing physical pages to be taken away from one process and given to another, thus allowing preemption."
+  },
+  {
+    "id": "q17",
+    "text": "What is one way to eliminate the circular wait condition?",
+    "options": [
+      "Use multiple locks simultaneously",
+      "Implement random resource access",
+      "Partial ordering of resources",
+      "Dynamic resource allocation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Circular wait can be eliminated through partial ordering of resources, ensuring resources are always acquired in a specific order."
+  },
+  {
+    "id": "q18",
+    "text": "In a resource allocation graph, what do the nodes represent?",
+    "options": [
+      "Only processes",
+      "Only resources",
+      "Both processes and resources",
+      "System states"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In a resource allocation graph, both processes and resources are represented as nodes, with edges showing requests and assignments."
+  },
+  {
+    "id": "q19",
+    "text": "What does a directed edge from Pi to Rj represent in a resource allocation graph?",
+    "options": [
+      "Pi is holding an instance of Rj",
+      "Pi is requesting Rj",
+      "Rj is available to Pi",
+      "Pi has released Rj"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A directed edge from Pi to Rj represents that process Pi is requesting resource Rj."
+  },
+  {
+    "id": "q20",
+    "text": "What does a directed edge from Rj to Pi represent in a resource allocation graph?",
+    "options": [
+      "Pi is requesting Rj",
+      "Pi is holding an instance of Rj",
+      "Rj is being released by Pi",
+      "Pi is waiting for Rj"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A directed edge from Rj to Pi represents that process Pi is holding an instance of resource Rj."
+  },
+  {
+    "id": "q21",
+    "text": "If a resource allocation graph has no cycles, what can be concluded?",
+    "options": [
+      "Deadlock definitely exists",
+      "Deadlock might exist",
+      "No deadlock exists",
+      "The system is unsafe"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If the graph has no cycles, then no deadlock exists. This is a basic fact about resource allocation graphs."
+  },
+  {
+    "id": "q22",
+    "text": "If a resource allocation graph contains a cycle and each resource type has only one instance, what can be concluded?",
+    "options": [
+      "No deadlock exists",
+      "Deadlock might exist",
+      "Deadlock definitely exists",
+      "The system needs restart"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If there's a cycle and only one instance per resource type, deadlock definitely exists."
+  },
+  {
+    "id": "q23",
+    "text": "If a resource allocation graph contains a cycle and some resource types have multiple instances, what can be concluded?",
+    "options": [
+      "Deadlock definitely exists",
+      "No deadlock exists",
+      "Maybe deadlock, maybe not",
+      "The system is in safe state"
+    ],
+    "correctAnswer": 2,
+    "explanation": "With multiple instances per resource type, a cycle in the graph means maybe deadlock exists, maybe not - further analysis is needed."
+  },
+  {
+    "id": "q24",
+    "text": "How many approaches are there for dealing with deadlock according to the lecture?",
+    "options": [
+      "Two",
+      "Three",
+      "Four",
+      "Five"
+    ],
+    "correctAnswer": 2,
+    "explanation": "There are four approaches: ignore it, prevention, avoidance, and detection and recovery."
+  },
+  {
+    "id": "q25",
+    "text": "What is the 'Ostrich Algorithm' approach to deadlock?",
+    "options": [
+      "Aggressive deadlock prevention",
+      "Pretend that deadlock never occurs",
+      "Immediate deadlock detection",
+      "Resource preemption strategy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Ostrich Algorithm pretends that deadlock never occurs, justified when deadlocks occur rarely and prevention cost is high."
+  },
+  {
+    "id": "q26",
+    "text": "Why might the Ostrich Algorithm be chosen for dealing with deadlocks?",
+    "options": [
+      "It's the most efficient solution",
+      "Deadlocks occur rarely, are difficult to detect, and prevention cost is high",
+      "It provides the best user experience",
+      "It's required by operating system standards"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Ostrich Algorithm is chosen when deadlocks occur rarely, are difficult to detect, and the cost of prevention is high."
+  },
+  {
+    "id": "q27",
+    "text": "What information does deadlock avoidance require in advance?",
+    "options": [
+      "Process execution time",
+      "Memory requirements",
+      "What resources will be needed by processes",
+      "Network bandwidth needs"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Deadlock avoidance requires information in advance about what resources will be needed by processes to guarantee deadlock won't happen."
+  },
+  {
+    "id": "q28",
+    "text": "What is the main challenge with deadlock avoidance in practice?",
+    "options": [
+      "It requires too much memory",
+      "It's too slow",
+      "Hard to determine all resources needed in advance",
+      "It doesn't work with multiple processors"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The main practical challenge is that it's hard to determine all resources needed in advance, making it more theoretical than practical."
+  },
+  {
+    "id": "q29",
+    "text": "What is the Banker's Algorithm used for?",
+    "options": [
+      "Deadlock detection",
+      "Deadlock recovery",
+      "Deadlock avoidance for resources with multiple units",
+      "Deadlock prevention"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Banker's Algorithm is the classic approach to deadlock avoidance for resources with multiple units."
+  },
+  {
+    "id": "q30",
+    "text": "In the Banker's Algorithm, what must be stated in advance?",
+    "options": [
+      "Process priority",
+      "Maximum credit claim (resource needs)",
+      "Execution time",
+      "Memory allocation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each customer (process) must have a maximum credit limit (maximum resource claim) stated in advance."
+  },
+  {
+    "id": "q31",
+    "text": "What defines a 'dangerous state' in the Banker's Algorithm?",
+    "options": [
+      "When all resources are allocated",
+      "When no processes are running",
+      "A state where a sudden request by any customer for full credit limit could lead to deadlock",
+      "When the system is overloaded"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A dangerous state is one where a sudden request by any customer for the full credit limit could lead to deadlock."
+  },
+  {
+    "id": "q32",
+    "text": "Why is the Banker's Algorithm rarely used in practice?",
+    "options": [
+      "It's too complex to implement",
+      "It doesn't work correctly",
+      "Low resource utilization due to maintaining resource surplus",
+      "It requires too much memory"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Banker's Algorithm is rarely used in practice due to low resource utilization, as the system must keep resource usage well below capacity."
+  },
+  {
+    "id": "q33",
+    "text": "What two algorithms are needed for detection and recovery approach?",
+    "options": [
+      "Prevention and avoidance algorithms",
+      "One to determine deadlock occurrence, another to recover from it",
+      "Resource allocation and deallocation algorithms",
+      "Process scheduling and memory management algorithms"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Detection and recovery requires two algorithms: one to determine whether deadlock has occurred, and another to recover from the deadlock."
+  },
+  {
+    "id": "q34",
+    "text": "How does deadlock detection work?",
+    "options": [
+      "Monitor CPU usage patterns",
+      "Check memory allocation",
+      "Traverse the resource graph looking for cycles",
+      "Analyze process communication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Deadlock detection works by traversing the resource graph looking for cycles."
+  },
+  {
+    "id": "q35",
+    "text": "Why is deadlock detection expensive?",
+    "options": [
+      "It requires special hardware",
+      "Many processes and resources to traverse",
+      "It uses too much memory",
+      "It interferes with normal operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Deadlock detection is expensive because there are many processes and resources to traverse when looking for cycles."
+  },
+  {
+    "id": "q36",
+    "text": "What factors determine when to invoke the detection algorithm?",
+    "options": [
+      "System load and user preferences",
+      "How often deadlock is likely and how many processes will be affected",
+      "Available memory and CPU usage",
+      "Network traffic and I/O patterns"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The decision depends on how often or likely deadlock is and how many processes are likely to be affected when it occurs."
+  },
+  {
+    "id": "q37",
+    "text": "What are the two main options for deadlock recovery?",
+    "options": [
+      "Restart system or increase resources",
+      "Abort processes or preempt resources",
+      "Change priorities or reallocate memory",
+      "Suspend processes or modify algorithms"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Once deadlock is detected, there are two main options: abort processes or preempt resources (force their release)."
+  },
+  {
+    "id": "q38",
+    "text": "What happens when all deadlocked processes are aborted?",
+    "options": [
+      "The system becomes more efficient",
+      "Resources are permanently lost",
+      "Processes need to start over again",
+      "The system automatically prevents future deadlocks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When all deadlocked processes are aborted, those processes need to start over again."
+  },
+  {
+    "id": "q39",
+    "text": "What must the system do when aborting one process at a time for deadlock recovery?",
+    "options": [
+      "Increase system priority",
+      "Allocate more memory",
+      "Rerun detection algorithm after each abort",
+      "Notify all users"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When aborting one process at a time, the system needs to rerun the detection algorithm after each abort to check if the deadlock is eliminated."
+  },
+  {
+    "id": "q40",
+    "text": "What must be considered when preempting resources for deadlock recovery?",
+    "options": [
+      "Network bandwidth and storage space",
+      "Process and resource selection, rollback, and preventing starvation",
+      "User permissions and security policies",
+      "Hardware compatibility and driver support"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Resource preemption requires selecting which process and resource to preempt, rolling back the process to a previous state, and preventing starvation."
+  },
+  {
+    "id": "q41",
+    "text": "According to the deadlock summary, what causes deadlock to occur?",
+    "options": [
+      "High system load",
+      "Processes waiting on each other and cannot make progress",
+      "Insufficient memory",
+      "Poor process scheduling"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Deadlock occurs when processes are waiting on each other and cannot make progress, which corresponds to cycles in the Resource Allocation Graph."
+  },
+  {
+    "id": "q42",
+    "text": "In the context of deadlock prevention, what does 'invalidating mutual exclusion' mean for read-only files?",
+    "options": [
+      "Files cannot be read simultaneously",
+      "Mutual exclusion is not required for sharable resources like read-only files",
+      "All files must be write-protected",
+      "Only one process can access the file system"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Mutual exclusion is not required for sharable resources such as read-only files, but must hold for non-sharable resources."
+  },
+  {
+    "id": "q43",
+    "text": "What are the potential problems with preventing hold and wait?",
+    "options": [
+      "Increased complexity and memory usage",
+      "Low resource utilization and possible starvation",
+      "Higher CPU overhead and slower execution",
+      "Network congestion and I/O bottlenecks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Preventing hold and wait can result in low resource utilization and starvation is possible."
+  },
+  {
+    "id": "q44",
+    "text": "In deadlock prevention by eliminating no preemption, what happens when a process requests a resource that cannot be immediately allocated?",
+    "options": [
+      "The process waits indefinitely",
+      "The system crashes",
+      "All resources currently held by the process are released",
+      "The request is denied permanently"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If a process holding resources requests another resource that cannot be immediately allocated, all resources currently being held are released."
+  },
+  {
+    "id": "q45",
+    "text": "What is required for circular wait prevention through resource ordering?",
+    "options": [
+      "Resources must be accessed randomly",
+      "Each resource must be assigned a unique number and acquired in order",
+      "Resources must be shared equally among processes",
+      "All resources must be acquired simultaneously"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To prevent circular wait, each resource (mutex lock) is assigned a unique number and resources must be acquired in increasing order of enumeration."
+  },
+  {
+    "id": "q46",
+    "text": "What additional information does deadlock avoidance require that the system has available?",
+    "options": [
+      "Current system performance metrics",
+      "Some additional a priori information about maximum resource needs",
+      "Real-time process execution data",
+      "Network topology and bandwidth information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Deadlock avoidance requires that the system has some additional a priori information available, specifically about maximum resource needs."
+  },
+  {
+    "id": "q47",
+    "text": "What defines a safe state in deadlock avoidance?",
+    "options": [
+      "No processes are currently running",
+      "All resources are available",
+      "There exists a sequence of all processes where each can complete with available resources plus resources from completed processes",
+      "The system is running at minimum capacity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A system is in a safe state if there exists a sequence of ALL processes such that for each process, its resource needs can be satisfied by currently available resources plus resources held by processes that finish before it."
+  },
+  {
+    "id": "q48",
+    "text": "What is the relationship between safe states and deadlocks?",
+    "options": [
+      "Safe states can lead to deadlocks",
+      "If a system is in safe state, no deadlocks can occur",
+      "Safe states and deadlocks are unrelated",
+      "Deadlocks always occur in safe states"
+    ],
+    "correctAnswer": 1,
+    "explanation": "If a system is in a safe state, then no deadlocks can occur. This is a basic fact about safe states."
+  },
+  {
+    "id": "q49",
+    "text": "What does an unsafe state mean in deadlock avoidance?",
+    "options": [
+      "Deadlock will definitely occur",
+      "The system will crash",
+      "There's a possibility of deadlock",
+      "All processes must be terminated"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If a system is in an unsafe state, there's a possibility of deadlock, but deadlock is not guaranteed to occur."
+  },
+  {
+    "id": "q50",
+    "text": "Which algorithms are used for deadlock avoidance depending on resource instances?",
+    "options": [
+      "First-fit and best-fit algorithms",
+      "Round-robin and priority scheduling",
+      "Resource-allocation graph for single instance, Banker's Algorithm for multiple instances",
+      "FIFO and LIFO algorithms"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For single instance of resource type, use resource-allocation graph; for multiple instances, use the Banker's Algorithm."
+  },
+  {
+    "id": "q51",
+    "text": "In the resource-allocation graph scheme for avoidance, what does a claim edge represent?",
+    "options": [
+      "A process currently holds a resource",
+      "A process may request a resource in the future",
+      "A resource is being released",
+      "A deadlock has been detected"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A claim edge (shown as dashed line) indicates that a process may request a resource in the future. Resources must be claimed a priori in the system."
+  },
+  {
+    "id": "q52",
+    "text": "In the Banker's Algorithm data structures, what does the Need matrix represent?",
+    "options": [
+      "Resources currently allocated to processes",
+      "Maximum resources each process may request",
+      "Resources that may still be needed by each process",
+      "Available resources in the system"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Need matrix represents resources that may still be needed by each process, calculated as Need[i,j] = Max[i,j] - Allocation[i,j]."
+  },
+  {
+    "id": "q53",
+    "text": "In the Safety Algorithm, what does it mean when Finish[i] = true for all i?",
+    "options": [
+      "All processes are deadlocked",
+      "The system is in unsafe state",
+      "The system is in safe state",
+      "Resources need to be reallocated"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If Finish[i] == true for all i, then the system is in a safe state according to the Safety Algorithm."
+  },
+  {
+    "id": "q54",
+    "text": "What is the first step in the Resource-Request Algorithm when process Pi makes a request?",
+    "options": [
+      "Check if resources are available",
+      "Allocate resources immediately",
+      "Check if Request ≤ Need, otherwise raise error",
+      "Run the safety algorithm"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The first step is to check if Request_i ≤ Need_i, and if not, raise an error condition since the process has exceeded its maximum claim."
+  },
+  {
+    "id": "q55",
+    "text": "For deadlock detection with single instance of each resource type, what type of graph is maintained?",
+    "options": [
+      "Resource allocation graph",
+      "Wait-for graph",
+      "Process dependency graph",
+      "System state graph"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For single instance detection, a wait-for graph is maintained where nodes are processes and Pi → Pj if Pi is waiting for Pj."
+  },
+  {
+    "id": "q56",
+    "text": "What is the time complexity for detecting a cycle in a wait-for graph?",
+    "options": [
+      "O(n) operations",
+      "O(n log n) operations",
+      "O(n²) operations",
+      "O(n³) operations"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An algorithm to detect a cycle in a graph requires an order of n² operations, where n is the number of vertices in the graph."
+  },
+  {
+    "id": "q57",
+    "text": "In the deadlock detection algorithm for multiple resource instances, what does it mean if Finish[i] == false for some process Pi?",
+    "options": [
+      "Process Pi is running normally",
+      "Process Pi is in safe state",
+      "Process Pi is deadlocked",
+      "Process Pi needs more resources"
+    ],
+    "correctAnswer": 2,
+    "explanation": "If Finish[i] == false for some process Pi after running the detection algorithm, then Pi is deadlocked."
+  },
+  {
+    "id": "q58",
+    "text": "What factors should be considered when deciding which process to abort for deadlock recovery?",
+    "options": [
+      "Process creation time and memory usage",
+      "Priority, computation time, resources used/needed, number of processes affected, interactive vs batch",
+      "Process ID and parent process",
+      "CPU usage and I/O patterns"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Factors include: priority of process, computation time and time to completion, resources used and needed, how many processes will be terminated, and whether it's interactive or batch."
+  },
+  {
+    "id": "q59",
+    "text": "What are the three main considerations for resource preemption in deadlock recovery?",
+    "options": [
+      "Speed, efficiency, and reliability",
+      "Selecting a victim, rollback, and preventing starvation",
+      "Memory, CPU, and I/O resources",
+      "User permissions, security, and audit trails"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The three considerations are: selecting a victim (minimize cost), rollback (return to safe state and restart), and preventing starvation (avoid always picking the same process)."
+  },
+  {
+    "id": "q60",
+    "text": "Which deadlock handling approach focuses on making one of the four necessary conditions impossible?",
+    "options": [
+      "Deadlock avoidance",
+      "Deadlock detection",
+      "Deadlock prevention",
+      "Deadlock recovery"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Deadlock prevention focuses on making one of the four necessary conditions (mutual exclusion, hold and wait, no preemption, circular wait) impossible."
+  }
+]

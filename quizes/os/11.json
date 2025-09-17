@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary benefit of virtual memory according to the lecture?",
+        "options": [
+            "Faster CPU execution speed",
+            "Separation of user logical memory from physical memory",
+            "Reduced power consumption",
+            "Better graphics performance"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Virtual memory provides separation of user logical memory from physical memory, allowing only part of the program to be in memory for execution."
+    },
+    {
+        "id": "q2",
+        "text": "Which of the following is NOT a benefit of virtual memory mentioned in the lecture?",
+        "options": [
+            "Logical address space can be much larger than physical address space",
+            "Allows address spaces to be shared by several processes",
+            "Reduces the need for secondary storage",
+            "Allows for more efficient process creation"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Virtual memory does not reduce the need for secondary storage; in fact, it relies on secondary storage for swapping pages."
+    },
+    {
+        "id": "q3",
+        "text": "Virtual memory can be implemented via which two methods?",
+        "options": [
+            "Demand paging and demand segmentation",
+            "Static allocation and dynamic allocation",
+            "Sequential access and random access",
+            "Buffering and caching"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The lecture specifically states that virtual memory can be implemented via demand paging and demand segmentation."
+    },
+    {
+        "id": "q4",
+        "text": "In virtual address space design, where does the stack typically start?",
+        "options": [
+            "At address 0",
+            "At the middle of address space",
+            "At the maximum logical address and grows down",
+            "At a random location"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The stack typically starts at the maximum logical address and grows 'down' while the heap grows 'up' to maximize address space use."
+    },
+    {
+        "id": "q5",
+        "text": "What is the main advantage of having unused address space between stack and heap?",
+        "options": [
+            "Faster memory access",
+            "No physical memory needed until heap or stack grows to a given new page",
+            "Better security",
+            "Reduced fragmentation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The unused address space is a hole where no physical memory is needed until the heap or stack grows to that area."
+    },
+    {
+        "id": "q6",
+        "text": "What is demand paging?",
+        "options": [
+            "Loading the entire process into memory at startup",
+            "Bringing a page into memory only when it is needed",
+            "Allocating memory in fixed-size chunks",
+            "Compressing memory pages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Demand paging brings a page into memory only when it is needed, rather than loading the entire process at startup."
+    },
+    {
+        "id": "q7",
+        "text": "What are the benefits of demand paging compared to loading entire processes?",
+        "options": [
+            "Less I/O needed, less memory needed, faster response, more users",
+            "Better graphics, faster CPU, more storage",
+            "Reduced power consumption, better security",
+            "Simplified programming, easier debugging"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Demand paging provides less I/O needed, less memory needed, faster response, and supports more users."
+    },
+    {
+        "id": "q8",
+        "text": "What is a lazy swapper in the context of demand paging?",
+        "options": [
+            "A swapper that works slowly",
+            "A swapper that never swaps a page into memory unless the page will be needed",
+            "A swapper that only works during idle time",
+            "A swapper that compresses pages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A lazy swapper never swaps a page into memory unless the page will be needed. A swapper that deals with pages is called a pager."
+    },
+    {
+        "id": "q9",
+        "text": "In the valid-invalid bit scheme, what does 'v' represent?",
+        "options": [
+            "Virtual memory",
+            "Valid page reference",
+            "In-memory (memory resident)",
+            "Variable size page"
+        ],
+        "correctAnswer": 2,
+        "explanation": "In the valid-invalid bit scheme, 'v' means in-memory (memory resident), while 'i' means not-in-memory."
+    },
+    {
+        "id": "q10",
+        "text": "What happens when the MMU encounters an 'i' bit during address translation?",
+        "options": [
+            "The page is immediately loaded",
+            "A page fault occurs",
+            "The process is terminated",
+            "Memory is compressed"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When the valid-invalid bit in a page table entry is 'i', it triggers a page fault during MMU address translation."
+    },
+    {
+        "id": "q11",
+        "text": "What is the first step in handling a page fault?",
+        "options": [
+            "Find a free frame",
+            "Reference to a page traps to the operating system",
+            "Reset the page tables",
+            "Swap the page into memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The first step is that a reference to a page (first reference to that page) will trap to the operating system, causing a page fault."
+    },
+    {
+        "id": "q12",
+        "text": "After a page fault occurs and the OS determines it's a valid reference, what is the next step?",
+        "options": [
+            "Restart the instruction",
+            "Find free frame",
+            "Reset validation bit",
+            "Terminate the process"
+        ],
+        "correctAnswer": 1,
+        "explanation": "After determining it's a valid reference (just not in memory), the OS needs to find a free frame to load the page."
+    },
+    {
+        "id": "q13",
+        "text": "What is pure demand paging?",
+        "options": [
+            "Loading all pages at once",
+            "Starting a process with no pages in memory",
+            "Using only physical memory",
+            "Compressing all pages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Pure demand paging means starting a process with no pages in memory, causing page faults for every page on first access."
+    },
+    {
+        "id": "q14",
+        "text": "What hardware support is needed for demand paging?",
+        "options": [
+            "Page table with valid/invalid bit, secondary memory, instruction restart",
+            "Cache memory, faster CPU, more registers",
+            "Graphics card, sound card, network card",
+            "Floating point unit, vector processor"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Demand paging requires page table with valid/invalid bit, secondary memory (swap device), and instruction restart capability."
+    },
+    {
+        "id": "q15",
+        "text": "What is a free-frame list?",
+        "options": [
+            "A list of processes waiting for memory",
+            "A pool of free frames for satisfying page fault requests",
+            "A list of pages to be swapped out",
+            "A directory of memory locations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A free-frame list is a pool of free frames maintained by the OS for satisfying page fault requests."
+    },
+    {
+        "id": "q16",
+        "text": "What is zero-fill-on-demand?",
+        "options": [
+            "Filling memory with random data",
+            "Zeroing out frame contents before allocation",
+            "Filling frames with program code",
+            "Creating empty files"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Zero-fill-on-demand means the content of frames is zeroed out before being allocated to prevent information leakage."
+    },
+    {
+        "id": "q17",
+        "text": "According to the performance example, if memory access time is 200 nanoseconds and average page-fault service time is 8 milliseconds, what is the EAT when p = 1/1000?",
+        "options": [
+            "200 nanoseconds",
+            "8.2 microseconds",
+            "8 milliseconds",
+            "1000 nanoseconds"
+        ],
+        "correctAnswer": 1,
+        "explanation": "EAT = (1-p) × 200 + p × 8,000,000 = 200 + (1/1000) × 7,999,800 = 8.2 microseconds."
+    },
+    {
+        "id": "q18",
+        "text": "For performance degradation less than 10%, what should be the maximum page fault rate?",
+        "options": [
+            "Less than 1 page fault in every 1,000 accesses",
+            "Less than 1 page fault in every 400,000 accesses",
+            "Less than 1 page fault in every 100 accesses",
+            "Less than 1 page fault in every 10,000 accesses"
+        ],
+        "correctAnswer": 1,
+        "explanation": "For less than 10% performance degradation, p < 0.0000025, which means less than 1 page fault in every 400,000 memory accesses."
+    },
+    {
+        "id": "q19",
+        "text": "What is Copy-on-Write (COW)?",
+        "options": [
+            "A method to copy files between processes",
+            "Allowing parent and child processes to initially share pages, copying only when modified",
+            "A technique to write data to multiple locations",
+            "A backup mechanism for virtual memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "COW allows parent and child processes to initially share the same pages in memory, copying a page only when either process modifies it."
+    },
+    {
+        "id": "q20",
+        "text": "Why is Copy-on-Write more efficient for process creation?",
+        "options": [
+            "It uses less CPU time",
+            "Only modified pages are copied",
+            "It requires less disk space",
+            "It uses fewer system calls"
+        ],
+        "correctAnswer": 1,
+        "explanation": "COW allows more efficient process creation as only modified pages need to be copied, rather than copying all pages immediately."
+    },
+    {
+        "id": "q21",
+        "text": "What is vfork()?",
+        "options": [
+            "A system call to create virtual memory",
+            "A variation on fork() where parent suspends and child uses copy-on-write address space",
+            "A method to allocate virtual frames",
+            "A technique to validate memory pages"
+        ],
+        "correctAnswer": 1,
+        "explanation": "vfork() is a variation on fork() where the parent suspends and the child uses the copy-on-write address space of the parent."
+    },
+    {
+        "id": "q22",
+        "text": "What happens when there is no free frame available for a page fault?",
+        "options": [
+            "The process is terminated",
+            "Page replacement must occur",
+            "The system crashes",
+            "Memory is automatically expanded"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When no free frame is available, the OS must use page replacement to find some page in memory that's not really in use and page it out."
+    },
+    {
+        "id": "q23",
+        "text": "What is the purpose of the modify (dirty) bit in page replacement?",
+        "options": [
+            "To identify invalid pages",
+            "To reduce overhead of page transfers by only writing modified pages to disk",
+            "To mark pages for compression",
+            "To indicate page access frequency"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The modify (dirty) bit reduces overhead of page transfers by ensuring only modified pages are written to disk during replacement."
+    },
+    {
+        "id": "q24",
+        "text": "What are the basic steps in page replacement?",
+        "options": [
+            "Find desired page, find free frame, bring page in, continue process",
+            "Compress memory, allocate space, load page, restart",
+            "Terminate process, clean memory, restart system",
+            "Save state, find victim, swap out, swap in"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Basic page replacement involves: find desired page location on disk, find free frame (using replacement algorithm if needed), bring desired page into free frame, continue process."
+    },
+    {
+        "id": "q25",
+        "text": "In the FIFO page replacement algorithm, how many page faults occur with the reference string 7,0,1,2,0,3,0,4,2,3,0,3,0,3,2,1,2,0,1,7,0,1 using 3 frames?",
+        "options": [
+            "12",
+            "15",
+            "18",
+            "20"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The FIFO algorithm with 3 frames results in 15 page faults for the given reference string."
+    },
+    {
+        "id": "q26",
+        "text": "What is Belady's Anomaly?",
+        "options": [
+            "More frames always result in fewer page faults",
+            "Adding more frames can cause more page faults",
+            "Page replacement algorithms are inefficient",
+            "Virtual memory causes system crashes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Belady's Anomaly occurs when adding more frames can actually cause more page faults, which can happen with the FIFO algorithm."
+    },
+    {
+        "id": "q27",
+        "text": "What is the optimal page replacement algorithm?",
+        "options": [
+            "Replace the page that was least recently used",
+            "Replace the page that arrived first",
+            "Replace the page that will not be used for the longest period of time",
+            "Replace the page with the lowest address"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The optimal algorithm replaces the page that will not be used for the longest period of time, though this requires knowledge of future references."
+    },
+    {
+        "id": "q28",
+        "text": "How many page faults does the optimal algorithm produce with the given reference string and 3 frames?",
+        "options": [
+            "7",
+            "9",
+            "12",
+            "15"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The optimal algorithm produces 9 page faults, which is the minimum possible for the given reference string with 3 frames."
+    },
+    {
+        "id": "q29",
+        "text": "What does the LRU (Least Recently Used) algorithm replace?",
+        "options": [
+            "The page that arrived first",
+            "The page that will not be used for longest time",
+            "The page that has not been used in the most amount of time",
+            "The page with the lowest reference count"
+        ],
+        "correctAnswer": 2,
+        "explanation": "LRU replaces the page that has not been used in the most amount of time, using past knowledge rather than future predictions."
+    },
+    {
+        "id": "q30",
+        "text": "How many page faults does LRU produce with the reference string using 3 frames?",
+        "options": [
+            "9",
+            "12",
+            "15",
+            "18"
+        ],
+        "correctAnswer": 1,
+        "explanation": "LRU produces 12 page faults, which is better than FIFO (15) but worse than optimal (9)."
+    },
+    {
+        "id": "q31",
+        "text": "What are two implementation approaches for LRU?",
+        "options": [
+            "Counter implementation and stack implementation",
+            "Array implementation and linked list implementation",
+            "Hardware implementation and software implementation",
+            "Sequential implementation and parallel implementation"
+        ],
+        "correctAnswer": 0,
+        "explanation": "LRU can be implemented using counter implementation (with timestamps) or stack implementation (with a stack of page numbers)."
+    },
+    {
+        "id": "q32",
+        "text": "What is the main problem with LRU implementation?",
+        "options": [
+            "It produces too many page faults",
+            "It needs special hardware and is still slow",
+            "It cannot handle large page sizes",
+            "It is incompatible with virtual memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "LRU needs special hardware support and is still slow, which led to the development of LRU approximation algorithms."
+    },
+    {
+        "id": "q33",
+        "text": "What is the reference bit in LRU approximation?",
+        "options": [
+            "A bit that counts references to a page",
+            "A bit associated with each page, initially 0, set to 1 when page is referenced",
+            "A bit that indicates page validity",
+            "A bit that shows page modification status"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The reference bit is associated with each page, initially set to 0, and set to 1 when the page is referenced."
+    },
+    {
+        "id": "q34",
+        "text": "What is the second-chance algorithm?",
+        "options": [
+            "A variation of optimal algorithm",
+            "Generally FIFO, plus hardware-provided reference bit",
+            "A hardware-based LRU implementation",
+            "A compression-based replacement algorithm"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The second-chance algorithm is generally FIFO with a hardware-provided reference bit, also known as clock replacement."
+    },
+    {
+        "id": "q35",
+        "text": "In the enhanced second-chance algorithm, which page category is best to replace?",
+        "options": [
+            "(1,1) recently used and modified",
+            "(1,0) recently used but clean",
+            "(0,1) not recently used but modified",
+            "(0,0) neither recently used nor modified"
+        ],
+        "correctAnswer": 3,
+        "explanation": "(0,0) pages are neither recently used nor modified, making them the best candidates for replacement."
+    },
+    {
+        "id": "q36",
+        "text": "What does LFU (Least Frequently Used) algorithm replace?",
+        "options": [
+            "The page with the largest reference count",
+            "The page with the smallest reference count",
+            "The page that was least recently used",
+            "The page that arrived first"
+        ],
+        "correctAnswer": 1,
+        "explanation": "LFU replaces the page with the smallest reference count, based on the assumption that frequently used pages should remain in memory."
+    },
+    {
+        "id": "q37",
+        "text": "What is the main benefit of page-buffering algorithms?",
+        "options": [
+            "They eliminate page faults entirely",
+            "Keep a pool of free frames so frames are available when needed",
+            "They compress memory pages",
+            "They predict future page references"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Page-buffering keeps a pool of free frames so that frames are available when needed, rather than finding them at fault time."
+    },
+    {
+        "id": "q38",
+        "text": "What is the minimum number of frames each process needs?",
+        "options": [
+            "At least 1 frame",
+            "Depends on the instruction set architecture",
+            "At least 10 frames",
+            "Depends on the process size"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The minimum number of frames depends on the instruction set architecture; for example, IBM 370 needs 6 pages to handle an SS MOVE instruction."
+    },
+    {
+        "id": "q39",
+        "text": "In fixed allocation, what is equal allocation?",
+        "options": [
+            "Each process gets frames proportional to its size",
+            "Each process gets the same number of frames",
+            "Each process gets frames based on priority",
+            "Each process gets frames based on CPU usage"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Equal allocation gives each process the same number of frames; for example, with 100 frames and 5 processes, each gets 20 frames."
+    },
+    {
+        "id": "q40",
+        "text": "What is the formula for proportional allocation?",
+        "options": [
+            "ai = (si/S) × m",
+            "ai = si × m",
+            "ai = m/si",
+            "ai = S/si"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Proportional allocation uses ai = (si/S) × m, where ai is allocation for process i, si is size of process i, S is sum of all sizes, and m is total frames."
+    },
+    {
+        "id": "q41",
+        "text": "What is global replacement?",
+        "options": [
+            "Process selects replacement frame from only its own allocated frames",
+            "Process selects replacement frame from the set of all frames",
+            "All processes share the same replacement algorithm",
+            "Replacement occurs globally across all systems"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Global replacement allows a process to select a replacement frame from the set of all frames, potentially taking frames from other processes."
+    },
+    {
+        "id": "q42",
+        "text": "What is an advantage of local replacement over global replacement?",
+        "options": [
+            "Higher throughput",
+            "More consistent per-process performance",
+            "Better memory utilization",
+            "Faster execution time"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Local replacement provides more consistent per-process performance since each process only selects from its own allocated frames."
+    },
+    {
+        "id": "q43",
+        "text": "What is thrashing?",
+        "options": [
+            "A process using too much CPU time",
+            "A process is busy swapping pages in and out",
+            "Multiple processes competing for resources",
+            "System running out of disk space"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Thrashing occurs when a process is busy swapping pages in and out because it doesn't have enough pages in memory."
+    },
+    {
+        "id": "q44",
+        "text": "What causes thrashing according to the lecture?",
+        "options": [
+            "Too many processes running",
+            "Insufficient CPU power",
+            "Size of locality > total memory size",
+            "Poor programming practices"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Thrashing occurs when the size of locality is greater than the total memory size available to the process."
+    },
+    {
+        "id": "q45",
+        "text": "What is the working-set model?",
+        "options": [
+            "A model for CPU scheduling",
+            "A model using a working-set window (Δ) - a fixed number of page references",
+            "A model for disk scheduling",
+            "A model for process synchronization"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The working-set model uses a working-set window (Δ) which is a fixed number of page references, like 10,000 instructions."
+    },
+    {
+        "id": "q46",
+        "text": "What is WSSi in the working-set model?",
+        "options": [
+            "Working set size of all processes",
+            "Working set of Process Pi - total number of pages referenced in the most recent Δ",
+            "Window size for process i",
+            "Wait state for process i"
+        ],
+        "correctAnswer": 1,
+        "explanation": "WSSi is the working set of Process Pi, which is the total number of pages referenced in the most recent Δ time units."
+    },
+    {
+        "id": "q47",
+        "text": "According to the working-set model, what happens if D > m?",
+        "options": [
+            "System performance improves",
+            "Thrashing occurs",
+            "More processes can be added",
+            "Memory is automatically expanded"
+        ],
+        "correctAnswer": 1,
+        "explanation": "If D (total demand frames) > m (total available frames), thrashing occurs and the policy is to suspend or swap out processes."
+    },
+    {
+        "id": "q48",
+        "text": "What is Page-Fault Frequency (PFF)?",
+        "options": [
+            "A more direct approach than working-set model",
+            "A method to increase page faults",
+            "A scheduling algorithm",
+            "A memory allocation technique"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Page-Fault Frequency is a more direct approach than the working-set model for managing thrashing."
+    },
+    {
+        "id": "q49",
+        "text": "Why is kernel memory treated differently from user memory?",
+        "options": [
+            "Kernel memory is faster",
+            "Kernel requests memory for structures of varying sizes, and some needs to be contiguous",
+            "Kernel memory is more secure",
+            "Kernel memory uses different hardware"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Kernel memory is treated differently because the kernel requests memory for structures of varying sizes, and some kernel memory needs to be contiguous for device I/O."
+    },
+    {
+        "id": "q50",
+        "text": "What is the buddy system?",
+        "options": [
+            "A system for sharing memory between processes",
+            "Memory allocated using power-of-2 allocator",
+            "A backup memory system",
+            "A system for memory compression"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The buddy system allocates memory using a power-of-2 allocator, satisfying requests in units sized as powers of 2."
+    },
+    {
+        "id": "q51",
+        "text": "What is a disadvantage of the buddy system?",
+        "options": [
+            "Slow allocation speed",
+            "Fragmentation",
+            "High memory overhead",
+            "Complex implementation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The main disadvantage of the buddy system is fragmentation, as it rounds up requests to the next power of 2."
+    },
+    {
+        "id": "q52",
+        "text": "What is a slab in the slab allocator?",
+        "options": [
+            "A type of memory controller",
+            "One or more physically contiguous pages",
+            "A compression algorithm",
+            "A scheduling policy"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A slab is one or more physically contiguous pages in the slab allocator system."
+    },
+    {
+        "id": "q53",
+        "text": "What are the benefits of the slab allocator?",
+        "options": [
+            "Faster CPU performance",
+            "No fragmentation, fast memory request satisfaction",
+            "Better graphics performance",
+            "Reduced power consumption"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The slab allocator provides benefits including no fragmentation and fast memory request satisfaction."
+    },
+    {
+        "id": "q54",
+        "text": "What is prepaging?",
+        "options": [
+            "Removing pages from memory",
+            "Prepaging all or some of the pages a process will need before they are referenced",
+            "Compressing pages before storage",
+            "Validating page references"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Prepaging means to prepage all or some of the pages a process will need before they are referenced, to reduce startup page faults."
+    },
+    {
+        "id": "q55",
+        "text": "What factors must be considered in page size selection?",
+        "options": [
+            "Fragmentation, page table size, resolution, I/O overhead",
+            "CPU speed, memory speed, disk speed",
+            "Process priority, user preferences, system load",
+            "Network bandwidth, graphics capability"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Page size selection must consider fragmentation, page table size, resolution, I/O overhead, number of page faults, locality, and TLB size and effectiveness."
+    },
+    {
+        "id": "q56",
+        "text": "What is TLB Reach?",
+        "options": [
+            "The distance TLB can access",
+            "The amount of memory accessible from the TLB",
+            "The number of TLB entries",
+            "The speed of TLB access"
+        ],
+        "correctAnswer": 1,
+        "explanation": "TLB Reach is the amount of memory accessible from the TLB, calculated as (TLB Size) × (Page Size)."
+    },
+    {
+        "id": "q57",
+        "text": "In the program structure example, why does Program 2 have fewer page faults than Program 1?",
+        "options": [
+            "Program 2 uses less memory",
+            "Program 2 accesses array elements in row-major order, following memory layout",
+            "Program 2 has better optimization",
+            "Program 2 runs faster"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Program 2 accesses array elements in row-major order (i, then j), which follows the memory layout where each row is stored in one page, resulting in only 128 page faults versus 16,384 for Program 1."
+    },
+    {
+        "id": "q58",
+        "text": "What is I/O interlock?",
+        "options": [
+            "A method to speed up I/O operations",
+            "Pages must sometimes be locked into memory during I/O operations",
+            "A synchronization mechanism for I/O",
+            "A technique to reduce I/O overhead"
+        ],
+        "correctAnswer": 1,
+        "explanation": "I/O interlock means pages must sometimes be locked (pinned) into memory, especially pages used for copying files from devices, to prevent them from being selected for eviction."
+    },
+    {
+        "id": "q59",
+        "text": "What technique does Windows use for virtual memory management?",
+        "options": [
+            "Pure demand paging",
+            "Demand paging with clustering",
+            "Segmentation only",
+            "Static allocation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Windows uses demand paging with clustering, which brings in pages surrounding the faulting page."
+    },
+    {
+        "id": "q60",
+        "text": "In Solaris virtual memory management, what is the purpose of the pageout process?",
+        "options": [
+            "To allocate new pages to processes",
+            "To perform paging using modified clock algorithm",
+            "To compress memory pages",
+            "To schedule process execution"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The pageout process in Solaris performs paging using a modified clock algorithm and scans pages at a rate between slowscan and fastscan."
+    }
+]
