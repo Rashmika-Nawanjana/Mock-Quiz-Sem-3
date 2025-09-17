@@ -269,6 +269,17 @@ function calculateQuizResults(quizData, userAnswers, timeSpent) {
     return finalResults;
 }
 
+
+
+app.get('/login', (req, res) => {
+  res.render('login');
+});
+
+app.get('/profile', (req, res) => {
+  res.render('profile');
+});
+
+
 // Start server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

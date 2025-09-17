@@ -1,0 +1,949 @@
+/* Premium CSS Variables - Light Theme */
+:root {
+    --primary: #5624d0;
+    --primary-light: #cec0fc;
+    --primary-gradient: linear-gradient(135deg, #5624d0 0%, #7e3ff2 100%);
+    --accent: #a435f0;
+    --accent-gradient: linear-gradient(135deg, #a435f0 0%, #c34cff 100%);
+    --background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+    --card-bg: rgba(255, 255, 255, 0.25);
+    --card-border: rgba(255, 255, 255, 0.4);
+    --card-border-strong: rgba(255, 255, 255, 0.6);
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --text-primary: #1c1d1f;
+    --text-secondary: #6a6f73;
+    --success: #0ca678;
+    --warning: #f59f00;
+    --danger: #fa5252;
+    --glow: rgba(86, 36, 208, 0.15);
+    --backdrop-overlay-1: rgba(174, 136, 255, 0.15);
+    --backdrop-overlay-2: rgba(206, 192, 252, 0.2);
+    --timer-bg: rgba(255, 255, 255, 0.8);
+    --quiz-container-bg: rgba(255, 255, 255, 0.6);
+    --progress-bg: rgba(255, 255, 255, 0.5);
+    --nav-dot-bg: rgba(255, 255, 255, 0.7);
+    --option-bg: rgba(255, 255, 255, 0.6);
+    --option-hover-bg: rgba(255, 255, 255, 0.8);
+    --stat-item-bg: rgba(255, 255, 255, 0.6);
+    --prev-btn-bg: rgba(255, 255, 255, 0.7);
+    --prev-btn-hover-bg: rgba(255, 255, 255, 0.9);
+    --modal-bg: rgba(255, 255, 255, 0.8);
+    --modal-btn-secondary-bg: rgba(255, 255, 255, 0.7);
+    --modal-btn-secondary-hover-bg: rgba(255, 255, 255, 0.9);
+    --warning-bg: rgba(255, 249, 219, 0.7);
+    --border-top: rgba(255, 255, 255, 0.5);
+    --input-bg: rgba(255, 255, 255, 0.4);
+    --input-border: rgba(206, 192, 252, 0.3);
+    --input-focus-border: var(--primary);
+    --tab-bg: rgba(245, 247, 250, 0.5);
+    --tab-active-bg: rgba(255, 255, 255, 0.7);
+    --social-btn-bg: rgba(255, 255, 255, 0.4);
+    --social-btn-border: rgba(206, 192, 252, 0.2);
+    --divider-bg: rgba(206, 192, 252, 0.3);
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+    padding: 20px 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: 
+        radial-gradient(circle at 20% 30%, var(--backdrop-overlay-1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, var(--backdrop-overlay-2) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(164, 53, 240, 0.1) 0%, transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+    transition: background 0.3s ease;
+}
+
+/* Background Animation */
+.auth-container {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.auth-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.floating-shapes {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--backdrop-overlay-1);
+    backdrop-filter: blur(10px);
+    animation: float 25s infinite linear;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.shape-1 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+    background: linear-gradient(135deg, rgba(174, 136, 255, 0.2) 0%, rgba(206, 192, 252, 0.1) 100%);
+}
+
+.shape-2 {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    right: 10%;
+    animation-delay: 6s;
+    background: linear-gradient(135deg, rgba(164, 53, 240, 0.15) 0%, rgba(124, 63, 242, 0.1) 100%);
+}
+
+.shape-3 {
+    width: 60px;
+    height: 60px;
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 12s;
+    background: linear-gradient(135deg, rgba(206, 192, 252, 0.2) 0%, rgba(174, 136, 255, 0.1) 100%);
+}
+
+.shape-4 {
+    width: 100px;
+    height: 100px;
+    top: 10%;
+    right: 30%;
+    animation-delay: 18s;
+    background: linear-gradient(135deg, rgba(86, 36, 208, 0.1) 0%, rgba(164, 53, 240, 0.15) 100%);
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-25px) rotate(180deg) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* Enhanced Glass Auth Card with Slow Height Transitions */
+.auth-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 28px;
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--card-border-strong);
+    /* KEY CHANGE: Add slow height transition to the card itself */
+    transition: all 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    overflow: hidden;
+}
+
+.auth-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.auth-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(255, 255, 255, 0.05) 100%);
+    pointer-events: none;
+    border-radius: 28px;
+}
+
+/* Header */
+.auth-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.logo i {
+    font-size: 32px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(86, 36, 208, 0.3));
+}
+
+.logo h1 {
+    font-size: 28px;
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 2px 4px rgba(86, 36, 208, 0.2));
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Enhanced Tabs */
+.auth-tabs {
+    display: flex;
+    background: var(--tab-bg);
+    backdrop-filter: blur(15px);
+    border-radius: 12px;
+    padding: 4px;
+    margin-bottom: 30px;
+    border: 1px solid var(--card-border);
+    position: relative;
+    z-index: 2;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 1;
+}
+
+.tab-btn.active {
+    background: var(--tab-active-bg);
+    color: var(--primary);
+    box-shadow: 
+        0 4px 15px var(--glow),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    border: 1px solid var(--card-border);
+    transform: translateY(-1px);
+}
+
+/* FIXED: Forms Container for Smooth Height Calculation */
+.forms-container {
+    position: relative;
+    overflow: hidden;
+    /* This will help with smooth height transitions */
+    transition: height 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* Quick Form Transitions (since height animation handles the slowness) */
+.auth-form {
+    display: none;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Faster form content transition */
+}
+
+.auth-form.active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Fixed Input Wrapper */
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-wrapper i {
+    position: absolute;
+    left: 16px;
+    color: var(--primary);
+    z-index: 3;
+    opacity: 0.7;
+    transition: all 0.4s ease;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 14px 52px 14px 48px;
+    border: 2px solid var(--input-border);
+    border-radius: 12px;
+    font-size: 14px;
+    background: var(--input-bg);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+}
+
+.input-wrapper input::placeholder {
+    color: var(--text-secondary);
+}
+
+.input-wrapper input:focus {
+    border-color: var(--input-focus-border);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 
+        0 0 0 3px var(--glow),
+        0 4px 20px rgba(86, 36, 208, 0.1);
+    transform: translateY(-1px);
+}
+
+.input-wrapper input:focus ~ i {
+    color: var(--primary);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Perfectly Centered Toggle Password Button */
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    z-index: 3;
+    padding: 0;
+    opacity: 0.7;
+    transition: all 0.4s ease;
+    border-radius: 6px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.toggle-password i {
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    opacity: 1;
+    background: rgba(86, 36, 208, 0.1);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.toggle-password:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    opacity: 1;
+}
+
+.toggle-password:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+/* Password Strength */
+.password-strength {
+    margin-top: 6px;
+}
+
+.strength-bar {
+    height: 5px;
+    background: var(--progress-bg);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 3px;
+    backdrop-filter: blur(5px);
+    border: 1px solid var(--card-border);
+    transition: all 0.4s ease;
+}
+
+.strength-text {
+    font-size: 11px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.4s ease;
+}
+
+.checkbox-wrapper input {
+    display: none;
+}
+
+.checkmark {
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--input-border);
+    border-radius: 4px;
+    margin-right: 8px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--input-bg);
+    backdrop-filter: blur(5px);
+}
+
+.checkbox-wrapper:hover .checkmark {
+    border-color: var(--primary);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px var(--glow);
+}
+
+.checkbox-wrapper input:checked + .checkmark {
+    background: var(--primary-gradient);
+    border-color: var(--primary);
+    box-shadow: 0 4px 12px var(--glow);
+    transform: scale(1.1);
+}
+
+.checkbox-wrapper input:checked + .checkmark::after {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: white;
+    font-size: 9px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkbox-wrapper a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.checkbox-wrapper a:hover {
+    color: var(--accent);
+}
+
+.forgot-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+/* Enhanced Buttons */
+.auth-btn {
+    width: 100%;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 0;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.auth-btn:hover::before {
+    left: 100%;
+}
+
+.auth-btn.primary {
+    background: var(--primary-gradient);
+    color: white;
+    box-shadow: 0 8px 25px var(--glow);
+}
+
+.auth-btn.primary:hover {
+    background: var(--accent-gradient);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px var(--glow);
+}
+
+/* Enhanced Divider */
+.divider {
+    position: relative;
+    text-align: center;
+    margin: 25px 0;
+    z-index: 2;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--divider-bg), transparent);
+}
+
+.divider span {
+    background: var(--card-bg);
+    backdrop-filter: blur(15px);
+    padding: 0 20px;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+}
+
+/* Enhanced Social Login */
+.social-login {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 18px;
+    z-index: 2;
+    position: relative;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 12px 18px;
+    border: 2px solid var(--social-btn-border);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--social-btn-bg);
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.social-btn:hover::before {
+    left: 100%;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px var(--card-shadow);
+}
+
+.social-btn.google:hover {
+    border-color: #db4437;
+    color: #db4437;
+    box-shadow: 0 12px 25px rgba(219, 68, 55, 0.25);
+}
+
+.social-btn.github:hover {
+    border-color: #333;
+    color: #333;
+    box-shadow: 0 12px 25px rgba(51, 51, 51, 0.25);
+}
+
+.social-btn i {
+    font-size: 16px;
+}
+
+/* Enhanced Alerts */
+.alert {
+    padding: 14px;
+    border-radius: 12px;
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    backdrop-filter: blur(15px);
+    border: 1px solid;
+    animation: slideInAlert 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.alert::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: currentColor;
+}
+
+.alert-error {
+    background: rgba(250, 82, 82, 0.1);
+    color: var(--danger);
+    border-color: rgba(250, 82, 82, 0.3);
+}
+
+.alert-success {
+    background: rgba(12, 166, 120, 0.1);
+    color: var(--success);
+    border-color: rgba(12, 166, 120, 0.3);
+}
+
+/* Enhanced Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInAlert {
+    from {
+        opacity: 0;
+        transform: translateX(-30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+/* Loading Animation */
+.loading {
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+.loading .auth-btn::after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 1.2s linear infinite;
+    margin-left: 8px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error State */
+.input-wrapper input.error {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px rgba(250, 82, 82, 0.1);
+    animation: shake 0.6s ease-in-out;
+}
+
+.input-wrapper input.error:focus {
+    border-color: var(--danger);
+    box-shadow: 0 0 0 3px rgba(250, 82, 82, 0.2);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    75% { transform: translateX(8px); }
+}
+
+/* Enhanced Hover Effects */
+.auth-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 
+        0 40px 80px rgba(0, 0, 0, 0.25),
+        0 0 0 1px rgba(255, 255, 255, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.tab-btn:hover:not(.active) {
+    color: var(--primary);
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.checkbox-wrapper:hover {
+    color: var(--primary);
+}
+
+/* Focus States */
+.tab-btn:focus,
+.auth-btn:focus,
+.social-btn:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+}
+
+/* Enhanced Visual Hierarchy */
+.auth-header {
+    position: relative;
+}
+
+.auth-header::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background: var(--primary-gradient);
+    border-radius: 1px;
+    box-shadow: 0 2px 8px var(--glow);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 25px 18px;
+        margin: 10px;
+        border-radius: 20px;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .social-login {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .logo h1 {
+        font-size: 24px;
+    }
+    
+    .auth-container {
+        padding: 10px;
+    }
+    
+    body {
+        overflow-y: auto;
+        padding: 10px 0;
+    }
+    
+    .input-wrapper input {
+        padding: 12px 45px 12px 40px;
+        font-size: 16px;
+    }
+    
+    .toggle-password {
+        right: 12px;
+        width: 28px;
+        height: 28px;
+        font-size: 12px;
+    }
+    
+    .form-group {
+        margin-bottom: 16px;
+    }
+    
+    .auth-btn {
+        padding: 12px 20px;
+    }
+    
+    .social-btn {
+        padding: 11px 16px;
+    }
+}
+
+@media (max-width: 360px) {
+    .auth-card {
+        padding: 20px 15px;
+    }
+    
+    .logo {
+        gap: 8px;
+    }
+    
+    .logo i {
+        font-size: 28px;
+    }
+    
+    .logo h1 {
+        font-size: 22px;
+    }
+    
+    .input-wrapper input {
+        padding: 11px 40px 11px 36px;
+    }
+    
+    .toggle-password {
+        right: 10px;
+        width: 26px;
+        height: 26px;
+        font-size: 11px;
+    }
+    
+    .form-group {
+        margin-bottom: 14px;
+    }
+}
+/* Add this to the existing CSS - just the forms section needs updating */
+
+/* FIXED: Forms Container for Smooth Height Calculation */
+.forms-container {
+    position: relative;
+    /* This will help with smooth height transitions */
+    transition: height 1.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    margin-bottom: 25px; /* Add margin to separate from divider */
+}
+
+/* FIXED: Form Transitions - Ensure proper display */
+.auth-form {
+    display: none;
+    opacity: 0;
+    transform: translateX(30px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%; /* Ensure full width */
+}
+
+.auth-form.active {
+    display: block !important; /* Force display */
+    opacity: 1;
+    transform: translateX(0);
+    position: relative; /* Ensure proper positioning */
+    z-index: 1;
+}
+
+/* Ensure forms container doesn't collapse */
+.forms-container:empty {
+    min-height: 200px;
+}

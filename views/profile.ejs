@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Quiz - Profile</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.css" rel="stylesheet">
+</head>
+<body>
+    <%- include('./partials/header') %>
+    <%
+        // Dummy data for testing
+        const user = {
+            name: 'Rashmika Nawanjana',
+            email: 'rashmika@example.com',
+            avatar: '/images/default-avatar.png'
+        };
+        
+        const stats = {
+            totalQuizzes: 47,
+            averageScore: 85,
+            totalModules: 8,
+            streak: 12
+        };
+        
+        const modules = [
+            {
+                id: 'db001',
+                name: 'Database Systems',
+                code: 'CS3042',
+                icon: 'fas fa-database',
+                progress: 85,
+                completedQuizzes: 8,
+                totalQuizzes: 10,
+                averageScore: 87,
+                bestScore: 95,
+                timeSpent: '12h 30m'
+            },
+            {
+                id: 'os001',
+                name: 'Operating Systems',
+                code: 'CS3022',
+                icon: 'fas fa-microchip',
+                progress: 72,
+                completedQuizzes: 6,
+                totalQuizzes: 9,
+                averageScore: 78,
+                bestScore: 88,
+                timeSpent: '9h 45m'
+            },
+            {
+                id: 'ds001',
+                name: 'Data Structures',
+                code: 'CS3012',
+                icon: 'fas fa-project-diagram',
+                progress: 90,
+                completedQuizzes: 9,
+                totalQuizzes: 10,
+                averageScore: 92,
+                bestScore: 98,
+                timeSpent: '15h 20m'
+            },
+            {
+                id: 'se001',
+                name: 'Software Engineering',
+                code: 'CS3032',
+                icon: 'fas fa-code',
+                progress: 65,
+                completedQuizzes: 5,
+                totalQuizzes: 8,
+                averageScore: 76,
+                bestScore: 85,
+                timeSpent: '8h 15m'
+            },
+            {
+                id: 'cn001',
+                name: 'Computer Networks',
+                code: 'CS3052',
+                icon: 'fas fa-network-wired',
+                progress: 78,
+                completedQuizzes: 7,
+                totalQuizzes: 9,
+                averageScore: 82,
+                bestScore: 91,
+                timeSpent: '11h 10m'
+            },
+            {
+                id: 'ai001',
+                name: 'Artificial Intelligence',
+                code: 'CS3062',
+                icon: 'fas fa-brain',
+                progress: 55,
+                completedQuizzes: 4,
+                totalQuizzes: 8,
+                averageScore: 74,
+                bestScore: 89,
+                timeSpent: '6h 45m'
+            }
+        ];
+        
+        const recentAttempts = [
+            {
+                id: 'att001',
+                quizName: 'Database Normalization Quiz',
+                moduleName: 'Database Systems',
+                score: 92,
+                scoreClass: 'excellent',
+                duration: '15m 30s',
+                date: '2025-01-15',
+                quizId: 'quiz001'
+            },
+            {
+                id: 'att002',
+                quizName: 'Process Scheduling',
+                moduleName: 'Operating Systems',
+                score: 78,
+                scoreClass: 'good',
+                duration: '12m 45s',
+                date: '2025-01-14',
+                quizId: 'quiz002'
+            },
+            {
+                id: 'att003',
+                quizName: 'Binary Trees',
+                moduleName: 'Data Structures',
+                score: 95,
+                scoreClass: 'excellent',
+                duration: '18m 20s',
+                date: '2025-01-13',
+                quizId: 'quiz003'
+            },
+            {
+                id: 'att004',
+                quizName: 'SDLC Models',
+                moduleName: 'Software Engineering',
+                score: 65,
+                scoreClass: 'poor',
+                duration: '14m 10s',
+                date: '2025-01-12',
+                quizId: 'quiz004'
+            },
+            {
+                id: 'att005',
+                quizName: 'TCP/IP Protocol',
+                moduleName: 'Computer Networks',
+                score: 88,
+                scoreClass: 'excellent',
+                duration: '16m 55s',
+                date: '2025-01-11',
+                quizId: 'quiz005'
+            },
+            {
+                id: 'att006',
+                quizName: 'AI Search Algorithms',
+                moduleName: 'Artificial Intelligence',
+                score: 73,
+                scoreClass: 'good',
+                duration: '20m 15s',
+                date: '2025-01-10',
+                quizId: 'quiz006'
+            }
+        ];
+        
+        const achievements = [
+            {
+                id: 'ach001',
+                name: 'First Steps',
+                description: 'Complete your first quiz',
+                icon: 'fas fa-star',
+                unlocked: true,
+                unlockedDate: '2024-12-01',
+                progress: 100
+            },
+            {
+                id: 'ach002',
+                name: 'Quiz Master',
+                description: 'Complete 50 quizzes',
+                icon: 'fas fa-crown',
+                unlocked: false,
+                progress: 94
+            },
+            {
+                id: 'ach003',
+                name: 'Perfect Score',
+                description: 'Get 100% on any quiz',
+                icon: 'fas fa-trophy',
+                unlocked: true,
+                unlockedDate: '2024-12-15',
+                progress: 100
+            },
+            {
+                id: 'ach004',
+                name: 'Streak Champion',
+                description: 'Maintain a 30-day streak',
+                icon: 'fas fa-fire',
+                unlocked: false,
+                progress: 40
+            },
+            {
+                id: 'ach005',
+                name: 'Speed Demon',
+                description: 'Complete a quiz in under 5 minutes',
+                icon: 'fas fa-bolt',
+                unlocked: true,
+                unlockedDate: '2025-01-05',
+                progress: 100
+            },
+            {
+                id: 'ach006',
+                name: 'Knowledge Seeker',
+                description: 'Complete quizzes in all modules',
+                icon: 'fas fa-graduation-cap',
+                unlocked: false,
+                progress: 75
+            }
+        ];
+    %>
+
+    <!-- Layout Container -->
+    <div class="layout-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <!-- Profile Summary -->
+                <div class="profile-summary">
+                    <div class="profile-avatar-small">
+                        <img src="<%= user.avatar || '/images/default-avatar.png' %>" alt="Profile Avatar">
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="profile-info-small">
+                        <h3><%= user.name %></h3>
+                        <p><%= user.email %></p>
+                    </div>
+                </div>
+
+                <!-- Navigation Menu -->
+                <nav class="sidebar-nav">
+                    <!-- Overview Section -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Overview</div>
+                        <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                        <a href="#recent-attempts" class="nav-item" data-section="recent-attempts">
+                            <i class="fas fa-history"></i>
+                            <span>Recent Attempts</span>
+                            <span class="nav-badge">5</span>
+                        </a>
+                    </div>
+
+                    <!-- Progress Section -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Progress</div>
+                        <a href="#modules" class="nav-item" data-section="modules">
+                            <i class="fas fa-book"></i>
+                            <span>Module Progress</span>
+                        </a>
+                        <a href="#analytics" class="nav-item" data-section="analytics">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Analytics</span>
+                        </a>
+                        <a href="#achievements" class="nav-item" data-section="achievements">
+                            <i class="fas fa-trophy"></i>
+                            <span>Achievements</span>
+                            <span class="nav-badge">3</span>
+                        </a>
+                    </div>
+
+                    <!-- Account Section -->
+                    <div class="nav-section">
+                        <div class="nav-section-title">Account</div>
+                        <a href="#profile-settings" class="nav-item" data-section="profile-settings">
+                            <i class="fas fa-user-cog"></i>
+                            <span>Profile Settings</span>
+                        </a>
+                        <a href="#preferences" class="nav-item" data-section="preferences">
+                            <i class="fas fa-sliders-h"></i>
+                            <span>Preferences</span>
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- Logout Button -->
+                <div class="sidebar-footer">
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="content-header">
+                    <h1>Dashboard</h1>
+                    <p>Overview of your quiz performance and progress</p>
+                </div>
+                
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clipboard-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><%= stats.totalQuizzes %></h3>
+                            <p>Quizzes Completed</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+3 this week</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon success">
+                            <i class="fas fa-percentage"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><%= stats.averageScore %>%</h3>
+                            <p>Average Score</p>
+                            <div class="stat-trend success">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+2% improvement</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon warning">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><%= stats.totalModules %></h3>
+                            <p>Active Modules</p>
+                            <div class="stat-trend">
+                                <i class="fas fa-minus"></i>
+                                <span>No change</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon fire">
+                            <i class="fas fa-fire"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3><%= stats.streak %></h3>
+                            <p>Day Streak</p>
+                            <div class="stat-trend success">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Keep it up!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="actions-grid">
+                        <button class="action-card" onclick="startQuiz()">
+                            <i class="fas fa-play"></i>
+                            <h3>Start Quiz</h3>
+                            <p>Begin a new quiz session</p>
+                        </button>
+                        <button class="action-card" onclick="viewProgress()">
+                            <i class="fas fa-chart-bar"></i>
+                            <h3>View Progress</h3>
+                            <p>Check your module progress</p>
+                        </button>
+                        <button class="action-card" onclick="reviewMistakes()">
+                            <i class="fas fa-search"></i>
+                            <h3>Review Mistakes</h3>
+                            <p>Learn from previous errors</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Attempts Section -->
+            <section id="recent-attempts" class="content-section">
+                <div class="content-header">
+                    <h1>Recent Quiz Attempts</h1>
+                    <p>Your latest quiz performance and results</p>
+                    <button class="btn-view-all" onclick="viewAllAttempts()">
+                        View All
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="attempts-grid">
+                    <% recentAttempts.forEach(attempt => { %>
+                    <div class="attempt-card">
+                        <div class="attempt-header">
+                            <div class="quiz-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="quiz-info">
+                                <h3><%= attempt.quizName %></h3>
+                                <p><%= attempt.moduleName %></p>
+                            </div>
+                            <div class="score-badge score-<%= attempt.scoreClass %>">
+                                <%= attempt.score %>%
+                            </div>
+                        </div>
+                        
+                        <div class="attempt-details">
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span><%= attempt.duration %></span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-calendar"></i>
+                                <span><%= attempt.date %></span>
+                            </div>
+                        </div>
+                        
+                        <div class="attempt-actions">
+                            <button class="btn-secondary" onclick="viewAttempt('<%= attempt.id %>')">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                            <button class="btn-primary" onclick="retakeQuiz('<%= attempt.quizId %>')">
+                                <i class="fas fa-redo"></i>
+                                Retake
+                            </button>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <!-- Modules Section -->
+            <section id="modules" class="content-section">
+                <div class="content-header">
+                    <h1>Module Progress</h1>
+                    <p>Track your progress across all course modules</p>
+                </div>
+                
+                <div class="modules-grid">
+                    <% modules.forEach(module => { %>
+                    <div class="module-card-premium">
+                        <div class="module-background">
+                            <div class="module-icon-large">
+                                <i class="<%= module.icon %>"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="module-content">
+                            <div class="module-header">
+                                <h3><%= module.name %></h3>
+                                <span class="module-code"><%= module.code %></span>
+                            </div>
+                            
+                            <div class="progress-section">
+                                <div class="progress-info">
+                                    <span>Progress</span>
+                                    <span><%= module.progress %>%</span>
+                                </div>
+                                <div class="progress-bar-modern">
+                                    <div class="progress-fill" style="width: <%= module.progress %>%"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="module-stats-grid">
+                                <div class="stat-mini">
+                                    <span class="stat-label">Completed</span>
+                                    <span class="stat-value"><%= module.completedQuizzes %>/<%= module.totalQuizzes %></span>
+                                </div>
+                                <div class="stat-mini">
+                                    <span class="stat-label">Avg Score</span>
+                                    <span class="stat-value"><%= module.averageScore %>%</span>
+                                </div>
+                                <div class="stat-mini">
+                                    <span class="stat-label">Best</span>
+                                    <span class="stat-value"><%= module.bestScore %>%</span>
+                                </div>
+                                <div class="stat-mini">
+                                    <span class="stat-label">Time</span>
+                                    <span class="stat-value"><%= module.timeSpent %></span>
+                                </div>
+                            </div>
+                            
+                            <div class="module-actions">
+                                <button class="btn-module-continue" onclick="viewModule('<%= module.id %>')">
+                                    <i class="fas fa-play"></i>
+                                    Continue
+                                </button>
+                                <button class="btn-module-history" onclick="viewHistory('<%= module.id %>')">
+                                    <i class="fas fa-history"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="content-section">
+                <div class="content-header">
+                    <h1>Performance Analytics</h1>
+                    <p>Detailed insights into your quiz performance</p>
+                </div>
+                
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <div class="card-header">
+                            <h3>Progress Overview</h3>
+                            <select class="time-filter">
+                                <option value="week">Last Week</option>
+                                <option value="month" selected>Last Month</option>
+                                <option value="year">Last Year</option>
+                            </select>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="progressChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card">
+                        <div class="card-header">
+                            <h3>Score Distribution</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="scoreChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="analytics-card full-width">
+                        <div class="card-header">
+                            <h3>Module Performance</h3>
+                        </div>
+                        <div class="chart-container">
+                            <canvas id="moduleChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Achievements Section -->
+            <section id="achievements" class="content-section">
+                <div class="content-header">
+                    <h1>Achievements</h1>
+                    <p>Your learning milestones and accomplishments</p>
+                </div>
+                
+                <div class="achievements-grid">
+                    <% achievements.forEach(achievement => { %>
+                    <div class="achievement-card-premium <%= achievement.unlocked ? 'unlocked' : 'locked' %>">
+                        <div class="achievement-glow"></div>
+                        <div class="achievement-icon-premium">
+                            <i class="<%= achievement.icon %>"></i>
+                        </div>
+                        <div class="achievement-content">
+                            <h3><%= achievement.name %></h3>
+                            <p><%= achievement.description %></p>
+                            <% if (achievement.unlocked) { %>
+                                <div class="achievement-date">
+                                    <i class="fas fa-check-circle"></i>
+                                    Unlocked on <%= achievement.unlockedDate %>
+                                </div>
+                            <% } else { %>
+                                <div class="achievement-progress">
+                                    <div class="progress-bar-achievement">
+                                        <div class="progress-fill" style="width: <%= achievement.progress %>%"></div>
+                                    </div>
+                                    <span><%= achievement.progress %>% complete</span>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+                    <% }); %>
+                </div>
+            </section>
+
+            <!-- Profile Settings Section -->
+            <section id="profile-settings" class="content-section">
+                <div class="content-header">
+                    <h1>Profile Settings</h1>
+                    <p>Manage your account information and preferences</p>
+                </div>
+                
+                <div class="settings-card">
+                    <div class="profile-edit-section">
+                        <div class="profile-picture-edit">
+                            <img src="<%= user.avatar || '/images/default-avatar.png' %>" alt="Profile Picture">
+                            <button class="change-picture-btn" onclick="editAvatar()">
+                                <i class="fas fa-camera"></i>
+                                Change Picture
+                            </button>
+                        </div>
+                        
+                        <div class="profile-form">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" value="<%= user.name %>" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" value="<%= user.email %>" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Password</label>
+                                <button class="btn-secondary">Change Password</button>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button class="btn-primary">Save Changes</button>
+                                <button class="btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preferences Section -->
+            <section id="preferences" class="content-section">
+                <div class="content-header">
+                    <h1>Preferences</h1>
+                    <p>Customize your quiz experience</p>
+                </div>
+                
+                <div class="preferences-grid">
+                    <div class="preference-card">
+                        <h3>Quiz Settings</h3>
+                        <div class="preference-item">
+                            <span>Auto-submit on time limit</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <span>Show correct answers after quiz</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <span>Sound effects</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox">
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="preference-card">
+                        <h3>Notifications</h3>
+                        <div class="preference-item">
+                            <span>Email reminders</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="preference-item">
+                            <span>Achievement notifications</span>
+                            <label class="toggle-switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>
