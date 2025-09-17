@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What does JDBC stand for?",
+        "options": [
+            "Java Database Connection",
+            "Java Database Connectivity",
+            "Java Data Base Control",
+            "Java Database Communication"
+        ],
+        "correctAnswer": 1,
+        "explanation": "JDBC stands for Java Database Connectivity, which is a Java API for communicating with database systems supporting SQL."
+    },
+    {
+        "id": "q2",
+        "text": "Which of the following is NOT a typical step in the JDBC model for communicating with a database?",
+        "options": [
+            "Open a connection",
+            "Create a statement object",
+            "Compile SQL statements",
+            "Execute queries using the Statement object"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The JDBC model includes: open connection, create statement object, execute queries, and close connections. SQL statements are not compiled in the JDBC model."
+    },
+    {
+        "id": "q3",
+        "text": "In JDBC, which method is used to execute INSERT, UPDATE, or DELETE statements?",
+        "options": [
+            "executeQuery()",
+            "executeUpdate()",
+            "execute()",
+            "executeBatch()"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The executeUpdate() method is used for INSERT, UPDATE, and DELETE statements, while executeQuery() is used for SELECT statements that return a ResultSet."
+    },
+    {
+        "id": "q4",
+        "text": "In JDBC, which method returns a ResultSet object?",
+        "options": [
+            "executeUpdate()",
+            "executeQuery()",
+            "execute()",
+            "executeBatch()"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The executeQuery() method executes SQL SELECT statements and returns a ResultSet object containing the query results."
+    },
+    {
+        "id": "q5",
+        "text": "What are the two equivalent ways to get a field value from a ResultSet?",
+        "options": [
+            "resultSet.getString(\"field_name\") and resultSet.getString(index)",
+            "resultSet.getField(\"field_name\") and resultSet.getField(index)",
+            "resultSet.getValue(\"field_name\") and resultSet.getValue(index)",
+            "resultSet.fetchString(\"field_name\") and resultSet.fetchString(index)"
+        ],
+        "correctAnswer": 0,
+        "explanation": "You can access fields using either the column name (e.g., resultSet.getString(\"dept_name\")) or the column index (e.g., resultSet.getString(1))."
+    },
+    {
+        "id": "q6",
+        "text": "What symbol is used as a parameter placeholder in PreparedStatement?",
+        "options": [
+            "%",
+            "@",
+            "?",
+            "#"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The question mark (?) is used as a parameter placeholder in PreparedStatement SQL queries, which are then set using methods like setString(), setInt(), etc."
+    },
+    {
+        "id": "q7",
+        "text": "Why should you always use PreparedStatement when taking user input?",
+        "options": [
+            "It executes faster",
+            "It uses less memory",
+            "To prevent SQL injection attacks",
+            "It provides better error handling"
+        ],
+        "correctAnswer": 2,
+        "explanation": "PreparedStatement internally sanitizes inputs, preventing SQL injection attacks that can occur when concatenating user input directly into SQL strings."
+    },
+    {
+        "id": "q8",
+        "text": "What problem occurs if a user enters \"D'Souza\" as input when using string concatenation to build SQL queries?",
+        "options": [
+            "Memory overflow",
+            "Syntax error due to the single quote",
+            "Character encoding issues",
+            "Database connection timeout"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The single quote in \"D'Souza\" will cause a SQL syntax error when concatenated directly into a query string, as it will terminate the string prematurely."
+    },
+    {
+        "id": "q9",
+        "text": "In the SQL injection example, if a user enters \"X' or 'Y' = 'Y\" what does the resulting query become?",
+        "options": [
+            "select * from instructor where name = 'X' or 'Y' = 'Y'",
+            "select * from instructor where name = 'X\\' or \\'Y\\' = \\'Y'",
+            "select * from instructor where name = \"X' or 'Y' = 'Y\"",
+            "The query will fail with a syntax error"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The malicious input creates a query that always returns true due to the 'Y' = 'Y' condition, potentially exposing all instructor records."
+    },
+    {
+        "id": "q10",
+        "text": "By default, how does JDBC handle transaction commits?",
+        "options": [
+            "Manually - you must call commit() for each statement",
+            "Each SQL statement is treated as a separate transaction that is committed automatically",
+            "All statements in a session are committed together",
+            "Transactions are never committed automatically"
+        ],
+        "correctAnswer": 1,
+        "explanation": "By default, JDBC auto-commits each SQL statement as a separate transaction, which is problematic for multi-statement transactions."
+    },
+    {
+        "id": "q11",
+        "text": "To manually control transactions in JDBC, you should first call:",
+        "options": [
+            "conn.setTransaction(false)",
+            "conn.setAutoCommit(false)",
+            "conn.beginTransaction()",
+            "conn.disableAutoCommit()"
+        ],
+        "correctAnswer": 1,
+        "explanation": "conn.setAutoCommit(false) disables automatic commit, allowing you to manually control when transactions are committed or rolled back."
+    },
+    {
+        "id": "q12",
+        "text": "Which JDBC method is used to handle large binary objects?",
+        "options": [
+            "getLargeObject()",
+            "getBinaryData()",
+            "getBlob()",
+            "getLOB()"
+        ],
+        "correctAnswer": 2,
+        "explanation": "getBlob() and getClob() methods are used to return Blob and Clob objects respectively for handling large binary and character data."
+    },
+    {
+        "id": "q13",
+        "text": "What does ODBC stand for?",
+        "options": [
+            "Object Database Connectivity",
+            "Open Database Connection",
+            "Open Database Connectivity",
+            "Oracle Database Connection"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ODBC stands for Open Database Connectivity, which is a standard API for connecting to database systems from various programming languages."
+    },
+    {
+        "id": "q14",
+        "text": "Which programming languages does ODBC work with?",
+        "options": [
+            "Only Java",
+            "Only C and C++",
+            "C, C++, C#, and Visual Basic",
+            "All programming languages"
+        ],
+        "correctAnswer": 2,
+        "explanation": "ODBC works with C, C++, C#, and Visual Basic, among other languages, while JDBC is specifically designed for Java."
+    },
+    {
+        "id": "q15",
+        "text": "In embedded SQL, what keyword is used to identify SQL statements to the preprocessor?",
+        "options": [
+            "SQL",
+            "EXEC SQL",
+            "EMBED SQL",
+            "BEGIN SQL"
+        ],
+        "correctAnswer": 1,
+        "explanation": "EXEC SQL is used to identify embedded SQL statements that need to be processed by the preprocessor before compilation."
+    },
+    {
+        "id": "q16",
+        "text": "What is the main advantage of SQLJ over JDBC?",
+        "options": [
+            "SQLJ is faster at runtime",
+            "SQLJ uses less memory",
+            "SQLJ can catch errors at compile time rather than runtime",
+            "SQLJ supports more database systems"
+        ],
+        "correctAnswer": 2,
+        "explanation": "SQLJ embeds SQL in Java code, allowing the compiler to catch SQL errors at compile time, whereas JDBC is dynamic and errors are only caught at runtime."
+    },
+    {
+        "id": "q17",
+        "text": "In SQLJ, what syntax is used to embed SQL statements?",
+        "options": [
+            "EXEC SQL { ... }",
+            "#SQL { ... }",
+            "SQL { ... }",
+            "EMBED SQL { ... }"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SQLJ uses the #SQL { ... } syntax to embed SQL statements in Java code."
+    },
+    {
+        "id": "q18",
+        "text": "What are stored procedures in SQL?",
+        "options": [
+            "Procedures stored in application memory",
+            "Procedures that can be stored in the database and executed using the call statement",
+            "Procedures that are automatically executed on startup",
+            "Procedures that handle database backup"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Stored procedures are procedures written in SQL that can be stored in the database and executed using the CALL statement, hiding internal database details from applications."
+    },
+    {
+        "id": "q19",
+        "text": "Which SQL standard first supported functions and procedures?",
+        "options": [
+            "SQL:1992",
+            "SQL:1999",
+            "SQL:2003",
+            "SQL:2006"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SQL:1999 was the first standard to support functions and procedures, including rich imperative constructs like loops and conditional statements."
+    },
+    {
+        "id": "q20",
+        "text": "In the function creation example, what does the 'returns integer' clause specify?",
+        "options": [
+            "The number of parameters the function accepts",
+            "The data type of the value returned by the function",
+            "The maximum value the function can return",
+            "The number of rows the function processes"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The 'returns integer' clause specifies that the function will return a value of integer data type."
+    },
+    {
+        "id": "q21",
+        "text": "What type of SQL construct was introduced in SQL:2003 for functions?",
+        "options": [
+            "Scalar functions only",
+            "Table functions that return a relation",
+            "Aggregate functions only",
+            "Window functions only"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SQL:2003 added table functions that can return a relation (table) as a result, not just scalar values."
+    },
+    {
+        "id": "q22",
+        "text": "What is the main difference between SQL functions and procedures?",
+        "options": [
+            "Functions are faster than procedures",
+            "Procedures can have output parameters while functions return values directly",
+            "Functions can only be called from embedded SQL",
+            "Procedures cannot access the database"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Procedures use 'in' and 'out' parameters to pass values, while functions return values directly using the 'return' statement."
+    },
+    {
+        "id": "q23",
+        "text": "What does SQL:1999 allow regarding function and procedure names?",
+        "options": [
+            "Names must be unique across the database",
+            "Names can be overloaded as long as the number or types of arguments differ",
+            "Names can only contain letters and numbers",
+            "Names must start with a specific prefix"
+        ],
+        "correctAnswer": 1,
+        "explanation": "SQL:1999 supports name overloading, allowing multiple functions/procedures with the same name as long as they have different numbers of arguments or different argument types."
+    },
+    {
+        "id": "q24",
+        "text": "In the while loop example, what is the initial value of variable n?",
+        "options": [
+            "1",
+            "0",
+            "10",
+            "null"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The example shows 'declare n integer default 0;' which initializes the variable n to 0."
+    },
+    {
+        "id": "q25",
+        "text": "What does the 'for' loop in SQL procedural constructs allow?",
+        "options": [
+            "Iteration over a fixed range of numbers",
+            "Iteration over all results of a query",
+            "Iteration over array elements",
+            "Iteration over file contents"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The SQL 'for' loop permits iteration over all results of a query, as shown in the example that iterates over budget values."
+    },
+    {
+        "id": "q26",
+        "text": "What is a benefit of using external language functions in SQL?",
+        "options": [
+            "They are more secure than SQL functions",
+            "They are more efficient and have more expressive power",
+            "They are easier to write",
+            "They require less memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "External language functions written in languages like C or C++ are more efficient for many operations and provide more expressive power than SQL alone."
+    },
+    {
+        "id": "q27",
+        "text": "What is a major security risk of external language functions?",
+        "options": [
+            "They can access unauthorized data",
+            "They consume too much memory",
+            "They are slower than SQL functions",
+            "They cannot be debugged"
+        ],
+        "correctAnswer": 0,
+        "explanation": "External functions may be loaded into the database system's address space, creating security risks including potential access to unauthorized data and corruption of database structures."
+    },
+    {
+        "id": "q28",
+        "text": "What is a trigger in SQL?",
+        "options": [
+            "A function that runs on a schedule",
+            "A statement executed automatically as a side effect of database modification",
+            "A constraint that prevents data modification",
+            "A backup mechanism for data recovery"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A trigger is a statement that executes automatically by the system as a side effect of a modification to the database."
+    },
+    {
+        "id": "q29",
+        "text": "Which SQL standard first introduced triggers?",
+        "options": [
+            "SQL:1992",
+            "SQL:1999",
+            "SQL:2003",
+            "Triggers were supported before any standard"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Triggers were introduced to the SQL standard in SQL:1999, though most databases supported them earlier using non-standard syntax."
+    },
+    {
+        "id": "q30",
+        "text": "What are the three triggering events that can activate a trigger?",
+        "options": [
+            "create, alter, drop",
+            "select, update, delete",
+            "insert, delete, update",
+            "commit, rollback, savepoint"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Triggers can be activated by insert, delete, or update operations on database tables."
+    },
+    {
+        "id": "q31",
+        "text": "When using 'referencing old row as orow', what type of operations can access this reference?",
+        "options": [
+            "Only insert operations",
+            "Only select operations",
+            "Delete and update operations",
+            "Only update operations"
+        ],
+        "correctAnswer": 2,
+        "explanation": "'referencing old row' is available for deletes and updates since these operations have previous values, while inserts do not."
+    },
+    {
+        "id": "q32",
+        "text": "What does 'for each statement' mean in trigger context?",
+        "options": [
+            "The trigger fires once per SQL statement",
+            "The trigger fires once per affected row",
+            "The trigger fires once per transaction",
+            "The trigger fires once per session"
+        ],
+        "correctAnswer": 0,
+        "explanation": "'for each statement' means a single action is executed for all rows affected by a transaction, instead of executing separately for each row."
+    },
+    {
+        "id": "q33",
+        "text": "Which of the following is NOT a recommended use case for triggers?",
+        "options": [
+            "Enforcing complex integrity constraints",
+            "Maintaining summary data",
+            "Logging changes for audit purposes",
+            "Converting data types during insertion"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The lecture specifically mentions that maintaining summary data is better handled by built-in materialized view facilities rather than triggers."
+    },
+    {
+        "id": "q34",
+        "text": "What is a risk of cascading trigger execution?",
+        "options": [
+            "Improved performance",
+            "Better data integrity",
+            "Unintended chain reactions and potential system failure",
+            "Simplified database maintenance"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Cascading execution can cause unintended chain reactions where one trigger fires another, potentially leading to system failures or infinite loops."
+    },
+    {
+        "id": "q35",
+        "text": "What does the rank() function do in SQL?",
+        "options": [
+            "Sorts the result set",
+            "Assigns ranks to rows based on specified ordering with possible gaps",
+            "Counts the number of rows",
+            "Finds the maximum value"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The rank() function assigns ranks to rows based on an order by specification, and may leave gaps when there are tied values."
+    },
+    {
+        "id": "q36",
+        "text": "What is the difference between rank() and dense_rank()?",
+        "options": [
+            "rank() is faster than dense_rank()",
+            "dense_rank() does not leave gaps in ranking while rank() does",
+            "rank() works with numbers only while dense_rank() works with all data types",
+            "There is no difference"
+        ],
+        "correctAnswer": 1,
+        "explanation": "dense_rank() does not leave gaps in ranking. If two students have the same top rank (1), the next rank with dense_rank() would be 2, while with rank() it would be 3."
+    },
+    {
+        "id": "q37",
+        "text": "What is the primary purpose of window functions in SQL?",
+        "options": [
+            "To create database windows",
+            "To smooth out random variations by computing over a range of rows",
+            "To display query results in windows",
+            "To partition large tables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Window functions are used to smooth out random variations, such as computing moving averages over a specified range of rows."
+    },
+    {
+        "id": "q38",
+        "text": "In the windowing example, what does 'between rows 1 preceding and 1 following' specify?",
+        "options": [
+            "The current row plus the previous and next rows",
+            "Only the previous row",
+            "Only the next row",
+            "The first and last rows of the table"
+        ],
+        "correctAnswer": 0,
+        "explanation": "This specification includes the current row, plus one row before it and one row after it, creating a 3-row window for calculations."
+    },
+    {
+        "id": "q39",
+        "text": "Which of the following is NOT a form of authorization on database data?",
+        "options": [
+            "Read",
+            "Insert",
+            "Update",
+            "Compile"
+        ],
+        "correctAnswer": 3,
+        "explanation": "The forms of authorization on data are: Read, Insert, Update, and Delete. Compile is not a database authorization type."
+    },
+    {
+        "id": "q40",
+        "text": "Which authorization allows creation and deletion of indices?",
+        "options": [
+            "Index",
+            "Resources",
+            "Alteration",
+            "Drop"
+        ],
+        "correctAnswer": 0,
+        "explanation": "The Index authorization specifically allows creation and deletion of indices on database tables."
+    },
+    {
+        "id": "q41",
+        "text": "What SQL statement is used to confer authorization?",
+        "options": [
+            "give",
+            "allow",
+            "grant",
+            "permit"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The GRANT statement is used to confer authorization privileges to users or roles in SQL."
+    },
+    {
+        "id": "q42",
+        "text": "What does 'public' mean in the context of granting privileges?",
+        "options": [
+            "Only administrators can use it",
+            "It allows all valid users the privilege granted",
+            "It makes the data publicly visible on the internet",
+            "It creates a public backup of the data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When 'public' is used in a GRANT statement, it allows all valid users in the system to have the specified privilege."
+    },
+    {
+        "id": "q43",
+        "text": "Which statement is used to remove authorization in SQL?",
+        "options": [
+            "remove",
+            "revoke",
+            "delete",
+            "deny"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The REVOKE statement is used to revoke (remove) previously granted authorization privileges."
+    },
+    {
+        "id": "q44",
+        "text": "What is a role in SQL authorization?",
+        "options": [
+            "A type of user account",
+            "A named collection of privileges that can be granted to users",
+            "A database table containing user information",
+            "A backup administrator position"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A role is a named collection of privileges that can be granted to users, making it easier to manage permissions for groups of users."
+    },
+    {
+        "id": "q45",
+        "text": "What happens when you grant a role to another role?",
+        "options": [
+            "An error occurs",
+            "The receiving role inherits all privileges of the granted role",
+            "Both roles are deleted",
+            "The roles are merged into one"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When a role is granted to another role, the receiving role inherits all privileges of the granted role, creating a hierarchy of permissions."
+    },
+    {
+        "id": "q46",
+        "text": "What does 'with grant option' allow?",
+        "options": [
+            "The grantee to revoke the privilege from others",
+            "The grantee to grant the privilege to other users",
+            "The grantee to modify the privilege",
+            "The grantee to rename the privilege"
+        ],
+        "correctAnswer": 1,
+        "explanation": "'with grant option' allows the recipient of a privilege to further grant that same privilege to other users."
+    },
+    {
+        "id": "q47",
+        "text": "In OLAP, what are measure attributes?",
+        "options": [
+            "Attributes that define dimensions",
+            "Attributes that measure some value and can be aggregated",
+            "Attributes that store metadata",
+            "Attributes that control access permissions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Measure attributes measure some value (like sales numbers) and can be aggregated using functions like SUM, AVG, etc."
+    },
+    {
+        "id": "q48",
+        "text": "What are dimension attributes in OLAP?",
+        "options": [
+            "Attributes that can be aggregated",
+            "Attributes that measure values",
+            "Attributes that define the dimensions on which measure attributes are viewed",
+            "Attributes that store user preferences"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Dimension attributes define the dimensions (like item_name, color, size) on which measure attributes or their aggregates are viewed and analyzed."
+    },
+    {
+        "id": "q49",
+        "text": "What is a cross-tabulation (cross-tab) also referred to as?",
+        "options": [
+            "Data cube",
+            "Pivot table",
+            "Summary table",
+            "Aggregate table"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A cross-tabulation (cross-tab) is also referred to as a pivot-table, showing data summarized across different dimensions."
+    },
+    {
+        "id": "q50",
+        "text": "What is a data cube?",
+        "options": [
+            "A three-dimensional database table",
+            "A multidimensional generalization of a cross-tab",
+            "A backup storage format",
+            "A type of index structure"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A data cube is a multidimensional generalization of a cross-tab that can have n dimensions, not just the 2 dimensions of a typical cross-tab."
+    },
+    {
+        "id": "q51",
+        "text": "What does 'drill down' mean in OLAP operations?",
+        "options": [
+            "Moving from finer-granularity to coarser-granularity data",
+            "Moving from coarser-granularity to finer-granularity data",
+            "Creating a new dimension",
+            "Deleting unnecessary data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Drill down is the operation of moving from coarser-granularity data to finer-granularity data, showing more detailed information."
+    },
+    {
+        "id": "q52",
+        "text": "What does 'rollup' mean in OLAP operations?",
+        "options": [
+            "Moving from coarser-granularity to finer-granularity data",
+            "Moving from finer-granularity to coarser-granularity data",
+            "Rotating the data display",
+            "Archiving old data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Rollup is the operation of moving from finer-granularity data to coarser-granularity data, showing more summarized information."
+    },
+    {
+        "id": "q53",
+        "text": "What does the cube operation in SQL compute?",
+        "options": [
+            "The volume of a data cube",
+            "Union of group by's on every subset of specified attributes",
+            "The intersection of multiple tables",
+            "A three-dimensional view of the data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The cube operation computes the union of group by operations on every subset of the specified attributes, generating all possible grouping combinations."
+    },
+    {
+        "id": "q54",
+        "text": "In the cube example with (item_name, color, size), how many different groupings are computed?",
+        "options": [
+            "3",
+            "6",
+            "8",
+            "12"
+        ],
+        "correctAnswer": 2,
+        "explanation": "With 3 attributes, cube computes 2³ = 8 different groupings, including all possible combinations of the attributes and the empty grouping."
+    },
+    {
+        "id": "q55",
+        "text": "What does the grouping() function return when applied to an attribute?",
+        "options": [
+            "The group number for that attribute",
+            "1 if the value represents 'all', 0 otherwise",
+            "The total number of groups",
+            "The attribute's data type"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The grouping() function returns 1 if the value is a null representing 'all' (aggregate across all values), and 0 for regular values."
+    },
+    {
+        "id": "q56",
+        "text": "What does the rollup construct generate?",
+        "options": [
+            "Union on every subset of specified attributes",
+            "Union on every prefix of specified list of attributes",
+            "Cross product of all attributes",
+            "Intersection of all groupings"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The rollup construct generates union on every prefix of the specified list of attributes, creating hierarchical summaries."
+    },
+    {
+        "id": "q57",
+        "text": "What does MOLAP stand for?",
+        "options": [
+            "Multiple Online Analytical Processing",
+            "Multidimensional Online Analytical Processing",
+            "Modern Online Analytical Processing",
+            "Memory Online Analytical Processing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "MOLAP stands for Multidimensional Online Analytical Processing, which uses multidimensional arrays in memory to store data cubes."
+    },
+    {
+        "id": "q58",
+        "text": "What is ROLAP?",
+        "options": [
+            "Relational Online Analytical Processing using only relational database features",
+            "Real-time Online Analytical Processing",
+            "Remote Online Analytical Processing",
+            "Rapid Online Analytical Processing"
+        ],
+        "correctAnswer": 0,
+        "explanation": "ROLAP (Relational OLAP) refers to OLAP implementations that use only relational database features, without specialized multidimensional storage."
+    },
+    {
+        "id": "q59",
+        "text": "What type of handler is shown in the exception handling example?",
+        "options": [
+            "continue",
+            "exit",
+            "retry",
+            "ignore"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The example shows an 'exit' handler, which causes the enclosing begin..end block to be exited when the exception occurs."
+    },
+    {
+        "id": "q60",
+        "text": "What is the purpose of the signal statement in exception handling?",
+        "options": [
+            "To catch an exception",
+            "To define an exception condition",
+            "To raise/trigger an exception condition",
+            "To ignore an exception"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The signal statement is used to raise or trigger an exception condition, which can then be caught by appropriate exception handlers."
+    }
+]
