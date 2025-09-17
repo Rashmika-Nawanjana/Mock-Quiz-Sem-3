@@ -1,0 +1,722 @@
+[
+    {
+        "id": "q1",
+        "text": "What is the primary purpose of indexing mechanisms in databases?",
+        "options": [
+            "To reduce storage space requirements",
+            "To speed up access to desired data",
+            "To improve data security",
+            "To compress data files"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Indexing mechanisms are used to speed up access to desired data, similar to how an author catalog helps locate books in a library."
+    },
+    {
+        "id": "q2",
+        "text": "What is a search key in the context of database indexing?",
+        "options": [
+            "A password used to access the database",
+            "An encryption key for data security",
+            "An attribute or set of attributes used to look up records in a file",
+            "A primary key constraint"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A search key is an attribute or set of attributes used to look up records in a file, forming the basis for index organization."
+    },
+    {
+        "id": "q3",
+        "text": "An index file consists of records called index entries. What is the typical structure of an index entry?",
+        "options": [
+            "search-key and pointer",
+            "primary key and foreign key",
+            "data value and timestamp",
+            "record ID and checksum"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Index entries consist of a search-key and a pointer, where the pointer directs to the actual record location."
+    },
+    {
+        "id": "q4",
+        "text": "What are the two basic kinds of indices mentioned in the lecture?",
+        "options": [
+            "Primary and secondary indices",
+            "Dense and sparse indices",
+            "Ordered indices and hash indices",
+            "Clustered and non-clustered indices"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The two basic kinds are ordered indices (search keys stored in sorted order) and hash indices (search keys distributed using a hash function)."
+    },
+    {
+        "id": "q5",
+        "text": "Which of the following is NOT mentioned as an index evaluation metric?",
+        "options": [
+            "Access time",
+            "Insertion time",
+            "Compression ratio",
+            "Space overhead"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The evaluation metrics mentioned are access types supported, access time, insertion time, deletion time, and space overhead. Compression ratio is not mentioned."
+    },
+    {
+        "id": "q6",
+        "text": "In ordered indices, how are index entries stored?",
+        "options": [
+            "In random order for faster access",
+            "Sorted on the search key value",
+            "In chronological order of insertion",
+            "Grouped by data type"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In ordered indices, index entries are stored sorted on the search key value, similar to an author catalog in a library."
+    },
+    {
+        "id": "q7",
+        "text": "What is a clustering index?",
+        "options": [
+            "An index that groups similar records together",
+            "An index whose search key specifies the sequential order of the file",
+            "An index that uses clustering algorithms",
+            "An index distributed across multiple servers"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A clustering index (also called primary index) has a search key that specifies the sequential order of the file in a sequentially ordered file."
+    },
+    {
+        "id": "q8",
+        "text": "What is another name for a clustering index?",
+        "options": [
+            "Secondary index",
+            "Primary index",
+            "Dense index",
+            "Sparse index"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A clustering index is also called a primary index, as it determines the sequential order of the file."
+    },
+    {
+        "id": "q9",
+        "text": "What is a secondary index?",
+        "options": [
+            "A backup copy of the primary index",
+            "An index created after the primary index",
+            "An index whose search key specifies an order different from the sequential order of the file",
+            "An index with lower priority than the primary index"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A secondary index (also called non-clustering index) has a search key that specifies an order different from the sequential order of the file."
+    },
+    {
+        "id": "q10",
+        "text": "What is an index-sequential file?",
+        "options": [
+            "A file with multiple indices",
+            "An ordered sequential file with a primary index",
+            "A file stored in sequential order only",
+            "A file with hash-based indexing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An index-sequential file is an ordered sequential file with a primary index, combining sequential organization with indexing benefits."
+    },
+    {
+        "id": "q11",
+        "text": "What characterizes a dense index?",
+        "options": [
+            "It has more pointers than records",
+            "Index record appears for every search-key value in the file",
+            "It uses compression to reduce space",
+            "It only indexes frequently accessed records"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A dense index has an index record for every search-key value in the file, providing direct access to all records."
+    },
+    {
+        "id": "q12",
+        "text": "In the context of dense indices, what does the example of 'index on ID attribute of instructor relation' illustrate?",
+        "options": [
+            "How to create composite indices",
+            "That every instructor ID has a corresponding index entry",
+            "How to handle duplicate keys",
+            "The use of hash functions in indexing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "This example illustrates that in a dense index, every instructor ID value has a corresponding index entry, demonstrating the dense property."
+    },
+    {
+        "id": "q13",
+        "text": "What is a sparse index?",
+        "options": [
+            "An index with missing or corrupted entries",
+            "An index that contains index records for only some search-key values",
+            "An index with low storage utilization",
+            "An index that uses minimal memory"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A sparse index contains index records for only some search-key values, not for every value in the file."
+    },
+    {
+        "id": "q14",
+        "text": "When is a sparse index applicable?",
+        "options": [
+            "When records are randomly distributed",
+            "When records are sequentially ordered on search-key",
+            "When the file is very small",
+            "When fast insertion is required"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sparse indices are applicable when records are sequentially ordered on the search-key, allowing efficient sequential searching from index points."
+    },
+    {
+        "id": "q15",
+        "text": "To locate a record with search-key value K in a sparse index, what is the procedure?",
+        "options": [
+            "Find index record with search-key value exactly equal to K",
+            "Find index record with largest search-key value < K, then search sequentially",
+            "Use binary search on all index entries",
+            "Hash the key value K to find the location"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In sparse index, find the index record with the largest search-key value less than K, then search the file sequentially starting from that record."
+    },
+    {
+        "id": "q16",
+        "text": "Compared to dense indices, what are the advantages of sparse indices?",
+        "options": [
+            "Faster record location and better accuracy",
+            "Less space and less maintenance overhead for insertions and deletions",
+            "Better support for range queries",
+            "Higher data integrity and consistency"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sparse indices require less space and have less maintenance overhead for insertions and deletions compared to dense indices."
+    },
+    {
+        "id": "q17",
+        "text": "What is a disadvantage of sparse indices compared to dense indices?",
+        "options": [
+            "They require more storage space",
+            "They are generally slower for locating records",
+            "They cannot handle range queries",
+            "They are more complex to implement"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sparse indices are generally slower than dense indices for locating records because they may require sequential searching after finding the index entry."
+    },
+    {
+        "id": "q18",
+        "text": "What is recommended as a good tradeoff for sparse indices?",
+        "options": [
+            "One index entry per record",
+            "One index entry for every block in file, corresponding to least search-key value in the block",
+            "One index entry per page in memory",
+            "One index entry per data type"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A good tradeoff is having one index entry for every block in the file, corresponding to the least search-key value in that block."
+    },
+    {
+        "id": "q19",
+        "text": "Why might a multilevel index be necessary?",
+        "options": [
+            "To improve data security",
+            "If primary index does not fit in memory, making access expensive",
+            "To support multiple data types",
+            "To enable parallel processing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Multilevel indices are needed when the primary index doesn't fit in memory, making access expensive due to disk I/O."
+    },
+    {
+        "id": "q20",
+        "text": "In a multilevel index, what is the outer index?",
+        "options": [
+            "The primary index file",
+            "A dense index of all records",
+            "A sparse index of the primary index",
+            "An index stored in memory"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The outer index is a sparse index of the primary index, treating the primary index as a sequential file."
+    },
+    {
+        "id": "q21",
+        "text": "In a multilevel index, what is the inner index?",
+        "options": [
+            "A sparse index of the outer index",
+            "The primary index file",
+            "A hash-based index",
+            "A compressed version of the data"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The inner index is the primary index file itself in a multilevel index structure."
+    },
+    {
+        "id": "q22",
+        "text": "What happens when even the outer index is too large to fit in main memory?",
+        "options": [
+            "The system crashes",
+            "Data must be compressed",
+            "Yet another level of index can be created",
+            "The file must be reorganized"
+        ],
+        "correctAnswer": 2,
+        "explanation": "If the outer index is too large for memory, yet another level of index can be created, continuing the multilevel approach."
+    },
+    {
+        "id": "q23",
+        "text": "What maintenance requirement applies to multilevel indices?",
+        "options": [
+            "Only the outer index needs updating",
+            "Only the inner index needs updating",
+            "Indices at all levels must be updated on insertion or deletion",
+            "No maintenance is required"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Indices at all levels must be updated when insertions or deletions occur in the file to maintain consistency."
+    },
+    {
+        "id": "q24",
+        "text": "Why might one want secondary indices?",
+        "options": [
+            "To replace primary indices",
+            "To find records based on fields other than the primary index search-key",
+            "To improve insertion performance",
+            "To reduce storage requirements"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Secondary indices allow finding records whose values in certain fields (not the primary index search-key) satisfy specific conditions."
+    },
+    {
+        "id": "q25",
+        "text": "In the instructor relation example, if records are stored sequentially by ID, what would require a secondary index?",
+        "options": [
+            "Finding instructors by ID",
+            "Finding all instructors in a particular department",
+            "Inserting new instructor records",
+            "Deleting instructor records"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Finding instructors by department (not the sequential order field) would require a secondary index on the department field."
+    },
+    {
+        "id": "q26",
+        "text": "In secondary indices, what does an index record point to when multiple records have the same search-key value?",
+        "options": [
+            "The first record with that value",
+            "A random record with that value",
+            "A bucket containing pointers to all actual records with that value",
+            "The last record with that value"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Index records in secondary indices point to buckets that contain pointers to all actual records with that particular search-key value."
+    },
+    {
+        "id": "q27",
+        "text": "Why do secondary indices have to be dense?",
+        "options": [
+            "To improve performance",
+            "Because records are not sequentially ordered on the secondary index search-key",
+            "To reduce storage space",
+            "To simplify implementation"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Secondary indices must be dense because records are not sequentially ordered on the secondary index search-key, so sparse indexing wouldn't work."
+    },
+    {
+        "id": "q28",
+        "text": "What is a major disadvantage of having multiple indices on a file?",
+        "options": [
+            "Reduced query performance",
+            "Updating indices imposes overhead on database modification",
+            "Increased storage for data",
+            "Complexity in index selection"
+        ],
+        "correctAnswer": 1,
+        "explanation": "When a file is modified, every index on the file must be updated, imposing overhead on database modifications."
+    },
+    {
+        "id": "q29",
+        "text": "Why is sequential scan using a secondary index expensive?",
+        "options": [
+            "Secondary indices are stored on slow media",
+            "Each record access may fetch a new block from disk",
+            "Secondary indices have poor compression",
+            "They require complex calculations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Sequential scan using secondary index is expensive because each record access may fetch a new block from disk, unlike primary indices where records are sequential."
+    },
+    {
+        "id": "q30",
+        "text": "According to the lecture, how long does a block fetch typically require compared to memory access?",
+        "options": [
+            "About the same time",
+            "About 5 to 10 milliseconds versus 100 nanoseconds",
+            "About 1 second versus 1 millisecond",
+            "About 100 times longer"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Block fetch requires about 5 to 10 milliseconds, versus about 100 nanoseconds for memory access, showing the significant difference."
+    },
+    {
+        "id": "q31",
+        "text": "What is a major disadvantage of indexed-sequential files?",
+        "options": [
+            "They cannot support range queries",
+            "Performance degrades as file grows due to overflow blocks",
+            "They require too much memory",
+            "They don't support insertions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Indexed-sequential files suffer performance degradation as the file grows because many overflow blocks get created."
+    },
+    {
+        "id": "q32",
+        "text": "What maintenance requirement is problematic for indexed-sequential files?",
+        "options": [
+            "Daily index updates",
+            "Periodic reorganization of the entire file",
+            "Frequent memory allocation",
+            "Regular backup procedures"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Indexed-sequential files require periodic reorganization of the entire file to maintain performance, which is expensive and disruptive."
+    },
+    {
+        "id": "q33",
+        "text": "What is a key advantage of B+-tree index files?",
+        "options": [
+            "They use less storage space",
+            "They automatically reorganize with small, local changes",
+            "They provide faster sequential access",
+            "They eliminate the need for deletion operations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "B+-trees automatically reorganize themselves with small, local changes when facing insertions and deletions, avoiding full file reorganization."
+    },
+    {
+        "id": "q34",
+        "text": "According to the lecture, do B+-trees require reorganization of the entire file to maintain performance?",
+        "options": [
+            "Yes, just like indexed-sequential files",
+            "No, reorganization of entire file is not required",
+            "Only during major updates",
+            "Only when the tree becomes unbalanced"
+        ],
+        "correctAnswer": 1,
+        "explanation": "B+-trees do not require reorganization of the entire file to maintain performance, unlike indexed-sequential files."
+    },
+    {
+        "id": "q35",
+        "text": "What is a minor disadvantage of B+-trees mentioned in the lecture?",
+        "options": [
+            "Poor query performance",
+            "Extra insertion and deletion overhead, space overhead",
+            "Inability to handle large datasets",
+            "Complex implementation requirements"
+        ],
+        "correctAnswer": 1,
+        "explanation": "B+-trees have extra insertion and deletion overhead and space overhead as minor disadvantages."
+    },
+    {
+        "id": "q36",
+        "text": "Despite their disadvantages, why are B+-trees used extensively?",
+        "options": [
+            "They are the only available option",
+            "The advantages outweigh the disadvantages",
+            "They are required by database standards",
+            "They have no maintenance costs"
+        ],
+        "correctAnswer": 1,
+        "explanation": "B+-trees are used extensively because their advantages outweigh their disadvantages."
+    },
+    {
+        "id": "q37",
+        "text": "In hash file organization, what is a bucket?",
+        "options": [
+            "A hash function parameter",
+            "A unit of storage containing one or more records",
+            "A type of search key",
+            "A backup storage location"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A bucket is a unit of storage containing one or more records, typically implemented as a disk block."
+    },
+    {
+        "id": "q38",
+        "text": "How does hash file organization locate records?",
+        "options": [
+            "By searching sequentially through all records",
+            "By using index entries to point to records",
+            "By obtaining the bucket directly from search-key value using a hash function",
+            "By sorting records first and then searching"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Hash file organization obtains the bucket of a record directly from its search-key value using a hash function."
+    },
+    {
+        "id": "q39",
+        "text": "A hash function h maps from what to what?",
+        "options": [
+            "Records to search keys",
+            "Set of all search-key values K to set of all bucket addresses B",
+            "Buckets to records",
+            "Indices to data files"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A hash function h maps from the set of all search-key values K to the set of all bucket addresses B."
+    },
+    {
+        "id": "q40",
+        "text": "What operations use the hash function in hash file organization?",
+        "options": [
+            "Only record access",
+            "Only insertion and deletion",
+            "Access, insertion, and deletion",
+            "Only sorting and searching"
+        ],
+        "correctAnswer": 2,
+        "explanation": "The hash function is used to locate records for access, insertion as well as deletion operations."
+    },
+    {
+        "id": "q41",
+        "text": "Why might an entire bucket need to be searched sequentially in hash file organization?",
+        "options": [
+            "Buckets are always sorted",
+            "Records with different search-key values may be mapped to the same bucket",
+            "Hash functions are unreliable",
+            "To maintain data integrity"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Records with different search-key values may be mapped to the same bucket due to hash collisions, requiring sequential search within the bucket."
+    },
+    {
+        "id": "q42",
+        "text": "In the instructor file hash organization example, how many buckets are there?",
+        "options": [
+            "5 buckets",
+            "10 buckets",
+            "15 buckets",
+            "20 buckets"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The example uses 10 buckets for the hash file organization of the instructor file using dept_name as key."
+    },
+    {
+        "id": "q43",
+        "text": "In the hash function example, what does h(Music) equal?",
+        "options": [
+            "0",
+            "1",
+            "2",
+            "3"
+        ],
+        "correctAnswer": 1,
+        "explanation": "According to the example, h(Music) = 1, calculated by summing binary representations of characters modulo 10."
+    },
+    {
+        "id": "q44",
+        "text": "What do h(Physics) and h(Elec. Eng.) both equal in the example?",
+        "options": [
+            "2",
+            "3",
+            "4",
+            "5"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Both h(Physics) and h(Elec. Eng.) equal 3, demonstrating hash collision where different keys map to the same bucket."
+    },
+    {
+        "id": "q45",
+        "text": "What represents the worst possible hash function?",
+        "options": [
+            "A function that distributes keys evenly",
+            "A function that maps all search-key values to the same bucket",
+            "A function that uses complex calculations",
+            "A function that produces random results"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The worst hash function maps all search-key values to the same bucket, making access time proportional to the number of search-key values."
+    },
+    {
+        "id": "q46",
+        "text": "What characterizes an ideal hash function?",
+        "options": [
+            "It minimizes computation time",
+            "It is uniform - each bucket is assigned the same number of search-key values",
+            "It uses simple arithmetic operations",
+            "It avoids all collisions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "An ideal hash function is uniform, meaning each bucket is assigned the same number of search-key values from all possible values."
+    },
+    {
+        "id": "q47",
+        "text": "Why should an ideal hash function be random?",
+        "options": [
+            "To make it unpredictable for security",
+            "To ensure each bucket has the same number of records regardless of actual distribution",
+            "To speed up computation",
+            "To reduce storage requirements"
+        ],
+        "correctAnswer": 1,
+        "explanation": "A random hash function ensures each bucket has the same number of records assigned irrespective of the actual distribution of search-key values."
+    },
+    {
+        "id": "q48",
+        "text": "What do typical hash functions perform computation on?",
+        "options": [
+            "The logical representation of search-key",
+            "The internal binary representation of the search-key",
+            "The ASCII values only",
+            "The length of the search-key"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Typical hash functions perform computation on the internal binary representation of the search-key."
+    },
+    {
+        "id": "q49",
+        "text": "What can cause bucket overflow in hash file organization?",
+        "options": [
+            "Insufficient buckets and skew in distribution of records",
+            "Too many hash functions",
+            "Hardware failures",
+            "Network congestion"
+        ],
+        "correctAnswer": 0,
+        "explanation": "Bucket overflow can occur due to insufficient buckets or skew in distribution of records (multiple records with same search-key or non-uniform hash function distribution)."
+    },
+    {
+        "id": "q50",
+        "text": "What are two reasons for skew in distribution of records?",
+        "options": [
+            "Hardware limitations and software bugs",
+            "Multiple records have same search-key value and chosen hash function produces non-uniform distribution",
+            "Network delays and disk failures",
+            "Memory constraints and CPU limitations"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Skew occurs when multiple records have the same search-key value or when the chosen hash function produces non-uniform distribution of key values."
+    },
+    {
+        "id": "q51",
+        "text": "How is bucket overflow handled in hash file organization?",
+        "options": [
+            "By increasing the hash table size",
+            "By using overflow buckets",
+            "By compressing existing records",
+            "By rejecting new insertions"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Bucket overflow is handled by using overflow buckets, as the probability of overflow can be reduced but not eliminated."
+    },
+    {
+        "id": "q52",
+        "text": "What is overflow chaining?",
+        "options": [
+            "Linking multiple hash functions together",
+            "The overflow buckets of a given bucket are chained together in a linked list",
+            "Creating chains of primary buckets",
+            "Connecting different hash tables"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Overflow chaining means the overflow buckets of a given bucket are chained together in a linked list structure."
+    },
+    {
+        "id": "q53",
+        "text": "What is the overflow chaining scheme called?",
+        "options": [
+            "Open hashing",
+            "Closed hashing",
+            "Linear hashing",
+            "Dynamic hashing"
+        ],
+        "correctAnswer": 1,
+        "explanation": "The overflow chaining scheme is called closed hashing, which uses overflow buckets linked together."
+    },
+    {
+        "id": "q54",
+        "text": "Why is open hashing not suitable for database applications?",
+        "options": [
+            "It is too slow",
+            "It does not use overflow buckets",
+            "It requires too much memory",
+            "It cannot handle concurrent access"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Open hashing does not use overflow buckets, making it unsuitable for database applications where overflow handling is necessary."
+    },
+    {
+        "id": "q55",
+        "text": "What are bitmap indices designed for?",
+        "options": [
+            "Compressing large datasets",
+            "Efficient querying on multiple keys",
+            "Fast sequential access",
+            "Reducing storage overhead"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Bitmap indices are a special type of index designed for efficient querying on multiple keys."
+    },
+    {
+        "id": "q56",
+        "text": "How are records assumed to be organized in bitmap indices?",
+        "options": [
+            "Randomly distributed",
+            "Sorted by primary key",
+            "Numbered sequentially from 0",
+            "Grouped by data type"
+        ],
+        "correctAnswer": 2,
+        "explanation": "Records in a relation are assumed to be numbered sequentially from 0 in bitmap indices, and given a number n, it must be easy to retrieve record n."
+    },
+    {
+        "id": "q57",
+        "text": "When is record retrieval particularly easy in bitmap indices?",
+        "options": [
+            "When records are compressed",
+            "When records are of fixed size",
+            "When records are sorted",
+            "When records are encrypted"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Record retrieval is particularly easy when records are of fixed size, making it straightforward to calculate record positions."
+    },
+    {
+        "id": "q58",
+        "text": "Bitmap indices are applicable on attributes that have what characteristic?",
+        "options": [
+            "Very large number of distinct values",
+            "Relatively small number of distinct values",
+            "Only numeric values",
+            "Only text values"
+        ],
+        "correctAnswer": 1,
+        "explanation": "Bitmap indices are applicable on attributes that take on a relatively small number of distinct values, such as gender, country, or income levels."
+    },
+    {
+        "id": "q59",
+        "text": "What is a bitmap in the context of bitmap indices?",
+        "options": [
+            "A compressed image file",
+            "A graphical representation of data",
+            "Simply an array of bits",
+            "A hash table structure"
+        ],
+        "correctAnswer": 2,
+        "explanation": "A bitmap is simply an array of bits used to represent the presence or absence of attribute values for each record."
+    },
+    {
+        "id": "q60",
+        "text": "In a bitmap for value v, when is the bit for a record set to 1?",
+        "options": [
+            "When the record is the first occurrence of value v",
+            "When the record has the value v for the attribute",
+            "When the record was recently accessed",
+            "When the record needs to be updated"
+        ],
+        "correctAnswer": 1,
+        "explanation": "In a bitmap for value v, the bit for a record is 1 if the record has the value v for the attribute, and 0 otherwise."
+    }
+]
