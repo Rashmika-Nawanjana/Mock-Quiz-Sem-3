@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "text": "In a tree-structured directory, the series of directory names that culminates in a file name is referred to as the:",
+    "options": [
+      "a. Pathname",
+      "b. Working directory",
+      "c. Symbolic name",
+      "d. None of the above"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A pathname is the complete specification of the location of a file or directory in the file system hierarchy, consisting of a sequence of directory names separated by delimiters (like '/' in Unix) leading to the target file."
+  },
+  {
+    "id": 2,
+    "text": "The UNIX file system uses which of the following consistency semantics?",
+    "options": [
+      "a. Writes to an open file by a user are not visible immediately to other users that have the file open at the same time.",
+      "b. Once a file is closed, the changes made to it are visible only in sessions starting later.",
+      "c. Users are not allowed share the pointer of current location into the file.",
+      "d. Writes to an open file by a user are visible immediately to other users that have the file open at the same time."
+    ],
+    "correctAnswer": 3,
+    "explanation": "UNIX file system uses session semantics where writes to an open file by one user are immediately visible to other users who have the same file open. This provides strong consistency for concurrent file access."
+  },
+  {
+    "id": 3,
+    "text": "In which of the following file allocation methods is preallocation required:",
+    "options": [
+      "a. Chained",
+      "b. Contiguous",
+      "c. Indexed",
+      "d. None of the above"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Contiguous allocation requires preallocation because the file must occupy consecutive disk blocks. The system needs to know the file size in advance to allocate a contiguous block of the required size."
+  },
+  {
+    "id": 4,
+    "text": "All types of UNIX files are administered by the OS by means of inodes.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. In UNIX file systems, every file (regular files, directories, device files, etc.) is represented by an inode (index node) which contains metadata about the file including permissions, ownership, timestamps, and pointers to data blocks."
+  },
+  {
+    "id": 5,
+    "text": "A file directory contains information about the files, including attributes, location, and ownership.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. A file directory serves as a database containing file metadata including file attributes (size, type, creation date), location information (disk addresses), and ownership details (user ID, group ID, permissions)."
+  },
+  {
+    "id": 6,
+    "text": "A file allocation table (FAT) is used to keep track of the portions assigned to a file.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. The File Allocation Table (FAT) maintains a record of which disk clusters are allocated to which files, effectively tracking all portions of disk space assigned to files and marking free/used clusters."
+  },
+  {
+    "id": 7,
+    "text": "Typically, an interactive user or a process has associated with it a current directory, often referred to as the working directory",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Each process maintains a current working directory (CWD) which serves as the default location for file operations. Relative pathnames are resolved relative to this working directory."
+  },
+  {
+    "id": 8,
+    "text": "An example of a block-oriented I/O device is:",
+    "options": [
+      "a. Printer",
+      "b. CD-ROM",
+      "c. Modem",
+      "d. All of the above"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CD-ROM is a block-oriented device that transfers data in fixed-size blocks. Printers and modems are stream-oriented devices that handle data as continuous streams of characters or bytes."
+  },
+  {
+    "id": 9,
+    "text": "The __________ unit is capable of mimicking the processor and of taking over control of the system bus just like a processor.",
+    "options": [
+      "a. interrupt-driven I/O",
+      "b. I/O channel",
+      "c. direct memory access",
+      "d. programmed I/O"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Direct Memory Access (DMA) controller can take control of the system bus independently of the CPU, allowing it to transfer data directly between memory and I/O devices without CPU intervention, effectively mimicking processor bus control capabilities."
+  },
+  {
+    "id": 10,
+    "text": "__________ external devices are suitable for communicating with electronic equipment.",
+    "options": [
+      "a. Communication",
+      "b. Application",
+      "c. Human readable",
+      "d. Machine readable"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Machine readable devices are designed to communicate with electronic equipment and other computer systems. They use digital signals and protocols suitable for machine-to-machine communication, unlike human readable devices which are designed for human interaction."
+  },
+  {
+    "id": 11,
+    "text": "Data striping provides reliability for RAID systems.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. Data striping alone does not provide reliability; it improves performance by distributing data across multiple drives. Reliability in RAID systems comes from redundancy mechanisms like mirroring or parity, not from striping itself."
+  },
+  {
+    "id": 12,
+    "text": "Disks and tapes are examples of block-oriented I/O devices.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Both disks and tapes transfer data in fixed-size blocks rather than individual bytes or characters. They are accessed in units of sectors (disks) or records (tapes), making them block-oriented devices."
+  },
+  {
+    "id": 13,
+    "text": "One general grouping of external I/O devices that communicate with computer systems is the Human Readable category, which includes disk drives and tape drives.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. Disk drives and tape drives are machine readable devices, not human readable devices. Human readable devices include monitors, printers, and keyboards that are designed for direct human interaction."
+  },
+  {
+    "id": 14,
+    "text": "A risk with _________ is the possibility of starvation for longer processes, as long as there is a steady supply of shorter processes.",
+    "options": [
+      "a. SRT",
+      "b. SPN",
+      "c. FIFO",
+      "d. FCFS"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Shortest Remaining Time (SRT) scheduling can cause starvation of longer processes because if short processes keep arriving, they will continuously preempt longer processes, potentially preventing long processes from ever completing."
+  },
+  {
+    "id": 15,
+    "text": "This is a decision whether to add a new process to the set of processes that are currently active:",
+    "options": [
+      "a. short-term scheduling",
+      "b. long-term scheduling",
+      "c. medium-term scheduling",
+      "d. I/O scheduling"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Long-term scheduling (admission scheduling) determines which processes from the job queue should be loaded into memory and become part of the active process set. It controls the degree of multiprogramming."
+  },
+  {
+    "id": 16,
+    "text": "The _________ determines which process, among ready processes, is selected next for execution.",
+    "options": [
+      "a. decision mode",
+      "b. selection function",
+      "c. TAT",
+      "d. long-term scheduler"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The selection function is the algorithm component that determines which process from the ready queue should be chosen for execution next. It implements the scheduling policy (FIFO, SJF, priority, etc.)."
+  },
+  {
+    "id": 17,
+    "text": "The decision as to which available process will be executed by the processor:",
+    "options": [
+      "a. long-term scheduling",
+      "b. I/O scheduling",
+      "c. medium-term scheduling",
+      "d. short-term scheduling"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Short-term scheduling (CPU scheduling) makes the decision of which ready process should be executed by the processor next. It operates most frequently and directly controls CPU allocation."
+  },
+  {
+    "id": 18,
+    "text": "The key to multiprogramming is scheduling.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Scheduling is fundamental to multiprogramming as it determines how multiple processes share system resources (CPU, memory, I/O), enabling efficient utilization and concurrent execution of multiple programs."
+  },
+  {
+    "id": 19,
+    "text": "Scheduling affects the performance of the system because it determines which processes will wait and which will progress.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Scheduling decisions directly impact system performance metrics like throughput, response time, turnaround time, and resource utilization by determining the order and timing of process execution."
+  },
+  {
+    "id": 20,
+    "text": "The medium-term scheduler is invoked whenever an event occurs that may lead to the blocking of the current process or that may provide an opportunity to preempt a currently running process in favor of another.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. This describes the short-term scheduler, not the medium-term scheduler. The medium-term scheduler handles swapping decisions - moving processes between main memory and secondary storage to manage memory allocation."
+  },
+  {
+    "id": 21,
+    "text": "The _________ policy results in the fewest number of page faults.",
+    "options": [
+      "a. Optimal",
+      "b. FIFO",
+      "c. Clock",
+      "d. LRU"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The Optimal (OPT) page replacement algorithm produces the minimum number of page faults by replacing the page that will not be used for the longest time in the future. However, it's theoretical since future references cannot be known in advance."
+  },
+  {
+    "id": 22,
+    "text": "The _________ algorithm requires a use bit to be associated with each page in memory.",
+    "options": [
+      "a. page placement",
+      "b. working set",
+      "c. VSWS",
+      "d. page fault frequency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The working set algorithm uses a use bit (reference bit) to track which pages have been accessed recently. This bit helps determine if a page is part of the current working set and should be kept in memory."
+  },
+  {
+    "id": 23,
+    "text": "A _________ chooses only among the resident pages of the process that generated the page fault in selecting a page to replace.",
+    "options": [
+      "a. global replacement policy",
+      "b. page replacement policy",
+      "c. local replacement policy",
+      "d. page placement policy"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A local replacement policy restricts page replacement to pages belonging to the same process that caused the page fault, ensuring one process cannot affect another process's memory allocation."
+  },
+  {
+    "id": 24,
+    "text": "Segments may be of unequal, indeed dynamic, size.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Unlike pages which are fixed-size, segments can vary in size and can grow or shrink dynamically during program execution. This flexibility allows segments to match logical program structures like procedures, arrays, or data structures."
+  },
+  {
+    "id": 25,
+    "text": "The design issue of page size is related to the size of physical main memory and program size.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Page size selection involves trade-offs related to internal fragmentation, page table size, I/O efficiency, and memory utilization. Both physical memory constraints and typical program sizes influence optimal page size decisions."
+  },
+  {
+    "id": 26,
+    "text": "The size of virtual storage is limited by the actual number of main storage locations.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. Virtual memory size is limited by the addressing scheme (e.g., 32-bit or 64-bit addresses) and available secondary storage, not by physical main memory size. Virtual memory allows programs larger than physical memory to execute."
+  },
+  {
+    "id": 27,
+    "text": "Main memory divided into a number of static partitions at system generation time is _______.",
+    "options": [
+      "a. fixed partitioning",
+      "b. simple segmentation",
+      "c. dynamic partitioning",
+      "d. simple paging"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Fixed partitioning divides main memory into a predetermined number of static partitions of fixed sizes at system startup time. Each partition can hold one process, and partition sizes remain constant during system operation."
+  },
+  {
+    "id": 28,
+    "text": "With __________ a process is loaded by loading all of its segments into dynamic partitions that need not be contiguous.",
+    "options": [
+      "a. simple paging",
+      "b. virtual memory segmentation",
+      "c. virtual memory paging",
+      "d. simple segmentation"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Simple segmentation loads all segments of a process into memory in dynamic partitions that don't need to be contiguous. Each segment occupies a separate partition, allowing for variable-sized logical divisions of the program."
+  },
+  {
+    "id": 29,
+    "text": "Main memory divided into a number of equal size frames is the __________ technique.",
+    "options": [
+      "a. Simple paging",
+      "b. Dynamic partitioning",
+      "c. Fixed partitioning",
+      "d. virtual memory segmentation"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Simple paging divides main memory into fixed-size frames (physical pages) of equal size. Programs are divided into pages of the same size, and any page can be loaded into any available frame."
+  },
+  {
+    "id": 30,
+    "text": "In a uniprogramming system main memory is divided into two parts.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. In uniprogramming systems, main memory is typically divided into two parts: one for the operating system (resident monitor) and one for the single user process that can execute at a time."
+  },
+  {
+    "id": 31,
+    "text": "In a multiprogramming system the available main memory is not generally shared among a number of processes.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. The fundamental principle of multiprogramming is that main memory IS shared among multiple processes. Multiple processes reside in memory simultaneously, each allocated a portion of available memory space."
+  },
+  {
+    "id": 32,
+    "text": "In order to implement mutual exclusion on a critical resource for competing processes, only one program at a time should be allowed:",
+    "options": [
+      "a. In the critical section of the program",
+      "b. To perform message passing",
+      "c. To Exhibit cooperation",
+      "d. None of the above"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Mutual exclusion ensures that only one process at a time can execute in its critical section - the part of the program that accesses shared resources. This prevents race conditions and maintains data consistency."
+  },
+  {
+    "id": 33,
+    "text": "The Reader/Writer problem requires that certain conditions be satisfied, such as:",
+    "options": [
+      "a. Readers may read from the file while writers are writing to it",
+      "b. Multiple writers may write to the file simultaneously",
+      "c. Any number of readers may simultaneously read from the file",
+      "d. None of the above"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the Readers-Writers problem, multiple readers can access the shared resource simultaneously since reading doesn't modify the data. However, writers must have exclusive access - no other readers or writers can access the resource while a writer is active."
+  },
+  {
+    "id": 34,
+    "text": "Embedded computers typically run on a ____ operating system.",
+    "options": [
+      "a. real-time",
+      "b. Windows XP",
+      "c. network",
+      "d. clustered"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Embedded systems typically require real-time operating systems (RTOS) that can meet strict timing constraints and provide predictable response times, which are crucial for controlling hardware devices and meeting deadlines."
+  },
+  {
+    "id": 35,
+    "text": "In a uniprocessor system, multiprogramming increases processor efficiency by:",
+    "options": [
+      "a. Taking advantage of time wasted by long wait interrupt handling",
+      "b. Disabling all interrupts except those of highest priority",
+      "c. Eliminating all idle processor cycles",
+      "d. Increasing processor speed"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Multiprogramming increases efficiency by utilizing CPU time that would otherwise be wasted during I/O operations or other wait states. When one process blocks for I/O, another process can use the CPU, reducing idle time."
+  },
+  {
+    "id": 36,
+    "text": "A __________ organization has a number of potential advantages over a uniprocessor organization including performance, availability, incremental growth, and scaling.",
+    "options": [
+      "a. temporal locality",
+      "b. symmetric multiprocessor",
+      "c. direct memory access",
+      "d. processor status word"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Symmetric Multiprocessor (SMP) systems provide better performance through parallel processing, higher availability through redundancy, and better scalability by adding more processors. All processors share memory and I/O resources equally."
+  },
+  {
+    "id": 37,
+    "text": "The operating system kernel consists of all system and application programs in a computer.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. The kernel is only the core part of the operating system that manages system resources, handles system calls, and provides essential services. It does not include application programs or all system programs - only the most fundamental OS components."
+  },
+  {
+    "id": 38,
+    "text": "An example of a multicore system is the Intel Core i7.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Intel Core i7 processors contain multiple processing cores on a single chip, making them multicore systems. They typically have 4, 6, 8, or more cores that can execute instructions simultaneously."
+  },
+  {
+    "id": 39,
+    "text": "In a two-level memory hierarchy the Hit Ratio is defined as the fraction of all memory accesses found in the slower memory.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. Hit Ratio is defined as the fraction of memory accesses found in the FASTER memory (e.g., cache). Miss Ratio is the fraction found in slower memory. Hit Ratio + Miss Ratio = 1."
+  },
+  {
+    "id": 40,
+    "text": "The fetched instruction is loaded into the Program Counter.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. The fetched instruction is loaded into the Instruction Register (IR). The Program Counter (PC) contains the address of the next instruction to be fetched, not the instruction itself."
+  },
+  {
+    "id": 41,
+    "text": "Operating systems must evolve over time because:",
+    "options": [
+      "a. new hardware is designed and implemented in the computer system",
+      "b. hardware must be replaced when it fails",
+      "c. hardware is hierarchical",
+      "d. users will only purchase software that has a current copyright date"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Operating systems must evolve to support new hardware technologies, features, and capabilities. As hardware advances with new processors, storage devices, network interfaces, etc., the OS must be updated to utilize these improvements effectively."
+  },
+  {
+    "id": 42,
+    "text": "A boot block ____.",
+    "options": [
+      "a. typically only knows the location and length of the rest of the bootstrap program",
+      "b. typically is sophisticated enough to load the operating system and begin its execution",
+      "c. is composed of multiple disk blocks",
+      "d. is composed of multiple disk cylinders"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The boot block (boot sector) is typically simple and small, containing just enough code to locate and load the more sophisticated boot loader. It usually only knows where to find the rest of the bootstrap program, not how to load the entire OS."
+  },
+  {
+    "id": 43,
+    "text": "_____ provide(s) an interface to the services provided by an operating system.",
+    "options": [
+      "a. Shared memory",
+      "b. System calls",
+      "c. Simulators",
+      "d. Communication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "System calls provide the programmatic interface between user applications and the operating system kernel. They allow programs to request services like file operations, process management, and device access from the OS."
+  },
+  {
+    "id": 44,
+    "text": "_____ is not an example of a benefit of virtual machines.",
+    "options": [
+      "a. The ability to run several different operating systems that all share the same hardware",
+      "b. The ability to concurrently run several different operating systems",
+      "c. Uses less physical memory than an actual operating system",
+      "d. Protects the host system from guest operating systems"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Virtual machines typically use MORE physical memory than running a single OS directly, because each virtual machine needs its own memory allocation plus overhead for the hypervisor. Options a, b, and d are genuine benefits of virtualization."
+  },
+  {
+    "id": 45,
+    "text": "Microkernels use _____ for communication.",
+    "options": [
+      "a. message passing",
+      "b. shared memory",
+      "c. system calls",
+      "d. virtualization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Microkernels rely heavily on message passing for communication between the minimal kernel and user-space services. Since most OS services run outside the kernel, message passing provides the primary inter-process communication mechanism."
+  },
+  {
+    "id": 46,
+    "text": "A microkernel is a kernel ____.",
+    "options": [
+      "a. containing many components that are optimized to reduce resident memory size",
+      "b. that is compressed before loading in order to reduce its resident memory size",
+      "c. that is compiled to produce the smallest size possible when stored to disk",
+      "d. that is stripped of all nonessential components"
+    ],
+    "correctAnswer": 3,
+    "explanation": "A microkernel is minimalist by design, containing only the most essential services (process management, memory management, IPC). All other services like file systems, device drivers, and networking run as user-space processes."
+  },
+  {
+    "id": 47,
+    "text": "Some level of hardware support is required to provide virtualization.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Effective virtualization requires hardware support such as memory management units (MMU), privileged instruction handling, and modern processors include specific virtualization extensions (Intel VT-x, AMD-V) to improve performance and security."
+  },
+  {
+    "id": 48,
+    "text": "The virtual-machine concept does not offer complete protection of the various system resources.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. While virtual machines provide good isolation, they don't offer complete protection. Issues can arise from hypervisor vulnerabilities, side-channel attacks, or shared physical resources that can potentially be exploited."
+  },
+  {
+    "id": 49,
+    "text": "Application programmers typically use an API rather than directory invoking system calls.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Application programmers typically use Application Programming Interfaces (APIs) provided by libraries or frameworks rather than directly invoking system calls. APIs provide a higher-level, more portable interface that internally makes the necessary system calls."
+  },
+  {
+    "id": 50,
+    "text": "Many operating system merge I/O devices and files into a combined file because of the similarity of system calls for each.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Unix-like systems treat devices as special files in the /dev directory, allowing the same file system calls (open, read, write, close) to work with both regular files and I/O devices, providing a uniform interface."
+  },
+  {
+    "id": 51,
+    "text": "A __________ is a unit of activity characterized by the execution of a sequence of instructions, a current state, and an associated set of system resources.",
+    "options": [
+      "a. identifier",
+      "b. process",
+      "c. state",
+      "d. kernel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A process is a program in execution, characterized by its instruction sequence, current execution state (including program counter and register values), and associated system resources (memory space, open files, etc.)."
+  },
+  {
+    "id": 52,
+    "text": "Thread-specific data is data that ____.",
+    "options": [
+      "a. is not associated with any process",
+      "b. has been modified by the thread, but not yet updated to the parent process",
+      "c. is generated by the thread independent of the thread's process",
+      "d. is copied and not shared with the parent process"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Thread-specific data (thread-local storage) is data that is private to each thread - copied and not shared with other threads or the parent process. Each thread has its own copy of this data, preventing interference between threads."
+  },
+  {
+    "id": 53,
+    "text": "A benefit of the microkernel organization is:",
+    "options": [
+      "a. Extensibility",
+      "b. Portability",
+      "c. Flexibility",
+      "d. All of the above"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Microkernels provide all these benefits: Extensibility (easy to add new services), Portability (minimal kernel is easier to port), and Flexibility (services can be modified without affecting the kernel). The modular design supports all these advantages."
+  },
+  {
+    "id": 54,
+    "text": "A thread is composed of a thread ID, program counter, register set, and heap.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. A thread consists of a thread ID, program counter, register set, and STACK (not heap). The heap is shared among all threads in a process, while each thread has its own stack for local variables and function calls."
+  },
+  {
+    "id": 55,
+    "text": "Virtually all contemporary operating systems support kernel threads.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Modern operating systems like Windows, Linux, macOS, and others provide kernel-level thread support, allowing the OS kernel to manage and schedule threads directly, providing better performance and true parallelism on multiprocessor systems."
+  },
+  {
+    "id": 56,
+    "text": "In a pure User-Level Thread (ULT) facility, all of the work of thread management is done by the application, but the kernel is aware of the existence of threads.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. In pure User-Level Threads, the kernel is NOT aware of the existence of threads. All thread management (creation, scheduling, synchronization) is handled entirely by user-space libraries without kernel involvement."
+  },
+  {
+    "id": 57,
+    "text": "The OS may create a process on behalf of an application.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. Operating systems can create processes on behalf of applications in various scenarios: during system startup, in response to user actions, when services are needed, or when applications request child process creation through system calls like fork()."
+  },
+  {
+    "id": 58,
+    "text": "The process control block is the key tool that enables the OS to support multiple processes and to provide for multiprocessing",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 0,
+    "explanation": "True. The Process Control Block (PCB) contains all information needed to manage a process (state, program counter, registers, memory allocation, etc.), enabling the OS to switch between processes and support multiprogramming/multiprocessing."
+  },
+  {
+    "id": 59,
+    "text": "It is not the responsibility of the operating system to control the execution of processes.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. Process execution control IS a fundamental responsibility of the operating system. The OS manages process creation, scheduling, synchronization, communication, and termination - controlling all aspects of process execution."
+  },
+  {
+    "id": 60,
+    "text": "The exec() system call creates a new process.",
+    "options": [
+      "True",
+      "False"
+    ],
+    "correctAnswer": 1,
+    "explanation": "False. The exec() system call does NOT create a new process; it replaces the current process image with a new program. The fork() system call creates new processes. exec() transforms an existing process by loading a new program into its memory space."
+  }
+]
