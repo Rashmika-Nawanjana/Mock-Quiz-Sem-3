@@ -23,9 +23,8 @@ INSERT INTO app_settings (setting_key, setting_value, setting_type, description)
 ('enable_timer', 'true', 'boolean', 'Enable timer for quizzes'),
 ('enable_progress_tracking', 'true', 'boolean', 'Enable user progress tracking');
 
--- Sample Admin User (password: admin123 - you should hash this properly)
 INSERT INTO users (email, password_hash, username, full_name, role) VALUES
-('admin@quiz.com', '$2b$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/XQG5L2xM3c4d5e6f7g', 'admin', 'System Administrator', 'admin');
+('hhhbhuwaneka@gmail.com', '$2b$12$o49gcWwMQFHaChA.1mij.uUe3/8k3VmHTHKwoX9DbxFxsYoai.Yg6', 'admin', 'System Administrator', 'admin');
 
 -- Sample Student User (password: student123)
 INSERT INTO users (email, password_hash, username, full_name, role) VALUES

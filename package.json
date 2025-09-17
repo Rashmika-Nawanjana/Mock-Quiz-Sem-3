@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Rashmika-Nawanjana/Mock-Quiz-Sem-3#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
   },
