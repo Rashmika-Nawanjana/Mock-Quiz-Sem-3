@@ -2,6 +2,13 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from "fs";
+import session from 'express-session';
+import dotenv from 'dotenv';
+import { AuthService } from './services/auth-service.js';
+import { requireAuth, redirectIfAuthenticated, optionalAuth } from './middleware/auth.js';
+
+// Load environment variables
+dotenv.config();
 
 // Config
 const __filename = fileURLToPath(import.meta.url);
@@ -14,12 +21,126 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Session middleware
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your-fallback-secret-key',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    secure: process.env.NODE_ENV === 'production',
+    httpOnly: true,
+    maxAge: 24 * 60 * 60 * 1000 // 24 hours
+  }
+}));
+
 // View engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/', (req, res) => {
-  res.render('index', { title: 'Home' });
+// Authentication Routes
+app.get('/login', redirectIfAuthenticated, (req, res) => {
+  res.render('login', { 
+    error: req.session.error,
+    success: req.session.success 
+  });
+  // Clear messages after displaying
+  delete req.session.error;
+  delete req.session.success;
+});
+
+app.post('/auth/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    
+    if (!email || !password) {
+      req.session.error = 'Email and password are required';
+      return res.redirect('/login');
+    }
+
+    const result = await AuthService.signIn({ email, password });
+    
+    if (result.error) {
+      req.session.error = result.error;
+      return res.redirect('/login');
+    }
+
+    // Store session data
+    req.session.access_token = result.session.access_token;
+    req.session.user_id = result.user.id;
+    
+    res.redirect('/profile');
+  } catch (error) {
+    console.error('Login error:', error);
+    req.session.error = 'An error occurred during login';
+    res.redirect('/login');
+  }
+});
+
+app.post('/auth/signup', async (req, res) => {
+  try {
+    const { name, email, password } = req.body;
+    
+    if (!name || !email || !password) {
+      req.session.error = 'All fields are required';
+      return res.redirect('/login');
+    }
+
+    const result = await AuthService.signUp({ email, password, name });
+    
+    if (result.error) {
+      req.session.error = result.error;
+      return res.redirect('/login');
+    }
+
+    req.session.success = 'Account created successfully! Please check your email to verify your account.';
+    res.redirect('/login');
+  } catch (error) {
+    console.error('Signup error:', error);
+    req.session.error = 'An error occurred during signup';
+    res.redirect('/login');
+  }
+});
+
+app.post('/auth/logout', (req, res) => {
+  req.session.destroy((err) => {
+    if (err) {
+      console.error('Logout error:', err);
+    }
+    res.redirect('/');
+  });
+});
+
+app.post('/auth/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+    
+    if (!email) {
+      req.session.error = 'Email is required';
+      return res.redirect('/login');
+    }
+
+    const result = await AuthService.resetPassword(email);
+    
+    if (result.error) {
+      req.session.error = result.error;
+    } else {
+      req.session.success = 'Password reset email sent! Check your inbox.';
+    }
+    
+    res.redirect('/login');
+  } catch (error) {
+    console.error('Forgot password error:', error);
+    req.session.error = 'An error occurred while sending reset email';
+    res.redirect('/login');
+  }
+});
+
+// Home route with optional authentication
+app.get('/', optionalAuth, (req, res) => {
+  res.render('index', { 
+    title: 'Home',
+    user: req.user || null
+  });
 });
 
 //modules
@@ -50,8 +171,8 @@ app.get('/modules/thermodynamics', (req, res) => {
 
 // UPDATED QUIZ ROUTES - Replace your existing quiz routes with these:
 
-// Quiz route - display quiz
-app.get("/quiz/:module/:quizId", (req, res) => {
+// Quiz route - display quiz (protected)
+app.get("/quiz/:module/:quizId", requireAuth, (req, res) => {
     const { module, quizId } = req.params;
     
     console.log('=== QUIZ DISPLAY DEBUG ===');
@@ -183,8 +304,8 @@ app.post("/quiz/:module/:quizId/submit", (req, res) => {
     }
 });
 
-// Alternative GET route for results (if you want to access results directly)
-app.get("/quiz/:module/:quizId/results", (req, res) => {
+// Alternative GET route for results (protected)
+app.get("/quiz/:module/:quizId/results", requireAuth, (req, res) => {
     // This could be used to show sample results or redirect to quiz
     res.redirect(`/quiz/${req.params.module}/${req.params.quizId}`);
 });
@@ -275,8 +396,30 @@ app.get('/login', (req, res) => {
   res.render('login');
 });
 
-app.get('/profile', (req, res) => {
-  res.render('profile');
+app.get('/profile', requireAuth, async (req, res) => {
+  try {
+    // Get user profile data
+    const result = await AuthService.getUserProfile(req.user.id);
+    
+    if (result.error) {
+      console.error('Profile fetch error:', result.error);
+      req.session.error = 'Unable to load profile data';
+      return res.redirect('/');
+    }
+
+    res.render('profile', { 
+      user: result.user,
+      error: req.session.error,
+      success: req.session.success
+    });
+    
+    // Clear messages after displaying
+    delete req.session.error;
+    delete req.session.success;
+  } catch (error) {
+    console.error('Profile route error:', error);
+    res.redirect('/');
+  }
 });
 
 
