@@ -2,11 +2,23 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from "fs";
-
+import 'dotenv/config';
+import session from 'express-session';
+const app = express();
+// Session middleware
+app.use(session({
+        secret: process.env.SESSION_SECRET || 'your-secret-key',
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            secure: false, // Set to true if using HTTPS in production
+            sameSite: 'lax' // Allows cookies to be sent from LAN IPs
+        }
+}));
 // Config
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const app = express();
+
 const PORT = process.env.PORT || 3000;
 
 // Middleware
@@ -18,8 +30,21 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+
+// Root route: show login if not logged in, else redirect to /home
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Home' });
+    if (req.session && req.session.user) {
+        return res.redirect('/home');
+    }
+    res.render('login');
+});
+
+// Home page (main page after login)
+app.get('/home', (req, res) => {
+    if (!req.session || !req.session.user) {
+        return res.redirect('/');
+    }
+    res.render('index', { title: 'Home' });
 });
 
 //modules
@@ -270,17 +295,26 @@ function calculateQuizResults(quizData, userAnswers, timeSpent) {
 }
 
 
+import authRoutes from './routes/auth.js'; // Note the .js extension, even if the file is .mjs or .js // or './routes/authRoutes'
+app.use('/auth', authRoutes);
 
-app.get('/login', (req, res) => {
-  res.render('login');
+
+// Home page (main page after login)
+app.get('/home', (req, res) => {
+    if (!req.session || !req.session.user) {
+        return res.redirect('/');
+    }
+    res.render('index', { title: 'Home' });
 });
 
-app.get('/profile', (req, res) => {
-  res.render('profile');
+app.get('/logout', async (req, res) => {
+  await supabase.auth.signOut();
+  req.session.destroy(() => {
+    res.redirect('/auth/login');
+  });
 });
-
 
 // Start server
-app.listen(PORT, () => {
+app.listen(PORT,'0.0.0.0', () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

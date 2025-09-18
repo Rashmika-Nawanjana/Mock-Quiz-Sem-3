@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OAuth Callback</title>
+</head>
+<body>
+  <h2>Logging you in...</h2>
+  <script>
+    window.onload = function() {
+      if (window.location.hash && window.location.hash.includes('access_token=')) {
+        const params = new URLSearchParams(window.location.hash.substring(1));
+        const access_token = params.get('access_token');
+        if (access_token) {
+          // Send the access_token to the backend
+          fetch('/auth/session', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ access_token })
+          }).then(() => {
+            window.location.href = '/home';
+          });
+        } else {
+          // No access token found
+          window.location.href = '/';
+        }
+      } else {
+        // No hash in URL
+        window.location.href = '/';
+      }
+    };
+  </script>
+</body>
+</html>
