@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What does NoSQL actually stand for according to the lecture?",
+    "options": [
+      "No to SQL",
+      "Not Only SQL",
+      "New Object SQL",
+      "Non-Operational SQL"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While many think NoSQL means 'No to SQL', the lecture clarifies it actually means 'Not Only SQL', indicating these databases can work alongside traditional SQL databases."
+  },
+  {
+    "id": "q2",
+    "text": "According to the lecture, what would be a more accurate term than 'NoSQL' for these databases?",
+    "options": [
+      "Modern SQL Databases",
+      "Non-Relational Databases",
+      "Distributed SQL Databases",
+      "Alternative Query Databases"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Non-Relational Databases' might be more correct than NoSQL, but acknowledges it's 'a mouthful'."
+  },
+  {
+    "id": "q3",
+    "text": "Which trend mentioned in the lecture explains why salary lists in the 2000s need multiple job columns compared to the 1970s?",
+    "options": [
+      "Data Size",
+      "Connectedness",
+      "Semi-structure",
+      "Architecture"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Semi-structure trend explains individualization of content, where people in the 2000s might have multiple jobs requiring 5, 8, or even 15 job columns, unlike the single job situation in the 1970s."
+  },
+  {
+    "id": "q4",
+    "text": "What is the primary reason ACID doesn't scale well according to the lecture?",
+    "options": [
+      "It requires too much memory",
+      "It's incompatible with web applications",
+      "Web apps have different needs than apps RDBMS were designed for",
+      "It only works on single machines"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states that web apps have different needs than the applications that RDBMS were originally designed for, making ACID properties less suitable for web-scale applications."
+  },
+  {
+    "id": "q5",
+    "text": "Which of the following is NOT listed as something web apps can usually do without?",
+    "options": [
+      "Transactions",
+      "Strong consistency",
+      "Complex queries",
+      "Low latency"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Low latency is actually listed as a requirement that web apps DO need. The lecture states web apps can usually do without transactions, strong consistency, and complex queries."
+  },
+  {
+    "id": "q6",
+    "text": "According to the lecture, what scale of servers do companies like Google, Amazon, Yahoo, and Facebook operate?",
+    "options": [
+      "100-1K servers",
+      "1K-10K servers",
+      "10K-100K servers",
+      "100K+ servers"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture specifically mentions that these major companies operate at a scale of '10-100K servers' for their massively distributed architectures."
+  },
+  {
+    "id": "q7",
+    "text": "Which disadvantage of NoSQL makes client applications more complicated?",
+    "options": [
+      "Limited query capabilities",
+      "Eventual consistency",
+      "No standardization",
+      "Insufficient access control"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Eventual consistency is not intuitive to program for' and 'Makes client applications more complicated'."
+  },
+  {
+    "id": "q8",
+    "text": "In SQL databases, what does the physical layer abstraction allow applications to specify?",
+    "options": [
+      "How data is stored",
+      "What data is needed",
+      "Where data is located",
+      "When data is accessed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that applications specify 'what, not how' due to physical layer abstraction, allowing the query optimization engine to determine the 'how'."
+  },
+  {
+    "id": "q9",
+    "text": "Which ACID property ensures that transaction results survive system failures?",
+    "options": [
+      "Atomic",
+      "Consistent",
+      "Isolated",
+      "Durable"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Durable means 'The results of a committed transaction survive failures' according to the ACID properties definition in the lecture."
+  },
+  {
+    "id": "q10",
+    "text": "According to Brewer's CAP Theorem, how many of the three characteristics can a distributed system support?",
+    "options": [
+      "All three",
+      "Only two",
+      "Only one",
+      "It depends on the system"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Brewer's CAP Theorem states that 'A distributed system can support only two of the following characteristics: Consistency, Availability, Partition tolerance'."
+  },
+  {
+    "id": "q11",
+    "text": "In the CAP theorem context, what does 'Consistency' most closely resemble from ACID properties?",
+    "options": [
+      "Atomic",
+      "Consistent",
+      "Isolated",
+      "Durable"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The lecture specifically states that Consistency in CAP theorem is 'More like Atomic in ACID transaction properties' because it means all operations appear to occur all at once."
+  },
+  {
+    "id": "q12",
+    "text": "What does 'Partition Tolerance' mean in the CAP theorem?",
+    "options": [
+      "The system can be divided into multiple databases",
+      "The system continues to operate despite arbitrary message loss",
+      "The system can handle network partitions gracefully",
+      "The system tolerates data inconsistencies"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines Partition Tolerance as 'the system continues to operate despite arbitrary message loss'."
+  },
+  {
+    "id": "q13",
+    "text": "What does the 'S' in BASE transactions stand for?",
+    "options": [
+      "Strong state",
+      "Soft state",
+      "Simple state",
+      "Stable state"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BASE stands for Basically Available, Soft state, Eventually Consistent. Soft state means 'The state of the system could change over time'."
+  },
+  {
+    "id": "q14",
+    "text": "Which characteristic is emphasized first in the BASE model?",
+    "options": [
+      "Consistency",
+      "Availability",
+      "Partition tolerance",
+      "Durability"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that BASE characteristics include 'Availability first', emphasizing availability over other properties."
+  },
+  {
+    "id": "q15",
+    "text": "In a Column Store database, what does each storage block contain?",
+    "options": [
+      "Data from multiple columns of the same row",
+      "Data from only one column",
+      "Complete rows of data",
+      "Index information for faster queries"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines Column Store as 'Each storage block contains data from only one column'."
+  },
+  {
+    "id": "q16",
+    "text": "When is a Column Store more efficient than a row store?",
+    "options": [
+      "When doing complex joins",
+      "When retrievals access only some columns and multiple rows are inserted simultaneously",
+      "When enforcing ACID properties",
+      "When handling single-row transactions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states Column Store is more efficient when 'Multiple row/record/documents are inserted at the same time' and 'Retrievals access only some of the columns'."
+  },
+  {
+    "id": "q17",
+    "text": "In Google BigTable, what are the three dimensions of the data model?",
+    "options": [
+      "Table, column, value",
+      "Row, column, timestamp",
+      "Key, value, version",
+      "Master, tablet, server"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture describes Google BigTable as having '(row, column, timestamp) dimensions, value is string'."
+  },
+  {
+    "id": "q18",
+    "text": "In Google BigTable, what is a 'Tablet'?",
+    "options": [
+      "A single row of data",
+      "A column family grouping",
+      "A row range that is dynamically partitioned",
+      "A timestamp version"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture defines Tablet as 'Row range is dynamically partitioned into tablets (sequence of rows)'."
+  },
+  {
+    "id": "q19",
+    "text": "According to the lecture, what makes range scans very efficient in Google BigTable?",
+    "options": [
+      "Data is stored in memory",
+      "Data is sorted by row key",
+      "Columns are compressed",
+      "Timestamps are indexed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Data is sorted by row key' and 'Range scans are very efficient' due to this sorting."
+  },
+  {
+    "id": "q20",
+    "text": "In Google BigTable architecture, what does client data NOT do?",
+    "options": [
+      "Move through the Master Server",
+      "Go directly through Tablet Servers",
+      "Get stored on GFS",
+      "Use Chubby for coordination"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The lecture specifically states that 'Client data does not move through the MS (directly through TS)' - meaning data doesn't go through the Master Server."
+  },
+  {
+    "id": "q21",
+    "text": "What is the primary structure of a Key-Value Store?",
+    "options": [
+      "B-trees",
+      "Hash tables",
+      "Linked lists",
+      "Binary trees"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines Key-Value Store as 'Hash tables of Keys' and 'Store items as alpha-numeric identifiers(keys) and associated values in simple, standalone tables (Hash table)'."
+  },
+  {
+    "id": "q22",
+    "text": "What type of queries are typically supported in Key-Value stores?",
+    "options": [
+      "Complex SQL queries",
+      "Only exact matches against keys",
+      "Range queries on values",
+      "Join operations between tables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Query can usually only be performed against keys and it limited to exact matches'."
+  },
+  {
+    "id": "q23",
+    "text": "What is a primary use case for Key-Value stores mentioned in the lecture?",
+    "options": [
+      "Complex analytical queries",
+      "Managing user profile or session data",
+      "Financial transaction processing",
+      "Real-time data streaming"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture lists 'Manage user profile or session or retrieving product names' as primary uses for Key-Value stores."
+  },
+  {
+    "id": "q24",
+    "text": "Which company developed Dynamo according to the lecture?",
+    "options": [
+      "Google",
+      "Facebook",
+      "Amazon",
+      "Yahoo"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture clearly states 'Amazon, ~2007' when introducing Dynamo as an example Key-Value store."
+  },
+  {
+    "id": "q25",
+    "text": "What does Dynamo use for membership and failure detection?",
+    "options": [
+      "Paxos protocol",
+      "Gossip protocol",
+      "RAFT consensus",
+      "Byzantine fault tolerance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture lists 'Gossip – membership & failure detection' as one of Dynamo's key features."
+  },
+  {
+    "id": "q26",
+    "text": "What format do Document Stores commonly use for storing data?",
+    "options": [
+      "XML only",
+      "Binary format",
+      "JSON (JavaScript Object Notation)",
+      "CSV format"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions 'JSON – JavaScript Object Notation' when discussing Document Store examples, and CouchDB specifically uses JSON format."
+  },
+  {
+    "id": "q27",
+    "text": "Which company uses CouchDB according to the lecture?",
+    "options": [
+      "Google",
+      "Facebook",
+      "BBC",
+      "Amazon"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture specifically mentions 'BBC' as using CouchDB in the Document Store examples."
+  },
+  {
+    "id": "q28",
+    "text": "What programming language was CouchDB implemented in for better scalability?",
+    "options": [
+      "C++",
+      "Java",
+      "Python",
+      "Erlang"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The lecture states CouchDB was 'Implemented in Erlang' and notes '1st version in C++, 2nd in Erlang and 500 times more scalable'."
+  },
+  {
+    "id": "q29",
+    "text": "In the CouchDB JSON example, what does '_rev' represent?",
+    "options": [
+      "Revision number",
+      "Reverse index",
+      "Review status",
+      "Revision date"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The lecture explains that '_rev' is the 'Revision number' and serves as a 'Versioning mechanism' in CouchDB."
+  },
+  {
+    "id": "q30",
+    "text": "What does '_id' contain in a CouchDB document?",
+    "options": [
+      "Auto-incremented integer",
+      "GUID – Global Unique Identifier",
+      "Hash of the document content",
+      "User-defined primary key"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture explains that '_id' contains a 'GUID – Global Unique Identifier' that can be 'Passed in or generated by CouchDB'."
+  },
+  {
+    "id": "q31",
+    "text": "How many phases does MapReduce have?",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture clearly states 'Two Phases, Map and Reduce' when describing MapReduce."
+  },
+  {
+    "id": "q32",
+    "text": "What does the Map phase do in MapReduce?",
+    "options": [
+      "Merge and sort key-value pairs",
+      "Extract sets of Key-Value pairs from underlying data",
+      "Reduce data volume",
+      "Create database indexes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines Map phase as 'Extract sets of Key-Value pairs from underlying data'."
+  },
+  {
+    "id": "q33",
+    "text": "Who implements MapReduce techniques according to the lecture?",
+    "options": [
+      "Database administrators",
+      "System administrators",
+      "Application developers",
+      "The underlying software automatically"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states 'Implemented by application developers, not by underlying software'."
+  },
+  {
+    "id": "q34",
+    "text": "When was Google granted the MapReduce patent?",
+    "options": [
+      "2007",
+      "2009",
+      "2010",
+      "2011"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states 'Google granted US Patent 7,650,331, January 2010' for the MapReduce system and method."
+  },
+  {
+    "id": "q35",
+    "text": "According to www.nosql-database.org definition, what type of databases are being addressed?",
+    "options": [
+      "Relational databases",
+      "Object-oriented databases",
+      "Next Generation Databases mostly addressing non-relational, distributed points",
+      "Legacy database systems"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture quotes the definition as 'Next Generation Databases mostly addressing some of the points: being non-relational, distributed, open-source and horizontal scalable'."
+  },
+  {
+    "id": "q36",
+    "text": "When did the NoSQL movement begin according to the lecture?",
+    "options": [
+      "Early 2007",
+      "Early 2008",
+      "Early 2009",
+      "Early 2010"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states 'The movement began early 2009 and is growing rapidly' in the NoSQL definition section."
+  },
+  {
+    "id": "q37",
+    "text": "Which of these is NOT listed as a NoSQL distinguishing characteristic?",
+    "options": [
+      "Large data volumes",
+      "Strong ACID compliance",
+      "Schema-less design",
+      "Mostly Open Source development"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Strong ACID compliance is actually what NoSQL databases reject. The lecture states 'ACID transaction properties are not needed – BASE' as a characteristic."
+  },
+  {
+    "id": "q38",
+    "text": "What type of workload pattern do NoSQL databases typically handle?",
+    "options": [
+      "Equal read and write operations",
+      "Mostly updates, few queries",
+      "Mostly query, few updates",
+      "Heavy transaction processing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture lists 'Mostly query, few updates' as one of the distinguishing characteristics of NoSQL databases."
+  },
+  {
+    "id": "q39",
+    "text": "How are inserts and updates typically handled in NoSQL databases?",
+    "options": [
+      "Synchronously with immediate confirmation",
+      "Asynchronously without waiting for confirmation",
+      "Through two-phase commit protocols",
+      "With strict consistency checks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states 'Asynchronous – Inserts and updates do not wait for confirmation' as a characteristic of storing and modifying data in NoSQL."
+  },
+  {
+    "id": "q40",
+    "text": "What approach to concurrency do NoSQL databases typically use?",
+    "options": [
+      "Pessimistic locking",
+      "Two-phase locking",
+      "Optimistic Concurrency",
+      "Strict serialization"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions 'Optimistic Concurrency' as one of the characteristics of how NoSQL databases handle data modification."
+  },
+  {
+    "id": "q41",
+    "text": "What type of query language do NoSQL databases typically NOT provide?",
+    "options": [
+      "Procedural programming interfaces",
+      "Set-based query language",
+      "JavaScript-based queries",
+      "Key-based lookups"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states 'No set-based query language' as a characteristic of retrieving data in NoSQL databases."
+  },
+  {
+    "id": "q42",
+    "text": "Who is responsible for navigating the access path in NoSQL databases?",
+    "options": [
+      "Query optimizer",
+      "Database engine",
+      "Programmer",
+      "System administrator"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states that the 'Programmer responsible for' both 'Step-by-step procedural language' and 'Navigating access path'."
+  },
+  {
+    "id": "q43",
+    "text": "What do NoSQL databases reject in terms of query expression?",
+    "options": [
+      "Procedural queries",
+      "Declarative query expression",
+      "Key-value queries",
+      "Document-based queries"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture lists 'Declarative query expression' as one of the things NoSQL databases reject in the summary section."
+  },
+  {
+    "id": "q44",
+    "text": "Which aspect of traditional databases do NoSQL systems consider a burden?",
+    "options": [
+      "Data backup procedures",
+      "Up-front schema design",
+      "User authentication",
+      "Network configuration"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that NoSQL databases reject the 'Burden of up-front schema design' as one of their characteristics."
+  },
+  {
+    "id": "q45",
+    "text": "In the CAP theorem triangle diagram, which databases are shown in the Consistency + Partition tolerance region?",
+    "options": [
+      "MongoDB, Redis",
+      "HBase, BigTable, MongoDB",
+      "CouchDB, Dynamo",
+      "Voldemort, Cassandra"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Looking at the CAP theorem diagram in the lecture, HBase, BigTable, and MongoDB are positioned in the CP (Consistency + Partition tolerance) region."
+  },
+  {
+    "id": "q46",
+    "text": "According to the database ranking shown in the lecture, what trend is noted about major Relational DB Vendors?",
+    "options": [
+      "They are abandoning SQL completely",
+      "They have included NoSQL components to stay competitive",
+      "They are focusing only on ACID compliance",
+      "They are reducing their market presence"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture notes state 'Most of the major Relational DB Vendors have included NoSQL components to their solutions to stay ahead of the competition.'"
+  },
+  {
+    "id": "q47",
+    "text": "Which of the following best describes the original intention behind NoSQL according to the lecture?",
+    "options": [
+      "Replace all SQL databases",
+      "Modern web-scale databases",
+      "Reduce database complexity",
+      "Improve transaction processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states 'The original intention has been modern web-scale databases' when defining NoSQL from www.nosql-database.org."
+  },
+  {
+    "id": "q48",
+    "text": "What characteristic is mentioned as being accelerated by 'web 2.0'?",
+    "options": [
+      "Data size growth",
+      "Network connectivity",
+      "Semi-structure trend",
+      "Architectural complexity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states the semi-structure 'Trend accelerated by the decentralization of content generation that is the hallmark of the age of participation (\"web 2.0\")'."
+  },
+  {
+    "id": "q49",
+    "text": "In Google BigTable, what are Column Families used for?",
+    "options": [
+      "Storing metadata only",
+      "Grouping columns for storage and compression together",
+      "Defining primary keys",
+      "Managing user permissions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture explains 'Column keys can be grouped into families' and 'Data in a CF is stored and compressed together (Locality Groups)'."
+  },
+  {
+    "id": "q50",
+    "text": "What does CouchDB use for storage engine?",
+    "options": [
+      "Hash tables",
+      "B-tree storage engine",
+      "LSM trees",
+      "Skip lists"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture specifically mentions that CouchDB uses 'B-tree storage engine' as part of its architecture."
+  },
+  {
+    "id": "q51",
+    "text": "According to the lecture, which company uses MongoDB?",
+    "options": [
+      "BBC and Shutterfly",
+      "Foursquare and Shutterfly",
+      "Google and Yahoo",
+      "Amazon and Facebook"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture lists 'Foursquare, Shutterfly' as examples of companies using MongoDB."
+  },
+  {
+    "id": "q52",
+    "text": "What versioning approach does CouchDB use according to the lecture?",
+    "options": [
+      "Automatic deletion of old versions",
+      "MVCC model with old versions retained",
+      "Single version with overwrites",
+      "Manual version management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states CouchDB uses 'MVCC model, no locking' and 'Old versions retained' for its versioning approach."
+  },
+  {
+    "id": "q53",
+    "text": "What is a key assumption about the query model in Amazon Dynamo?",
+    "options": [
+      "Complex joins are required",
+      "Multi-table access is common",
+      "Simple query model with unique keys and blobs",
+      "SQL compatibility is essential"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture lists 'Simple query model (unique keys, blobs, no schema, no multi-access)' as a key requirement and assumption for Dynamo."
+  },
+  {
+    "id": "q54",
+    "text": "Which of the following is NOT mentioned as a web application requirement that differs from traditional RDBMS applications?",
+    "options": [
+      "Low and predictable response time",
+      "Strong transaction consistency",
+      "Geographic distribution",
+      "Flexible schemas"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Strong transaction consistency is actually listed as something web apps can usually do without. The lecture lists low latency, geographic distribution, and flexible schemas as requirements."
+  },
+  {
+    "id": "q55",
+    "text": "What makes Google BigTable a 'hybrid' according to the lecture?",
+    "options": [
+      "It combines SQL and NoSQL",
+      "It's a hybrid row/column store",
+      "It uses both memory and disk",
+      "It supports both reads and writes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture specifically lists 'Hybrid row/column store' as one of the key features of Google BigTable."
+  },
+  {
+    "id": "q56",
+    "text": "In the Couchbase survey mentioned in the lecture, when was it conducted?",
+    "options": [
+      "2010",
+      "2011",
+      "2012",
+      "2013"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states 'Couchbase survey was conducted in the 2012' when discussing NoSQL adoption."
+  },
+  {
+    "id": "q57",
+    "text": "According to the BASE model description, what type of answers are considered acceptable?",
+    "options": [
+      "Only exact answers",
+      "Approximate answers",
+      "Delayed answers",
+      "Cached answers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture lists 'Approximate answers OK' as one of the BASE characteristics, contrasting with ACID's precision requirements."
+  },
+  {
+    "id": "q58",
+    "text": "What does the lecture say about NoSQL database portability?",
+    "options": [
+      "It's excellent across platforms",
+      "It's guaranteed by standards",
+      "Portability might be an issue",
+      "It's not a concern for most applications"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture lists 'Portability might be an issue' as one of the disadvantages of NoSQL databases."
+  },
+  {
+    "id": "q59",
+    "text": "Which storage system does Google BigTable rely on for data storage?",
+    "options": [
+      "HDFS",
+      "GFS",
+      "S3",
+      "Local file systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that Google BigTable architecture has 'Data stored on GFS' (Google File System)."
+  },
+  {
+    "id": "q60",
+    "text": "What is the primary difference between how SQL and NoSQL databases handle query optimization?",
+    "options": [
+      "NoSQL uses better algorithms",
+      "SQL doesn't have query optimization",
+      "NoSQL has no query optimizer, application specifies retrieval path",
+      "Both use the same optimization techniques"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture contrasts SQL's 'Query optimization engine' with NoSQL's 'No query optimizer' where the 'Application specifies retrieval path'."
+  }
+]
