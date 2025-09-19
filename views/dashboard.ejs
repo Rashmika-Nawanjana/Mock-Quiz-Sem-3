@@ -176,74 +176,6 @@
                     </div>
                 </div>
             </section>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-// Quizzes Completed Over Time (Line Chart)
-const quizzesCompletedData = <%- JSON.stringify(quizzesCompletedOverTime) %>;
-const ctxProgress = document.getElementById('progressChart').getContext('2d');
-const progressChart = new Chart(ctxProgress, {
-    type: 'line',
-    data: {
-        labels: quizzesCompletedData.map(q => q.date + (q.module ? ' - ' + q.module : '')),
-        datasets: [{
-            label: 'Quizzes Completed',
-            data: quizzesCompletedData.map(q => q.completed),
-            borderColor: '#007bff',
-            backgroundColor: 'rgba(0,123,255,0.1)',
-            fill: true,
-            tension: 0.3,
-            pointRadius: 4,
-            pointBackgroundColor: '#007bff',
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: false },
-            title: { display: true, text: 'Quizzes Completed Over Time' }
-        },
-        scales: {
-            y: { min: 0, title: { display: true, text: 'Quizzes Completed' } }
-        }
-    }
-});
-
-// Average & Best Scores Per Module (Bar Chart)
-const avgScoresData = <%- JSON.stringify(avgScoresPerModule) %>;
-const ctxModule = document.getElementById('moduleChart').getContext('2d');
-const moduleChart = new Chart(ctxModule, {
-    type: 'bar',
-    data: {
-        labels: avgScoresData.map(m => m.module),
-        datasets: [
-            {
-                label: 'Average Score (%)',
-                data: avgScoresData.map(m => m.avgScore),
-                backgroundColor: '#28a745',
-                borderColor: '#218838',
-                borderWidth: 1
-            },
-            {
-                label: 'Best Score (%)',
-                data: avgScoresData.map(m => m.bestScore),
-                backgroundColor: '#ffc107',
-                borderColor: '#e0a800',
-                borderWidth: 1
-            }
-        ]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: { display: true },
-            title: { display: true, text: 'Scores Per Module' }
-        },
-        scales: {
-            y: { min: 0, max: 100, title: { display: true, text: 'Score (%)' } }
-        }
-    }
-});
-</script>
 
             <!-- Recent Attempts Section -->
             <section id="recent-attempts" class="content-section">
@@ -487,39 +419,47 @@ const moduleChart = new Chart(ctxModule, {
             <section id="analytics" class="content-section">
                 <div class="content-header">
                     <h1>Performance Analytics</h1>
-                    <p>Detailed insights into your quiz performance</p>
+                    <p>Detailed insights into your quiz and module performance</p>
                 </div>
-                
                 <div class="analytics-grid">
                     <div class="analytics-card">
                         <div class="card-header">
-                            <h3>Progress Overview</h3>
-                            <select class="time-filter">
-                                <option value="week">Last Week</option>
-                                <option value="month" selected>Last Month</option>
-                                <option value="year">Last Year</option>
-                            </select>
+                            <h3>Your Analytics</h3>
                         </div>
-                        <div class="chart-container">
-                            <canvas id="progressChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="analytics-card">
-                        <div class="card-header">
-                            <h3>Score Distribution</h3>
-                        </div>
-                        <div class="chart-container">
-                            <canvas id="scoreChart"></canvas>
+                        <div class="analytics-user-details">
+                            <ul style="list-style:none;padding:0;">
+                                <li><strong>Total Quizzes Completed:</strong> <%= userAnalytics.totalQuizzes %></li>
+                                <li><strong>Total Time Spent:</strong> <%= Math.floor(userAnalytics.totalTime/60) %>m <%= userAnalytics.totalTime%60 %>s</li>
+                                <li><strong>Average Score:</strong> <%= userAnalytics.avgScore %>%</li>
+                                <li><strong>Best Score:</strong> <%= userAnalytics.bestScore %>%</li>
+                            </ul>
                         </div>
                     </div>
-
                     <div class="analytics-card full-width">
                         <div class="card-header">
-                            <h3>Module Performance</h3>
+                            <h3>Module Analytics (All Users)</h3>
                         </div>
-                        <div class="chart-container">
-                            <canvas id="moduleChart"></canvas>
+                        <div class="analytics-module-table-container">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Module</th>
+                                        <th>Avg Score</th>
+                                        <th>Best Score</th>
+                                        <th>Total Attempts</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% moduleAnalytics.forEach(m => { %>
+                                        <tr>
+                                            <td><%= m.module %></td>
+                                            <td><%= m.avgScore %>%</td>
+                                            <td><%= m.bestScore %>%</td>
+                                            <td><%= m.totalAttempts %></td>
+                                        </tr>
+                                    <% }); %>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>

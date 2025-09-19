@@ -242,23 +242,32 @@ app.get('/dashboard', requireAuth, (req, res) => {
         // Achievements: keep as dummy for now
         let achievements = [];
 
-        // Prepare analytics data for charts using user_progress
-        // 1. Average and best scores per module (for bar chart)
-        const avgScoresPerModule = (progressRows || []).map(p => ({
-            module: (modules.find(m => m.id === p.module_id) || {}).display_name || '',
-            avgScore: p.average_score_percentage ? Math.round(p.average_score_percentage) : 0,
-            bestScore: p.best_score_percentage ? Math.round(p.best_score_percentage) : 0
-        }));
+        // --- USER ANALYTICS ---
+        // User's overall stats from user_progress
+        const userAnalytics = {
+            totalQuizzes: (progressRows || []).reduce((sum, p) => sum + (p.quizzes_completed || 0), 0),
+            totalTime: (progressRows || []).reduce((sum, p) => sum + (p.total_time_spent_seconds || 0), 0),
+            avgScore: (progressRows || []).length ? Math.round((progressRows.reduce((a, p) => a + (p.average_score_percentage || 0), 0)) / progressRows.length) : 0,
+            bestScore: (progressRows || []).reduce((max, p) => Math.max(max, p.best_score_percentage || 0), 0)
+        };
 
-        // 2. Quizzes completed over time (for line chart)
-        // We'll use the last_activity as the date and quizzes_completed as the value
-        const quizzesCompletedOverTime = (progressRows || [])
-            .filter(p => p.last_activity)
-            .map(p => ({
-                date: p.last_activity.split('T')[0],
-                completed: p.quizzes_completed || 0,
-                module: (modules.find(m => m.id === p.module_id) || {}).display_name || ''
-            }));
+        // --- MODULE ANALYTICS ---
+        // For each module, get average and best score across all users
+        const { data: allProgress, error: allProgressError } = await supabase
+            .from('user_progress')
+            .select('*');
+        const moduleAnalytics = (modules || []).map(m => {
+            const allForModule = (allProgress || []).filter(p => p.module_id === m.id);
+            const avgScore = allForModule.length ? Math.round(allForModule.reduce((a, p) => a + (p.average_score_percentage || 0), 0) / allForModule.length) : 0;
+            const bestScore = allForModule.length ? Math.round(Math.max(...allForModule.map(p => p.best_score_percentage || 0))) : 0;
+            const totalAttempts = allForModule.reduce((a, p) => a + (p.total_attempts || 0), 0);
+            return {
+                module: m.display_name,
+                avgScore,
+                bestScore,
+                totalAttempts
+            };
+        });
 
         res.render('dashboard', {
             user,
@@ -267,8 +276,8 @@ app.get('/dashboard', requireAuth, (req, res) => {
             groupedRecentAttempts,
             achievements,
             userAttempts,
-            avgScoresPerModule,
-            quizzesCompletedOverTime
+            userAnalytics,
+            moduleAnalytics
         });
     })();
 });
