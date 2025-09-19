@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What are the three basic steps in query processing?",
+    "options": [
+      "Parsing, compilation, and execution",
+      "Parsing and translation, optimization, and evaluation",
+      "Analysis, synthesis, and implementation",
+      "Input, processing, and output"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The three basic steps in query processing are: 1) Parsing and translation, 2) Optimization, and 3) Evaluation."
+  },
+  {
+    "id": "q2",
+    "text": "During the parsing and translation step, what does the parser check?",
+    "options": [
+      "Only syntax errors",
+      "Only semantic errors",
+      "Syntax and verifies relations",
+      "Performance optimization opportunities"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The parser checks syntax and verifies relations during the parsing and translation step."
+  },
+  {
+    "id": "q3",
+    "text": "What is the internal form that queries are translated into during parsing?",
+    "options": [
+      "SQL format",
+      "Machine code",
+      "Relational algebra",
+      "Assembly language"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Queries are translated into relational algebra as their internal form during parsing and translation."
+  },
+  {
+    "id": "q4",
+    "text": "What does the query-execution engine do during the evaluation step?",
+    "options": [
+      "Optimizes the query syntax",
+      "Takes a query-evaluation plan, executes it, and returns answers",
+      "Translates SQL to relational algebra",
+      "Checks for syntax errors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The query-execution engine takes a query-evaluation plan, executes that plan, and returns the answers to the query."
+  },
+  {
+    "id": "q5",
+    "text": "Consider the query 'select balance from account where balance<2500'. Which of the following relational algebra expressions are equivalent?",
+    "options": [
+      "σbalance<2500(πbalance(account)) and πbalance(σbalance<2500(account))",
+      "Only σbalance<2500(πbalance(account))",
+      "Only πbalance(σbalance<2500(account))",
+      "They are not equivalent"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Both σbalance<2500(πbalance(account)) and πbalance(σbalance<2500(account)) are equivalent expressions for the given query."
+  },
+  {
+    "id": "q6",
+    "text": "What is an evaluation plan?",
+    "options": [
+      "A SQL query statement",
+      "An annotated expression specifying detailed evaluation strategy",
+      "A database schema design",
+      "A user interface specification"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An evaluation plan is an annotated expression specifying detailed evaluation strategy for executing a query."
+  },
+  {
+    "id": "q7",
+    "text": "For finding accounts with balance < 2500, which evaluation strategies are mentioned?",
+    "options": [
+      "Only using an index on balance",
+      "Only performing complete relation scan",
+      "Using an index on balance OR performing complete relation scan and discarding inappropriate records",
+      "Creating a new temporary table"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document mentions two strategies: using an index on balance to find accounts with balance < 2500, or performing complete relation scan and discarding accounts with balance ≥ 2500."
+  },
+  {
+    "id": "q8",
+    "text": "What is the primary goal of query optimization?",
+    "options": [
+      "To make queries shorter",
+      "To choose the evaluation plan with lowest cost among all equivalent plans",
+      "To eliminate all SQL syntax errors",
+      "To increase database storage capacity"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Query optimization aims to choose the evaluation plan with the lowest cost amongst all equivalent evaluation plans."
+  },
+  {
+    "id": "q9",
+    "text": "How is cost estimated during query optimization?",
+    "options": [
+      "By measuring actual execution time",
+      "Using statistical information from the database catalog",
+      "By counting the number of SQL statements",
+      "Through user feedback surveys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cost is estimated using statistical information from the database catalog, such as number of tuples in each relation, size of tuples, etc."
+  },
+  {
+    "id": "q10",
+    "text": "Query cost is generally measured as:",
+    "options": [
+      "Number of SQL lines",
+      "Database storage space used",
+      "Total elapsed time for answering query",
+      "Number of users accessing the database"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cost is generally measured as total elapsed time for answering the query."
+  },
+  {
+    "id": "q11",
+    "text": "Which factors contribute to query time cost?",
+    "options": [
+      "Only disk accesses",
+      "Only CPU usage",
+      "Disk accesses, CPU, and network communication",
+      "Only network communication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Many factors contribute to time cost including disk accesses, CPU, and even network communication."
+  },
+  {
+    "id": "q12",
+    "text": "What is typically the predominant cost factor in query execution?",
+    "options": [
+      "CPU processing",
+      "Memory usage",
+      "Disk access",
+      "Network latency"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Typically disk access is the predominant cost, and is also relatively easy to estimate."
+  },
+  {
+    "id": "q13",
+    "text": "How is disk access cost measured?",
+    "options": [
+      "Only by counting total disk operations",
+      "Number of seeks × average-seek-cost + Number of blocks read × average-block-read-cost + Number of blocks written × average-block-write-cost",
+      "Only by measuring seek time",
+      "Only by counting read operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Disk access cost is measured by taking into account: Number of seeks × average-seek-cost + Number of blocks read × average-block-read-cost + Number of blocks written × average-block-write-cost."
+  },
+  {
+    "id": "q14",
+    "text": "Why is the cost to write a block greater than the cost to read a block?",
+    "options": [
+      "Write operations are more complex",
+      "Data is read back after being written to ensure that the write was successful",
+      "Write operations require more CPU power",
+      "Disk heads move slower during write operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cost to write a block is greater than cost to read a block because data is read back after being written to ensure that the write was successful."
+  },
+  {
+    "id": "q15",
+    "text": "What can make the cost difference between evaluation plans for a query?",
+    "options": [
+      "Minimal - usually within milliseconds",
+      "Moderate - usually within minutes",
+      "Enormous - can be seconds vs. days in some cases",
+      "Negligible - all plans perform similarly"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cost difference between evaluation plans for a query can be enormous, for example seconds vs. days in some cases."
+  },
+  {
+    "id": "q16",
+    "text": "What are the three steps in cost-based query optimization?",
+    "options": [
+      "Parse, execute, return results",
+      "Generate logically equivalent expressions using equivalence rules, annotate resultant expressions to get alternative query plans, choose the cheapest plan based on estimated cost",
+      "Analyze syntax, optimize performance, execute query",
+      "Read input, process data, write output"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The three steps in cost-based query optimization are: 1) Generate logically equivalent expressions using equivalence rules, 2) Annotate resultant expressions to get alternative query plans, 3) Choose the cheapest plan based on estimated cost."
+  },
+  {
+    "id": "q17",
+    "text": "What statistical information about relations is used for cost estimation?",
+    "options": [
+      "Only table names",
+      "Number of tuples and number of distinct values for an attribute",
+      "Only data types used",
+      "Only primary key information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Statistical information includes number of tuples and number of distinct values for an attribute."
+  },
+  {
+    "id": "q18",
+    "text": "Why are statistics estimation for intermediate results important?",
+    "options": [
+      "To reduce storage requirements",
+      "To compute cost of complex expressions",
+      "To improve user interface design",
+      "To enhance security measures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Statistics estimation for intermediate results is needed to compute cost of complex expressions."
+  },
+  {
+    "id": "q19",
+    "text": "How are cost formulae for algorithms computed?",
+    "options": [
+      "Using random estimates",
+      "Using statistics",
+      "Using user preferences",
+      "Using hardware specifications only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cost formulae for algorithms are computed using statistics."
+  },
+  {
+    "id": "q20",
+    "text": "What is a transaction in database systems?",
+    "options": [
+      "A single SQL statement",
+      "A unit of program execution that accesses and possibly updates various data items",
+      "A database backup operation",
+      "A user login session"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A transaction is a unit of program execution that accesses and possibly updates various data items."
+  },
+  {
+    "id": "q21",
+    "text": "What must a transaction see when it begins execution?",
+    "options": [
+      "An empty database",
+      "A consistent database",
+      "A backup database",
+      "A temporary database"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A transaction must see a consistent database when it begins execution."
+  },
+  {
+    "id": "q22",
+    "text": "What can happen to the database during transaction execution?",
+    "options": [
+      "It must always remain consistent",
+      "It may be temporarily inconsistent",
+      "It becomes permanently corrupted",
+      "It gets automatically backed up"
+    ],
+    "correctAnswer": 1,
+    "explanation": "During transaction execution the database may be temporarily inconsistent."
+  },
+  {
+    "id": "q23",
+    "text": "What must be true when a transaction completes successfully?",
+    "options": [
+      "The database may remain inconsistent",
+      "The database must be consistent",
+      "The database is deleted",
+      "The database is locked permanently"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When the transaction completes successfully (is committed), the database must be consistent."
+  },
+  {
+    "id": "q24",
+    "text": "What happens to changes made by a committed transaction?",
+    "options": [
+      "They are automatically rolled back",
+      "They persist even if there are system failures",
+      "They are lost during system restart",
+      "They are saved only temporarily"
+    ],
+    "correctAnswer": 1,
+    "explanation": "After a transaction commits, the changes it has made to the database persist, even if there are system failures."
+  },
+  {
+    "id": "q25",
+    "text": "Can multiple transactions execute in parallel?",
+    "options": [
+      "No, transactions must always run sequentially",
+      "Yes, multiple transactions can execute in parallel",
+      "Only if they access different databases",
+      "Only during off-peak hours"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multiple transactions can execute in parallel according to the document."
+  },
+  {
+    "id": "q26",
+    "text": "What are the two main issues to deal with in transaction processing?",
+    "options": [
+      "Speed and accuracy",
+      "Failures of various kinds and concurrent execution of multiple transactions",
+      "Storage and retrieval",
+      "Input and output operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The two main issues to deal with are: failures of various kinds (such as hardware failures and system crashes) and concurrent execution of multiple transactions."
+  },
+  {
+    "id": "q27",
+    "text": "What does the 'A' in ACID properties stand for?",
+    "options": [
+      "Accuracy",
+      "Atomicity",
+      "Authentication",
+      "Authorization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 'A' in ACID properties stands for Atomicity."
+  },
+  {
+    "id": "q28",
+    "text": "What does Atomicity ensure in transactions?",
+    "options": [
+      "Transactions execute quickly",
+      "Either all operations of the transaction are properly reflected in the database or none are",
+      "Transactions use minimum storage",
+      "Transactions are encrypted"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Atomicity ensures that either all operations of the transaction are properly reflected in the database or none are."
+  },
+  {
+    "id": "q29",
+    "text": "What does Consistency mean in ACID properties?",
+    "options": [
+      "Data is stored in the same format",
+      "Execution of a transaction in isolation preserves the consistency of the database",
+      "All transactions take the same time",
+      "Database size remains constant"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Consistency means that execution of a transaction in isolation preserves the consistency of the database."
+  },
+  {
+    "id": "q30",
+    "text": "What does Isolation ensure in transaction processing?",
+    "options": [
+      "Transactions are stored separately",
+      "Each transaction must be unaware of other concurrently executing transactions",
+      "Transactions cannot access the same data",
+      "Transactions execute on different servers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Isolation ensures that although multiple transactions may execute concurrently, each transaction must be unaware of other concurrently executing transactions."
+  },
+  {
+    "id": "q31",
+    "text": "According to the Isolation property, what must be hidden from concurrently executed transactions?",
+    "options": [
+      "Final transaction results",
+      "Intermediate transaction results",
+      "Transaction identifiers",
+      "Database schema information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Intermediate transaction results must be hidden from other concurrently executed transactions."
+  },
+  {
+    "id": "q32",
+    "text": "For any pair of transactions Ti and Tj under Isolation, how should they appear to each other?",
+    "options": [
+      "They should be aware of each other's progress",
+      "It should appear to Ti that either Tj finished execution before Ti started, or Tj started execution after Ti finished",
+      "They should execute simultaneously",
+      "They should share intermediate results"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For every pair of transactions Ti and Tj, it appears to Ti that either Tj finished execution before Ti started, or Tj started execution after Ti finished."
+  },
+  {
+    "id": "q33",
+    "text": "What does Durability ensure in ACID properties?",
+    "options": [
+      "Transactions execute for a long time",
+      "After a transaction completes successfully, the changes persist even if there are system failures",
+      "Database hardware lasts longer",
+      "Transactions are resistant to user errors"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Durability ensures that after a transaction completes successfully, the changes it has made to the database persist, even if there are system failures."
+  },
+  {
+    "id": "q34",
+    "text": "In the fund transfer example, what is the sequence of operations to transfer $50 from account A to account B?",
+    "options": [
+      "read(A), A := A + 50, write(A), read(B), B := B - 50, write(B)",
+      "read(A), A := A - 50, write(A), read(B), B := B + 50, write(B)",
+      "write(A), read(A), write(B), read(B)",
+      "read(B), B := B + 50, write(B), read(A), A := A - 50, write(A)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The correct sequence is: 1. read(A), 2. A := A - 50, 3. write(A), 4. read(B), 5. B := B + 50, 6. write(B)."
+  },
+  {
+    "id": "q35",
+    "text": "What does the Atomicity requirement ensure in the fund transfer example?",
+    "options": [
+      "The transfer happens quickly",
+      "If the transaction fails after step 3 and before step 6, the system should ensure that updates are not reflected in the database",
+      "Both accounts are updated simultaneously",
+      "The transfer amount is validated"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Atomicity requirement ensures that if the transaction fails after step 3 and before step 6, the system should ensure that its updates are not reflected in the database, else an inconsistency will result."
+  },
+  {
+    "id": "q36",
+    "text": "What does the Consistency requirement ensure in the fund transfer example?",
+    "options": [
+      "Account balances are always positive",
+      "The sum of A and B is unchanged by the execution of the transaction",
+      "Transfer amounts are rounded to nearest dollar",
+      "Account numbers remain the same"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Consistency requirement ensures that the sum of A and B is unchanged by the execution of the transaction: SUM(A + B)BeforeTrans = SUM(A + B)AfterTrans."
+  },
+  {
+    "id": "q37",
+    "text": "What problem does the Isolation requirement address in the fund transfer example?",
+    "options": [
+      "Prevents unauthorized access to accounts",
+      "If between steps 3 and 6, another transaction accesses the partially updated database, it will see an inconsistent database",
+      "Ensures transfer amounts are correct",
+      "Prevents account overdrafts"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Isolation requirement addresses the problem that if between steps 3 and 6, another transaction is allowed to access the partially updated database, it will see an inconsistent database (the sum A + B will be less than it should be)."
+  },
+  {
+    "id": "q38",
+    "text": "How can Isolation be ensured trivially?",
+    "options": [
+      "By using faster processors",
+      "By running transactions serially, that is one after the other",
+      "By using more memory",
+      "By encrypting all data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Isolation can be ensured trivially by running transactions serially, that is one after the other."
+  },
+  {
+    "id": "q39",
+    "text": "Why is executing multiple transactions concurrently beneficial despite isolation challenges?",
+    "options": [
+      "It uses less memory",
+      "It has significant benefits as mentioned in the document",
+      "It reduces disk usage",
+      "It simplifies programming"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document states that executing multiple transactions concurrently has significant benefits, though the specific benefits are mentioned to be covered later."
+  },
+  {
+    "id": "q40",
+    "text": "What does the Durability requirement ensure in the fund transfer example?",
+    "options": [
+      "The transfer can be reversed later",
+      "Once the user has been notified that the transaction has completed, the updates must persist despite failures",
+      "The accounts are locked during transfer",
+      "Transfer history is maintained indefinitely"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Durability requirement ensures that once the user has been notified that the transaction has completed (i.e., the transfer of the $50 has taken place), the updates to the database by the transaction must persist despite failures."
+  },
+  {
+    "id": "q41",
+    "text": "What is the initial state of a transaction called?",
+    "options": [
+      "Started",
+      "Active",
+      "Beginning",
+      "Initiated"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Active is the initial state; the transaction stays in this state while it is executing."
+  },
+  {
+    "id": "q42",
+    "text": "When does a transaction enter the 'Partially committed' state?",
+    "options": [
+      "When it starts executing",
+      "After the final statement has been executed",
+      "When it encounters an error",
+      "When it is rolled back"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Partially committed state occurs after the final statement has been executed."
+  },
+  {
+    "id": "q43",
+    "text": "When does a transaction enter the 'Failed' state?",
+    "options": [
+      "When it starts executing",
+      "After the discovery that normal execution can no longer proceed",
+      "When it completes successfully",
+      "When it is partially committed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Failed state occurs after the discovery that normal execution can no longer proceed."
+  },
+  {
+    "id": "q44",
+    "text": "What happens when a transaction is in the 'Aborted' state?",
+    "options": [
+      "It continues executing",
+      "The transaction has been rolled back and the database restored to its state prior to the start of the transaction",
+      "It waits for user input",
+      "It commits automatically"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Aborted state means the transaction has been rolled back and the database restored to its state prior to the start of the transaction."
+  },
+  {
+    "id": "q45",
+    "text": "What are the two options available after a transaction has been aborted?",
+    "options": [
+      "Commit or rollback",
+      "Restart the transaction or kill the transaction",
+      "Save or delete",
+      "Continue or pause"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Two options after a transaction has been aborted: restart the transaction (can be done only if no internal logical error) or kill the transaction."
+  },
+  {
+    "id": "q46",
+    "text": "When can a transaction be restarted after being aborted?",
+    "options": [
+      "Always",
+      "Only if no internal logical error occurred",
+      "Never",
+      "Only with user permission"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A transaction can be restarted after being aborted only if no internal logical error occurred."
+  },
+  {
+    "id": "q47",
+    "text": "When does a transaction enter the 'Committed' state?",
+    "options": [
+      "When it starts executing",
+      "After successful completion",
+      "When it encounters an error",
+      "When it is partially committed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Committed state occurs after successful completion of the transaction."
+  },
+  {
+    "id": "q48",
+    "text": "Which query processing step involves checking syntax and verifying relations?",
+    "options": [
+      "Optimization",
+      "Parsing and translation",
+      "Evaluation",
+      "Execution"
+    ],
+    "correctAnswer": 1,
+    "explanation": "During parsing and translation, the parser checks syntax and verifies relations."
+  },
+  {
+    "id": "q49",
+    "text": "What type of algorithms can be used for each relational algebra operation?",
+    "options": [
+      "Only one specific algorithm per operation",
+      "Several different algorithms",
+      "Only sorting algorithms",
+      "Only searching algorithms"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each relational algebra operation can be evaluated using one of several different algorithms."
+  },
+  {
+    "id": "q50",
+    "text": "In what ways can a relational-algebra expression be evaluated?",
+    "options": [
+      "Only one way",
+      "Two ways maximum",
+      "Many ways",
+      "Three specific ways"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A relational-algebra expression can be evaluated in many ways, corresponding to the different algorithms available for each operation."
+  },
+  {
+    "id": "q51",
+    "text": "What defines exactly what algorithm is used for each operation in query execution?",
+    "options": [
+      "SQL statement",
+      "Evaluation plan",
+      "Database schema",
+      "User preferences"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An evaluation plan defines exactly what algorithm is used for each operation, and how the execution of the operations is coordinated."
+  },
+  {
+    "id": "q52",
+    "text": "Besides statistical information about relations, what else is needed for cost estimation?",
+    "options": [
+      "User feedback",
+      "Statistics estimation for intermediate results and cost formulae for algorithms",
+      "Hardware specifications only",
+      "Network speed measurements"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Besides statistical information about relations, we need statistics estimation for intermediate results (to compute cost of complex expressions) and cost formulae for algorithms (computed using statistics)."
+  },
+  {
+    "id": "q53",
+    "text": "What fundamental requirement must be preserved by the database system?",
+    "options": [
+      "Fast query execution",
+      "Integrity of data",
+      "Minimum storage usage",
+      "Maximum user capacity"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To preserve the integrity of data the database system must ensure the ACID properties of transactions."
+  },
+  {
+    "id": "q54",
+    "text": "During concurrent transaction execution, what creates the need for isolation?",
+    "options": [
+      "Hardware limitations",
+      "The possibility of seeing inconsistent intermediate states",
+      "Storage constraints",
+      "Network delays"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Isolation is needed because if other transactions access the database during intermediate states of a transaction, they may see inconsistent data."
+  },
+  {
+    "id": "q55",
+    "text": "In the transaction state diagram, which states can lead to the Aborted state?",
+    "options": [
+      "Only Active",
+      "Only Failed",
+      "Both Active and Failed states",
+      "Only Partially committed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A transaction can be aborted from both Active state (if issues are discovered during execution) and Failed state (after discovery that normal execution cannot proceed)."
+  },
+  {
+    "id": "q56",
+    "text": "What is the primary reason disk access is considered the predominant cost factor?",
+    "options": [
+      "It's the most expensive hardware component",
+      "It's the slowest operation and relatively easy to estimate",
+      "It uses the most electricity",
+      "It generates the most heat"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Disk access is typically the predominant cost because it's much slower than CPU or memory operations, and is also relatively easy to estimate."
+  },
+  {
+    "id": "q57",
+    "text": "What happens to a transaction that moves from Partially Committed to Committed state?",
+    "options": [
+      "It gets rolled back",
+      "Its changes are made permanent and durable",
+      "It enters a waiting state",
+      "It is marked for deletion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When a transaction moves from Partially Committed to Committed state, its changes are made permanent and durable, satisfying the durability property of ACID."
+  },
+  {
+    "id": "q58",
+    "text": "Why might equivalent relational algebra expressions have different execution costs?",
+    "options": [
+      "They produce different results",
+      "Different algorithms and execution strategies can be used for the same logical operation",
+      "They use different SQL syntax",
+      "They access different tables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Even though expressions are logically equivalent, different algorithms and execution strategies can be used, leading to vastly different performance costs."
+  },
+  {
+    "id": "q59",
+    "text": "What is the relationship between transaction isolation and serial execution?",
+    "options": [
+      "They are completely different concepts",
+      "Serial execution is one way to achieve perfect isolation, but concurrent execution with proper controls can also maintain isolation",
+      "Isolation is impossible with serial execution",
+      "Serial execution prevents isolation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Serial execution (running transactions one after another) can ensure isolation trivially, but concurrent execution with proper isolation controls can provide the same guarantees while offering performance benefits."
+  },
+  {
+    "id": "q60",
+    "text": "In the context of cost-based optimization, what is the ultimate goal of generating multiple equivalent expressions?",
+    "options": [
+      "To confuse the query processor",
+      "To provide backup options in case of failures",
+      "To find the expression that can be executed with minimum cost",
+      "To demonstrate different SQL syntax options"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The goal of generating logically equivalent expressions is to create multiple execution alternatives so the optimizer can choose the one with the lowest estimated cost, potentially saving enormous amounts of execution time."
+  }
+]
