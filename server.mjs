@@ -491,10 +491,10 @@ app.get('/home', (req, res) => {
 });
 
 app.get('/logout', async (req, res) => {
-  await supabase.auth.signOut();
-  req.session.destroy(() => {
-    res.redirect('/auth/login');
-  });
+    await supabase.auth.signOut();
+    req.session.destroy(() => {
+        res.redirect('/');
+    });
 });
 
 // Start server
