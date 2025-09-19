@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What are the three main characteristics that differentiate Big Data from data handled by earlier generation databases?",
+    "options": [
+      "Volume, Velocity, and Variety",
+      "Volume, Value, and Verification",
+      "Velocity, Validation, and Visualization",
+      "Variety, Verification, and Virtualization"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Big Data is characterized by the three V's: Volume (much larger amounts of data), Velocity (much higher rates of insertions), and Variety (many types of data, beyond relational data)."
+  },
+  {
+    "id": "q2",
+    "text": "Which of the following was mentioned as an early source of Big Data?",
+    "options": [
+      "Social media posts",
+      "Web logs",
+      "Internet-of-things sensors",
+      "Mobile app usage data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to the lecture, web logs were an early source of data, with analytics on web logs having great value for advertisements, web site structuring, and determining what posts to show to users."
+  },
+  {
+    "id": "q3",
+    "text": "What are transaction processing systems for Big Data often willing to sacrifice in exchange for very high scalability?",
+    "options": [
+      "Data security and encryption",
+      "ACID properties and other database features",
+      "Query processing speed",
+      "Data storage capacity"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Many Big Data applications are willing to sacrifice ACID properties and other traditional database features if they can achieve very high scalability."
+  },
+  {
+    "id": "q4",
+    "text": "Which of the following is NOT mentioned as a Big Data storage system?",
+    "options": [
+      "Distributed file systems",
+      "Sharding across multiple databases",
+      "Key-value storage systems",
+      "Traditional relational databases"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The lecture mentions distributed file systems, sharding across multiple databases, key-value storage systems, and parallel and distributed databases as Big Data storage systems, but not traditional relational databases."
+  },
+  {
+    "id": "q5",
+    "text": "What is a key characteristic of distributed file systems according to the lecture?",
+    "options": [
+      "They only work with structured data",
+      "They store data across a large collection of machines but provide a single file-system view",
+      "They require expensive and reliable computers",
+      "They cannot handle hardware failures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A distributed file system stores data across a large collection of machines, but provides a single file-system view, making it appear as one unified system to users."
+  },
+  {
+    "id": "q6",
+    "text": "What scale example is given for highly scalable distributed file systems?",
+    "options": [
+      "1K nodes, 10 million files, 1 PB",
+      "10K nodes, 100 million files, 10 PB",
+      "100K nodes, 1 billion files, 100 PB",
+      "5K nodes, 50 million files, 5 PB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture gives an example of a highly scalable distributed file system handling 10K nodes, 100 million files, and 10 PB of data."
+  },
+  {
+    "id": "q7",
+    "text": "How do distributed file systems handle hardware failure?",
+    "options": [
+      "By using only reliable hardware",
+      "By immediately shutting down the system",
+      "By replicating files and detecting/recovering from failures",
+      "By backing up data to tape storage"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Distributed file systems provide redundant storage by replicating files to handle hardware failure, and they can detect failures and recover from them."
+  },
+  {
+    "id": "q8",
+    "text": "Which of the following are examples of distributed file systems mentioned in the lecture?",
+    "options": [
+      "MySQL File System and Oracle File System",
+      "Windows File System and Linux File System",
+      "Google File System (GFS) and Hadoop File System (HDFS)",
+      "Amazon S3 and Microsoft Azure Storage"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture specifically mentions Google File System (GFS) and Hadoop File System (HDFS) as examples of distributed file systems."
+  },
+  {
+    "id": "q9",
+    "text": "In Hadoop File System Architecture, what is the typical block size?",
+    "options": [
+      "32 MB",
+      "64 MB",
+      "128 MB",
+      "256 MB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to the HDFS architecture description, files are broken up into blocks with a typical block size of 64 MB."
+  },
+  {
+    "id": "q10",
+    "text": "What role does the NameNode play in HDFS?",
+    "options": [
+      "It stores the actual data blocks",
+      "It maps filenames to Block IDs and Block IDs to DataNodes",
+      "It provides backup storage for failed nodes",
+      "It handles user authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The NameNode maps a filename to a list of Block IDs and maps each Block ID to DataNodes containing a replica of the block."
+  },
+  {
+    "id": "q11",
+    "text": "What does a DataNode do in HDFS?",
+    "options": [
+      "Maps filenames to Block IDs",
+      "Coordinates data replication",
+      "Maps a Block ID to a physical location on disk",
+      "Manages user permissions"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A DataNode maps a Block ID to a physical location on disk, handling the actual storage of data blocks."
+  },
+  {
+    "id": "q12",
+    "text": "What is the data coherency model used by HDFS?",
+    "options": [
+      "Read-write-modify access model",
+      "Write-once-read-many access model",
+      "Multiple-write-single-read access model",
+      "Random access model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HDFS uses a write-once-read-many access model where clients can only append to existing files, ensuring data coherency."
+  },
+  {
+    "id": "q13",
+    "text": "What is a limitation of distributed file systems mentioned in the lecture?",
+    "options": [
+      "They cannot handle large files",
+      "They have very high overheads and poor performance with billions of smaller tuples",
+      "They don't support data replication",
+      "They only work with structured data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While distributed file systems are good for millions of large files, they have very high overheads and poor performance when dealing with billions of smaller tuples."
+  },
+  {
+    "id": "q14",
+    "text": "What is sharding in the context of Big Data?",
+    "options": [
+      "Encrypting data across multiple databases",
+      "Partitioning data across multiple databases",
+      "Backing up data to multiple locations",
+      "Compressing data for storage efficiency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sharding involves partitioning data across multiple databases, usually based on some partitioning attributes or keys."
+  },
+  {
+    "id": "q15",
+    "text": "In the sharding example given, how might records be distributed?",
+    "options": [
+      "Records with key values 1-100,000 on database 1, 100,001-200,000 on database 2, etc.",
+      "All records randomly distributed across databases",
+      "Records grouped by creation date",
+      "Records distributed based on file size"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The example shows records with key values from 1 to 100,000 on database 1, records with key values from 100,001 to 200,000 on database 2, and so on."
+  },
+  {
+    "id": "q16",
+    "text": "What is a positive aspect of sharding mentioned in the lecture?",
+    "options": [
+      "It's completely transparent to applications",
+      "It scales well and is easy to implement",
+      "It eliminates the chance of failure",
+      "It automatically handles load balancing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture mentions that sharding scales well and is easy to implement as positive aspects."
+  },
+  {
+    "id": "q17",
+    "text": "What is a major drawback of sharding?",
+    "options": [
+      "It reduces data security",
+      "It's not transparent - applications must deal with routing queries and handling queries that span multiple databases",
+      "It only works with small datasets",
+      "It requires expensive hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sharding is not transparent to applications, which must handle routing of queries and deal with queries that span multiple databases."
+  },
+  {
+    "id": "q18",
+    "text": "When were parallel databases originally developed?",
+    "options": [
+      "1970s",
+      "1980s",
+      "1990s",
+      "2000s"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Parallel databases were developed in the 1980s, well before Big Data became a major concern."
+  },
+  {
+    "id": "q19",
+    "text": "What scale were parallel databases originally designed for?",
+    "options": [
+      "5 to 50 machines",
+      "10s to 100s of machines",
+      "1000s of machines",
+      "10,000s of machines"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Parallel databases were designed for smaller scale operations, typically 10s to 100s of machines, and did not provide easy scalability."
+  },
+  {
+    "id": "q20",
+    "text": "How do parallel databases typically handle query failure due to machine failure?",
+    "options": [
+      "They continue execution on remaining machines",
+      "They automatically restart the failed machine",
+      "They typically restart the entire query",
+      "They ignore the failure and continue"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Parallel databases typically restart the query in the event of failure, which can be problematic at very large scale where restarts may be frequent."
+  },
+  {
+    "id": "q21",
+    "text": "How do Map-reduce systems handle failures compared to parallel databases?",
+    "options": [
+      "They restart queries more frequently",
+      "They ignore failures completely",
+      "They can continue query execution, working around failures",
+      "They shut down the entire system"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Map-reduce systems can continue query execution while working around failures, unlike traditional parallel databases that typically restart queries."
+  },
+  {
+    "id": "q22",
+    "text": "Why is availability essential for parallel/distributed databases?",
+    "options": [
+      "To improve query performance",
+      "So the system can run even if parts have failed",
+      "To reduce storage costs",
+      "To simplify database administration"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Availability is essential so that the system can continue to run even if some parts have failed, which is achieved through replication."
+  },
+  {
+    "id": "q23",
+    "text": "What does consistency mean in the context of replicated data?",
+    "options": [
+      "All data is stored in the same format",
+      "All live replicas have the same value, and each read sees the latest version",
+      "Data is backed up regularly",
+      "All databases use the same schema"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Consistency means that all live replicas have the same value, and each read operation sees the latest version of the data."
+  },
+  {
+    "id": "q24",
+    "text": "In the majority protocol example given, if there are 3 replicas, how many replicas must reads/writes access?",
+    "options": [
+      "1 replica",
+      "2 replicas",
+      "3 replicas",
+      "Any number of replicas"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the majority protocol example with 3 replicas, reads and writes must access 2 replicas to ensure consistency."
+  },
+  {
+    "id": "q25",
+    "text": "What does Brewer's CAP 'Theorem' state about network partitions?",
+    "options": [
+      "Availability and consistency can always be guaranteed",
+      "Network partitions never occur in practice",
+      "In the presence of partitions, you cannot guarantee both availability and consistency",
+      "Partitions only affect data storage, not retrieval"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Brewer's CAP theorem states that in the presence of network partitions, you cannot guarantee both availability and consistency simultaneously."
+  },
+  {
+    "id": "q26",
+    "text": "What does the MapReduce paradigm provide?",
+    "options": [
+      "A database management system",
+      "A platform for reliable, scalable parallel computing",
+      "A web development framework",
+      "A data visualization tool"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MapReduce provides a platform for reliable, scalable parallel computing that abstracts distributed and parallel environment issues from programmers."
+  },
+  {
+    "id": "q27",
+    "text": "What does MapReduce abstract from the programmer?",
+    "options": [
+      "Data storage requirements",
+      "Issues of distributed and parallel environment",
+      "Algorithm design",
+      "User interface development"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MapReduce abstracts issues of the distributed and parallel environment from the programmer, who only needs to provide core logic via map() and reduce() functions."
+  },
+  {
+    "id": "q28",
+    "text": "What functions must the programmer provide in MapReduce?",
+    "options": [
+      "input() and output() functions",
+      "map() and reduce() functions",
+      "create() and delete() functions",
+      "read() and write() functions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The programmer provides core logic via map() and reduce() functions, while the system handles parallelization, coordination, etc."
+  },
+  {
+    "id": "q29",
+    "text": "What scale of machines do very large MapReduce implementations run on?",
+    "options": [
+      "10^1 to 10^2 machines",
+      "10^2 to 10^3 machines",
+      "10^3 to 10^4 machines",
+      "10^4 to 10^5 machines"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Very large scale MapReduce implementations run on clusters with 10^3 to 10^4 machines (thousands to tens of thousands of machines)."
+  },
+  {
+    "id": "q30",
+    "text": "In the word count example, what does each worker do in the map phase?",
+    "options": [
+      "Counts total words across all documents",
+      "Parses documents to find all words and outputs (word, count) pairs",
+      "Sorts words alphabetically",
+      "Removes duplicate words"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the map phase, each worker parses its assigned documents to find all words and outputs (word, count) pairs with count=1 for each occurrence."
+  },
+  {
+    "id": "q31",
+    "text": "Given the input 'One a penny, two a penny, hot cross buns.', what would be one of the (word, count) pairs output by the map function?",
+    "options": [
+      "('penny', 2)",
+      "('a', 1)",
+      "('total', 9)",
+      "('sentence', 1)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The map function outputs individual (word, 1) pairs for each word occurrence, so ('a', 1) would be output for each occurrence of 'a'."
+  },
+  {
+    "id": "q32",
+    "text": "In the word count example, what is the final output for the word 'penny'?",
+    "options": [
+      "('penny', 1)",
+      "('penny', 2)",
+      "('penny', 3)",
+      "('penny', 4)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The word 'penny' appears twice in the input, so the reduce function would output ('penny', 2) after aggregating the counts."
+  },
+  {
+    "id": "q33",
+    "text": "In the MapReduce word count pseudo-code, what does the emit function do in the map phase?",
+    "options": [
+      "Counts the total words",
+      "Outputs a (word, 1) pair for each word",
+      "Sorts the words",
+      "Removes punctuation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The emit function outputs a (word, 1) pair for each word encountered, with the word as the key and 1 as the count value."
+  },
+  {
+    "id": "q34",
+    "text": "What is the first attribute of the emit function called in MapReduce?",
+    "options": [
+      "Map key",
+      "Reduce key",
+      "Primary key",
+      "Sort key"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The first attribute of the emit function is called the reduce key, which is used to group values in the shuffle step."
+  },
+  {
+    "id": "q35",
+    "text": "What operation is effectively performed on the reduce key in MapReduce?",
+    "options": [
+      "Sort by",
+      "Group by",
+      "Order by",
+      "Filter by"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A group by operation is effectively performed on the reduce key to create lists of values, which requires a shuffle step across machines."
+  },
+  {
+    "id": "q36",
+    "text": "Which companies are mentioned as widely using MapReduce for parallel processing?",
+    "options": [
+      "Microsoft and Oracle",
+      "Google, Yahoo, and hundreds of other companies",
+      "IBM and Intel",
+      "Amazon and Facebook only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture mentions that MapReduce is widely used by Google, Yahoo, and hundreds of other companies for parallel processing."
+  },
+  {
+    "id": "q37",
+    "text": "Which of the following is mentioned as an example use of MapReduce?",
+    "options": [
+      "Real-time transaction processing",
+      "Compute PageRank and build keyword indices",
+      "User interface design",
+      "Database schema design"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Example uses mentioned include computing PageRank, building keyword indices, and doing data analysis of web click logs."
+  },
+  {
+    "id": "q38",
+    "text": "What is an advantage of MapReduce over traditional SQL databases?",
+    "options": [
+      "It's always faster than SQL",
+      "It allows procedural code in map and reduce functions and data of any type",
+      "It uses less storage space",
+      "It requires less programming knowledge"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MapReduce allows procedural code in map and reduce functions and can handle data of any type, making it more flexible than traditional SQL for certain tasks."
+  },
+  {
+    "id": "q39",
+    "text": "What is a disadvantage of MapReduce compared to SQL?",
+    "options": [
+      "It cannot handle large datasets",
+      "It is cumbersome for writing simple queries",
+      "It doesn't support parallel processing",
+      "It only works with structured data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While many computations are easier to express in SQL, MapReduce is cumbersome for writing simple queries that would be straightforward in SQL."
+  },
+  {
+    "id": "q40",
+    "text": "What do current generation execution engines natively support?",
+    "options": [
+      "Only map and reduce operations",
+      "Algebraic operations such as joins and aggregation",
+      "Only SQL queries",
+      "Only key-value operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Current generation execution engines natively support algebraic operations such as joins, aggregation, etc., and allow users to create their own algebraic operators."
+  },
+  {
+    "id": "q41",
+    "text": "Which execution engines are mentioned as examples in the lecture?",
+    "options": [
+      "MySQL and PostgreSQL",
+      "Apache Tez and Spark",
+      "Oracle and SQL Server",
+      "MongoDB and Cassandra"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Apache Tez and Spark are mentioned as examples of current generation execution engines that support algebraic operations."
+  },
+  {
+    "id": "q42",
+    "text": "What does Apache Tez provide according to the lecture?",
+    "options": [
+      "High-level SQL interface",
+      "Low level API",
+      "User interface components",
+      "Database storage engine"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Tez provides a low level API, while Hive on Tez compiles SQL to Tez for higher-level functionality."
+  },
+  {
+    "id": "q43",
+    "text": "What does RDD stand for in Spark?",
+    "options": [
+      "Relational Data Distribution",
+      "Resilient Distributed Dataset",
+      "Rapid Data Deployment",
+      "Remote Database Driver"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RDD stands for Resilient Distributed Dataset, which is a core abstraction in Spark representing a collection of records that can be stored across multiple machines."
+  },
+  {
+    "id": "q44",
+    "text": "How are RDDs computed in Spark?",
+    "options": [
+      "They are computed immediately when created",
+      "They are lazily computed when needed",
+      "They are pre-computed and cached",
+      "They are computed in parallel always"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RDDs can be lazily computed when needed, which is an important performance optimization feature in Spark."
+  },
+  {
+    "id": "q45",
+    "text": "In which programming languages can Spark programs be written?",
+    "options": [
+      "Only Java",
+      "Java, Scala, and R",
+      "Only Python and Java",
+      "Any programming language"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Spark programs can be written in Java, Scala, and R, with the lecture examples being shown in Java."
+  },
+  {
+    "id": "q46",
+    "text": "What does streaming data refer to?",
+    "options": [
+      "Data stored in multiple locations",
+      "Data that arrives in a continuous fashion",
+      "Data that is compressed",
+      "Data that is encrypted"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Streaming data refers to data that arrives in a continuous fashion, as opposed to data-at-rest."
+  },
+  {
+    "id": "q47",
+    "text": "Which of the following is NOT mentioned as an example of streaming data applications?",
+    "options": [
+      "Stock market trades",
+      "E-commerce purchases and searches",
+      "Sensor readings from IoT devices",
+      "Database backup operations"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Stock market trades, e-commerce activities, sensor readings, network monitoring data, and social media posts are mentioned as streaming data examples, but not database backups."
+  },
+  {
+    "id": "q48",
+    "text": "What is windowing in the context of streaming data?",
+    "options": [
+      "Displaying data in multiple windows",
+      "Breaking up streams into windows and running queries on windows",
+      "Opening multiple database connections",
+      "Partitioning data by geographic regions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Windowing involves breaking up the stream into windows, and queries are run on these windows rather than the entire continuous stream."
+  },
+  {
+    "id": "q49",
+    "text": "What are the two bases on which windows may be created in streaming systems?",
+    "options": [
+      "Size and location",
+      "Time or tuples",
+      "Source and destination",
+      "Priority and frequency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Windows in streaming systems may be based on time (e.g., hourly windows) or on the number of tuples (e.g., every 1000 records)."
+  },
+  {
+    "id": "q50",
+    "text": "What are punctuations used for in stream processing?",
+    "options": [
+      "To format output data",
+      "To specify that all future tuples have timestamp greater than some value",
+      "To mark the end of a query",
+      "To separate different data types"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Punctuations specify that all future tuples have timestamps greater than some value, helping to determine when all tuples in a window have been seen."
+  },
+  {
+    "id": "q51",
+    "text": "What is a characteristic of continuous queries?",
+    "options": [
+      "They run once and produce final results",
+      "They output partial results and update continuously",
+      "They only work with static data",
+      "They require manual refresh"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Continuous queries output partial results based on the stream seen so far, and query results are updated continuously as new data arrives."
+  },
+  {
+    "id": "q52",
+    "text": "What is a potential problem with continuous queries?",
+    "options": [
+      "They consume too much storage",
+      "They can lead to a flood of updates",
+      "They don't work with real-time data",
+      "They require too much programming effort"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While continuous queries have applications, they can lead to a flood of updates, which can be overwhelming for systems and users."
+  },
+  {
+    "id": "q53",
+    "text": "What does CEP stand for in the context of stream processing?",
+    "options": [
+      "Central Event Processing",
+      "Complex Event Processing",
+      "Continuous Event Processing",
+      "Concurrent Event Processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CEP stands for Complex Event Processing, which are systems that detect patterns in streams and trigger actions."
+  },
+  {
+    "id": "q54",
+    "text": "What characterizes many stream processing systems mentioned in the lecture?",
+    "options": [
+      "They always persist data to disk",
+      "They are purely in-memory and do not persist data",
+      "They only work with small datasets",
+      "They require expensive hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Many stream processing systems are purely in-memory and do not persist data, focusing on real-time processing rather than storage."
+  },
+  {
+    "id": "q55",
+    "text": "What is the lambda architecture in stream processing?",
+    "options": [
+      "A single stream processing approach",
+      "Split stream into two: one to stream processing system, another to database for storage",
+      "A method for data compression",
+      "A security protocol for streams"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Lambda architecture splits the stream into two parts: one output goes to a stream processing system and the other to a database for storage."
+  },
+  {
+    "id": "q56",
+    "text": "What is a disadvantage of lambda architecture?",
+    "options": [
+      "It's too complex to implement",
+      "It often leads to duplication of querying effort",
+      "It doesn't scale well",
+      "It only works with small data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Lambda architecture often leads to duplication of querying effort, requiring queries to be implemented both on the streaming system and in the database."
+  },
+  {
+    "id": "q57",
+    "text": "What type of window doesn't overlap in streaming systems?",
+    "options": [
+      "Sliding window",
+      "Tumbling window",
+      "Hopping window",
+      "Session window"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Tumbling windows (e.g., hourly windows) don't overlap, unlike other window types that may have overlapping time periods."
+  },
+  {
+    "id": "q58",
+    "text": "What do publish-subscribe systems provide?",
+    "options": [
+      "Database storage capabilities",
+      "Convenient abstraction for processing streams",
+      "User interface components",
+      "Data encryption services"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Publish-subscribe (pub-sub) systems provide a convenient abstraction for processing streams where tuples are published to topics and consumers subscribe to topics."
+  },
+  {
+    "id": "q59",
+    "text": "Which parallel pub-sub system is mentioned as popular for managing streaming data?",
+    "options": [
+      "Apache Storm",
+      "Apache Kafka",
+      "Apache Flume",
+      "Apache Flink"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Apache Kafka is mentioned as a popular parallel pub-sub system widely used to manage streaming data."
+  },
+  {
+    "id": "q60",
+    "text": "How can graphs be modelled as relations according to the lecture?",
+    "options": [
+      "graph(nodes, edges, properties)",
+      "node(ID, label, node_data) and edge(fromID, toID, label, edge_data)",
+      "vertex(ID, data) and connection(start, end)",
+      "entity(ID, type) and relationship(source, target, type)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture shows graphs can be modelled as relations using node(ID, label, node_data) and edge(fromID, toID, label, edge_data) tables."
+  }
+]
