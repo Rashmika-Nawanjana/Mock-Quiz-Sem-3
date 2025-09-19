@@ -176,6 +176,74 @@
                     </div>
                 </div>
             </section>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Quizzes Completed Over Time (Line Chart)
+const quizzesCompletedData = <%- JSON.stringify(quizzesCompletedOverTime) %>;
+const ctxProgress = document.getElementById('progressChart').getContext('2d');
+const progressChart = new Chart(ctxProgress, {
+    type: 'line',
+    data: {
+        labels: quizzesCompletedData.map(q => q.date + (q.module ? ' - ' + q.module : '')),
+        datasets: [{
+            label: 'Quizzes Completed',
+            data: quizzesCompletedData.map(q => q.completed),
+            borderColor: '#007bff',
+            backgroundColor: 'rgba(0,123,255,0.1)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 4,
+            pointBackgroundColor: '#007bff',
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: false },
+            title: { display: true, text: 'Quizzes Completed Over Time' }
+        },
+        scales: {
+            y: { min: 0, title: { display: true, text: 'Quizzes Completed' } }
+        }
+    }
+});
+
+// Average & Best Scores Per Module (Bar Chart)
+const avgScoresData = <%- JSON.stringify(avgScoresPerModule) %>;
+const ctxModule = document.getElementById('moduleChart').getContext('2d');
+const moduleChart = new Chart(ctxModule, {
+    type: 'bar',
+    data: {
+        labels: avgScoresData.map(m => m.module),
+        datasets: [
+            {
+                label: 'Average Score (%)',
+                data: avgScoresData.map(m => m.avgScore),
+                backgroundColor: '#28a745',
+                borderColor: '#218838',
+                borderWidth: 1
+            },
+            {
+                label: 'Best Score (%)',
+                data: avgScoresData.map(m => m.bestScore),
+                backgroundColor: '#ffc107',
+                borderColor: '#e0a800',
+                borderWidth: 1
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { display: true },
+            title: { display: true, text: 'Scores Per Module' }
+        },
+        scales: {
+            y: { min: 0, max: 100, title: { display: true, text: 'Score (%)' } }
+        }
+    }
+});
+</script>
 
             <!-- Recent Attempts Section -->
             <section id="recent-attempts" class="content-section">
@@ -348,6 +416,28 @@
                                 <h3><%= module.name %></h3>
                                 <span class="module-code"><%= module.code %></span>
                             </div>
+                            <div class="module-progress-summary" style="margin: 8px 0; font-weight: 500; color: var(--github-text);">
+                                <span>
+                                    <i class="fas fa-clipboard-check"></i>
+                                    <%= module.completedQuizzes %> of <%= module.totalQuizzes %> quizzes completed
+                                </span>
+                                &nbsp;|&nbsp;
+                                <span>
+                                    <i class="fas fa-percentage"></i>
+                                    Avg: <%= module.averageScore %>%
+                                </span>
+                                &nbsp;|&nbsp;
+                                <span>
+                                    <i class="fas fa-trophy"></i>
+                                    Best: <%= module.bestScore %>%
+                                </span>
+                                &nbsp;|&nbsp;
+                                <span>
+                                    <i class="fas fa-clock"></i>
+                                    Time: <%= module.timeSpent %>
+                                </span>
+                            </div>
+                            </div>
                             
                             <div class="progress-section">
                                 <div class="progress-info">
@@ -379,10 +469,10 @@
                             </div>
                             
                             <div class="module-actions">
-                                <button class="btn-module-continue" onclick="viewModule('<%= module.id %>')">
+                                <a class="btn-module-continue" href="/modules/<%= module.code %>">
                                     <i class="fas fa-play"></i>
                                     Continue
-                                </button>
+                                </a>
                                 <button class="btn-module-history" onclick="viewHistory('<%= module.id %>')">
                                     <i class="fas fa-history"></i>
                                 </button>

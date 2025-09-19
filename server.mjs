@@ -131,6 +131,16 @@ app.get('/dashboard', requireAuth, (req, res) => {
             .from('modules')
             .select('*');
 
+        // Ensure user_progress is up to date for each module
+        if (modules && modules.length) {
+            for (const m of modules) {
+                await supabase.rpc('update_user_progress', {
+                    user_uuid: user.id,
+                    module_uuid: m.id
+                });
+            }
+        }
+
         // Fetch user progress for all modules
         const { data: progressRows, error: progressError } = await supabase
             .from('user_progress')
@@ -232,13 +242,33 @@ app.get('/dashboard', requireAuth, (req, res) => {
         // Achievements: keep as dummy for now
         let achievements = [];
 
+        // Prepare analytics data for charts using user_progress
+        // 1. Average and best scores per module (for bar chart)
+        const avgScoresPerModule = (progressRows || []).map(p => ({
+            module: (modules.find(m => m.id === p.module_id) || {}).display_name || '',
+            avgScore: p.average_score_percentage ? Math.round(p.average_score_percentage) : 0,
+            bestScore: p.best_score_percentage ? Math.round(p.best_score_percentage) : 0
+        }));
+
+        // 2. Quizzes completed over time (for line chart)
+        // We'll use the last_activity as the date and quizzes_completed as the value
+        const quizzesCompletedOverTime = (progressRows || [])
+            .filter(p => p.last_activity)
+            .map(p => ({
+                date: p.last_activity.split('T')[0],
+                completed: p.quizzes_completed || 0,
+                module: (modules.find(m => m.id === p.module_id) || {}).display_name || ''
+            }));
+
         res.render('dashboard', {
             user,
             stats,
             modules: moduleProgress,
             groupedRecentAttempts,
             achievements,
-            userAttempts
+            userAttempts,
+            avgScoresPerModule,
+            quizzesCompletedOverTime
         });
     })();
 });
