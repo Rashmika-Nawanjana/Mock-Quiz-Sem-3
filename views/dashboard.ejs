@@ -197,7 +197,7 @@
                     'statistics': 'Statistics',
                     'thermodynamics': 'Thermodynamics'
                 }; %>
-                <% if (groupedRecentAttempts.length > 0) { %>
+                <% if (groupedRecentAttempts && groupedRecentAttempts.length > 0) { %>
                 <div class="attempts-grouped">
                     <% groupedRecentAttempts.forEach(group => { %>
                         <div class="attempt-group">
@@ -294,6 +294,7 @@
                     <h1>All Quiz Attempts</h1>
                     <p>Every attempt you've made, across all modules and quizzes</p>
                 </div>
+                <% if (userAttempts && userAttempts.length > 0) { %>
                 <div class="attempts-grid">
                     <% userAttempts.forEach(function(attempt) { %>
                         <div class="attempt-card">
@@ -325,6 +326,11 @@
                         </div>
                     <% }); %>
                 </div>
+                <% } else { %>
+                <div class="empty-state">
+                    <p>No quiz attempts found yet.</p>
+                </div>
+                <% } %>
             </section>
 
             <!-- Modules Section -->
@@ -335,83 +341,88 @@
                 </div>
                 
                 <div class="modules-grid">
-                    <% modules.forEach(module => { %>
-                    <div class="module-card-premium">
-                        <div class="module-background">
-                            <div class="module-icon-large">
-                                <i class="<%= module.icon %>"></i>
+                    <% if (modules && modules.length > 0) { %>
+                        <% modules.forEach(module => { %>
+                        <div class="module-card-premium">
+                            <div class="module-background">
+                                <div class="module-icon-large">
+                                    <i class="<%= module.icon %>"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="module-content">
+                                <div class="module-header">
+                                    <h3><%= module.name %></h3>
+                                    <span class="module-code"><%= module.code %></span>
+                                </div>
+                                <div class="module-progress-summary" style="margin: 8px 0; font-weight: 500; color: var(--github-text);">
+                                    <span>
+                                        <i class="fas fa-clipboard-check"></i>
+                                        <%= module.completedQuizzes %> of <%= module.totalQuizzes %> quizzes completed
+                                    </span>
+                                    &nbsp;|&nbsp;
+                                    <span>
+                                        <i class="fas fa-percentage"></i>
+                                        Avg: <%= module.averageScore %>%
+                                    </span>
+                                    &nbsp;|&nbsp;
+                                    <span>
+                                        <i class="fas fa-trophy"></i>
+                                        Best: <%= module.bestScore %>%
+                                    </span>
+                                    &nbsp;|&nbsp;
+                                    <span>
+                                        <i class="fas fa-clock"></i>
+                                        Time: <%= module.timeSpent %>
+                                    </span>
+                                </div>
+                                
+                                <div class="progress-section">
+                                    <div class="progress-info">
+                                        <span>Progress</span>
+                                        <span><%= module.progress %>%</span>
+                                    </div>
+                                    <div class="progress-bar-modern">
+                                        <div class="progress-fill" style="width: <%= module.progress %>%;"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="module-stats-grid">
+                                    <div class="stat-mini">
+                                        <span class="stat-label">Completed</span>
+                                        <span class="stat-value"><%= module.completedQuizzes %>/<%= module.totalQuizzes %></span>
+                                    </div>
+                                    <div class="stat-mini">
+                                        <span class="stat-label">Avg Score</span>
+                                        <span class="stat-value"><%= module.averageScore %>%</span>
+                                    </div>
+                                    <div class="stat-mini">
+                                        <span class="stat-label">Best</span>
+                                        <span class="stat-value"><%= module.bestScore %>%</span>
+                                    </div>
+                                    <div class="stat-mini">
+                                        <span class="stat-label">Time</span>
+                                        <span class="stat-value"><%= module.timeSpent %></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="module-actions">
+                                    <a class="btn-module-continue" href="/modules/<%= module.code %>">
+                                        <i class="fas fa-play"></i>
+                                        Continue
+                                    </a>
+                                    <button class="btn-module-history" onclick="viewHistory('<%= module.id %>')">
+                                        <i class="fas fa-history"></i>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        
-                        <div class="module-content">
-                            <div class="module-header">
-                                <h3><%= module.name %></h3>
-                                <span class="module-code"><%= module.code %></span>
-                            </div>
-                            <div class="module-progress-summary" style="margin: 8px 0; font-weight: 500; color: var(--github-text);">
-                                <span>
-                                    <i class="fas fa-clipboard-check"></i>
-                                    <%= module.completedQuizzes %> of <%= module.totalQuizzes %> quizzes completed
-                                </span>
-                                &nbsp;|&nbsp;
-                                <span>
-                                    <i class="fas fa-percentage"></i>
-                                    Avg: <%= module.averageScore %>%
-                                </span>
-                                &nbsp;|&nbsp;
-                                <span>
-                                    <i class="fas fa-trophy"></i>
-                                    Best: <%= module.bestScore %>%
-                                </span>
-                                &nbsp;|&nbsp;
-                                <span>
-                                    <i class="fas fa-clock"></i>
-                                    Time: <%= module.timeSpent %>
-                                </span>
-                            </div>
-                            </div>
-                            
-                            <div class="progress-section">
-                                <div class="progress-info">
-                                    <span>Progress</span>
-                                    <span><%= module.progress %>%</span>
-                                </div>
-                                <div class="progress-bar-modern">
-                                    <div class="progress-fill" style="width: <%= module.progress %>%;"></div>
-                                </div>
-                            </div>
-                            
-                            <div class="module-stats-grid">
-                                <div class="stat-mini">
-                                    <span class="stat-label">Completed</span>
-                                    <span class="stat-value"><%= module.completedQuizzes %>/<%= module.totalQuizzes %></span>
-                                </div>
-                                <div class="stat-mini">
-                                    <span class="stat-label">Avg Score</span>
-                                    <span class="stat-value"><%= module.averageScore %>%</span>
-                                </div>
-                                <div class="stat-mini">
-                                    <span class="stat-label">Best</span>
-                                    <span class="stat-value"><%= module.bestScore %>%</span>
-                                </div>
-                                <div class="stat-mini">
-                                    <span class="stat-label">Time</span>
-                                    <span class="stat-value"><%= module.timeSpent %></span>
-                                </div>
-                            </div>
-                            
-                            <div class="module-actions">
-                                <a class="btn-module-continue" href="/modules/<%= module.code %>">
-                                    <i class="fas fa-play"></i>
-                                    Continue
-                                </a>
-                                <button class="btn-module-history" onclick="viewHistory('<%= module.id %>')">
-                                    <i class="fas fa-history"></i>
-                                </button>
-                            </div>
+                        <% }); %>
+                    <% } else { %>
+                        <div class="empty-state">
+                            <p>No modules found.</p>
                         </div>
-                    </div>
-                    <% }); %>
+                    <% } %>
                 </div>
             </section>
 
@@ -428,10 +439,14 @@
                         </div>
                         <div class="analytics-user-details">
                             <ul style="list-style:none;padding:0;">
-                                <li><strong>Total Quizzes Completed:</strong> <%= userAnalytics.totalQuizzes %></li>
-                                <li><strong>Total Time Spent:</strong> <%= Math.floor(userAnalytics.totalTime/60) %>m <%= userAnalytics.totalTime%60 %>s</li>
-                                <li><strong>Average Score:</strong> <%= userAnalytics.avgScore %>%</li>
-                                <li><strong>Best Score:</strong> <%= userAnalytics.bestScore %>%</li>
+                                <% if (userAnalytics) { %>
+                                    <li><strong>Total Quizzes Completed:</strong> <%= userAnalytics.totalQuizzes %></li>
+                                    <li><strong>Total Time Spent:</strong> <%= Math.floor(userAnalytics.totalTime/60) %>m <%= userAnalytics.totalTime%60 %>s</li>
+                                    <li><strong>Average Score:</strong> <%= userAnalytics.avgScore %>%</li>
+                                    <li><strong>Best Score:</strong> <%= userAnalytics.bestScore %>%</li>
+                                <% } else { %>
+                                    <li>No analytics data available</li>
+                                <% } %>
                             </ul>
                         </div>
                     </div>
@@ -450,14 +465,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% moduleAnalytics.forEach(m => { %>
+                                    <% if (moduleAnalytics && moduleAnalytics.length > 0) { %>
+                                        <% moduleAnalytics.forEach(m => { %>
+                                            <tr>
+                                                <td><%= m.module %></td>
+                                                <td><%= m.avgScore %>%</td>
+                                                <td><%= m.bestScore %>%</td>
+                                                <td><%= m.totalAttempts %></td>
+                                            </tr>
+                                        <% }); %>
+                                    <% } else { %>
                                         <tr>
-                                            <td><%= m.module %></td>
-                                            <td><%= m.avgScore %>%</td>
-                                            <td><%= m.bestScore %>%</td>
-                                            <td><%= m.totalAttempts %></td>
+                                            <td colspan="4">No module analytics available</td>
                                         </tr>
-                                    <% }); %>
+                                    <% } %>
                                 </tbody>
                             </table>
                         </div>
@@ -473,31 +494,37 @@
                 </div>
                 
                 <div class="achievements-grid">
-                    <% achievements.forEach(achievement => { %>
-                    <div class="achievement-card-premium <%= achievement.unlocked ? 'unlocked' : 'locked' %>">
-                        <div class="achievement-glow"></div>
-                        <div class="achievement-icon-premium">
-                            <i class="<%= achievement.icon %>"></i>
-                        </div>
-                        <div class="achievement-content">
-                            <h3><%= achievement.name %></h3>
-                            <p><%= achievement.description %></p>
-                            <% if (achievement.unlocked) { %>
-                                <div class="achievement-date">
-                                    <i class="fas fa-check-circle"></i>
-                                    Unlocked on <%= achievement.unlockedDate %>
-                                </div>
-                            <% } else { %>
-                                <div class="achievement-progress">
-                                    <div class="progress-bar-achievement">
-                                        <div class="progress-fill" style="width: <%= achievement.progress %>%;"></div>
+                    <% if (achievements && achievements.length > 0) { %>
+                        <% achievements.forEach(achievement => { %>
+                        <div class="achievement-card-premium <%= achievement.unlocked ? 'unlocked' : 'locked' %>">
+                            <div class="achievement-glow"></div>
+                            <div class="achievement-icon-premium">
+                                <i class="<%= achievement.icon %>"></i>
+                            </div>
+                            <div class="achievement-content">
+                                <h3><%= achievement.name %></h3>
+                                <p><%= achievement.description %></p>
+                                <% if (achievement.unlocked) { %>
+                                    <div class="achievement-date">
+                                        <i class="fas fa-check-circle"></i>
+                                        Unlocked on <%= achievement.unlockedDate %>
                                     </div>
-                                    <span><%= achievement.progress %>% complete</span>
-                                </div>
-                            <% } %>
+                                <% } else { %>
+                                    <div class="achievement-progress">
+                                        <div class="progress-bar-achievement">
+                                            <div class="progress-fill" style="width: <%= achievement.progress %>%;"></div>
+                                        </div>
+                                        <span><%= achievement.progress %>% complete</span>
+                                    </div>
+                                <% } %>
+                            </div>
                         </div>
-                    </div>
-                    <% }); %>
+                        <% }); %>
+                    <% } else { %>
+                        <div class="empty-state">
+                            <p>No achievements available.</p>
+                        </div>
+                    <% } %>
                 </div>
             </section>
 
