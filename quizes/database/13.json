@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the primary purpose of data analytics according to the lecture?",
+    "options": [
+      "To store large amounts of data efficiently",
+      "To process data to infer patterns, correlations, or models for prediction",
+      "To create backup copies of business databases",
+      "To design user interfaces for database applications"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Data analytics is defined as the processing of data to infer patterns, correlations, or models for prediction, primarily used to make business decisions."
+  },
+  {
+    "id": "q2",
+    "text": "Which of the following is NOT mentioned as a common business decision supported by data analytics?",
+    "options": [
+      "What product to suggest for purchase to individual customers",
+      "What products to manufacture in what quantity",
+      "How to design the company's organizational structure",
+      "What insurance premium to charge"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions product suggestions, manufacturing decisions, and insurance premiums as examples, but does not mention organizational structure design."
+  },
+  {
+    "id": "q3",
+    "text": "In the ETL vs ELT approaches, what is the key difference?",
+    "options": [
+      "ETL is faster than ELT",
+      "ELT requires more storage space",
+      "ETL transforms data before loading, while ELT loads data before transforming",
+      "ELT is only used for small datasets"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ETL stands for Extract-Transform-Load (transform before loading), while ELT stands for Extract-Load-Transform (load before transforming)."
+  },
+  {
+    "id": "q4",
+    "text": "Which component is NOT part of the common steps in data analytics mentioned in the lecture?",
+    "options": [
+      "Gather data from multiple sources into one location",
+      "Generate aggregates and reports summarizing data",
+      "Design new database schemas from scratch",
+      "Build predictive models for decision making"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions gathering data, generating reports, and building models, but emphasizes integrating existing data rather than designing new schemas."
+  },
+  {
+    "id": "q5",
+    "text": "According to the lecture, what is a key advantage of using predictive models in business?",
+    "options": [
+      "They eliminate the need for human decision making",
+      "They can predict customer likelihood of loan default to make lending decisions",
+      "They guarantee 100% accurate predictions",
+      "They reduce the cost of data storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture specifically mentions using customer profile features and past history to predict likelihood of default on loans, which helps in making loan decisions."
+  },
+  {
+    "id": "q6",
+    "text": "What is the relationship between machine learning and data mining according to the lecture?",
+    "options": [
+      "They are completely different fields with no overlap",
+      "Machine learning is a subset of data mining",
+      "Data mining extends machine learning techniques to run on very large datasets",
+      "Data mining is outdated and has been replaced by machine learning"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states that data mining extends techniques developed by machine-learning communities to run them on very large datasets."
+  },
+  {
+    "id": "q7",
+    "text": "Which term is mentioned as a synonym for data analytics?",
+    "options": [
+      "Data warehousing",
+      "Business intelligence (BI)",
+      "Decision support",
+      "Online analytical processing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture explicitly states that 'The term business intelligence (BI) is synonym for data analytics'."
+  },
+  {
+    "id": "q8",
+    "text": "What is the primary limitation of data sources that necessitates data warehousing?",
+    "options": [
+      "They are too slow for real-time queries",
+      "They often store only current data, not historical data",
+      "They use incompatible hardware",
+      "They are too expensive to maintain"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Data sources often store only current data, not historical data' as a key motivation for data warehousing."
+  },
+  {
+    "id": "q9",
+    "text": "According to the lecture, what is a data warehouse?",
+    "options": [
+      "A physical storage facility for computer hardware",
+      "A repository of information gathered from multiple sources, stored under a unified schema, at a single site",
+      "A type of database that only stores current transactions",
+      "A software tool for creating data visualizations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A data warehouse is defined as 'a repository (archive) of information gathered from multiple sources, stored under a unified schema, at a single site'."
+  },
+  {
+    "id": "q10",
+    "text": "What is a key benefit of data warehousing mentioned in the lecture?",
+    "options": [
+      "It eliminates the need for backup systems",
+      "It shifts decision support query load away from transaction processing systems",
+      "It reduces the total amount of data stored",
+      "It automatically generates business reports"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture mentions that data warehousing 'Shifts decision support query load away from transaction processing systems' as a key benefit."
+  },
+  {
+    "id": "q11",
+    "text": "In warehouse architecture design, what is the difference between source driven and destination driven approaches?",
+    "options": [
+      "Source driven is faster than destination driven",
+      "Source driven: data sources transmit new information; Destination driven: warehouse requests information",
+      "Source driven uses more storage space",
+      "Destination driven is more secure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Source driven architecture means data sources transmit new information to warehouse, while destination driven means warehouse periodically requests new information from data sources."
+  },
+  {
+    "id": "q12",
+    "text": "Why is keeping a warehouse exactly synchronized with data sources often too expensive?",
+    "options": [
+      "It requires too much storage space",
+      "It needs expensive hardware",
+      "Methods like two-phase commit are resource-intensive",
+      "It requires specialized programming languages"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states that 'Keeping warehouse exactly synchronized with data sources (e.g., using two-phase commit) is often too expensive'."
+  },
+  {
+    "id": "q13",
+    "text": "What is typically acceptable regarding data freshness in data warehouses?",
+    "options": [
+      "Data must be updated in real-time",
+      "Data can be slightly out-of-date",
+      "Data should never be more than 1 hour old",
+      "Only historical data is acceptable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture mentions that it's 'Usually OK to have slightly out-of-date data at warehouse'."
+  },
+  {
+    "id": "q14",
+    "text": "Which of the following is NOT mentioned as a warehouse design issue?",
+    "options": [
+      "Data transformation and cleansing",
+      "How to propagate updates",
+      "What data to summarize",
+      "How to design user interfaces"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The lecture discusses data transformation, update propagation, and data summarization, but does not mention user interface design."
+  },
+  {
+    "id": "q15",
+    "text": "What is an example of data cleansing mentioned in the lecture?",
+    "options": [
+      "Removing old records from the database",
+      "Correcting mistakes in addresses and merging address lists from different sources",
+      "Converting data from one file format to another",
+      "Encrypting sensitive customer information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture specifically mentions 'correct mistakes in addresses (misspellings, zip code errors)' and 'Merge address lists from different sources and purge duplicates' as data cleansing examples."
+  },
+  {
+    "id": "q16",
+    "text": "Why might raw data be too large to store online in a warehouse?",
+    "options": [
+      "Raw data contains too many errors",
+      "Raw data is always unstructured",
+      "Storage and processing limitations make aggregate values more practical",
+      "Raw data violates privacy regulations"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture indicates that raw data may be too large to store online, so 'Aggregate values (totals/subtotals) often suffice'."
+  },
+  {
+    "id": "q17",
+    "text": "What does OLAP stand for and what is its primary characteristic?",
+    "options": [
+      "Online Analytical Processing; batch processing of large datasets",
+      "Online Analytical Processing; interactive analysis with negligible delay",
+      "Offline Analytical Processing; processing data during off-peak hours",
+      "Optimal Linear Analytical Processing; mathematical optimization of queries"
+    ],
+    "correctAnswer": 1,
+    "explanation": "OLAP stands for Online Analytical Processing and is defined as 'Interactive analysis of data, allowing data to be summarized and viewed in different ways in an online fashion (with negligible delay)'."
+  },
+  {
+    "id": "q18",
+    "text": "The example relation used to illustrate OLAP concepts is sales(item_name, color, clothes_size, quantity). What does this represent?",
+    "options": [
+      "A raw transaction log",
+      "A simplified version of the sales fact table joined with dimension tables",
+      "A customer relationship management table",
+      "An inventory management system"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states this is 'a simplified version of the sales fact table joined with the dimension tables, and many attributes removed (and some renamed)'."
+  },
+  {
+    "id": "q19",
+    "text": "What is a data cube in the context of OLAP?",
+    "options": [
+      "A three-dimensional database storage structure",
+      "A multidimensional generalization of a cross-tab",
+      "A cube-shaped data visualization",
+      "A compression algorithm for large datasets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines a data cube as 'a multidimensional generalization of a cross-tab'."
+  },
+  {
+    "id": "q20",
+    "text": "What is pivoting in OLAP operations?",
+    "options": [
+      "Rotating the display of a data visualization",
+      "Changing the dimensions used in a cross-tab",
+      "Creating a backup copy of data",
+      "Sorting data in ascending or descending order"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pivoting is defined as 'changing the dimensions used in a cross-tab', with the example of 'moving colors to column names'."
+  },
+  {
+    "id": "q21",
+    "text": "Which OLAP operation involves creating a cross-tab for fixed values only?",
+    "options": [
+      "Pivoting",
+      "Rollup",
+      "Slicing",
+      "Drill down"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Slicing is defined as 'creating a cross-tab for fixed values only', with the example of 'fixing color to white and size to small'."
+  },
+  {
+    "id": "q22",
+    "text": "What is the difference between slicing and dicing in OLAP?",
+    "options": [
+      "Slicing is faster than dicing",
+      "Dicing is used when values for multiple dimensions are fixed",
+      "Slicing works with numerical data, dicing with categorical data",
+      "There is no difference; they are synonymous"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture mentions that dicing is 'Sometimes called dicing, particularly when values for multiple dimensions are fixed', suggesting dicing is a variant of slicing."
+  },
+  {
+    "id": "q23",
+    "text": "What does rollup accomplish in OLAP operations?",
+    "options": [
+      "Creates more detailed views of data",
+      "Moves from finer-granularity data to coarser granularity",
+      "Combines multiple databases into one",
+      "Reverses previous operations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Rollup is defined as 'moving from finer-granularity data to a coarser granularity', such as 'moving from aggregates by day to aggregates by month or year'."
+  },
+  {
+    "id": "q24",
+    "text": "Drill down is described as:",
+    "options": [
+      "The same operation as rollup",
+      "Moving from coarser-granularity data to finer-granularity data",
+      "A data storage optimization technique",
+      "A method for data backup"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Drill down is 'The opposite operation [to rollup] - that of moving from coarser-granularity data to finer-granularity data'."
+  },
+  {
+    "id": "q25",
+    "text": "What is the purpose of hierarchies on dimensions in OLAP?",
+    "options": [
+      "To organize data storage more efficiently",
+      "To let dimensions be viewed at different levels of detail",
+      "To improve query performance",
+      "To reduce data redundancy"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Hierarchy on dimension attributes: lets dimensions be viewed at different levels of detail'."
+  },
+  {
+    "id": "q26",
+    "text": "According to the example given, the datetime dimension can be used to aggregate by which of the following?",
+    "options": [
+      "Hour of day, date, day of week only",
+      "Month, quarter, year only",
+      "Hour of day, date, day of week, month, quarter, or year",
+      "Only by calendar year"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture lists all these options: 'hour of day, date, day of week, month, quarter or year' as aggregation possibilities for the datetime dimension."
+  },
+  {
+    "id": "q27",
+    "text": "Which of the following is NOT mentioned as a data visualization tool?",
+    "options": [
+      "Tableau",
+      "plotly",
+      "Microsoft Excel",
+      "Google Charts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions Tableau, FusionChart, plotly, Datawrapper, and Google Charts, but not Microsoft Excel."
+  },
+  {
+    "id": "q28",
+    "text": "What technology is typically used for frontend data visualization tools?",
+    "options": [
+      "Java and C++",
+      "HTML and JavaScript",
+      "Python and R",
+      "SQL and PL/SQL"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that 'Frontend typically based on HTML+JavaScript' for data visualization tools."
+  },
+  {
+    "id": "q29",
+    "text": "How is data mining defined in relation to machine learning?",
+    "options": [
+      "Data mining and machine learning are completely different",
+      "Data mining has similar goals to machine learning, but operates on very large volumes of data",
+      "Data mining is simpler than machine learning",
+      "Data mining only works with structured data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states that data mining has 'Similar goals to machine learning, but on very large volumes of data'."
+  },
+  {
+    "id": "q30",
+    "text": "What does KDD stand for in the context of data mining?",
+    "options": [
+      "Knowledge Database Development",
+      "Key Data Decisions",
+      "Knowledge Discovery in Databases",
+      "Kernel Density Distribution"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions that data mining is 'Part of the larger area of knowledge discovery in databases (KDD)'."
+  },
+  {
+    "id": "q31",
+    "text": "In decision trees, what determines when a node becomes a leaf node?",
+    "options": [
+      "When the tree reaches a predetermined depth",
+      "When all items belong to the same class OR all attributes have been considered",
+      "When there are fewer than 10 data points",
+      "When the algorithm runs out of memory"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states a leaf node occurs when 'all (or most) of the items at the node belong to the same class, or all attributes have been considered, and no further partitioning is possible'."
+  },
+  {
+    "id": "q32",
+    "text": "How do you make a prediction using a decision tree?",
+    "options": [
+      "Calculate the average of all leaf values",
+      "Use the most common value in the training data",
+      "Traverse tree from top to make a prediction",
+      "Apply a mathematical formula to the root node"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture explicitly states 'Traverse tree from top to make a prediction'."
+  },
+  {
+    "id": "q33",
+    "text": "In the Bayes theorem formula p(cj|d) = p(d|cj)p(cj)/p(d), what does p(cj|d) represent?",
+    "options": [
+      "Probability of generating instance d given class cj",
+      "Probability of instance d being in class cj",
+      "Probability of occurrence of class cj",
+      "Probability of instance d occurring"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines p(cj|d) as 'probability of instance d being in class cj'."
+  },
+  {
+    "id": "q34",
+    "text": "In the Bayes theorem formula, what does p(d|cj) represent?",
+    "options": [
+      "Probability of instance d being in class cj",
+      "Probability of generating instance d given class cj",
+      "Probability of class cj given instance d",
+      "Joint probability of d and cj"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines p(d|cj) as 'probability of generating instance d given class cj'."
+  },
+  {
+    "id": "q35",
+    "text": "What is the main goal of Support Vector Machine (SVM) classifiers?",
+    "options": [
+      "Find the line that passes through the most data points",
+      "Find the maximum margin line that divides classes with maximum distance from nearest points",
+      "Find the shortest line that separates the classes",
+      "Find multiple lines that intersect at the center of the data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture describes finding a 'maximum margin line' such that 'line divides two classes, and distance from nearest point in either class is maximum'."
+  },
+  {
+    "id": "q36",
+    "text": "How do SVMs work in n-dimensions compared to 2 dimensions?",
+    "options": [
+      "They use multiple lines instead of one",
+      "They use a plane instead of a line to divide points",
+      "They cannot work in more than 2 dimensions",
+      "They require different algorithms entirely"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states 'In n-dimensions points are divided by a plane, instead of a line'."
+  },
+  {
+    "id": "q37",
+    "text": "What are kernel functions in the context of SVMs?",
+    "options": [
+      "Functions that calculate distances between points",
+      "Non-linear transformation functions used before classification",
+      "Functions that determine the number of classes",
+      "Error measurement functions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture mentions 'Transformation functions may be non-linear and are called kernel functions'."
+  },
+  {
+    "id": "q38",
+    "text": "How can SVMs handle N-ary classification (more than 2 classes)?",
+    "options": [
+      "By using N different kernel functions",
+      "By creating N decision trees",
+      "By doing N binary classifications (in class i vs. not in class i)",
+      "SVMs cannot handle more than 2 classes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states 'N-ary classification can be done by N binary classifications • In class i vs. not in class i'."
+  },
+  {
+    "id": "q39",
+    "text": "In neural networks, what determines the classification decision?",
+    "options": [
+      "The number of layers in the network",
+      "The input values only",
+      "Pick the class with maximum likelihood from output values",
+      "The average of all node values"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture states 'For classification, each output value indicates likelihood of the input instance belonging to that class • Pick class with maximum likelihood'."
+  },
+  {
+    "id": "q40",
+    "text": "What are the key components that determine neural network behavior?",
+    "options": [
+      "The number of input nodes",
+      "The weights associated with edges",
+      "The activation functions only",
+      "The number of output classes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture emphasizes 'Weights of edges are key to classification' and 'Edge weights are learnt during training phase'."
+  },
+  {
+    "id": "q41",
+    "text": "How does the backpropagation algorithm work?",
+    "options": [
+      "It processes all training instances simultaneously",
+      "Weights are set randomly, then instances are processed one at a time, adjusting weights when classification is wrong",
+      "It works backwards from output to input without using training data",
+      "It requires manual adjustment of weights by the programmer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The algorithm 'Weights are set randomly initially • Training instances are processed one at a time' and 'If classification is wrong, weights are tweaked'."
+  },
+  {
+    "id": "q42",
+    "text": "What characterizes deep neural networks?",
+    "options": [
+      "They use only linear functions",
+      "They have a large number of layers with large number of nodes in each layer",
+      "They are faster than shallow networks",
+      "They require less training data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture defines deep neural networks as having 'a large number of layers with large number of nodes in each layer'."
+  },
+  {
+    "id": "q43",
+    "text": "What type of neural network architecture is mentioned for image processing?",
+    "options": [
+      "Recurrent networks",
+      "Convolutional networks",
+      "Feedforward networks",
+      "Adversarial networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture specifically mentions 'Convolutional networks used for image processing'."
+  },
+  {
+    "id": "q44",
+    "text": "How does regression differ from classification according to the lecture?",
+    "options": [
+      "Regression is faster than classification",
+      "Regression deals with prediction of a value, rather than a class",
+      "Regression only works with numerical data",
+      "Regression requires more training data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture clearly states 'Regression deals with the prediction of a value, rather than a class'."
+  },
+  {
+    "id": "q45",
+    "text": "What is the goal of linear regression?",
+    "options": [
+      "To classify data into categories",
+      "To infer coefficients for the equation Y = a₀ + a₁X₁ + a₂X₂ + ... + aₙXₙ",
+      "To reduce the dimensionality of data",
+      "To cluster similar data points"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture describes linear regression as inferring 'coefficients a₀, a₁, a₁, …, aₙ such that Y = a₀ + a₁ * X₁ + a₂ * X₂ + … + aₙ * Xₙ'."
+  },
+  {
+    "id": "q46",
+    "text": "Why might regression fits only be approximate?",
+    "options": [
+      "Due to insufficient computational power",
+      "Because of noise in the data or because the relationship is not exactly polynomial",
+      "Due to limitations in the regression algorithm",
+      "Because linear relationships don't exist in real data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states the fit may be approximate 'because of noise in the data, or because the relationship is not exactly a polynomial'."
+  },
+  {
+    "id": "q47",
+    "text": "In association rules, what do the left and right hand sides represent?",
+    "options": [
+      "Input and output variables",
+      "Antecedent and consequent",
+      "Independent and dependent variables",
+      "Cause and correlation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture explicitly states 'Left hand side: antecedent, right hand side: consequent'."
+  },
+  {
+    "id": "q48",
+    "text": "What is support in association rules?",
+    "options": [
+      "The computational resources required",
+      "A measure of what fraction of the population satisfies both the antecedent and consequent",
+      "The confidence level of the rule",
+      "The number of transactions in the database"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Support is defined as 'a measure of what fraction of the population satisfies both the antecedent and the consequent of the rule'."
+  },
+  {
+    "id": "q49",
+    "text": "What does confidence measure in association rules?",
+    "options": [
+      "The total number of occurrences of the rule",
+      "How often the consequent is true when the antecedent is true",
+      "The statistical significance of the relationship",
+      "The strength of correlation between variables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Confidence is 'a measure of how often the consequent is true when the antecedent is true'."
+  },
+  {
+    "id": "q50",
+    "text": "If a rule 'bread → milk' has 80% confidence, what does this mean?",
+    "options": [
+      "80% of all customers buy both bread and milk",
+      "80% of purchases that include bread also include milk",
+      "80% of purchases that include milk also include bread",
+      "There's an 80% chance the rule is correct"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture gives this exact example: 'the rule bread → milk has a confidence of 80 percent if 80 percent of the purchases that include bread also include milk'."
+  },
+  {
+    "id": "q51",
+    "text": "What is the intuitive goal of clustering?",
+    "options": [
+      "To predict future values",
+      "To find clusters of points such that similar points lie in the same cluster",
+      "To reduce the size of the dataset",
+      "To identify the most important features"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Clustering is described as 'Intuitively, finding clusters of points in the given data such that similar points lie in the same cluster'."
+  },
+  {
+    "id": "q52",
+    "text": "What is a centroid in clustering?",
+    "options": [
+      "The largest point in a cluster",
+      "The first point assigned to a cluster",
+      "A point defined by taking average of coordinates in each dimension",
+      "The point furthest from other clusters"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Centroid is defined as 'point defined by taking average of coordinates in each dimension'."
+  },
+  {
+    "id": "q53",
+    "text": "What is one approach to formalizing clustering using distance metrics?",
+    "options": [
+      "Maximize the distance between all points",
+      "Group points into k sets such that average distance of points from the centroid of their assigned group is minimized",
+      "Ensure each cluster has the same number of points",
+      "Create clusters with equal variance"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture describes 'Group points into k sets (for a given k) such that the average distance of points from the centroid of their assigned group is minimized'."
+  },
+  {
+    "id": "q54",
+    "text": "What is text mining according to the lecture?",
+    "options": [
+      "A method for compressing text files",
+      "Application of data mining to textual documents",
+      "A technique for translating text between languages",
+      "A way to search for specific words in documents"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Text mining is defined as 'application of data mining to textual documents'."
+  },
+  {
+    "id": "q55",
+    "text": "What is an example of sentiment analysis mentioned in the lecture?",
+    "options": [
+      "Translating customer reviews into different languages",
+      "Learning to predict if a user review is positive or negative about a product",
+      "Counting the number of words in customer feedback",
+      "Identifying the demographic of review writers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture gives the example: 'learn to predict if a user review is positive or negative about a product'."
+  },
+  {
+    "id": "q56",
+    "text": "What challenge is illustrated by the 'Michael Jordan' example in entity recognition?",
+    "options": [
+      "Names that are difficult to pronounce",
+      "Names that are spelled incorrectly",
+      "Names that could refer to different famous people (basketball player vs ML expert)",
+      "Names that appear in multiple documents"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The example asks 'does the name refer to the famous basketball player or the famous ML expert', illustrating the disambiguation challenge."
+  },
+  {
+    "id": "q57",
+    "text": "According to the lecture, how can knowledge graphs be constructed?",
+    "options": [
+      "Only through manual data entry",
+      "By information extraction from different sources, such as Wikipedia",
+      "Only from structured databases",
+      "Through social media analysis only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture states knowledge graphs 'Can be constructed by information extraction from different sources, such as Wikipedia'."
+  },
+  {
+    "id": "q58",
+    "text": "Which of these is NOT mentioned as a type of mining or analytics technique in the lecture?",
+    "options": [
+      "Text mining",
+      "Sentiment analysis",
+      "Image mining",
+      "Information extraction"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture mentions text mining, sentiment analysis, and information extraction, but does not mention image mining specifically."
+  },
+  {
+    "id": "q59",
+    "text": "What is the primary difference between OLTP and data warehouse systems according to the lecture?",
+    "options": [
+      "OLTP systems are faster",
+      "Data warehouses shift decision support query load away from transaction processing systems",
+      "OLTP systems store more data",
+      "Data warehouses are more secure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture emphasizes that data warehousing 'Shifts decision support query load away from transaction processing systems', indicating OLTP systems are for transaction processing while warehouses handle analytical queries."
+  },
+  {
+    "id": "q60",
+    "text": "Which statement best summarizes the overall scope of data analytics as presented in the lecture?",
+    "options": [
+      "Data analytics is only concerned with storing large amounts of data",
+      "Data analytics encompasses data warehousing, OLAP, and data mining to support business decision making",
+      "Data analytics is limited to statistical analysis of numerical data",
+      "Data analytics focuses primarily on database design and optimization"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture presents data analytics as a comprehensive field that includes data warehousing (for data integration), OLAP (for interactive analysis), and data mining (for pattern discovery), all aimed at supporting business decision making through predictive models and insights."
+  }
+]
