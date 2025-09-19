@@ -189,44 +189,50 @@
                     </button>
                 </div>
                 
-                <div class="attempts-grid">
-                    <% recentAttempts.forEach(attempt => { %>
-                    <div class="attempt-card">
-                        <div class="attempt-header">
-                            <div class="quiz-icon">
-                                <i class="fas fa-file-alt"></i>
+                <div class="attempts-grouped">
+                    <% groupedRecentAttempts.forEach(group => { %>
+                        <div class="attempt-group">
+                            <div class="group-header">
+                                <h3><%= group.moduleName %> - <%= group.quizName %> (Quiz #: <%= group.quizNumber %>)</h3>
                             </div>
-                            <div class="quiz-info">
-                                <h3><%= attempt.quizName %></h3>
-                                <p><%= attempt.moduleName %></p>
-                            </div>
-                            <div class="score-badge score-<%= attempt.scoreClass %>">
-                                <%= attempt.score %>%
+                            <div class="attempts-grid">
+                                <% group.attempts.forEach(attempt => { %>
+                                <div class="attempt-card">
+                                    <div class="attempt-header">
+                                        <div class="quiz-icon">
+                                            <i class="fas fa-file-alt"></i>
+                                        </div>
+                                        <div class="quiz-info">
+                                            <h4>Attempt #<%= attempt.attemptNumber %></h4>
+                                        </div>
+                                        <div class="score-badge score-<%= attempt.scoreClass %>">
+                                            <%= attempt.marks %>%
+                                        </div>
+                                    </div>
+                                    <div class="attempt-details">
+                                        <div class="detail-item">
+                                            <i class="fas fa-calendar"></i>
+                                            <span><%= attempt.date %></span>
+                                        </div>
+                                        <div class="detail-item">
+                                            <i class="fas fa-clock"></i>
+                                            <span><%= attempt.duration %></span>
+                                        </div>
+                                    </div>
+                                    <div class="attempt-actions">
+                                        <a class="btn-secondary" href="/review/<%= attempt.attemptId %>">
+                                            <i class="fas fa-eye"></i>
+                                            Review
+                                        </a>
+                                        <button class="btn-primary" onclick="retakeQuiz('<%= attempt.quizId %>')">
+                                            <i class="fas fa-redo"></i>
+                                            Retake
+                                        </button>
+                                    </div>
+                                </div>
+                                <% }); %>
                             </div>
                         </div>
-                        
-                        <div class="attempt-details">
-                            <div class="detail-item">
-                                <i class="fas fa-clock"></i>
-                                <span><%= attempt.duration %></span>
-                            </div>
-                            <div class="detail-item">
-                                <i class="fas fa-calendar"></i>
-                                <span><%= attempt.date %></span>
-                            </div>
-                        </div>
-                        
-                        <div class="attempt-actions">
-                            <button class="btn-secondary" onclick="viewAttempt('<%= attempt.id %>')">
-                                <i class="fas fa-eye"></i>
-                                View Details
-                            </button>
-                            <button class="btn-primary" onclick="retakeQuiz('<%= attempt.quizId %>')">
-                                <i class="fas fa-redo"></i>
-                                Retake
-                            </button>
-                        </div>
-                    </div>
                     <% }); %>
                 </div>
             </section>

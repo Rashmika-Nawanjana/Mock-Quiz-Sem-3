@@ -1,12 +1,4 @@
-// Dashboard route (protected)
 
-// Auth middleware to protect routes
-function requireAuth(req, res, next) {
-    if (!req.session || !req.session.user) {
-        return res.redirect('/');
-    }
-    next();
-}
 import express from 'express';
 import supabase from './database/supabase-client.js';
 import path from 'path';
@@ -49,7 +41,52 @@ app.get('/', (req, res) => {
     res.render('login', { user: req.session.user });
 });
 
+// Review route: renders results page from review_json
+app.get('/review/:attemptId', async (req, res) => {
+    const { attemptId } = req.params;
+    try {
+        // Fetch the quiz attempt by ID
+        const { data, error } = await supabase
+            .from('quiz_attempts')
+            .select('review_json, module, quiz_id')
+            .eq('id', attemptId)
+            .single();
+        if (error || !data) {
+            return res.status(404).send('Attempt not found');
+        }
+        // Parse the review_json
+        let review;
+        try {
+            review = typeof data.review_json === 'string' ? JSON.parse(data.review_json) : data.review_json;
+        } catch (e) {
+            return res.status(500).send('Corrupted review data');
+        }
+        // Render the results page with review data
+        const moduleName = data.module || 'Module';
+        res.render('results', {
+            quiz: {
+                title: `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Quiz - ${data.quiz_id}`,
+                description: `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Quiz Results`
+            },
+            results: review,
+            module: moduleName,
+            quizId: data.quiz_id,
+            user: req.session.user
+        });
+    } catch (err) {
+        console.error('Error fetching review:', err);
+        res.status(500).send('Server error');
+    }
+});
+// Dashboard route (protected)
 
+// Auth middleware to protect routes
+function requireAuth(req, res, next) {
+    if (!req.session || !req.session.user) {
+        return res.redirect('/');
+    }
+    next();
+}
 // Home page (main page after login)
 app.get('/home', (req, res) => {
     if (!req.session || !req.session.user) {
@@ -85,6 +122,7 @@ app.get('/modules/thermodynamics', requireAuth, (req, res) => {
 });
 
 app.get('/dashboard', requireAuth, (req, res) => {
+    // (No groupedRecentAttempts or attempts in this outer scope)
     (async () => {
         const user = req.session.user;
         // Fetch all modules
@@ -105,6 +143,8 @@ app.get('/dashboard', requireAuth, (req, res) => {
             .eq('user_id', user.id)
             .order('started_at', { ascending: false })
             .limit(10);
+
+        // (Removed duplicate groupedRecentAttempts logic; only one block remains below)
 
         // Map progress by module_id for quick lookup
         const progressByModule = {};
@@ -153,17 +193,34 @@ app.get('/dashboard', requireAuth, (req, res) => {
             streak: 0
         };
 
-        // Prepare recentAttempts for EJS
-        let recentAttempts = (attempts || []).map(a => ({
-            id: a.id,
-            quizName: a.quizzes?.title || 'Quiz',
-            moduleName: a.modules?.display_name || 'Module',
-            score: a.score_percentage || 0,
-            scoreClass: a.score_percentage >= 90 ? 'excellent' : a.score_percentage >= 75 ? 'good' : a.score_percentage >= 60 ? 'average' : 'poor',
-            duration: a.time_spent_seconds ? `${Math.floor(a.time_spent_seconds/60)}m ${a.time_spent_seconds%60}s` : '',
-            date: a.started_at ? a.started_at.split('T')[0] : '',
-            quizId: a.quiz_id
-        }));
+        // Prepare groupedRecentAttempts for EJS
+        let groupedRecentAttempts = {};
+        (attempts || []).forEach((a, idx) => {
+            const moduleKey = a.modules?.name || 'unknown';
+            const quizKey = a.quiz_id;
+            const groupKey = `${moduleKey}__${quizKey}`;
+            if (!groupedRecentAttempts[groupKey]) {
+                groupedRecentAttempts[groupKey] = {
+                    module: moduleKey,
+                    moduleName: a.modules?.display_name || 'Module',
+                    quizNumber: quizKey,
+                    quizName: a.quizzes?.title || 'Quiz',
+                    attempts: []
+                };
+            }
+            groupedRecentAttempts[groupKey].attempts.push({
+                id: a.id,
+                attemptNumber: groupedRecentAttempts[groupKey].attempts.length + 1,
+                date: a.started_at ? a.started_at.split('T')[0] : '',
+                marks: a.score_percentage || 0,
+                scoreClass: a.score_percentage >= 90 ? 'excellent' : a.score_percentage >= 75 ? 'good' : a.score_percentage >= 60 ? 'average' : 'poor',
+                duration: a.time_spent_seconds ? `${Math.floor(a.time_spent_seconds/60)}m ${a.time_spent_seconds%60}s` : '',
+                quizId: a.quiz_id,
+                attemptId: a.id // for review button
+            });
+        });
+        // Convert to array for easier EJS iteration
+        groupedRecentAttempts = Object.values(groupedRecentAttempts);
 
         // Achievements: keep as dummy for now
         let achievements = [];
@@ -172,7 +229,7 @@ app.get('/dashboard', requireAuth, (req, res) => {
             user,
             stats,
             modules: moduleProgress,
-            recentAttempts,
+            groupedRecentAttempts,
             achievements
         });
     })();
@@ -183,27 +240,27 @@ app.get('/dashboard', requireAuth, (req, res) => {
 
 // Quiz route - display quiz
 app.get("/quiz/:module/:quizId", requireAuth, (req, res) => {
-    const { module, quizId } = req.params;
-    
+    const { module: moduleName, quizId } = req.params;
+
     console.log('=== QUIZ DISPLAY DEBUG ===');
-    console.log('Module:', module);
+    console.log('Module:', moduleName);
     console.log('Quiz ID:', quizId);
-    
+
     // Build the file path with __dirname
-    const filePath = path.join(__dirname, 'quizes', module, `${quizId}.json`);
+    const filePath = path.join(__dirname, 'quizes', moduleName, `${quizId}.json`);
     console.log('Looking for quiz file at:', filePath);
-    
+
     // Check if file exists
     if (!fs.existsSync(filePath)) {
         console.error('Quiz file not found at:', filePath);
         return res.status(404).send("Quiz not found");
     }
-    
+
     try {
         // Read the quiz JSON
         const quizData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
         console.log('Quiz loaded successfully with', quizData.length, 'questions');
-        
+
         // Send or render quiz
         res.render("quize", { 
             quiz: quizData,
@@ -217,133 +274,113 @@ app.get("/quiz/:module/:quizId", requireAuth, (req, res) => {
 });
 
 // Quiz submission route - handle answers and show results
-app.post("/quiz/:module/:quizId/submit", requireAuth, (req, res) => {
-    const { module, quizId } = req.params;
-    const userAnswers = req.body.answers; 
-    const answersArray = req.body.answersArray; // New complete array
+// ... (rest of your setup code above is unchanged) ...
+
+app.post("/quiz/:module/:quizId/submit", requireAuth, async (req, res) => {
+    const { module: moduleName, quizId } = req.params;
+    const user_id = req.session.user && req.session.user.id;
+    // Compose a unique quiz key for this module/quiz
+    const quiz_key = `${moduleName}/${quizId}`;
+
+    // Check previous attempts for this user and quiz
+    const { data: prevAttempts, error: prevAttemptsError } = await supabase
+        .from('quiz_attempts')
+        .select('id')
+        .eq('user_id', user_id)
+        .eq('quiz_key', quiz_key)
+        .not('quiz_key', 'is', null);
+    const attempt_number = prevAttempts && prevAttempts.length ? prevAttempts.length + 1 : 1;
+    // Always use the position-aware answersArray hidden field for grading
+    const rawAnswers = req.body.answersArray || req.body.answers;
     const timeSpent = req.body.timeSpent || "0:00";
-    
-    // DEBUG: Log the incoming request data
-    console.log('=== QUIZ SUBMISSION DEBUG ===');
-    console.log('Module:', module);
-    console.log('Quiz ID:', quizId);
-    console.log('User Answers (traditional):', userAnswers);
-    console.log('Answers Array (position-aware):', answersArray);
-    console.log('Request Body:', req.body);
-    console.log('Time Spent:', timeSpent);
-    
-    try {
-        // Build the file path with __dirname
-        const filePath = path.join(__dirname, 'quizes', module, `${quizId}.json`);
-        console.log('Looking for quiz file at:', filePath);
-        
-        // Check if file exists
-        if (!fs.existsSync(filePath)) {
-            console.error('Quiz file not found at:', filePath);
-            return res.status(404).send("Quiz not found");
+
+    // Parse answers array
+    let answersArray = [];
+    if (typeof rawAnswers === 'string') {
+        try {
+            answersArray = JSON.parse(rawAnswers);
+        } catch {
+            answersArray = Object.values(rawAnswers);
         }
-        
-        // Read the quiz JSON
-        const quizData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-        console.log('Quiz data loaded successfully');
-        console.log('Number of questions:', quizData.length);
-        
-        // Validate and process answers
-        let processedAnswers;
-        
-        // Prioritize the complete position-aware array if available
-        if (answersArray) {
-            try {
-                processedAnswers = JSON.parse(answersArray);
-                console.log('Using position-aware answers array:', processedAnswers);
-            } catch (error) {
-                console.error('Error parsing answersArray:', error);
-                processedAnswers = null;
-            }
-        }
-        
-        // Fallback to traditional format if position-aware array not available
-        if (!processedAnswers) {
-            console.log('Falling back to traditional answer processing');
-            if (!userAnswers || typeof userAnswers !== 'object') {
-                console.error('Invalid user answers format:', userAnswers);
-                return res.status(400).send("Invalid answers format");
-            }
-            
-            // Convert userAnswers object to array if needed
-            if (Array.isArray(userAnswers)) {
-                processedAnswers = userAnswers;
-            } else {
-                // Convert object to array (answers[0], answers[1] format)
-                processedAnswers = [];
-                for (let i = 0; i < quizData.length; i++) {
-                    processedAnswers[i] = userAnswers[i] || userAnswers[i.toString()] || -1;
-                }
-            }
-        }
-        
-        // Ensure processedAnswers has the right length
-        while (processedAnswers.length < quizData.length) {
-            processedAnswers.push(-1);
-        }
-        
-        console.log('Final processed answers array:', processedAnswers);
-        
-        // Calculate results
-        const results = calculateQuizResults(quizData, processedAnswers, timeSpent);
-        console.log('Results calculated:', {
-            totalQuestions: results.totalQuestions,
-            correctCount: results.correctCount,
-            percentage: results.percentage
-        });
-        
-        // --- SUPABASE: Save quiz attempt ---
-        // 1. Get user_id (assume req.session.user.id is the UUID from Supabase users table)
-        const user_id = req.session.user && req.session.user.id;
-        // 2. Prepare attempt data
-        const attemptData = {
-            user_id: user_id,
-            // quiz_id: quizId, // If you have the UUID, use it here
-            // For now, you can add module and quizId as extra fields if needed
-            total_questions: results.totalQuestions,
-            correct_answers: results.correctCount,
-            score_percentage: results.percentage,
-            grade: results.grade,
-            grade_message: results.message,
-            time_spent_seconds: (typeof timeSpent === 'string' && timeSpent.includes(':')) ? (parseInt(timeSpent.split(':')[0], 10) * 60 + parseInt(timeSpent.split(':')[1], 10)) : null,
-            is_completed: true,
-            created_at: new Date().toISOString(),
-        };
-        // 3. Insert into Supabase
-        if (user_id) {
-            (async () => {
-                const { data, error } = await supabase.from('quiz_attempts').insert([attemptData]);
-                if (error) {
-                    console.error('Error saving quiz attempt to Supabase:', error);
-                } else {
-                    console.log('Quiz attempt saved to Supabase:', data);
-                }
-            })();
-        } else {
-            console.warn('No user_id found in session, skipping attempt save.');
-        }
-        // Render results page
-        res.render("results", { 
-            quiz: {
-                title: `${module.charAt(0).toUpperCase() + module.slice(1)} Quiz - ${quizId}`,
-                description: `${module.charAt(0).toUpperCase() + module.slice(1)} Quiz Results`
-            },
-            results: results,
-            module: module,
-            quizId: quizId,
-            user: req.session.user
-        });
-        
-    } catch (error) {
-        console.error('Error processing quiz submission:', error);
-        console.error('Stack trace:', error.stack);
-        res.status(500).send(`Error processing quiz submission: ${error.message}`);
+    } else if (Array.isArray(rawAnswers)) {
+        answersArray = rawAnswers;
+    } else if (typeof rawAnswers === 'object') {
+        answersArray = Object.values(rawAnswers);
     }
+
+    // Load quiz data from JSON file
+    const filePath = path.join(__dirname, 'quizes', moduleName, `${quizId}.json`);
+    if (!fs.existsSync(filePath)) {
+        return res.status(404).send("Quiz not found");
+    }
+    const quizData = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+
+
+    // -- Find module UUID from module name
+    const { data: moduleRow, error: moduleError } = await supabase
+        .from('modules')
+        .select('id')
+        .eq('name', moduleName)
+        .single();
+    if (moduleError || !moduleRow) {
+        console.error("Module lookup failed:", moduleError);
+        return res.status(500).send("Module lookup failed");
+    }
+    const module_id = moduleRow.id;
+
+    // -- Find real quiz UUID from DB using module_id
+    const { data: quizRow, error: quizRowError } = await supabase
+        .from('quizzes')
+        .select('id, module_id')
+        .eq('module_id', module_id)
+        .eq('quiz_number', quizId)
+        .single();
+    if (quizRowError || !quizRow) {
+        console.error("Quiz lookup failed:", quizRowError);
+        return res.status(500).send("Quiz lookup failed");
+    }
+    const quiz_uuid = quizRow.id;
+
+    // -- Calculate results using quizData and answersArray only
+    const results = calculateQuizResults(quizData, answersArray, timeSpent);
+    const totalQuestions = results.totalQuestions;
+    const correctCount = results.correctCount;
+    const percentage = results.percentage;
+
+    // -- Insert attempt (quiz_id as UUID)
+    const attemptInsert = {
+        user_id,
+        quiz_id: quiz_uuid,
+        quiz_key,
+        attempt_number,
+        total_questions: totalQuestions,
+        correct_answers: correctCount,
+        score_percentage: percentage,
+        is_completed: true,
+        time_spent_seconds: (typeof timeSpent === 'string' && timeSpent.includes(':')) ? (parseInt(timeSpent.split(':')[0], 10) * 60 + parseInt(timeSpent.split(':')[1], 10)) : null,
+        created_at: new Date().toISOString(),
+        review_json: results
+    };
+    const { data: attemptRows, error: attemptError } = await supabase
+        .from('quiz_attempts')
+        .insert([attemptInsert])
+        .select();
+    if (attemptError || !attemptRows || !attemptRows[0]) {
+        console.error('Quiz attempt insert error:', attemptError);
+        return res.status(500).send("Could not save attempt");
+    }
+
+    // -- Render results
+    res.render("results", {
+        quiz: {
+            title: `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Quiz - ${quizId}`,
+            description: `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Quiz Results`
+        },
+        results,
+        module: moduleName,
+        quizId,
+        user: req.session.user
+    });
 });
 
 // Alternative GET route for results (if you want to access results directly)
