@@ -87,7 +87,18 @@ app.get('/modules/thermodynamics', requireAuth, (req, res) => {
 app.get('/dashboard', requireAuth, (req, res) => {
     (async () => {
         const user = req.session.user;
-        // Fetch quiz attempts for this user
+        // Fetch all modules
+        const { data: modules, error: modulesError } = await supabase
+            .from('modules')
+            .select('*');
+
+        // Fetch user progress for all modules
+        const { data: progressRows, error: progressError } = await supabase
+            .from('user_progress')
+            .select('*')
+            .eq('user_id', user.id);
+
+        // Fetch recent quiz attempts (with quiz and module info)
         const { data: attempts, error: attemptsError } = await supabase
             .from('quiz_attempts')
             .select('*, quizzes(title, module_id), modules(display_name, name)')
@@ -95,32 +106,52 @@ app.get('/dashboard', requireAuth, (req, res) => {
             .order('started_at', { ascending: false })
             .limit(10);
 
+        // Map progress by module_id for quick lookup
+        const progressByModule = {};
+        (progressRows || []).forEach(row => {
+            progressByModule[row.module_id] = row;
+        });
+
+        // Compose module progress for all modules (show 0s if no attempts)
+        let moduleProgress = (modules || []).map(m => {
+            const p = progressByModule[m.id] || {};
+            // Calculate progress percent (completed/total)
+            const completed = p.quizzes_completed || 0;
+            const total = p.total_quizzes || m.total_quizzes || 0;
+            const progressPercent = total > 0 ? Math.round((completed / total) * 100) : 0;
+            // Format time spent
+            let timeSpent = '0m';
+            if (p.total_time_spent_seconds) {
+                const h = Math.floor(p.total_time_spent_seconds / 3600);
+                const m = Math.floor((p.total_time_spent_seconds % 3600) / 60);
+                timeSpent = h > 0 ? `${h}h ${m}m` : `${m}m`;
+            }
+            return {
+                id: m.id,
+                name: m.display_name,
+                code: m.name,
+                icon: m.icon || 'fas fa-book',
+                progress: progressPercent,
+                completedQuizzes: completed,
+                totalQuizzes: total,
+                averageScore: p.average_score_percentage ? Math.round(p.average_score_percentage) : 0,
+                bestScore: p.best_score_percentage ? Math.round(p.best_score_percentage) : 0,
+                timeSpent
+            };
+        });
+
         // Calculate stats
-        let stats = {
-            totalQuizzes: attempts ? attempts.length : 0,
-            averageScore: attempts && attempts.length ? Math.round(attempts.reduce((sum, a) => sum + (a.score_percentage || 0), 0) / attempts.length) : 0,
-            totalModules: 0,
-            streak: 0 // You can implement streak logic later
+        const totalQuizzes = (progressRows || []).reduce((sum, p) => sum + (p.quizzes_completed || 0), 0);
+        const totalModules = modules ? modules.length : 0;
+        const allScores = (progressRows || []).map(p => p.average_score_percentage || 0);
+        const averageScore = allScores.length ? Math.round(allScores.reduce((a, b) => a + b, 0) / allScores.length) : 0;
+        // Streak logic can be implemented later
+        const stats = {
+            totalQuizzes,
+            averageScore,
+            totalModules,
+            streak: 0
         };
-
-        // Fetch modules
-        const { data: modules, error: modulesError } = await supabase
-            .from('modules')
-            .select('*');
-
-        // Map module progress (dummy for now, you can enhance later)
-        let moduleProgress = modules ? modules.map(m => ({
-            id: m.id,
-            name: m.display_name,
-            code: m.name,
-            icon: m.icon || 'fas fa-book',
-            progress: 0,
-            completedQuizzes: 0,
-            totalQuizzes: 0,
-            averageScore: 0,
-            bestScore: 0,
-            timeSpent: '0m'
-        })) : [];
 
         // Prepare recentAttempts for EJS
         let recentAttempts = (attempts || []).map(a => ({

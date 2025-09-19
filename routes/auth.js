@@ -13,9 +13,21 @@ const app = express();
 // Email/password login
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
-  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) {
-    return res.render('login', { error: error.message });
+  let { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error && error.message.toLowerCase().includes('email not confirmed')) {
+    // Resend confirmation email
+    await supabase.auth.resend({ type: 'signup', email });
+    return res.render('login', { error: 'Your email is not confirmed. A new confirmation email has been sent. Please check your inbox.', activeTab: 'login' });
+  } else if (error && error.message.includes('Invalid login credentials')) {
+    // Try to sign up if user not found
+    const signup = await supabase.auth.signUp({ email, password });
+    if (signup.error) {
+      return res.render('login', { error: signup.error.message, activeTab: 'login' });
+    }
+    // Ask user to check email for confirmation
+    return res.render('login', { success: 'Account created! Please check your email to confirm, then log in.', activeTab: 'login' });
+  } else if (error) {
+    return res.render('login', { error: error.message, activeTab: 'login' });
   }
   // Upsert user into Supabase users table
   const user = data.user;
@@ -54,9 +66,14 @@ router.post('/signup', async (req, res) => {
     options: { data: { name } }
   });
   if (error) {
-    return res.render('login', { error: error.message });
+    return res.render('login', { error: error.message, activeTab: 'signup' });
   }
-  res.render('login', { success: 'Signup successful! Please check your email to verify your account.' });
+  // After signup, switch to login tab and show message
+  res.render('login', { success: 'Signup successful! Please check your email to verify your account, then log in.', activeTab: 'login' });
+// Always define activeTab when rendering login page
+router.get('/login', (req, res) => {
+  res.render('login', { activeTab: 'login' });
+});
 });
 
 // Forgot password (show form)

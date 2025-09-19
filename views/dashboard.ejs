@@ -11,36 +11,20 @@
 </head>
 <body>
     <%- include('./partials/header') %>
-    <!-- Hamburger Icon for Sidebar Toggle -->
-    <button id="sidebarToggle" class="sidebar-toggle-btn" aria-label="Toggle sidebar">
-        <i class="fas fa-bars"></i>
-    </button>
-    <div class="dashboard-profile">
-        <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="User Avatar" class="profile-avatar">
-        <h2><%= user.name || user.email %></h2>
-        <p><%= user.email %></p>
-    </div>
-    <!-- Stats and modules are temporarily removed until real data is available -->
-        <div class="dashboard-profile">
-            <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="User Avatar" class="profile-avatar">
-            <h2><%= user.full_name || user.name || user.email %></h2>
-            <p><%= user.email %></p>
-        </div>
-    %>
 
     <!-- Layout Container -->
     <div class="layout-container">
-    <!-- Sidebar Navigation -->
-    <aside class="sidebar" id="sidebarNav">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
             <div class="sidebar-content">
                 <!-- Profile Summary -->
                 <div class="profile-summary">
                     <div class="profile-avatar-small">
-                        <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="Profile Avatar">
+                        <img src="<%= user.avatar || '/images/default-avatar.png' %>" alt="Profile Avatar">
                         <div class="online-indicator"></div>
                     </div>
                     <div class="profile-info-small">
-                        <h3><%= user.full_name || user.name || user.email %></h3>
+                        <h3><%= user.name %></h3>
                         <p><%= user.email %></p>
                     </div>
                 </div>
@@ -99,11 +83,6 @@
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </button>
-                    <script>
-                    function logout() {
-                        window.location.href = '/auth/logout';
-                    }
-                    </script>
                 </div>
             </div>
         </aside>
@@ -211,9 +190,6 @@
                 </div>
                 
                 <div class="attempts-grid">
-                    <div style="color: #a00; font-size: 0.9em; margin-bottom: 1em;">
-                        <strong>Debug recentAttempts:</strong> <%= JSON.stringify(recentAttempts) %>
-                    </div>
                     <% recentAttempts.forEach(attempt => { %>
                     <div class="attempt-card">
                         <div class="attempt-header">
@@ -223,14 +199,12 @@
                             <div class="quiz-info">
                                 <h3><%= attempt.quizName %></h3>
                                 <p><%= attempt.moduleName %></p>
-                                <% if (attempt.grade) { %>
-                                    <span class="badge bg-info text-dark"> <%= attempt.grade %> </span>
-                                <% } %>
                             </div>
                             <div class="score-badge score-<%= attempt.scoreClass %>">
                                 <%= attempt.score %>%
                             </div>
                         </div>
+                        
                         <div class="attempt-details">
                             <div class="detail-item">
                                 <i class="fas fa-clock"></i>
@@ -240,13 +214,8 @@
                                 <i class="fas fa-calendar"></i>
                                 <span><%= attempt.date %></span>
                             </div>
-                            <% if (attempt.gradeMessage) { %>
-                            <div class="detail-item">
-                                <i class="fas fa-comment"></i>
-                                <span><%= attempt.gradeMessage %></span>
-                            </div>
-                            <% } %>
                         </div>
+                        
                         <div class="attempt-actions">
                             <button class="btn-secondary" onclick="viewAttempt('<%= attempt.id %>')">
                                 <i class="fas fa-eye"></i>
@@ -504,46 +473,5 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="/js/profile.js"></script>
-    <script>
-    // Sidebar toggle logic
-    document.getElementById('sidebarToggle').addEventListener('click', function() {
-        document.getElementById('sidebarNav').classList.toggle('sidebar-collapsed');
-        document.body.classList.toggle('sidebar-collapsed');
-    });
-    </script>
-    <style>
-    .sidebar-toggle-btn {
-        position: fixed;
-        top: 18px;
-        left: 18px;
-        z-index: 1001;
-        background: #fff;
-        border: none;
-        border-radius: 4px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        padding: 8px 12px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-    .sidebar-toggle-btn:focus {
-        outline: 2px solid #007bff;
-    }
-    .sidebar-collapsed .sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
-    }
-    .sidebar {
-        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
-    }
-    .sidebar-collapsed .main-content {
-        margin-left: 0 !important;
-    }
-    @media (min-width: 900px) {
-        .sidebar-toggle-btn {
-            display: none;
-        }
-    }
-    </style>
 </body>
 </html>

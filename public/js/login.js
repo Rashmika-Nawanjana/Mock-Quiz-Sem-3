@@ -348,6 +348,17 @@ function enhanceInputInteractions() {
 
 // Initialize all functionality
 document.addEventListener('DOMContentLoaded', function() {
+    // If a success message exists and activeTab is login, auto-switch and focus login form
+    const successAlert = document.querySelector('.alert-success');
+    const loginTabBtn = document.querySelector('.tab-btn:nth-child(1)');
+    const loginEmailInput = document.getElementById('login-email');
+    if (successAlert && loginTabBtn && loginEmailInput) {
+        // If the message is about signup, switch to login tab and focus
+        if (successAlert.textContent.toLowerCase().includes('signup') || successAlert.textContent.toLowerCase().includes('account created')) {
+            switchTab('login');
+            setTimeout(() => { loginEmailInput.focus(); }, 400);
+        }
+    }
     // Create forms container for height transitions - FIXED
     const loginForm = document.getElementById('login-form');
     const signupForm = document.getElementById('signup-form');
@@ -374,13 +385,23 @@ document.addEventListener('DOMContentLoaded', function() {
     addSmoothAnimations();
     autoHideAlerts();
     enhanceInputInteractions();
-    
+
+    // Switch to correct tab if server rendered with activeTab
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab && !activeTab.classList.contains('active-initialized')) {
+        activeTab.classList.add('active-initialized');
+        const tab = activeTab.textContent.trim().toLowerCase();
+        if ((tab === 'login' && !document.getElementById('login-form').classList.contains('active')) ||
+            (tab === 'sign up' && !document.getElementById('signup-form').classList.contains('active'))) {
+            switchTab(tab === 'login' ? 'login' : 'signup');
+        }
+    }
+
     // Initialize password toggle buttons
     const toggleButtons = document.querySelectorAll('.toggle-password');
     toggleButtons.forEach(button => {
         button.setAttribute('aria-label', 'Show password');
         button.setAttribute('type', 'button');
-        
         // Ensure proper icon positioning
         const icon = button.querySelector('i');
         if (icon) {
@@ -389,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
             icon.style.transform = 'none';
         }
     });
-    
+
     // Keyboard navigation
     document.addEventListener('keydown', function(e) {
         if (e.key === 'Tab') {

@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         alert('Data export would be implemented here.');
     };
     window.logout = function () {
-        if (confirm('Logout?')) window.location.href = 'auth/logout';
+        if (confirm('Logout?')) window.location.href = '/logout';
     };
 
     // Attempt-related actions
