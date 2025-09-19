@@ -50,7 +50,7 @@ router.post('/login', async (req, res) => {
     } else {
       console.log('Supabase user upsert success:', upsertData);
     }
-    req.session.user = { id, email, full_name, avatar_url };
+  req.session.user = { id, email, name: full_name, avatar_url };
   }
   req.session.save(() => {
     res.redirect('/home');

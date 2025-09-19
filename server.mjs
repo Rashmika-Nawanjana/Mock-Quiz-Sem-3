@@ -46,9 +46,10 @@ app.get('/review/:attemptId', async (req, res) => {
     const { attemptId } = req.params;
     try {
         // Fetch the quiz attempt by ID
+        // Join quizzes and modules to get module display_name
         const { data, error } = await supabase
             .from('quiz_attempts')
-            .select('review_json, module, quiz_id')
+            .select('review_json, quiz_id, quizzes(module_id), quizzes(id), modules(display_name)')
             .eq('id', attemptId)
             .single();
         if (error || !data) {
@@ -62,7 +63,8 @@ app.get('/review/:attemptId', async (req, res) => {
             return res.status(500).send('Corrupted review data');
         }
         // Render the results page with review data
-        const moduleName = data.module || 'Module';
+    // moduleName from joined modules table (via quizzes.module_id)
+    const moduleName = data.modules?.display_name || 'Module';
         res.render('results', {
             quiz: {
                 title: `${moduleName.charAt(0).toUpperCase() + moduleName.slice(1)} Quiz - ${data.quiz_id}`,
@@ -124,7 +126,8 @@ app.get('/modules/thermodynamics', requireAuth, (req, res) => {
 app.get('/dashboard', requireAuth, (req, res) => {
     // (No groupedRecentAttempts or attempts in this outer scope)
     (async () => {
-        const user = req.session.user;
+    const user = req.session.user;
+    console.log('Dashboard user:', user);
         // Fetch all modules
         const { data: modules, error: modulesError } = await supabase
             .from('modules')
@@ -141,8 +144,14 @@ app.get('/dashboard', requireAuth, (req, res) => {
             .from('quiz_attempts')
             .select('*, quizzes(title, module_id), modules(display_name, name)')
             .eq('user_id', user.id)
-            .order('started_at', { ascending: false })
-            .limit(10);
+            .order('started_at', { ascending: false });
+
+        // Fetch all attempts for the user (for card display)
+        const { data: userAttempts, error: userAttemptsError } = await supabase
+            .from('quiz_attempts')
+            .select('*')
+            .eq('user_id', user.id)
+            .order('started_at', { ascending: false });
 
         // (Removed duplicate groupedRecentAttempts logic; only one block remains below)
 
@@ -230,7 +239,8 @@ app.get('/dashboard', requireAuth, (req, res) => {
             stats,
             modules: moduleProgress,
             groupedRecentAttempts,
-            achievements
+            achievements,
+            userAttempts
         });
     })();
 });

@@ -20,12 +20,11 @@
                 <!-- Profile Summary -->
                 <div class="profile-summary">
                     <div class="profile-avatar-small">
-                        <img src="<%= user.avatar || '/images/default-avatar.png' %>" alt="Profile Avatar">
+                        <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #ccc;">
                         <div class="online-indicator"></div>
                     </div>
-                    <div class="profile-info-small">
-                        <h3><%= user.name %></h3>
-                        <p><%= user.email %></p>
+                    <div class="profile-info-small" style="margin-left: 12px; display: flex; align-items: center;">
+                        <h3 style="margin: 0; font-size: 1rem; font-weight: 600; color: var(--text-primary);"><%= user.full_name %></h3>
                     </div>
                 </div>
 
@@ -188,7 +187,17 @@
                         <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
-                
+                <% const moduleNameMap = {
+                    'os': 'Operating Systems',
+                    'intro-ai': 'Intro to AI',
+                    'database': 'Database',
+                    'differential': 'Differential',
+                    'networking': 'Networking',
+                    'architecture': 'Architecture',
+                    'statistics': 'Statistics',
+                    'thermodynamics': 'Thermodynamics'
+                }; %>
+                <% if (groupedRecentAttempts.length > 0) { %>
                 <div class="attempts-grouped">
                     <% groupedRecentAttempts.forEach(group => { %>
                         <div class="attempt-group">
@@ -231,6 +240,87 @@
                                     </div>
                                 </div>
                                 <% }); %>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+                <% } else if (userAttempts && userAttempts.length > 0) { %>
+                <div class="attempts-grid">
+                    <% userAttempts.forEach(function(attempt, idx) { 
+                        let quizKeyParts = (attempt.quiz_key || '').split('/');
+                        let modCode = quizKeyParts[0] || 'Module';
+                        let quizNum = quizKeyParts[1] || '';
+                        let modName = moduleNameMap[modCode] || modCode.charAt(0).toUpperCase() + modCode.slice(1);
+                    %>
+                        <div class="attempt-card">
+                            <div class="attempt-header">
+                                <div class="quiz-info">
+                                    <h4><%= modName %> Quiz <%= quizNum %></h4>
+                                    <span>Attempt #<%= attempt.attempt_number || (idx+1) %></span>
+                                </div>
+                                <div class="score-badge">
+                                    <%= attempt.score_percentage %>%
+                                </div>
+                            </div>
+                            <div class="attempt-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span><%= attempt.started_at ? attempt.started_at.split('T')[0] : '' %></span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><%= attempt.time_spent_seconds ? Math.floor(attempt.time_spent_seconds/60) + 'm ' + (attempt.time_spent_seconds%60) + 's' : '' %></span>
+                                </div>
+                            </div>
+                            <div class="attempt-actions">
+                                <a class="btn-secondary" href="/review/<%= attempt.id %>">
+                                    <i class="fas fa-eye"></i>
+                                    Review
+                                </a>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
+                <% } else { %>
+                <div class="empty-state">
+                    <p>No quiz attempts found yet.</p>
+                </div>
+                <% } %>
+            </section>
+
+            <!-- All Attempts Section -->
+            <section id="all-attempts" class="content-section">
+                <div class="content-header">
+                    <h1>All Quiz Attempts</h1>
+                    <p>Every attempt you've made, across all modules and quizzes</p>
+                </div>
+                <div class="attempts-grid">
+                    <% userAttempts.forEach(function(attempt) { %>
+                        <div class="attempt-card">
+                            <div class="attempt-header">
+                                <div class="quiz-info">
+                                    <h4><%= attempt.module || attempt.module_name || 'Module' %> - Quiz #<%= attempt.quiz_id %></h4>
+                                    <span>Attempt #<%= attempt.attempt_number || 1 %></span>
+                                </div>
+                                <div class="score-badge">
+                                    <%= attempt.score_percentage %>%
+                                </div>
+                            </div>
+                            <div class="attempt-details">
+                                <div class="detail-item">
+                                    <i class="fas fa-calendar"></i>
+                                    <span><%= attempt.started_at ? attempt.started_at.split('T')[0] : '' %></span>
+                                </div>
+                                <div class="detail-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span><%= attempt.time_spent_seconds ? Math.floor(attempt.time_spent_seconds/60) + 'm ' + (attempt.time_spent_seconds%60) + 's' : '' %></span>
+                                </div>
+                            </div>
+                            <div class="attempt-actions">
+                                <a class="btn-secondary" href="/review/<%= attempt.id %>">
+                                    <i class="fas fa-eye"></i>
+                                    Review
+                                </a>
                             </div>
                         </div>
                     <% }); %>
@@ -391,7 +481,7 @@
                 <div class="settings-card">
                     <div class="profile-edit-section">
                         <div class="profile-picture-edit">
-                            <img src="<%= user.avatar || '/images/default-avatar.png' %>" alt="Profile Picture">
+                            <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="Profile" class="rounded-circle" style="width: 80px; height: 80px; object-fit: cover; border: 2px solid #ccc;">
                             <button class="change-picture-btn" onclick="editAvatar()">
                                 <i class="fas fa-camera"></i>
                                 Change Picture
