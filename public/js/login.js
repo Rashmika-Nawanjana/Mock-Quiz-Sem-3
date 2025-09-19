@@ -1,4 +1,3 @@
-// edit auth service to integrate with actual supabase
 // Fixed slow height transition tab switching
 function switchTab(tab) {
     const currentForm = document.querySelector('.auth-form.active');
@@ -229,14 +228,12 @@ function showAlert(message, type) {
     }, 6000);
 }
 
-// Enhanced form submission handling with Supabase
-import { AuthService } from './auth-service.js';
-
+// Enhanced form submission handling
 function handleFormSubmission() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
-        form.addEventListener('submit', async function(e) {
+        form.addEventListener('submit', function(e) {
             e.preventDefault();
             
             const formId = this.closest('.auth-form').id;
@@ -254,81 +251,18 @@ function handleFormSubmission() {
                     ${formId === 'login-form' ? 'Signing In...' : 'Creating Account...'}
                 `;
                 
-                try {
-                    let result;
-                    const formData = new FormData(this);
-                    
-                    if (formId === 'login-form') {
-                        // Handle login
-                        result = await AuthService.signIn({
-                            email: formData.get('email'),
-                            password: formData.get('password')
-                        });
-                    } else {
-                        // Handle signup
-                        result = await AuthService.signUp({
-                            email: formData.get('email'),
-                            password: formData.get('password'),
-                            fullName: formData.get('name')
-                        });
-                    }
-                    
-                    if (result.success) {
-                        showAlert(result.message, 'success');
-                        
-                        // Redirect after success
-                        if (formId === 'login-form') {
-                            setTimeout(() => {
-                                window.location.href = '/profile.html';
-                            }, 1500);
-                        } else {
-                            // For signup, stay on login page to show verification message
-                            setTimeout(() => {
-                                switchTab('login');
-                            }, 2000);
-                        }
-                    } else {
-                        showAlert(result.error, 'error');
-                    }
-                } catch (error) {
-                    console.error('Form submission error:', error);
-                    showAlert('An unexpected error occurred. Please try again.', 'error');
-                } finally {
-                    // Reset button state
+                // Simulate form submission
+                setTimeout(() => {
                     submitBtn.classList.remove('loading');
                     submitBtn.disabled = false;
                     submitBtn.innerHTML = originalText;
-                }
-            }
-        });
-    });
-    
-    // Handle social login buttons
-    const socialButtons = document.querySelectorAll('.social-btn');
-    socialButtons.forEach(button => {
-        button.addEventListener('click', async function(e) {
-            e.preventDefault();
-            
-            const provider = this.classList.contains('google') ? 'google' : 'github';
-            
-            // Add loading state
-            this.style.opacity = '0.7';
-            this.style.pointerEvents = 'none';
-            
-            try {
-                const result = await AuthService.signInWithProvider(provider);
-                
-                if (!result.success) {
-                    showAlert(result.error, 'error');
-                    this.style.opacity = '1';
-                    this.style.pointerEvents = 'auto';
-                }
-                // Success will redirect automatically
-            } catch (error) {
-                console.error('Social login error:', error);
-                showAlert('Social login failed. Please try again.', 'error');
-                this.style.opacity = '1';
-                this.style.pointerEvents = 'auto';
+                    
+                    // Show success message
+                    showAlert(`${formId === 'login-form' ? 'Login' : 'Account creation'} successful!`, 'success');
+                    
+                    // Uncomment for actual form submission
+                    // this.submit();
+                }, 2500);
             }
         });
     });
