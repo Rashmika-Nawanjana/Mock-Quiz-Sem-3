@@ -45,10 +45,10 @@ app.get('/', (req, res) => {
 app.get('/review/:attemptId', async (req, res) => {
     const { attemptId } = req.params;
     try {
-        // Fetch the quiz attempt by ID (no joins)
+        // Fetch the quiz attempt by ID, join quizzes to get quiz title
         const { data, error } = await supabase
             .from('quiz_attempts')
-            .select('review_json, quiz_id')
+            .select('review_json, quiz_id, quizzes(title)')
             .eq('id', attemptId)
             .single();
         if (error || !data) {
@@ -61,11 +61,12 @@ app.get('/review/:attemptId', async (req, res) => {
         } catch (e) {
             return res.status(500).send('Corrupted review data');
         }
-        // Render the results page with review data
+        // Render the results page with quiz title
+        const quizTitle = data.quizzes?.title || 'Quiz';
         res.render('results', {
             quiz: {
-                title: `Quiz - ${data.quiz_id}`,
-                description: `Quiz Results`
+                title: `${quizTitle}`,
+                description: `${quizTitle} Results`
             },
             results: review,
             module: '',
