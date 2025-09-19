@@ -17,8 +17,29 @@ router.post('/login', async (req, res) => {
   if (error) {
     return res.render('login', { error: error.message });
   }
-  // Set session token or cookie as needed
-  req.session.user = data.user;
+  // Upsert user into Supabase users table
+  const user = data.user;
+  if (user) {
+    const { id, email, user_metadata } = user;
+    const full_name = user_metadata?.full_name || user_metadata?.name || null;
+    const avatar_url = user_metadata?.avatar_url || user_metadata?.picture || null;
+    const { data: upsertData, error: upsertError } = await supabase.from('users').upsert([
+      {
+        id,
+        email,
+        full_name,
+        avatar_url,
+        is_active: true,
+        updated_at: new Date().toISOString(),
+      }
+    ], { onConflict: 'id' });
+    if (upsertError) {
+      console.error('Supabase user upsert error:', upsertError);
+    } else {
+      console.log('Supabase user upsert success:', upsertData);
+    }
+    req.session.user = { id, email, full_name, avatar_url };
+  }
   req.session.save(() => {
     res.redirect('/home');
   });
@@ -105,10 +126,31 @@ router.get('/oauth/callback', (req, res) => {
 
 router.post('/session', async (req, res) => {
   const { access_token } = req.body;
-  // Optionally, verify the access token with Supabase
-  // Fetch user info if needed
-  req.session.user = { access_token }; // or fetch user info from Supabase
-  res.sendStatus(200);
+  // Fetch user info from Supabase
+  const { data: { user }, error } = await supabase.auth.getUser(access_token);
+  if (error || !user) return res.status(401).send('Unauthorized');
+  console.log('Supabase user_metadata:', user.user_metadata);
+  // Upsert user into Supabase users table (OAuth)
+  const { id, email, user_metadata } = user;
+  const full_name = user_metadata?.full_name || user_metadata?.name || null;
+  const avatar_url = user_metadata?.avatar_url || user_metadata?.picture || null;
+  const { data: upsertData, error: upsertError } = await supabase.from('users').upsert([
+    {
+      id,
+      email,
+      full_name,
+      avatar_url,
+      is_active: true,
+      updated_at: new Date().toISOString(),
+    }
+  ], { onConflict: 'id' });
+  if (upsertError) {
+    console.error('Supabase user upsert error:', upsertError);
+  } else {
+    console.log('Supabase user upsert success:', upsertData);
+  }
+  req.session.user = { id, email, full_name, avatar_url };
+  req.session.save(() => res.sendStatus(200));
 });
 
 export default router;

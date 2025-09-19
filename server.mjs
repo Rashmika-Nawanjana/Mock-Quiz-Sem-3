@@ -1,4 +1,14 @@
+// Dashboard route (protected)
+
+// Auth middleware to protect routes
+function requireAuth(req, res, next) {
+    if (!req.session || !req.session.user) {
+        return res.redirect('/');
+    }
+    next();
+}
 import express from 'express';
+import supabase from './database/supabase-client.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from "fs";
@@ -36,47 +46,112 @@ app.get('/', (req, res) => {
     if (req.session && req.session.user) {
         return res.redirect('/home');
     }
-    res.render('login');
+    res.render('login', { user: req.session.user });
 });
+
 
 // Home page (main page after login)
 app.get('/home', (req, res) => {
     if (!req.session || !req.session.user) {
         return res.redirect('/');
     }
-    res.render('index', { title: 'Home' });
+    res.render('index', { title: 'Home', user: req.session.user });
 });
 
 //modules
-app.get('/modules/intro-ai', (req, res) => {
-  res.render('modules/intro-ai');
+app.get('/modules/intro-ai', requireAuth, (req, res) => {
+    res.render('modules/intro-ai', { user: req.session.user });
 });
-app.get('/modules/database', (req, res) => {
-  res.render('modules/database');
+app.get('/modules/database', requireAuth, (req, res) => {
+    res.render('modules/database', { user: req.session.user });
 });
-app.get('/modules/differential', (req, res) => {
-  res.render('modules/differential');
+app.get('/modules/differential', requireAuth, (req, res) => {
+    res.render('modules/differential', { user: req.session.user });
 });
-app.get('/modules/statistics', (req, res) => {
-  res.render('modules/statistics');
+app.get('/modules/statistics', requireAuth, (req, res) => {
+    res.render('modules/statistics', { user: req.session.user });
 });
-app.get('/modules/os', (req, res) => {
-  res.render('modules/os');
+app.get('/modules/os', requireAuth, (req, res) => {
+    res.render('modules/os', { user: req.session.user });
 });
-app.get('/modules/architecture', (req, res) => {
-  res.render('modules/architecture');
+app.get('/modules/architecture', requireAuth, (req, res) => {
+    res.render('modules/architecture', { user: req.session.user });
 });
-app.get('/modules/networking', (req, res) => {
-  res.render('modules/networking');
+app.get('/modules/networking', requireAuth, (req, res) => {
+    res.render('modules/networking', { user: req.session.user });
 });
-app.get('/modules/thermodynamics', (req, res) => {
-  res.render('modules/thermodynamics');
+app.get('/modules/thermodynamics', requireAuth, (req, res) => {
+    res.render('modules/thermodynamics', { user: req.session.user });
 });
+
+app.get('/dashboard', requireAuth, (req, res) => {
+    (async () => {
+        const user = req.session.user;
+        // Fetch quiz attempts for this user
+        const { data: attempts, error: attemptsError } = await supabase
+            .from('quiz_attempts')
+            .select('*, quizzes(title, module_id), modules(display_name, name)')
+            .eq('user_id', user.id)
+            .order('started_at', { ascending: false })
+            .limit(10);
+
+        // Calculate stats
+        let stats = {
+            totalQuizzes: attempts ? attempts.length : 0,
+            averageScore: attempts && attempts.length ? Math.round(attempts.reduce((sum, a) => sum + (a.score_percentage || 0), 0) / attempts.length) : 0,
+            totalModules: 0,
+            streak: 0 // You can implement streak logic later
+        };
+
+        // Fetch modules
+        const { data: modules, error: modulesError } = await supabase
+            .from('modules')
+            .select('*');
+
+        // Map module progress (dummy for now, you can enhance later)
+        let moduleProgress = modules ? modules.map(m => ({
+            id: m.id,
+            name: m.display_name,
+            code: m.name,
+            icon: m.icon || 'fas fa-book',
+            progress: 0,
+            completedQuizzes: 0,
+            totalQuizzes: 0,
+            averageScore: 0,
+            bestScore: 0,
+            timeSpent: '0m'
+        })) : [];
+
+        // Prepare recentAttempts for EJS
+        let recentAttempts = (attempts || []).map(a => ({
+            id: a.id,
+            quizName: a.quizzes?.title || 'Quiz',
+            moduleName: a.modules?.display_name || 'Module',
+            score: a.score_percentage || 0,
+            scoreClass: a.score_percentage >= 90 ? 'excellent' : a.score_percentage >= 75 ? 'good' : a.score_percentage >= 60 ? 'average' : 'poor',
+            duration: a.time_spent_seconds ? `${Math.floor(a.time_spent_seconds/60)}m ${a.time_spent_seconds%60}s` : '',
+            date: a.started_at ? a.started_at.split('T')[0] : '',
+            quizId: a.quiz_id
+        }));
+
+        // Achievements: keep as dummy for now
+        let achievements = [];
+
+        res.render('dashboard', {
+            user,
+            stats,
+            modules: moduleProgress,
+            recentAttempts,
+            achievements
+        });
+    })();
+});
+
 
 // UPDATED QUIZ ROUTES - Replace your existing quiz routes with these:
 
 // Quiz route - display quiz
-app.get("/quiz/:module/:quizId", (req, res) => {
+app.get("/quiz/:module/:quizId", requireAuth, (req, res) => {
     const { module, quizId } = req.params;
     
     console.log('=== QUIZ DISPLAY DEBUG ===');
@@ -101,7 +176,8 @@ app.get("/quiz/:module/:quizId", (req, res) => {
         // Send or render quiz
         res.render("quize", { 
             quiz: quizData,
-            req: req // Pass req object to template for URL building
+            req: req, // Pass req object to template for URL building
+            user: req.session.user
         });
     } catch (error) {
         console.error('Error reading quiz file:', error);
@@ -110,7 +186,7 @@ app.get("/quiz/:module/:quizId", (req, res) => {
 });
 
 // Quiz submission route - handle answers and show results
-app.post("/quiz/:module/:quizId/submit", (req, res) => {
+app.post("/quiz/:module/:quizId/submit", requireAuth, (req, res) => {
     const { module, quizId } = req.params;
     const userAnswers = req.body.answers; 
     const answersArray = req.body.answersArray; // New complete array
@@ -190,6 +266,36 @@ app.post("/quiz/:module/:quizId/submit", (req, res) => {
             percentage: results.percentage
         });
         
+        // --- SUPABASE: Save quiz attempt ---
+        // 1. Get user_id (assume req.session.user.id is the UUID from Supabase users table)
+        const user_id = req.session.user && req.session.user.id;
+        // 2. Prepare attempt data
+        const attemptData = {
+            user_id: user_id,
+            // quiz_id: quizId, // If you have the UUID, use it here
+            // For now, you can add module and quizId as extra fields if needed
+            total_questions: results.totalQuestions,
+            correct_answers: results.correctCount,
+            score_percentage: results.percentage,
+            grade: results.grade,
+            grade_message: results.message,
+            time_spent_seconds: (typeof timeSpent === 'string' && timeSpent.includes(':')) ? (parseInt(timeSpent.split(':')[0], 10) * 60 + parseInt(timeSpent.split(':')[1], 10)) : null,
+            is_completed: true,
+            created_at: new Date().toISOString(),
+        };
+        // 3. Insert into Supabase
+        if (user_id) {
+            (async () => {
+                const { data, error } = await supabase.from('quiz_attempts').insert([attemptData]);
+                if (error) {
+                    console.error('Error saving quiz attempt to Supabase:', error);
+                } else {
+                    console.log('Quiz attempt saved to Supabase:', data);
+                }
+            })();
+        } else {
+            console.warn('No user_id found in session, skipping attempt save.');
+        }
         // Render results page
         res.render("results", { 
             quiz: {
@@ -198,7 +304,8 @@ app.post("/quiz/:module/:quizId/submit", (req, res) => {
             },
             results: results,
             module: module,
-            quizId: quizId
+            quizId: quizId,
+            user: req.session.user
         });
         
     } catch (error) {
@@ -209,7 +316,7 @@ app.post("/quiz/:module/:quizId/submit", (req, res) => {
 });
 
 // Alternative GET route for results (if you want to access results directly)
-app.get("/quiz/:module/:quizId/results", (req, res) => {
+app.get("/quiz/:module/:quizId/results", requireAuth, (req, res) => {
     // This could be used to show sample results or redirect to quiz
     res.redirect(`/quiz/${req.params.module}/${req.params.quizId}`);
 });

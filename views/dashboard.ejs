@@ -11,227 +11,36 @@
 </head>
 <body>
     <%- include('./partials/header') %>
-    <%
-        // Dummy data for testing
-        const user = {
-            name: 'Rashmika Nawanjana',
-            email: 'rashmika@example.com',
-            avatar: '/images/default-avatar.png'
-        };
-        
-        const stats = {
-            totalQuizzes: 47,
-            averageScore: 85,
-            totalModules: 8,
-            streak: 12
-        };
-        
-        const modules = [
-            {
-                id: 'db001',
-                name: 'Database Systems',
-                code: 'CS3042',
-                icon: 'fas fa-database',
-                progress: 85,
-                completedQuizzes: 8,
-                totalQuizzes: 10,
-                averageScore: 87,
-                bestScore: 95,
-                timeSpent: '12h 30m'
-            },
-            {
-                id: 'os001',
-                name: 'Operating Systems',
-                code: 'CS3022',
-                icon: 'fas fa-microchip',
-                progress: 72,
-                completedQuizzes: 6,
-                totalQuizzes: 9,
-                averageScore: 78,
-                bestScore: 88,
-                timeSpent: '9h 45m'
-            },
-            {
-                id: 'ds001',
-                name: 'Data Structures',
-                code: 'CS3012',
-                icon: 'fas fa-project-diagram',
-                progress: 90,
-                completedQuizzes: 9,
-                totalQuizzes: 10,
-                averageScore: 92,
-                bestScore: 98,
-                timeSpent: '15h 20m'
-            },
-            {
-                id: 'se001',
-                name: 'Software Engineering',
-                code: 'CS3032',
-                icon: 'fas fa-code',
-                progress: 65,
-                completedQuizzes: 5,
-                totalQuizzes: 8,
-                averageScore: 76,
-                bestScore: 85,
-                timeSpent: '8h 15m'
-            },
-            {
-                id: 'cn001',
-                name: 'Computer Networks',
-                code: 'CS3052',
-                icon: 'fas fa-network-wired',
-                progress: 78,
-                completedQuizzes: 7,
-                totalQuizzes: 9,
-                averageScore: 82,
-                bestScore: 91,
-                timeSpent: '11h 10m'
-            },
-            {
-                id: 'ai001',
-                name: 'Artificial Intelligence',
-                code: 'CS3062',
-                icon: 'fas fa-brain',
-                progress: 55,
-                completedQuizzes: 4,
-                totalQuizzes: 8,
-                averageScore: 74,
-                bestScore: 89,
-                timeSpent: '6h 45m'
-            }
-        ];
-        
-        const recentAttempts = [
-            {
-                id: 'att001',
-                quizName: 'Database Normalization Quiz',
-                moduleName: 'Database Systems',
-                score: 92,
-                scoreClass: 'excellent',
-                duration: '15m 30s',
-                date: '2025-01-15',
-                quizId: 'quiz001'
-            },
-            {
-                id: 'att002',
-                quizName: 'Process Scheduling',
-                moduleName: 'Operating Systems',
-                score: 78,
-                scoreClass: 'good',
-                duration: '12m 45s',
-                date: '2025-01-14',
-                quizId: 'quiz002'
-            },
-            {
-                id: 'att003',
-                quizName: 'Binary Trees',
-                moduleName: 'Data Structures',
-                score: 95,
-                scoreClass: 'excellent',
-                duration: '18m 20s',
-                date: '2025-01-13',
-                quizId: 'quiz003'
-            },
-            {
-                id: 'att004',
-                quizName: 'SDLC Models',
-                moduleName: 'Software Engineering',
-                score: 65,
-                scoreClass: 'poor',
-                duration: '14m 10s',
-                date: '2025-01-12',
-                quizId: 'quiz004'
-            },
-            {
-                id: 'att005',
-                quizName: 'TCP/IP Protocol',
-                moduleName: 'Computer Networks',
-                score: 88,
-                scoreClass: 'excellent',
-                duration: '16m 55s',
-                date: '2025-01-11',
-                quizId: 'quiz005'
-            },
-            {
-                id: 'att006',
-                quizName: 'AI Search Algorithms',
-                moduleName: 'Artificial Intelligence',
-                score: 73,
-                scoreClass: 'good',
-                duration: '20m 15s',
-                date: '2025-01-10',
-                quizId: 'quiz006'
-            }
-        ];
-        
-        const achievements = [
-            {
-                id: 'ach001',
-                name: 'First Steps',
-                description: 'Complete your first quiz',
-                icon: 'fas fa-star',
-                unlocked: true,
-                unlockedDate: '2024-12-01',
-                progress: 100
-            },
-            {
-                id: 'ach002',
-                name: 'Quiz Master',
-                description: 'Complete 50 quizzes',
-                icon: 'fas fa-crown',
-                unlocked: false,
-                progress: 94
-            },
-            {
-                id: 'ach003',
-                name: 'Perfect Score',
-                description: 'Get 100% on any quiz',
-                icon: 'fas fa-trophy',
-                unlocked: true,
-                unlockedDate: '2024-12-15',
-                progress: 100
-            },
-            {
-                id: 'ach004',
-                name: 'Streak Champion',
-                description: 'Maintain a 30-day streak',
-                icon: 'fas fa-fire',
-                unlocked: false,
-                progress: 40
-            },
-            {
-                id: 'ach005',
-                name: 'Speed Demon',
-                description: 'Complete a quiz in under 5 minutes',
-                icon: 'fas fa-bolt',
-                unlocked: true,
-                unlockedDate: '2025-01-05',
-                progress: 100
-            },
-            {
-                id: 'ach006',
-                name: 'Knowledge Seeker',
-                description: 'Complete quizzes in all modules',
-                icon: 'fas fa-graduation-cap',
-                unlocked: false,
-                progress: 75
-            }
-        ];
+    <!-- Hamburger Icon for Sidebar Toggle -->
+    <button id="sidebarToggle" class="sidebar-toggle-btn" aria-label="Toggle sidebar">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="dashboard-profile">
+        <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="User Avatar" class="profile-avatar">
+        <h2><%= user.name || user.email %></h2>
+        <p><%= user.email %></p>
+    </div>
+    <!-- Stats and modules are temporarily removed until real data is available -->
+        <div class="dashboard-profile">
+            <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="User Avatar" class="profile-avatar">
+            <h2><%= user.full_name || user.name || user.email %></h2>
+            <p><%= user.email %></p>
+        </div>
     %>
 
     <!-- Layout Container -->
     <div class="layout-container">
-        <!-- Sidebar Navigation -->
-        <aside class="sidebar">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebarNav">
             <div class="sidebar-content">
                 <!-- Profile Summary -->
                 <div class="profile-summary">
                     <div class="profile-avatar-small">
-                        <img src="<%= user.avatar || '/images/default-avatar.png' %>" alt="Profile Avatar">
+                        <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="Profile Avatar">
                         <div class="online-indicator"></div>
                     </div>
                     <div class="profile-info-small">
-                        <h3><%= user.name %></h3>
+                        <h3><%= user.full_name || user.name || user.email %></h3>
                         <p><%= user.email %></p>
                     </div>
                 </div>
@@ -290,6 +99,11 @@
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
                     </button>
+                    <script>
+                    function logout() {
+                        window.location.href = '/auth/logout';
+                    }
+                    </script>
                 </div>
             </div>
         </aside>
@@ -397,6 +211,9 @@
                 </div>
                 
                 <div class="attempts-grid">
+                    <div style="color: #a00; font-size: 0.9em; margin-bottom: 1em;">
+                        <strong>Debug recentAttempts:</strong> <%= JSON.stringify(recentAttempts) %>
+                    </div>
                     <% recentAttempts.forEach(attempt => { %>
                     <div class="attempt-card">
                         <div class="attempt-header">
@@ -406,12 +223,14 @@
                             <div class="quiz-info">
                                 <h3><%= attempt.quizName %></h3>
                                 <p><%= attempt.moduleName %></p>
+                                <% if (attempt.grade) { %>
+                                    <span class="badge bg-info text-dark"> <%= attempt.grade %> </span>
+                                <% } %>
                             </div>
                             <div class="score-badge score-<%= attempt.scoreClass %>">
                                 <%= attempt.score %>%
                             </div>
                         </div>
-                        
                         <div class="attempt-details">
                             <div class="detail-item">
                                 <i class="fas fa-clock"></i>
@@ -421,8 +240,13 @@
                                 <i class="fas fa-calendar"></i>
                                 <span><%= attempt.date %></span>
                             </div>
+                            <% if (attempt.gradeMessage) { %>
+                            <div class="detail-item">
+                                <i class="fas fa-comment"></i>
+                                <span><%= attempt.gradeMessage %></span>
+                            </div>
+                            <% } %>
                         </div>
-                        
                         <div class="attempt-actions">
                             <button class="btn-secondary" onclick="viewAttempt('<%= attempt.id %>')">
                                 <i class="fas fa-eye"></i>
@@ -466,7 +290,7 @@
                                     <span><%= module.progress %>%</span>
                                 </div>
                                 <div class="progress-bar-modern">
-                                    <div class="progress-fill" style="width: <%= module.progress %>%"></div>
+                                    <div class="progress-fill" style="width: <%= module.progress %>%;"></div>
                                 </div>
                             </div>
                             
@@ -571,7 +395,7 @@
                             <% } else { %>
                                 <div class="achievement-progress">
                                     <div class="progress-bar-achievement">
-                                        <div class="progress-fill" style="width: <%= achievement.progress %>%"></div>
+                                        <div class="progress-fill" style="width: <%= achievement.progress %>%;"></div>
                                     </div>
                                     <span><%= achievement.progress %>% complete</span>
                                 </div>
@@ -680,5 +504,46 @@
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="/js/profile.js"></script>
+    <script>
+    // Sidebar toggle logic
+    document.getElementById('sidebarToggle').addEventListener('click', function() {
+        document.getElementById('sidebarNav').classList.toggle('sidebar-collapsed');
+        document.body.classList.toggle('sidebar-collapsed');
+    });
+    </script>
+    <style>
+    .sidebar-toggle-btn {
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 1001;
+        background: #fff;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        padding: 8px 12px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .sidebar-toggle-btn:focus {
+        outline: 2px solid #007bff;
+    }
+    .sidebar-collapsed .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    .sidebar {
+        transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+    }
+    .sidebar-collapsed .main-content {
+        margin-left: 0 !important;
+    }
+    @media (min-width: 900px) {
+        .sidebar-toggle-btn {
+            display: none;
+        }
+    }
+    </style>
 </body>
 </html>
