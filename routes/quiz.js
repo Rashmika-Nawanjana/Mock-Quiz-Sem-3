@@ -1,3 +1,4 @@
+alert("quiz.js loaded!");
 // Upsert user info on login (call this after successful login)
 // Example usage: await upsertUser(supabaseUser)
 export async function upsertUser(supabaseUser) {
