@@ -1,3 +1,5 @@
+// Leaderboard route (protected)
+
 
 import express from 'express';
 import supabase from './database/supabase-client.js';
@@ -39,6 +41,93 @@ app.get('/', (req, res) => {
         return res.redirect('/home');
     }
     res.render('login', { user: req.session.user });
+});
+
+
+
+app.get('/leaderboard', requireAuth, async (req, res) => {
+    // Get all users
+    const { data: allUsers, error: usersError } = await supabase
+        .from('users')
+        .select('id, full_name, username, avatar_url');
+
+    // Get all quiz attempts (first attempt per user per quiz)
+    const { data: allAttempts, error: attemptsError } = await supabase
+        .from('quiz_attempts')
+        .select('id, user_id, quiz_id, score_percentage, time_spent_seconds, started_at')
+        .order('started_at', { ascending: true });
+
+    // For each user, for each quiz, keep only the first attempt
+    const firstAttemptsMap = {};
+    (allAttempts || []).forEach(a => {
+        const key = a.user_id + '|' + a.quiz_id;
+        if (!firstAttemptsMap[key]) {
+            firstAttemptsMap[key] = a;
+        }
+    });
+
+    // Aggregate: for each user, sum marks, time spent, quizzes completed, average score, last active
+    const leaderboardMap = {};
+    Object.values(firstAttemptsMap).forEach(a => {
+        if (!leaderboardMap[a.user_id]) {
+            leaderboardMap[a.user_id] = {
+                marks: 0,
+                time: 0,
+                quizzes_completed: 0,
+                scores: [],
+                last_active: null
+            };
+        }
+        leaderboardMap[a.user_id].marks += a.score_percentage || 0;
+        leaderboardMap[a.user_id].time += a.time_spent_seconds || 0;
+        leaderboardMap[a.user_id].quizzes_completed += 1;
+        leaderboardMap[a.user_id].scores.push(a.score_percentage || 0);
+        // Track most recent attempt
+        if (!leaderboardMap[a.user_id].last_active || new Date(a.started_at) > new Date(leaderboardMap[a.user_id].last_active)) {
+            leaderboardMap[a.user_id].last_active = a.started_at;
+        }
+    });
+
+    // Build leaderboard array with user info
+    const leaderboard = (allUsers || []).map(u => {
+        const userStats = leaderboardMap[u.id] || {};
+        // Calculate average score
+        let avgScore = 0;
+        if (userStats.scores && userStats.scores.length > 0) {
+            avgScore = userStats.scores.reduce((a, b) => a + b, 0) / userStats.scores.length;
+        }
+        // Calculate last active (hours ago)
+        let lastActive = '';
+        let lastActiveHours = undefined;
+        if (userStats.last_active) {
+            const last = new Date(userStats.last_active);
+            const now = new Date();
+            const diffMs = now - last;
+            lastActiveHours = diffMs / (1000 * 60 * 60);
+            if (lastActiveHours < 1) lastActive = 'Just now';
+            else if (lastActiveHours < 24) lastActive = Math.floor(lastActiveHours) + ' hours ago';
+            else lastActive = Math.floor(lastActiveHours / 24) + ' days ago';
+        }
+        return {
+            user_id: u.id,
+            name: u.full_name || u.username || 'User',
+            avatar: u.avatar_url,
+            marks: userStats.marks || 0,
+            time: userStats.time || 0,
+            quizzes_completed: userStats.quizzes_completed || 0,
+            average_score: avgScore ? avgScore.toFixed(1) : 0,
+            last_active: lastActive,
+            last_active_hours: lastActiveHours
+        };
+    });
+
+    // Sort by marks descending, then time ascending
+    leaderboard.sort((a, b) => b.marks - a.marks || a.time - b.time);
+
+    res.render('leaderboard', {
+        user: req.session.user,
+        leaderboard
+    });
 });
 
 // Review route: renders results page from review_json

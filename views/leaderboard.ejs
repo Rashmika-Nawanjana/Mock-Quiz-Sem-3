@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaderboard - Mock Quiz Hub</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/leaderboard.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <%- include('./partials/header') %>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="container">
+            <!-- Back Button -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <a href="/" class="btn btn-outline-light">
+                        <i class="fas fa-arrow-left"></i> Back to Home
+                    </a>
+                </div>
+            </div>
+
+            <!-- Leaderboard Header -->
+            <div class="leaderboard-header">
+                <h1 class="leaderboard-title">
+                    <i class="fas fa-trophy me-3"></i>Global Leaderboard
+                </h1>
+                <p class="leaderboard-subtitle">Top performers across all modules</p>
+                
+                <!-- Stats Overview -->
+                <div class="row mt-4">
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-number"><%= leaderboard ? leaderboard.length : 0 %></div>
+                            <div class="stats-label">Total Users</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-number"><%= leaderboard && leaderboard.reduce((sum, u) => sum + (u.quizzes_completed || 0), 0) %></div>
+                            <div class="stats-label">Quizzes Taken</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-number"><%= leaderboard && leaderboard.length ? (leaderboard.reduce((sum, u) => sum + (u.average_score || 0), 0) / leaderboard.length).toFixed(1) : 0 %>%</div>
+                            <div class="stats-label">Average Score</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-3">
+                        <div class="stats-card">
+                            <div class="stats-number"><%= leaderboard && leaderboard.filter(u => u.last_active_hours !== undefined && u.last_active_hours < 24).length %></div>
+                            <div class="stats-label">Active Today</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Podium Section -->
+            <div class="podium-section">
+                <div class="row justify-content-center">
+                    <!-- 2nd Place -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="podium-card second-place">
+                            <div class="rank-badge">
+                                <i class="fas fa-medal"></i>
+                                <span>2</span>
+                            </div>
+                            <div class="podium-avatar">
+                                <img src="<%= leaderboard && leaderboard[1] && leaderboard[1].avatar %>" alt="Avatar">
+                            </div>
+                            <h4 class="podium-name"><%= leaderboard && leaderboard[1] && leaderboard[1].name %></h4>
+                            <div class="podium-score"><%= leaderboard && leaderboard[1] && leaderboard[1].marks %> pts</div>
+                            <div class="podium-quizzes"><%= leaderboard && leaderboard[1] && leaderboard[1].quizzes_completed %> quizzes</div>
+                        </div>
+                    </div>
+
+                    <!-- 1st Place -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="podium-card first-place">
+                            <div class="rank-badge">
+                                <i class="fas fa-crown"></i>
+                                <span>1</span>
+                            </div>
+                            <div class="podium-avatar">
+                                <img src="<%= leaderboard && leaderboard[0] && leaderboard[0].avatar %>" alt="Avatar">
+                            </div>
+                            <h4 class="podium-name"><%= leaderboard && leaderboard[0] && leaderboard[0].name %></h4>
+                            <div class="podium-score"><%= leaderboard && leaderboard[0] && leaderboard[0].marks %> pts</div>
+                            <div class="podium-quizzes"><%= leaderboard && leaderboard[0] && leaderboard[0].quizzes_completed %> quizzes</div>
+                        </div>
+                    </div>
+
+                    <!-- 3rd Place -->
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="podium-card third-place">
+                            <div class="rank-badge">
+                                <i class="fas fa-award"></i>
+                                <span>3</span>
+                            </div>
+                            <div class="podium-avatar">
+                                <img src="<%= leaderboard && leaderboard[2] && leaderboard[2].avatar %>" alt="Avatar">
+                            </div>
+                            <h4 class="podium-name"><%= leaderboard && leaderboard[2] && leaderboard[2].name %></h4>
+                            <div class="podium-score"><%= leaderboard && leaderboard[2] && leaderboard[2].marks %> pts</div>
+                            <div class="podium-quizzes"><%= leaderboard && leaderboard[2] && leaderboard[2].quizzes_completed %> quizzes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Leaderboard -->
+            <div class="leaderboard-table-section">
+                <h2 class="section-title">Complete Rankings</h2>
+                <div class="leaderboard-table-container">
+                    <div class="table-responsive">
+                        <table class="table leaderboard-table">
+                            <thead>
+                                <tr>
+                                    <th>Rank</th>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                    <th>Quizzes</th>
+                                    <th>Avg Score</th>
+                                    <th>Last Active</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% (leaderboard || []).forEach((player, index) => {
+                                    const rank = index + 1;
+                                    let rankClass = '';
+                                    if (rank === 1) rankClass = 'first-rank';
+                                    else if (rank === 2) rankClass = 'second-rank';
+                                    else if (rank === 3) rankClass = 'third-rank';
+                                %>
+                                <tr class="<%= rankClass %>">
+                                    <td>
+                                        <div class="rank-cell">
+                                            <% if (rank === 1) { %>
+                                                <i class="fas fa-crown rank-icon gold"></i>
+                                            <% } else if (rank === 2) { %>
+                                                <i class="fas fa-medal rank-icon silver"></i>
+                                            <% } else if (rank === 3) { %>
+                                                <i class="fas fa-award rank-icon bronze"></i>
+                                            <% } %>
+                                            <span class="rank-number">#<%= rank %></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="player-cell">
+                                            <img src="<%= player.avatar %>" alt="<%= player.name %>" class="player-avatar">
+                                            <span class="player-name"><%= player.name %></span>
+                                        </div>
+                                    </td>
+                                    <td class="score-cell"><%= player.marks %></td>
+                                    <td class="quizzes-cell"><%= player.quizzes_completed %></td>
+                                    <td class="avg-score-cell"><%= player.average_score %>%</td>
+                                    <td class="last-active-cell"><%= player.last_active %></td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('./partials/footer') %>
+</body>
+</html>
