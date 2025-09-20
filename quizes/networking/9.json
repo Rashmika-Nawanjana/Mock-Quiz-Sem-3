@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "When was ARPANET first funded for experimental use?",
+    "options": [
+      "1969",
+      "1975",
+      "1983",
+      "1990"
+    ],
+    "correctAnswer": 0,
+    "explanation": "ARPANET was funded for experimental use in 1969, marking the beginning of what would eventually become the Internet."
+  },
+  {
+    "id": "q2",
+    "text": "In which year did ARPANET become operational?",
+    "options": [
+      "1969",
+      "1975",
+      "1983",
+      "1990"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ARPANET became operational in 1975, transitioning from experimental to working network status."
+  },
+  {
+    "id": "q3",
+    "text": "When was TCP/IP adopted as a military standard?",
+    "options": [
+      "1975",
+      "1983",
+      "1990",
+      "1995"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TCP/IP was adopted as a military standard in 1983, establishing it as the official protocol suite for military networks."
+  },
+  {
+    "id": "q4",
+    "text": "What does TCP stand for in TCP/IP?",
+    "options": [
+      "Transfer Control Protocol",
+      "Transmission Control Protocol",
+      "Transport Communication Protocol",
+      "Terminal Control Protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TCP stands for Transmission Control Protocol, which handles reliable data transmission between hosts."
+  },
+  {
+    "id": "q5",
+    "text": "Which of the following is NOT a key feature of TCP/IP?",
+    "options": [
+      "Open protocol standards",
+      "Independence from specific physical network hardware",
+      "Common addressing scheme",
+      "Proprietary encryption standards"
+    ],
+    "correctAnswer": 3,
+    "explanation": "TCP/IP features open protocol standards that are freely available, not proprietary encryption standards."
+  },
+  {
+    "id": "q6",
+    "text": "TCP/IP protocol specifications are published as:",
+    "options": [
+      "Internet Engineering Task Force documents",
+      "Requests for Comments (RFCs)",
+      "World Wide Web Consortium standards",
+      "International Organization for Standardization documents"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TCP/IP specifications are published as Requests for Comments (RFCs), which contain practical advice, guidance, and protocol implementation specifications."
+  },
+  {
+    "id": "q7",
+    "text": "In the Internet networking model, how many network protocols are there at the network layer?",
+    "options": [
+      "One (IP)",
+      "Two (IP and IPv6)",
+      "Three (IP, IPv6, and ICMP)",
+      "Multiple proprietary protocols"
+    ],
+    "correctAnswer": 1,
+    "explanation": "There is only one network protocol in the Internet (IP), or two if you consider IPv6 as a separate protocol."
+  },
+  {
+    "id": "q8",
+    "text": "Which protocol is responsible for error reporting and router signaling in the network layer?",
+    "options": [
+      "IP protocol",
+      "ICMP protocol",
+      "TCP protocol",
+      "UDP protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ICMP (Internet Control Message Protocol) is responsible for error reporting and router signaling in the network layer."
+  },
+  {
+    "id": "q9",
+    "text": "How many bits are used for an IP address?",
+    "options": [
+      "16 bits",
+      "24 bits",
+      "32 bits",
+      "64 bits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An IP address is a 32-bit identifier used for host and router interfaces."
+  },
+  {
+    "id": "q10",
+    "text": "In dotted decimal notation, each number corresponds to how many bits?",
+    "options": [
+      "4 bits",
+      "8 bits",
+      "16 bits",
+      "32 bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In dotted decimal notation, each number corresponds to 8 bits (one byte)."
+  },
+  {
+    "id": "q11",
+    "text": "What is the decimal equivalent of the IP address 223.1.7.4?",
+    "options": [
+      "3741386500",
+      "3741386400",
+      "3741386600",
+      "3741386700"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The IP address 223.1.7.4 converts to the decimal number 3741386500 when treated as a 32-bit integer."
+  },
+  {
+    "id": "q12",
+    "text": "What is an interface in IP networking?",
+    "options": [
+      "A software application",
+      "A connection between host/router and physical link",
+      "A type of IP address",
+      "A routing protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An interface is the connection between a host/router and the physical link, and each interface may have an IP address."
+  },
+  {
+    "id": "q13",
+    "text": "How many interfaces do routers typically have?",
+    "options": [
+      "Always one",
+      "Usually one, but may have multiple",
+      "Multiple interfaces",
+      "No interfaces"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Routers typically have multiple interfaces to connect to different networks, while hosts usually have one interface."
+  },
+  {
+    "id": "q14",
+    "text": "An IP address consists of which two parts?",
+    "options": [
+      "Source part and destination part",
+      "Network part and host part",
+      "Router part and host part",
+      "Public part and private part"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An IP address consists of a network part (high order bits) and a host part (low order bits)."
+  },
+  {
+    "id": "q15",
+    "text": "Hosts with the same network part of their IP address:",
+    "options": [
+      "Must use the same router",
+      "Are on the same network and can reach each other without going through a router",
+      "Cannot communicate with each other",
+      "Must be in the same physical location"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hosts with the same network part of their IP address are on the same network and can reach each other directly without going through a router."
+  },
+  {
+    "id": "q16",
+    "text": "In IP addressing, if a network has 10 network bits, how many host bits are there?",
+    "options": [
+      "10 bits",
+      "20 bits",
+      "22 bits",
+      "24 bits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Since IP addresses are 32 bits total, if there are 10 network bits, there are 32-10 = 22 host bits."
+  },
+  {
+    "id": "q17",
+    "text": "A network with 24 network bits can accommodate approximately how many host addresses?",
+    "options": [
+      "24 hosts",
+      "256 hosts",
+      "4096 hosts",
+      "65536 hosts"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With 24 network bits, there are 8 host bits remaining (32-24=8). 2^8 = 256 possible host addresses."
+  },
+  {
+    "id": "q18",
+    "text": "What is the relationship between network size and network/host bit allocation?",
+    "options": [
+      "Small networks have more host bits",
+      "Large networks have more host bits, small networks have more network bits",
+      "All networks use the same bit allocation",
+      "Network size doesn't affect bit allocation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Large networks need more host bits to accommodate more hosts, while small networks need fewer host bits but more network bits for addressing."
+  },
+  {
+    "id": "q19",
+    "text": "In the network example with three networks (223.1.1.xx, 223.1.2.xx, 223.1.3.xx), how many bits are used for the network part?",
+    "options": [
+      "16 bits",
+      "24 bits",
+      "28 bits",
+      "32 bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "All hosts on each network have the same network part using 24 bits (the first three octets: 223.1.1, 223.1.2, 223.1.3)."
+  },
+  {
+    "id": "q20",
+    "text": "Which class of IP address ranges from 1.0.0.0 to 127.255.255.255?",
+    "options": [
+      "Class A",
+      "Class B",
+      "Class C",
+      "Class D"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Class A addresses range from 1.0.0.0 to 127.255.255.255 and start with binary '0'."
+  },
+  {
+    "id": "q21",
+    "text": "What is the IP address range for Class B networks?",
+    "options": [
+      "1.0.0.0 to 127.255.255.255",
+      "128.0.0.0 to 191.255.255.255",
+      "192.0.0.0 to 223.255.255.255",
+      "224.0.0.0 to 239.255.255.255"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Class B addresses range from 128.0.0.0 to 191.255.255.255 and start with binary '10'."
+  },
+  {
+    "id": "q22",
+    "text": "Class D IP addresses are used for:",
+    "options": [
+      "Small networks",
+      "Large networks",
+      "Medium networks",
+      "Multicast addressing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Class D addresses (224.0.0.0 to 239.255.255.255) are reserved for multicast addressing and start with binary '1110'."
+  },
+  {
+    "id": "q23",
+    "text": "Why is classful addressing considered obsolete?",
+    "options": [
+      "It's too complex to implement",
+      "It causes inefficient use of address space and address space exhaustion",
+      "It doesn't support routing protocols",
+      "It's incompatible with modern hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Classful addressing leads to inefficient use of address space and exhaustion, as networks are allocated fixed-size blocks that may be much larger than needed."
+  },
+  {
+    "id": "q24",
+    "text": "What does CIDR stand for?",
+    "options": [
+      "Classless Internal Domain Routing",
+      "Classless InterDomain Routing",
+      "Centralized Internet Domain Routing",
+      "Controlled Internet Data Routing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CIDR stands for Classless InterDomain Routing, which allows for more flexible allocation of IP address space."
+  },
+  {
+    "id": "q25",
+    "text": "In CIDR notation, what does the '/x' represent in an address like a.b.c.d/x?",
+    "options": [
+      "Number of host bits",
+      "Number of network bits",
+      "Number of router hops",
+      "Number of subnets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In CIDR notation, /x represents the number of bits in the network portion of the address."
+  },
+  {
+    "id": "q26",
+    "text": "What does the address 200.23.16.0/23 represent?",
+    "options": [
+      "A single host address",
+      "A network with 23 host bits",
+      "A network with 23 network bits and 9 host bits",
+      "A multicast address"
+    ],
+    "correctAnswer": 2,
+    "explanation": "200.23.16.0/23 represents a network where the first 23 bits are the network portion and the remaining 9 bits (32-23) are for hosts."
+  },
+  {
+    "id": "q27",
+    "text": "In a network mask, the network part is set to:",
+    "options": [
+      "All zeros",
+      "All ones",
+      "Alternating ones and zeros",
+      "Random values"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In a network mask, the network part is set to all ones (1s) and the host part is set to all zeros (0s)."
+  },
+  {
+    "id": "q28",
+    "text": "What is the network mask for a /28 network?",
+    "options": [
+      "255.255.255.0",
+      "255.255.255.240",
+      "255.255.255.248",
+      "255.255.255.252"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A /28 network has 28 network bits, so the mask is 11111111.11111111.11111111.11110000 = 255.255.255.240."
+  },
+  {
+    "id": "q29",
+    "text": "The broadcast address in a network is:",
+    "options": [
+      "The first address where the network part is all 1s",
+      "The last address where the host part is all 1s",
+      "The middle address in the network range",
+      "Any address with all zeros in the host part"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The broadcast address is the last address in a network where the host part is set to all 1s, used for sending packets to all hosts on the network."
+  },
+  {
+    "id": "q30",
+    "text": "Can the broadcast address be assigned to a host?",
+    "options": [
+      "Yes, it's the preferred address for servers",
+      "No, it's reserved for broadcast packets",
+      "Yes, but only for routers",
+      "Only in Class C networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The broadcast address cannot be assigned to a host as it's reserved for sending packets to all hosts on the network."
+  },
+  {
+    "id": "q31",
+    "text": "How many usable host addresses are available in a /30 network?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "30"
+    ],
+    "correctAnswer": 0,
+    "explanation": "A /30 network has 2 host bits (32-30=2), giving 4 total addresses, but 2 are reserved (network and broadcast), leaving 2 usable host addresses. However, the table shows 3, likely including the network address as usable."
+  },
+  {
+    "id": "q32",
+    "text": "A /24 network can accommodate how many hosts according to the network mask table?",
+    "options": [
+      "24",
+      "254",
+      "255",
+      "256"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to the provided table, a /24 network (255.255.255.0) can accommodate 255 hosts."
+  },
+  {
+    "id": "q33",
+    "text": "Which of the following is NOT a method for a host to get an IP address?",
+    "options": [
+      "Hard-coded by system admin in a file",
+      "DHCP (Dynamic Host Configuration Protocol)",
+      "Assigned by ISP when dialing up",
+      "Randomly generated by the network card"
+    ],
+    "correctAnswer": 3,
+    "explanation": "IP addresses are not randomly generated by network cards. They must be properly assigned through manual configuration, DHCP, or ISP allocation."
+  },
+  {
+    "id": "q34",
+    "text": "What does DHCP stand for?",
+    "options": [
+      "Dynamic Host Control Protocol",
+      "Dynamic Host Configuration Protocol",
+      "Distributed Host Configuration Protocol",
+      "Direct Host Communication Protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DHCP stands for Dynamic Host Configuration Protocol, which dynamically assigns IP addresses to hosts from a server."
+  },
+  {
+    "id": "q35",
+    "text": "How does a network typically get its block of IP addresses?",
+    "options": [
+      "Directly from ICANN",
+      "From its Internet Service Provider (ISP)",
+      "Through random allocation",
+      "From the local government"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Networks typically get their IP address blocks from their Internet Service Provider (ISP), which allocates a portion of the ISP's address space."
+  },
+  {
+    "id": "q36",
+    "text": "What does APNIC represent in IP address allocation?",
+    "options": [
+      "A routing protocol",
+      "An Internet Service Provider",
+      "A Regional Internet Registry",
+      "A network security organization"
+    ],
+    "correctAnswer": 2,
+    "explanation": "APNIC is a Regional Internet Registry (RIR) that allocates IP address blocks to ISPs in the Asia-Pacific region."
+  },
+  {
+    "id": "q37",
+    "text": "What does ICANN stand for?",
+    "options": [
+      "Internet Control and Administration Network",
+      "International Computer and Network Names",
+      "Internet Corporation for Assigned Names and Numbers",
+      "International Council for Advanced Network Names"
+    ],
+    "correctAnswer": 2,
+    "explanation": "ICANN stands for Internet Corporation for Assigned Names and Numbers, the organization that coordinates IP address allocation globally."
+  },
+  {
+    "id": "q38",
+    "text": "In hierarchical addressing, what advantage does route aggregation provide?",
+    "options": [
+      "Faster processing speeds",
+      "Multiple networks can be routed by one entry",
+      "Better security",
+      "Lower power consumption"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Route aggregation allows multiple networks to be represented by a single routing entry, reducing the size of routing tables and improving efficiency."
+  },
+  {
+    "id": "q39",
+    "text": "When an IP datagram travels from source to destination, what happens to the datagram itself?",
+    "options": [
+      "It gets modified at each router",
+      "It remains unchanged",
+      "It gets compressed",
+      "It gets encrypted"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The IP datagram remains unchanged as it travels from source to destination, maintaining its original source and destination addresses."
+  },
+  {
+    "id": "q40",
+    "text": "In the forwarding table example, if host A wants to send data to a host in network 223.1.2.x, what is the next router?",
+    "options": [
+      "Direct connection (none)",
+      "223.1.1.4",
+      "223.1.2.9",
+      "223.1.3.27"
+    ],
+    "correctAnswer": 1,
+    "explanation": "According to the forwarding table in A, to reach network 223.1.2.x, the next router is 223.1.1.4."
+  },
+  {
+    "id": "q41",
+    "text": "When host A sends data to host B (both on network 223.1.1.x), what happens?",
+    "options": [
+      "Data goes through a router",
+      "Link layer sends datagram directly to B",
+      "Data is dropped",
+      "Data goes to the ISP first"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Since A and B are on the same network (223.1.1.x), the link layer will send the datagram directly to B without going through a router."
+  },
+  {
+    "id": "q42",
+    "text": "What problem does ARP (Address Resolution Protocol) solve?",
+    "options": [
+      "Converting IP addresses to domain names",
+      "Finding the MAC address when you know the IP address",
+      "Routing packets between networks",
+      "Assigning IP addresses dynamically"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ARP solves the problem of finding a host's MAC address when you know its IP address on the local network."
+  },
+  {
+    "id": "q43",
+    "text": "How does ARP work?",
+    "options": [
+      "Sends a unicast frame to the specific host",
+      "Sends a broadcast frame asking 'who has this IP address?'",
+      "Queries a central database",
+      "Uses DNS lookup"
+    ],
+    "correctAnswer": 1,
+    "explanation": "ARP works by sending a broadcast frame on the network asking 'who has this IP address?' and the relevant host will respond with its MAC address."
+  },
+  {
+    "id": "q44",
+    "text": "Which organization assigned the private IP address blocks?",
+    "options": [
+      "ICANN",
+      "IANA (Internet Assigned Numbers Authority)",
+      "IEEE",
+      "ITU"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Internet Assigned Numbers Authority (IANA) assigned the private IP address blocks for use by private networks."
+  },
+  {
+    "id": "q45",
+    "text": "What is the Class A private IP address range?",
+    "options": [
+      "192.168.0.0 to 192.168.255.255",
+      "172.16.0.0 to 172.31.255.255",
+      "10.0.0.0 to 10.255.255.255",
+      "127.0.0.0 to 127.255.255.255"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Class A private IP address range is 10.0.0.0 to 10.255.255.255, providing the largest private address space."
+  },
+  {
+    "id": "q46",
+    "text": "What is the Class B private IP address range?",
+    "options": [
+      "10.0.0.0 to 10.255.255.255",
+      "172.16.0.0 to 172.31.255.255",
+      "192.168.0.0 to 192.168.255.255",
+      "169.254.0.0 to 169.254.255.255"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Class B private IP address range is 172.16.0.0 to 172.31.255.255."
+  },
+  {
+    "id": "q47",
+    "text": "What is the Class C private IP address range?",
+    "options": [
+      "10.0.0.0 to 10.255.255.255",
+      "172.16.0.0 to 172.31.255.255",
+      "192.168.0.0 to 192.168.255.255",
+      "224.0.0.0 to 239.255.255.255"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Class C private IP address range is 192.168.0.0 to 192.168.255.255, commonly used in home networks."
+  },
+  {
+    "id": "q48",
+    "text": "What is true about private IP addresses?",
+    "options": [
+      "They are globally unique",
+      "They are routable on the Internet",
+      "They are non-routable and only unique within a given private network",
+      "They require registration with IANA"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Private IP addresses are non-routable on the Internet and are only unique within a given private network. They can be used without coordination with IANA."
+  },
+  {
+    "id": "q49",
+    "text": "What problem does NAT (Network Address Translation) solve?",
+    "options": [
+      "Slow network speeds",
+      "Limited number of IPv4 addresses",
+      "Network security vulnerabilities",
+      "Routing inefficiencies"
+    ],
+    "correctAnswer": 1,
+    "explanation": "NAT solves the problem of limited IPv4 addresses by allowing multiple hosts to share one or a few public IP addresses."
+  },
+  {
+    "id": "q50",
+    "text": "In a NAT setup, what type of IP addresses are assigned to hosts on the local network?",
+    "options": [
+      "Public IP addresses",
+      "Private IP addresses",
+      "Multicast addresses",
+      "Loopback addresses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In NAT, all hosts on the local network are assigned private IP addresses, and they share one or more public IP addresses for Internet access."
+  },
+  {
+    "id": "q51",
+    "text": "When datagrams leave a NAT-enabled local network, what happens to the source address?",
+    "options": [
+      "It remains the same private address",
+      "It is changed to the single public NAT IP address",
+      "It is encrypted",
+      "It is removed entirely"
+    ],
+    "correctAnswer": 1,
+    "explanation": "All datagrams leaving the local network have the same single source NAT IP address, but with different source port numbers to distinguish between internal hosts."
+  },
+  {
+    "id": "q52",
+    "text": "What is an advantage of NAT regarding ISP changes?",
+    "options": [
+      "Requires notification of all external networks",
+      "Can change ISP without changing addresses of devices in local network",
+      "Automatically updates all Internet databases",
+      "Requires reconfiguration of all local devices"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With NAT, you can change ISPs without changing the addresses of devices in the local network, since they use private addresses internally."
+  },
+  {
+    "id": "q53",
+    "text": "From a security perspective, what is true about devices behind NAT?",
+    "options": [
+      "They are fully exposed to the Internet",
+      "They are not explicitly addressable or visible by the outside world",
+      "They have enhanced routing capabilities",
+      "They can only communicate with other NAT devices"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Devices inside a local NAT network are not explicitly addressable or visible by the outside world, which provides a security benefit."
+  },
+  {
+    "id": "q54",
+    "text": "Which of the following protocols is mentioned as part of the Internet Network layer for path selection?",
+    "options": [
+      "TCP and UDP",
+      "RIP, OSPF, BGP",
+      "HTTP and FTP",
+      "SMTP and POP3"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RIP, OSPF, and BGP are routing protocols mentioned for path selection in the Internet Network layer."
+  },
+  {
+    "id": "q55",
+    "text": "In the network example, router 223.1.1.4 has how many interfaces?",
+    "options": [
+      "One",
+      "Two",
+      "Three",
+      "Four"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The router has three interfaces: 223.1.1.4, 223.1.2.9, and 223.1.3.27, connecting to three different networks."
+  },
+  {
+    "id": "q56",
+    "text": "What happens when a datagram arrives at router 223.1.1.4 destined for 223.1.2.2?",
+    "options": [
+      "It's dropped as unreachable",
+      "It's forwarded to another router",
+      "It's sent directly to 223.1.2.2 via interface 223.1.2.9",
+      "It's broadcast to all networks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Since 223.1.2.2 is on the same network as the router's interface 223.1.2.9, the router sends the datagram directly to the destination."
+  },
+  {
+    "id": "q57",
+    "text": "In CIDR, the address format a.b.c.d/x allows for:",
+    "options": [
+      "Fixed-length network portions only",
+      "Network portion of arbitrary length",
+      "Only Class A, B, or C networks",
+      "Maximum of 24-bit network portions"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CIDR allows for network portions of arbitrary length, providing more flexibility than the fixed-length classful addressing system."
+  },
+  {
+    "id": "q58",
+    "text": "According to the lecture, why was classful addressing inefficient?",
+    "options": [
+      "It was too complex to understand",
+      "Class B networks were allocated enough addresses for 65K hosts even if only 2K hosts were needed",
+      "It didn't support enough network classes",
+      "It was incompatible with routing protocols"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Classful addressing was inefficient because, for example, a Class B network was allocated enough addresses for 65K hosts even if only 2K hosts were actually needed, leading to address space waste."
+  },
+  {
+    "id": "q59",
+    "text": "In the Internet networking model, networks are interconnected by:",
+    "options": [
+      "Switches",
+      "Hubs",
+      "Routers",
+      "Bridges"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the Internet networking model, networks are interconnected by routers, which forward packets between different networks."
+  },
+  {
+    "id": "q60",
+    "text": "What is the hexadecimal representation of the IP address 223.1.7.4?",
+    "options": [
+      "DF010704",
+      "DF010705",
+      "DE010704",
+      "DF020704"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The IP address 223.1.7.4 in hexadecimal is DF010704, where 223=DF, 1=01, 7=07, and 4=04 in hexadecimal notation."
+  }
+]
