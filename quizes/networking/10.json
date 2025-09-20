@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the size of an IPv4 address?",
+    "options": [
+      "16 bits",
+      "24 bits", 
+      "32 bits",
+      "64 bits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An IPv4 address is a 32-bit identifier for host and router interfaces."
+  },
+  {
+    "id": "q2", 
+    "text": "What is an interface in the context of IP addressing?",
+    "options": [
+      "A software program that manages IP addresses",
+      "A connection between host/router and physical link",
+      "A type of network cable",
+      "A protocol for data transmission"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An interface is the connection between a host/router and a physical link."
+  },
+  {
+    "id": "q3",
+    "text": "How many interfaces do routers typically have?",
+    "options": [
+      "Always one interface",
+      "Always two interfaces", 
+      "Multiple interfaces",
+      "No interfaces"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Routers typically have multiple interfaces to connect to different networks."
+  },
+  {
+    "id": "q4",
+    "text": "How many interfaces do hosts typically have?",
+    "options": [
+      "One or two interfaces",
+      "Always three interfaces",
+      "Multiple interfaces like routers",
+      "No interfaces"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Hosts typically have one or two interfaces, such as wired Ethernet and wireless 802.11."
+  },
+  {
+    "id": "q5",
+    "text": "Do Layer 2 switches have IP addresses associated with their interfaces?",
+    "options": [
+      "Yes, all switches have IP addresses",
+      "No, switches do not have IPs associated with interfaces",
+      "Only some switches have IP addresses",
+      "Only managed switches have IP addresses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Switches operate at Layer 2 and do not have IP addresses associated with their interfaces."
+  },
+  {
+    "id": "q6",
+    "text": "An IP address consists of which two parts?",
+    "options": [
+      "Network part and broadcast part",
+      "Subnet part (high order bits) and host part (low order bits)",
+      "Router part and switch part",
+      "Public part and private part"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An IP address consists of a subnet part (high order bits) and a host part (low order bits)."
+  },
+  {
+    "id": "q7",
+    "text": "What is a subnet?",
+    "options": [
+      "A type of network cable",
+      "Device interfaces with same subnet part of IP address that can physically reach each other without intervening router",
+      "A protocol for network communication",
+      "A security feature for networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A subnet consists of device interfaces with the same subnet part of IP address that can physically reach each other without an intervening router."
+  },
+  {
+    "id": "q8",
+    "text": "What does CIDR stand for?",
+    "options": [
+      "Centralized Internet Domain Routing",
+      "Classless InterDomain Routing",
+      "Controlled Internet Data Routing",
+      "Classified Internet Domain Registry"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CIDR stands for Classless InterDomain Routing."
+  },
+  {
+    "id": "q9",
+    "text": "In CIDR notation, what does the '/x' represent in a.b.c.d/x?",
+    "options": [
+      "The number of hosts in the network",
+      "The network class identifier",
+      "The number of bits in the subnet portion of the address",
+      "The subnet mask in decimal format"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In CIDR notation, /x represents the number of bits in the subnet portion of the address."
+  },
+  {
+    "id": "q10",
+    "text": "What is the Network Address?",
+    "options": [
+      "The last address of the IP block",
+      "The first address of the IP block",
+      "Any address in the middle of the IP block",
+      "The address used by routers only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Network Address is the first address of the IP block."
+  },
+  {
+    "id": "q11",
+    "text": "For the host IP 10.10.1.22/24, what is the Network Address?",
+    "options": [
+      "10.10.1.1",
+      "10.10.1.0",
+      "10.10.0.0", 
+      "10.10.1.255"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For 10.10.1.22/24, the network address is 10.10.1.0 (first address of the block)."
+  },
+  {
+    "id": "q12",
+    "text": "What is the Broadcast Address?",
+    "options": [
+      "The first address of the IP block",
+      "The last address of the IP block",
+      "Any address that can broadcast",
+      "The router's address"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Broadcast Address is the last address of the IP block."
+  },
+  {
+    "id": "q13",
+    "text": "For the host IP 10.10.1.22/24, what is the Broadcast Address?",
+    "options": [
+      "10.10.1.0",
+      "10.10.1.22",
+      "10.10.1.255",
+      "10.10.255.255"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For 10.10.1.22/24, the broadcast address is 10.10.1.255 (last address of the block)."
+  },
+  {
+    "id": "q14",
+    "text": "Which organization assigned the private IP address ranges?",
+    "options": [
+      "IEEE",
+      "IANA (Internet Assigned Numbers Authority)",
+      "ISO",
+      "ITU"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Internet Assigned Numbers Authority (IANA) assigned the private IP address ranges."
+  },
+  {
+    "id": "q15",
+    "text": "What is the Class A private IP range?",
+    "options": [
+      "172.16.0.0 to 172.31.255.255",
+      "192.168.0.0 to 192.168.255.255",
+      "10.0.0.0 to 10.255.255.255",
+      "169.254.0.0 to 169.254.255.255"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Class A private IP range is 10.0.0.0 to 10.255.255.255."
+  },
+  {
+    "id": "q16",
+    "text": "What is the Class B private IP range?",
+    "options": [
+      "10.0.0.0 to 10.255.255.255",
+      "172.16.0.0 to 172.31.255.255",
+      "192.168.0.0 to 192.168.255.255",
+      "224.0.0.0 to 239.255.255.255"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Class B private IP range is 172.16.0.0 to 172.31.255.255."
+  },
+  {
+    "id": "q17",
+    "text": "What is the Class C private IP range?",
+    "options": [
+      "10.0.0.0 to 10.255.255.255",
+      "172.16.0.0 to 172.31.255.255",
+      "192.168.0.0 to 192.168.255.255",
+      "127.0.0.0 to 127.255.255.255"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Class C private IP range is 192.168.0.0 to 192.168.255.255."
+  },
+  {
+    "id": "q18",
+    "text": "Are private IP addresses routable on the Internet?",
+    "options": [
+      "Yes, they are fully routable",
+      "No, they are considered non-routable",
+      "Only Class A private addresses are routable",
+      "They are routable only with special permission"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Private IP addresses are non-routable on the Internet as they are not unique globally and are only unique within a given private network."
+  },
+  {
+    "id": "q19",
+    "text": "How many addresses are lost for every network or subnet?",
+    "options": [
+      "One address",
+      "Two addresses", 
+      "Three addresses",
+      "Four addresses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Two addresses are lost for every network or subnet: one for the Network Address and one for the Broadcast Address."
+  },
+  {
+    "id": "q20",
+    "text": "Which address is reserved to represent the network itself?",
+    "options": [
+      "Broadcast Address",
+      "Network Address",
+      "Gateway Address",
+      "Subnet Address"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Network Address is reserved to represent the network itself."
+  },
+  {
+    "id": "q21",
+    "text": "Which address is reserved to address all hosts in a network or subnet?",
+    "options": [
+      "Network Address",
+      "Gateway Address", 
+      "Broadcast Address",
+      "Multicast Address"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Broadcast Address is reserved to address all hosts in that network or subnet."
+  },
+  {
+    "id": "q22",
+    "text": "In the example with network 172.19.0.0/16, what does /16 represent?",
+    "options": [
+      "16 subnets available",
+      "16 hosts per subnet",
+      "Network mask of 16 bits",
+      "16 different network classes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The /16 represents a network mask of 16 bits, equivalent to 255.255.0.0."
+  },
+  {
+    "id": "q23",
+    "text": "When subnetting 172.19.0.0/16 with a /24 subnet mask, what happens?",
+    "options": [
+      "The network is divided into subnets",
+      "More hosts are created",
+      "The network becomes faster",
+      "Security is automatically improved"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Applying a larger subnet mask (/24 vs /16) divides the network into subnets."
+  },
+  {
+    "id": "q24",
+    "text": "How many subnets can be created when subnetting 172.19.0.0/16 with /24?",
+    "options": [
+      "255 subnets",
+      "256 subnets",
+      "254 usable subnets",
+      "128 subnets"
+    ],
+    "correctAnswer": 0,
+    "explanation": "With 8 subnet bits (24-16=8), we get 2^8 = 256 possible subnets, but traditionally the last subnet containing the broadcast address cannot be used, leaving 255 subnets."
+  },
+  {
+    "id": "q25",
+    "text": "How many hosts are available per subnet when using /24 subnetting?",
+    "options": [
+      "256 hosts",
+      "255 hosts",
+      "254 hosts",
+      "253 hosts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "With 8 host bits, we get 2^8 = 256 addresses, minus 2 for network and broadcast addresses = 254 hosts per subnet."
+  },
+  {
+    "id": "q26",
+    "text": "Can you subnet the network portion of an IP address?",
+    "options": [
+      "Yes, you can subnet any portion",
+      "No, you can only subnet the host portion",
+      "Only with special permission",
+      "Only in private networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "You can only subnet the host portion; you do not have control of the network portion."
+  },
+  {
+    "id": "q27",
+    "text": "Does subnetting give you more hosts?",
+    "options": [
+      "Yes, subnetting increases the total number of hosts",
+      "No, it only divides your larger network into smaller networks",
+      "Sometimes, depending on the subnet mask",
+      "Only in Class A networks"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Subnetting does not give you more hosts; it only allows you to divide your larger network into smaller networks."
+  },
+  {
+    "id": "q28",
+    "text": "What addresses do you lose when subnetting?",
+    "options": [
+      "Only the network address",
+      "Only the broadcast address", 
+      "The subnet address and broadcast address for each subnet",
+      "Only the gateway address"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For each subnet, you lose the subnet address and the broadcast address of that subnet."
+  },
+  {
+    "id": "q29",
+    "text": "Why would you want to subnet a network?",
+    "options": [
+      "To increase the number of available hosts",
+      "To divide larger network into smaller networks and limit broadcasts",
+      "To make the network faster automatically",
+      "To reduce the cost of networking equipment"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Subnetting allows you to divide larger networks into smaller networks and limit layer 2 and layer 3 broadcasts to their subnet, enabling better traffic management."
+  },
+  {
+    "id": "q30",
+    "text": "In the detailed example, what is the host IP address given?",
+    "options": [
+      "138.101.114.192",
+      "138.101.114.250",
+      "138.101.114.255",
+      "138.101.114.1"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The host IP address given in the detailed example is 138.101.114.250."
+  },
+  {
+    "id": "q31",
+    "text": "What is the network mask in the detailed example?",
+    "options": [
+      "255.255.255.192 (/26)",
+      "255.255.0.0 (/16)",
+      "255.255.255.0 (/24)",
+      "255.255.255.255 (/32)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The network mask in the example is 255.255.0.0 or /16."
+  },
+  {
+    "id": "q32",
+    "text": "What is the subnet mask in the detailed example?",
+    "options": [
+      "255.255.0.0 (/16)",
+      "255.255.255.0 (/24)",
+      "255.255.255.192 (/26)",
+      "255.255.255.128 (/25)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The subnet mask in the example is 255.255.255.192 or /26."
+  },
+  {
+    "id": "q33",
+    "text": "What is the major network address for 138.101.114.250/16?",
+    "options": [
+      "138.101.0.0",
+      "138.101.114.0",
+      "138.0.0.0",
+      "138.101.255.255"
+    ],
+    "correctAnswer": 0,
+    "explanation": "With a /16 network mask, the major network address is 138.101.0.0."
+  },
+  {
+    "id": "q34",
+    "text": "What is the major network broadcast address for 138.101.114.250/16?",
+    "options": [
+      "138.101.114.255",
+      "138.101.255.255",
+      "138.255.255.255",
+      "138.101.0.0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With a /16 network mask, the major network broadcast address is 138.101.255.255."
+  },
+  {
+    "id": "q35",
+    "text": "What would be the range of hosts if 138.101.0.0/16 was not subnetted?",
+    "options": [
+      "138.101.0.0 to 138.101.255.255",
+      "138.101.0.1 to 138.101.255.254",
+      "138.101.1.1 to 138.101.254.254",
+      "138.101.114.1 to 138.101.114.254"
+    ],
+    "correctAnswer": 1,
+    "explanation": "If not subnetted, the host range would be 138.101.0.1 to 138.101.255.254 (excluding network and broadcast addresses)."
+  },
+  {
+    "id": "q36",
+    "text": "In binary conversion, what decimal values do the bit positions represent from right to left?",
+    "options": [
+      "1, 2, 4, 8, 16, 32, 64, 128",
+      "128, 64, 32, 16, 8, 4, 2, 1",
+      "1, 4, 16, 64, 128, 256, 512, 1024",
+      "8, 16, 32, 64, 128, 256, 512, 1024"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Binary positions from right to left represent: 1, 2, 4, 8, 16, 32, 64, 128."
+  },
+  {
+    "id": "q37",
+    "text": "How do you find the subnet address using the bit-wise AND operation?",
+    "options": [
+      "OR the IP address with the subnet mask",
+      "AND the IP address with the subnet mask",
+      "XOR the IP address with the subnet mask", 
+      "Add the IP address and subnet mask"
+    ],
+    "correctAnswer": 1,
+    "explanation": "To find the subnet address, perform a bit-wise AND operation between the IP address and subnet mask."
+  },
+  {
+    "id": "q38",
+    "text": "In the AND operation, what is the result of 1 AND 1?",
+    "options": [
+      "0",
+      "1",
+      "2",
+      "Undefined"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the AND operation, 1 AND 1 results in 1."
+  },
+  {
+    "id": "q39",
+    "text": "In the AND operation, what is the result of 0 AND anything?",
+    "options": [
+      "1",
+      "0",
+      "The other value",
+      "Depends on the other value"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the AND operation, 0 AND anything always results in 0."
+  },
+  {
+    "id": "q40",
+    "text": "What is the subnet address for 138.101.114.250/26?",
+    "options": [
+      "138.101.114.0",
+      "138.101.114.192",
+      "138.101.114.128",
+      "138.101.114.255"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Using the AND operation with 138.101.114.250 and 255.255.255.192, the subnet address is 138.101.114.192."
+  },
+  {
+    "id": "q41",
+    "text": "What is the quick method for finding the subnet address?",
+    "options": [
+      "Always use the AND operation",
+      "Find the last 1 bit in subnet mask, copy all bits to that point, add 0's for the rest",
+      "Convert everything to hexadecimal first",
+      "Use only the network portion"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The quick method is to find the last (right-most) 1 bit in the subnet mask, copy all bits in the IP address to that point, and add 0's for the rest."
+  },
+  {
+    "id": "q42",
+    "text": "How do you determine the subnet and host portions of an address?",
+    "options": [
+      "Use only the network mask to divide everything",
+      "Use the Great Divide (network mask) and Small Divide (subnet mask) to separate network, subnet, and host portions",
+      "Count the number of 1's in the address",
+      "Always use /24 as the dividing point"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Use the Great Divide (network mask) to separate network from the rest, and the Small Divide (subnet mask) to separate subnet from host portions."
+  },
+  {
+    "id": "q43",
+    "text": "For the host portion, how do you find the subnet address?",
+    "options": [
+      "Set all host bits to 1",
+      "Set all host bits to 0",
+      "Set the first host bit to 1, rest to 0",
+      "Set the last host bit to 1, rest to 0"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For the subnet address, set all host bits to 0."
+  },
+  {
+    "id": "q44",
+    "text": "For the host portion, how do you find the first host address?",
+    "options": [
+      "Set all host bits to 0",
+      "Set all host bits to 1", 
+      "Set all host bits to 0 except the rightmost bit to 1",
+      "Set only the leftmost host bit to 1"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For the first host address, set all host bits to 0 and the rightmost bit to 1."
+  },
+  {
+    "id": "q45",
+    "text": "For the host portion, how do you find the last host address?",
+    "options": [
+      "Set all host bits to 1",
+      "Set all host bits to 0",
+      "Set all host bits to 1 except the rightmost bit to 0",
+      "Set only the leftmost host bit to 1"
+    ],
+    "correctAnswer": 2,
+    "explanation": "For the last host address, set all host bits to 1 and the rightmost bit to 0."
+  },
+  {
+    "id": "q46",
+    "text": "For the host portion, how do you find the broadcast address?",
+    "options": [
+      "Set all host bits to 0",
+      "Set all host bits to 1",
+      "Set the first host bit to 1, rest to 0", 
+      "Set the last host bit to 0, rest to 1"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For the broadcast address, set all host bits to 1."
+  },
+  {
+    "id": "q47",
+    "text": "In the example, what is the first host address in subnet 138.101.114.192/26?",
+    "options": [
+      "138.101.114.192",
+      "138.101.114.193",
+      "138.101.114.194",
+      "138.101.114.255"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The first host address is 138.101.114.193 (subnet address + 1)."
+  },
+  {
+    "id": "q48",
+    "text": "In the example, what is the last host address in subnet 138.101.114.192/26?",
+    "options": [
+      "138.101.114.253",
+      "138.101.114.254",
+      "138.101.114.255",
+      "138.101.114.192"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The last host address is 138.101.114.254 (broadcast address - 1)."
+  },
+  {
+    "id": "q49",
+    "text": "In the example, what is the broadcast address for subnet 138.101.114.192/26?",
+    "options": [
+      "138.101.114.254",
+      "138.101.114.255",
+      "138.101.255.255",
+      "138.101.114.192"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The broadcast address for this subnet is 138.101.114.255."
+  },
+  {
+    "id": "q50",
+    "text": "How many subnet bits are there in the example with /26 subnetting of a /16 network?",
+    "options": [
+      "8 bits",
+      "10 bits",
+      "16 bits",
+      "6 bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With a /16 network extended to /26, there are 26-16 = 10 subnet bits."
+  },
+  {
+    "id": "q51",
+    "text": "How many total subnets are possible with 10 subnet bits?",
+    "options": [
+      "512 subnets",
+      "1024 subnets",
+      "2048 subnets", 
+      "256 subnets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With 10 subnet bits, 2^10 = 1,024 total subnets are possible."
+  },
+  {
+    "id": "q52",
+    "text": "When might you subtract subnets from the total count?",
+    "options": [
+      "Always subtract two subnets",
+      "If all-zeros subnet cannot be used and/or if all-ones subnet cannot be used",
+      "Only in private networks",
+      "Never subtract any subnets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "You may subtract one if the all-zeros subnet cannot be used and/or subtract one if the all-ones subnet cannot be used."
+  },
+  {
+    "id": "q53",
+    "text": "How many host bits are there in the /26 example?",
+    "options": [
+      "4 bits",
+      "6 bits", 
+      "8 bits",
+      "10 bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In a /26 subnet, there are 32-26 = 6 host bits."
+  },
+  {
+    "id": "q54",
+    "text": "How many total addresses are available with 6 host bits?",
+    "options": [
+      "32 addresses",
+      "64 addresses",
+      "128 addresses",
+      "256 addresses"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With 6 host bits, 2^6 = 64 total addresses are available."
+  },
+  {
+    "id": "q55",
+    "text": "How many usable host addresses are there per subnet with 6 host bits?",
+    "options": [
+      "64 hosts",
+      "63 hosts",
+      "62 hosts",
+      "60 hosts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "With 64 total addresses, subtract 1 for subnet address and 1 for broadcast address = 62 usable host addresses per subnet."
+  },
+  {
+    "id": "q56",
+    "text": "What addresses are subtracted from the total to get usable host addresses?",
+    "options": [
+      "First and last addresses only",
+      "Subnet address and broadcast address",
+      "Network address and gateway address",
+      "Router address and switch address"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The subnet address and broadcast address are subtracted from the total to get usable host addresses."
+  },
+  {
+    "id": "q57",
+    "text": "In CIDR notation, what does 200.23.16.0/23 mean?",
+    "options": [
+      "23 subnets are available",
+      "23 hosts per subnet",
+      "The first 23 bits represent the subnet portion",
+      "The address belongs to Class 23"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In 200.23.16.0/23, the /23 means the first 23 bits represent the subnet portion of the address."
+  },
+  {
+    "id": "q58",
+    "text": "Which of the following is true about subnetting?",
+    "options": [
+      "It increases the total number of available host addresses",
+      "It allows better traffic management and broadcast control",
+      "It automatically improves network security",
+      "It reduces the need for routers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Subnetting allows better traffic management by limiting layer 2 and layer 3 broadcasts to their respective subnets."
+  },
+  {
+    "id": "q59",
+    "text": "What is the main disadvantage of subnetting?",
+    "options": [
+      "It makes the network slower",
+      "It requires more expensive equipment",
+      "You lose host addresses for subnet and broadcast addresses",
+      "It only works with private IP addresses"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The main disadvantage of subnetting is that you lose host addresses - specifically the subnet address and broadcast address for each subnet."
+  },
+  {
+    "id": "q60",
+    "text": "Which of the following statements about IP addressing is correct?",
+    "options": [
+      "All IP addresses are globally unique",
+      "Private IP addresses are unique within a given private network but not globally",
+      "Public IP addresses can be used in private networks",
+      "IP addresses are assigned randomly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Private IP addresses are only unique within a given private network, while public IP addresses are globally unique."
+  }
+]
