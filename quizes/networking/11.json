@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "Which layer is responsible for path selection and routing protocols like RIP, OSPF, and BGP?",
+    "options": [
+      "Transport Layer",
+      "Network Layer",
+      "Application Layer",
+      "Data Link Layer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Network Layer handles routing protocols for path selection including RIP, OSPF, and BGP, as well as IP protocol and ICMP protocol."
+  },
+  {
+    "id": "q2",
+    "text": "What is the size of an IP address?",
+    "options": [
+      "16-bit identifier",
+      "24-bit identifier",
+      "32-bit identifier",
+      "64-bit identifier"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IP address is a 32-bit identifier for host and router interfaces, generally written as four decimal numbers in dotted quad notation."
+  },
+  {
+    "id": "q3",
+    "text": "In dotted decimal notation, what does the IP address 223.1.7.4 represent in binary?",
+    "options": [
+      "11011111 00000001 00000111 00000100",
+      "11011111 00000001 00000111 00000010",
+      "10011111 00000001 00000111 00000100",
+      "11011111 00000010 00000111 00000100"
+    ],
+    "correctAnswer": 0,
+    "explanation": "Each decimal number in dotted quad notation corresponds to eight bits (one byte). 223.1.7.4 converts to 11011111 00000001 00000111 00000100 in binary."
+  },
+  {
+    "id": "q4",
+    "text": "What is an interface in the context of IP addressing?",
+    "options": [
+      "A software program that manages network connections",
+      "The connection between host/router and physical link",
+      "A protocol for data transmission",
+      "A type of network cable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An interface is the connection between host/router and physical link. Routers typically have multiple interfaces while hosts usually have one interface."
+  },
+  {
+    "id": "q5",
+    "text": "In IP addressing, hosts with the same network part of IP address are considered to be:",
+    "options": [
+      "On different networks requiring a router",
+      "On the same network and can reach each other without going through a router",
+      "Using different protocols",
+      "Having connection problems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hosts (interfaces) with the same network part of IP address are on the 'same network' and can reach each other without going through a router."
+  },
+  {
+    "id": "q6",
+    "text": "In IP addressing structure, what are the two main parts of an IP address?",
+    "options": [
+      "Source part and destination part",
+      "Network part (high order bits) and host part (low order bits)",
+      "Protocol part and data part",
+      "Header part and payload part"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An IP address consists of a network part (high order bits) and host part (low order bits), with n bits for network and 32-n bits for host."
+  },
+  {
+    "id": "q7",
+    "text": "For a network with 10 network bits, how many host bits are available?",
+    "options": [
+      "20 bits",
+      "22 bits",
+      "24 bits",
+      "26 bits"
+    ],
+    "correctAnswer": 1,
+    "explanation": "With 32 total bits in an IP address, if 10 bits are used for network part, then 32-10 = 22 bits are available for the host part."
+  },
+  {
+    "id": "q8",
+    "text": "What relationship exists between network size and bit allocation?",
+    "options": [
+      "Small networks have more bits for host part",
+      "Large networks have more bits for network part",
+      "Small networks have less bits for host part and more bits for network part",
+      "Network size doesn't affect bit allocation"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Small networks have less bits for host part and more bits for network part, while large networks have more bits for host part and less bits for network part."
+  },
+  {
+    "id": "q9",
+    "text": "In the network example showing three networks (223.1.1.xx, 223.1.2.xx, 223.1.3.xx), how many bits are used for the network part?",
+    "options": [
+      "16 bits",
+      "20 bits",
+      "24 bits",
+      "28 bits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "All hosts on each network have the same network part of 24 bits in their IP address, as shown in the three network example."
+  },
+  {
+    "id": "q10",
+    "text": "In routing algorithms, what do graph nodes represent?",
+    "options": [
+      "Physical links",
+      "Routers",
+      "Data packets",
+      "Network protocols"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the graph abstraction for routing algorithms, graph nodes represent routers and graph edges represent physical links."
+  },
+  {
+    "id": "q11",
+    "text": "What can link cost represent in routing algorithms?",
+    "options": [
+      "Only financial cost",
+      "Only physical distance",
+      "Delay, financial cost, or congestion level",
+      "Only bandwidth"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Link cost in routing can represent delay, financial cost, or congestion level, and is used to determine the 'good' path through the network."
+  },
+  {
+    "id": "q12",
+    "text": "What is the primary goal of routing protocols?",
+    "options": [
+      "To encrypt data packets",
+      "To determine good path (sequence of routers) through network from source to destination",
+      "To compress network traffic",
+      "To manage network security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The goal of routing is to determine a 'good' path (sequence of routers) through the network from source to destination, typically meaning minimum cost path."
+  },
+  {
+    "id": "q13",
+    "text": "In Global routing, what information does a router have?",
+    "options": [
+      "Only information about directly connected neighbors",
+      "Complete topology and link cost information",
+      "Only source and destination addresses",
+      "Only protocol information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In Global routing, the router has complete topology and link cost information, similar to how airlines have complete route information."
+  },
+  {
+    "id": "q14",
+    "text": "What characterizes Local routing?",
+    "options": [
+      "Router has complete network topology",
+      "Router knows physically-connected neighbors and link costs to neighbors",
+      "Router stores all possible paths",
+      "Router only handles local traffic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In Local routing, the router knows physically-connected neighbors and link costs to neighbors, using an iterative process of computation and information exchange."
+  },
+  {
+    "id": "q15",
+    "text": "What is the difference between Static and Dynamic routing?",
+    "options": [
+      "Static uses more memory than Dynamic",
+      "Static routes change slowly over time, Dynamic routes change more quickly",
+      "Static is faster than Dynamic",
+      "Static is more secure than Dynamic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Static routing has routes that change slowly over time, while Dynamic routing has routes that change more quickly with periodic updates or in response to link cost changes."
+  },
+  {
+    "id": "q16",
+    "text": "In static routing, what does 'Direct' mean in the Next Hop column?",
+    "options": [
+      "The network requires multiple hops",
+      "The network is directly connected to the router",
+      "The route is fastest",
+      "The route is most secure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In static routing tables, 'Direct' in the Next Hop column indicates that the network is directly connected to the router interface."
+  },
+  {
+    "id": "q17",
+    "text": "What is the main characteristic of Dynamic (adaptive) Routing?",
+    "options": [
+      "Routes never change",
+      "Intermediate stations exchange routing information periodically",
+      "Only works with static networks",
+      "Requires manual configuration"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In Dynamic routing, intermediate stations exchange routing information periodically, and each station computes the best path to each destination."
+  },
+  {
+    "id": "q18",
+    "text": "Dynamic routing decisions can be based on which factors?",
+    "options": [
+      "Only link speed",
+      "Only cost",
+      "Link speed-delay, congestion-error rate, cost-policy",
+      "Only physical distance"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Dynamic routing bases decisions on multiple factors including link speed (delay), congestion (error rate), and cost (policy)."
+  },
+  {
+    "id": "q19",
+    "text": "In routing, distance can be defined by which of the following?",
+    "options": [
+      "Only number of hops",
+      "Number of hops, physical distance, delay, bandwidth (inverse), communication cost",
+      "Only physical distance",
+      "Only delay"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distance in routing may be defined by various metrics: number of hops, physical distance, delay, bandwidth (inverse), communication cost, etc."
+  },
+  {
+    "id": "q20",
+    "text": "Which routing mechanism calculates the shortest path between pairs of nodes?",
+    "options": [
+      "Flooding",
+      "Distance Vector Routing",
+      "Shortest Path Routing",
+      "Broadcast Routing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Shortest Path Routing specifically calculates the shortest path between pairs of nodes in the network."
+  },
+  {
+    "id": "q21",
+    "text": "What does Flooding routing mechanism do?",
+    "options": [
+      "Calculates shortest paths",
+      "Sends packets on all unused links",
+      "Keeps track of link states",
+      "Maintains distance tables"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Flooding sends packets on all unused links as its routing strategy."
+  },
+  {
+    "id": "q22",
+    "text": "What does Distance Vector Routing maintain?",
+    "options": [
+      "Complete network topology",
+      "Table of distances to each destination",
+      "All possible paths",
+      "Link state information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distance Vector Routing maintains a table where each router has distances to each destination."
+  },
+  {
+    "id": "q23",
+    "text": "What does Link State Routing keep track of?",
+    "options": [
+      "Distance vectors",
+      "The state of each link",
+      "All broadcast messages",
+      "Only shortest paths"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Link State Routing keeps track of the state of each link in the network."
+  },
+  {
+    "id": "q24",
+    "text": "How can a router find paths to all other routers when directly connected to only a few?",
+    "options": [
+      "By storing all possible paths locally",
+      "By exchanging information with neighbors, who exchange info with their neighbors",
+      "By broadcasting to all networks",
+      "By using only static routes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A router can find paths to all other routers by exchanging information with its neighbors, who exchange info with their neighbors, etc."
+  },
+  {
+    "id": "q25",
+    "text": "In Distance Vector Routing, what does each node keep?",
+    "options": [
+      "Complete network map",
+      "List of the 'shortest distance' to every other node and the best way to reach it",
+      "Only direct connections",
+      "All possible routes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each node in Distance Vector Routing keeps a list of the 'shortest distance' to every other node and the best way to reach it."
+  },
+  {
+    "id": "q26",
+    "text": "What information does a distance table provide?",
+    "options": [
+      "Only direct costs",
+      "Cost to destination via different intermediate nodes",
+      "Physical distances only",
+      "Security information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A distance table shows the cost to reach each destination via different intermediate nodes, helping determine the best route."
+  },
+  {
+    "id": "q27",
+    "text": "How is a routing table derived from a distance table?",
+    "options": [
+      "By copying all entries",
+      "By selecting the minimum cost path to each destination and the corresponding outgoing link",
+      "By averaging all costs",
+      "By selecting random paths"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The routing table is derived by selecting the minimum cost path to each destination and identifying the corresponding outgoing link to use."
+  },
+  {
+    "id": "q28",
+    "text": "In Link-State Routing, what does each router initially do?",
+    "options": [
+      "Broadcasts to all networks",
+      "Finds out information about directly connected links",
+      "Copies neighbor's routing table",
+      "Selects random paths"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In Link-State Routing, each router first finds out information about its directly connected links."
+  },
+  {
+    "id": "q29",
+    "text": "After gathering link information, what does a router do in Link-State Routing?",
+    "options": [
+      "Keeps the information secret",
+      "Sends this information to neighbors",
+      "Only stores it locally",
+      "Discards the information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "After finding information about directly connected links, the router sends this information to its neighbors so eventually each node knows about all links."
+  },
+  {
+    "id": "q30",
+    "text": "What happens when each node has complete link information in Link-State Routing?",
+    "options": [
+      "The algorithm stops",
+      "Each node computes best path to every other node",
+      "Nodes start over",
+      "Information is deleted"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When each node knows about all the links, each node computes the best path to get to each other node based on its knowledge about links."
+  },
+  {
+    "id": "q31",
+    "text": "Where does the Transport Layer primarily operate?",
+    "options": [
+      "In routers throughout the network",
+      "In the end stations",
+      "In network cables",
+      "In switches only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Transport layer operates in the end stations, while the Network layer operates mostly inside the network (in routers)."
+  },
+  {
+    "id": "q32",
+    "text": "What is a primary objective of the transport layer?",
+    "options": [
+      "To provide physical connectivity",
+      "To provide end-to-end delivery of data",
+      "To manage network hardware",
+      "To encrypt all communications"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The primary objective of the transport layer is to provide end-to-end delivery of data with efficient, reliable and cost-effective service."
+  },
+  {
+    "id": "q33",
+    "text": "How does the Transport Layer help upper layers?",
+    "options": [
+      "By providing faster connections",
+      "By shielding upper layers from the peculiarities of the network",
+      "By encrypting data",
+      "By providing more bandwidth"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The transport layer shields upper layers from the peculiarities of the network, providing a more reliable service than the network layer."
+  },
+  {
+    "id": "q34",
+    "text": "Which functions does the Transport Layer handle?",
+    "options": [
+      "Only data encryption",
+      "Fragmentation, multiplexing, inverse multiplexing, type of service",
+      "Only routing",
+      "Only physical connections"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Transport Layer functions include ensuring data delivery, handling network layer peculiarities like fragmentation, multiplexing, inverse multiplexing, and type of service."
+  },
+  {
+    "id": "q35",
+    "text": "What connection management functions does the Transport Layer provide?",
+    "options": [
+      "Only establishing connections",
+      "Managing multiple connections, establishing and deleting connections, naming, flow control",
+      "Only physical connections",
+      "Only wireless connections"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Transport Layer manages multiple connections on the same hosts, handles establishing and deleting connections, naming, and flow control."
+  },
+  {
+    "id": "q36",
+    "text": "What are the main types of Transport service?",
+    "options": [
+      "Only reliable services",
+      "Connection-oriented, Connectionless, Reliable, Not reliable, Multicast",
+      "Only connection-oriented services",
+      "Only unicast services"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Types of Transport service include Connection-oriented, Connectionless, Reliable, Not reliable, and Multicast services."
+  },
+  {
+    "id": "q37",
+    "text": "What are the characteristics of TCP (Transmission Control Protocol)?",
+    "options": [
+      "Connectionless and unreliable",
+      "Connection-oriented, reliable, unicast",
+      "Only multicast",
+      "Connectionless but reliable"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TCP is connection-oriented, reliable, and provides unicast communication in Internet Transport Protocols."
+  },
+  {
+    "id": "q38",
+    "text": "What are the characteristics of UDP (Unreliable Datagram Protocol)?",
+    "options": [
+      "Connection-oriented and reliable",
+      "Connectionless, unacknowledged (at TP layer), Unicast/Multicast",
+      "Only reliable unicast",
+      "Connection-oriented multicast"
+    ],
+    "correctAnswer": 1,
+    "explanation": "UDP is connectionless, unacknowledged (at the Transport layer), and supports both Unicast and Multicast communication."
+  },
+  {
+    "id": "q39",
+    "text": "Why does UDP exist alongside TCP?",
+    "options": [
+      "UDP is more reliable",
+      "No connection establishment, simple with no connection state, small segment header, no congestion control",
+      "UDP is more secure",
+      "UDP is faster for all applications"
+    ],
+    "correctAnswer": 1,
+    "explanation": "UDP exists because it has no connection establishment (avoiding delay), is simple with no connection state, has small segment header, and no congestion control allowing fast transmission."
+  },
+  {
+    "id": "q40",
+    "text": "Why are Internet applications important?",
+    "options": [
+      "They make networks faster",
+      "Without applications, Internet (or any other network) would be useless",
+      "They provide security",
+      "They reduce costs"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Without applications, the Internet (or any other network) would be useless - applications give purpose to the network infrastructure."
+  },
+  {
+    "id": "q41",
+    "text": "Which layer do Internet applications communicate with directly?",
+    "options": [
+      "Physical Layer",
+      "Transport layer (TCP or UDP)",
+      "Network Layer",
+      "Data Link Layer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Internet applications talk directly to the transport layer (TCP or UDP) in the Internet application layer model."
+  },
+  {
+    "id": "q42",
+    "text": "How is the Application Layer defined in Internet architecture?",
+    "options": [
+      "As hardware specifications",
+      "As a protocol where both sides must implement the protocol",
+      "As physical connections",
+      "As security measures"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Application Layer is defined as a protocol where both sides must implement the protocol, though APIs are usually not defined by IETF."
+  },
+  {
+    "id": "q43",
+    "text": "What is the general operational model for Internet applications?",
+    "options": [
+      "Peer-to-peer only",
+      "Client-server model",
+      "Broadcast model",
+      "Ring topology model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Internet applications generally use the client-server model for their operation."
+  },
+  {
+    "id": "q44",
+    "text": "What is expected of servers in client-server operation?",
+    "options": [
+      "Servers can be turned off anytime",
+      "Servers should be always on, generally sit in a data centre or on the cloud",
+      "Servers only work during business hours",
+      "Servers are temporary"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Servers should be always on and generally sit in a data centre or on the 'cloud' to provide continuous service."
+  },
+  {
+    "id": "q45",
+    "text": "What typically represents clients in client-server operation?",
+    "options": [
+      "Only servers",
+      "PCs, phones, mobile devices, sometimes other servers",
+      "Only desktop computers",
+      "Only mobile devices"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Clients are often user machines like PCs, phones, mobile devices, and sometimes other servers acting as clients."
+  },
+  {
+    "id": "q46",
+    "text": "Which protocols are used for E-mail?",
+    "options": [
+      "Only HTTP",
+      "Simple Mail Transfer Protocol (SMTP), Post Office Protocol (POP), Interactive Mail Access Protocol (IMAP)",
+      "Only FTP",
+      "Only DNS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "E-mail uses SMTP (Simple Mail Transfer Protocol), POP (Post Office Protocol V3), and IMAP (Interactive Mail Access Protocol)."
+  },
+  {
+    "id": "q47",
+    "text": "What are the main file transfer protocols mentioned?",
+    "options": [
+      "Only HTTP",
+      "File Transfer Protocol (FTP) and BitTorrent",
+      "Only SMTP",
+      "Only DNS"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The main file transfer protocols mentioned are FTP (File Transfer Protocol) and BitTorrent."
+  },
+  {
+    "id": "q48",
+    "text": "What protocol is used for web communication?",
+    "options": [
+      "File Transfer Protocol (FTP)",
+      "HyperText Transfer Protocol (HTTP)",
+      "Simple Mail Transfer Protocol (SMTP)",
+      "Domain Name Service (DNS)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Web communication uses HTTP (HyperText Transfer Protocol)."
+  },
+  {
+    "id": "q49",
+    "text": "Which protocols are mentioned for remote login?",
+    "options": [
+      "Only HTTP",
+      "Telnet, rlogin, Secure Shell (SSH)",
+      "Only FTP",
+      "Only SMTP"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Remote login protocols include Telnet, rlogin, and SSH (Secure Shell)."
+  },
+  {
+    "id": "q50",
+    "text": "What are some remote graphics protocols mentioned?",
+    "options": [
+      "Only HTTP",
+      "X Window System, Microsoft Remote Desktop, VNC",
+      "Only FTP",
+      "Only Telnet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Remote graphics protocols include X Window System, Microsoft Remote Desktop, and VNC."
+  },
+  {
+    "id": "q51",
+    "text": "Which protocols are used for remote file systems?",
+    "options": [
+      "HTTP and FTP",
+      "Sun Network File System (NFS) and SMB/CIFS",
+      "SMTP and POP",
+      "DNS and HTTP"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Remote file systems use NFS (Sun Network File System) and SMB/CIFS protocols."
+  },
+  {
+    "id": "q52",
+    "text": "What protocol is used for network management?",
+    "options": [
+      "HTTP",
+      "Simple Network Management Protocol (SNMP)",
+      "FTP",
+      "SMTP"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Network management uses SNMP (Simple Network Management Protocol)."
+  },
+  {
+    "id": "q53",
+    "text": "Which protocols are mentioned for voice and teleconferencing?",
+    "options": [
+      "HTTP and FTP",
+      "Session Initiation Protocol (SIP) and H.323",
+      "SMTP and DNS",
+      "TCP and UDP"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Voice and teleconferencing use SIP (Session Initiation Protocol) and H.323 protocols."
+  },
+  {
+    "id": "q54",
+    "text": "What is the general format of many Internet protocols?",
+    "options": [
+      "Binary commands only",
+      "Client-Server with Command/Response, text commands, numeric responses",
+      "Encrypted messages only",
+      "Graphics-based interfaces"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Many protocols follow a Client-Server format with Command/Response pattern using text commands and numeric responses."
+  },
+  {
+    "id": "q55",
+    "text": "What type of data exchange do many protocols use and why?",
+    "options": [
+      "Full duplex for speed",
+      "Half duplex data exchange",
+      "Simplex for security",
+      "Multiplex for efficiency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Many protocols use half duplex data exchange, though the specific reason why is left as a consideration point in the lecture."
+  },
+  {
+    "id": "q56",
+    "text": "What format do protocol commands and responses typically use?",
+    "options": [
+      "Binary encoded messages",
+      "ASCII text commands and responses",
+      "Hexadecimal codes",
+      "Compressed formats"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Protocol commands and responses typically use ASCII text format, as shown in the SMTP example with readable text commands and numeric responses."
+  },
+  {
+    "id": "q57",
+    "text": "In the SMTP protocol example, what does the server response '250 2.1.0' indicate?",
+    "options": [
+      "Error in transmission",
+      "Successful acknowledgment (Sender ok, Recipient ok)",
+      "Connection terminated",
+      "Authentication required"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The '250 2.1.0' and '250 2.1.5' responses in SMTP indicate successful acknowledgment for 'Sender ok' and 'Recipient ok' respectively."
+  },
+  {
+    "id": "q58",
+    "text": "What are the main topics covered in this lecture on networking?",
+    "options": [
+      "Only physical layer protocols",
+      "Internet working, IP addressing, Routing principles, Transport Layer, Applications Layer",
+      "Only wireless communications",
+      "Only network security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The lecture covers Internet working, IP addressing, Routing principles, Transport Layer, and Applications Layer as the main networking topics."
+  },
+  {
+    "id": "q59",
+    "text": "What is the relationship between network layer operation and transport layer operation?",
+    "options": [
+      "They operate in the same locations",
+      "Network layer operates mostly inside the network (routers), Transport layer operates in end stations",
+      "They are identical in function",
+      "They cannot work together"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Network layer operates mostly inside the network (in routers) while the Transport layer operates in the end stations, showing their complementary but distinct roles."
+  },
+  {
+    "id": "q60",
+    "text": "What can the transport layer provide that improves upon the network layer service?",
+    "options": [
+      "Faster routing",
+      "More reliable service than the network service",
+      "Better physical connections",
+      "Lower costs only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The transport layer can improve the service provided by the network layer, with transport service being more reliable than the network service."
+  }
+]
