@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "Which of the following is NOT a type of unswitched network?",
+    "options": [
+      "Point-to-point",
+      "Multi-point",
+      "Broadcast",
+      "Virtual circuit"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Virtual circuit is a type of packet switching used in switched networks, not unswitched networks. Unswitched networks include point-to-point, multi-point, and broadcast configurations."
+  },
+  {
+    "id": "q2",
+    "text": "How many links are required to directly connect 10 nodes in an unswitched network?",
+    "options": [
+      "10 links",
+      "20 links",
+      "45 links",
+      "100 links"
+    ],
+    "correctAnswer": 2,
+    "explanation": "To directly connect n nodes, you need n(n-1)/2 links. For 10 nodes: 10×9/2 = 45 links, which demonstrates why unswitched networks with many nodes are unfeasible."
+  },
+  {
+    "id": "q3",
+    "text": "What is the main difference between switched and unswitched networks?",
+    "options": [
+      "Switched networks are faster",
+      "In switched networks, data passes through intermediate nodes",
+      "Switched networks use wireless connections",
+      "Unswitched networks are more secure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In switched networks, data passes through one or more intermediate nodes between the sender and receiver, unlike unswitched networks where nodes are directly connected."
+  },
+  {
+    "id": "q4",
+    "text": "Why are switched networks preferred over unswitched networks for large-scale deployments?",
+    "options": [
+      "They provide better security",
+      "They are not cost effective to have all nodes directly connected",
+      "They use less bandwidth",
+      "They have lower latency"
+    ],
+    "correctAnswer": 1,
+    "explanation": "It is not cost effective to have all nodes directly connected to all other nodes, especially when nodes are spread out and vast in number, making switching necessary."
+  },
+  {
+    "id": "q5",
+    "text": "What is the primary purpose of switching in networks?",
+    "options": [
+      "To increase network speed",
+      "To get signals to the correct destination",
+      "To reduce network costs",
+      "To improve security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The primary purpose of switching is to get signals to the correct destination when source and destination are not directly connected."
+  },
+  {
+    "id": "q6",
+    "text": "What is the difference between routing and switching?",
+    "options": [
+      "Routing is faster than switching",
+      "Routing identifies the route, switching transfers data between networks/links",
+      "Switching is more secure than routing",
+      "There is no difference"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Routing identifies the route traversed by data to get from source to destination, while switching transfers data from one network/link to another."
+  },
+  {
+    "id": "q7",
+    "text": "Which of the following is NOT a type of switching mentioned in the lecture?",
+    "options": [
+      "Circuit switching",
+      "Message switching",
+      "Packet switching",
+      "Frequency switching"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Frequency switching is not mentioned as a type of switching. The main types covered are circuit switching, message switching, and packet switching (with its variants)."
+  },
+  {
+    "id": "q8",
+    "text": "In circuit switching, what happens once a dedicated communications path is established?",
+    "options": [
+      "The path can be optimized during transmission",
+      "Circuit capacity must be paid for whether used or not",
+      "The path automatically terminates after 5 minutes",
+      "Multiple users can share the same path"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Once a circuit is established, circuit capacity must be paid for whether or not it is used, which is one of the characteristics of circuit switching."
+  },
+  {
+    "id": "q9",
+    "text": "What is a disadvantage of circuit switching once the route is set up?",
+    "options": [
+      "High transmission delays",
+      "Cannot be optimized",
+      "Requires constant monitoring",
+      "Uses too much bandwidth"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Once the route is set up in circuit switching, it cannot be optimized, which is considered a disadvantage, although it does provide low transmission delays."
+  },
+  {
+    "id": "q10",
+    "text": "Circuit switching is most suitable for which type of communication?",
+    "options": [
+      "Computer-to-computer data transfer",
+      "Human-to-human telephone communications",
+      "File transfers",
+      "Email transmission"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit switching suits human-to-human telephone communications but is less suitable for computer communications due to setup time and inability to handle data bursts."
+  },
+  {
+    "id": "q11",
+    "text": "Why is circuit switching less suitable for computer communications?",
+    "options": [
+      "It's too expensive",
+      "Setup time and cannot handle data bursts",
+      "It's not secure enough",
+      "It uses too much power"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit switching is less suitable for computer communications because of setup time and its inability to handle data bursts effectively."
+  },
+  {
+    "id": "q12",
+    "text": "In space-division switching, what happens to each call?",
+    "options": [
+      "Each call shares the same path",
+      "Each call takes a different path through the switch",
+      "Each call is divided into time slots",
+      "Each call is compressed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In space-division switching, each call takes a different path through the switch, with crosspoints that can be turned on or off to establish these different paths."
+  },
+  {
+    "id": "q13",
+    "text": "What is a crossbar in the context of space-division switching?",
+    "options": [
+      "A type of cable connector",
+      "A simple space-division switch with crosspoints that can be turned on or off",
+      "A routing algorithm",
+      "A type of multiplexer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A crossbar is a simple space-division switch where crosspoints can be turned on or off to establish different paths for different calls."
+  },
+  {
+    "id": "q14",
+    "text": "In time-division switching, how is each call handled?",
+    "options": [
+      "Each call takes a different physical path",
+      "Each call is divided into small pieces assigned time-slots",
+      "Each call waits in a queue",
+      "Each call is broadcast to all destinations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In time-division switching, each call is divided into small pieces and each piece is assigned a time-slot, with the contents of each time-slot switched independently."
+  },
+  {
+    "id": "q15",
+    "text": "What is the function of a multiplexer in time-division switching?",
+    "options": [
+      "To separate different calls",
+      "To aggregate sessions from N input lines to output running N times faster",
+      "To store data temporarily",
+      "To encrypt data"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A multiplexer aggregates sessions from N input lines, with the output running N times as fast as the input lines."
+  },
+  {
+    "id": "q16",
+    "text": "What does a demultiplexer do in time-division switching?",
+    "options": [
+      "Combines multiple signals",
+      "Distributes sessions from one input to N outputs running N times slower",
+      "Amplifies signals",
+      "Filters noise"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A demultiplexer distributes sessions from one input line to N outputs that run N times slower than the input."
+  },
+  {
+    "id": "q17",
+    "text": "What is Time Slot Interchange (TSI)?",
+    "options": [
+      "A method to encrypt time slots",
+      "Writing to shared memory and reading in different order",
+      "A way to compress data",
+      "A routing protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Time Slot Interchange (TSI) involves writing data to shared memory and reading it in a different order to achieve the switching function."
+  },
+  {
+    "id": "q18",
+    "text": "What is a major efficiency problem with circuit switching?",
+    "options": [
+      "Too much processing power required",
+      "The circuit may be idle much of the time",
+      "It requires too many cables",
+      "It's too slow"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A major efficiency problem with circuit switching is that the circuit may be idle much of the time, especially in computer communications, yet resources are still reserved."
+  },
+  {
+    "id": "q19",
+    "text": "What type of delay is associated with circuit switching?",
+    "options": [
+      "Processing delay",
+      "Time needed to set up the circuit",
+      "Transmission delay",
+      "Queuing delay"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit switching has a delay due to the time needed to set up the circuit initially, though it has low delay once the circuit is established."
+  },
+  {
+    "id": "q20",
+    "text": "How are messages transmitted in message switching?",
+    "options": [
+      "All at once through a dedicated circuit",
+      "Entire messages sent store-and-forward, hop-by-hop",
+      "Broken into packets and reassembled",
+      "Through broadcast to all nodes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In message switching, entire messages are sent using store-and-forward technique, hop-by-hop through the network."
+  },
+  {
+    "id": "q21",
+    "text": "What is a characteristic of message progress in message switching?",
+    "options": [
+      "Messages travel at constant speed",
+      "Messages make intermittent progress as each hop becomes available",
+      "Messages are duplicated at each hop",
+      "Messages are compressed during transmission"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In message switching, messages make intermittent progress as each hop becomes available, and end-to-end delivery time cannot be guaranteed."
+  },
+  {
+    "id": "q22",
+    "text": "What problem can very long messages cause in message switching?",
+    "options": [
+      "They get corrupted",
+      "They hog buffer space at intermediate nodes and links",
+      "They cannot be transmitted",
+      "They require special hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Very long messages can hog buffer space at intermediate nodes and hog the links between them, causing resource utilization issues."
+  },
+  {
+    "id": "q23",
+    "text": "What does a packet switching network comprise?",
+    "options": [
+      "Only end hosts",
+      "A set of nodes (switches/routers) connected by links",
+      "A single central switch",
+      "Wireless access points only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A packet switching network comprises a set of nodes (switches or routers) that serve as intermediate stations, connected by point-to-point or broadcast links."
+  },
+  {
+    "id": "q24",
+    "text": "How is the data stream handled in packet switching?",
+    "options": [
+      "Sent as one large message",
+      "Divided into packets, each with data and header",
+      "Compressed and encrypted",
+      "Stored permanently at each node"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In packet switching, the data stream is divided into packets, with each packet comprising data and a header containing control information."
+  },
+  {
+    "id": "q25",
+    "text": "What does each packet contain in packet switching?",
+    "options": [
+      "Only user data",
+      "Data and a header",
+      "Only routing information",
+      "Compressed data only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each packet in packet switching contains both data (the actual information being transmitted) and a header (control information for routing and handling)."
+  },
+  {
+    "id": "q26",
+    "text": "How do packets reach their destination in packet switching?",
+    "options": [
+      "Through a pre-established circuit",
+      "By making their way through the network from node to node",
+      "Through direct point-to-point connections only",
+      "By broadcasting to all nodes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Packets make their way through the network from node to node, with each intermediate station switching incoming packets through links to other nodes until reaching the destination."
+  },
+  {
+    "id": "q27",
+    "text": "Which of the following is NOT a type of packet switching mentioned?",
+    "options": [
+      "Virtual Circuit Switching",
+      "Datagram Switching",
+      "Label Switching",
+      "Circuit Switching"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Circuit switching is a different switching method altogether, not a type of packet switching. The types of packet switching are virtual circuit, datagram, and label switching."
+  },
+  {
+    "id": "q28",
+    "text": "What happens before data transfer in virtual circuit packet switching?",
+    "options": [
+      "Data is compressed",
+      "Connection setup between end stations",
+      "All routes are tested",
+      "Packets are numbered"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In virtual circuit packet switching, a connection is set up between end stations before data is transferred, similar to circuit switching but at the packet level."
+  },
+  {
+    "id": "q29",
+    "text": "How are packets sent in virtual circuit switching?",
+    "options": [
+      "Each packet finds its own route",
+      "Packets are sent along a pre-chosen route",
+      "Packets are broadcast to all nodes",
+      "Packets are stored at the source"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In virtual circuit switching, packets are sent along a pre-chosen route that was established during the connection setup phase."
+  },
+  {
+    "id": "q30",
+    "text": "What is a disadvantage of virtual circuit packet switching?",
+    "options": [
+      "High bandwidth usage",
+      "Set-up delay before sending data",
+      "Poor reliability",
+      "Complex packet headers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Virtual circuit packet switching has a set-up delay before sending data because a connection must be established between end stations first."
+  },
+  {
+    "id": "q31",
+    "text": "What is a Virtual Circuit Identifier (VCI)?",
+    "options": [
+      "A permanent address for each node",
+      "An identifier assigned to each packet for its virtual circuit",
+      "A type of encryption key",
+      "A hardware component"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A Virtual Circuit Identifier (VCI) is assigned to each packet to identify which virtual circuit it belongs to, and different VCIs are used on each link."
+  },
+  {
+    "id": "q32",
+    "text": "In virtual circuit switching, are the same VCIs used on all links?",
+    "options": [
+      "Yes, VCIs remain constant throughout the path",
+      "No, different VCIs are used on each link",
+      "Only on adjacent links",
+      "VCIs are not used"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Different VCIs are used on each link in virtual circuit switching, meaning the VCI can change as the packet traverses different links in the network."
+  },
+  {
+    "id": "q33",
+    "text": "How are packets routed in datagram packet switching?",
+    "options": [
+      "Along pre-established circuits",
+      "Independently by each packet",
+      "Through a central controller",
+      "Using broadcast methods"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In datagram packet switching, packets are routed independently, with each packet making its own routing decisions based on current network conditions."
+  },
+  {
+    "id": "q34",
+    "text": "What is an advantage of datagram packet switching regarding setup?",
+    "options": [
+      "Faster transmission speed",
+      "No initial circuit setup costs or delays",
+      "Better security",
+      "Lower packet overhead"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Datagram packet switching has no initial circuit setup costs or delays, unlike virtual circuit switching which requires connection establishment."
+  },
+  {
+    "id": "q35",
+    "text": "What is a disadvantage of datagram packet switching?",
+    "options": [
+      "Requires connection setup",
+      "Switching each packet is relatively expensive",
+      "Cannot handle multiple destinations",
+      "Requires special hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In datagram packet switching, switching each packet is relatively expensive because routing decisions must be made independently for each packet."
+  },
+  {
+    "id": "q36",
+    "text": "How does datagram switching handle network failures?",
+    "options": [
+      "It cannot handle failures",
+      "It adapts to node and link failures during transmission",
+      "It requires manual reconfiguration",
+      "It stops all transmission"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Datagram switching adapts to node and link failures during transmission because each packet is routed independently and can take alternate paths."
+  },
+  {
+    "id": "q37",
+    "text": "What can happen to packet order in datagram switching?",
+    "options": [
+      "Packets always arrive in order",
+      "Datagrams may arrive out of order",
+      "Packets are automatically reordered",
+      "Order is not important"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In datagram switching, datagrams may arrive out of order because each packet is routed independently and may take different paths with different delays."
+  },
+  {
+    "id": "q38",
+    "text": "What does a switch use for routing decisions in a datagram network?",
+    "options": [
+      "Virtual circuit identifier",
+      "Routing table based on destination address",
+      "Source address only",
+      "Random selection"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A switch in a datagram network uses a routing table that is based on the destination address to make forwarding decisions."
+  },
+  {
+    "id": "q39",
+    "text": "What happens to the destination address during a packet's journey in datagram networks?",
+    "options": [
+      "It changes at each hop",
+      "It remains the same during the entire journey",
+      "It is removed after the first hop",
+      "It is encrypted"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The destination address in the header of a packet in a datagram network remains the same during the entire journey of the packet."
+  },
+  {
+    "id": "q40",
+    "text": "What is the basic principle of label switching?",
+    "options": [
+      "Route everywhere, switch nowhere",
+      "Route at edges, switch in core",
+      "Switch at edges, route in core",
+      "Broadcast all packets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Label switching follows the principle of 'Route at edges, switch in core', where routing decisions are made at network edges and simple switching occurs in the core."
+  },
+  {
+    "id": "q41",
+    "text": "When is a label attached to a packet in label switching?",
+    "options": [
+      "At the destination",
+      "When it arrives at a label switched network",
+      "At every intermediate node",
+      "Only for error packets"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A label is attached to each packet when it arrives at a label switched network, typically at the network edge."
+  },
+  {
+    "id": "q42",
+    "text": "How do core switches handle packets in label switching?",
+    "options": [
+      "They examine the full destination address",
+      "They switch based on the label and substitute a new label for the next hop",
+      "They broadcast to all ports",
+      "They store and forward entire messages"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Each core switch switches the packet based on the label and then substitutes a new label for the next hop, making the switching process very efficient."
+  },
+  {
+    "id": "q43",
+    "text": "What happens to labels as packets traverse through a label switched network?",
+    "options": [
+      "Labels remain constant",
+      "Labels are substituted at each hop",
+      "Labels are removed after first hop",
+      "Multiple labels are added"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Labels are substituted at each hop in a label switched network, with each switch replacing the incoming label with an appropriate outgoing label."
+  },
+  {
+    "id": "q44",
+    "text": "What is cell switching?",
+    "options": [
+      "A type of circuit switching",
+      "A switching method mentioned in the summary",
+      "A wireless switching technique",
+      "A type of message switching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cell switching is mentioned in the summary as another type of switching, though not elaborated upon in the lecture content provided."
+  },
+  {
+    "id": "q45",
+    "text": "According to the switching strategies diagram, which switching method shows messages progressing in complete blocks?",
+    "options": [
+      "Circuit switching",
+      "Message switching",
+      "Packet switching",
+      "Label switching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Based on the switching strategies comparison, message switching shows complete messages progressing as blocks through the network, unlike packet switching which shows smaller packet segments."
+  },
+  {
+    "id": "q46",
+    "text": "Which switching method would be most appropriate for real-time voice communication?",
+    "options": [
+      "Message switching",
+      "Circuit switching",
+      "Datagram packet switching",
+      "Label switching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit switching is most appropriate for real-time voice communication because it provides a dedicated path with consistent delay characteristics, which is essential for voice quality."
+  },
+  {
+    "id": "q47",
+    "text": "Which switching method provides the best resource utilization for bursty data traffic?",
+    "options": [
+      "Circuit switching",
+      "Packet switching",
+      "Message switching with large buffers",
+      "Space-division switching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Packet switching provides the best resource utilization for bursty data traffic because resources are shared dynamically rather than being reserved as in circuit switching."
+  },
+  {
+    "id": "q48",
+    "text": "What is the main trade-off between virtual circuit and datagram packet switching?",
+    "options": [
+      "Speed vs. reliability",
+      "Setup overhead vs. per-packet processing overhead",
+      "Security vs. performance",
+      "Cost vs. complexity"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The main trade-off is between setup overhead (virtual circuits require connection establishment) and per-packet processing overhead (datagrams require routing decisions for each packet)."
+  },
+  {
+    "id": "q49",
+    "text": "In which scenario would message switching be preferred over packet switching?",
+    "options": [
+      "Real-time communications",
+      "When network reliability is poor and store-and-forward is beneficial",
+      "High-speed data transfer",
+      "Voice over IP applications"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Message switching would be preferred when network reliability is poor and the store-and-forward capability is beneficial, allowing messages to wait at intermediate nodes until the next hop is available."
+  },
+  {
+    "id": "q50",
+    "text": "What is the primary advantage of using intermediate nodes in switched networks?",
+    "options": [
+      "Increased security",
+      "Reduced total number of required links compared to full mesh",
+      "Higher data transmission speeds",
+      "Better error detection"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The primary advantage is the reduced total number of required links compared to a full mesh topology, making large networks economically feasible."
+  },
+  {
+    "id": "q51",
+    "text": "Which type of switching allows for the most efficient use of network bandwidth?",
+    "options": [
+      "Circuit switching",
+      "Packet switching",
+      "Message switching",
+      "Space-division switching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Packet switching allows for the most efficient use of network bandwidth because multiple communications can share the same links simultaneously, unlike circuit switching where bandwidth is reserved."
+  },
+  {
+    "id": "q52",
+    "text": "What happens to crosspoints in a crossbar switch?",
+    "options": [
+      "They are permanently connected",
+      "They can be turned on or off",
+      "They automatically adjust timing",
+      "They amplify signals"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In a crossbar switch, crosspoints can be turned on or off to establish or break connections, allowing different input-output combinations for space-division switching."
+  },
+  {
+    "id": "q53",
+    "text": "What is the relationship between input and output speeds in time-division multiplexing?",
+    "options": [
+      "Output runs at the same speed as input",
+      "Output runs N times as fast as input for N input lines",
+      "Output runs slower than input",
+      "Speed relationship varies randomly"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In time-division multiplexing, the output runs N times as fast as the input when there are N input lines, allowing all inputs to be accommodated in the single output stream."
+  },
+  {
+    "id": "q54",
+    "text": "Why is circuit switching inefficient for computer communications?",
+    "options": [
+      "Computers communicate too slowly",
+      "Computer traffic is typically bursty with idle periods",
+      "Computers require error-free transmission",
+      "Computer data is too complex"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit switching is inefficient for computer communications because computer traffic is typically bursty with long idle periods, yet the circuit remains allocated and paid for during these idle times."
+  },
+  {
+    "id": "q55",
+    "text": "What is a key characteristic that distinguishes packet switching from message switching?",
+    "options": [
+      "Use of headers",
+      "Data is divided into smaller units (packets) rather than sent as complete messages",
+      "Use of intermediate nodes",
+      "Store-and-forward operation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The key distinguishing characteristic is that in packet switching, data is divided into smaller units called packets, while in message switching, entire complete messages are transmitted."
+  },
+  {
+    "id": "q56",
+    "text": "In label switching, what is the main benefit of having labels?",
+    "options": [
+      "Enhanced security",
+      "Simplified and faster switching in core nodes",
+      "Better error detection",
+      "Reduced packet size"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The main benefit of labels is simplified and faster switching in core nodes, as switches only need to look at the short label rather than processing complex destination addresses."
+  },
+  {
+    "id": "q57",
+    "text": "Which switching method requires the caller, callee, and all intervening nodes to be available simultaneously?",
+    "options": [
+      "Packet switching",
+      "Circuit switching",
+      "Message switching",
+      "Label switching"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Circuit switching requires the caller, callee, and all intervening links and nodes to be available at the same time to establish the dedicated communications path."
+  },
+  {
+    "id": "q58",
+    "text": "What is the main disadvantage of having very long messages in message switching?",
+    "options": [
+      "They cannot be transmitted",
+      "They hog buffer space and links at intermediate nodes",
+      "They get corrupted easily",
+      "They require special protocols"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Very long messages can hog buffer space at intermediate nodes and hog the links between them, potentially causing delays and resource starvation for other messages."
+  },
+  {
+    "id": "q59",
+    "text": "Which statement best describes the packet forwarding process in datagram networks?",
+    "options": [
+      "All packets follow the same predetermined path",
+      "Each packet is independently routed based on its destination address",
+      "Packets are broadcast to all possible destinations",
+      "Routing decisions are made only at the source"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In datagram networks, each packet is independently routed based on its destination address, with routing decisions made at each intermediate node."
+  },
+  {
+    "id": "q60",
+    "text": "What is the primary purpose of the header in packet switching?",
+    "options": [
+      "To compress the data",
+      "To provide control information for routing and handling",
+      "To encrypt the payload",
+      "To detect transmission errors only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The header in packet switching provides control information necessary for routing and handling the packet, including destination addresses and other control fields needed for proper delivery."
+  }
+]
