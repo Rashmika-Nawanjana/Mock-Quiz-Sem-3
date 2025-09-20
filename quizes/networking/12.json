@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "In the basic structure of the Web, what is the primary function of web clients?",
+    "options": [
+      "Send web pages when requested by clients",
+      "Request pages from servers and display them",
+      "Store web pages permanently",
+      "Manage database connections"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Web clients are responsible for requesting pages from servers and displaying them to users, as shown in the basic web architecture."
+  },
+  {
+    "id": "q2",
+    "text": "What do web servers do in the Web architecture?",
+    "options": [
+      "Display web pages to users",
+      "Store user preferences",
+      "Send web pages when requested by clients",
+      "Create HTML content automatically"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Web servers are responsible for sending web pages when they are requested by clients, completing the client-server communication model."
+  },
+  {
+    "id": "q3",
+    "text": "Web pages are primarily written in which markup language?",
+    "options": [
+      "XML (eXtensible Markup Language)",
+      "SGML (Standard Generalized Markup Language)",
+      "HTML (HyperText Markup Language)",
+      "CSS (Cascading Style Sheets)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Web pages are written in HTML (HyperText Markup Language), which is the standard markup language for creating web content."
+  },
+  {
+    "id": "q4",
+    "text": "What are resources in the context of the Web?",
+    "options": [
+      "Only HTML files stored on servers",
+      "Pieces of information which can be accessed over the web",
+      "Database connections",
+      "Network protocols only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Resources are defined as pieces of information which can be accessed over the web, including various types of content like images, documents, and data."
+  },
+  {
+    "id": "q5",
+    "text": "What does URL stand for and represent?",
+    "options": [
+      "Universal Resource Locator - the physical address of a server",
+      "Uniform Resource Locator - the name of a resource",
+      "Universal Reference Link - a database reference",
+      "Uniform Retrieval Language - a query language"
+    ],
+    "correctAnswer": 1,
+    "explanation": "URL stands for Uniform Resource Locator and represents the name of a resource, providing a way to identify and locate resources on the web."
+  },
+  {
+    "id": "q6",
+    "text": "How do hyperlinks contribute to the Web structure?",
+    "options": [
+      "They only link to pages on the same server",
+      "They create a web by linking pages that may contain links to other pages",
+      "They are used only for navigation menus",
+      "They only work with HTML files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Hyperlinks allow web pages to contain URLs linking to other pages, which may in turn contain links to yet other pages, forming the interconnected web structure."
+  },
+  {
+    "id": "q7",
+    "text": "What protocol do web clients and web servers use to communicate?",
+    "options": [
+      "FTP (File Transfer Protocol)",
+      "SMTP (Simple Mail Transfer Protocol)",
+      "HTTP (HyperText Transfer Protocol)",
+      "TCP (Transmission Control Protocol)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Web clients and servers communicate using HTTP (HyperText Transfer Protocol), which is the Web's application layer protocol."
+  },
+  {
+    "id": "q8",
+    "text": "What communication model does HTTP use?",
+    "options": [
+      "Peer-to-peer model",
+      "Client/server model",
+      "Broadcast model",
+      "Multicast model"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HTTP uses the client/server model where clients (browsers) request resources and servers respond with the requested resources."
+  },
+  {
+    "id": "q9",
+    "text": "In the HTTP client/server model, what role does the browser play?",
+    "options": [
+      "Server that sends resources",
+      "Client that requests, receives, and displays Web resources",
+      "Router that forwards requests",
+      "Database that stores web pages"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The browser acts as a client that requests, receives, and displays web resources in the HTTP communication model."
+  },
+  {
+    "id": "q10",
+    "text": "Why might a web client make multiple requests to a server for a single web page?",
+    "options": [
+      "To check for server availability",
+      "Because web resources may contain references to other resources like graphics and stylesheets",
+      "To establish backup connections",
+      "To verify user authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Web resources may contain references to other resources such as graphics and stylesheets, requiring the client to make additional requests to fully render the page."
+  },
+  {
+    "id": "q11",
+    "text": "What transport protocol does HTTP use?",
+    "options": [
+      "UDP (User Datagram Protocol)",
+      "TCP (Transmission Control Protocol)",
+      "ICMP (Internet Control Message Protocol)",
+      "FTP (File Transfer Protocol)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HTTP uses TCP as its underlying transport protocol, providing reliable, connection-oriented communication between clients and servers."
+  },
+  {
+    "id": "q12",
+    "text": "What are the default ports typically used for HTTP communication?",
+    "options": [
+      "Port 21 or port 22",
+      "Port 25 or port 110",
+      "Port 80 or port 443",
+      "Port 53 or port 67"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HTTP typically uses port 80 for standard HTTP connections and port 443 for secure HTTPS connections."
+  },
+  {
+    "id": "q13",
+    "text": "What happens to the TCP connection after HTTP messages are exchanged?",
+    "options": [
+      "The connection remains open indefinitely",
+      "The connection is cached for future use",
+      "The TCP connection is closed",
+      "The connection is transferred to another server"
+    ],
+    "correctAnswer": 2,
+    "explanation": "After HTTP messages are exchanged between the client and server, the TCP connection is closed, completing the communication cycle."
+  },
+  {
+    "id": "q14",
+    "text": "What does it mean that HTTP is 'stateless'?",
+    "options": [
+      "HTTP connections are always secure",
+      "The server maintains no information about past client requests",
+      "HTTP only works with static content",
+      "Clients cannot make multiple requests"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HTTP being 'stateless' means that the server maintains no information about past client requests, treating each request independently."
+  },
+  {
+    "id": "q15",
+    "text": "Why are stateless protocols considered advantageous?",
+    "options": [
+      "They are faster than stateful protocols",
+      "They avoid the complexity of maintaining state and handling inconsistencies during crashes",
+      "They use less bandwidth",
+      "They provide better security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Stateless protocols avoid the complexity that comes with maintaining state, including the need to handle inconsistent state views when servers or clients crash."
+  },
+  {
+    "id": "q16",
+    "text": "In the HTTP operation example, what happens in step 1a?",
+    "options": [
+      "The server forms a response message",
+      "The client initiates TCP connection to HTTP server on port 80",
+      "The client sends an HTTP request message",
+      "The server closes the TCP connection"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In step 1a of the HTTP operation, the client initiates a TCP connection to the HTTP server at the specified host on port 80."
+  },
+  {
+    "id": "q17",
+    "text": "What does the HTTP server do after receiving a request message?",
+    "options": [
+      "Immediately closes the connection",
+      "Waits for more requests",
+      "Forms response message containing requested resource and sends it",
+      "Forwards the request to another server"
+    ],
+    "correctAnswer": 2,
+    "explanation": "After receiving a request message, the HTTP server forms a response message containing the requested resource and sends it back to the client."
+  },
+  {
+    "id": "q18",
+    "text": "If an HTML file contains 10 referenced JPEG resources, what happens in the HTTP operation?",
+    "options": [
+      "All resources are sent in a single response",
+      "Steps 1-5 are repeated for each of the 10 JPEG resources",
+      "Only the HTML file is sent",
+      "The images are ignored"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When an HTML file references other resources like JPEG images, the HTTP request-response cycle (steps 1-5) is repeated for each of these resources."
+  },
+  {
+    "id": "q19",
+    "text": "How many types of HTTP messages are there?",
+    "options": [
+      "One type",
+      "Two types: Request and Response",
+      "Three types: Request, Response, and Acknowledgment",
+      "Four types: GET, POST, PUT, DELETE"
+    ],
+    "correctAnswer": 1,
+    "explanation": "There are two types of HTTP messages: Request messages (sent by clients) and Response messages (sent by servers)."
+  },
+  {
+    "id": "q20",
+    "text": "What format are HTTP request messages written in?",
+    "options": [
+      "Binary format",
+      "Encrypted format",
+      "ASCII (human-readable format)",
+      "Compressed format"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HTTP request messages are written in ASCII format, making them human-readable for debugging and development purposes."
+  },
+  {
+    "id": "q21",
+    "text": "In the HTTP request message format, what does the request line contain?",
+    "options": [
+      "Server information and date",
+      "GET, POST, HEAD commands and the resource path",
+      "Content type and length",
+      "User authentication credentials"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The request line contains HTTP commands like GET, POST, or HEAD, along with the path to the requested resource and HTTP version."
+  },
+  {
+    "id": "q22",
+    "text": "What indicates the end of an HTTP request message?",
+    "options": [
+      "A closing tag",
+      "A carriage return and line feed",
+      "A special termination character",
+      "The TCP connection closure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An HTTP request message is terminated by a carriage return and line feed, indicating the end of the message."
+  },
+  {
+    "id": "q23",
+    "text": "Which HTTP method is used to upload a file to a server?",
+    "options": [
+      "GET",
+      "POST",
+      "PUT",
+      "HEAD"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The PUT method is used to upload a file in the entity body to the path specified in the URL field."
+  },
+  {
+    "id": "q24",
+    "text": "What does the HTTP DELETE method do?",
+    "options": [
+      "Deletes cookies from the browser",
+      "Deletes the TCP connection",
+      "Deletes file specified in the URL field",
+      "Deletes the browser cache"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The HTTP DELETE method deletes the file specified in the URL field from the server."
+  },
+  {
+    "id": "q25",
+    "text": "What does the status line in an HTTP response message contain?",
+    "options": [
+      "Request method and URL",
+      "Protocol version, status code, and status phrase",
+      "Content type and length only",
+      "Server name and date only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The status line contains the protocol version, status code (like 200), and status phrase (like 'OK')."
+  },
+  {
+    "id": "q26",
+    "text": "What does HTTP status code 200 OK indicate?",
+    "options": [
+      "Request failed due to server error",
+      "Resource has moved permanently",
+      "Request succeeded, requested resource follows in message",
+      "Request was malformed"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HTTP status code 200 OK indicates that the request succeeded and the requested resource is included later in the response message."
+  },
+  {
+    "id": "q27",
+    "text": "What does HTTP status code 301 indicate?",
+    "options": [
+      "Request succeeded",
+      "Moved Permanently - resource moved, new location specified",
+      "Bad request format",
+      "Server internal error"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HTTP status code 301 indicates 'Moved Permanently', meaning the requested resource has moved and the new location is specified in the response."
+  },
+  {
+    "id": "q28",
+    "text": "What does HTTP status code 404 indicate?",
+    "options": [
+      "Request succeeded",
+      "Server temporarily unavailable",
+      "Not Found - requested document not found on server",
+      "Authentication required"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HTTP status code 404 indicates 'Not Found', meaning the requested document could not be found on the server."
+  },
+  {
+    "id": "q29",
+    "text": "What does HTTP status code 400 indicate?",
+    "options": [
+      "Request succeeded",
+      "Bad Request - request message not understood by server",
+      "Resource moved permanently",
+      "Server overloaded"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HTTP status code 400 indicates 'Bad Request', meaning the request message was not understood by the server due to malformed syntax."
+  },
+  {
+    "id": "q30",
+    "text": "How can you manually test HTTP communication using command line tools?",
+    "options": [
+      "Using ping command",
+      "Using telnet to connect to port 80 and send GET requests",
+      "Using traceroute command",
+      "Using netstat command"
+    ],
+    "correctAnswer": 1,
+    "explanation": "You can manually test HTTP by using telnet to connect to a web server on port 80 and then typing HTTP GET requests to see the server responses."
+  },
+  {
+    "id": "q31",
+    "text": "In the manual HTTP test example, what command opens a connection to www.mrt.ac.lk?",
+    "options": [
+      "http www.mrt.ac.lk 80",
+      "connect www.mrt.ac.lk:80",
+      "telnet www.mrt.ac.lk 80",
+      "wget www.mrt.ac.lk"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The command 'telnet www.mrt.ac.lk 80' opens a TCP connection to port 80 on the www.mrt.ac.lk server for manual HTTP testing."
+  },
+  {
+    "id": "q32",
+    "text": "When uploading data to a website using the POST method, where is the input data placed?",
+    "options": [
+      "In the URL field of the request line",
+      "In the header lines",
+      "In the entity body of the request",
+      "In a separate TCP connection"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When using the POST method, input data from forms is uploaded to the server in the entity body of the HTTP request message."
+  },
+  {
+    "id": "q33",
+    "text": "When using the URL method for uploading data, where is the input placed?",
+    "options": [
+      "In the entity body",
+      "In the URL field of the request line",
+      "In the response headers",
+      "In a cookie"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The URL method uses the GET method and places input data directly in the URL field of the request line, like www.somesite.com/animalsearch?monkeys&banana."
+  },
+  {
+    "id": "q34",
+    "text": "What is the purpose of cookies in HTTP?",
+    "options": [
+      "To encrypt data transmission",
+      "To introduce 'state' into HTTP communication",
+      "To compress web pages",
+      "To authenticate servers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cookies are used to introduce 'state' into HTTP, allowing servers to maintain information about users across multiple requests despite HTTP being stateless."
+  },
+  {
+    "id": "q35",
+    "text": "How many components make up the cookie mechanism?",
+    "options": [
+      "Two components",
+      "Three components",
+      "Four components",
+      "Five components"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cookies consist of four components: cookie header in HTTP response, cookie header in HTTP request, cookie file on user's host, and back-end database at the website."
+  },
+  {
+    "id": "q36",
+    "text": "What happens when a user visits an e-commerce site for the first time in terms of cookies?",
+    "options": [
+      "No action is taken",
+      "The site creates a unique ID and database entry for that ID",
+      "The user is redirected to a login page",
+      "The connection is terminated"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When a user first visits a site, the site creates a unique ID and creates an entry in its backend database for that ID to track the user in future visits."
+  },
+  {
+    "id": "q37",
+    "text": "Which of the following is NOT a typical use of cookies?",
+    "options": [
+      "Authorization",
+      "Shopping carts",
+      "Data encryption",
+      "User session state"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Cookies are used for authorization, shopping carts, recommendations, and user session state, but they do not provide data encryption."
+  },
+  {
+    "id": "q38",
+    "text": "What privacy concern is associated with cookies?",
+    "options": [
+      "They slow down internet connections",
+      "They permit sites to learn about users and enable tracking across sites",
+      "They consume too much storage space",
+      "They make websites less secure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cookies raise privacy concerns because they permit sites to learn about users, and advertising companies can use them to obtain information across multiple sites."
+  },
+  {
+    "id": "q39",
+    "text": "What is web caching?",
+    "options": [
+      "A method to encrypt web pages",
+      "Storing copies of recently accessed web pages for faster delivery",
+      "A way to compress web content",
+      "A security mechanism for websites"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Web caching involves storing copies of recently accessed web pages so they can be delivered from the cache when requested again, improving performance."
+  },
+  {
+    "id": "q40",
+    "text": "Which of the following is NOT a benefit of web caching?",
+    "options": [
+      "Shorter response time",
+      "Reduced bandwidth requirement",
+      "Increased server processing power",
+      "Reduced load on servers"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Web caching provides shorter response time, reduced bandwidth requirements, and reduced server load, but it does not increase server processing power."
+  },
+  {
+    "id": "q41",
+    "text": "What is the goal of conditional GET in client-side caching?",
+    "options": [
+      "To always download fresh content",
+      "To avoid sending resource if client has up-to-date cached version",
+      "To compress the response data",
+      "To authenticate the client"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The goal of conditional GET is to avoid sending the resource if the client already has an up-to-date cached version, saving bandwidth and time."
+  },
+  {
+    "id": "q42",
+    "text": "In conditional GET, what header does the client use to specify the date of its cached copy?",
+    "options": [
+      "Cache-Control: <date>",
+      "Last-Modified: <date>",
+      "If-modified-since: <date>",
+      "Expires: <date>"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The client uses the 'If-modified-since: <date>' header to specify the date of its cached copy when making a conditional GET request."
+  },
+  {
+    "id": "q43",
+    "text": "What HTTP status code does the server return when a cached resource is still up-to-date?",
+    "options": [
+      "HTTP/1.0 200 OK",
+      "HTTP/1.0 301 Moved",
+      "HTTP/1.0 304 Not Modified",
+      "HTTP/1.0 404 Not Found"
+    ],
+    "correctAnswer": 2,
+    "explanation": "When a cached resource is still up-to-date, the server returns 'HTTP/1.0 304 Not Modified' without sending the resource content."
+  },
+  {
+    "id": "q44",
+    "text": "What is the purpose of the Accept-Language header?",
+    "options": [
+      "To specify supported file formats",
+      "To indicate browser capabilities",
+      "To specify preferred natural languages in order",
+      "To set character encoding"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Accept-Language header allows the browser to specify a list of preferred natural languages (like Sinhala, English, Tamil) in order of preference."
+  },
+  {
+    "id": "q45",
+    "text": "How does a web server use the Accept-Language header?",
+    "options": [
+      "To determine the browser type",
+      "To send the page in the highest preferred language available",
+      "To set the server's language",
+      "To compress content appropriately"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When a web server has the same page in multiple languages, it uses the Accept-Language header to send the page in the language highest on the client's preference list."
+  },
+  {
+    "id": "q46",
+    "text": "What is the main security problem with regular HTTP?",
+    "options": [
+      "Slow connection speeds",
+      "Limited functionality",
+      "Data is sent in plain text and can be read by anyone with network access",
+      "Too many features"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The main security problem with regular HTTP is that both requests and responses are sent in plain text, allowing anyone with network access to read them."
+  },
+  {
+    "id": "q47",
+    "text": "What does HTTPS provide that regular HTTP does not?",
+    "options": [
+      "Faster data transmission",
+      "Data encryption and authentication",
+      "Better caching capabilities",
+      "Support for more file types"
+    ],
+    "correctAnswer": 1,
+    "explanation": "HTTPS provides data encryption (so data cannot be viewed by others) and authentication of web servers to prevent impersonation."
+  },
+  {
+    "id": "q48",
+    "text": "How can users identify that they are using HTTPS?",
+    "options": [
+      "The URL starts with 'secure://'",
+      "The page loads faster",
+      "A padlock or similar icon appears in the browser",
+      "The page has a different background color"
+    ],
+    "correctAnswer": 2,
+    "explanation": "HTTPS connections are indicated by a padlock or similar security icon displayed in the browser, showing users that their connection is encrypted."
+  },
+  {
+    "id": "q49",
+    "text": "What characterized early websites in terms of interactivity?",
+    "options": [
+      "They were highly interactive",
+      "They were mostly static - you could view them but not change them",
+      "They required user registration",
+      "They were only available to certain users"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Originally, most websites were static, meaning users could view them but not change or interact with them in meaningful ways."
+  },
+  {
+    "id": "q50",
+    "text": "What does 'Web 2.0' or 'read-write web' refer to?",
+    "options": [
+      "A new version of HTTP",
+      "Interactive websites that can be modified by users",
+      "Websites that require special software",
+      "Government-controlled websites"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Web 2.0 or read-write web refers to interactive websites that can be modified by users, representing a shift from static, view-only content to dynamic, user-modifiable content."
+  },
+  {
+    "id": "q51",
+    "text": "Which of the following is an example of a popular search engine mentioned in the lecture?",
+    "options": [
+      "Facebook",
+      "Gmail",
+      "Google",
+      "DropBox"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Google is mentioned as one of the most popular search engines, along with Bing, representing one of the most popular features of the web."
+  },
+  {
+    "id": "q52",
+    "text": "What makes search engines significant for web users?",
+    "options": [
+      "They provide email services",
+      "They allow us to find almost anything from anywhere",
+      "They store personal files",
+      "They provide social networking"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Search engines are significant because they allow users to find almost anything from anywhere on the web, making the vast amount of web content discoverable."
+  },
+  {
+    "id": "q53",
+    "text": "Which of the following is NOT listed as a popular interactive website in the lecture?",
+    "options": [
+      "Gmail",
+      "Facebook",
+      "Wikipedia",
+      "Amazon"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Amazon is not specifically mentioned in the list of popular interactive websites, while Gmail, Facebook, DropBox, Wikipedia, PickMe, and UoM Moodle are listed as examples."
+  },
+  {
+    "id": "q54",
+    "text": "What type of application is described as the most popular on the Internet?",
+    "options": [
+      "Email applications",
+      "File transfer applications",
+      "Web applications",
+      "Database applications"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Web is described as the most popular application on the Internet, highlighting its widespread adoption and usage."
+  },
+  {
+    "id": "q55",
+    "text": "According to the lecture, what should students do regarding HTTP knowledge?",
+    "options": [
+      "Learn only the basics",
+      "Focus on other protocols instead",
+      "Study HTTP in detail and become an expert",
+      "Avoid HTTP complexity"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture emphasizes that students should study HTTP in detail and become experts, highlighting the importance of thorough understanding of this protocol."
+  },
+  {
+    "id": "q56",
+    "text": "What important web technology was NOT covered in this particular lecture?",
+    "options": [
+      "HTTP protocol details",
+      "Cookie mechanisms",
+      "HyperText Markup Language (HTML)",
+      "Web caching"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The lecture specifically mentions that HyperText Markup Language (HTML) was not covered in this session, despite being an important web technology."
+  },
+  {
+    "id": "q57",
+    "text": "In HTTP communication, what role does TCP play?",
+    "options": [
+      "It formats HTTP messages",
+      "It provides the reliable transport layer for HTTP messages",
+      "It creates web pages",
+      "It manages cookies"
+    ],
+    "correctAnswer": 1,
+    "explanation": "TCP provides the reliable, connection-oriented transport layer that HTTP uses for communication between clients and servers."
+  },
+  {
+    "id": "q58",
+    "text": "What is the relationship between web pages and resources?",
+    "options": [
+      "Web pages and resources are the same thing",
+      "Web pages consist of text and other resources",
+      "Resources cannot be part of web pages",
+      "Web pages only contain text, never resources"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Web pages consist of text and other resources, meaning a single web page can include various types of content like images, stylesheets, and other media."
+  },
+  {
+    "id": "q59",
+    "text": "Why might wireless networks be particularly vulnerable to HTTP security issues?",
+    "options": [
+      "They have slower speeds",
+      "They are more likely to have network access by unauthorized parties who can read plain text",
+      "They don't support HTTPS",
+      "They have limited bandwidth"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Wireless networks are particularly vulnerable because they are more accessible to unauthorized parties who might intercept plain text HTTP communications."
+  },
+  {
+    "id": "q60",
+    "text": "What happens when a web page is considered 'completely rendered'?",
+    "options": [
+      "When the HTML file is downloaded",
+      "When the TCP connection is established",
+      "When all referenced resources have been retrieved",
+      "When the first image is loaded"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A web page is completely rendered only when all resources (including images, stylesheets, scripts, etc.) referenced by the page have been retrieved and displayed."
+  }
+]
