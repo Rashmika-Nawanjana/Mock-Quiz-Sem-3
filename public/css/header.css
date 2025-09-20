@@ -1,3 +1,40 @@
+/* Premium Profile Avatar Button */
+.premium-avatar-btn {
+    border-radius: 50%;
+    padding: 0.2rem;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px var(--glow), 0 2px 8px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,215,0,0.3);
+    border: 2px solid gold;
+    background: linear-gradient(135deg, #fffbe6 0%, #fffde4 100%);
+    position: relative;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+.premium-avatar-btn:hover, .premium-avatar-btn:focus {
+    box-shadow: 0 8px 30px var(--glow), 0 4px 16px rgba(255,215,0,0.2), 0 0 0 3px gold;
+    border-color: #ffd700;
+}
+.premium-avatar-btn img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px var(--glow);
+}
+.premium-crown {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+    color: gold;
+    text-shadow: 0 1px 4px #fff, 0 0 8px gold;
+    pointer-events: none;
+}
 /* Notification Bell and Tooltip - Premium Design */
 .notification-container .btn-link {
     color: var(--text-primary);

@@ -49,10 +49,10 @@
                     </a>
                     <% if (typeof user !== 'undefined' && user) { %>
                         <div class="dropdown user-avatar-container d-flex align-items-center" style="gap: 0.25rem;">
-                            <a href="/dashboard" id="profileAvatarLink">
-                                <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover; border: 2px solid #ccc;">
+                            <a href="/dashboard" id="profileAvatarLink" class="premium-avatar-btn btn btn-link p-0 position-relative" style="border-radius: 50%; padding: 0.2rem; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 20px var(--glow), 0 2px 8px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,215,0,0.3); border: 2px solid gold; background: linear-gradient(135deg, #fffbe6 0%, #fffde4 100%);">
+                                <img src="<%= user.avatar_url || '/images/avatar.jpg' %>" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px; object-fit: cover; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 2px 8px var(--glow);">
                             </a>
-                            <a href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color: inherit; text-decoration: none;">
+                            <a href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color: inherit; text-decoration: none; font-size: 1.5rem; margin-left: 0.1rem;">
                                 <i class="fas fa-caret-down"></i>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">

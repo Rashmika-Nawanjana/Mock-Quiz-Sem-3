@@ -1,3 +1,5 @@
+// Middleware: inject session user into res.locals for all routes
+
 // Leaderboard route (protected)
 
 
@@ -34,7 +36,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
+app.use((req, res, next) => {
+    res.locals.user = req.session && req.session.user ? req.session.user : null;
+    next();
+});
 // Root route: show login if not logged in, else redirect to /home
 app.get('/', (req, res) => {
     if (req.session && req.session.user) {
@@ -89,6 +94,17 @@ app.get('/leaderboard', requireAuth, async (req, res) => {
     });
 
     // Build leaderboard array with user info
+    // Optimize avatar URL: use public URL if possible, else fallback to default
+    const getAvatarUrl = (avatar_url) => {
+        if (!avatar_url) return '/images/avatar.jpg';
+        // If already a public URL, return as is
+        if (avatar_url.startsWith('http')) return avatar_url;
+        // If using Supabase Storage, construct public URL (adjust bucket name if needed)
+        const supabaseUrl = process.env.SUPABASE_URL;
+        // Example: avatars bucket
+        return `${supabaseUrl}/storage/v1/object/public/avatars/${avatar_url}`;
+    };
+
     const leaderboard = (allUsers || []).map(u => {
         const userStats = leaderboardMap[u.id] || {};
         // Calculate average score
@@ -111,7 +127,7 @@ app.get('/leaderboard', requireAuth, async (req, res) => {
         return {
             user_id: u.id,
             name: u.full_name || u.username || 'User',
-            avatar: u.avatar_url,
+            avatar: getAvatarUrl(u.avatar_url),
             marks: userStats.marks || 0,
             time: userStats.time || 0,
             quizzes_completed: userStats.quizzes_completed || 0,

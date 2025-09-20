@@ -50,7 +50,16 @@ router.post('/login', async (req, res) => {
     } else {
       console.log('Supabase user upsert success:', upsertData);
     }
-  req.session.user = { id, email, name: full_name, avatar_url };
+  // Resolve avatar URL once and cache in session
+  let avatar_url_resolved = '/images/avatar.jpg';
+  if (avatar_url) {
+    if (avatar_url.startsWith('http')) {
+      avatar_url_resolved = avatar_url;
+    } else {
+      avatar_url_resolved = `${process.env.SUPABASE_URL}/storage/v1/object/public/avatars/${avatar_url}`;
+    }
+  }
+  req.session.user = { id, email, name: full_name, avatar_url, avatar_url_resolved };
   }
   req.session.save(() => {
     res.redirect('/home');
