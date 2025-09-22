@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "Which of the following best describes file storage in network applications?",
+    "options": [
+      "Files are stored locally on each client machine",
+      "Files are stored on a server in the network and accessed by clients",
+      "Files are stored in the cloud and accessed through web browsers only",
+      "Files are distributed across multiple peer nodes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "File storage involves files being stored on a server in the network and accessed by clients, which may be integrated into the user interface or accessed through web browsers or client applications."
+  },
+  {
+    "id": "q2",
+    "text": "What year was the File Transfer Protocol (FTP) originally defined?",
+    "options": [
+      "1970",
+      "1980",
+      "1985",
+      "1990"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FTP was originally defined in 1980 and is considered the original file storage protocol."
+  },
+  {
+    "id": "q3",
+    "text": "Which transport protocol does FTP use?",
+    "options": [
+      "UDP",
+      "TCP",
+      "SCTP",
+      "HTTP"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FTP uses TCP as its transport protocol for reliable file transfer."
+  },
+  {
+    "id": "q4",
+    "text": "How many connections does FTP use and what are they?",
+    "options": [
+      "One connection on port 21",
+      "Two connections: Control on port 21 and Data on port 20",
+      "Three connections: Control, Data, and Authentication",
+      "One connection that switches between control and data modes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FTP uses two connections: a Control Connection on TCP port 21 and a Data Connection on TCP port 20."
+  },
+  {
+    "id": "q5",
+    "text": "What form of authentication does FTP provide?",
+    "options": [
+      "Certificate-based authentication",
+      "Token-based authentication",
+      "Username and password",
+      "Biometric authentication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "FTP provides authentication and access control in the form of username and password."
+  },
+  {
+    "id": "q6",
+    "text": "Which FTP command is used to retrieve a file from the server?",
+    "options": [
+      "GET",
+      "RETR",
+      "Both GET and RETR",
+      "DOWNLOAD"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Both GET and RETR commands can be used to retrieve files from the FTP server, with GET being similar to RETR."
+  },
+  {
+    "id": "q7",
+    "text": "What does the FTP command 'STOR' do?",
+    "options": [
+      "Store file information",
+      "Upload a file to remote host",
+      "Create storage directory",
+      "Store user credentials"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The STOR command is used to upload a file to the remote host in FTP."
+  },
+  {
+    "id": "q8",
+    "text": "What does SFTP stand for and what is its main advantage over FTP?",
+    "options": [
+      "Simple FTP; easier to use",
+      "Secure File Transfer Protocol; transfers files over TLS",
+      "Super Fast Transfer Protocol; faster transfers",
+      "Standard File Transfer Protocol; industry standard"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SFTP stands for Secure File Transfer Protocol and its main advantage is that it transfers files over Transport Layer Security (TLS), providing security that regular FTP lacks."
+  },
+  {
+    "id": "q9",
+    "text": "What is another name for Network File Systems?",
+    "options": [
+      "Distributed File Systems",
+      "Network Attached Storage (NAS)",
+      "Storage Area Networks",
+      "Cloud Storage Systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Network File Systems are also called Network Attached Storage (NAS)."
+  },
+  {
+    "id": "q10",
+    "text": "Which file system is commonly used in Unix environments?",
+    "options": [
+      "SMB",
+      "CIFS",
+      "Network File System (NFS)",
+      "WebDAV"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Network File System (NFS) by Sun is commonly used in Unix environments."
+  },
+  {
+    "id": "q11",
+    "text": "Which file systems are commonly used in Windows environments?",
+    "options": [
+      "NFS and AFS",
+      "SMB and CIFS",
+      "WebDAV and FTP",
+      "SSH and Telnet"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Windows commonly uses SMB (Server Message Block) and CIFS (Common Internet File System) for network file sharing."
+  },
+  {
+    "id": "q12",
+    "text": "How does a client typically access a network file system?",
+    "options": [
+      "Through a web browser only",
+      "By mounting the file system as a drive",
+      "Using command line tools exclusively",
+      "Through email attachments"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A client can mount a file system as a drive (e.g., h:) and then perform normal file operations like open, copy, etc."
+  },
+  {
+    "id": "q13",
+    "text": "What characterizes Storage-Area Networks (SANs)?",
+    "options": [
+      "File-level access for clients",
+      "Block-level access for high performance storage shared among servers",
+      "Web-based storage interfaces",
+      "Peer-to-peer file sharing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SANs are specialized storage devices that provide block-level (not file-level) access, offer high performance, and storage is typically shared among servers rather than clients."
+  },
+  {
+    "id": "q14",
+    "text": "What is a key issue with Internet storage compared to LAN storage?",
+    "options": [
+      "Higher cost",
+      "Limited storage capacity",
+      "Internet is slower and less reliable than LAN",
+      "Incompatible file formats"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The main issue with Internet storage is that the Internet is slower and less reliable than LAN connections."
+  },
+  {
+    "id": "q15",
+    "text": "Which protocol is mentioned as being used for Internet storage?",
+    "options": [
+      "FTP",
+      "HTTP",
+      "WebDAV",
+      "SMTP"
+    ],
+    "correctAnswer": 2,
+    "explanation": "WebDAV (Web Distributed Authoring and Versioning) protocol is specifically mentioned for Internet storage, though SMB and other protocols may also be used."
+  },
+  {
+    "id": "q16",
+    "text": "Why was the Domain Name System (DNS) created?",
+    "options": [
+      "To replace IP addresses entirely",
+      "To overcome the limitations of the hosts file as networks grew",
+      "To provide email routing",
+      "To enable web browsing"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DNS was designed to overcome the problem of updating hosts files in every host as the network grew, making it difficult to maintain hostname-to-IP mappings."
+  },
+  {
+    "id": "q17",
+    "text": "In which RFCs is DNS defined?",
+    "options": [
+      "RFCs 1034 and 1035",
+      "RFCs 959 and 960",
+      "RFCs 2821 and 2822",
+      "RFCs 793 and 794"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DNS is defined in RFCs 1034 and 1035."
+  },
+  {
+    "id": "q18",
+    "text": "On which port does DNS operate?",
+    "options": [
+      "Port 21",
+      "Port 25",
+      "Port 53",
+      "Port 80"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DNS runs on port 53."
+  },
+  {
+    "id": "q19",
+    "text": "What type of naming scheme does DNS use?",
+    "options": [
+      "Flat naming scheme",
+      "Hierarchical, domain-based naming scheme",
+      "Sequential numbering system",
+      "Random hash-based naming"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DNS uses a hierarchical, domain-based naming scheme and is implemented as a distributed database system."
+  },
+  {
+    "id": "q20",
+    "text": "Which of the following is NOT a DNS function mentioned in the lecture?",
+    "options": [
+      "Translating names to IP addresses",
+      "Translating names to other information",
+      "Translating IP addresses to names",
+      "Providing file storage services"
+    ],
+    "correctAnswer": 3,
+    "explanation": "DNS functions include name-to-IP translation, name-to-other-information translation, and IP-to-name translation (reverse lookup), but not file storage services."
+  },
+  {
+    "id": "q21",
+    "text": "What is an example of DNS translating a name to an IP address?",
+    "options": [
+      "123.56.88.126 => abc.lk",
+      "abc.lk => 123.56.88.126",
+      "foolish.lk => the society of foolish people",
+      "202.33.192.85 => host85.mycomp.org"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The example given shows abc.lk being translated to the IP address 123.56.88.126."
+  },
+  {
+    "id": "q22",
+    "text": "What do authoritative DNS servers provide?",
+    "options": [
+      "Caching services for faster lookups",
+      "Authoritative hostname to IP mappings for organization's servers",
+      "Load balancing for web servers",
+      "Backup storage for DNS records"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Authoritative DNS servers are organization's DNS servers that provide authoritative hostname to IP mappings for the organization's servers (e.g., Web and mail servers)."
+  },
+  {
+    "id": "q23",
+    "text": "What is another name for a Local Name Server?",
+    "options": [
+      "Root name server",
+      "Authoritative name server",
+      "Default name server",
+      "Primary name server"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Local Name Servers are also called 'default name servers' and each ISP typically has one."
+  },
+  {
+    "id": "q24",
+    "text": "What role does a local name server play in DNS queries?",
+    "options": [
+      "It stores all DNS records globally",
+      "It acts as a proxy and forwards queries into the hierarchy",
+      "It only handles reverse DNS lookups",
+      "It manages domain registrations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "When a host makes a DNS query, it's sent to the local DNS server, which acts as a proxy and forwards the query into the DNS hierarchy."
+  },
+  {
+    "id": "q25",
+    "text": "What is a key advantage of using local name servers?",
+    "options": [
+      "They provide better security",
+      "They reduce lookup latency for commonly searched hostnames",
+      "They cost less to maintain",
+      "They have unlimited storage capacity"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Local name servers reduce lookup latency for commonly searched hostnames by caching frequently requested DNS information."
+  },
+  {
+    "id": "q26",
+    "text": "How do Peer-to-Peer (P2P) applications differ from the client-server model?",
+    "options": [
+      "P2P applications are always faster",
+      "P2P has no specified client or server, with all peers having equal status",
+      "P2P applications only work on mobile devices",
+      "P2P requires a central database"
+    ],
+    "correctAnswer": 1,
+    "explanation": "P2P applications divert from the client-server model by having no specified client or server, with all peers having equal status, though for any given transaction there is still a client and server relationship."
+  },
+  {
+    "id": "q27",
+    "text": "Which of the following is NOT mentioned as a P2P application?",
+    "options": [
+      "File Sharing",
+      "Instant Messaging",
+      "Online Gaming",
+      "Web Browsing"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The lecture mentions File Sharing, Instant Messaging, Online Gaming, and Distributed Services as P2P applications, but not web browsing."
+  },
+  {
+    "id": "q28",
+    "text": "In the P2P file sharing example, what protocol is used for file transfer?",
+    "options": [
+      "FTP",
+      "SFTP",
+      "HTTP",
+      "TCP"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the P2P file sharing example, the file is copied using HTTP protocol."
+  },
+  {
+    "id": "q29",
+    "text": "What makes P2P file sharing highly scalable?",
+    "options": [
+      "Centralized servers handle all requests",
+      "All peers are servers, so capacity grows with users",
+      "Files are compressed before sharing",
+      "Only selected peers serve files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "P2P is highly scalable because all peers are servers - while Alice downloads, other users can upload from Alice, meaning capacity grows with the number of users."
+  },
+  {
+    "id": "q30",
+    "text": "In the original Napster design, what information does a peer provide to the central server when connecting?",
+    "options": [
+      "Username and password only",
+      "IP address and content",
+      "File sizes and checksums",
+      "Download and upload speeds"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In Napster's centralized directory design, when a peer connects, it informs the central server of its IP address and content."
+  },
+  {
+    "id": "q31",
+    "text": "What are the main problems with centralized directory P2P systems like original Napster?",
+    "options": [
+      "Slow file transfers and limited storage",
+      "Single point of failure, performance bottleneck, and copyright infringement issues",
+      "High bandwidth costs and complex setup",
+      "Incompatible file formats and security vulnerabilities"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Centralized directory systems suffer from single point of failure, performance bottlenecks, and copyright infringement issues, despite having decentralized file transfer."
+  },
+  {
+    "id": "q32",
+    "text": "How does decentralized file sharing (like BitTorrent) differ from centralized systems?",
+    "options": [
+      "It uses faster protocols",
+      "It has no central directory; each file has controller nodes with info about sharing nodes",
+      "It only works with specific file types",
+      "It requires special hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Decentralized file sharing has no central directory. Instead, each file or group of files has a set of controller nodes that contain information about the nodes storing/sharing the file."
+  },
+  {
+    "id": "q33",
+    "text": "What is BitTorrent primarily designed for?",
+    "options": [
+      "Searching for files across the internet",
+      "Efficient content distribution using file swarming",
+      "Real-time communication between peers",
+      "Secure file encryption and storage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BitTorrent is an efficient content distribution system using file swarming, though it usually doesn't perform all functions of a typical P2P system like searching."
+  },
+  {
+    "id": "q34",
+    "text": "What does a .torrent file contain?",
+    "options": [
+      "The actual file content to be shared",
+      "Metadata about files and information about the tracker",
+      "User credentials and permissions",
+      "Network routing information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A .torrent file is a small file containing metadata about the files to be shared and information about the tracker that coordinates file distribution."
+  },
+  {
+    "id": "q35",
+    "text": "What is the role of the tracker in BitTorrent?",
+    "options": [
+      "To store the actual files being shared",
+      "To coordinate file distribution by telling peers where to download pieces",
+      "To provide search functionality for files",
+      "To encrypt files during transfer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The tracker is the computer that coordinates file distribution by telling peers from which other peers to download the pieces of the file."
+  },
+  {
+    "id": "q36",
+    "text": "What is the typical size range for pieces in BitTorrent file sharing?",
+    "options": [
+      "1 KB to 64 KB",
+      "64 KB to 1 MB",
+      "1 MB to 10 MB",
+      "10 MB to 100 MB"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Large files in BitTorrent are broken into pieces of size between 64 KB and 1 MB."
+  },
+  {
+    "id": "q37",
+    "text": "What information does a tracker maintain about peers?",
+    "options": [
+      "File content and checksums",
+      "IP address, port, peer ID, and state information",
+      "User preferences and download history",
+      "Network bandwidth and connection speed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The tracker maintains IP address, port, peer ID, and state information (Completed or Downloading) about peers."
+  },
+  {
+    "id": "q38",
+    "text": "What is a 'seeder' in BitTorrent terminology?",
+    "options": [
+      "A peer that is just starting to download",
+      "A peer that provides the complete file",
+      "A peer that only downloads but never uploads",
+      "A peer that manages the tracker"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A seeder is a peer that provides the complete file to other peers in the BitTorrent network."
+  },
+  {
+    "id": "q39",
+    "text": "What is an 'initial seeder'?",
+    "options": [
+      "The first peer to join a torrent",
+      "A peer that provides the initial copy of the file",
+      "A peer with the fastest internet connection",
+      "A peer designated by the tracker"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An initial seeder is a peer that provides the initial copy of the file being shared in the BitTorrent network."
+  },
+  {
+    "id": "q40",
+    "text": "What is a 'leecher' in BitTorrent?",
+    "options": [
+      "A malicious peer that only downloads",
+      "One who is downloading (not a derogatory term)",
+      "A peer with slow internet connection",
+      "A peer that corrupts file pieces"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A leecher is simply one who is downloading files in BitTorrent - it's not a derogatory term, just descriptive of the peer's current state."
+  },
+  {
+    "id": "q41",
+    "text": "When can a leecher start sharing pieces with other downloaders?",
+    "options": [
+      "Only after downloading the complete file",
+      "As soon as it has a complete piece",
+      "After downloading 50% of the file",
+      "Only with permission from the initial seeder"
+    ],
+    "correctAnswer": 1,
+    "explanation": "As soon as a leecher has downloaded a complete piece, it can potentially share it with other downloaders, which creates more replicas and improves distribution efficiency."
+  },
+  {
+    "id": "q42",
+    "text": "How does a leecher become a seeder?",
+    "options": [
+      "By uploading more than downloading",
+      "By obtaining all the pieces and assembling the complete file",
+      "By being designated by the tracker",
+      "By maintaining the highest upload speed"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A leecher becomes a seeder by obtaining all the pieces of the file and assembling the complete file, after which it can provide the full file to other peers."
+  },
+  {
+    "id": "q43",
+    "text": "What does the initial seeder do with the file before sharing?",
+    "options": [
+      "Compresses it for faster transfer",
+      "Encrypts it for security",
+      "Chops it into many pieces",
+      "Creates multiple copies"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The initial seeder chops the file into many pieces, which can then be distributed across multiple peers for efficient sharing."
+  },
+  {
+    "id": "q44",
+    "text": "How does a leecher initially locate other peers sharing a file?",
+    "options": [
+      "Through direct peer discovery",
+      "By broadcasting on the local network",
+      "By locating the .torrent file that directs it to a tracker",
+      "Through social media networks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A leecher first locates the .torrent file, which directs it to a tracker that tells which other peers are downloading that file."
+  },
+  {
+    "id": "q45",
+    "text": "What happens as more downloads occur in BitTorrent?",
+    "options": [
+      "The network becomes slower",
+      "More replicas of pieces become available",
+      "The original file gets corrupted",
+      "The tracker becomes overloaded"
+    ],
+    "correctAnswer": 1,
+    "explanation": "As a leecher downloads pieces of the file, replicas of the pieces are created. More downloads mean more replicas available, improving distribution efficiency."
+  },
+  {
+    "id": "q46",
+    "text": "How does BitTorrent verify file integrity?",
+    "options": [
+      "Through digital signatures",
+      "By verifying checksums",
+      "Through peer voting",
+      "Using encryption keys"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BitTorrent verifies file integrity by checking checksums once a leecher obtains all pieces and assembles the complete file."
+  },
+  {
+    "id": "q47",
+    "text": "Which field is NOT typically included in a .torrent file?",
+    "options": [
+      "URL of the tracker",
+      "Piece hashes",
+      "User credentials",
+      "Piece length"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A .torrent file includes the URL of the tracker, piece hashes, piece length, name of the file, and length of the file, but not user credentials."
+  },
+  {
+    "id": "q48",
+    "text": "What does the tracker return to peers requesting information?",
+    "options": [
+      "File content and metadata",
+      "A random list of peers",
+      "Search results for files",
+      "Network performance statistics"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The tracker returns a random list of peers along with their IP addresses, ports, peer IDs, and state information."
+  },
+  {
+    "id": "q49",
+    "text": "What is the main advantage of file swarming in BitTorrent?",
+    "options": [
+      "Better file compression",
+      "Enhanced security features",
+      "Distributed load and increased download speed through multiple sources",
+      "Reduced storage requirements"
+    ],
+    "correctAnswer": 2,
+    "explanation": "File swarming allows efficient content distribution by distributing the load across multiple peers and enabling downloads from multiple sources simultaneously, increasing speed and resilience."
+  },
+  {
+    "id": "q50",
+    "text": "In network file storage, what is the primary difference between file-level and block-level access?",
+    "options": [
+      "File-level is faster than block-level",
+      "Block-level provides direct access to storage blocks while file-level accesses complete files",
+      "File-level requires special hardware",
+      "Block-level is only used in peer-to-peer systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Block-level access (used in SANs) provides direct access to storage blocks for high performance, while file-level access (used in NAS) works with complete files and is typically integrated into user interfaces."
+  },
+  {
+    "id": "q51",
+    "text": "What is the primary purpose of the LIST command in FTP?",
+    "options": [
+      "To list available FTP servers",
+      "To list the files in the current remote directory",
+      "To list connected users",
+      "To list transfer protocols"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The LIST command in FTP is used to list the files in the current remote directory."
+  },
+  {
+    "id": "q52",
+    "text": "Which DNS function involves translating '202.33.192.85' to 'host85.mycomp.org'?",
+    "options": [
+      "Forward DNS lookup",
+      "Reverse DNS lookup",
+      "DNS caching",
+      "DNS forwarding"
+    ],
+    "correctAnswer": 1,
+    "explanation": "This is an example of reverse DNS lookup, where an IP address is translated back to a hostname."
+  },
+  {
+    "id": "q53",
+    "text": "In the DNS hierarchy, what type of servers are at the top level?",
+    "options": [
+      "Local DNS servers",
+      "Authoritative DNS servers",
+      "Root DNS servers",
+      "Caching DNS servers"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Root DNS servers are at the top of the DNS hierarchy, followed by top-level domain servers (like .com, .org, .lk)."
+  },
+  {
+    "id": "q54",
+    "text": "What makes P2P file sharing different from traditional client-server file sharing?",
+    "options": [
+      "P2P uses different file formats",
+      "In P2P, each peer can act as both client and server",
+      "P2P is always encrypted",
+      "P2P only works with small files"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In P2P file sharing, each peer can act as both a client (downloading) and a server (uploading), making all peers servers and creating high scalability."
+  },
+  {
+    "id": "q55",
+    "text": "What is the main limitation of using /etc/hosts file for hostname resolution?",
+    "options": [
+      "It only works with IP version 4",
+      "It requires root privileges to modify",
+      "It becomes difficult to update in every host as the network grows",
+      "It doesn't support long hostnames"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The main problem with /etc/hosts files was that as networks grew, it became difficult to update the hosts file in every host, leading to the development of DNS."
+  },
+  {
+    "id": "q56",
+    "text": "Which of the following best describes WebDAV?",
+    "options": [
+      "A peer-to-peer file sharing protocol",
+      "A protocol used for Internet storage",
+      "A DNS lookup method",
+      "A network file system for Unix"
+    ],
+    "correctAnswer": 1,
+    "explanation": "WebDAV (Web Distributed Authoring and Versioning) is a protocol specifically mentioned for Internet storage applications."
+  },
+  {
+    "id": "q57",
+    "text": "In BitTorrent, what is the significance of piece hashes in the .torrent file?",
+    "options": [
+      "They determine download priority",
+      "They enable verification of piece integrity",
+      "They specify file compression methods",
+      "They identify peer locations"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Piece hashes in the .torrent file enable verification of piece integrity, ensuring that downloaded pieces are not corrupted."
+  },
+  {
+    "id": "q58",
+    "text": "What happens when Alice downloads from Bob while others upload from Alice in P2P?",
+    "options": [
+      "The network becomes congested",
+      "File transfer speeds decrease",
+      "It demonstrates the scalable nature of P2P systems",
+      "It violates P2P protocols"
+    ],
+    "correctAnswer": 2,
+    "explanation": "This scenario demonstrates the highly scalable nature of P2P systems, where Alice's peer acts as both a web client and a transient web server, with all peers serving as servers."
+  },
+  {
+    "id": "q59",
+    "text": "What is a key characteristic of distributed services mentioned in P2P applications?",
+    "options": [
+      "They require central coordination",
+      "They operate without a single point of control",
+      "They only work in local networks",
+      "They are slower than centralized services"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Distributed services in P2P applications operate without a single point of control, with functionality distributed across multiple peer nodes."
+  },
+  {
+    "id": "q60",
+    "text": "According to the lecture, which statement best summarizes the evolution from FTP to modern file storage?",
+    "options": [
+      "Modern systems only use web browsers for access",
+      "Security improvements led to protocols like SFTP, while integration with GUIs improved usability",
+      "File sizes have become the limiting factor",
+      "All modern systems use peer-to-peer architecture"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The evolution shows security improvements with SFTP using TLS encryption, GUI interfaces for better usability, and integration into operating systems for seamless user experience, while maintaining the core client-server file storage model."
+  }
+]
