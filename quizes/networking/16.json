@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "Which of the following is NOT mentioned as a primary category of telecommunications?",
+    "options": [
+      "Voice (Telephony)",
+      "Video",
+      "Data",
+      "Holographic communication"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The document lists three main categories of telecommunications: Voice (Telephony), Video, and Data. Holographic communication is not mentioned."
+  },
+  {
+    "id": "q2",
+    "text": "What are the main components of the telephone network according to the lecture?",
+    "options": [
+      "Access Network, Switching and Signalling, Transmission",
+      "Routers, Modems, Cables",
+      "Servers, Clients, Protocols",
+      "Hardware, Software, Network"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The document clearly states that the telephone network consists of the Access Network, Switching and Signalling, and Transmission components."
+  },
+  {
+    "id": "q3",
+    "text": "According to the lecture, what is described as 'the biggest investment in a telecommunication network'?",
+    "options": [
+      "Switching equipment",
+      "The Access Network",
+      "Transmission lines",
+      "Signalling systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document explicitly states that the Access Network 'provides the subscriber's connection to the Local Exchange' and is 'the biggest investment in a telecommunication network'."
+  },
+  {
+    "id": "q4",
+    "text": "Which access technology uses copper wire pairs optimized to carry voice in analog form?",
+    "options": [
+      "Wireless Local Loops (WLL)",
+      "Digital Subscriber Loops (DSL)",
+      "Local Loop (wired)",
+      "Fiber to the x (FTTx)"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Local Loop (wired) is described as using 'copper wire pairs optimized to carry voice in analog form'."
+  },
+  {
+    "id": "q5",
+    "text": "What does WLL stand for in telecommunications?",
+    "options": [
+      "Wide Local Loop",
+      "Wireless Local Loops",
+      "Wired Line Link",
+      "Wide Line Loop"
+    ],
+    "correctAnswer": 1,
+    "explanation": "WLL stands for Wireless Local Loops, which replaces the local loop with wireless connection."
+  },
+  {
+    "id": "q6",
+    "text": "Which access technology is described as modifying copper local loops to carry both data and voice?",
+    "options": [
+      "Local Loop",
+      "Wireless Local Loops",
+      "Digital Subscriber Loops (DSL)",
+      "Fiber to the x"
+    ],
+    "correctAnswer": 2,
+    "explanation": "DSL (Digital Subscriber Loops) is described as 'modified to carry data and voice within certain constraints on copper local loops'."
+  },
+  {
+    "id": "q7",
+    "text": "In FTTx technology, what does the 'x' represent?",
+    "options": [
+      "The transmission speed",
+      "The fiber type",
+      "The location (curb, business, home)",
+      "The cable length"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document explains that in Fiber to the x (FTTx), 'x=curb, business, home', indicating the endpoint location."
+  },
+  {
+    "id": "q8",
+    "text": "What is the primary function of switching in the telephone network?",
+    "options": [
+      "Signal amplification",
+      "Connects subscribers to each other on demand",
+      "Data encryption",
+      "Network monitoring"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Switching is described as connecting 'subscribers to each other on demand'."
+  },
+  {
+    "id": "q9",
+    "text": "Which of the following is NOT mentioned as a type of switching technology?",
+    "options": [
+      "Manual operators",
+      "Electromechanical switches",
+      "Software-controlled switches",
+      "Quantum switches"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The document mentions manual operators, electromechanical switches, and software-controlled switches, but not quantum switches."
+  },
+  {
+    "id": "q10",
+    "text": "What is the primary purpose of transmission in the telephone network?",
+    "options": [
+      "Signal processing",
+      "Transportation of signals between subscribers or networks",
+      "Call routing",
+      "Billing management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Transmission is defined as 'transportation of signals between subscribers of networks'."
+  },
+  {
+    "id": "q11",
+    "text": "Which transmission media carries 'thousands of multiplexed calls between exchanges'?",
+    "options": [
+      "Single copper wires",
+      "High capacity copper cables, microwave links, optical fibers",
+      "Wireless signals only",
+      "Satellite links only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document states that transmission uses 'high capacity copper cables, microwave (radio) links, optical fibers' and 'carries thousands of multiplexed calls between exchanges'."
+  },
+  {
+    "id": "q12",
+    "text": "Which of the following is NOT listed as a function of signalling?",
+    "options": [
+      "Call connection",
+      "Call disconnection",
+      "Billing",
+      "Data encryption"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The signalling functions listed are call connection, call disconnection, billing, subscriber loop signalling, and inter-exchange signalling. Data encryption is not mentioned."
+  },
+  {
+    "id": "q13",
+    "text": "What is an example of subscriber loop signalling mentioned in the lecture?",
+    "options": [
+      "Network routing protocols",
+      "Dial tone, dial-digits, ringing signals",
+      "Error correction codes",
+      "Authentication tokens"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Subscriber loop signalling examples given include 'dial tone, dial-digits, ringing signals'."
+  },
+  {
+    "id": "q14",
+    "text": "In the telephone numbering system example, what is the country code for Sri Lanka?",
+    "options": [
+      "11",
+      "2",
+      "94",
+      "650301"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The example shows Country Code (94) for Sri Lanka."
+  },
+  {
+    "id": "q15",
+    "text": "What is the maximum character limit for SMS messages according to the lecture?",
+    "options": [
+      "140 characters",
+      "160 characters",
+      "180 characters",
+      "200 characters"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SMS is described as 'sending and receiving of short messages of up to 160 characters'."
+  },
+  {
+    "id": "q16",
+    "text": "SMS is described as part of which technology?",
+    "options": [
+      "GSM only",
+      "CDMA only",
+      "Integrated Digital Subscriber Line (ISDN)",
+      "VoIP systems"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SMS is described as 'part of Integrated Digital Subscriber Line (ISDN)'."
+  },
+  {
+    "id": "q17",
+    "text": "What type of service model does SMS use?",
+    "options": [
+      "Real-time communication",
+      "Store and Forward Service",
+      "Peer-to-peer messaging",
+      "Broadcast only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SMS is described as a 'Store and Forward Service by SMS Centre'."
+  },
+  {
+    "id": "q18",
+    "text": "What does CLI stand for in enhanced telephone services?",
+    "options": [
+      "Call Line Interface",
+      "Calling Line ID",
+      "Central Line Identifier",
+      "Customer Line Information"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CLI stands for 'Calling Line ID' which 'provides the calling number to the receiver'."
+  },
+  {
+    "id": "q19",
+    "text": "Which of the following is NOT mentioned as an enhanced telephone service?",
+    "options": [
+      "Conference Calls",
+      "Call Forwarding",
+      "Voice Mail",
+      "Video streaming"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The enhanced services listed include Conference Calls, Call Forwarding, Voice Mail, Follow Me, Free calls, and Short Code numbers, but not video streaming."
+  },
+  {
+    "id": "q20",
+    "text": "For mobile phones, which method is NOT mentioned for location identification in Location Based Services?",
+    "options": [
+      "Cell ID",
+      "GPS",
+      "Triangulation",
+      "Bluetooth beacons"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The document mentions cell ID, GPS, and triangulation for mobile location identification, but not Bluetooth beacons."
+  },
+  {
+    "id": "q21",
+    "text": "What is another name for Voice over IP (VoIP)?",
+    "options": [
+      "Digital telephony",
+      "Internet Telephony",
+      "Packet telephony",
+      "Network calling"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document states that VoIP is 'also known as Internet Telephony'."
+  },
+  {
+    "id": "q22",
+    "text": "VoIP uses which type of networks for voice communications?",
+    "options": [
+      "Circuit-switched networks only",
+      "Packet-switched data networks",
+      "Analog networks only",
+      "Satellite networks only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "VoIP is defined as 'using packet-switched data networks for interactive voice communications'."
+  },
+  {
+    "id": "q23",
+    "text": "Which of the following is NOT mentioned as a network type that VoIP can use?",
+    "options": [
+      "Ethernet",
+      "WiFi",
+      "3G/4G",
+      "Morse code"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The document lists Ethernet, WiFi, 3G/4G, and any IP-based network as examples, but not Morse code."
+  },
+  {
+    "id": "q24",
+    "text": "According to the lecture, why is VoIP advantageous economically?",
+    "options": [
+      "It requires specialized hardware",
+      "Companies already have data networks, so no additional network needed for voice",
+      "It only works with expensive equipment",
+      "It requires separate infrastructure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document explains that companies 'already have data networks' so there's 'no need to have additional network for voice', making it cheaper."
+  },
+  {
+    "id": "q25",
+    "text": "In the VoIP process, what converts voice to digital form?",
+    "options": [
+      "Decoder",
+      "Encoder (codec)",
+      "Router",
+      "Gateway"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document states 'Voice is converted to a digital form by an encoder (codec)'."
+  },
+  {
+    "id": "q26",
+    "text": "Which of the following is mentioned as an advantage of VoIP?",
+    "options": [
+      "Lower latency than traditional telephony",
+      "No packet losses",
+      "Support for advanced features like video and conferencing",
+      "Guaranteed voice quality"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The advantages listed include using existing network, integration with computer applications, and 'support for advanced features' including video and conferencing."
+  },
+  {
+    "id": "q27",
+    "text": "Which of the following is listed as a disadvantage of VoIP?",
+    "options": [
+      "Requires separate networks",
+      "Higher latency (delay)",
+      "Cannot integrate with computers",
+      "Limited to voice only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The disadvantages of VoIP listed include 'higher latency (delay)', packet losses, and variable voice quality."
+  },
+  {
+    "id": "q28",
+    "text": "According to the lecture, what is a key concept characteristic of multimedia?",
+    "options": [
+      "Analog format",
+      "Digital format",
+      "Text-only format",
+      "Audio-only format"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document lists 'Digital – key concept' as one of the characteristics of multimedia."
+  },
+  {
+    "id": "q29",
+    "text": "What is multimedia defined as in the lecture?",
+    "options": [
+      "Only video and audio content",
+      "An integration of text, graphics, still and moving images, animation, sounds, or any others",
+      "Digital photographs only",
+      "Computer games only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Multimedia is defined as 'an integration of text, graphics, still and moving images, animation, sounds, or any others'."
+  },
+  {
+    "id": "q30",
+    "text": "Which type of media is described as 'information captured from the real world'?",
+    "options": [
+      "Synthesized media",
+      "Captured media (natural)",
+      "Discrete media",
+      "Continuous media"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Captured media (natural) is described as 'information captured from the real world' with examples like still image, video, audio."
+  },
+  {
+    "id": "q31",
+    "text": "What type of media is text classified as according to the lecture?",
+    "options": [
+      "Captured and Continuous",
+      "Captured and Discrete",
+      "Synthesized and Discrete",
+      "Synthesized and Continuous"
+    ],
+    "correctAnswer": 2,
+    "explanation": "According to the classification diagram, text is shown as both Synthesized (by computer) and Discrete (no time component)."
+  },
+  {
+    "id": "q32",
+    "text": "Which media type has 'no time component' according to the classification?",
+    "options": [
+      "Continuous media",
+      "Discrete media",
+      "Captured media",
+      "Synthesized media"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Discrete media is defined as having 'no time component', while continuous media is 'time-based'."
+  },
+  {
+    "id": "q33",
+    "text": "What is the difference between plain text and rich text?",
+    "options": [
+      "Plain text is digital, rich text is analog",
+      "Plain text is unformatted with same style, rich text is formatted with various styles",
+      "Plain text is compressed, rich text is uncompressed",
+      "Plain text is encrypted, rich text is unencrypted"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Plain text is described as 'unformatted' where 'all characters have the same style and font', while rich text is 'formatted' with 'characters of various size, shape and style'."
+  },
+  {
+    "id": "q34",
+    "text": "What character encoding standards are mentioned for plain text?",
+    "options": [
+      "HTML and XML",
+      "ASCII code and Unicode",
+      "JPEG and PNG",
+      "MP3 and WAV"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document mentions 'ASCII code, Unicode' as character encoding standards for plain text."
+  },
+  {
+    "id": "q35",
+    "text": "What distinguishes graphics from images according to the lecture?",
+    "options": [
+      "Graphics are always colored, images are black and white",
+      "Graphics retain structural information and consist of objects like lines and curves, images are 2D matrices of pixels",
+      "Graphics are larger files, images are smaller",
+      "Graphics are static, images are dynamic"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Graphics are described as 'revisable document that retains structural information' consisting of 'objects such as lines, curves, circles', while images are '2D matrix consisting of pixels' with 'no structural information'."
+  },
+  {
+    "id": "q36",
+    "text": "What is a pixel according to the lecture?",
+    "options": [
+      "A type of image format",
+      "The smallest element of resolution of the image",
+      "A graphics editing tool",
+      "A color measurement unit"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A pixel is defined as the 'smallest element of resolution of the image'."
+  },
+  {
+    "id": "q37",
+    "text": "What does 'pixel depth' refer to?",
+    "options": [
+      "The physical size of the pixel",
+      "The number of bits per pixel",
+      "The color intensity of the pixel",
+      "The location of the pixel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Pixel depth is defined as 'the number of bits per pixel'."
+  },
+  {
+    "id": "q38",
+    "text": "According to the examples given, what is the pixel depth for a color image?",
+    "options": [
+      "1 bit",
+      "8 bits",
+      "24 bits",
+      "32 bits"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document shows 'Color image – pixel depth 24' as an example."
+  },
+  {
+    "id": "q39",
+    "text": "What is the pixel depth for a binary image?",
+    "options": [
+      "1 bit",
+      "8 bits",
+      "16 bits",
+      "24 bits"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The document shows 'Binary image – pixel depth 1' as an example."
+  },
+  {
+    "id": "q40",
+    "text": "What is each individual image in a video sequence called?",
+    "options": [
+      "Pixel",
+      "Frame",
+      "Segment",
+      "Layer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document states that video 'consists of a series of bitmap images' where 'each image is called a frame'."
+  },
+  {
+    "id": "q41",
+    "text": "What does 'frame rate' measure in video?",
+    "options": [
+      "The size of each frame",
+      "The quality of the video",
+      "The speed to playback the video (frames per second)",
+      "The compression ratio"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Frame rate is defined as 'the speed to playback the video (frame per second)'."
+  },
+  {
+    "id": "q42",
+    "text": "How does animation differ from video according to the lecture?",
+    "options": [
+      "Animation is always in color, video is black and white",
+      "Animation is moving graphics generated by computer, video is moving images",
+      "Animation is shorter than video",
+      "Animation requires more storage space"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Animation is described as 'moving graphics' that are 'generated by computer program', while video is 'moving images or moving pictures' that can be captured or synthesized."
+  },
+  {
+    "id": "q43",
+    "text": "What are the two main categories of sound mentioned?",
+    "options": [
+      "Digital and analog",
+      "Natural sound and Structured sound",
+      "High quality and low quality",
+      "Mono and stereo"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document categorizes sound into 'Natural sound – Recorded/generated sound wave represented as digital signal' and 'Structured sound – Synthesize sound in a symbolic way'."
+  },
+  {
+    "id": "q44",
+    "text": "Which file format is given as an example of structured sound?",
+    "options": [
+      "WAV files",
+      "Audio in CD",
+      "MIDI file",
+      "MP3 files"
+    ],
+    "correctAnswer": 2,
+    "explanation": "MIDI file is given as an example of structured sound, while WAV files and Audio in CD are examples of natural sound."
+  },
+  {
+    "id": "q45",
+    "text": "Sound is described as what type of signal?",
+    "options": [
+      "2-D spatial signal",
+      "1-D time-based signal",
+      "3-D volumetric signal",
+      "Static signal"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Sound is described as a '1-D time-based signal'."
+  },
+  {
+    "id": "q46",
+    "text": "Which of the following is NOT mentioned as a class of multimedia applications?",
+    "options": [
+      "Streaming stored audio and video",
+      "Streaming live audio and video",
+      "Real-time interactive audio and video",
+      "Batch processing multimedia"
+    ],
+    "correctAnswer": 3,
+    "explanation": "The three classes mentioned are streaming stored audio and video, streaming live audio and video, and real-time interactive audio and video. Batch processing is not mentioned."
+  },
+  {
+    "id": "q47",
+    "text": "What is given as an example of streaming stored multimedia?",
+    "options": [
+      "Internet radio talk show",
+      "YouTube",
+      "IP telephony",
+      "Live sporting event"
+    ],
+    "correctAnswer": 1,
+    "explanation": "YouTube is given as an example (E.G. YouTube) of streaming stored multimedia."
+  },
+  {
+    "id": "q48",
+    "text": "Which feature is possible with streaming stored multimedia but NOT with streaming live multimedia?",
+    "options": [
+      "Pause",
+      "Rewind",
+      "Fast forward",
+      "All of the above"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document states that with streaming live multimedia, 'fast forward impossible' while 'rewind, pause possible!'"
+  },
+  {
+    "id": "q49",
+    "text": "What is an example of streaming live multimedia mentioned in the lecture?",
+    "options": [
+      "YouTube videos",
+      "Internet radio talk show",
+      "Video conference",
+      "Downloaded movies"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Examples given for streaming live multimedia include 'Internet radio talk show' and 'Live sporting event'."
+  },
+  {
+    "id": "q50",
+    "text": "Which applications are examples of Interactive, Real-Time Multimedia?",
+    "options": [
+      "YouTube and Netflix",
+      "Internet radio and live TV",
+      "IP telephony, video conference, distributed interactive worlds",
+      "Email and file transfer"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document lists 'IP telephony, video conference, distributed interactive worlds' as applications of Interactive, Real-Time Multimedia."
+  },
+  {
+    "id": "q51",
+    "text": "What are examples of real-time interactive multimedia applications mentioned?",
+    "options": [
+      "Facebook and Instagram",
+      "Zoom, Viber call",
+      "Gmail and Yahoo mail",
+      "Chrome and Firefox"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document specifically mentions 'e.g. Zoom, Viber call' as examples of real-time interactive multimedia applications."
+  },
+  {
+    "id": "q52",
+    "text": "For interactive real-time multimedia, what is the acceptable end-to-end delay for audio marked as 'good'?",
+    "options": [
+      "< 50 msec",
+      "< 150 msec",
+      "< 400 msec",
+      "< 1000 msec"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document states that for audio: '< 150 msec good, < 400 msec OK'."
+  },
+  {
+    "id": "q53",
+    "text": "What happens with higher delays in interactive real-time multimedia?",
+    "options": [
+      "Better quality is achieved",
+      "No noticeable effect",
+      "They are noticeable and impair interactivity",
+      "Automatic compensation occurs"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document states that 'higher delays noticeable, impair interactivity'."
+  },
+  {
+    "id": "q54",
+    "text": "In streaming live multimedia, how much can playback lag behind transmission?",
+    "options": [
+      "Less than 1 second",
+      "A few seconds",
+      "Tens of seconds",
+      "Several minutes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document states that in streaming live multimedia, 'playback can lag tens of seconds after transmission'."
+  },
+  {
+    "id": "q55",
+    "text": "What is the timing constraint for streaming stored multimedia?",
+    "options": [
+      "No timing constraints",
+      "Real-time delivery required",
+      "In time for playout",
+      "Immediate delivery required"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document states there is a 'timing constraint for still-to-be transmitted data: in time for playout'."
+  },
+  {
+    "id": "q56",
+    "text": "Which of the following controls is mentioned as available for streaming stored multimedia?",
+    "options": [
+      "Volume control only",
+      "Play and stop only",
+      "Pause, rewind, FF, push slider bar",
+      "Speed adjustment only"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document states that clients 'can pause, rewind, FF, push slider bar' with streaming stored multimedia."
+  },
+  {
+    "id": "q57",
+    "text": "What is required for streaming live multimedia that helps with timing?",
+    "options": [
+      "High-speed internet only",
+      "Playback buffer",
+      "Special hardware",
+      "Dedicated servers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document mentions 'playback buffer' as a component of streaming live multimedia systems."
+  },
+  {
+    "id": "q58",
+    "text": "According to the telephone numbering system example, what is the area code?",
+    "options": [
+      "94",
+      "11",
+      "2",
+      "650301"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The example shows Area Code (11) in the telephone numbering system structure."
+  },
+  {
+    "id": "q59",
+    "text": "What is the emergency services number mentioned as an example of location-based services?",
+    "options": [
+      "911",
+      "999",
+      "119",
+      "112"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The document mentions 'emergency services (119)' as an example of location-based services."
+  },
+  {
+    "id": "q60",
+    "text": "Which of the following best describes the main advantage of using existing data networks for VoIP?",
+    "options": [
+      "Better voice quality than traditional telephony",
+      "No need for additional network infrastructure, making it cheaper",
+      "Unlimited calling capacity",
+      "Faster connection setup"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The document explains that companies 'already have data networks' so there's 'no need to have additional network for voice', making it 'cheaper internally, locally, internationally'."
+  }
+]
