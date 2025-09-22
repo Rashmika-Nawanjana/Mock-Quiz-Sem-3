@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "Which of the following is NOT a primary reason for using wireless networks?",
+    "options": [
+      "Mobile devices that are not stationary",
+      "Nomadic access for users working in several places",
+      "Ad hoc networking for temporary peer-to-peer networks",
+      "Higher data transmission speeds compared to wired networks"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Wireless networks are used for mobility, nomadic access, and ad hoc networking, but they typically do not provide higher data transmission speeds compared to wired networks."
+  },
+  {
+    "id": "q2",
+    "text": "What is the hidden terminal problem in wireless networks?",
+    "options": [
+      "A challenge where nodes cannot detect each other's transmissions",
+      "Difficulty in finding the physical location of wireless devices",
+      "Signal interference from external sources",
+      "Loss of connection during device handoff"
+    ],
+    "correctAnswer": 0,
+    "explanation": "The hidden terminal problem occurs when wireless nodes cannot detect each other's transmissions, leading to potential collisions."
+  },
+  {
+    "id": "q3",
+    "text": "Which challenge is NOT typically associated with wireless networks compared to wired networks?",
+    "options": [
+      "Path loss and fading",
+      "Multipath propagation",
+      "Fixed addressing schemes",
+      "Handoff procedures"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Fixed addressing schemes are not a wireless-specific challenge. The other options (path loss, multipath propagation, handoff) are specific wireless challenges."
+  },
+  {
+    "id": "q4",
+    "text": "What is the primary advantage of spread spectrum encoding?",
+    "options": [
+      "Higher data transmission rates",
+      "Less susceptibility to signal jamming",
+      "Reduced power consumption",
+      "Simpler hardware implementation"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Spread spectrum encoding spreads the signal across a larger bandwidth, making it less susceptible to signal jamming and interference."
+  },
+  {
+    "id": "q5",
+    "text": "In Frequency Hopping Spread Spectrum (FHSS), what happens to the carrier frequency?",
+    "options": [
+      "It remains constant throughout transmission",
+      "It changes according to a predetermined sequence",
+      "It is divided into multiple parallel channels",
+      "It is eliminated to reduce interference"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In FHSS, the carrier frequency changes (hops) according to a predetermined sequence, spreading the signal across different frequencies."
+  },
+  {
+    "id": "q6",
+    "text": "In Direct Sequence Spread Spectrum (DSSS), each data bit is represented by:",
+    "options": [
+      "A single bit in the transmitted signal",
+      "Multiple bits using a spreading code",
+      "A frequency-hopped sequence",
+      "An analog waveform"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In DSSS, each data bit in the original signal is represented by multiple bits in the transmitted signal using a spreading code."
+  },
+  {
+    "id": "q7",
+    "text": "What type of sequence is used as a spreading code in DSSS?",
+    "options": [
+      "Sequential binary pattern",
+      "Pseudorandom sequence of '1' and '0's",
+      "Alphabetical character sequence",
+      "Fixed alternating pattern"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DSSS uses a pseudorandom sequence of '1' and '0's (or 1s and -1s) as the spreading code."
+  },
+  {
+    "id": "q8",
+    "text": "In DSSS, how is the data stream combined with the spreading code at the sender?",
+    "options": [
+      "Using AND operation",
+      "Using OR operation",
+      "Using XOR operation",
+      "Using multiplication"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In DSSS, the data stream is combined with the spreading code using XOR operation at the sender."
+  },
+  {
+    "id": "q9",
+    "text": "Code Division Multiple Access (CDMA) is:",
+    "options": [
+      "A modulation technique for single users",
+      "A multiplexing technique used with spread spectrum",
+      "A frequency allocation method",
+      "A power control mechanism"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CDMA is a multiplexing technique that is used with spread spectrum technology to allow multiple users to share the same spectrum."
+  },
+  {
+    "id": "q10",
+    "text": "In CDMA, what must be true about the chipping codes used by different users?",
+    "options": [
+      "They must be identical",
+      "They must be sequential",
+      "They must be orthogonal",
+      "They must be of equal length"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In CDMA, the chipping codes used by different users must be orthogonal to avoid interference between users."
+  },
+  {
+    "id": "q11",
+    "text": "In CDMA, how is a data bit '1' represented using the chipping code?",
+    "options": [
+      "By the complement of the chipping code",
+      "By the chipping code as it is",
+      "By doubling the chipping code",
+      "By inverting the chipping code"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In CDMA, a data bit '1' is represented by the chipping code as it is, while '0' is represented by the complement of the code."
+  },
+  {
+    "id": "q12",
+    "text": "Which IEEE standard family governs wireless LAN specifications?",
+    "options": [
+      "IEEE 802.3",
+      "IEEE 802.5",
+      "IEEE 802.11",
+      "IEEE 802.15"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IEEE 802.11 is the standard family that governs wireless LAN (WLAN) specifications."
+  },
+  {
+    "id": "q13",
+    "text": "What does BSS stand for in 802.11 terminology?",
+    "options": [
+      "Basic System Set",
+      "Basic Service Set",
+      "Base Station System",
+      "Binary Service Standard"
+    ],
+    "correctAnswer": 1,
+    "explanation": "BSS stands for Basic Service Set, which is the smallest building block of a WLAN."
+  },
+  {
+    "id": "q14",
+    "text": "A Basic Service Set (BSS) consists of:",
+    "options": [
+      "Multiple access points connected together",
+      "A set of stations executing the same MAC protocol",
+      "Different wireless standards operating together",
+      "Base stations from different manufacturers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A BSS is a set of stations executing the same MAC protocol and competing for the same shared wireless medium."
+  },
+  {
+    "id": "q15",
+    "text": "What is the purpose of a Distribution System (DS) in 802.11?",
+    "options": [
+      "To distribute power to wireless devices",
+      "To interconnect BSS and LANs to create an ESS",
+      "To manage frequency distribution",
+      "To control data packet distribution"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A Distribution System (DS) is used to interconnect a set of basic service sets (BSSs) and integrated local area networks (LANs) to create an extended service set (ESS)."
+  },
+  {
+    "id": "q16",
+    "text": "An Independent BSS (IBSS) is characterized by:",
+    "options": [
+      "Connection to multiple access points",
+      "No access to a distribution system",
+      "Higher data transmission rates",
+      "Centralized control mechanism"
+    ],
+    "correctAnswer": 1,
+    "explanation": "An IBSS is a basic service set that forms a self-contained network with no access to a distribution system (DS)."
+  },
+  {
+    "id": "q17",
+    "text": "In infrastructure mode, what role do base stations play?",
+    "options": [
+      "They only relay data packets",
+      "They provide services like addressing and routing",
+      "They store data permanently",
+      "They generate wireless signals"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In infrastructure mode, base stations (like access points) provide services such as addressing and routing for the nodes associated with them."
+  },
+  {
+    "id": "q18",
+    "text": "Ad hoc networks are characterized by:",
+    "options": [
+      "Centralized control through base stations",
+      "Nodes providing services themselves without infrastructure",
+      "Higher security compared to infrastructure networks",
+      "Fixed topology that cannot change"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In ad hoc networks, there is no infrastructure to connect to, and the nodes themselves provide the necessary services."
+  },
+  {
+    "id": "q19",
+    "text": "What is handoff in wireless networks?",
+    "options": [
+      "Transferring data between applications",
+      "Changing attachment point from one base station to another",
+      "Switching between different wireless standards",
+      "Passing control from user to network"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Handoff is the process of changing the attachment point from one base station to another as a mobile device moves."
+  },
+  {
+    "id": "q20",
+    "text": "What does DFWMAC stand for in 802.11?",
+    "options": [
+      "Distributed Foundation Wireless MAC",
+      "Dynamic Frequency Wireless Multiple Access Control",
+      "Digital Foundation Wireless Media Access",
+      "Direct Function Wireless MAC"
+    ],
+    "correctAnswer": 0,
+    "explanation": "DFWMAC stands for Distributed Foundation Wireless MAC, which is the medium access control method used in 802.11."
+  },
+  {
+    "id": "q21",
+    "text": "Which function provides distributed access control in 802.11 DFWMAC?",
+    "options": [
+      "Point Coordination Function (PCF)",
+      "Distributed Coordination Function (DCF)",
+      "Medium Access Control (MAC)",
+      "Collision Detection Function (CDF)"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Distributed Coordination Function (DCF) provides distributed access control in 802.11 DFWMAC."
+  },
+  {
+    "id": "q22",
+    "text": "CSMA/CA is an example of which 802.11 function?",
+    "options": [
+      "Point Coordination Function (PCF)",
+      "Distributed Coordination Function (DCF)",
+      "Centralized Control Function",
+      "Collision Detection Function"
+    ],
+    "correctAnswer": 1,
+    "explanation": "CSMA/CA (Carrier Sense Multiple Access/Collision Avoidance) is an example of the Distributed Coordination Function (DCF)."
+  },
+  {
+    "id": "q23",
+    "text": "What frequency band does 802.11a operate in?",
+    "options": [
+      "2.4 GHz",
+      "5 GHz",
+      "900 MHz",
+      "Both 2.4 GHz and 5 GHz"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.11a operates in the 5 GHz frequency band using OFDM modulation."
+  },
+  {
+    "id": "q24",
+    "text": "Which modulation technique does 802.11a use?",
+    "options": [
+      "DSSS",
+      "FHSS",
+      "OFDM",
+      "QAM"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IEEE 802.11a uses OFDM (Orthogonal Frequency Division Multiplexing) as its modulation technique."
+  },
+  {
+    "id": "q25",
+    "text": "What is the maximum data rate supported by 802.11a?",
+    "options": [
+      "11 Mbps",
+      "54 Mbps",
+      "100 Mbps",
+      "150 Mbps"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.11a supports data rates up to 54 Mbps using OFDM in the 5 GHz band."
+  },
+  {
+    "id": "q26",
+    "text": "Which frequency band and modulation does 802.11b use?",
+    "options": [
+      "5 GHz OFDM",
+      "2.4 GHz DSSS",
+      "900 MHz FHSS",
+      "2.4 GHz OFDM"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.11b operates in the 2.4 GHz frequency band using DSSS (Direct Sequence Spread Spectrum) modulation."
+  },
+  {
+    "id": "q27",
+    "text": "What are the data rates supported by 802.11b?",
+    "options": [
+      "1 and 2 Mbps",
+      "5.5 and 11 Mbps",
+      "6 and 54 Mbps",
+      "1, 2, 5.5, and 11 Mbps"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.11b specifically supports data rates of 5.5 Mbps and 11 Mbps, though it's backward compatible with lower rates."
+  },
+  {
+    "id": "q28",
+    "text": "How does 802.11g extend 802.11b?",
+    "options": [
+      "By changing to 5 GHz frequency",
+      "By extending to data rates greater than 20 Mbps",
+      "By using FHSS modulation",
+      "By reducing power consumption"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.11g extends 802.11b by supporting data rates greater than 20 Mbps while maintaining backward compatibility."
+  },
+  {
+    "id": "q29",
+    "text": "What technology does 802.11n introduce to achieve higher throughput?",
+    "options": [
+      "FHSS",
+      "MIMO",
+      "CDMA",
+      "TDMA"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IEEE 802.11n introduces MIMO (Multiple Input Multiple Output) technology to achieve higher throughput."
+  },
+  {
+    "id": "q30",
+    "text": "Which frequency bands does 802.11n support?",
+    "options": [
+      "Only 2.4 GHz",
+      "Only 5 GHz",
+      "Both 2.4 GHz and 5 GHz",
+      "900 MHz and 2.4 GHz"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IEEE 802.11n supports both 2.4 GHz and 5 GHz frequency bands for greater flexibility."
+  },
+  {
+    "id": "q31",
+    "text": "What is the maximum payload size in an 802.11 frame?",
+    "options": [
+      "1500 bytes",
+      "2312 bytes",
+      "4096 bytes",
+      "1024 bytes"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The maximum payload size in an 802.11 frame is 2312 bytes as shown in the frame structure."
+  },
+  {
+    "id": "q32",
+    "text": "How many address fields are there in an 802.11 frame?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "6"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An 802.11 frame has 4 address fields (Addr1, Addr2, Addr3, and Addr4), though not all are always used."
+  },
+  {
+    "id": "q33",
+    "text": "What does Address 1 represent in an 802.11 frame?",
+    "options": [
+      "MAC address of the transmitting station",
+      "MAC address of the receiving station",
+      "MAC address of the router interface",
+      "MAC address of the access point"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Address 1 contains the MAC address of the wireless station that receives the frame."
+  },
+  {
+    "id": "q34",
+    "text": "Address 4 in 802.11 frames is used for:",
+    "options": [
+      "Infrastructure mode only",
+      "Ad-hoc mode operation",
+      "Both infrastructure and ad-hoc modes",
+      "Router identification only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Address 4 is specifically used for ad-hoc mode of operation in 802.11 networks."
+  },
+  {
+    "id": "q35",
+    "text": "Which generation of mobile telecommunications first introduced digital voice?",
+    "options": [
+      "1G",
+      "2G",
+      "3G",
+      "4G"
+    ],
+    "correctAnswer": 1,
+    "explanation": "2G (second generation) mobile telecommunications first introduced digital voice services, moving away from 1G's analog voice."
+  },
+  {
+    "id": "q36",
+    "text": "What was the primary service offered by 1G mobile systems?",
+    "options": [
+      "Digital voice",
+      "Analog voice",
+      "Data services",
+      "Internet access"
+    ],
+    "correctAnswer": 1,
+    "explanation": "1G (first generation) mobile systems primarily offered analog voice services starting in 1984."
+  },
+  {
+    "id": "q37",
+    "text": "Which generation introduced higher capacity packetized data services?",
+    "options": [
+      "2G",
+      "2.5G",
+      "3G",
+      "4G"
+    ],
+    "correctAnswer": 1,
+    "explanation": "2.5G introduced higher capacity packetized data services as an enhancement to 2G systems."
+  },
+  {
+    "id": "q38",
+    "text": "What is the data rate capability of 3G systems?",
+    "options": [
+      "384 kbps",
+      "2 Mbps",
+      "200 Mbps",
+      "20 Gbps"
+    ],
+    "correctAnswer": 1,
+    "explanation": "3G mobile systems support data rates up to 2 Mbps for higher capacity broadband services."
+  },
+  {
+    "id": "q39",
+    "text": "4G mobile systems are characterized by being:",
+    "options": [
+      "Partially IP based",
+      "Circuit switched only",
+      "Completely IP based",
+      "Analog based"
+    ],
+    "correctAnswer": 2,
+    "explanation": "4G mobile systems are completely IP based, representing a full transition to packet-switched networks."
+  },
+  {
+    "id": "q40",
+    "text": "What is the theoretical maximum data rate for 5G systems?",
+    "options": [
+      "200 Mbps",
+      "2 Gbps",
+      "20 Gbps",
+      "200 Gbps"
+    ],
+    "correctAnswer": 2,
+    "explanation": "5G systems are designed to support theoretical maximum data rates of up to 20 Gbps."
+  },
+  {
+    "id": "q41",
+    "text": "Which multiplexing technique is used in 1G systems?",
+    "options": [
+      "TDMA",
+      "CDMA",
+      "FDMA",
+      "OFDMA"
+    ],
+    "correctAnswer": 2,
+    "explanation": "1G mobile systems use FDMA (Frequency Division Multiple Access) as their multiplexing technique."
+  },
+  {
+    "id": "q42",
+    "text": "Both 4G and 5G systems use which multiplexing technique?",
+    "options": [
+      "FDMA",
+      "TDMA",
+      "CDMA",
+      "OFDMA"
+    ],
+    "correctAnswer": 3,
+    "explanation": "Both 4G and 5G mobile systems use OFDMA (Orthogonal Frequency Division Multiple Access) as their multiplexing technique."
+  },
+  {
+    "id": "q43",
+    "text": "The core network for 1G and 2G systems was based on:",
+    "options": [
+      "IP backbone",
+      "PSTN",
+      "Internet protocols",
+      "Packet networks only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Both 1G and 2G systems used PSTN (Public Switched Telephone Network) as their core network infrastructure."
+  },
+  {
+    "id": "q44",
+    "text": "What are the two main components of a basic mobile communications system?",
+    "options": [
+      "Transmitter and receiver",
+      "Base station and mobile station",
+      "Antenna and amplifier",
+      "Controller and switch"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The basic components of a mobile communications system are the base station (fixed) and the mobile station."
+  },
+  {
+    "id": "q45",
+    "text": "In mobile communications, what is the forward link also called?",
+    "options": [
+      "Uplink",
+      "Downlink",
+      "Sidelink",
+      "Backlink"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The forward link in mobile communications is also called the downlink, referring to communication from base station to mobile."
+  },
+  {
+    "id": "q46",
+    "text": "For full-duplex communication in mobile systems, what is required?",
+    "options": [
+      "A single RF channel",
+      "A pair of RF channels",
+      "Three RF channels",
+      "Multiple antennas only"
+    ],
+    "correctAnswer": 1,
+    "explanation": "For full-duplex communication, a pair of RF channels is needed - one for uplink and one for downlink."
+  },
+  {
+    "id": "q47",
+    "text": "Which type of mobile communication system is designed for sparsely populated areas?",
+    "options": [
+      "Cordless telephone systems",
+      "Cellular systems",
+      "Mobile satellite systems",
+      "WiFi networks"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Mobile satellite systems are designed for long-range communication in sparsely populated areas where terrestrial infrastructure is limited."
+  },
+  {
+    "id": "q48",
+    "text": "The most widespread mobile communication technique is:",
+    "options": [
+      "Cordless systems",
+      "Cellular systems",
+      "Satellite systems",
+      "Microwave systems"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cellular systems are the most widespread technique for mobile communications, providing high capacity public networks."
+  },
+  {
+    "id": "q49",
+    "text": "What is the cellular concept primarily based on?",
+    "options": [
+      "High-power transmitters and large coverage zones",
+      "Low-power transmitters and small coverage zones",
+      "Medium-power transmitters and variable zones",
+      "Ultra-high power transmitters and nationwide coverage"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The cellular concept is based on using low-power transmitters and small coverage zones to enable frequency reuse and increase capacity."
+  },
+  {
+    "id": "q50",
+    "text": "Frequency reuse in cellular systems allows:",
+    "options": [
+      "Using the same frequencies in all cells",
+      "Using the same frequencies in non-adjacent cells",
+      "Avoiding frequency interference completely",
+      "Increasing power in all cells"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Frequency reuse allows the same frequencies to be used in non-adjacent cells, maximizing spectrum efficiency while controlling interference."
+  },
+  {
+    "id": "q51",
+    "text": "Cell splitting in cellular systems is used to:",
+    "options": [
+      "Reduce interference",
+      "Increase capacity in high traffic areas",
+      "Simplify network management",
+      "Reduce power consumption"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Cell splitting divides cells into smaller cells to increase capacity in areas with higher traffic density."
+  },
+  {
+    "id": "q52",
+    "text": "What is the primary function of the MTSO in cellular systems?",
+    "options": [
+      "Signal amplification",
+      "Frequency allocation",
+      "All call control functions",
+      "Power management"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The MTSO (Mobile Telecommunications Switching Office) handles all call control functions and connects all base stations for centralized control."
+  },
+  {
+    "id": "q53",
+    "text": "Voice channels in cellular systems are also known as:",
+    "options": [
+      "Control channels",
+      "Traffic channels",
+      "Paging channels",
+      "Access channels"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Voice channels are also referred to as traffic channels as they carry the actual voice or data traffic."
+  },
+  {
+    "id": "q54",
+    "text": "What does FOCC stand for in cellular channel structure?",
+    "options": [
+      "Forward Operations Control Channel",
+      "Forward Control Channel",
+      "Frequency Operations Control Channel",
+      "Full Operations Control Channel"
+    ],
+    "correctAnswer": 1,
+    "explanation": "FOCC stands for Forward Control Channel, also known as the Paging Channel, used for base-to-mobile control signaling."
+  },
+  {
+    "id": "q55",
+    "text": "In FDMA cellular systems like AMPS, what is the typical channel bandwidth?",
+    "options": [
+      "25 kHz",
+      "30 kHz",
+      "200 kHz",
+      "1.25 MHz"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In FDMA systems like AMPS (Advanced Mobile Phone System), each channel typically has a bandwidth of 30 kHz."
+  },
+  {
+    "id": "q56",
+    "text": "GSM is an example of which multiple access technique?",
+    "options": [
+      "FDMA",
+      "TDMA",
+      "CDMA",
+      "OFDMA"
+    ],
+    "correctAnswer": 1,
+    "explanation": "GSM (Global System for Mobile Communications) uses TDMA (Time Division Multiple Access) as its multiple access technique."
+  },
+  {
+    "id": "q57",
+    "text": "In GSM's TDMA system, how many time slots are typically used per frame?",
+    "options": [
+      "4",
+      "6",
+      "8",
+      "16"
+    ],
+    "correctAnswer": 2,
+    "explanation": "GSM's TDMA system typically uses 8 time slots per frame, allowing 8 users to share the same frequency channel."
+  },
+  {
+    "id": "q58",
+    "text": "IS-95 is an example of which cellular system generation and access method?",
+    "options": [
+      "1G FDMA",
+      "2G TDMA",
+      "2G CDMA",
+      "3G WCDMA"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IS-95 is a second-generation (2G) cellular system that uses CDMA (Code Division Multiple Access) technology."
+  },
+  {
+    "id": "q59",
+    "text": "During mobile initialization, what does the mobile unit do first?",
+    "options": [
+      "Transmits its identity",
+      "Selects the strongest control channel",
+      "Requests a voice channel",
+      "Performs authentication"
+    ],
+    "correctAnswer": 1,
+    "explanation": "During mobile initialization, the mobile unit first selects the strongest control channel from the broadcast information it receives."
+  },
+  {
+    "id": "q60",
+    "text": "Why is power control important in cellular systems?",
+    "options": [
+      "To increase data transmission rates",
+      "To save battery power and reduce interference",
+      "To improve call quality only",
+      "To simplify network management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Power control in cellular systems serves to save battery power in mobile devices and reduce interference to other cells, improving overall system performance."
+  }
+]
