@@ -1,0 +1,722 @@
+[
+  {
+    "id": "q1",
+    "text": "What is the primary purpose of electronic mail (e-mail)?",
+    "options": [
+      "To create web pages on the Internet",
+      "To send messages on the Internet or any other connected network",
+      "To store files on remote servers",
+      "To browse multimedia content"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Electronic mail is specifically used to send messages on the Internet or any other connected network, where sender and/or receiver may be a program."
+  },
+  {
+    "id": "q2",
+    "text": "Which of the following is a valid example of an e-mail address format?",
+    "options": [
+      "www.example.com",
+      "http://example.com",
+      "gihan@cse.mrt.ac.lk",
+      "example.com/user"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The format alibaba@treasure.org shows the standard e-mail address structure with username@domain, and gihan@cse.mrt.ac.lk follows this pattern."
+  },
+  {
+    "id": "q3",
+    "text": "What happens when mail is delivered to a mailbox?",
+    "options": [
+      "It must be read immediately by the recipient",
+      "It is automatically deleted after 24 hours",
+      "The recipient can read it at his convenience",
+      "It can only be accessed by the sender"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Mail is delivered to a mailbox where the recipient can read it at his convenience and can check his mailbox periodically."
+  },
+  {
+    "id": "q4",
+    "text": "Which of the following is NOT listed as a reason why e-mail is popular?",
+    "options": [
+      "It is widely used",
+      "It is easy to use",
+      "It requires both parties to be online simultaneously",
+      "It is low-cost and reliable"
+    ],
+    "correctAnswer": 2,
+    "explanation": "E-mail is popular because it's asynchronous - both sender and receiver don't have to be online simultaneously, unlike telephone communication."
+  },
+  {
+    "id": "q5",
+    "text": "What is a key advantage of e-mail over telephone communication?",
+    "options": [
+      "E-mail is always faster than phone calls",
+      "You can read/send e-mail at your convenience",
+      "E-mail supports only text messages",
+      "E-mail requires special hardware"
+    ],
+    "correctAnswer": 1,
+    "explanation": "E-mail allows users to read and send messages at their convenience, unlike telephone which requires both parties to be available simultaneously."
+  },
+  {
+    "id": "q6",
+    "text": "How does e-mail differ from the Web in terms of communication direction?",
+    "options": [
+      "E-mail is unidirectional, Web is bidirectional",
+      "E-mail is bidirectional, Web is mostly unidirectional",
+      "Both are equally bidirectional",
+      "Both are unidirectional"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Web is mostly unidirectional (one-way) while e-mail is bidirectional, allowing two-way communication between parties."
+  },
+  {
+    "id": "q7",
+    "text": "What is a key characteristic of e-mail compared to the Web in terms of timing?",
+    "options": [
+      "E-mail is real-time, Web is asynchronous",
+      "E-mail is asynchronous, Web is real-time",
+      "Both are real-time",
+      "Both are asynchronous"
+    ],
+    "correctAnswer": 1,
+    "explanation": "E-mail is asynchronous (both sender and receiver don't have to be online simultaneously) while the Web is real-time."
+  },
+  {
+    "id": "q8",
+    "text": "Which of the following is a characteristic of Instant Messaging (IM)?",
+    "options": [
+      "Messages can be sent to offline recipients",
+      "Sender and recipients are all online",
+      "Only supports long text messages",
+      "Cannot indicate user presence"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In instant messaging systems like WhatsApp and Viber, sender and recipients are all online, and the system can indicate presence."
+  },
+  {
+    "id": "q9",
+    "text": "What is the primary advantage of Web Forums for group communication?",
+    "options": [
+      "Messages are automatically deleted",
+      "Only text-based communication is allowed",
+      "Convenient to read, reply and archive messages",
+      "No login is required"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Web forums like Google groups and Facebook groups are convenient to read, reply and archive messages for group communication."
+  },
+  {
+    "id": "q10",
+    "text": "Which e-mail access method involves using a web browser interface?",
+    "options": [
+      "Client-server method",
+      "Direct server login",
+      "Web-based access",
+      "Command-line interface"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Web-based access uses a web browser interface, with Gmail being a prime example of this access method."
+  },
+  {
+    "id": "q11",
+    "text": "What is the primary function of a Mail Client (User Agent)?",
+    "options": [
+      "To transfer e-mail between servers",
+      "To store messages permanently",
+      "To compose, send, receive, read and store messages",
+      "To scan for malware and spam"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Mail Client (User Agent) is used to compose, send, receive, read and store messages for the user."
+  },
+  {
+    "id": "q12",
+    "text": "What is the role of a Mail Server (Mail Transfer Agent)?",
+    "options": [
+      "To compose and edit messages",
+      "To transfer e-mail from one place to another",
+      "To provide user interface for reading mail",
+      "To store user preferences"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Mail Server (Mail Transfer Agent - MTA) transfers e-mail from one place to another in the e-mail system."
+  },
+  {
+    "id": "q13",
+    "text": "What does the Message Store component do in an e-mail system?",
+    "options": [
+      "Sends messages to recipients",
+      "Composes new messages",
+      "Stores messages for users",
+      "Encrypts all communications"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The Message Store stores messages for users, including incoming e-mail until accessed by the client (inbox) and other mail folders."
+  },
+  {
+    "id": "q14",
+    "text": "What protocol does the mail client use to send mail to the gateway?",
+    "options": [
+      "HTTP protocol",
+      "FTP protocol",
+      "Submit protocol",
+      "Telnet protocol"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The client uses the submit protocol to send mail to the gateway, where the gateway may authenticate users and use TLS to secure data."
+  },
+  {
+    "id": "q15",
+    "text": "What type of DNS record specifies the mail server for a domain?",
+    "options": [
+      "A record",
+      "CNAME record",
+      "MX record",
+      "NS record"
+    ],
+    "correctAnswer": 2,
+    "explanation": "An MX record specifies the name of the mail server for each domain, such as 'treasure.org. MX 10 mail.server.com.'"
+  },
+  {
+    "id": "q16",
+    "text": "Why do organizations scan outgoing e-mail?",
+    "options": [
+      "To compress the messages",
+      "To add digital signatures",
+      "To check for malware and prevent spreading infections",
+      "To translate messages to different languages"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Organizations scan outgoing e-mail to prevent malware from spreading and to ensure they don't become sources of spam or malicious content."
+  },
+  {
+    "id": "q17",
+    "text": "What does SMTP stand for?",
+    "options": [
+      "Secure Mail Transfer Protocol",
+      "Simple Mail Transfer Protocol",
+      "Standard Mail Transmission Protocol",
+      "System Mail Transport Protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "SMTP stands for Simple Mail Transfer Protocol, which is a simple, easy to understand text-based protocol with a client-server model."
+  },
+  {
+    "id": "q18",
+    "text": "What is the structure of SMTP commands?",
+    "options": [
+      "Eight-letter commands with binary data",
+      "Variable-length commands with XML format",
+      "Four-letter commands with additional data following",
+      "Two-letter commands with numeric prefixes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SMTP uses four-letter commands with additional data following the command, and numeric responses followed by text for user information."
+  },
+  {
+    "id": "q19",
+    "text": "In the SMTP model, which component initiates the communication?",
+    "options": [
+      "The receiver (server)",
+      "The sender (client)",
+      "Both simultaneously",
+      "A third-party mediator"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In the SMTP model, the sender acts as the client and initiates communication with the receiver (server) by sending commands."
+  },
+  {
+    "id": "q20",
+    "text": "What does the SMTP command 'EHLO' accomplish?",
+    "options": [
+      "Ends the SMTP session",
+      "Sends the message content",
+      "Introduces the client to the server and requests capabilities",
+      "Specifies the message recipient"
+    ],
+    "correctAnswer": 2,
+    "explanation": "EHLO is the extended hello command that introduces the client to the server and requests information about the server's capabilities."
+  },
+  {
+    "id": "q21",
+    "text": "What does the SMTP 'DATA' command indicate?",
+    "options": [
+      "The start of recipient specification",
+      "The beginning of message header and body transmission",
+      "The end of the SMTP session",
+      "A request for server status"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The DATA command indicates that the client is ready to send the message header and body, ended with a '.' on a line by itself."
+  },
+  {
+    "id": "q22",
+    "text": "How do mailing lists work in e-mail systems?",
+    "options": [
+      "The sender must know all recipient addresses",
+      "Messages are sent individually to each recipient",
+      "A list manager sends copies to each address on the list",
+      "Recipients must request each message separately"
+    ],
+    "correctAnswer": 2,
+    "explanation": "A mailing list address specifies a special mailbox called a list manager, which sends copies of the message to each address on the list."
+  },
+  {
+    "id": "q23",
+    "text": "What is POP3 used for in e-mail systems?",
+    "options": [
+      "Sending outgoing mail",
+      "Scanning for viruses",
+      "Mail retrieval (though very old)",
+      "Creating mailing lists"
+    ],
+    "correctAnswer": 2,
+    "explanation": "POP3 is a mail retrieval protocol used when users need to access mail from a remote server, though it's described as very old."
+  },
+  {
+    "id": "q24",
+    "text": "What advantage does IMAP have over POP3?",
+    "options": [
+      "IMAP is faster for all operations",
+      "IMAP can store mail folders on the server",
+      "IMAP requires less bandwidth",
+      "IMAP is simpler to configure"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IMAP is more powerful than POP and can store mail folders on the server, retrieve messages or parts of messages, and is suitable for mobile users."
+  },
+  {
+    "id": "q25",
+    "text": "What is a major security concern with traditional e-mail?",
+    "options": [
+      "Messages are too fast",
+      "Storage requirements are too high",
+      "Forged e-mail, spam, and viruses",
+      "Limited message size"
+    ],
+    "correctAnswer": 2,
+    "explanation": "E-mail security issues include forged e-mail, spam, viruses, and the use of insecure e-mail protocols, making it a critical security concern."
+  },
+  {
+    "id": "q26",
+    "text": "What does 'end-to-end' security in e-mail mean?",
+    "options": [
+      "Only the mail servers handle encryption",
+      "Security is managed by ISPs",
+      "Servers do not get involved in the security process",
+      "Security is optional for users"
+    ],
+    "correctAnswer": 2,
+    "explanation": "End-to-end security means servers do not get involved in the encryption/signing process - it's handled between the sender and receiver using systems like PGP or S/MIME."
+  },
+  {
+    "id": "q27",
+    "text": "What does SPF (Sender Policy Framework) help prevent?",
+    "options": [
+      "Large file attachments",
+      "Slow mail delivery",
+      "Forged e-mail addresses",
+      "Encrypted messages"
+    ],
+    "correctAnswer": 2,
+    "explanation": "SPF uses special DNS records to specify IP addresses authorized to send mail for a domain, helping prevent forged e-mail by validating the envelope sender."
+  },
+  {
+    "id": "q28",
+    "text": "What does DKIM stand for in e-mail authentication?",
+    "options": [
+      "Domain Key Internet Mail",
+      "DomainKeys Identified Mail",
+      "Digital Key Internet Messaging",
+      "Domain Key Identity Management"
+    ],
+    "correctAnswer": 1,
+    "explanation": "DKIM stands for DomainKeys Identified Mail, which is another method used alongside SPF to prevent forged e-mail."
+  },
+  {
+    "id": "q29",
+    "text": "According to RFC 822, what are the three main parts of an e-mail message format?",
+    "options": [
+      "Subject, Body, Attachments",
+      "Envelope, Headers, Body",
+      "Sender, Recipient, Message",
+      "Date, From, Content"
+    ],
+    "correctAnswer": 1,
+    "explanation": "RFC 822 defines the e-mail message format as consisting of Envelope (delivery information), Headers (information about the message), and Body (the message itself)."
+  },
+  {
+    "id": "q30",
+    "text": "What information is typically contained in the e-mail envelope?",
+    "options": [
+      "The message subject and date",
+      "Delivery information, recipients, and sender's address",
+      "The message body content",
+      "Attachment details"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The envelope contains delivery information used by mail transfer software, including recipient(s), sender's address for error messages, and priority/security information."
+  },
+  {
+    "id": "q31",
+    "text": "Why can't the 'From:' header in e-mail be completely trusted?",
+    "options": [
+      "It's automatically generated by servers",
+      "It's encrypted and unreadable",
+      "It's set by the sender and cannot be relied upon",
+      "It only contains the domain name"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The From: header contains the sender's name and e-mail address but is set by the sender, so it cannot be relied upon and may be different from the envelope 'From' header."
+  },
+  {
+    "id": "q32",
+    "text": "In the e-mail address 'alibaba@treasure.org', what does 'treasure.org' represent?",
+    "options": [
+      "The mailbox name",
+      "The user's real name",
+      "The mailserver name specifying where mail should be delivered",
+      "The message subject"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In the format alibaba@treasure.org, 'treasure.org' is the mailserver name that specifies where the mail should be delivered."
+  },
+  {
+    "id": "q33",
+    "text": "What is the difference between 'To:' and 'Cc:' headers in e-mail?",
+    "options": [
+      "To: is for internal recipients, Cc: is for external",
+      "To: is for primary recipients, Cc: indicates non-primary recipients",
+      "To: is mandatory, Cc: is optional",
+      "To: is encrypted, Cc: is plain text"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The To: header contains the name and address of expected primary recipients, while Cc: contains names and addresses of additional recipients who are not primary recipients."
+  },
+  {
+    "id": "q34",
+    "text": "What is the purpose of the 'Message-Id:' header?",
+    "options": [
+      "To specify the message priority",
+      "To provide a unique string to identify the message",
+      "To indicate the message size",
+      "To show the delivery route"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The Message-Id header provides a unique string to identify each specific message in the e-mail system."
+  },
+  {
+    "id": "q35",
+    "text": "What information do 'Received:' headers provide?",
+    "options": [
+      "The message content summary",
+      "User authentication details",
+      "Postmarks from each mail server the message traveled through",
+      "Attachment file sizes"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Received headers provide a set of 'postmarks' inserted by each mail server through which the message travels, useful for debugging and identifying forged messages."
+  },
+  {
+    "id": "q36",
+    "text": "What problem did MIME solve for e-mail systems?",
+    "options": [
+      "Slow message delivery",
+      "Inability to handle binary files and specify content types",
+      "Limited number of recipients",
+      "Weak password security"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MIME (Multipurpose Internet Mail Extension) solved the problem that SMTP could not handle binary files and provided a way to tell receivers what type of content was being sent."
+  },
+  {
+    "id": "q37",
+    "text": "How many new message header fields does MIME introduce?",
+    "options": [
+      "Three header fields",
+      "Five header fields",
+      "Seven header fields",
+      "Ten header fields"
+    ],
+    "correctAnswer": 1,
+    "explanation": "MIME introduces five new message header fields: MIME version, Content type, Content transfer encoding, Content Id, and Content Description."
+  },
+  {
+    "id": "q38",
+    "text": "What does 'Content-Transfer-Encoding: base64' indicate in a MIME message?",
+    "options": [
+      "The content is compressed",
+      "The content is encrypted",
+      "The method used to encode the data",
+      "The content is a text file"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Content-Transfer-Encoding specifies the method used to encode data, with base64 being a common encoding method for binary data in e-mail."
+  },
+  {
+    "id": "q39",
+    "text": "Which MIME type would be appropriate for a Microsoft Word document?",
+    "options": [
+      "text/plain",
+      "image/jpeg",
+      "application/msword",
+      "audio/basic"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Application/msword is the appropriate MIME type for Microsoft Word documents, falling under the Application type for data that must be processed by an application."
+  },
+  {
+    "id": "q40",
+    "text": "What is the purpose of boundaries in multipart MIME messages?",
+    "options": [
+      "To encrypt different sections",
+      "To separate different parts of the message",
+      "To compress the message content",
+      "To specify the message priority"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Boundaries like '--StartOfNextPart' are used to separate different parts of a multipart MIME message, allowing multiple content types in one message."
+  },
+  {
+    "id": "q41",
+    "text": "What is a key characteristic of modern messaging systems?",
+    "options": [
+      "They only support text messages",
+      "They can send images, video, files, etc.",
+      "They require postal addresses",
+      "They work only on desktop computers"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Modern messaging systems can send not just text messages but also images, video, files, and other multimedia content between people and devices."
+  },
+  {
+    "id": "q42",
+    "text": "Which of the following is NOT mentioned as a common type of messaging?",
+    "options": [
+      "SMS",
+      "WhatsApp",
+      "E-mail",
+      "Slack"
+    ],
+    "correctAnswer": 2,
+    "explanation": "E-mail is covered separately from messaging systems. The common types of messaging mentioned include SMS, WhatsApp, Viber, Facebook messenger, and Slack."
+  },
+  {
+    "id": "q43",
+    "text": "What is a major limitation of proprietary messaging systems?",
+    "options": [
+      "They are slower than e-mail",
+      "Both sender and receiver must be on the same system",
+      "They don't support multimedia",
+      "They require internet connection"
+    ],
+    "correctAnswer": 1,
+    "explanation": "Unlike e-mail, proprietary messaging systems require both sender and receiver to be on the same system - you can't receive WhatsApp messages on Viber."
+  },
+  {
+    "id": "q44",
+    "text": "What is an advantage of proprietary messaging systems?",
+    "options": [
+      "Universal compatibility",
+      "Lower cost",
+      "More features and potentially more secure",
+      "Simpler setup"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Being proprietary has advantages including more features, fast and reliable service, and potentially better security, though users may be locked in."
+  },
+  {
+    "id": "q45",
+    "text": "What does XMPP stand for?",
+    "options": [
+      "eXternal Messaging and Presence Protocol",
+      "eXtensible Messaging and Presence Protocol",
+      "eXpress Messaging and Privacy Protocol",
+      "eXclusive Messaging and Public Protocol"
+    ],
+    "correctAnswer": 1,
+    "explanation": "XMPP stands for eXtensible Messaging and Presence Protocol, which is a standard protocol for messaging."
+  },
+  {
+    "id": "q46",
+    "text": "What is a key advantage of XMPP over proprietary messaging systems?",
+    "options": [
+      "It's faster and more reliable",
+      "Anyone can run a server and servers can interconnect",
+      "It uses less bandwidth",
+      "It's more secure by default"
+    ],
+    "correctAnswer": 1,
+    "explanation": "XMPP allows anyone to run a server and servers can interconnect, providing the openness that proprietary systems lack."
+  },
+  {
+    "id": "q47",
+    "text": "What format does XMPP use for its messages?",
+    "options": [
+      "Binary format",
+      "JSON format",
+      "XML-based messages",
+      "Plain text format"
+    ],
+    "correctAnswer": 2,
+    "explanation": "XMPP uses XML-based messages and supports presence, attachments, groups, and other messaging features."
+  },
+  {
+    "id": "q48",
+    "text": "How do WhatsApp and Google relate to XMPP?",
+    "options": [
+      "They completely avoid XMPP",
+      "They run versions of XMPP",
+      "They compete directly with XMPP",
+      "They only support XMPP clients"
+    ],
+    "correctAnswer": 1,
+    "explanation": "WhatsApp, Google, and other major messaging services run versions of XMPP, showing its widespread adoption even in proprietary systems."
+  },
+  {
+    "id": "q49",
+    "text": "Why is XMPP popular for IoT messaging?",
+    "options": [
+      "It uses less power",
+      "It supports things talking to other things",
+      "It's required by IoT standards",
+      "It's the only protocol available"
+    ],
+    "correctAnswer": 1,
+    "explanation": "XMPP is popular for IoT messaging because it supports machine-to-machine communication, enabling 'things talking to other things.'"
+  },
+  {
+    "id": "q50",
+    "text": "What is required for secure e-mail using PGP or S/MIME?",
+    "options": [
+      "Special e-mail servers",
+      "Government authorization",
+      "Public key infrastructure (PKI)",
+      "Premium e-mail accounts"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Secure e-mail using PGP or S/MIME needs public key infrastructure (PKI) including certification authorities (CA) to manage encryption keys."
+  },
+  {
+    "id": "q51",
+    "text": "In a firewall-protected e-mail system, where is the mail gateway typically located?",
+    "options": [
+      "Inside the local network",
+      "In the DMZ (demilitarized zone)",
+      "Outside the firewall",
+      "On the user's computer"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The mail gateway is typically placed in the DMZ along with the malware scanner, providing a buffer zone between the internal network and the internet."
+  },
+  {
+    "id": "q52",
+    "text": "What does the numeric code '250' typically indicate in SMTP responses?",
+    "options": [
+      "Error in processing",
+      "Successful operation",
+      "Temporary failure",
+      "Connection refused"
+    ],
+    "correctAnswer": 1,
+    "explanation": "In SMTP, 250 codes indicate successful operations, such as '250 2.1.0 Sender ok' or '250 2.1.5 Recipient ok' in the sample session."
+  },
+  {
+    "id": "q53",
+    "text": "What does the SMTP response code '354' mean?",
+    "options": [
+      "Message accepted for delivery",
+      "Enter mail, end with '.' on a line by itself",
+      "Connection established",
+      "Recipient unknown"
+    ],
+    "correctAnswer": 1,
+    "explanation": "The 354 response code means 'Enter mail, end with \".\" on a line by itself', indicating the server is ready to receive the message content."
+  },
+  {
+    "id": "q54",
+    "text": "Which e-mail access method is most suitable for users who frequently change locations?",
+    "options": [
+      "Direct server login",
+      "POP3 protocol",
+      "IMAP protocol",
+      "Local file storage"
+    ],
+    "correctAnswer": 2,
+    "explanation": "IMAP is suitable for mobile users who frequently change locations because it can store mail folders on the server and retrieve messages or parts of messages."
+  },
+  {
+    "id": "q55",
+    "text": "What is the primary difference between SMS and instant messaging apps like WhatsApp?",
+    "options": [
+      "SMS is faster than WhatsApp",
+      "WhatsApp requires internet, SMS uses cellular network",
+      "SMS supports multimedia, WhatsApp doesn't",
+      "WhatsApp is text-only, SMS supports images"
+    ],
+    "correctAnswer": 1,
+    "explanation": "While both are messaging systems, WhatsApp and similar apps require internet connectivity and offer additional features, while SMS uses the cellular network infrastructure."
+  },
+  {
+    "id": "q56",
+    "text": "What can cause an MX record to have multiple entries for the same domain?",
+    "options": [
+      "To increase security",
+      "To provide backup mail servers with different priorities",
+      "To support different protocols",
+      "To handle different message types"
+    ],
+    "correctAnswer": 1,
+    "explanation": "A domain can have two or more MX records with different priorities to specify which server is preferred and provide backup servers for redundancy."
+  },
+  {
+    "id": "q57",
+    "text": "In MIME, what does the 'application/octet-stream' content type indicate?",
+    "options": [
+      "A text document",
+      "An image file",
+      "Binary data of unknown type",
+      "An audio file"
+    ],
+    "correctAnswer": 2,
+    "explanation": "The 'application/octet-stream' content type is used for binary data that must be processed by an application before being viewable, typically for unknown or arbitrary binary files."
+  },
+  {
+    "id": "q58",
+    "text": "Why might IMAP be slower to access folders compared to POP3?",
+    "options": [
+      "IMAP uses more encryption",
+      "IMAP stores more data on the server and provides more functionality",
+      "IMAP requires authentication for each access",
+      "IMAP compresses all messages"
+    ],
+    "correctAnswer": 1,
+    "explanation": "IMAP is slower to access folders because it's more powerful and can store mail folders on the server, retrieve parts of messages, and provide more functionality than the simpler POP3."
+  },
+  {
+    "id": "q59",
+    "text": "What is the significance of case sensitivity in e-mail addresses?",
+    "options": [
+      "Both parts are case-sensitive",
+      "Neither part is case-sensitive",
+      "Mail server name is not case-sensitive, mailbox name may be",
+      "Mail server name is case-sensitive, mailbox name is not"
+    ],
+    "correctAnswer": 2,
+    "explanation": "In e-mail addresses, the mail server name (domain) is not case-sensitive, but the mailbox name (username) may be case-sensitive, though it often is not in practice."
+  },
+  {
+    "id": "q60",
+    "text": "What makes instant messaging systems convenient on phones compared to traditional e-mail?",
+    "options": [
+      "They use less battery power",
+      "They provide faster internet connections",
+      "They are designed for short messages and quick interaction",
+      "They don't require typing"
+    ],
+    "correctAnswer": 2,
+    "explanation": "Instant messaging systems are convenient on phones because they're designed for short messages, fast delivery, and quick interaction, making them well-suited for mobile device usage patterns."
+  }
+]
